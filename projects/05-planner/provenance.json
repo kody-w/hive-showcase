@@ -1,0 +1,170 @@
+{
+  "schema": "agenda-planner-provenance/1",
+  "seedSlug": "product-launch-company",
+  "source": "https://kody-w.github.io/hive-hub/api/hive-hub/v1/organization-seeds.json",
+  "sourceIndexSha256": "fcb19176c22034db5c4b95530516392852754b77656b63d180214987042f7c80",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hive Hub contributors",
+  "licenseFile": "projects/05-planner/data/source/LICENSE",
+  "parentVerification": "evidence/seed-verification.json",
+  "parentVerifiedAt": "2026-09-19T01:11:33.237613+00:00",
+  "bindings": {
+    "seedRef": "sha256:f30f4349b32cfde5d9a1715f6293b54972435ab74fc56c7f17a63136791b2e8c",
+    "cardRef": "sha256:47e165d06d337aa7c62ec9f57920813cc617d39d68f5f37c524ea3e8f1009118",
+    "archiveRef": "sha256:5bd39ca17e4bc4900fd1b7d851a76d9e2528dca0dec40f6a3c81f0cd427318e4",
+    "archiveBytes": 90328,
+    "dialId": "dial:sha256:a8c18ee50b2a0e1b8e552925c5fc7ccd2b94bc383fcbb4a1899de9e84381e191",
+    "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f"
+  },
+  "reviewedFiles": [
+    {
+      "sourcePath": "LICENSE",
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+      "bytes": 1079,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/LICENSE"
+    },
+    {
+      "sourcePath": "seed.json",
+      "sha256": "a954c9350bc3f2b9ccbb542479387992c49f00dbb27bc147d592b45c287c6bb5",
+      "bytes": 5958,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/seed.json"
+    },
+    {
+      "sourcePath": "initialize.json",
+      "sha256": "dd8fa1284950733c20521dfd516cd5b5baa98ff398ffc3da6065eef8232fe947",
+      "bytes": 4176,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/initialize.json"
+    },
+    {
+      "sourcePath": "templates/casework/work/intake.json",
+      "sha256": "774ebdde3a4f88174cb503bf315156b4d4909cfb9d1b3144203c256463b88cc2",
+      "bytes": 1364,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/intake.json"
+    },
+    {
+      "sourcePath": "templates/casework/work/task-board.json",
+      "sha256": "4f13a54cf3573220743b9916466f493ecde81f975192e4e77791d1727fc98a75",
+      "bytes": 10798,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/task-board.json"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/data/sample-agenda.json",
+      "sha256": "9782d287e0e1cc50e233e7e22a0d30dc2c402f430a1cde51555464637700bedc",
+      "bytes": 776,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/sample-agenda.json"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/data/acceptance-cases.json",
+      "sha256": "6d823e958e25f9ef223e352fa146471011cf77b41f9277caf7a11c72c00378ef",
+      "bytes": 2093,
+      "use": "byte-identical-inert-data-copy",
+      "copiedTo": "projects/05-planner/data/source/acceptance-cases.json"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/docs/product-brief.md",
+      "sha256": "4dc2cfd0a5e36512507e3a5b2ed14750121693f67ce0363171250e46593a8c97",
+      "bytes": 1840,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/docs/design-spec.md",
+      "sha256": "43d7d44e980c99b86c5c710ad9600f4604f9e7bee5b98ec3acd5a990abbb8f46",
+      "bytes": 1938,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/docs/test-protocol.md",
+      "sha256": "cf404ebff1631618896cdea1accaa734e58d716d86a162229f18f7b10b595737",
+      "bytes": 2159,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/docs/support-playbook.md",
+      "sha256": "788e580cb21494f2c40301038d39f02a0d058c2c25e328dbf52883d7089281d7",
+      "bytes": 1970,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/casework/work/starter/docs/launch-checklist.md",
+      "sha256": "f8b9483efd87802a628a72427df99489da6204e9af3f7967b93a96647f115550",
+      "bytes": 1706,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/product-strategy/work/TEAM.md",
+      "sha256": "b48721779312e095c572b35e788e3f4e2f0ab82b410aa3d88987979beb376fd5",
+      "bytes": 361,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/design/work/TEAM.md",
+      "sha256": "c51d0e1a1a992031e6a95a999bd8f33b9fd70e02da929ee22a790a0b7a495aed",
+      "bytes": 376,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/engineering/work/TEAM.md",
+      "sha256": "ad0d8cce7a875e1d16c02ff106fb01256af351b19616341b799e4ff9131afe53",
+      "bytes": 366,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/creative/work/TEAM.md",
+      "sha256": "03827294152ada97249de00137d40782e884c44cbe41e074002cbb5ad9c7b50e",
+      "bytes": 361,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/distribution/work/TEAM.md",
+      "sha256": "5f1c4f051b803c274df0d414d0a379d729f43c7fb78b02acb98506d5025908cb",
+      "bytes": 354,
+      "use": "reviewed-as-inert-data"
+    },
+    {
+      "sourcePath": "templates/teams/customer-success/work/TEAM.md",
+      "sha256": "0d5bbfdbb78a981863209943d1a98dbd64e7e74cd0e22e18a1da2f542428a82a",
+      "bytes": 362,
+      "use": "reviewed-as-inert-data"
+    }
+  ],
+  "nativeInitialized": false,
+  "downloadedCodeExecuted": false,
+  "downloadedCodeImported": false,
+  "downloadedCodeEmbedded": false,
+  "originalImplementation": [
+    "engine.mjs",
+    "editor.mjs",
+    "presets.mjs",
+    "app.mjs",
+    "index.html",
+    "styles.css",
+    "tools/build.mjs"
+  ],
+  "copiedExecutableFiles": [],
+  "adaptations": [
+    {
+      "input": "data/source/sample-agenda.json",
+      "output": "presets.mjs#libraryPreset",
+      "copiedData": "Six topic IDs, labels and durations. Original input remains byte-identical.",
+      "changedSemantics": "All topics are mandatory. Added an explicit five-minute wrap with finish-to-start dependencies. No optional-topic omission.",
+      "newSyntheticAssumptions": "Availability 09:00\u201310:30; initial cutoff 10:00; optional proposed cutoff through 10:30; template-demo may be explicitly renegotiated from 15 down to 2 minutes. These windows/floors are not source facts."
+    },
+    {
+      "input": "data/source/acceptance-cases.json",
+      "output": "historical-reference-only",
+      "changedSemantics": "Seed greedy optional-topic expectations are preserved as data, not executed as tests of this different exact, all-mandatory model."
+    },
+    {
+      "input": "user-requested extension",
+      "output": "presets.mjs#arcadePreset",
+      "copiedData": "None. Original synthetic tournament rounds, breaks and declared venue windows; no real tournament, availability or attendance is claimed."
+    }
+  ],
+  "scope": "Local work product only; initialization metadata was read as DATA, not executed. No native workspace registration, publication, purchases, outreach, services or shared browser use."
+}

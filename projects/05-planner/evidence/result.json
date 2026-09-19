@@ -1,0 +1,309 @@
+{
+  "schema": "local-workstream-result/1",
+  "id": "05-planner",
+  "title": "Agenda Pocket — room for reality",
+  "stage": "work-produced",
+  "status": "passed",
+  "recordedAt": "2026-09-19T01:41:44.112Z",
+  "environment": {
+    "node": "v26.7.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "scope": "Local original implementation and synthetic numerical verification only.",
+  "checks": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/05-planner/tests/engine.test.mjs",
+        "projects/05-planner/tests/oracle.test.mjs",
+        "projects/05-planner/tests/editor.test.mjs",
+        "projects/05-planner/tests/artifacts.test.mjs",
+        "projects/05-planner/tests/ui.test.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "durationMs": 201.07,
+      "log": "projects/05-planner/evidence/check-01.tap"
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/05-planner/app.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "durationMs": 23.26,
+      "log": "projects/05-planner/evidence/check-02.txt"
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/05-planner/app.bundle.js"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "durationMs": 25.09,
+      "log": "projects/05-planner/evidence/check-03.txt"
+    },
+    {
+      "argv": [
+        "node",
+        "projects/05-planner/tools/build.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "durationMs": 30.09,
+      "log": "projects/05-planner/evidence/check-04.txt"
+    }
+  ],
+  "tests": {
+    "total": 87,
+    "passed": 87,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "adversarialFixtures": {
+    "total": 17,
+    "matched": 17,
+    "results": "projects/05-planner/evidence/fixture-results.json",
+    "sha256": "89f0367aef4eea8bda6d3b84b37eb627faea7df665ecbab3f4a2326af6342961"
+  },
+  "independentOracleCorpora": {
+    "startDomainModels": 1000,
+    "finiteRepairPolicies": 250,
+    "taskCoreModels": 150,
+    "method": "Separate exhaustive test implementations, not the engine's own search"
+  },
+  "semantics": {
+    "feasibility": "All tasks required, nonpreemptive, within both availability unions, fixed starts, finish-to-start dependencies, and a declared discrete same-day single-track model.",
+    "infeasibility": "Sound arithmetic/cycle/domain/fixed-collision proof or completed exhaustive search only. Bound exhaustion is unproven.",
+    "conflict": "Minimum task-cardinality core only when all smaller induced task subsets are conclusively feasible; not a minimum atomic-constraint set.",
+    "repairObjective": "Lexicographic changedFields then totalMinutes over only declared cutoff extensions and permitted unfixed-task duration reductions.",
+    "minimum": "Every cheaper permitted vector proven infeasible before a complete repair witness; truncated ties are disclosed separately."
+  },
+  "manualBrowserChecks": "not-observed",
+  "manualProtocol": "projects/05-planner/docs/manual-checks.json",
+  "automatedUiScope": "Node DOM-double execution of the original bundle and static asset checks; no browser-rendering or assistive-technology claim.",
+  "userStudyPerformed": false,
+  "tractionClaimed": false,
+  "published": false,
+  "nativeInitialized": false,
+  "externalEffectsPerformed": false,
+  "sharedBrowserUsed": false,
+  "servicesStarted": false,
+  "releaseRecommendation": "HOLD for external release; manual review and separate owner publication authorization remain outstanding.",
+  "provenance": "projects/05-planner/provenance.json",
+  "limitations": [
+    "Single track; at most 8 mandatory nonpreemptive tasks, 16 intervals per availability set, and 120 grid slots through the full repair envelope. Grids are 1/5/10/15/30/60 minutes; same day only.",
+    "Only explicit availability, fixed starts and finish-to-start dependencies are modeled. Unknown fields/constraints are unsupported, never ignored.",
+    "Feasibility search bounds return unproven, never impossible. Conflict-core minimum means task cardinality with induced dependencies, not minimum atomic constraints.",
+    "Repair minimum is lexicographic changed field count then total changed minutes, only across declared cutoff extensions and permitted unfixed-task duration reductions. No task, availability, dependency or fixed event is relaxed.",
+    "Duration reductions are proposed negotiated timeboxes/scope, not evidence that unchanged work takes less time. Declared availability is not externally verified.",
+    "At most four tied repair choices are normally shown; tiesComplete explicitly distinguishes full from truncated enumeration.",
+    "No calendar/date/recurrence/parallel-room integration, automatic persistence, telemetry, native Hive activation or external effects.",
+    "Synthetic inputs and model results are not real tournament operations, customer validation, traction, publication or launch approval.",
+    "Browser, keyboard, screen-reader and narrow-layout checks remain not observed. Node DOM-double/static tests do not certify real-browser accessibility or behavior.",
+    "Synchronous bounded search can briefly occupy the main thread; no performance SLA or large-instance completeness claim."
+  ],
+  "artifactHashes": [
+    {
+      "path": "projects/05-planner/app.bundle.js",
+      "bytes": 60587,
+      "sha256": "17460cfcf3b391baab3ad043527ae3c1c3234fee3fdf93d9948804a32e49dd13"
+    },
+    {
+      "path": "projects/05-planner/app.mjs",
+      "bytes": 20971,
+      "sha256": "20683e1cb376ac07d6d20a3f68c331af3eb6afbeb6bac186ea75c0feb449c823"
+    },
+    {
+      "path": "projects/05-planner/data/source/acceptance-cases.json",
+      "bytes": 2093,
+      "sha256": "6d823e958e25f9ef223e352fa146471011cf77b41f9277caf7a11c72c00378ef"
+    },
+    {
+      "path": "projects/05-planner/data/source/initialize.json",
+      "bytes": 4176,
+      "sha256": "dd8fa1284950733c20521dfd516cd5b5baa98ff398ffc3da6065eef8232fe947"
+    },
+    {
+      "path": "projects/05-planner/data/source/intake.json",
+      "bytes": 1364,
+      "sha256": "774ebdde3a4f88174cb503bf315156b4d4909cfb9d1b3144203c256463b88cc2"
+    },
+    {
+      "path": "projects/05-planner/data/source/LICENSE",
+      "bytes": 1079,
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+    },
+    {
+      "path": "projects/05-planner/data/source/sample-agenda.json",
+      "bytes": 776,
+      "sha256": "9782d287e0e1cc50e233e7e22a0d30dc2c402f430a1cde51555464637700bedc"
+    },
+    {
+      "path": "projects/05-planner/data/source/seed.json",
+      "bytes": 5958,
+      "sha256": "a954c9350bc3f2b9ccbb542479387992c49f00dbb27bc147d592b45c287c6bb5"
+    },
+    {
+      "path": "projects/05-planner/data/source/task-board.json",
+      "bytes": 10798,
+      "sha256": "4f13a54cf3573220743b9916466f493ecde81f975192e4e77791d1727fc98a75"
+    },
+    {
+      "path": "projects/05-planner/docs/FAQ.md",
+      "bytes": 6173,
+      "sha256": "ee83afd580c296073ee12f2fdf8b24784c0bdde96d439893cff748507fe99d1b"
+    },
+    {
+      "path": "projects/05-planner/docs/launch-draft.md",
+      "bytes": 5500,
+      "sha256": "cd69c248693d7a9b56d1293f7a1fc928a4fd5359cc59569a37b480ab9647285b"
+    },
+    {
+      "path": "projects/05-planner/docs/manual-checks.json",
+      "bytes": 3012,
+      "sha256": "86963a3a9014b268fe999364c90c5f6ddd5902b4c93d947e7a9e2ace52466412"
+    },
+    {
+      "path": "projects/05-planner/docs/task-mapping.md",
+      "bytes": 5613,
+      "sha256": "61882809d58571cafac263f8debded5b6c1eaeafc430e14c105150a0b63fbb08"
+    },
+    {
+      "path": "projects/05-planner/editor.mjs",
+      "bytes": 3637,
+      "sha256": "4fc41b34deb74fb30d983eef286bb938c98c26eb1f3323ecf822aa3405a195f6"
+    },
+    {
+      "path": "projects/05-planner/engine.mjs",
+      "bytes": 30634,
+      "sha256": "66a9abbcc9c3a0c00dc7841ed5b36c78a3d3349a74bf80178202818d791974cf"
+    },
+    {
+      "path": "projects/05-planner/fixtures/adversarial.json",
+      "bytes": 14559,
+      "sha256": "d6bcc8a42612d8dc4421799cab5011609ef30c1b52084319b16fbf0a3f3e160d"
+    },
+    {
+      "path": "projects/05-planner/fixtures/boundary.json",
+      "bytes": 1117,
+      "sha256": "a76fdb85867c4ec120057da3a4ab1e6f576414b6a8bbf454589be9ef0c418e86"
+    },
+    {
+      "path": "projects/05-planner/fixtures/disjoint.json",
+      "bytes": 675,
+      "sha256": "96220fed3ab1ed7a026fffd77827ea04017830ad09a668b1e64afa33932d9fb0"
+    },
+    {
+      "path": "projects/05-planner/fixtures/library.json",
+      "bytes": 2320,
+      "sha256": "24785a9694b54d2be2501668e43eedd6721a6fe11a8662434f778c0cc316e039"
+    },
+    {
+      "path": "projects/05-planner/fixtures/pocket-arcade.json",
+      "bytes": 2331,
+      "sha256": "44d916e056b463535eb051a4260b6c967d63d8d6aab87df73d6a59f858c92987"
+    },
+    {
+      "path": "projects/05-planner/index.html",
+      "bytes": 11528,
+      "sha256": "c7dfe6eb8ea1115526d7cc1053a5293ecb19dfb2aa907af448906de158d0fd4e"
+    },
+    {
+      "path": "projects/05-planner/manifest.json",
+      "bytes": 3954,
+      "sha256": "be32190db7b40a42850abddd7799b6496983068aa31b63af758bcad5f20b9534"
+    },
+    {
+      "path": "projects/05-planner/presets.mjs",
+      "bytes": 5279,
+      "sha256": "d34d05e0d6ad0a82ee05e44aa0093cc298e7070d8d083f1ebe139bac73e5c3e8"
+    },
+    {
+      "path": "projects/05-planner/provenance.json",
+      "bytes": 7227,
+      "sha256": "c4084cb90b629b3f38fd10092a82b4e05f57720b760fe3f71561199bd638b911"
+    },
+    {
+      "path": "projects/05-planner/README.md",
+      "bytes": 17862,
+      "sha256": "0963c67f913fa7d2cb487dd5b6873a7fabb7e19a6712ca6a6ce05e5a2b755f60"
+    },
+    {
+      "path": "projects/05-planner/styles.css",
+      "bytes": 13503,
+      "sha256": "4a9aa347b065a9ba43968a73a3e02f6ba22102dd4b92df6d78caedbe5727773c"
+    },
+    {
+      "path": "projects/05-planner/tests/artifacts.test.mjs",
+      "bytes": 6772,
+      "sha256": "ce02aef6e19d11d26894e3f2cf9d415931e6b303353d92e6b45b7b14fcca322b"
+    },
+    {
+      "path": "projects/05-planner/tests/dom-double.mjs",
+      "bytes": 5796,
+      "sha256": "6ed82b0a725f83ab240c60dfd7f2b921537b2f56f562ac4d8eaa6a2c86692da1"
+    },
+    {
+      "path": "projects/05-planner/tests/editor.test.mjs",
+      "bytes": 4641,
+      "sha256": "0e4a480cd671ef85a9cbfea682484c00f0c9cbc4d981171543622b644a568051"
+    },
+    {
+      "path": "projects/05-planner/tests/engine.test.mjs",
+      "bytes": 15633,
+      "sha256": "c16079f70c48c9ecfe144e2338320b0b7d3406d53beaec2b42495a26415b3a86"
+    },
+    {
+      "path": "projects/05-planner/tests/oracle.test.mjs",
+      "bytes": 8798,
+      "sha256": "aa0b8b8d8ac1112254e258b424a940343b5813b7c2958da1e433040bc8027d01"
+    },
+    {
+      "path": "projects/05-planner/tests/ui.test.mjs",
+      "bytes": 7739,
+      "sha256": "4a29a66e51e3a13aa0f947468a306c119c7770a0af9d2b6b90d7e385e906edae"
+    },
+    {
+      "path": "projects/05-planner/tools/build.mjs",
+      "bytes": 2271,
+      "sha256": "a004c916cbba1e4af6c169f1c3bd1cc1a6bb42b8efe9c9914d8b0d6fd610e325"
+    },
+    {
+      "path": "projects/05-planner/tools/record-evidence.mjs",
+      "bytes": 7277,
+      "sha256": "3a655f2928c1b608f4e70521846eb9e2cdf505fc32ffbd1ef2ae1f5b21ce281c"
+    }
+  ],
+  "logHashes": [
+    {
+      "path": "projects/05-planner/evidence/check-01.tap",
+      "sha256": "8fa9855b95f648f478fcb84f55006a36ba2bcd930ff2f1ee60cd4e33242fa6b7"
+    },
+    {
+      "path": "projects/05-planner/evidence/check-02.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "projects/05-planner/evidence/check-03.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "projects/05-planner/evidence/check-04.txt",
+      "sha256": "b3aa01284196723abc575a5125a5fd38ea6292e71ec036e9dc1a491a369734ac"
+    }
+  ]
+}

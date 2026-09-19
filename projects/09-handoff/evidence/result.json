@@ -1,0 +1,155 @@
+{
+  "actions_not_taken": [
+    "No new AI agents or continuation.",
+    "No edits to the original checkout, earlier worktree, or partner projects.",
+    "No network, remote publication, browser use, services, purchases or native activation."
+  ],
+  "consumer_changes": [
+    "Maintenance output bytes and pocket-arcade-maintenance/1 remain unchanged.",
+    "Evidence result schema is handoff-public-result/1, separating historical_validation and new publication_checks.",
+    "continuation-run.json is excluded; historical-continuation.json provides a derived historical summary without private identity.",
+    "Replay metadata is handoff-browser-replay/2, with explicitly historical commit keys and no executor identifier.",
+    "Evidence-hash consumers must rebind to actual public bytes; no partner project was edited."
+  ],
+  "historical_continuation": {
+    "count": 1,
+    "fix_commit": "849660c39cd53277f37ba3dddf8f7ccd553cf910",
+    "midpoint_commit": "97dac1b6bdcfcfbae5ebdb43bbfdc0854335030e",
+    "model": "gpt-6-astra",
+    "qualification": "Historical hashes are informational, not available public Git objects. Private invocation identity and metadata are withheld; public readers cannot independently reverify that invocation.",
+    "record": "projects/09-handoff/evidence/historical-continuation.json"
+  },
+  "historical_validation": {
+    "before_regression_tests": {
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 15
+    },
+    "before_strict_acceptance": {
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 2
+    },
+    "browser_run": false,
+    "coordinator_regression_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 19
+    },
+    "coordinator_strict_acceptance": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 3
+    },
+    "executor_regression_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 19
+    },
+    "executor_reproduced_baseline": true,
+    "executor_strict_acceptance": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 3
+    },
+    "offline_replay_dom_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 12
+    },
+    "sealed_files_unchanged": 12
+  },
+  "id": "09-handoff",
+  "integrity": {
+    "current_public_bytes": "projects/09-handoff/evidence/public-integrity.json",
+    "historical_hashes": "projects/09-handoff/evidence/input-hashes.json",
+    "qualification": "Current and historical hashes have different scopes. Redacted derived records are not byte-identical private originals. Hashes are not signatures or independent attestations."
+  },
+  "limitations": [
+    "Clean-room reproduction of the seed's explicitly specified ll-duplicate defect, not an upstream patch or newly discovered bug.",
+    "Original SYNTHETIC fixtures only; no real telemetry, player feedback, human review, or production assurance.",
+    "One real separate Astra continuation performed the original repair. Private invocation records and identity are withheld; this historical fact cannot be independently reverified from the public projection.",
+    "Public historical records are explicitly redacted derivatives, not byte-identical private transcripts or new executions. Original numerical observations and safe input bytes are retained.",
+    "Historical commit hashes are informational; checks use included source snapshots and current public-byte hashes, never private Git objects.",
+    "The browser plays back captured Python output; the Python utility runs separately through the documented CLI.",
+    "Browser visuals were not browser-validated; DOM behavior and static offline references are tested with Node built-ins.",
+    "The seed's separate ordering defect was not an unfinished defect here; this is not the full seed release gate.",
+    "The maintenance artifact is provided for a consumer; integration into another workstream is not claimed.",
+    "No network dependencies, services, native Hive activation, or release authority. Only the coordinating publisher owns remote publication; this projection performs no remote operations."
+  ],
+  "maintenance_artifact": {
+    "bytes_changed_for_publication": false,
+    "input_records": 4,
+    "open_queue": [
+      "arcade-input"
+    ],
+    "path": "projects/09-handoff/artifacts/pocket-arcade-maintenance.json",
+    "release_authority": false,
+    "replayed_records": 1,
+    "schema": "pocket-arcade-maintenance/1",
+    "sha256": "8e2a9b88295a2e544b652271154fb6330557c41281a33391052b347b61f8c618",
+    "unique_events": 3
+  },
+  "previous_publication_checks": {
+    "path": "projects/09-handoff/evidence/publication-initial-checks.json",
+    "qualification": "Initial successful checks preserved before changing only the evidence diff to zero context and updating its verifier.",
+    "sha256": "22e729e3470118a6eb030ad7f0f3ef44da0f12c7139e8663a8bb23fc3516cb56"
+  },
+  "previous_snapshot_validation": {
+    "path": "projects/09-handoff/evidence/snapshot-initial-check.json",
+    "qualification": "Earlier successful export retained before the evidence diff formatting change.",
+    "sha256": "1396fd06f394edbc75093ce160cf7ac382bfe2fd49c0418cf783e88785da4f0c"
+  },
+  "publication_checks": {
+    "commands_captured": 6,
+    "final_binding_audit_argv": [
+      "python3",
+      "-B",
+      "projects/09-handoff/tools/verify_evidence.py"
+    ],
+    "kind": "new-public-projection-checks",
+    "ledger_tests": {
+      "failed": 0,
+      "passed": 19
+    },
+    "path": "projects/09-handoff/evidence/publication-final-checks.json",
+    "preserved_historical_inputs": 6,
+    "projection_privacy_tests": {
+      "failed": 0,
+      "passed": 14
+    },
+    "qualification": "Final fresh checks after clarifying historical publication permission and binding verification to the declared check-record path; not another continuation.",
+    "replay_dom_tests": {
+      "failed": 0,
+      "passed": 12
+    },
+    "sha256": "9da137664bf4a482781f41ed0b61fafe9bfb9cc382091ed526ad8f7b1394a134",
+    "strict_acceptance": {
+      "failed": 0,
+      "passed": 3
+    },
+    "unchanged_original_source_and_tests": 4
+  },
+  "record_kind": "public-projection-summary",
+  "recorded_at": "2026-09-19T13:07:26.503616+00:00",
+  "redaction_boundaries": [
+    "Absolute checkout, interpreter and traceback locations removed or rebased to repository-relative paths.",
+    "Private task/session identifiers, registry metadata, internal coordination instructions and raw invocation records excluded.",
+    "Historical numerical observations and exit codes are retained; derived records explicitly identify their transformation and original record hashes.",
+    "The canonical private checkout and records were not edited.",
+    "Original handoff, criteria, fixtures, provenance, utility, CLI and ledger regressions remain byte-identical."
+  ],
+  "schema": "handoff-public-result/1",
+  "scope": "Original synthetic clean-room ll-duplicate utility; no upstream repair or new continuation.",
+  "seedSlug": "open-source-infrastructure-foundation",
+  "snapshot_validation": {
+    "checks_passed": 7,
+    "historical_git_objects_available": false,
+    "path": "projects/09-handoff/evidence/snapshot-final-check.json",
+    "qualification": "Final exported-snapshot validation; this report was added after its tested snapshot.",
+    "sha256": "a6b708ff96cb6b7e7dfe196d697ee6dfe23c85641a03bc3f9f5fbc6418e32c74"
+  },
+  "stage": "work-produced",
+  "status": "public-projection-locally-checked",
+  "title": "The receipt that counted twice"
+}

@@ -1,0 +1,532 @@
+TAP version 13
+# Subtest: direct-file bundle and standalone JSON presets exactly match original ES module sources
+ok 1 - direct-file bundle and standalone JSON presets exactly match original ES module sources
+  ---
+  duration_ms: 3.018375
+  type: 'test'
+  ...
+# Subtest: entrypoint uses local relative assets, classic direct-file script and labeled controls
+ok 2 - entrypoint uses local relative assets, classic direct-file script and labeled controls
+  ---
+  duration_ms: 0.482583
+  type: 'test'
+  ...
+# Subtest: browser code has no network, persistence, evaluated code or imported-markup sink
+ok 3 - browser code has no network, persistence, evaluated code or imported-markup sink
+  ---
+  duration_ms: 0.487791
+  type: 'test'
+  ...
+# Subtest: copied inert input bytes, attribution and bindings match the parent seed verification
+ok 4 - copied inert input bytes, attribution and bindings match the parent seed verification
+  ---
+  duration_ms: 0.825542
+  type: 'test'
+  ...
+# Subtest: copied historical source data is retained, but optional-topic reference results are not relabeled as this contract
+ok 5 - copied historical source data is retained, but optional-topic reference results are not relabeled as this contract
+  ---
+  duration_ms: 0.246583
+  type: 'test'
+  ...
+# Subtest: manifest exposes reproducible argv checks, local artifacts, truthful stage and limitations
+ok 6 - manifest exposes reproducible argv checks, local artifacts, truthful stage and limitations
+  ---
+  duration_ms: 0.263833
+  type: 'test'
+  ...
+# Subtest: manual and launch gates never substitute static/unit tests for browser observations
+ok 7 - manual and launch gates never substitute static/unit tests for browser observations
+  ---
+  duration_ms: 0.151792
+  type: 'test'
+  ...
+# Subtest: clock parsing preserves exact boundaries and does not coerce malformed text
+ok 8 - clock parsing preserves exact boundaries and does not coerce malformed text
+  ---
+  duration_ms: 0.636583
+  type: 'test'
+  ...
+# Subtest: disjoint windows accept hyphen or en dash; empty does not mean unlimited
+ok 9 - disjoint windows accept hyphen or en dash; empty does not mean unlimited
+  ---
+  duration_ms: 0.4735
+  type: 'test'
+  ...
+# Subtest: explicit analysis export/import round trip keeps the input, not untrusted imported conclusions
+ok 10 - explicit analysis export/import round trip keeps the input, not untrusted imported conclusions
+  ---
+  duration_ms: 16.595542
+  type: 'test'
+  ...
+# Subtest: exports label unknown and input-only reports without implying feasibility
+ok 11 - exports label unknown and input-only reports without implying feasibility
+  ---
+  duration_ms: 0.124167
+  type: 'test'
+  ...
+# Subtest: stale analysis and invalid input cannot be exported as a current result
+ok 12 - stale analysis and invalid input cannot be exported as a current result
+  ---
+  duration_ms: 6.15275
+  type: 'test'
+  ...
+# Subtest: failed imports have no replacement agenda and do not touch current state
+ok 13 - failed imports have no replacement agenda and do not touch current state
+  ---
+  duration_ms: 0.210833
+  type: 'test'
+  ...
+# Subtest: imported labels remain literal strings, including markup-like data
+ok 14 - imported labels remain literal strings, including markup-like data
+  ---
+  duration_ms: 0.082292
+  type: 'test'
+  ...
+# Subtest: the timeline accounts for tasks, usable slack and unavailable minutes separately
+ok 15 - the timeline accounts for tasks, usable slack and unavailable minutes separately
+  ---
+  duration_ms: 0.210458
+  type: 'test'
+  ...
+# Subtest: empty agenda rendering still distinguishes unavailable time from slack
+ok 16 - empty agenda rendering still distinguishes unavailable time from slack
+  ---
+  duration_ms: 0.099333
+  type: 'test'
+  ...
+# Subtest: adversarial: overloaded-duration
+ok 17 - adversarial: overloaded-duration
+  ---
+  duration_ms: 2.945
+  type: 'test'
+  ...
+# Subtest: adversarial: disjoint-availability
+ok 18 - adversarial: disjoint-availability
+  ---
+  duration_ms: 0.221459
+  type: 'test'
+  ...
+# Subtest: adversarial: dependency-conflict
+ok 19 - adversarial: dependency-conflict
+  ---
+  duration_ms: 0.1555
+  type: 'test'
+  ...
+# Subtest: adversarial: dependency-cycle
+ok 20 - adversarial: dependency-cycle
+  ---
+  duration_ms: 0.225458
+  type: 'test'
+  ...
+# Subtest: adversarial: fixed-event-collision
+ok 21 - adversarial: fixed-event-collision
+  ---
+  duration_ms: 0.132791
+  type: 'test'
+  ...
+# Subtest: adversarial: boundary-valid-agenda
+ok 22 - adversarial: boundary-valid-agenda
+  ---
+  duration_ms: 0.113209
+  type: 'test'
+  ...
+# Subtest: adversarial: malformed-input
+ok 23 - adversarial: malformed-input
+  ---
+  duration_ms: 0.092792
+  type: 'test'
+  ...
+# Subtest: adversarial: malformed-duplicate-id
+ok 24 - adversarial: malformed-duplicate-id
+  ---
+  duration_ms: 0.059875
+  type: 'test'
+  ...
+# Subtest: adversarial: search-bound-feasible
+ok 25 - adversarial: search-bound-feasible
+  ---
+  duration_ms: 0.12
+  type: 'test'
+  ...
+# Subtest: adversarial: search-bound-infeasible
+ok 26 - adversarial: search-bound-infeasible
+  ---
+  duration_ms: 0.127375
+  type: 'test'
+  ...
+# Subtest: adversarial: repair-candidate-bound
+ok 27 - adversarial: repair-candidate-bound
+  ---
+  duration_ms: 0.117125
+  type: 'test'
+  ...
+# Subtest: adversarial: repair-node-bound
+ok 28 - adversarial: repair-node-bound
+  ---
+  duration_ms: 0.098417
+  type: 'test'
+  ...
+# Subtest: adversarial: two-field-minimum
+ok 29 - adversarial: two-field-minimum
+  ---
+  duration_ms: 0.182083
+  type: 'test'
+  ...
+# Subtest: adversarial: lexicographic-repair
+ok 30 - adversarial: lexicographic-repair
+  ---
+  duration_ms: 0.277041
+  type: 'test'
+  ...
+# Subtest: adversarial: core-search-bound
+ok 31 - adversarial: core-search-bound
+  ---
+  duration_ms: 0.088083
+  type: 'test'
+  ...
+# Subtest: adversarial: unsupported-constraint
+ok 32 - adversarial: unsupported-constraint
+  ---
+  duration_ms: 0.044417
+  type: 'test'
+  ...
+# Subtest: adversarial: no-invented-availability
+ok 33 - adversarial: no-invented-availability
+  ---
+  duration_ms: 0.890542
+  type: 'test'
+  ...
+# Subtest: all shipped synthetic presets are supported, deterministic and immutable
+ok 34 - all shipped synthetic presets are supported, deterministic and immutable
+  ---
+  duration_ms: 13.793291
+  type: 'test'
+  ...
+# Subtest: Pocket Arcade keeps rounds, two breaks and fixed check-in in every repair
+ok 35 - Pocket Arcade keeps rounds, two breaks and fixed check-in in every repair
+  ---
+  duration_ms: 1.619292
+  type: 'test'
+  ...
+# Subtest: library adaptation retains all source topics instead of copying the seed's greedy omission
+ok 36 - library adaptation retains all source topics instead of copying the seed's greedy omission
+  ---
+  duration_ms: 3.481917
+  type: 'test'
+  ...
+# Subtest: a fields-first objective can deliberately prefer 25 minutes over a two-field 10-minute alternative
+ok 37 - a fields-first objective can deliberately prefer 25 minutes over a two-field 10-minute alternative
+  ---
+  duration_ms: 0.182291
+  type: 'test'
+  ...
+# Subtest: a choice limit may truncate tied repairs without invalidating the minimum cost
+ok 38 - a choice limit may truncate tied repairs without invalidating the minimum cost
+  ---
+  duration_ms: 0.064209
+  type: 'test'
+  ...
+# Subtest: a node-limited smallest-core search cannot claim minimality
+ok 39 - a node-limited smallest-core search cannot claim minimality
+  ---
+  duration_ms: 0.060458
+  type: 'test'
+  ...
+# Subtest: zero search nodes still allow sound arithmetic proofs, but not a guessed witness
+ok 40 - zero search nodes still allow sound arithmetic proofs, but not a guessed witness
+  ---
+  duration_ms: 0.041875
+  type: 'test'
+  ...
+# Subtest: empty agenda is feasible; empty availability with a commitment is not
+ok 41 - empty agenda is feasible; empty availability with a commitment is not
+  ---
+  duration_ms: 0.078125
+  type: 'test'
+  ...
+# Subtest: adjacent and overlapping availability windows are normalized without mutation
+ok 42 - adjacent and overlapping availability windows are normalized without mutation
+  ---
+  duration_ms: 0.077167
+  type: 'test'
+  ...
+# Subtest: self-dependency is a supported, proven cycle
+ok 43 - self-dependency is a supported, proven cycle
+  ---
+  duration_ms: 0.042917
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: duration zero
+ok 44 - malformed input is not an impossibility proof: duration zero
+  ---
+  duration_ms: 0.045291
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: duration fraction
+ok 45 - malformed input is not an impossibility proof: duration fraction
+  ---
+  duration_ms: 0.036542
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: NaN
+ok 46 - malformed input is not an impossibility proof: NaN
+  ---
+  duration_ms: 0.049125
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: out of day
+ok 47 - malformed input is not an impossibility proof: out of day
+  ---
+  duration_ms: 0.038042
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: overnight
+ok 48 - malformed input is not an impossibility proof: overnight
+  ---
+  duration_ms: 0.033083
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: off-grid
+ok 49 - malformed input is not an impossibility proof: off-grid
+  ---
+  duration_ms: 0.027833
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: missing task availability
+ok 50 - malformed input is not an impossibility proof: missing task availability
+  ---
+  duration_ms: 0.03325
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: missing global availability
+ok 51 - malformed input is not an impossibility proof: missing global availability
+  ---
+  duration_ms: 0.03075
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: reversed window
+ok 52 - malformed input is not an impossibility proof: reversed window
+  ---
+  duration_ms: 0.029542
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: dangling dependency
+ok 53 - malformed input is not an impossibility proof: dangling dependency
+  ---
+  duration_ms: 0.028166
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: repeated dependency
+ok 54 - malformed input is not an impossibility proof: repeated dependency
+  ---
+  duration_ms: 0.026333
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: array instead of task
+ok 55 - malformed input is not an impossibility proof: array instead of task
+  ---
+  duration_ms: 0.023791
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: bad ID
+ok 56 - malformed input is not an impossibility proof: bad ID
+  ---
+  duration_ms: 0.029542
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: blank label
+ok 57 - malformed input is not an impossibility proof: blank label
+  ---
+  duration_ms: 0.026416
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: invalid floor
+ok 58 - malformed input is not an impossibility proof: invalid floor
+  ---
+  duration_ms: 0.0345
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: floor above duration
+ok 59 - malformed input is not an impossibility proof: floor above duration
+  ---
+  duration_ms: 0.027042
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: unknown floor ID
+ok 60 - malformed input is not an impossibility proof: unknown floor ID
+  ---
+  duration_ms: 0.031958
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: shortening fixed event
+ok 61 - malformed input is not an impossibility proof: shortening fixed event
+  ---
+  duration_ms: 0.03025
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: cutoff shrinks
+ok 62 - malformed input is not an impossibility proof: cutoff shrinks
+  ---
+  duration_ms: 0.027875
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: bad fixed-start type
+ok 63 - malformed input is not an impossibility proof: bad fixed-start type
+  ---
+  duration_ms: 0.02925
+  type: 'test'
+  ...
+# Subtest: malformed input is not an impossibility proof: bad classification
+ok 64 - malformed input is not an impossibility proof: bad classification
+  ---
+  duration_ms: 0.02725
+  type: 'test'
+  ...
+# Subtest: null, arrays, primitive and missing-top-level objects are invalid, not crashes
+ok 65 - null, arrays, primitive and missing-top-level objects are invalid, not crashes
+  ---
+  duration_ms: 0.037958
+  type: 'test'
+  ...
+# Subtest: unsupported features and limits are never silently ignored
+ok 66 - unsupported features and limits are never silently ignored
+  ---
+  duration_ms: 0.430958
+  type: 'test'
+  ...
+# Subtest: complete schedule verification rejects dropped, duplicated, moved or falsified commitments
+ok 67 - complete schedule verification rejects dropped, duplicated, moved or falsified commitments
+  ---
+  duration_ms: 0.246042
+  type: 'test'
+  ...
+# Subtest: verifier rejects availability holes and reversed dependencies even without overlaps
+ok 68 - verifier rejects availability holes and reversed dependencies even without overlaps
+  ---
+  duration_ms: 0.601292
+  type: 'test'
+  ...
+# Subtest: repair application rechecks policy and witness instead of trusting downloaded choice data
+ok 69 - repair application rechecks policy and witness instead of trusting downloaded choice data
+  ---
+  duration_ms: 3.582458
+  type: 'test'
+  ...
+# Subtest: malformed API bounds are explicit developer errors
+ok 70 - malformed API bounds are explicit developer errors
+  ---
+  duration_ms: 0.648084
+  type: 'test'
+  ...
+# Subtest: prototype-named legal task IDs never inherit a duration-repair permission
+ok 71 - prototype-named legal task IDs never inherit a duration-repair permission
+  ---
+  duration_ms: 0.3055
+  type: 'test'
+  ...
+# Subtest: an unknown original feasibility yields an explicitly unproven conflict result
+ok 72 - an unknown original feasibility yields an explicitly unproven conflict result
+  ---
+  duration_ms: 0.141709
+  type: 'test'
+  ...
+# Subtest: results are plain JSON, with no BigInt masks or partial assignment state
+ok 73 - results are plain JSON, with no BigInt masks or partial assignment state
+  ---
+  duration_ms: 4.796792
+  type: 'test'
+  ...
+# Subtest: independent exhaustive start-vector oracle agrees on 1,000 small models
+ok 74 - independent exhaustive start-vector oracle agrees on 1,000 small models
+  ---
+  duration_ms: 22.719709
+  type: 'test'
+  ...
+# Subtest: independent full Cartesian repair enumeration checks 250 finite policies
+ok 75 - independent full Cartesian repair enumeration checks 250 finite policies
+  ---
+  duration_ms: 26.529292
+  type: 'test'
+  ...
+# Subtest: minimum task cores agree with independent subset enumeration on 150 models
+ok 76 - minimum task cores agree with independent subset enumeration on 150 models
+  ---
+  duration_ms: 3.006417
+  type: 'test'
+  ...
+# Subtest: DOM-double: original bundle boots to an honest overload, not a partial schedule
+ok 77 - DOM-double: original bundle boots to an honest overload, not a partial schedule
+  ---
+  duration_ms: 17.38875
+  type: 'test'
+  ...
+# Subtest: DOM-double: Pocket Arcade approval produces and exports a valid complete schedule
+ok 78 - DOM-double: Pocket Arcade approval produces and exports a valid complete schedule
+  ---
+  duration_ms: 20.179917
+  type: 'test'
+  ...
+# Subtest: DOM-double: edits invalidate old timeline, repair buttons and analysis export
+ok 79 - DOM-double: edits invalidate old timeline, repair buttons and analysis export
+  ---
+  duration_ms: 21.35775
+  type: 'test'
+  ...
+# Subtest: DOM-double: failed malformed/unsupported imports preserve editor and current analysis
+ok 80 - DOM-double: failed malformed/unsupported imports preserve editor and current analysis
+  ---
+  duration_ms: 8.785334
+  type: 'test'
+  ...
+# Subtest: DOM-double: bounded search says unknown and exports no schedule
+ok 81 - DOM-double: bounded search says unknown and exports no schedule
+  ---
+  duration_ms: 8.633125
+  type: 'test'
+  ...
+# Subtest: DOM-double: imported markup-like task labels remain literal DOM text
+ok 82 - DOM-double: imported markup-like task labels remain literal DOM text
+  ---
+  duration_ms: 8.401959
+  type: 'test'
+  ...
+# Subtest: DOM-double: explicit deletion does not silently remove a dangling dependency
+ok 83 - DOM-double: explicit deletion does not silently remove a dangling dependency
+  ---
+  duration_ms: 8.318375
+  type: 'test'
+  ...
+# Subtest: DOM-double: adding reaches the supported task limit without erasing existing rows
+ok 84 - DOM-double: adding reaches the supported task limit without erasing existing rows
+  ---
+  duration_ms: 8.565958
+  type: 'test'
+  ...
+# Subtest: DOM-double: asynchronous file import cannot overwrite an intervening edit
+ok 85 - DOM-double: asynchronous file import cannot overwrite an intervening edit
+  ---
+  duration_ms: 8.047583
+  type: 'test'
+  ...
+# Subtest: DOM-double: rapid preset change queues a fresh check rather than displaying the previous result
+ok 86 - DOM-double: rapid preset change queues a fresh check rather than displaying the previous result
+  ---
+  duration_ms: 3.804167
+  type: 'test'
+  ...
+# Subtest: DOM-double: legal constructor ID has no inherited floor or unexpected field value
+ok 87 - DOM-double: legal constructor ID has no inherited floor or unexpected field value
+  ---
+  duration_ms: 8.0875
+  type: 'test'
+  ...
+1..87
+# tests 87
+# suites 0
+# pass 87
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 172.434875

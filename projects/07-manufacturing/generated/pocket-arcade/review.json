@@ -1,0 +1,272 @@
+{
+  "schema": "stackline-digital-review/1",
+  "units": "mm",
+  "classification": "SYNTHETIC / digital checks",
+  "params": {
+    "width": 180,
+    "depth": 100,
+    "height": 28,
+    "wall": 3,
+    "floor": 3,
+    "clearance": 1.5,
+    "insertHeight": 18,
+    "rib": 2,
+    "bays": 3,
+    "layout": "card-token"
+  },
+  "innerMM": [
+    174,
+    94,
+    25
+  ],
+  "insertMM": [
+    171,
+    91,
+    18
+  ],
+  "offsetMM": [
+    4.5,
+    4.5,
+    3
+  ],
+  "nominalPerSideGapMM": 1.5,
+  "rimRecessMM": 7,
+  "bays": [
+    {
+      "id": 1,
+      "x": 0,
+      "y": 2,
+      "width": 91.85000000000001,
+      "depth": 87,
+      "height": 18
+    },
+    {
+      "id": 2,
+      "x": 93.85000000000001,
+      "y": 2,
+      "width": 37.575,
+      "depth": 87,
+      "height": 18
+    },
+    {
+      "id": 3,
+      "x": 133.425,
+      "y": 2,
+      "width": 37.575,
+      "depth": 87,
+      "height": 18
+    }
+  ],
+  "trayVolumeMM3": 95100,
+  "insertVolumeMM3": 18576,
+  "totalVolumeMM3": 113676,
+  "meshes": {
+    "tray": {
+      "triangles": 92,
+      "vertices": 48,
+      "edges": 138,
+      "unpairedEdges": 0,
+      "orientationErrors": 0,
+      "degenerate": 0,
+      "closedOrientedEdges": true,
+      "signedVolumeMM3": 95100,
+      "boundsMM": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          180,
+          100,
+          28
+        ],
+        "size": [
+          180,
+          100,
+          28
+        ]
+      },
+      "eulerCharacteristic": 2
+    },
+    "insert": {
+      "triangles": 96,
+      "vertices": 48,
+      "edges": 144,
+      "unpairedEdges": 0,
+      "orientationErrors": 0,
+      "degenerate": 0,
+      "closedOrientedEdges": true,
+      "signedVolumeMM3": 18576.00000000001,
+      "boundsMM": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          171,
+          91,
+          18
+        ],
+        "size": [
+          171,
+          91,
+          18
+        ]
+      },
+      "eulerCharacteristic": 0
+    }
+  },
+  "modeledBenchEffort": {
+    "classification": "MODELED assembly + handling + inspection; not time-study evidence",
+    "operations": [
+      {
+        "step": "Identify matching revision and pair",
+        "seconds": 45
+      },
+      {
+        "step": "Record proposed dimensional checks",
+        "seconds": 90
+      },
+      {
+        "step": "Review edges and condition",
+        "seconds": 45
+      },
+      {
+        "step": "Place insert without forcing",
+        "seconds": 40
+      },
+      {
+        "step": "Lift insert out",
+        "seconds": 30
+      },
+      {
+        "step": "Review seating and desk stability",
+        "seconds": 50
+      },
+      {
+        "step": "Check 3 bay openings",
+        "seconds": 60
+      },
+      {
+        "step": "Review assumed card/token envelopes",
+        "seconds": 45
+      }
+    ],
+    "seconds": 405,
+    "minutes": 6.75,
+    "fabricationTimeIncluded": false
+  },
+  "economics": {
+    "classification": "SYNTHETIC estimate only",
+    "solidMassG": 140.95824,
+    "grossFeedstockG": 153.21547826086956,
+    "materialUSD": 3.6771714782608695,
+    "benchUSD": 2.475,
+    "packagingUSD": 0.35,
+    "overheadUSD": 1.1,
+    "unitUSD": 7.602171478260869,
+    "displayedUnitUSD": "7.60",
+    "quantity": 20,
+    "batchUSD": 152.0434295652174,
+    "displayedBatchUSD": "152.04"
+  },
+  "pack": {
+    "classification": "SYNTHETIC nominal envelope only; fixed orientation, no diagonal packing",
+    "packedMM": [
+      184,
+      104,
+      32
+    ],
+    "marginsMM": [
+      8,
+      8,
+      10
+    ],
+    "packedMassG": 165.95824,
+    "massMarginG": 84.04176000000001,
+    "pass": true
+  },
+  "payload": {
+    "applicable": true,
+    "cardFit": true,
+    "tokenFit": true,
+    "pass": true,
+    "assumptions": {
+      "cardWidth": 88,
+      "cardDepth": 63,
+      "cardStackHeight": 12,
+      "tokenDiameter": 20,
+      "edgeAllowance": 1
+    },
+    "note": "Nominal rectangle/circle containment only. Actual Pocket Arcade items, retrieval, and token retention are untested."
+  },
+  "sensitivity": [
+    {
+      "label": "Low",
+      "densityGCM3": 1.18,
+      "feedstockUSDPerKG": 18,
+      "scrapFraction": 0.04,
+      "classification": "SYNTHETIC estimate only",
+      "solidMassG": 134.13768,
+      "grossFeedstockG": 139.72674999999998,
+      "materialUSD": 2.5150814999999995,
+      "benchUSD": 2.475,
+      "packagingUSD": 0.35,
+      "overheadUSD": 1.1,
+      "unitUSD": 6.4400815,
+      "displayedUnitUSD": "6.44",
+      "quantity": 20,
+      "batchUSD": 128.80163,
+      "displayedBatchUSD": "128.80"
+    },
+    {
+      "label": "Base",
+      "densityGCM3": 1.24,
+      "feedstockUSDPerKG": 24,
+      "scrapFraction": 0.08,
+      "classification": "SYNTHETIC estimate only",
+      "solidMassG": 140.95824,
+      "grossFeedstockG": 153.21547826086956,
+      "materialUSD": 3.6771714782608695,
+      "benchUSD": 2.475,
+      "packagingUSD": 0.35,
+      "overheadUSD": 1.1,
+      "unitUSD": 7.602171478260869,
+      "displayedUnitUSD": "7.60",
+      "quantity": 20,
+      "batchUSD": 152.0434295652174,
+      "displayedBatchUSD": "152.04"
+    },
+    {
+      "label": "High",
+      "densityGCM3": 1.3,
+      "feedstockUSDPerKG": 32,
+      "scrapFraction": 0.15,
+      "classification": "SYNTHETIC estimate only",
+      "solidMassG": 147.77880000000002,
+      "grossFeedstockG": 173.85741176470592,
+      "materialUSD": 5.56343717647059,
+      "benchUSD": 2.475,
+      "packagingUSD": 0.35,
+      "overheadUSD": 1.1,
+      "unitUSD": 9.488437176470589,
+      "displayedUnitUSD": "9.49",
+      "quantity": 20,
+      "batchUSD": 189.76874352941178,
+      "displayedBatchUSD": "189.77"
+    }
+  ],
+  "physicalTestsPerformed": [],
+  "limitations": [
+    "No material has been selected, purchased, printed, fabricated, handled, inspected, or shipped.",
+    "STL files contain nominal millimetre coordinates but STL itself has no unit metadata. Import explicitly as mm.",
+    "Solid-volume mass is not a slicer estimate: no infill, supports, shrinkage, machine time, or process settings are modeled.",
+    "Clearance is a loose, centered design assumption, not a validated tolerance or friction fit. The insert is not retained.",
+    "The open-ended ladder and 1.5 mm nominal surrounding gap do not seal small tokens into bays.",
+    "Dimensions, strength, material suitability, surface finish, stability, handling time, and transit behavior require future physical review.",
+    "Lightweight dry desk items only; no food, heated items, electrical, medical, child-safety, or load-bearing uses.",
+    "Packaging and costs are synthetic scenarios. Digital passes grant no fabrication, spending, shipment, or native Hive authority."
+  ]
+}

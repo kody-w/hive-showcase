@@ -1,0 +1,36 @@
+{
+  "assumptions": [
+    "The sealed acceptance contract is authoritative; expected values and protected files must not change.",
+    "Only fully identical repeated IDs are replays. Different IDs with the same payload remain separate events, while any changed payload under the same ID remains an error.",
+    "Raw input records continue to count toward byte, line, and record limits and remain available for input/replay accounting.",
+    "Sorting unique validated values by the existing (at_minute, event_id) key is the smallest complete repair; no utility rewrite, dependency, service, or external action is needed."
+  ],
+  "context_missing": [
+    "No earlier conversation, hidden decisions, or original author's reasoning beyond the project artifacts.",
+    "No access to, or independent re-verification of, the original downloaded archive and inert source files described by provenance.json.",
+    "No real-world input sample, upstream test execution, human review, browser validation, or permission to publish.",
+    "No claim that this bounded ll-duplicate repair completes the seed's full two-defect release gate."
+  ],
+  "context_recovered": [
+    "The frozen midpoint intentionally fails the duplicate desired-behavior case: four records are counted as four events rather than three.",
+    "ACCEPTANCE.json fixes global and per-item uniqueness by event ID, complete validation and conflict rejection, chronological ordering with event-ID ties, immutability, and bounded synthetic JSONL.",
+    "The clean and out-of-order cases already pass. The existing equal-minute, conflict, bounds, validation, and immutable-value behavior must remain intact.",
+    "_checked_order already builds and validates an event-ID map, but then sorts the original receipts rather than the map's unique values.",
+    "parse_jsonl intentionally preserves raw validated records. maintenance_report computes replayed_records from raw length minus unique event_count, so deduplication belongs in the reducer rather than the parser.",
+    "The three fictional fixtures, sealed failure evidence, and provenance account are immutable inputs, not real telemetry or independent attestation."
+  ],
+  "original_record_sha256": "7487388497b593f9b742532227cb756273315ab7bf95e217600dc148fafad3c1",
+  "prior_conversation": {
+    "consulted": false,
+    "evidence_level": "historical-executor-self-report"
+  },
+  "qualification": "Selected non-sensitive facts from the original recovery account. Absolute locations, private executor identity, coordination metadata and operational command transcripts are omitted. This summary is not the original byte-identical account or a new continuation.",
+  "record_kind": "derived-historical-recovery-summary",
+  "schema": "handoff-public-recovery/1",
+  "verified_artifact_bindings": {
+    "repaired_source_sha256": "9049da2028504b0f6e4940d589db74ab1f42eecd1042eee504518e01d87acdc2",
+    "starting_source_sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8",
+    "tested_test_file_sha256": "87bddbcd4314e7b1c4a2ce9c7b7515aa3bec049f3460889fd183d4e6ed7eba21",
+    "unchanged_contract_sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4"
+  }
+}

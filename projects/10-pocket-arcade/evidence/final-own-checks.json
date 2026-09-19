@@ -1,0 +1,234 @@
+{
+  "schema": "pocket-arcade-prime-checks/2",
+  "recordKind": "new-public-integration-checks",
+  "executionRoot": ".",
+  "allPassed": true,
+  "unitTestsUseExplicitFixturesOnly": true,
+  "unitTests": {
+    "python": 92,
+    "node": 18
+  },
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/10-pocket-arcade/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.051013+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-python-tests.txt",
+        "sha256": "9f0c91f54c0419aecda3b2ca7325bd381aa714b6adaa63a9cc2b216d8652a2d3",
+        "bytes": 8138
+      },
+      "scope": "Explicit synthetic validator/consumer/privacy test fixtures,not real invocation evidence."
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "projects/10-pocket-arcade/tests/model.test.cjs"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.740776+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-model-tests.txt",
+        "sha256": "3b7ae75cc9baa9bf645bd27f883a997008e7cde32854d58dd456024b6bb727ed",
+        "bytes": 1675
+      },
+      "scope": "Owned model and static UI contract tests;no real browser."
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/app.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.817192+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-syntax-checks.txt",
+        "sha256": "88c1123313cdc566f9cdb7cbcaa361649b64c071bd83e0e210d998e204403ea8",
+        "bytes": 955
+      },
+      "scope": "Syntax of original integration code."
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/model.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.840744+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-syntax-checks.txt",
+        "sha256": "88c1123313cdc566f9cdb7cbcaa361649b64c071bd83e0e210d998e204403ea8",
+        "bytes": 955
+      },
+      "scope": "Syntax of original integration code."
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/connected-data.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.864708+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-syntax-checks.txt",
+        "sha256": "88c1123313cdc566f9cdb7cbcaa361649b64c071bd83e0e210d998e204403ea8",
+        "bytes": 955
+      },
+      "scope": "Syntax of original integration code."
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/planner_bridge.mjs"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.888996+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-syntax-checks.txt",
+        "sha256": "88c1123313cdc566f9cdb7cbcaa361649b64c071bd83e0e210d998e204403ea8",
+        "bytes": 955
+      },
+      "scope": "Syntax of original integration code."
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/verify_experience.cjs"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.913843+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-syntax-checks.txt",
+        "sha256": "88c1123313cdc566f9cdb7cbcaa361649b64c071bd83e0e210d998e204403ea8",
+        "bytes": 955
+      },
+      "scope": "Syntax of original integration code."
+    },
+    {
+      "argv": [
+        "node",
+        "projects/10-pocket-arcade/planner_bridge.mjs",
+        "--root",
+        ".",
+        "--check"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.936978+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-planner-bridge-check.json",
+        "sha256": "578a80a56bd96e20aec273dd275e191a716df85797d3ee8008c57a42bc6f28c2",
+        "bytes": 731
+      },
+      "scope": "Read-only consistency of the unchanged recorded planner bridge;no artifact regeneration."
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/10-pocket-arcade/consume.py",
+        "--root",
+        ".",
+        "--check"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:35.974582+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-consumer-check.json",
+        "sha256": "0613f0228a45882af13856b6650d5dc719d7df32c462e8d0c0e222b553e96fd5",
+        "bytes": 1654
+      },
+      "scope": "Current public binding/hash consistency with preserved original check records."
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/10-pocket-arcade/validate.py",
+        "--root",
+        "."
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:36.042535+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-validator-stdout.json",
+        "sha256": "220e10ff3c06879990c1586833abb10618459f7417ec23000262e7d0a27e6149",
+        "bytes": 60539
+      },
+      "scope": "Current real technical integration validation,not identity or native authority."
+    },
+    {
+      "argv": [
+        "node",
+        "projects/10-pocket-arcade/verify_experience.cjs",
+        "--root",
+        "."
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:36.101562+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/final-experience-stdout.json",
+        "sha256": "868c33fe0aac79a50a77e309ac1839acbed118020a1bfab4a91f0b2393e6c29b",
+        "bytes": 32431
+      },
+      "scope": "Actual public file/script flow under the Pages repository prefix in a DOM double,not live browser validation."
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/10-pocket-arcade/public_checks.py",
+        "--root",
+        "."
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T13:46:36.165707+00:00",
+      "status": "passed",
+      "pathRebasing": [],
+      "stdoutText": "{\n  \"schema\": \"pocket-arcade-public-check/1\",\n  \"status\": \"passed\",\n  \"publicFilesChecked\": 74,\n  \"checks\": [\n    \"machine/private identifiers absent\",\n    \"embedded JSON strings inspected\",\n    \"private operational fields absent\",\n    \"exact owned artifact inventory\"\n  ],\n  \"showcasePublicationAuthorized\": true,\n  \"deploymentPerformedByThisCheck\": false,\n  \"nativeHumanPhysicalMarketApproval\": false\n}\n",
+      "stdoutSha256": "1d73b795761989b11400d0f93071ed6009d3a0e4aab45bb30d8d505f11cc9731",
+      "scope": "Public payload privacy and exact owned inventory."
+    }
+  ],
+  "showcasePublicationAuthorized": true,
+  "deploymentPerformedHere": false,
+  "nativeHumanPhysicalMarketApproval": false
+}

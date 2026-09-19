@@ -1,0 +1,214 @@
+{
+  "schema": "stackline-artifact-index/1",
+  "generatorVersion": "1.0.0",
+  "deterministic": true,
+  "timestamps": "none in generated content; ZIP DOS dates fixed to 1980-01-01",
+  "sourceHashes": {
+    "engine.js": "25b74446b12969572c9f277e63d789442a81ea82da7ba3bee49e3072b13bde21",
+    "archive.js": "a0f7caf41e89fba417046b116e449ade26daeebaa34d802351972e975b894452",
+    "README.md": "f829844b24ba6750a53605b4dd38aaf82d06cda3d1ca09a76dce3b320aa09855",
+    "tools/generate.mjs": "8e43f6e43fe9205af5fc94bab5bb8af251b1617a2830d59f58a7ea7d4558406f"
+  },
+  "artifacts": [
+    {
+      "path": "projects/07-manufacturing/generated/stackline/tray.stl",
+      "bytes": 11361,
+      "sha256": "e9867703e41a622687824a50caec4cbcf6e9ec2caa55898067257428868816a6"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/insert.stl",
+      "bytes": 14099,
+      "sha256": "694eb6a9805dc6b3994d0faf59d9ff23f4aef9d66532f23f23915e62e30ecf59"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/drawing.svg",
+      "bytes": 3523,
+      "sha256": "2e9af32a8f53f6c4a22db6759d3cceef8410ec7b54b37fb954beb4c27626e4cb"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/preview.svg",
+      "bytes": 18591,
+      "sha256": "338bfb1469d915ad7bf9667abf049549b1dcf8d7b25c8d780ecf877428561a5f"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/parameters.json",
+      "bytes": 2069,
+      "sha256": "259747d570c14d31f2b75f2fdce157a2888f020fd90a443e9933f07f403c5925"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/bom.csv",
+      "bytes": 215,
+      "sha256": "8b50b7e626842785505ecf629b5e0a9774d07bb8a6e21f42686f2182de7963e3"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/inspection.csv",
+      "bytes": 1015,
+      "sha256": "3b9a43e9bb25d148b71f2bbce40471c6697c96cccd7d566f086eba867dd51184"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/assembly.txt",
+      "bytes": 3270,
+      "sha256": "0711bd29351830614fe06fd0cbd1e9a5312b5f51d150d758672f854c37d7c1d5"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/review.json",
+      "bytes": 6630,
+      "sha256": "81d55c00bbb3cfe88a06f79e385b71f1d63baa0d50a909631f9b4f533a5c3f0d"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/THIRD-PARTY-NOTICES.txt",
+      "bytes": 1356,
+      "sha256": "faf3de54aea034919161f6ae96cb2e9432ae6f97b0e963c0299e3cf67859ec75"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/READ-FIRST.txt",
+      "bytes": 821,
+      "sha256": "5cc8c12e502a5786031ca2bbff530a10dd27edca2ec1a46a045c7391c3d9a1d1"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/review-bundle.zip",
+      "bytes": 123377,
+      "sha256": "84cc35becb3c44a264c2ff4a8eeb18a355acf223a99ab27635b29d7c56121769"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/tray.stl",
+      "bytes": 11295,
+      "sha256": "0955ecd650e09d8c37a204503a29a8586f847dab5b2ed93c54239f244d4d4168"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/insert.stl",
+      "bytes": 7637,
+      "sha256": "089f753c24c844e3a2fa68fb3fc0b102b745ba9f3174d25803ff4d905e719607"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/drawing.svg",
+      "bytes": 3314,
+      "sha256": "f563588101579b896154b4dec4190837e4855185ea77e1b50caaae47ba9e604e"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/preview.svg",
+      "bytes": 15039,
+      "sha256": "abdc8aff01ea1f2fd6447810ce67de75975609855fbb09eed7584f298b0391cb"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/parameters.json",
+      "bytes": 2068,
+      "sha256": "662f1240a503e83173263f874b35cc743ad6c917ad1378a911b09ac6b41e7d29"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/bom.csv",
+      "bytes": 211,
+      "sha256": "4bc5172c43dcc177fc74d8ddaf56e179f0e3274478078598d409ab95b32b5e53"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/inspection.csv",
+      "bytes": 1013,
+      "sha256": "716b5bd6c1576d52f031572182fab47978f99e2b2b245a947fc4827446464bca"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/assembly.txt",
+      "bytes": 3272,
+      "sha256": "f1668543f68c578d48abcb3b218f76eb784e98ac4397669b53654eb447d4b70a"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/review.json",
+      "bytes": 6509,
+      "sha256": "8354f402b7a00620c11025c41e442c70bd820f680b3e98732b92cb5290d77541"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/THIRD-PARTY-NOTICES.txt",
+      "bytes": 1356,
+      "sha256": "faf3de54aea034919161f6ae96cb2e9432ae6f97b0e963c0299e3cf67859ec75"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/READ-FIRST.txt",
+      "bytes": 821,
+      "sha256": "5cc8c12e502a5786031ca2bbff530a10dd27edca2ec1a46a045c7391c3d9a1d1"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/review-bundle.zip",
+      "bytes": 112962,
+      "sha256": "56b62285ebee052f5010c9e3689133f6996ede3960fe0bdd6150da6e419813d8"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/tray.stl",
+      "bytes": 11361,
+      "sha256": "45c77711b7a4a90a9423a999c3bb11dd5e2f8949d9c2dea5e8d655ef6c13f66e"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/insert.stl",
+      "bytes": 12695,
+      "sha256": "34e9872a27a4316dae44a27c85a7ea3601ce4b1cc15da8205c9531630e41148c"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/drawing.svg",
+      "bytes": 3517,
+      "sha256": "980908f22e0360d7399ab8c44d94463ded029b9641914fdec85dc76dbf28d6e8"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/preview.svg",
+      "bytes": 19126,
+      "sha256": "585e9ea9ef00de12a2c6d052bd01f254d773797e1d957a2a55dbc8dbf9b4afe8"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/parameters.json",
+      "bytes": 2075,
+      "sha256": "3a385a3a45e7d6b05df2d4b0a248bcdebbc7316c7e7954c925bb16e1ce8f6042"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/bom.csv",
+      "bytes": 213,
+      "sha256": "e11d11dd6dc67217ff22c637aeb3cfa30c40e367ffef2c96b317b1abedc98ecc"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/inspection.csv",
+      "bytes": 1015,
+      "sha256": "92ff667e1bb37902084916349d4b27d00a2b57a657763a28e1ccbbe99cb532c4"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/assembly.txt",
+      "bytes": 3481,
+      "sha256": "2500adf028800f331996412bd823518c459fb849a6508050da0f7476934544eb"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/review.json",
+      "bytes": 6698,
+      "sha256": "cff5dd27b6e8be9dfbde03bcfdf37082dc63dc9e784ffe6c554d99a7452322ae"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/THIRD-PARTY-NOTICES.txt",
+      "bytes": 1356,
+      "sha256": "faf3de54aea034919161f6ae96cb2e9432ae6f97b0e963c0299e3cf67859ec75"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/READ-FIRST.txt",
+      "bytes": 821,
+      "sha256": "5cc8c12e502a5786031ca2bbff530a10dd27edca2ec1a46a045c7391c3d9a1d1"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/review-bundle.zip",
+      "bytes": 122785,
+      "sha256": "f002197852d13842f47a79adea687a7aae9e99a9ee7f91cce027026773122472"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/comparison.json",
+      "bytes": 6017,
+      "sha256": "cf2a334e066165b2ea4a3c6f42144fc42fba4e37269020cd4046cdc0759afee0"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/width-change-review.json",
+      "bytes": 15374,
+      "sha256": "cf09687d73c2b62e3f0c0a0f389a377e91a219dbc7613526f56fdd0c68d9fb84"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/synthetic-inspection.json",
+      "bytes": 2916,
+      "sha256": "ff5674e8a263af0c0d6c2ee45afb79bf74de1120e3636b786ece98765c10cb68"
+    },
+    {
+      "path": "projects/07-manufacturing/generated/seed-review.json",
+      "bytes": 3243,
+      "sha256": "20262c86f93fef15b1bd41fc4a47a535c9ff2b8d36ede6d2115135843e5e19fc"
+    }
+  ]
+}

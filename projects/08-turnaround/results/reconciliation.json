@@ -1,0 +1,53 @@
+{
+  "classification": "SYNTHETIC arithmetic; not an audited financial statement",
+  "assumption": "All included plan billings are collected in the same month; ledger is cash-only and not a complete financial statement.",
+  "ledgerRows": 15,
+  "openingCashCents": 5200000,
+  "receiptsCents": 4850000,
+  "paymentsCents": 6810000,
+  "closingCashCents": 3240000,
+  "reserveCents": 550000,
+  "availableCents": 2690000,
+  "floorCents": 1200000,
+  "headroomCents": 1490000,
+  "months": [
+    {
+      "month": "2026-07",
+      "receiptsCents": 1800000,
+      "paymentsCents": 2200000,
+      "billedCents": 1800000,
+      "netCents": -400000,
+      "openingCashCents": 5200000,
+      "closingCashCents": 4800000
+    },
+    {
+      "month": "2026-08",
+      "receiptsCents": 1600000,
+      "paymentsCents": 2260000,
+      "billedCents": 1600000,
+      "netCents": -660000,
+      "openingCashCents": 4800000,
+      "closingCashCents": 4140000
+    },
+    {
+      "month": "2026-09",
+      "receiptsCents": 1450000,
+      "paymentsCents": 2350000,
+      "billedCents": 1450000,
+      "netCents": -900000,
+      "openingCashCents": 4140000,
+      "closingCashCents": 3240000
+    }
+  ],
+  "smoothedComparison": {
+    "burnCentsPer30Days": 900000,
+    "daysToZeroAfterReserve": 89.66666666666667,
+    "daysToFloorAfterReserve": 49.666666666666664,
+    "limitation": "Continuous-average comparison only. Date-lumped obligations cause earlier event-level failures."
+  },
+  "provenance": {
+    "modelSha256": "f482d2bcc616bba534b5f4d4aca7fbe55263b747405bdab4a27d40b35f113b9c",
+    "inputsSha256": "eaf6265d5abe77334427eb1989962cbc9a353c56e6eeacdcb5db4acb20ea3f33",
+    "scenarioSpecificationSha256": "fa0ac52ebce67adb4f38e16aaae6aa91f5c752d4ebc097f53ac58cbc7e215a90"
+  }
+}

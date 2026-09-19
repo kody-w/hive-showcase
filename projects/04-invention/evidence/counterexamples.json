@@ -1,0 +1,2536 @@
+{
+  "schema": "local-invention-counterexamples/1",
+  "knownRegression": {
+    "caseId": "mixed-classroom/authored",
+    "input": 6,
+    "dominant": 7,
+    "volume": 8,
+    "status": "Known before local freeze; reproduced, not newly discovered."
+  },
+  "unattainableAggregateBound": {
+    "caseId": "bulky-gaps/authored",
+    "aggregateLowerBound": 2,
+    "provenOptimum": 3,
+    "proofMethod": "exhaustive-search",
+    "explanation": "Three indivisible items have volume 6 each. Every pair totals 12 > 10, so each needs its own tote. Aggregate volume only gives ceil(18/10) = 2."
+  },
+  "authoredRegressions": [
+    {
+      "caseId": "weight-trap/authored",
+      "scenario": "weight-trap",
+      "trial": 0,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    }
+  ],
+  "pairedRegressions": [
+    {
+      "caseId": "weight-trap/trial-01",
+      "scenario": "weight-trap",
+      "trial": 1,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-03",
+      "scenario": "weight-trap",
+      "trial": 3,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-04",
+      "scenario": "weight-trap",
+      "trial": 4,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-05",
+      "scenario": "weight-trap",
+      "trial": 5,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-06",
+      "scenario": "weight-trap",
+      "trial": 6,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-07",
+      "scenario": "weight-trap",
+      "trial": 7,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-08",
+      "scenario": "weight-trap",
+      "trial": 8,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-10",
+      "scenario": "weight-trap",
+      "trial": 10,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-11",
+      "scenario": "weight-trap",
+      "trial": 11,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-13",
+      "scenario": "weight-trap",
+      "trial": 13,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-14",
+      "scenario": "weight-trap",
+      "trial": 14,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-15",
+      "scenario": "weight-trap",
+      "trial": 15,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-16",
+      "scenario": "weight-trap",
+      "trial": 16,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-17",
+      "scenario": "weight-trap",
+      "trial": 17,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-19",
+      "scenario": "weight-trap",
+      "trial": 19,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "weight-trap/trial-20",
+      "scenario": "weight-trap",
+      "trial": 20,
+      "method": "volume-first-fit",
+      "baselineCount": 4,
+      "methodCount": 5,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "dominant-first-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "volume-first-fit",
+      "baselineCount": 6,
+      "methodCount": 8,
+      "extraBins": 2
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "dual-best-fit",
+      "baselineCount": 6,
+      "methodCount": 7,
+      "extraBins": 1
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "volume-first-fit",
+      "baselineCount": 7,
+      "methodCount": 8,
+      "extraBins": 1
+    }
+  ],
+  "unprovenResults": [
+    {
+      "caseId": "order-trap/authored",
+      "scenario": "order-trap",
+      "trial": 0,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/authored",
+      "scenario": "weight-trap",
+      "trial": 0,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "order-trap/trial-03",
+      "scenario": "order-trap",
+      "trial": 3,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "order-trap/trial-09",
+      "scenario": "order-trap",
+      "trial": 9,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "order-trap/trial-17",
+      "scenario": "order-trap",
+      "trial": 17,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "order-trap/trial-20",
+      "scenario": "order-trap",
+      "trial": 20,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-01",
+      "scenario": "weight-trap",
+      "trial": 1,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-02",
+      "scenario": "weight-trap",
+      "trial": 2,
+      "method": "input-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-02",
+      "scenario": "weight-trap",
+      "trial": 2,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-03",
+      "scenario": "weight-trap",
+      "trial": 3,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-04",
+      "scenario": "weight-trap",
+      "trial": 4,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-05",
+      "scenario": "weight-trap",
+      "trial": 5,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-06",
+      "scenario": "weight-trap",
+      "trial": 6,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-07",
+      "scenario": "weight-trap",
+      "trial": 7,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-08",
+      "scenario": "weight-trap",
+      "trial": 8,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-09",
+      "scenario": "weight-trap",
+      "trial": 9,
+      "method": "input-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-09",
+      "scenario": "weight-trap",
+      "trial": 9,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-10",
+      "scenario": "weight-trap",
+      "trial": 10,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-11",
+      "scenario": "weight-trap",
+      "trial": 11,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-12",
+      "scenario": "weight-trap",
+      "trial": 12,
+      "method": "input-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-12",
+      "scenario": "weight-trap",
+      "trial": 12,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-13",
+      "scenario": "weight-trap",
+      "trial": 13,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-14",
+      "scenario": "weight-trap",
+      "trial": 14,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-15",
+      "scenario": "weight-trap",
+      "trial": 15,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-16",
+      "scenario": "weight-trap",
+      "trial": 16,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-17",
+      "scenario": "weight-trap",
+      "trial": 17,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-18",
+      "scenario": "weight-trap",
+      "trial": 18,
+      "method": "input-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-18",
+      "scenario": "weight-trap",
+      "trial": 18,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-19",
+      "scenario": "weight-trap",
+      "trial": 19,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "weight-trap/trial-20",
+      "scenario": "weight-trap",
+      "trial": 20,
+      "method": "volume-first-fit",
+      "lowerBound": 4,
+      "upperBound": 5,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-01",
+      "scenario": "mixed-classroom",
+      "trial": 1,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-02",
+      "scenario": "mixed-classroom",
+      "trial": 2,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-03",
+      "scenario": "mixed-classroom",
+      "trial": 3,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-04",
+      "scenario": "mixed-classroom",
+      "trial": 4,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-05",
+      "scenario": "mixed-classroom",
+      "trial": 5,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-06",
+      "scenario": "mixed-classroom",
+      "trial": 6,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-07",
+      "scenario": "mixed-classroom",
+      "trial": 7,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-08",
+      "scenario": "mixed-classroom",
+      "trial": 8,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-09",
+      "scenario": "mixed-classroom",
+      "trial": 9,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-10",
+      "scenario": "mixed-classroom",
+      "trial": 10,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-11",
+      "scenario": "mixed-classroom",
+      "trial": 11,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-12",
+      "scenario": "mixed-classroom",
+      "trial": 12,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-13",
+      "scenario": "mixed-classroom",
+      "trial": 13,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-14",
+      "scenario": "mixed-classroom",
+      "trial": 14,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-15",
+      "scenario": "mixed-classroom",
+      "trial": 15,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-16",
+      "scenario": "mixed-classroom",
+      "trial": 16,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-17",
+      "scenario": "mixed-classroom",
+      "trial": 17,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-18",
+      "scenario": "mixed-classroom",
+      "trial": 18,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-19",
+      "scenario": "mixed-classroom",
+      "trial": 19,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "input-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "dominant-first-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "volume-first-fit",
+      "lowerBound": 6,
+      "upperBound": 8,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "dual-best-fit",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "mixed-classroom/trial-20",
+      "scenario": "mixed-classroom",
+      "trial": 20,
+      "method": "bounded-exact",
+      "lowerBound": 6,
+      "upperBound": 7,
+      "reason": "skipped-item-limit"
+    },
+    {
+      "caseId": "bulky-gaps/trial-01",
+      "scenario": "bulky-gaps",
+      "trial": 1,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-01",
+      "scenario": "bulky-gaps",
+      "trial": 1,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-01",
+      "scenario": "bulky-gaps",
+      "trial": 1,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-01",
+      "scenario": "bulky-gaps",
+      "trial": 1,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-01",
+      "scenario": "bulky-gaps",
+      "trial": 1,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-02",
+      "scenario": "bulky-gaps",
+      "trial": 2,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-02",
+      "scenario": "bulky-gaps",
+      "trial": 2,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-02",
+      "scenario": "bulky-gaps",
+      "trial": 2,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-02",
+      "scenario": "bulky-gaps",
+      "trial": 2,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-02",
+      "scenario": "bulky-gaps",
+      "trial": 2,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-03",
+      "scenario": "bulky-gaps",
+      "trial": 3,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-03",
+      "scenario": "bulky-gaps",
+      "trial": 3,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-03",
+      "scenario": "bulky-gaps",
+      "trial": 3,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-03",
+      "scenario": "bulky-gaps",
+      "trial": 3,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-03",
+      "scenario": "bulky-gaps",
+      "trial": 3,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-04",
+      "scenario": "bulky-gaps",
+      "trial": 4,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-04",
+      "scenario": "bulky-gaps",
+      "trial": 4,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-04",
+      "scenario": "bulky-gaps",
+      "trial": 4,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-04",
+      "scenario": "bulky-gaps",
+      "trial": 4,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-04",
+      "scenario": "bulky-gaps",
+      "trial": 4,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-05",
+      "scenario": "bulky-gaps",
+      "trial": 5,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-05",
+      "scenario": "bulky-gaps",
+      "trial": 5,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-05",
+      "scenario": "bulky-gaps",
+      "trial": 5,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-05",
+      "scenario": "bulky-gaps",
+      "trial": 5,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-05",
+      "scenario": "bulky-gaps",
+      "trial": 5,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-06",
+      "scenario": "bulky-gaps",
+      "trial": 6,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-06",
+      "scenario": "bulky-gaps",
+      "trial": 6,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-06",
+      "scenario": "bulky-gaps",
+      "trial": 6,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-06",
+      "scenario": "bulky-gaps",
+      "trial": 6,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-06",
+      "scenario": "bulky-gaps",
+      "trial": 6,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-07",
+      "scenario": "bulky-gaps",
+      "trial": 7,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-07",
+      "scenario": "bulky-gaps",
+      "trial": 7,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-07",
+      "scenario": "bulky-gaps",
+      "trial": 7,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-07",
+      "scenario": "bulky-gaps",
+      "trial": 7,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-07",
+      "scenario": "bulky-gaps",
+      "trial": 7,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-08",
+      "scenario": "bulky-gaps",
+      "trial": 8,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-08",
+      "scenario": "bulky-gaps",
+      "trial": 8,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-08",
+      "scenario": "bulky-gaps",
+      "trial": 8,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-08",
+      "scenario": "bulky-gaps",
+      "trial": 8,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-08",
+      "scenario": "bulky-gaps",
+      "trial": 8,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-09",
+      "scenario": "bulky-gaps",
+      "trial": 9,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-09",
+      "scenario": "bulky-gaps",
+      "trial": 9,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-09",
+      "scenario": "bulky-gaps",
+      "trial": 9,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-09",
+      "scenario": "bulky-gaps",
+      "trial": 9,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-09",
+      "scenario": "bulky-gaps",
+      "trial": 9,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-10",
+      "scenario": "bulky-gaps",
+      "trial": 10,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-10",
+      "scenario": "bulky-gaps",
+      "trial": 10,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-10",
+      "scenario": "bulky-gaps",
+      "trial": 10,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-10",
+      "scenario": "bulky-gaps",
+      "trial": 10,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-10",
+      "scenario": "bulky-gaps",
+      "trial": 10,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-11",
+      "scenario": "bulky-gaps",
+      "trial": 11,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-11",
+      "scenario": "bulky-gaps",
+      "trial": 11,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-11",
+      "scenario": "bulky-gaps",
+      "trial": 11,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-11",
+      "scenario": "bulky-gaps",
+      "trial": 11,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-11",
+      "scenario": "bulky-gaps",
+      "trial": 11,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-12",
+      "scenario": "bulky-gaps",
+      "trial": 12,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-12",
+      "scenario": "bulky-gaps",
+      "trial": 12,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-12",
+      "scenario": "bulky-gaps",
+      "trial": 12,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-12",
+      "scenario": "bulky-gaps",
+      "trial": 12,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-12",
+      "scenario": "bulky-gaps",
+      "trial": 12,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-13",
+      "scenario": "bulky-gaps",
+      "trial": 13,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-13",
+      "scenario": "bulky-gaps",
+      "trial": 13,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-13",
+      "scenario": "bulky-gaps",
+      "trial": 13,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-13",
+      "scenario": "bulky-gaps",
+      "trial": 13,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-13",
+      "scenario": "bulky-gaps",
+      "trial": 13,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-14",
+      "scenario": "bulky-gaps",
+      "trial": 14,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-14",
+      "scenario": "bulky-gaps",
+      "trial": 14,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-14",
+      "scenario": "bulky-gaps",
+      "trial": 14,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-14",
+      "scenario": "bulky-gaps",
+      "trial": 14,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-14",
+      "scenario": "bulky-gaps",
+      "trial": 14,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-15",
+      "scenario": "bulky-gaps",
+      "trial": 15,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-15",
+      "scenario": "bulky-gaps",
+      "trial": 15,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-15",
+      "scenario": "bulky-gaps",
+      "trial": 15,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-15",
+      "scenario": "bulky-gaps",
+      "trial": 15,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-15",
+      "scenario": "bulky-gaps",
+      "trial": 15,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-16",
+      "scenario": "bulky-gaps",
+      "trial": 16,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-16",
+      "scenario": "bulky-gaps",
+      "trial": 16,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-16",
+      "scenario": "bulky-gaps",
+      "trial": 16,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-16",
+      "scenario": "bulky-gaps",
+      "trial": 16,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-16",
+      "scenario": "bulky-gaps",
+      "trial": 16,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-17",
+      "scenario": "bulky-gaps",
+      "trial": 17,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-17",
+      "scenario": "bulky-gaps",
+      "trial": 17,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-17",
+      "scenario": "bulky-gaps",
+      "trial": 17,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-17",
+      "scenario": "bulky-gaps",
+      "trial": 17,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-17",
+      "scenario": "bulky-gaps",
+      "trial": 17,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-18",
+      "scenario": "bulky-gaps",
+      "trial": 18,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-18",
+      "scenario": "bulky-gaps",
+      "trial": 18,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-18",
+      "scenario": "bulky-gaps",
+      "trial": 18,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-18",
+      "scenario": "bulky-gaps",
+      "trial": 18,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-18",
+      "scenario": "bulky-gaps",
+      "trial": 18,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-19",
+      "scenario": "bulky-gaps",
+      "trial": 19,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-19",
+      "scenario": "bulky-gaps",
+      "trial": 19,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-19",
+      "scenario": "bulky-gaps",
+      "trial": 19,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-19",
+      "scenario": "bulky-gaps",
+      "trial": 19,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-19",
+      "scenario": "bulky-gaps",
+      "trial": 19,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    },
+    {
+      "caseId": "bulky-gaps/trial-20",
+      "scenario": "bulky-gaps",
+      "trial": 20,
+      "method": "input-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-20",
+      "scenario": "bulky-gaps",
+      "trial": 20,
+      "method": "dominant-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-20",
+      "scenario": "bulky-gaps",
+      "trial": 20,
+      "method": "volume-first-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-20",
+      "scenario": "bulky-gaps",
+      "trial": 20,
+      "method": "dual-best-fit",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "not-attempted"
+    },
+    {
+      "caseId": "bulky-gaps/trial-20",
+      "scenario": "bulky-gaps",
+      "trial": 20,
+      "method": "beam-128",
+      "lowerBound": 2,
+      "upperBound": 3,
+      "reason": "bounded-beam"
+    }
+  ],
+  "beamFallbacks": [],
+  "rejectedCandidates": [
+    {
+      "method": "dual-best-fit",
+      "reasons": [
+        "No strict total improvement across authored cases",
+        "At least one authored-case regression",
+        "At least one scenario's paired total regressed"
+      ]
+    }
+  ]
+}

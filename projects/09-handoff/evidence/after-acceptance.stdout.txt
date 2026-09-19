@@ -1,0 +1,140 @@
+{
+  "cases": [
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "fixtures/clean.jsonl",
+      "id": "clean",
+      "input_sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf",
+      "passed": true
+    },
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "fixtures/duplicate.jsonl",
+      "id": "duplicate",
+      "input_sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040",
+      "passed": true
+    },
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "fixtures/out-of-order.jsonl",
+      "id": "out-of-order",
+      "input_sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "passed": 3,
+  "schema": "handoff-strict-acceptance/1",
+  "seed_issue": "ll-duplicate"
+}

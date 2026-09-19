@@ -1,0 +1,62 @@
+{
+  "boundaries": {
+    "automaticPartnerCodeExecution": false,
+    "crossWorldAuthority": false,
+    "externalEffects": false,
+    "foreignWorkspaceRegistration": false,
+    "nativeMembership": false,
+    "physicalManufactureVerified": false,
+    "publicLaunch": false,
+    "signedReceipts": false
+  },
+  "browserObservation": "No browser evidence is claimed here; public deployment validation is a separate workflow.",
+  "checkCapture": {
+    "bytes": 6095,
+    "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-runs.json",
+    "sha256": "30bd07e4bdc8ade2e28a443444498fb80afd2a5a781c716ab842632c3e503e6f"
+  },
+  "checkOutputs": [
+    {
+      "bytes": 7694,
+      "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-0.txt",
+      "sha256": "5a6f873af1b012debef1147bb3bb7efb9ed5aac6c187c4c39acb2390cc715ddb"
+    },
+    {
+      "bytes": 266,
+      "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-1.txt",
+      "sha256": "df2f09429ff317d0f2ed764ceee63ba42acdbb2c03a11dd21da7a51be5b35d94"
+    }
+  ],
+  "checkProvenance": "preserved-valid-original-checks-not-rerun",
+  "fixtureOnly": false,
+  "gates": {
+    "game-deterministic": {
+      "basis": "Preserved declared checks replay all eight recordings and verify the six-replay bundle; actual trained and negative-control scores still agree with unchanged result.json bytes.",
+      "status": "passed"
+    },
+    "game-honest-scope": {
+      "basis": "Actual scores are labeled automated, the negative control remains lost, nativeOrganizationActivated is false, and no human-fun claim is adopted.",
+      "status": "passed"
+    },
+    "game-playable": {
+      "basis": "Preserved original engine/controller/DOM check records remain byte-valid; the actual trained recording wins. These component checks are not newly rerun by this public refresh.",
+      "status": "passed"
+    }
+  },
+  "historicalSourceCommit": "493c333ac7085a10359c87ede5e0c74ab459a766",
+  "humanOrOwnerReview": "pending",
+  "partnerResult": {
+    "bytes": 31806,
+    "path": "projects/01-game-studio/evidence/result.json",
+    "sha256": "c6ef9f41366cd2aa2c138c92da7c64eaf732e1e6d1921373b3dbfd2a7b5e7358"
+  },
+  "physicalAcceptance": "not-performed",
+  "projectId": "01-game-studio",
+  "publication": {
+    "deploymentPerformedHere": false,
+    "showcaseAuthorized": true
+  },
+  "schema": "pocket-arcade-bounded-acceptance/1",
+  "scope": "Public-file technical acceptance only; never verification of withheld private execution.",
+  "sourceBasis": "Current public bytes and explicitly scoped recorded checks; no private Git history required."
+}

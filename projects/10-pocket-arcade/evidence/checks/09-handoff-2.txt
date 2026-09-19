@@ -1,0 +1,32 @@
+argv: ["python3", "-B", "-m", "unittest", "discover", "-s", "projects/09-handoff/tests", "-p", "test_ledger.py", "-v"]
+recordedAt: 2026-09-19T13:28:15.290505+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+test_byte_line_and_record_limits (test_ledger.LedgerTests) ... ok
+test_clean_contract (test_ledger.LedgerTests) ... ok
+test_cli_is_offline_and_reports_errors (test_ledger.LedgerTests) ... ok
+test_conflict_late_in_input_is_not_hidden (test_ledger.LedgerTests) ... ok
+test_conflicting_ids_rejected_for_every_payload_field (test_ledger.LedgerTests) ... ok
+test_direct_summary_requires_bounded_receipts (test_ledger.LedgerTests) ... ok
+test_distinct_ids_with_identical_payloads_count_separately (test_ledger.LedgerTests) ... ok
+test_empty_blank_and_close_only_inputs (test_ledger.LedgerTests) ... ok
+test_equal_minute_uses_event_id (test_ledger.LedgerTests) ... ok
+test_identical_replay_is_not_additional_work (test_ledger.LedgerTests) ... ok
+test_identifier_and_minute_bounds (test_ledger.LedgerTests) ... ok
+test_input_and_returned_results_are_not_shared (test_ledger.LedgerTests) ... ok
+test_maintenance_artifact_counts_raw_and_replayed_records (test_ledger.LedgerTests) ... ok
+test_maintenance_artifact_has_no_release_authority (test_ledger.LedgerTests) ... ok
+test_order_is_already_deterministic (test_ledger.LedgerTests) ... ok
+test_replays_of_each_event_are_idempotent_in_every_order (test_ledger.LedgerTests) ... ok
+test_selected_file_reader (test_ledger.LedgerTests) ... ok
+test_strict_json_shape_and_duplicate_keys (test_ledger.LedgerTests) ... ok
+test_validation_does_not_skip_repeated_record_payloads (test_ledger.LedgerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.106s
+
+OK
+
+--- end of captured streams ---

@@ -1,0 +1,9 @@
+argv: ["node", "projects/01-game-studio/tools/bundle-replays.mjs", "--check"]
+recordedAt: 2026-09-19T02:21:35.677837+00:00
+exitCode: 0
+--- stdout ---
+Six bundled recordings exactly match their verified JSON evidence.
+
+--- stderr ---
+
+--- end of captured streams ---

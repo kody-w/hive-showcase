@@ -1,0 +1,283 @@
+{
+  "excluded_self": "projects/09-handoff/evidence/public-integrity.json",
+  "files": [
+    {
+      "bytes": 2037,
+      "path": "projects/09-handoff/ACCEPTANCE.json",
+      "sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4"
+    },
+    {
+      "bytes": 2009,
+      "path": "projects/09-handoff/AGENTS.md",
+      "sha256": "c58ea9d7b43d41b32a9d6364ab64ed3010bcd581adee353b99c03088aae0bd97"
+    },
+    {
+      "bytes": 4529,
+      "path": "projects/09-handoff/HANDOFF.md",
+      "sha256": "9cc24b856b88313d8f271904b447c1a76711b2c7ced39b69109e9dfb4108abc3"
+    },
+    {
+      "bytes": 8632,
+      "path": "projects/09-handoff/README.md",
+      "sha256": "9fdbeb0305950554e84fe4c497f1a8712b98c47d1731f1b4d7691de4c582f638"
+    },
+    {
+      "bytes": 5484,
+      "path": "projects/09-handoff/app.js",
+      "sha256": "ef7005452d02300a20036b3ae562860d3817a85f6bf5e8a14bac624a1e52c4c1"
+    },
+    {
+      "bytes": 2478,
+      "path": "projects/09-handoff/artifacts/maintenance-contract.json",
+      "sha256": "ddb6c093c9b3c82a84cb7078ffa8471572a9488b6a7ee3c515a7dcb98473b99f"
+    },
+    {
+      "bytes": 694,
+      "path": "projects/09-handoff/artifacts/pocket-arcade-maintenance.json",
+      "sha256": "8e2a9b88295a2e544b652271154fb6330557c41281a33391052b347b61f8c618"
+    },
+    {
+      "bytes": 843,
+      "path": "projects/09-handoff/cli.py",
+      "sha256": "0ad68cb860a899670b81c3f3ff8643985b2152903b29d69fa660c7ec3d5a2744"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/after-acceptance.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3357,
+      "path": "projects/09-handoff/evidence/after-acceptance.stdout.txt",
+      "sha256": "d256653e69c02558b54d201587fe253a8acd7e49235ee852f6151313d457fed9"
+    },
+    {
+      "bytes": 1541,
+      "path": "projects/09-handoff/evidence/after-tests.stderr.txt",
+      "sha256": "8f8aa01155b588fa00bf20ce47aeabcc2ebc6a6c8c01fe4f26d5caba2c061652"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/after-tests.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 14849,
+      "path": "projects/09-handoff/evidence/after.json",
+      "sha256": "201aa38bcde353e1923bf92a8c2cd1d4ea8e625d4ea754e338fc2b462f6f7084"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/before-acceptance.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3358,
+      "path": "projects/09-handoff/evidence/before-acceptance.stdout.txt",
+      "sha256": "a23994b5e2024a5bbb5023afcd7e26a3848160612a8469b8f4181ee7e302da86"
+    },
+    {
+      "bytes": 2382,
+      "path": "projects/09-handoff/evidence/before-tests.stderr.txt",
+      "sha256": "4de3909eacb96c48c67dc40aef81753fe534f155b6756660776e7b62bbfdb8f2"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/before-tests.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 14884,
+      "path": "projects/09-handoff/evidence/before.json",
+      "sha256": "5153692a37afe981e19cb9f98b24623f86b3bf8037bb35576b925801c4035646"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/continuation-acceptance.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3357,
+      "path": "projects/09-handoff/evidence/continuation-acceptance.stdout.txt",
+      "sha256": "d256653e69c02558b54d201587fe253a8acd7e49235ee852f6151313d457fed9"
+    },
+    {
+      "bytes": 8325,
+      "path": "projects/09-handoff/evidence/continuation-baseline.json",
+      "sha256": "187ebb530c333312aadac7dadf3d1b5f8e2644feae1c6f3f0257a3713e056db8"
+    },
+    {
+      "bytes": 1541,
+      "path": "projects/09-handoff/evidence/continuation-tests.stderr.txt",
+      "sha256": "8f8aa01155b588fa00bf20ce47aeabcc2ebc6a6c8c01fe4f26d5caba2c061652"
+    },
+    {
+      "bytes": 0,
+      "path": "projects/09-handoff/evidence/continuation-tests.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 14884,
+      "path": "projects/09-handoff/evidence/continuation.json",
+      "sha256": "24433b15f8ca50c47548a8e41c13cca1a095f0b9b9d17146237cd03dd149d46c"
+    },
+    {
+      "bytes": 3716,
+      "path": "projects/09-handoff/evidence/historical-continuation.json",
+      "sha256": "965c9c1eb0a1c99036ad638444792ad45bfbe4321ae841cd87d8e782316032b6"
+    },
+    {
+      "bytes": 4851,
+      "path": "projects/09-handoff/evidence/input-hashes.json",
+      "sha256": "225ea0ba49f3cd830eb40d9ae943e5e44b0f5c5b85b2ebbe84e28b441db9d270"
+    },
+    {
+      "bytes": 5999,
+      "path": "projects/09-handoff/evidence/midpoint-receipt-ledger.py",
+      "sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8"
+    },
+    {
+      "bytes": 14564,
+      "path": "projects/09-handoff/evidence/package-checks.json",
+      "sha256": "94937b27177d63b229a40cc38d45915dc6c80c27a1f500ab7128f48650184324"
+    },
+    {
+      "bytes": 14561,
+      "path": "projects/09-handoff/evidence/publication-final-checks.json",
+      "sha256": "9da137664bf4a482781f41ed0b61fafe9bfb9cc382091ed526ad8f7b1394a134"
+    },
+    {
+      "bytes": 14567,
+      "path": "projects/09-handoff/evidence/publication-initial-checks.json",
+      "sha256": "22e729e3470118a6eb030ad7f0f3ef44da0f12c7139e8663a8bb23fc3516cb56"
+    },
+    {
+      "bytes": 3200,
+      "path": "projects/09-handoff/evidence/recovery.json",
+      "sha256": "a03d3ef0484e4cd5ce99f1f6eef23fb4dca8d6fcde1b65e1b69e9aafad70d594"
+    },
+    {
+      "bytes": 239,
+      "path": "projects/09-handoff/evidence/repair.diff",
+      "sha256": "e6801fcd1bb4c73348f5787de6718b1fe664808a92339b20a2e1638ec1a93b62"
+    },
+    {
+      "bytes": 7466,
+      "path": "projects/09-handoff/evidence/result.json",
+      "sha256": "5ce58892864d37f27614e11448c5c6ca45352361d1b7b660753e2b87ee59967f"
+    },
+    {
+      "bytes": 12292,
+      "path": "projects/09-handoff/evidence/snapshot-check.json",
+      "sha256": "e4c82485c12a7045ef914342f01f550b11a1aa0d869fd2af53c8a23e0cb73cb2"
+    },
+    {
+      "bytes": 12282,
+      "path": "projects/09-handoff/evidence/snapshot-final-check.json",
+      "sha256": "a6b708ff96cb6b7e7dfe196d697ee6dfe23c85641a03bc3f9f5fbc6418e32c74"
+    },
+    {
+      "bytes": 12274,
+      "path": "projects/09-handoff/evidence/snapshot-initial-check.json",
+      "sha256": "1396fd06f394edbc75093ce160cf7ac382bfe2fd49c0418cf783e88785da4f0c"
+    },
+    {
+      "bytes": 358,
+      "path": "projects/09-handoff/fixtures/clean.jsonl",
+      "sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf"
+    },
+    {
+      "bytes": 476,
+      "path": "projects/09-handoff/fixtures/duplicate.jsonl",
+      "sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040"
+    },
+    {
+      "bytes": 358,
+      "path": "projects/09-handoff/fixtures/out-of-order.jsonl",
+      "sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c"
+    },
+    {
+      "bytes": 14680,
+      "path": "projects/09-handoff/index.html",
+      "sha256": "5354cdeeafbaa4da03c48ee2dc8806c7b722ef6395d121b122ca0fbdd07aa020"
+    },
+    {
+      "bytes": 3648,
+      "path": "projects/09-handoff/manifest.json",
+      "sha256": "d33edc9dc7c6346f52c8be7767f3a18d62fa69e0539744e7f33e1688d26084f8"
+    },
+    {
+      "bytes": 6180,
+      "path": "projects/09-handoff/provenance.json",
+      "sha256": "47e655e128dafeb9262c9c4ba0b720e35c808218c06474a3864b0bc9a07e645a"
+    },
+    {
+      "bytes": 6010,
+      "path": "projects/09-handoff/receipt_ledger.py",
+      "sha256": "9049da2028504b0f6e4940d589db74ab1f42eecd1042eee504518e01d87acdc2"
+    },
+    {
+      "bytes": 15338,
+      "path": "projects/09-handoff/replay-data.js",
+      "sha256": "a56e2d79bfa5beca9769af58fc5d55c1f138173eb86bcd39a5286a83c70c4904"
+    },
+    {
+      "bytes": 7730,
+      "path": "projects/09-handoff/style.css",
+      "sha256": "204a8b2731dc4bdddd8219f8d4feb8cdc50937e28dbd3b567cf4e8943163fffe"
+    },
+    {
+      "bytes": 9692,
+      "path": "projects/09-handoff/tests/replay.test.cjs",
+      "sha256": "2c71751dc39c655960b8b60750743eaf6754808f9d8e1bcac2a28019a3a04565"
+    },
+    {
+      "bytes": 8717,
+      "path": "projects/09-handoff/tests/test_ledger.py",
+      "sha256": "87bddbcd4314e7b1c4a2ce9c7b7515aa3bec049f3460889fd183d4e6ed7eba21"
+    },
+    {
+      "bytes": 5675,
+      "path": "projects/09-handoff/tests/test_public_projection.py",
+      "sha256": "3f5f289432acfb285bbe39c3553cffa9909bfbf3e0fd7bdaffc5b28051d58adc"
+    },
+    {
+      "bytes": 3656,
+      "path": "projects/09-handoff/tools/build_demo.py",
+      "sha256": "eb13c4b26bf3eac48c6ca885c50872a04dc0bb51cf850aca8298b2b82f13d68d"
+    },
+    {
+      "bytes": 3004,
+      "path": "projects/09-handoff/tools/capture.py",
+      "sha256": "d107bc20083361937ff9fed047364c98c956a415652e13406486669bca094722"
+    },
+    {
+      "bytes": 1321,
+      "path": "projects/09-handoff/tools/check_acceptance.py",
+      "sha256": "4d0ef123efb15e1374a724d4bddabfd330be295e9e054c5fc2e17167618edee3"
+    },
+    {
+      "bytes": 3553,
+      "path": "projects/09-handoff/tools/public_projection.py",
+      "sha256": "71a18bed754e425f6589dccb27a0e36d6a18741968ae4b8aa69878c86eb19571"
+    },
+    {
+      "bytes": 1279,
+      "path": "projects/09-handoff/tools/seal_public.py",
+      "sha256": "99394655203e15c31b5344630cdeb089a2ba8678f652efca5906730195c984f6"
+    },
+    {
+      "bytes": 10656,
+      "path": "projects/09-handoff/tools/verify_evidence.py",
+      "sha256": "6603e2fe55fafd9df21d1a52dc6b0af20df3ca5e61c33eef43cc63cd6ecb5fb9"
+    },
+    {
+      "bytes": 1403,
+      "path": "projects/09-handoff/tools/verify_inputs.py",
+      "sha256": "4f5e998184de3cd3ea6014432bc84f31c277921291f01a2345865fbf71a2c9e8"
+    }
+  ],
+  "qualification": "Binds current public bytes, not original private execution records. Historical hashes are separately labeled. This is not a signature or proof of executor identity.",
+  "record_kind": "current-public-byte-manifest",
+  "schema": "handoff-public-integrity/1"
+}

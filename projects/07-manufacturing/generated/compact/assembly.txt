@@ -1,0 +1,44 @@
+STACKLINE — PROSPECTIVE ASSEMBLY / PILOT REVIEW
+DIGITAL WORK ONLY. No physical sample or approved manufacturing process exists in this project.
+Revision 1.0.0; envelope 140 × 90 × 28 mm; 2 bays.
+
+INTENDED INTERFACE
+One tray + one ladder insert. Insert footprint 131 × 81 × 18 mm.
+Position insert at [4.5, 4.5, 3] mm relative to tray origin. Rails run along the front/back edges.
+Centered side gap 1.5 mm; rim recess 7 mm. Loose drop-in, not snap-fit.
+The surrounding gap and open ladder ends do not seal compartments. Support the tray, not the unretained insert.
+
+FUTURE SEQUENCE — ONLY AFTER SEPARATE PROTOTYPE / MATERIAL / PROCESS APPROVAL
+1. Assign matching revision and pair IDs; keep different configurations and revisions separate.
+2. Check the BOM: one tray and one insert. Verify actual units, dimensions, edges, and condition.
+3. Record proposed inspection readings without inventing missing values. Any unresolved defect holds the pair.
+4. Orient rails front/back and lower the insert onto the floor without force, adhesive, or fasteners.
+5. Review all four side gaps, seating, squareness, each bay, and stability on a flat desk.
+6. Lift out without forcing; record any binding, flex, rocking, or poor retrieval as a HOLD.
+8. Segregate a mismatched or nonconforming pair. Reopen design/quality review; do not infer a correction process.
+9. Packing requires separate approval. A mathematical envelope pass is not transit validation.
+
+BOUNDED PILOT PLAN
+Twenty hypothetical kits; no fabrication authorized. If later approved, identify and inspect every pair.
+Do not reuse the seed's five synthetic rows as evidence about new objects or changed dimensions.
+Review instruments, uncertainty, proposed tolerances, material/process safety, and record schema before any physical trial.
+
+MODELED BENCH EFFORT — ASSEMBLY + HANDLING + INSPECTION, NOT A TIME STUDY
+45 assumed seconds: Identify matching revision and pair
+90 assumed seconds: Record proposed dimensional checks
+45 assumed seconds: Review edges and condition
+40 assumed seconds: Place insert without forcing
+30 assumed seconds: Lift insert out
+50 assumed seconds: Review seating and desk stability
+40 assumed seconds: Check 2 bay openings
+Total: 5.67 modeled minutes per kit. Fabrication, postprocessing, and waiting time excluded.
+
+UNPERFORMED PHYSICAL CHECKS
+- No material has been selected, purchased, printed, fabricated, handled, inspected, or shipped.
+- STL files contain nominal millimetre coordinates but STL itself has no unit metadata. Import explicitly as mm.
+- Solid-volume mass is not a slicer estimate: no infill, supports, shrinkage, machine time, or process settings are modeled.
+- Clearance is a loose, centered design assumption, not a validated tolerance or friction fit. The insert is not retained.
+- The open-ended ladder and 1.5 mm nominal surrounding gap do not seal small tokens into bays.
+- Dimensions, strength, material suitability, surface finish, stability, handling time, and transit behavior require future physical review.
+- Lightweight dry desk items only; no food, heated items, electrical, medical, child-safety, or load-bearing uses.
+- Packaging and costs are synthetic scenarios. Digital passes grant no fabrication, spending, shipment, or native Hive authority.

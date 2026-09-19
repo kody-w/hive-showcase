@@ -1,0 +1,43 @@
+{
+  "id": "08-turnaround",
+  "title": "The corporate escape room",
+  "seedSlug": "turnaround-firm",
+  "entrypoint": "projects/08-turnaround/index.html",
+  "summary": "An original offline Cedarline Desk cash-and-capacity model. Reconciles the synthetic ledger, searches 128 bounded strategies, preserves receipt conservation and exposes when a candidate only delays failure.",
+  "stage": "work-produced",
+  "checks": [
+    ["node", "--test", "--test-reporter=tap", "projects/08-turnaround/tests/model.test.mjs", "projects/08-turnaround/tests/ui.test.mjs", "projects/08-turnaround/tests/artifacts.test.mjs"],
+    ["node", "projects/08-turnaround/scripts/build.mjs", "--check"],
+    ["node", "projects/08-turnaround/scripts/evidence.mjs", "--check"]
+  ],
+  "artifacts": [
+    "projects/08-turnaround/README.md",
+    "projects/08-turnaround/model.mjs",
+    "projects/08-turnaround/app.mjs",
+    "projects/08-turnaround/view-model.mjs",
+    "projects/08-turnaround/offline.js",
+    "projects/08-turnaround/data/inputs.json",
+    "projects/08-turnaround/data/assumptions.json",
+    "projects/08-turnaround/data/scenarios.json",
+    "projects/08-turnaround/data/attribution.json",
+    "projects/08-turnaround/data/scope.json",
+    "projects/08-turnaround/data/reference/LICENSE",
+    "projects/08-turnaround/results/reconciliation.json",
+    "projects/08-turnaround/results/backlog.json",
+    "projects/08-turnaround/results/scenarios.json",
+    "projects/08-turnaround/results/strategy-search.json",
+    "projects/08-turnaround/results/thresholds.json",
+    "projects/08-turnaround/evidence/tests.tap",
+    "projects/08-turnaround/evidence/build-check.json",
+    "projects/08-turnaround/evidence/result.json"
+  ],
+  "limitations": [
+    "Synthetic operational modeling only; not personalized investment advice, a solvency opinion or real business outcomes.",
+    "90-day deterministic window, normalized 30-day cycles and assumed payment-before-receipt ordering; no complete accrual accounts, taxes, financing, litigation or quantified service-outage model.",
+    "Future receipts, consent, lead times, fees, daily staffing and action outcomes are labeled added assumptions. No new sales or support-to-revenue uplift is invented.",
+    "A negative scheduled balance is a funding gap, not a permitted overdraft. The executable prefix ends at the first unfunded payment; later values are counterfactual.",
+    "A best finite-grid candidate is not a global optimum or a guaranteed rescue. No evaluated plan protects both floor and funding for the full default window.",
+    "Reference tasks remain unaccepted and blocked states unchanged. No native Hive initialization, deployment, publication, customer work, messages or financial effects occurred.",
+    "Browser interaction and visual rendering were not performed by this workstream. Original UI logic is tested with a minimal Node DOM harness, not a real-browser accessibility certification."
+  ]
+}

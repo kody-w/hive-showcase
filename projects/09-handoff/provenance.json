@@ -1,0 +1,148 @@
+{
+  "archiveRef": "sha256:e74bf1efeb5046338528b7bc7b3d94b529a8019cbdeb02b43202f76d537552c9",
+  "caseId": "line-ledger-repair-cycle",
+  "claim": "Original bounded reproduction and local repair of a specified synthetic defect, not an upstream patch or newly discovered bug.",
+  "copiedFixtures": false,
+  "downloadedCodeExecuted": false,
+  "downloadedCodeImported": false,
+  "downloadedCodePackaged": false,
+  "fixtureOrigin": "Newly authored fictional Arcade cache/input maintenance events at minutes 7, 11 and 19; none are observed user telemetry.",
+  "licensing": "No downloaded code, prose passages or event records are copied. Source paths, hashes and contract field identifiers are provenance, not executable dependencies.",
+  "reviewedSources": [
+    {
+      "bytes": 6437,
+      "handling": "read-as-inert-source-only",
+      "path": "seed.json",
+      "sha256": "7fdbf523871320afc6ac296e514d72e5a05c88333cebe2be00c3020d7f1cc36f"
+    },
+    {
+      "bytes": 4774,
+      "handling": "read-as-inert-source-only",
+      "path": "initialize.json",
+      "sha256": "05798b99d1f7ed2812a135732c89df0af000cc5721dbdf9148f0d7e3a2cb0b67"
+    },
+    {
+      "bytes": 11357,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/task-board.json",
+      "sha256": "aa01486bb4ec61a5634016168a2e8e05929824e8fdae32871485f8d77199261d"
+    },
+    {
+      "bytes": 1482,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/intake.json",
+      "sha256": "a20b8ca75e827269e1b503edebde8f611b42b2ee6b817ec1f0dff19428c9281f"
+    },
+    {
+      "bytes": 362,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/maintainers/work/TEAM.md",
+      "sha256": "83f28b94751362e750cb1f9f8ac0d3996c4addcf610d70f19b9d6e3b126924c0"
+    },
+    {
+      "bytes": 356,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/triage/work/TEAM.md",
+      "sha256": "c149148b69ec22f51e8a3a0341ccfb2682333e1b9a5029208df1a2469541eec2"
+    },
+    {
+      "bytes": 380,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/engineering/work/TEAM.md",
+      "sha256": "15d3fff295e1f44b6e03a8fc2363bb4a1f63c0471a691925e807f373bbe7618e"
+    },
+    {
+      "bytes": 391,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/security/work/TEAM.md",
+      "sha256": "79e213374fe6c5c1d88af9eaff0af58ea3095fccfb55c779661aec5a10ebc8dc"
+    },
+    {
+      "bytes": 370,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/docs/work/TEAM.md",
+      "sha256": "198429f81ef66cc6656c2c87e38f0e432328d01bac06a89e491393d58bb2e8d7"
+    },
+    {
+      "bytes": 361,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/release/work/TEAM.md",
+      "sha256": "6e0cb5e8541c1ddbe8fa557c054f04773197374fd9980fd8075fadae725e8eee"
+    },
+    {
+      "bytes": 360,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/teams/community/work/TEAM.md",
+      "sha256": "00071c1da0254fd9a9cb436a6636da8cd53f7525140eabbadc2d32a376803b52"
+    },
+    {
+      "bytes": 496,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/docs/issue-register.csv",
+      "sha256": "f3f5b5d48fb958b853d9a76a64f2698c09e4bdb0a74ecf1d61d7e3d08da4f6a4"
+    },
+    {
+      "bytes": 2003,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/docs/contract.md",
+      "sha256": "788a25c7ebbb3bf248b90536da3912b1d7fcbae6fddf8c6bf1b01afc460c9664"
+    },
+    {
+      "bytes": 1365,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/docs/charter.md",
+      "sha256": "3b6c394d22b53b2e17844a3f9f1927a64df290a948cccca8c99da9d772e12ac4"
+    },
+    {
+      "bytes": 1437,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/docs/security-boundary.md",
+      "sha256": "50722fe7756eaa9f99e8076bd2ea1d0e6e12af49333ef52ded90be0977d655d8"
+    },
+    {
+      "bytes": 323,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/data/events-clean.jsonl",
+      "sha256": "28025d47bfbdfcb4b7b59d98a6bb4b671c4dcc574facdc65f26836468f75a28e"
+    },
+    {
+      "bytes": 430,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/data/events-duplicate.jsonl",
+      "sha256": "209a05fc4bc3c8582e966d471200397521c9a1592b75820c5ef9439697247de3"
+    },
+    {
+      "bytes": 323,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/data/events-out-of-order.jsonl",
+      "sha256": "d05949223d4d8e5c4eaf8a5a4df1ed5cd949eb67a4f861fa8753bc0e9e503b7d"
+    },
+    {
+      "bytes": 1210,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/data/expected-contract.json",
+      "sha256": "bf733860bbf7bd53e8ad9fdfcb06ed29d1c5f97b0f25d8152f3ef20d7c7219d5"
+    },
+    {
+      "bytes": 3932,
+      "handling": "read-as-inert-source-only",
+      "path": "templates/casework/work/starter/reference/line_ledger.py",
+      "sha256": "a43d89fdb69d00d00de21dbaff54a206196c6bbf81c5bd15b2282c1faf8b786d"
+    }
+  ],
+  "schema": "handoff-clean-room-provenance/1",
+  "scopeDecisions": {
+    "community": "No outreach, memberships, issues or usage claims.",
+    "docs": "Preserve observed failure and missing context.",
+    "engineering": "Preserve deterministic ordering already implemented here.",
+    "maintainers": "Only ll-duplicate is assigned; no release authority.",
+    "release": "Require local strict acceptance, not upstream or publication approval.",
+    "security": "Keep input bounds and conflict rejection; no security-audit claim.",
+    "triage": "Execute original reproduction only, not seed task-board commands."
+  },
+  "seedRef": "sha256:f3ef3de76892c8d58ff6db41cf1665bcb607a6d230b366ccb552f1aaee8755b7",
+  "seedReport": "evidence/seed-verification.json",
+  "seedReportSha256": "dc624f7101cd31e76a43b6285c183ce23ec92f3b0fc95e22da74b3e886c85a38",
+  "seedSlug": "open-source-infrastructure-foundation",
+  "specifiedIssue": "ll-duplicate"
+}

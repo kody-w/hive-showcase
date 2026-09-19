@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocket Arcade · printable operator kit</title>
+  <style>
+    * { box-sizing: border-box; } body { font: 13px/1.5 system-ui, sans-serif; margin: 0; color: #173a34; background: #f3f2e8; }
+    main { max-width: 850px; margin: 30px auto; padding: 38px; background: white; border: 1px solid #cbd4be; }
+    h1 { font-size: 34px; margin: 4px 0 12px; letter-spacing: -.05em; } h2 { font-size: 18px; margin-top: 25px; } p { margin: 8px 0; }
+    .eyebrow { font-size: 9px; letter-spacing: .14em; font-weight: 800; } .toolbar { display: flex; justify-content: space-between; gap: 20px; max-width: 850px; margin: 25px auto 0; padding: 0 12px; }
+    a { color: inherit; text-underline-offset: 3px; } button { padding: 9px 16px; background: #173a34; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    .notice { border: 1px solid #b7c6a5; padding: 12px; font-size: 11px; background: #eef3e4; } ol { padding-left: 20px; } li { padding: 4px 0; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; } .card { border: 1px dashed #819277; min-height: 75px; padding: 10px; }
+    .card strong { display: block; font-size: 10px; } .blank { border-bottom: 1px solid #83967d; display: block; height: 25px; } .card small { font-size: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; } th, td { border: 1px solid #acbba0; text-align: left; padding: 9px; } td { height: 33px; } th { background: #edf2e3; }
+    .fine { font-size: 9px; color: #53684d; margin-top: 15px; } .lines { border-bottom: 1px solid #9daa95; height: 29px; }
+    :focus-visible { outline: 3px solid #df814e; outline-offset: 4px; }
+    @page { size: A4; margin: 13mm; }
+    @media print { body { background: white; font-size: 10px; } main { padding: 0; border: 0; margin: 0; max-width: none; } .toolbar { display: none; } h1 { font-size: 27px; } h2 { margin-top: 17px; } .card { min-height: 62px; } .notice { background: white; } .cards, table, .notice { break-inside: avoid; } }
+    @media (max-width: 600px) { main { margin: 15px; padding: 22px; } .cards { grid-template-columns: repeat(2, 1fr); } .toolbar { flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Kit actions"><a href="../index.html">← Back to Pocket Arcade</a><button id="print-button" type="button">Print this operator kit</button></nav>
+  <main>
+    <p class="eyebrow">POCKET ARCADE · ORIGINAL PRIME CONTRIBUTION · PRINTABLE / 1</p>
+    <h1>A small game night, on paper.</h1>
+    <p>A host checklist, eight blank alias cards and a session sheet. Fill in observations only after using the actual local projects.</p>
+    <p class="notice"><strong>Blank operator kit, not a simulated success.</strong> No attendees, match results, feasible schedule, partner acceptance or fabricated tray are asserted. Card dimensions are not yet validated against the tray. Printing and any physical use are your separate choices.</p>
+    <h2>Four instructions for the host</h2>
+    <ol>
+      <li><strong>Play.</strong> Open <a href="../../01-game-studio/index.html">Game Studio</a>. Learn the actual controls and rules. Note the game version/replay reference; do not invent a scoring interface.</li>
+      <li><strong>Plan.</strong> Open <a href="../../05-planner/index.html">the planner</a>. The original 85-minute tournament does not fit 14:00–15:15. Review the <a href="tournament-proposal.json">unapproved model proposal</a>: extend the cutoff to 15:25 without dropping work. Importing it is a hypothetical input edit, not a booking or owner approval; use real availability and workload for any real session.</li>
+      <li><strong>Prepare.</strong> Review <a href="../../07-manufacturing/index.html">the digital tray and fabrication files</a>. Use aliases, not personal details. Digital review is not proof of physical fit or manufacture.</li>
+      <li><strong>Hand off.</strong> Inspect <a href="../../09-handoff/index.html">the maintenance kit</a>. Keep actual artifact references, commands and limits for the next host. Re-run the prime validator after any file change.</li>
+    </ol>
+    <p class="fine">The model uses seven session blocks, not a verified player bracket. Eight note cards are optional supplies, not evidence that eight entrants can finish within those blocks. Minimum repair is scoped to declared changes; displayed ties are not claimed exhaustive.</p>
+    <h2>Eight blank alias cards</h2>
+    <div class="cards" aria-label="Eight blank cards">
+      <div class="card"><strong>POCKET ARCADE / 01</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 02</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 03</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 04</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 05</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 06</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 07</strong><span class="blank"></span><small>Alias only</small></div>
+      <div class="card"><strong>POCKET ARCADE / 08</strong><span class="blank"></span><small>Alias only</small></div>
+    </div>
+    <h2>Session sheet · deliberately blank</h2>
+    <table>
+      <thead><tr><th scope="col">Planner-approved slot</th><th scope="col">Aliases / game run</th><th scope="col">Observed result / replay reference</th></tr></thead>
+      <tbody><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr></tbody>
+    </table>
+    <h2>Next-host note / unresolved limitation</h2>
+    <div class="lines"></div><div class="lines"></div>
+    <p class="fine">This sheet records user observations only. It never creates native membership, a signed receipt, a contract, a federation, approval to exchange private material, or a real manufacturing/publication claim. Local contribution checks live in the separate integration record.</p>
+  </main>
+  <script>document.getElementById("print-button").addEventListener("click", function () { window.print(); });</script>
+</body>
+</html>

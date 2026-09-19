@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="A local, synthetic quote-to-cash process time machine. Replay eight identical quotes through three deterministic queue designs; inspect waits, rework and bottleneck relocation.">
+  <title>Process Time Machine · Enterprise transformation</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#replay">Skip to replay controls</a>
+  <main>
+    <nav class="topbar" aria-label="Project navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">↺</span> PROCESS / TIME MACHINE</a>
+      <div class="nav-links"><a href="#compare">Compare</a><a href="#inputs">Inputs</a><a href="#pilot">Pilot</a><span class="badge">06 / ENTERPRISE</span></div>
+    </nav>
+    <header class="hero" id="top">
+      <div>
+        <p class="eyebrow">Lattice Harbor Supply · quote-to-cash laboratory</p>
+        <h1>The work moved.<br><span>Did the wait?</span></h1>
+        <p class="subtitle">Eight quotes. Three possible futures. Rewind a broken handoff, follow each exception, and see which queue inherits the problem.</p>
+        <p class="boundary"><span class="status-dot" aria-hidden="true"></span> <strong>SYNTHETIC INPUTS / MODELED RESULTS</strong><br>No realized savings. No invoice, approval, or production change.</p>
+      </div>
+      <aside class="hero-note" aria-label="Scope of the model">
+        <span class="eyebrow">The fixed workload</span>
+        <div class="workload-count">08<span>original quotes</span></div>
+        <dl class="outcome-counts">
+          <div><dt>Clean, still unapproved</dt><dd>2</dd></div>
+          <div><dt>Policy review pending</dt><dd>4</dd></div>
+          <div><dt>Missing or invalid data</dt><dd>2</dd></div>
+        </dl>
+        <p>Every design keeps these outcomes. “Disposed” means a handoff packet was recorded, <strong>not</strong> a quote approved or cash collected.</p>
+      </aside>
+    </header>
+
+    <p id="loading" role="status" class="notice">Loading the local, deterministic replay… If this message remains, file:// may be blocking ES modules. Use an owner-controlled local static preview from the repository root, or read the <a href="./results/comparison.json">persisted results</a> and <a href="./README.md">model guide</a>.</p>
+    <p id="load-error" role="alert" class="notice error" hidden></p>
+    <noscript><p class="notice">JavaScript is required for replay. The <a href="./results/comparison.json">persisted comparisons</a>, <a href="./results/replays.json">full paced histories</a>, and <a href="./README.md">model guide</a> remain available.</p></noscript>
+
+    <div id="laboratory" hidden>
+      <section id="replay" class="scenario-panel panel" aria-labelledby="replay-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / Choose a clock, not a winner</p><h2 id="replay-title">Replay the same workload</h2></div>
+          <label class="scenario-label" for="scenario">Assumed conditions
+            <select id="scenario"></select>
+          </label>
+        </div>
+        <p id="scenario-description" class="muted"></p>
+        <div id="design-cards" class="design-grid" aria-label="Full-run modeled comparisons"></div>
+        <p class="microcopy">Cards show the <strong>full modeled run</strong>, not the current replay frame. All designs receive identical quote IDs, source values, arrival clocks, and common stress multipliers. Service times and capacity are hypotheses, not observations.</p>
+      </section>
+
+      <section class="replay-deck" aria-label="Replay clock">
+        <div class="clock-display"><span class="eyebrow">Model clock</span><output id="clock-label">t = 0 min</output></div>
+        <div class="transport">
+          <button type="button" data-action="start" title="Reset to first event time">↺ Reset</button>
+          <button type="button" data-action="previous" aria-label="Previous event time">← Back</button>
+          <button type="button" data-action="play" id="play" aria-pressed="false">▶ Play</button>
+          <button type="button" data-action="next">Step →</button>
+          <button type="button" data-action="end">End ⇥</button>
+        </div>
+        <div class="clock-scrubber"><label for="clock">Seek by distinct event time <span id="step-label"></span></label><input id="clock" type="range" min="0" max="1" value="0" step="1"></div>
+        <p class="microcopy">One step applies every event at the same timestamp atomically. FIFO, completion-before-arrival ties; no randomness. Play is 2 event times per second.</p>
+        <p id="replay-status" class="replay-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="live-grid">
+        <section class="panel" aria-labelledby="queues-title">
+          <div class="section-heading"><div><p class="eyebrow">Where work waits now</p><h2 id="queues-title">The queue floor</h2></div><span id="selected-design" class="badge"></span></div>
+          <p class="microcopy">Slots serve one packet at a time. A queued quote waits for earlier FIFO work at that resource; its underlying exception remains visible.</p>
+          <div id="queues"></div>
+        </section>
+        <section class="panel ledger-panel" aria-labelledby="ledger-title">
+          <div class="section-heading"><div><p class="eyebrow">No case disappears</p><h2 id="ledger-title">Eight-quote ledger</h2></div></div>
+          <label for="case-picker">Inspect a quote <select id="case-picker"></select></label>
+          <div id="case-ledger" class="table-wrap"></div>
+          <p class="microcopy">Click a quote to compare its three timelines. Original business state is not changed by finishing a modeled service task.</p>
+        </section>
+      </div>
+
+      <section class="panel timeline-panel" aria-labelledby="timeline-title">
+        <div class="section-heading"><div><p class="eyebrow">02 / Follow the exception</p><h2 id="timeline-title">One quote, three trajectories</h2></div><span class="badge">SAME HORIZONTAL SCALE</span></div>
+        <div id="case-detail"></div>
+        <div class="timeline-legend"><span class="legend-wait">W / waiting</span><span>I / intake</span><span>V / validation</span><span>E / exception packet</span><span>R / unchanged-input recheck</span><span>D / pending disposition</span></div>
+        <p class="microcopy">Full modeled futures are shown dimmed beyond the replay clock. Hatched segments are queue waits, not service. Every original reason remains unresolved.</p>
+        <div id="timelines" class="timeline-scroll"></div>
+        <details class="visit-details" open><summary>Exact visits, waiting reasons, owners, and return paths for the selected design</summary><div id="visits" class="table-wrap"></div></details>
+      </section>
+
+      <section id="compare" aria-labelledby="compare-title">
+        <div class="section-heading"><div><p class="eyebrow">03 / Before → after → elsewhere</p><h2 id="compare-title">Faster is not the only metric</h2></div></div>
+        <div id="comparison-table" class="panel table-wrap"></div>
+        <div class="analysis-grid">
+          <section class="panel" aria-labelledby="distribution-title"><h3 id="distribution-title">All eight waits, not just an average</h3><p class="microcopy">One bar per quote; a common vertical scale across designs. Total queue waiting per case, in model minutes.</p><div id="distributions"></div></section>
+          <section class="panel" aria-labelledby="utilization-title"><h3 id="utilization-title">Where capacity accumulates work</h3><p class="microcopy">Selected design, full run. Busy slot-minutes ÷ (slots × run duration). Bottleneck = resource with greatest summed case waiting, not necessarily highest utilization.</p><div id="utilization" class="table-wrap"></div></section>
+        </div>
+        <section class="panel stress-panel" aria-labelledby="stress-title">
+          <p class="eyebrow">Counterexamples are part of the result</p><h3 id="stress-title">Stress the redesign before believing it</h3>
+          <div id="stress-callouts" class="stress-callouts"></div>
+          <div id="stress-table" class="table-wrap"></div>
+        </section>
+      </section>
+
+      <section id="inputs" class="panel" aria-labelledby="inputs-title">
+        <div class="section-heading"><div><p class="eyebrow">04 / Keep the evidence boundary intact</p><h2 id="inputs-title">Facts, assumptions, and missing authority</h2></div><a href="./provenance.json">Exact source hashes ↗</a></div>
+        <p>These are the actual included <strong>synthetic</strong> quote exceptions. Original data files are preserved byte-for-byte with MIT attribution. An original integer-arithmetic evaluator reproduces all eight expected results; no downloaded reference code is executed, imported, or embedded.</p>
+        <div id="source-table" class="table-wrap"></div>
+        <div class="artifact-links"><a href="./fixtures/quotes.csv">Quote headers</a><a href="./fixtures/quote-lines.csv">Line items</a><a href="./fixtures/accounts.csv">Accounts</a><a href="./fixtures/policy.json">Fictional policy</a><a href="./fixtures/expected-results.json">Inert acceptance data</a><a href="./fixtures/LICENSE">MIT notice</a></div>
+        <details class="assumption-details" open><summary>Every added clock, capacity, service duration, and rework rule is an assumption</summary><div id="assumptions"></div></details>
+        <details><summary>Proposed exception ownership and evidence needed for a real return</summary><div id="ownership" class="table-wrap"></div></details>
+      </section>
+    </div>
+
+    <section id="pilot" class="panel pilot-panel" aria-labelledby="pilot-title">
+      <div class="section-heading"><div><p class="eyebrow">05 / A door that opens both ways</p><h2 id="pilot-title">A reversible pilot, not a deployment</h2></div><span class="badge hold-badge">PROPOSAL ONLY · HOLD</span></div>
+      <div class="pilot-grid">
+        <div><span class="step-number">01</span><h3>Bound the rehearsal</h3><p>At most 10 working days or 40 labeled synthetic submissions, whichever comes first. Rehearse baseline and triage on paired inputs; keep the pooled pod as a stress comparator. No production access or policy decisions.</p></div>
+        <div><span class="step-number">02</span><h3>Measure both sides</h3><p>Record every arrival, queue, return, and handoff. Compare clean and exception tails, incomplete-data holds, packet rework, and reviewer comprehension—not just average lead time. Real lead time and savings remain unobserved.</p></div>
+        <div><span class="step-number">03</span><h3>Stop, preserve, revert</h3><p>Stop on any lost case, altered original, false approval, or capacity violation. Also stop after two paired batches with &gt;10% worse p95 wait or &gt;15% worse clean-tail time. Keep the audit ledger; reset to baseline and cease the offline exercise.</p></div>
+      </div>
+      <p class="notice">There is no production migration to roll back. Source corrections, policy ownership, adoption, enterprise access, and any later live pilot require separate explicit approvals. This model grants none.</p>
+      <div class="artifact-links"><a class="button" href="./pilot.md">Read the bounded owner pack →</a><a href="./traceability.json">Requirement &amp; gate trace</a><a href="./evidence/result.json">Actual validation evidence</a><a href="./README.md">Reproduce &amp; inspect</a></div>
+    </section>
+    <footer>
+      <p>Original local simulator · <strong>work-produced</strong>, not human-reviewed or natively activated.<br>All business data is SYNTHETIC. All timing is modeled. Modeled improvement is not realized savings.</p>
+      <div class="artifact-links"><a href="./manifest.json">Manifest</a><a href="./results/comparison.json">All comparison results</a><a href="./results/replays.json">Full paced event logs</a></div>
+    </footer>
+  </main>
+</body>
+</html>

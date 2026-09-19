@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="200" viewBox="0 0 280 200" role="img" aria-labelledby="title desc">
+  <title id="title">Little Signals colony</title>
+  <desc id="desc">Original geometric illustration of Pip, Ada and Bop tending a star-shaped flower.</desc>
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#698568"/><stop offset="1" stop-color="#324e4c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#e5f79b" stop-opacity=".45"/><stop offset="1" stop-color="#e5f79b" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="142" cy="147" rx="111" ry="35" fill="#080f19" opacity=".3"/>
+  <path d="M38 130 135 76 245 130 147 184Z" fill="url(#ground)" stroke="#8ba388" stroke-width="1.5"/>
+  <path d="m38 130 1 11 108 56 98-56v-11l-98 54Z" fill="#233f3e" stroke="#526f66"/>
+  <path d="m70 112 107 55m-72-74 107 55m-49-56-95 56m124-43-93 57" fill="none" stroke="#b2c48c" opacity=".22"/>
+  <ellipse cx="141" cy="101" rx="65" ry="61" fill="url(#glow)"/>
+  <g transform="translate(63 74) rotate(-6)">
+    <ellipse cx="20" cy="58" rx="23" ry="8" fill="#192d34" opacity=".25"/>
+    <path d="M13 40v13m21-13v13" stroke="#1c343e" stroke-width="8" stroke-linecap="round"/>
+    <path d="m4 26-7 7m48-7 8 6" stroke="#acc1e7" stroke-width="6" stroke-linecap="round"/>
+    <path d="M25 8V-1" stroke="#b8d0ef" stroke-width="3"/><circle cx="25" cy="-4" r="4" fill="#d9f78b"/>
+    <rect x="2" y="8" width="43" height="37" rx="10" fill="#b6c8ed" stroke="#233e47" stroke-width="2"/>
+    <rect x="9" y="17" width="29" height="16" rx="6" fill="#354c60"/>
+    <path d="M17 23v3m13-3v3" stroke="#edfac3" stroke-width="3" stroke-linecap="round"/>
+    <path d="M19 37h11" stroke="#738aaf" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(183 81) rotate(8)">
+    <ellipse cx="20" cy="57" rx="23" ry="8" fill="#192d34" opacity=".25"/>
+    <path d="M11 42v11m20-11v11" stroke="#1c343e" stroke-width="8" stroke-linecap="round"/>
+    <path d="m0 24-9-4m49 3 6 8" stroke="#8dd1bc" stroke-width="6" stroke-linecap="round"/>
+    <rect x="0" y="7" width="42" height="38" rx="12" fill="#9adccb" stroke="#233e47" stroke-width="2"/>
+    <path d="M20 7V0" stroke="#9adccb" stroke-width="3"/><circle cx="20" cy="-3" r="4" fill="#efda94"/>
+    <rect x="6" y="17" width="30" height="15" rx="6" fill="#315651"/>
+    <circle cx="14" cy="24" r="2.5" fill="#edfac3"/><circle cx="28" cy="24" r="2.5" fill="#edfac3"/>
+    <path d="m16 37 5 3 5-3" fill="none" stroke="#488371" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(124 31)">
+    <ellipse cx="19" cy="51" rx="22" ry="7" fill="#192d34" opacity=".22"/>
+    <path d="M10 38v10m20-10v10" stroke="#273f44" stroke-width="7" stroke-linecap="round"/>
+    <rect x="0" y="7" width="39" height="34" rx="11" fill="#f2d49a" stroke="#29454a" stroke-width="2"/>
+    <path d="M19 7V0" stroke="#f2d49a" stroke-width="3"/><circle cx="19" cy="-3" r="3.5" fill="#d7f488"/>
+    <rect x="6" y="16" width="27" height="14" rx="5" fill="#665943"/>
+    <path d="m12 23 3-2 3 2m5 0 3-2 3 2" fill="none" stroke="#f8f3ce" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M15 35h10" stroke="#b4945b" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <path d="M141 145v-29" stroke="#b1d394" stroke-width="3" stroke-linecap="round"/>
+  <path d="M141 137c-14 0-16-10-16-10 12-1 16 10 16 10m0-6c13-1 17-10 17-10-12-1-17 10-17 10" fill="#b9d695"/>
+  <path d="m140 91 4 10 11-3-6 10 8 8-12-1-5 12-4-12-12 1 8-8-6-10 11 3Z" fill="#e2f58d" stroke="#efffc2" stroke-width="1.2"/>
+  <circle cx="141" cy="109" r="5" fill="#587857"/>
+  <g fill="none" stroke="#c9e7a3" stroke-width="1.5" stroke-linecap="round">
+    <path d="m99 156 1-7 4 4m59 14 1-8 4 4m49-22 1-6 4 3m-121-3 2-8 3 3"/>
+    <path d="M38 60h7m-3-4v8M213 42h8m-4-4v8M244 83h6m-3-3v6"/>
+  </g>
+</svg>

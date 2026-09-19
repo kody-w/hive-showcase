@@ -1,0 +1,50 @@
+test_byte_line_and_record_limits (test_ledger.LedgerTests) ... ok
+test_clean_contract (test_ledger.LedgerTests) ... ok
+test_cli_is_offline_and_reports_errors (test_ledger.LedgerTests) ... ok
+test_conflict_late_in_input_is_not_hidden (test_ledger.LedgerTests) ... ok
+test_conflicting_ids_rejected_for_every_payload_field (test_ledger.LedgerTests) ... ok
+test_direct_summary_requires_bounded_receipts (test_ledger.LedgerTests) ... ok
+test_empty_blank_and_close_only_inputs (test_ledger.LedgerTests) ... ok
+test_equal_minute_uses_event_id (test_ledger.LedgerTests) ... ok
+test_identical_replay_is_not_additional_work (test_ledger.LedgerTests) ... FAIL
+test_identifier_and_minute_bounds (test_ledger.LedgerTests) ... ok
+test_input_and_returned_results_are_not_shared (test_ledger.LedgerTests) ... ok
+test_maintenance_artifact_has_no_release_authority (test_ledger.LedgerTests) ... ok
+test_order_is_already_deterministic (test_ledger.LedgerTests) ... ok
+test_selected_file_reader (test_ledger.LedgerTests) ... ok
+test_strict_json_shape_and_duplicate_keys (test_ledger.LedgerTests) ... ok
+test_validation_does_not_skip_repeated_record_payloads (test_ledger.LedgerTests) ... ok
+
+======================================================================
+FAIL: test_identical_replay_is_not_additional_work (test_ledger.LedgerTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "projects/09-handoff/tests/test_ledger.py", line 36, in test_identical_replay_is_not_additional_work
+    self.assertEqual(summarize(fixture("duplicate")), EXPECTED)
+AssertionError: {'event_count': 4, 'open_items': 1, 'closed_items': 1, 'i[171 chars]11}]} != {'event_count': 3, 'open_items': 1, 'closed_items': 1, 'i[171 chars]11}]}
+  {'closed_items': 1,
+-  'event_count': 4,
+?                 ^
+
++  'event_count': 3,
+?                 ^
+
+-  'items': [{'event_count': 3,
+?                            ^
+
++  'items': [{'event_count': 2,
+?                            ^
+
+              'item_id': 'arcade-cache',
+              'last_minute': 19,
+              'state': 'closed'},
+             {'event_count': 1,
+              'item_id': 'arcade-input',
+              'last_minute': 11,
+              'state': 'open'}],
+   'open_items': 1}
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.122s
+
+FAILED (failures=1)

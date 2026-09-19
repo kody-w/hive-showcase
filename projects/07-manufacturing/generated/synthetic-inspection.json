@@ -1,0 +1,112 @@
+{
+  "classification": "SYNTHETIC fixture replay only; no samples exist as a result of this project",
+  "pass": 3,
+  "hold": 2,
+  "rows": [
+    {
+      "sampleId": "synthetic-kit-01",
+      "classification": "SYNTHETIC fixture, not a physical measurement",
+      "values": {
+        "tray_width_mm": 180.1,
+        "tray_depth_mm": 100,
+        "tray_height_mm": 32,
+        "side_clearance_mm": 1.5499999999999972
+      },
+      "status": "PASS",
+      "failures": [],
+      "unmeasured": [
+        "depth-side clearance",
+        "individual actual gaps",
+        "squareness",
+        "stability",
+        "retrieval",
+        "material suitability"
+      ]
+    },
+    {
+      "sampleId": "synthetic-kit-02",
+      "classification": "SYNTHETIC fixture, not a physical measurement",
+      "values": {
+        "tray_width_mm": 179.8,
+        "tray_depth_mm": 100.2,
+        "tray_height_mm": 31.8,
+        "side_clearance_mm": 1.5
+      },
+      "status": "PASS",
+      "failures": [],
+      "unmeasured": [
+        "depth-side clearance",
+        "individual actual gaps",
+        "squareness",
+        "stability",
+        "retrieval",
+        "material suitability"
+      ]
+    },
+    {
+      "sampleId": "synthetic-kit-03",
+      "classification": "SYNTHETIC fixture, not a physical measurement",
+      "values": {
+        "tray_width_mm": 181,
+        "tray_depth_mm": 100,
+        "tray_height_mm": 32,
+        "side_clearance_mm": 2
+      },
+      "status": "HOLD",
+      "failures": [
+        "tray_width_mm"
+      ],
+      "unmeasured": [
+        "depth-side clearance",
+        "individual actual gaps",
+        "squareness",
+        "stability",
+        "retrieval",
+        "material suitability"
+      ]
+    },
+    {
+      "sampleId": "synthetic-kit-04",
+      "classification": "SYNTHETIC fixture, not a physical measurement",
+      "values": {
+        "tray_width_mm": 180,
+        "tray_depth_mm": 100,
+        "tray_height_mm": 32,
+        "side_clearance_mm": 0
+      },
+      "status": "HOLD",
+      "failures": [
+        "side_clearance_mm"
+      ],
+      "unmeasured": [
+        "depth-side clearance",
+        "individual actual gaps",
+        "squareness",
+        "stability",
+        "retrieval",
+        "material suitability"
+      ]
+    },
+    {
+      "sampleId": "synthetic-kit-05",
+      "classification": "SYNTHETIC fixture, not a physical measurement",
+      "values": {
+        "tray_width_mm": 180,
+        "tray_depth_mm": 99.9,
+        "tray_height_mm": 32.1,
+        "side_clearance_mm": 1.5
+      },
+      "status": "PASS",
+      "failures": [],
+      "unmeasured": [
+        "depth-side clearance",
+        "individual actual gaps",
+        "squareness",
+        "stability",
+        "retrieval",
+        "material suitability"
+      ]
+    }
+  ],
+  "scope": "Only the baseline dimensions and authored edge flags are classified. Unmeasured characteristics remain unverified."
+}

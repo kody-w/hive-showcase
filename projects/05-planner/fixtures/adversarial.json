@@ -1,0 +1,244 @@
+{
+  "schema": "agenda-planner-fixtures/1",
+  "classification": "synthetic",
+  "notice": "Authored adversarial inputs and expected model outcomes, not participant observations.",
+  "cases": [
+    {
+      "id": "overloaded-duration",
+      "purpose": "65 mandatory minutes cannot fit 60; three tied, one-field, five-minute repairs preserve both tasks.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Five minutes over", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 610]] },
+        "tasks": [
+          { "id": "design", "label": "Design review", "duration": 35, "availability": [[540, 610]], "dependsOn": [], "fixedStart": null },
+          { "id": "decision", "label": "Decision session", "duration": 30, "availability": [[540, 610]], "dependsOn": [], "fixedStart": null }
+        ],
+        "repairs": { "latestEnd": 610, "durationFloors": { "design": 30, "decision": 25 } }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreSize": 2, "repairStatus": "minimum-proven", "cost": { "changedFields": 1, "totalMinutes": 5 }, "choices": 3 }
+    },
+    {
+      "id": "disjoint-availability",
+      "purpose": "Aggregate spare minutes do not justify splitting a nonpreemptive task.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "A fragmented hour", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 555], [575, 600]] },
+        "tasks": [
+          { "id": "focus", "label": "Uninterrupted focus", "duration": 30, "availability": [[540, 600]], "dependsOn": [], "fixedStart": null }
+        ],
+        "repairs": { "latestEnd": 600, "durationFloors": { "focus": 25 } }
+      },
+      "expected": { "status": "infeasible", "proofKind": "empty-domain", "coreSize": 1, "repairStatus": "minimum-proven", "cost": { "changedFields": 1, "totalMinutes": 5 }, "choices": 1 }
+    },
+    {
+      "id": "dependency-conflict",
+      "purpose": "Both tasks fit separately, but the only time ordering contradicts their finish-to-start dependency.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Approval arrives too late", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "approve", "label": "Approval", "duration": 20, "availability": [[570, 600]], "dependsOn": [], "fixedStart": null },
+          { "id": "deliver", "label": "Delivery after approval", "duration": 20, "availability": [[540, 565]], "dependsOn": ["approve"], "fixedStart": null }
+        ],
+        "repairs": { "latestEnd": 600, "durationFloors": {} }
+      },
+      "expected": { "status": "infeasible", "proofKind": "exhaustive-search", "coreSize": 2, "repairStatus": "none-within-policy" }
+    },
+    {
+      "id": "dependency-cycle",
+      "purpose": "A positive-duration directed cycle is impossible, not malformed and not fixed by adding time.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Circular prerequisites", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 615]] },
+        "tasks": [
+          { "id": "alpha", "label": "Alpha", "duration": 10, "availability": [[540, 615]], "dependsOn": ["beta"], "fixedStart": null },
+          { "id": "beta", "label": "Beta", "duration": 10, "availability": [[540, 615]], "dependsOn": ["alpha"], "fixedStart": null }
+        ],
+        "repairs": { "latestEnd": 615, "durationFloors": { "alpha": 5, "beta": 5 } }
+      },
+      "expected": { "status": "infeasible", "proofKind": "dependency-cycle", "coreSize": 2, "repairStatus": "none-within-policy" }
+    },
+    {
+      "id": "fixed-event-collision",
+      "purpose": "A later cutoff never moves or shortens fixed events.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Two fixed meetings", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 615]] },
+        "tasks": [
+          { "id": "meeting-a", "label": "Fixed A", "duration": 20, "availability": [[540, 615]], "dependsOn": [], "fixedStart": 550, "kind": "event" },
+          { "id": "meeting-b", "label": "Fixed B", "duration": 20, "availability": [[540, 615]], "dependsOn": [], "fixedStart": 560, "kind": "event" }
+        ],
+        "repairs": { "latestEnd": 615, "durationFloors": {} }
+      },
+      "expected": { "status": "infeasible", "proofKind": "fixed-collision", "coreSize": 2, "repairStatus": "none-within-policy" }
+    },
+    {
+      "id": "boundary-valid-agenda",
+      "purpose": "Adjacent half-open intervals and an exact 24:00 finish are valid.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Finish exactly at midnight", "classification": "synthetic",
+        "day": { "start": 1380, "end": 1440, "stepMinutes": 5, "availability": [[1380, 1440]] },
+        "tasks": [
+          { "id": "setup", "label": "Setup", "duration": 30, "availability": [[1380, 1440]], "dependsOn": [], "fixedStart": 1380, "kind": "event" },
+          { "id": "round", "label": "Final round", "duration": 25, "availability": [[1380, 1440]], "dependsOn": ["setup"], "fixedStart": null },
+          { "id": "close", "label": "Closing break", "duration": 5, "availability": [[1380, 1440]], "dependsOn": ["round"], "fixedStart": null, "kind": "break" }
+        ],
+        "repairs": { "latestEnd": 1440, "durationFloors": {} }
+      },
+      "expected": { "status": "feasible", "proofKind": "witness", "repairStatus": "not-needed", "lastEnd": 1440 }
+    },
+    {
+      "id": "malformed-input",
+      "purpose": "A numeric string is not coerced into a valid duration.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Wrong numeric type", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "bad", "label": "Bad duration", "duration": "15", "availability": [[540, 600]], "dependsOn": [] }
+        ]
+      },
+      "expected": { "status": "invalid", "proofKind": "not-assessed", "repairStatus": "not-assessed" }
+    },
+    {
+      "id": "malformed-duplicate-id",
+      "purpose": "Repeated IDs cannot disguise a lost commitment.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Duplicate IDs", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "same", "label": "One", "duration": 15, "availability": [[540, 600]], "dependsOn": [] },
+          { "id": "same", "label": "Two", "duration": 15, "availability": [[540, 600]], "dependsOn": [] }
+        ]
+      },
+      "expected": { "status": "invalid", "proofKind": "not-assessed", "repairStatus": "not-assessed" }
+    },
+    {
+      "id": "search-bound-feasible",
+      "purpose": "A known-feasible input with an insufficient node bound must say unknown, never impossible.",
+      "options": { "maxNodes": 1 },
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Unknown is not impossible", "classification": "synthetic",
+        "day": { "start": 540, "end": 560, "stepMinutes": 5, "availability": [[540, 560]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 5, "availability": [[540, 560]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 5, "availability": [[540, 560]], "dependsOn": ["one"] }
+        ]
+      },
+      "expected": { "status": "unproven", "proofKind": "search-bound", "repairStatus": "unproven", "unboundedStatus": "feasible" }
+    },
+    {
+      "id": "search-bound-infeasible",
+      "purpose": "A genuinely infeasible input still cannot be called impossible until the search proves it.",
+      "options": { "maxNodes": 1 },
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "An unsearched collision", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 15, "availability": [[540, 555]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 15, "availability": [[540, 555]], "dependsOn": [] }
+        ]
+      },
+      "expected": { "status": "unproven", "proofKind": "search-bound", "repairStatus": "unproven", "unboundedStatus": "infeasible" }
+    },
+    {
+      "id": "repair-candidate-bound",
+      "purpose": "A stopped repair enumeration is not evidence that no allowed repair exists.",
+      "options": { "maxRepairCandidates": 0 },
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Repair candidates not searched", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 610]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 35, "availability": [[540, 610]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 30, "availability": [[540, 610]], "dependsOn": [] }
+        ],
+        "repairs": { "latestEnd": 610, "durationFloors": {} }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreSize": 2, "repairStatus": "unproven" }
+    },
+    {
+      "id": "repair-node-bound",
+      "purpose": "Checking a candidate without completing its exact search proves no minimum.",
+      "options": { "maxRepairNodes": 0 },
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Repair witness not searched", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 605]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 35, "availability": [[540, 605]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 30, "availability": [[540, 605]], "dependsOn": [] }
+        ],
+        "repairs": { "latestEnd": 605, "durationFloors": {} }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreSize": 2, "repairStatus": "unproven" }
+    },
+    {
+      "id": "two-field-minimum",
+      "purpose": "Both tasks are individually too long for their windows. No single-field change suffices.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Two independent conflicts", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 565], [575, 600]] },
+        "tasks": [
+          { "id": "one", "label": "Morning topic", "duration": 30, "availability": [[540, 565]], "dependsOn": [] },
+          { "id": "two", "label": "Later topic", "duration": 30, "availability": [[575, 600]], "dependsOn": [] }
+        ],
+        "repairs": { "latestEnd": 600, "durationFloors": { "one": 25, "two": 25 } }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreSize": 1, "repairStatus": "minimum-proven", "cost": { "changedFields": 2, "totalMinutes": 10 }, "choices": 1 }
+    },
+    {
+      "id": "lexicographic-repair",
+      "purpose": "One 25-minute cutoff change outranks two changes totaling 10 minutes under the stated fields-first objective.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Fields first is an explicit tradeoff", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 575], [585, 635]] },
+        "tasks": [
+          { "id": "fixed", "label": "Fixed opening", "duration": 20, "availability": [[540, 560]], "dependsOn": [], "fixedStart": 540 },
+          { "id": "middle", "label": "Middle session", "duration": 20, "availability": [[560, 635]], "dependsOn": ["fixed"] },
+          { "id": "last", "label": "Last session", "duration": 20, "availability": [[585, 635]], "dependsOn": ["middle"] }
+        ],
+        "repairs": { "latestEnd": 630, "durationFloors": { "middle": 15, "last": 15 } }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "repairStatus": "minimum-proven", "cost": { "changedFields": 1, "totalMinutes": 25 }, "choices": 1 }
+    },
+    {
+      "id": "core-search-bound",
+      "purpose": "A full-set conflict proof survives, but a minimum core is not claimed when its subset bound is exhausted.",
+      "options": { "maxCoreChecks": 0 },
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Unproven smallest core", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 35, "availability": [[540, 600]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 30, "availability": [[540, 600]], "dependsOn": [] }
+        ]
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreStatus": "unproven-minimum", "repairStatus": "none-within-policy" }
+    },
+    {
+      "id": "unsupported-constraint",
+      "purpose": "Parallel resource requests must not be silently solved as a single-track model.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "Unsupported rooms", "classification": "synthetic",
+        "resources": ["room-a", "room-b"],
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 15, "availability": [[540, 600]], "dependsOn": [] }
+        ]
+      },
+      "expected": { "status": "unsupported", "proofKind": "not-assessed", "repairStatus": "not-assessed" }
+    },
+    {
+      "id": "no-invented-availability",
+      "purpose": "Extending a cutoff cannot create available minutes. The repair family is exhausted without a false schedule.",
+      "agenda": {
+        "schema": "agenda-planner/1", "title": "The room really closes at ten", "classification": "synthetic",
+        "day": { "start": 540, "end": 600, "stepMinutes": 5, "availability": [[540, 600]] },
+        "tasks": [
+          { "id": "one", "label": "One", "duration": 35, "availability": [[540, 630]], "dependsOn": [] },
+          { "id": "two", "label": "Two", "duration": 30, "availability": [[540, 630]], "dependsOn": [] }
+        ],
+        "repairs": { "latestEnd": 630, "durationFloors": {} }
+      },
+      "expected": { "status": "infeasible", "proofKind": "capacity", "coreSize": 2, "repairStatus": "none-within-policy" }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "local-hive-original-work-scope/1",
+  "id": "01-game-studio",
+  "stage": "work-produced",
+  "nativeOrganizationActivated": false,
+  "externalEffectsPerformed": [],
+  "source": {
+    "seedSlug": "independent-game-studio",
+    "name": "The Independent Game Studio",
+    "classification": "public-synthetic",
+    "authority": "inert-starter-data",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2026 Hive Hub contributors",
+    "notice": "projects/01-game-studio/SOURCE-NOTICE.txt",
+    "indexUrl": "https://kody-w.github.io/hive-hub/api/hive-hub/v1/organization-seeds.json",
+    "indexSha256": "fcb19176c22034db5c4b95530516392852754b77656b63d180214987042f7c80",
+    "seedRef": "sha256:1b84cbff20dc163254feab2e53890eeef766be02756868d7ceae49a78f4b8e48",
+    "cardRef": "sha256:4872058d0bb08f6482f7ea8d96ea84d992ae73e9d25a6aacc0516839bb42f52e",
+    "archiveRef": "sha256:12f9c2805e88c0e7b1e0e512640347694e33d4f2d80e7ccd548533434ceb9df8",
+    "verificationArtifact": "evidence/seed-verification.json",
+    "verificationBasis": "Parent verified exact index, seed/card/archive bindings and all file bytes/digests before delegation. This workstream read the listed files as inert text and did not execute, import, or embed seed code."
+  },
+  "reviewedFiles": [
+    {"path":"seed.json","sha256":"438b49e2b2ba4b40a603daf32533693fadbaef88645b95313673cd4d47eebf5b"},
+    {"path":"initialize.json","sha256":"896a41d4d308e06626df5d790c4caaf7a959ca43c7da5ac6e444cd7c3d9532cd"},
+    {"path":"templates/casework/work/intake.json","sha256":"e986a93654c4a62c47ac1a16f2fa7c31fbb0d7d259e0b7531410a1036e1d32ee"},
+    {"path":"templates/casework/work/task-board.json","sha256":"b75a4c6f4aa307d889816913ee56b4a29fe35d4065072eb51f616f3bb0d6e2e4"},
+    {"path":"templates/teams/production/work/TEAM.md","sha256":"1cdc728ea2b1c9cf230f15f72f51abcfc3838bbf213aadca67f15f3b3af5329f"},
+    {"path":"templates/teams/design/work/TEAM.md","sha256":"aa7ec59e9a4164cd637f550608814508e3e08fd02d17e099d447ba7ddd714ae2"},
+    {"path":"templates/teams/engineering/work/TEAM.md","sha256":"8c863689e602a8b15072e1616668076690d8dd60b2141d8a048f698c7c9abf77"},
+    {"path":"templates/teams/art/work/TEAM.md","sha256":"5008ce31d5e2835502c1aa88177e54a75b2290a9c1f5746e1217dd9140fc46d7"},
+    {"path":"templates/teams/quality/work/TEAM.md","sha256":"7353963ad8414915dcfac4aa5a536f2f64f5456542f74a2076dd452c9d40b4c8"},
+    {"path":"templates/teams/player-research/work/TEAM.md","sha256":"39f4d5e96db515f1285e107dad5d7b3f9ba9b0e98c1ff0556ce54dc58be94d41"},
+    {"path":"LICENSE","sha256":"3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"}
+  ],
+  "readyTaskMapping": [
+    {
+      "seedTaskId": "lock-first-shift",
+      "seedTeam": "production",
+      "seedState": "ready",
+      "localDisposition": "Scope-review analogue only; original seed task not claimed complete.",
+      "artifact": "projects/01-game-studio/evidence/source-review.json",
+      "reason": "The seed asks for a two-day onboarding revision of Mosslight Courier. The explicit user request authorizes an original five-minute robot-teaching game instead. This artifact records that boundary before any native execution."
+    }
+  ],
+  "blockedTaskMapping": [
+    {"seedTaskId":"read-synthetic-feedback","seedState":"blocked","localDisposition":"Not performed. Downloaded feedback utility was not executed. Its authored research is not evidence about this game."},
+    {"seedTaskId":"revise-bridge-onboarding","seedState":"blocked","localDisposition":"Not completed. New teaching rules and onboarding are an explicitly authorized extension, not a revision to the seed's bridge rules."},
+    {"seedTaskId":"prepare-readable-art","seedState":"blocked","localDisposition":"Original local analogue: art/colony.svg and procedural SVG symbols. No seed graphics copied."},
+    {"seedTaskId":"specify-local-cues","seedState":"blocked","localDisposition":"Not performed. This game is silent and has text/symbol cues; no audio imported or synthesized."},
+    {"seedTaskId":"implement-onboarding","seedState":"blocked","localDisposition":"Original local analogue: engine.js, controller.js, app.js, index.html. No seed executable source was read, imported, executed, or embedded."},
+    {"seedTaskId":"verify-game-regressions","seedState":"blocked","localDisposition":"Original local analogue: Node engine/controller/app/evidence tests and eight actual recordings. Original three-board seed regressions were not run."},
+    {"seedTaskId":"audit-offline-release","seedState":"blocked","localDisposition":"Static local-resource inspection and DOM contract tests only. Browser, keyboard usability, narrow-device, and assistive-technology checks remain unperformed."},
+    {"seedTaskId":"plan-observed-playtest","seedState":"blocked","localDisposition":"No recruitment or human observation. A short prospective test checklist is in README; no seed task completion claimed."},
+    {"seedTaskId":"make-release-decision","seedState":"blocked","localDisposition":"Local work-produced candidate only. Human experience validation is on hold; no publication, native activation, business activity, or upstream acceptance."}
+  ],
+  "extensionScope": {
+    "authorizedBy": "Explicit user request for an original five-minute browser game about teaching a tiny robot colony, bounded controls, real automated play, and three build-play-improve cycles.",
+    "originalImplementation": [
+      "Three deterministic robot couriers, editable delivery/recharge/route/rest lessons, energy and rescue choices.",
+      "Three original gardens, 150-beat shift cap, clear win/loss, keyboard and button controls.",
+      "Shared browser/Node engine, four preserved build configurations, exact replay validation.",
+      "Six cycle recordings plus trained and untaught release recordings, original local SVG artwork."
+    ],
+    "notClaimed": [
+      "Completion of the seed's Mosslight Courier case or preservation of its original three boards.",
+      "Native Hive organization/workspace/task activation.",
+      "A learned statistical model; robot lessons are explicit deterministic policies.",
+      "Human enjoyment, usability improvement, market demand, device accessibility approval, or publication.",
+      "The seed's synthetic feedback counts as observations of this original game."
+    ],
+    "copiedMaterial": "Seed/task/team identifiers, source names, source reference hashes, MIT notice, and factual scope descriptions only. No downloaded executable code, graphics, starter prose, or synthetic playtest rows are embedded in runtime files."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "pocket-arcade-prime-checks/1",
+  "phase": "bounded-B",
+  "allPassed": true,
+  "unitTestsUseExplicitFixturesOnly": true,
+  "unitTests": {
+    "python": 72,
+    "node": 17
+  },
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/10-pocket-arcade/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.876952+00:00",
+      "status": "passed",
+      "scope": "Synthetic validator/consumer unit fixtures only; no real acceptance.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-python-tests.txt",
+        "sha256": "c0b581c8ac345bd9ed8ce2e1cbad1675eb1842cd60812348013b1ca7e8f460a2",
+        "bytes": 6185
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "projects/10-pocket-arcade/tests/model.test.cjs"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.877161+00:00",
+      "status": "passed",
+      "scope": "Synthetic UI-model inputs and original static HTML checks; no browser.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-model-tests.txt",
+        "sha256": "f90147cbf9675812b24596b267954d8e5948e47f9cbe77e2878c0df72368ec5b",
+        "bytes": 1569
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/app.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.878108+00:00",
+      "status": "passed",
+      "scope": "Original script syntax only.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-syntax-checks.txt",
+        "sha256": "c35a82c21dd063c20e68f93d6b4c0f048769c374981969a7092db6b8b31caff2",
+        "bytes": 562
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/model.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.914066+00:00",
+      "status": "passed",
+      "scope": "Original script syntax only.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-syntax-checks.txt",
+        "sha256": "c35a82c21dd063c20e68f93d6b4c0f048769c374981969a7092db6b8b31caff2",
+        "bytes": 562
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/10-pocket-arcade/connected-data.js"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.941243+00:00",
+      "status": "passed",
+      "scope": "Original script syntax only.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-syntax-checks.txt",
+        "sha256": "c35a82c21dd063c20e68f93d6b4c0f048769c374981969a7092db6b8b31caff2",
+        "bytes": 562
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/10-pocket-arcade/consume.py",
+        "--root",
+        ".",
+        "--check"
+      ],
+      "exitCode": 0,
+      "recordedAt": "2026-09-19T02:09:26.958495+00:00",
+      "status": "passed",
+      "scope": "Actual three-component binding consistency; complete integration remains blocked.",
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/phase-b-consumer-check.json",
+        "sha256": "178ceb55ad5906b05855db6907adbaef0081de9f676f028c79b50764134026bf",
+        "bytes": 1461
+      }
+    }
+  ],
+  "integrationPassed": false
+}

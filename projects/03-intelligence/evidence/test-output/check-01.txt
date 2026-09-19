@@ -1,0 +1,1 @@
+PASS: offline bundle and integrity receipt are deterministic and current.

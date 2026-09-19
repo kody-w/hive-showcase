@@ -1,0 +1,83 @@
+{
+  "schema": "executed-local-research-checks/1",
+  "projectId": "03-intelligence",
+  "stage": "work-produced",
+  "status": "passed",
+  "startedAt": "2026-09-19T13:00:31.734570+00:00",
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "projects/03-intelligence/tools/build.py",
+        "--check"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "durationSeconds": 0.03,
+      "completedAt": "2026-09-19T13:00:31.764572+00:00",
+      "outputFile": "evidence/test-output/check-01.txt",
+      "completeOutputSha256": "2b969eb0c0d19c5614b0071de63903c5205ae1a58f7afc3046907b9d8d18c2e2",
+      "retainedOutputSha256": "2b969eb0c0d19c5614b0071de63903c5205ae1a58f7afc3046907b9d8d18c2e2",
+      "outputTruncated": false
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "projects/03-intelligence/tests/model.test.mjs",
+        "projects/03-intelligence/tests/app.test.mjs"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "durationSeconds": 0.112,
+      "completedAt": "2026-09-19T13:00:31.876800+00:00",
+      "outputFile": "evidence/test-output/check-02.txt",
+      "completeOutputSha256": "15d13d8b6115af0a08eafe7479e1be6f31c345a8c2c7fb0a49f2fee8c37b8321",
+      "retainedOutputSha256": "15d13d8b6115af0a08eafe7479e1be6f31c345a8c2c7fb0a49f2fee8c37b8321",
+      "outputTruncated": false
+    },
+    {
+      "argv": [
+        "python3",
+        "projects/03-intelligence/tests/check_evidence.py"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "durationSeconds": 0.096,
+      "completedAt": "2026-09-19T13:00:31.972663+00:00",
+      "outputFile": "evidence/test-output/check-03.txt",
+      "completeOutputSha256": "162560c14e4836d9282fc9bf0f85b7f389d8bcde6c7b8effcdbde90fbe5a4f0c",
+      "retainedOutputSha256": "162560c14e4836d9282fc9bf0f85b7f389d8bcde6c7b8effcdbde90fbe5a4f0c",
+      "outputTruncated": false
+    }
+  ],
+  "researchVerdict": "v-plausible",
+  "facts": {
+    "inspectedSources": 9,
+    "provenanceFamilies": 6,
+    "claims": 12,
+    "contradictions": 5,
+    "operatingGates": 7,
+    "qualifyingBusinessCases": 0,
+    "syntheticSourceRecords": 18,
+    "rawHttpResponseHashes": 8
+  },
+  "verificationScope": "Offline byte/hash, citation, ID/link, synthetic separation, source coverage, rendered HTML, DOM-fixture controller and all verdict/reversal-condition logic checks. Not real-browser visual validation or independent verification of the underlying study/financial data.",
+  "notPerformed": [
+    "Real-browser preview or visual/a11y certification",
+    "Financial, customer or accepted-AI-work audit",
+    "Market test, founder outreach or contact",
+    "Downloaded seed code execution or native Hive initialization",
+    "Server, deployment, purchase, publication or external mutation"
+  ],
+  "limitations": [
+    "Conditional plausibility, not a proven broad business claim, market test, financial audit, success-rate estimate or universal impossibility result.",
+    "Coding benchmarks, task completion and enterprise throughput are implementation proxies, not direct evidence of paying demand, retained use, complete owner economics or solo operations.",
+    "Commercial claims retain founder/acquirer attribution; nine documents are six provenance families, not independent votes.",
+    "Primary source dates span historical tools and populations. The METR 2026 methodological update prevents treating its 2025 slowdown as a current constant.",
+    "Eight raw HTTP body hashes are retained. News18 succeeded through web_fetch but direct capture returned 403, so only bounded tool-returned excerpts and their local artifact hash are available.",
+    "Automated checks cover data, provenance, links, UI logic and counterfactual verdict rules; no real-browser visual certification or human review is claimed.",
+    "The seed's eighteen synthetic observations are separately labeled and hash-verified; no downloaded seed code, native initialization, server, external mutation, publication or outreach was performed."
+  ],
+  "completedAt": "2026-09-19T13:00:31.972706+00:00"
+}

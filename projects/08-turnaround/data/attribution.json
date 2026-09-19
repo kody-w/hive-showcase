@@ -1,0 +1,42 @@
+{
+  "schema": "turnaround-data-provenance/1",
+  "source": "The Turnaround Firm, Hive Hub contributors, MIT",
+  "copyright": "Copyright (c) 2026 Hive Hub contributors",
+  "license": "data/reference/LICENSE",
+  "seedSlug": "turnaround-firm",
+  "sourceClassification": "public-synthetic; inert-starter-data",
+  "verificationReport": "evidence/seed-verification.json",
+  "indexUrl": "https://kody-w.github.io/hive-hub/api/hive-hub/v1/organization-seeds.json",
+  "seedObjectRef": "sha256:f9112fb8e126f098c0a303662f92c925f30795c1039ee2ad9309bf4232376df0",
+  "archiveSha256": "d2f818c10c0af2b0af010ae280eec8bd94e80f5fb7609a71993694827810a6da",
+  "extractedSeedJsonSha256": "011c89dd7a9ab8c1ee966f2e7914d55b0cfeae41562c47b7d984dc3ab30b6cd4",
+  "hashDistinction": "seedObjectRef is the exact downloaded seed descriptor object; extractedSeedJsonSha256 is the separate seed.json file inside the verified archive.",
+  "copiedData": [
+    {"local": "data/reference/LICENSE", "source": "LICENSE", "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"},
+    {"local": "data/reference/recovery.json", "source": "templates/casework/work/starter/case/recovery.json", "sha256": "92e6b5c0763d226a71996ce9654b43c7e31e7d035d1144b1f97a6b9e37116350"},
+    {"local": "data/reference/cash-ledger.csv", "source": "templates/casework/work/starter/data/cash-ledger.csv", "sha256": "17728ba9a34df12dcd0997dad08ec922babc3d6d504c2e47e1ab0ac3aad69d8e"},
+    {"local": "data/reference/payables.csv", "source": "templates/casework/work/starter/data/payables.csv", "sha256": "07c963d545bc10b7a34b78065653ff4c070d8bd9ac0f61991bb7854cf0bf9f31"},
+    {"local": "data/reference/subscriptions.csv", "source": "templates/casework/work/starter/data/subscriptions.csv", "sha256": "177b247ac08ada48652d2123af4066c946c89e2aeccb367c669d34912ef7ace8"},
+    {"local": "data/reference/scenarios.csv", "source": "templates/casework/work/starter/data/scenarios.csv", "sha256": "e81fd022a31c2550dd0a54e754d072ad5b7ca164adf57e8bfd9c3214891e2c19"},
+    {"local": "data/reference/support-backlog.csv", "source": "templates/casework/work/starter/data/support-backlog.csv", "sha256": "565b646c0dbab4567c30838950093b1bf68f3c7332933eddb49c4b40c3027031"},
+    {"local": "data/reference/recovery-sprint.csv", "source": "templates/casework/work/starter/ops/recovery-sprint.csv", "sha256": "056db98cad94ab00478eb6d37e61c236883b46506c700eca2609ca6755e4c51d"},
+    {"local": "data/reference/approval-gates.json", "source": "templates/casework/work/starter/ops/approval-gates.json", "sha256": "6e2e89930421dc3b1ab4b0a2b8fb80f8bb31e79e249fd77504ecbaaa6ea69fdf"}
+  ],
+  "reviewedAsDataOnly": [
+    {"path": "seed.json", "sha256": "011c89dd7a9ab8c1ee966f2e7914d55b0cfeae41562c47b7d984dc3ab30b6cd4"},
+    {"path": "initialize.json", "sha256": "dfd0bf4067f4480989ccb6d6e6a5d340e926a6ff4120b2ee7422764fa488db98"},
+    {"path": "templates/casework/work/intake.json", "sha256": "100f7048a868d0553bd704250a82b18e2f666d206e3e4b2781cf3c3010b0bcf5"},
+    {"path": "templates/casework/work/task-board.json", "sha256": "8188e4007fb4b265f6140544bb900e519a3a7d6899a1eced22ce243e601d50a2"},
+    {"path": "templates/casework/work/ACCEPTANCE.md", "sha256": "e3bf5ab5049b632c60b42d66e93b2dfdb9672eb8c128239cf8a42f170df45235"},
+    {"path": "templates/casework/work/starter/quality/recovery-cases.csv", "sha256": "4236e1e613e2ca0733095be6a6d260018ec52266a93b977a2d8b9b4b4f2f09f5"},
+    {"path": "templates/teams/finance/work/TEAM.md", "sha256": "4fa62ee8bb3f54136cac0b3f95fd22dbe5b967660ee1105416bfd19033ca5ff7"},
+    {"path": "templates/teams/product-recovery/work/TEAM.md", "sha256": "fcba45b080d2908974b217e7a05abf6313d66a8d73fb10a90202d572918df095"},
+    {"path": "templates/teams/engineering/work/TEAM.md", "sha256": "a3919817144605eb4988f8f3f74cf0a2af4e1b55a59dc115ffa7222ef75172b8"},
+    {"path": "templates/teams/operations/work/TEAM.md", "sha256": "273fe63556f403adadf69e4f25864cd947168824844ac61d7d99e1516b98c2d6"},
+    {"path": "templates/teams/customer-success/work/TEAM.md", "sha256": "cca32357d63b4004c48d18eacf82bab81a34b487c831722b9865167aa75cee5d"}
+  ],
+  "implementationBoundary": "All executable files in this project are original. No downloaded reference Python, tests, package, initialization or scaffolding code was executed, imported, copied or embedded. Copied files are data plus their license, byte-checked against the verified seed inventory.",
+  "nativeInitialized": false,
+  "referenceTasksAccepted": false,
+  "externalEffectsAuthorized": false
+}

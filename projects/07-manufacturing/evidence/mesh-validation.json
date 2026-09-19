@@ -1,0 +1,297 @@
+{
+  "schema": "stackline-independent-artifact-check/1",
+  "validator": "Original Python 3 standard-library parser/geometry/ZIP/XML checks; no CAD tools",
+  "status": "pass",
+  "configurations": [
+    {
+      "id": "stackline",
+      "units": "nominal mm coordinates; STL requires explicit mm import",
+      "parts": {
+        "tray": {
+          "triangles": 92,
+          "vertices": 48,
+          "edges": 138,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 2,
+          "signedVolumeMM3": 101676.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              180.0,
+              100.0,
+              32.0
+            ],
+            "size": [
+              180.0,
+              100.0,
+              32.0
+            ]
+          },
+          "analyticVolumeMM3": 101676,
+          "volumeDifferenceMM3": 0.0
+        },
+        "insert": {
+          "triangles": 96,
+          "vertices": 48,
+          "edges": 144,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 0,
+          "signedVolumeMM3": 20640.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              171.0,
+              91.0,
+              20.0
+            ],
+            "size": [
+              171.0,
+              91.0,
+              20.0
+            ]
+          },
+          "analyticVolumeMM3": 20640.0,
+          "volumeDifferenceMM3": 0.0
+        }
+      },
+      "bomParts": 2,
+      "drawing": {
+        "xml": "valid",
+        "units": "mm",
+        "drawingUnitsPerMM": 1,
+        "scaleBarMM": 50,
+        "cutTemplate": false
+      },
+      "archive": {
+        "crc": "pass",
+        "entries": 16,
+        "sourceIncluded": true,
+        "bytes": 123377,
+        "sha256": "84cc35becb3c44a264c2ff4a8eeb18a355acf223a99ab27635b29d7c56121769"
+      },
+      "adversarialControlsRejected": [
+        "open boundary",
+        "reversed triangle",
+        "duplicate facet",
+        "degenerate facet",
+        "disconnected shells"
+      ]
+    },
+    {
+      "id": "compact",
+      "units": "nominal mm coordinates; STL requires explicit mm import",
+      "parts": {
+        "tray": {
+          "triangles": 92,
+          "vertices": 48,
+          "edges": 138,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 2,
+          "signedVolumeMM3": 71400.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              140.0,
+              90.0,
+              28.0
+            ],
+            "size": [
+              140.0,
+              90.0,
+              28.0
+            ]
+          },
+          "analyticVolumeMM3": 71400,
+          "volumeDifferenceMM3": 0.0
+        },
+        "insert": {
+          "triangles": 60,
+          "vertices": 32,
+          "edges": 90,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 2,
+          "signedVolumeMM3": 12204.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              131.0,
+              81.0,
+              18.0
+            ],
+            "size": [
+              131.0,
+              81.0,
+              18.0
+            ]
+          },
+          "analyticVolumeMM3": 12204.0,
+          "volumeDifferenceMM3": 0.0
+        }
+      },
+      "bomParts": 2,
+      "drawing": {
+        "xml": "valid",
+        "units": "mm",
+        "drawingUnitsPerMM": 1,
+        "scaleBarMM": 50,
+        "cutTemplate": false
+      },
+      "archive": {
+        "crc": "pass",
+        "entries": 16,
+        "sourceIncluded": true,
+        "bytes": 112962,
+        "sha256": "56b62285ebee052f5010c9e3689133f6996ede3960fe0bdd6150da6e419813d8"
+      },
+      "adversarialControlsRejected": []
+    },
+    {
+      "id": "pocket-arcade",
+      "units": "nominal mm coordinates; STL requires explicit mm import",
+      "parts": {
+        "tray": {
+          "triangles": 92,
+          "vertices": 48,
+          "edges": 138,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 2,
+          "signedVolumeMM3": 95100.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              180.0,
+              100.0,
+              28.0
+            ],
+            "size": [
+              180.0,
+              100.0,
+              28.0
+            ]
+          },
+          "analyticVolumeMM3": 95100,
+          "volumeDifferenceMM3": 0.0
+        },
+        "insert": {
+          "triangles": 96,
+          "vertices": 48,
+          "edges": 144,
+          "connectedShells": 1,
+          "unpairedEdges": 0,
+          "orientationErrors": 0,
+          "nonmanifoldVertices": 0,
+          "degenerateTriangles": 0,
+          "duplicateFacets": 0,
+          "watertight": true,
+          "closedTwoManifold": true,
+          "eulerCharacteristic": 0,
+          "signedVolumeMM3": 18576.0,
+          "boundsMM": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              171.0,
+              91.0,
+              18.0
+            ],
+            "size": [
+              171.0,
+              91.0,
+              18.0
+            ]
+          },
+          "analyticVolumeMM3": 18576.0,
+          "volumeDifferenceMM3": 0.0
+        }
+      },
+      "bomParts": 2,
+      "drawing": {
+        "xml": "valid",
+        "units": "mm",
+        "drawingUnitsPerMM": 1,
+        "scaleBarMM": 50,
+        "cutTemplate": false
+      },
+      "archive": {
+        "crc": "pass",
+        "entries": 16,
+        "sourceIncluded": true,
+        "bytes": 122785,
+        "sha256": "f002197852d13842f47a79adea687a7aae9e99a9ee7f91cce027026773122472"
+      },
+      "adversarialControlsRejected": []
+    }
+  ],
+  "stlSolidsChecked": 6,
+  "inventory": {
+    "sha256Artifacts": 40,
+    "originalSourceHashes": 4,
+    "localHTMLLinks": 15
+  },
+  "digitalOnly": true,
+  "physicalTestsPerformed": [],
+  "notTested": [
+    "Physical dimensions, material, fabrication process, fit or handling",
+    "Slicer/renderer import behavior or automatic unit interpretation",
+    "Actual card/token compatibility, strength or transit protection",
+    "Real-browser visual/accessibility behavior (parent-owned review)"
+  ]
+}

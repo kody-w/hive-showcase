@@ -1,0 +1,33 @@
+{
+  "id": "03-intelligence",
+  "title": "Evidence Bureau: The One-Person Software Business",
+  "seedSlug": "public-source-intelligence-bureau",
+  "entrypoint": "projects/03-intelligence/index.html",
+  "summary": "An original, offline claim/evidence map investigating whether a solo founder can operate a useful AI-majority software business. Nine inspected public sources, a pre-collection protocol, explicit opposing cases, source drilldowns, seven operating gates and falsifiable reversal conditions keep coding productivity distinct from verified business viability.",
+  "checks": [
+    ["python3", "projects/03-intelligence/tools/build.py", "--check"],
+    ["node", "--test", "projects/03-intelligence/tests/model.test.mjs", "projects/03-intelligence/tests/app.test.mjs"],
+    ["python3", "projects/03-intelligence/tests/check_evidence.py"]
+  ],
+  "artifacts": [
+    "projects/03-intelligence/research/brief.md",
+    "projects/03-intelligence/research/protocol.json",
+    "projects/03-intelligence/research/protocol-lock.json",
+    "projects/03-intelligence/research/evidence.json",
+    "projects/03-intelligence/research/collection-log.json",
+    "projects/03-intelligence/evidence/seed-inputs.json",
+    "projects/03-intelligence/evidence/fetches",
+    "projects/03-intelligence/evidence/integrity.json",
+    "projects/03-intelligence/evidence/result.json"
+  ],
+  "limitations": [
+    "Conditional plausibility, not a proven broad business claim, market test, financial audit, success-rate estimate or universal impossibility result.",
+    "Coding benchmarks, task completion and enterprise throughput are implementation proxies, not direct evidence of paying demand, retained use, complete owner economics or solo operations.",
+    "Commercial claims retain founder/acquirer attribution; nine documents are six provenance families, not independent votes.",
+    "Primary source dates span historical tools and populations. The METR 2026 methodological update prevents treating its 2025 slowdown as a current constant.",
+    "Eight raw HTTP body hashes are retained. News18 succeeded through web_fetch but direct capture returned 403, so only bounded tool-returned excerpts and their local artifact hash are available.",
+    "Automated checks cover data, provenance, links, UI logic and counterfactual verdict rules; no real-browser visual certification or human review is claimed.",
+    "The seed's eighteen synthetic observations are separately labeled and hash-verified; no downloaded seed code, native initialization, server, external mutation, publication or outreach was performed."
+  ],
+  "stage": "work-produced"
+}

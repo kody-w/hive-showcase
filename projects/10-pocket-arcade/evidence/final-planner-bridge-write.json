@@ -1,0 +1,23 @@
+{
+  "schema": "pocket-arcade-planner-bridge-check/1",
+  "mode": "write",
+  "status": "local-technical-checks-passed",
+  "originalFilesUnchanged": true,
+  "baselineRemainsInfeasible": true,
+  "proposalVerifiedInModel": true,
+  "proposalImportRoundTripVerified": true,
+  "ownerApproved": false,
+  "nativeAuthority": false,
+  "outputs": [
+    {
+      "path": "projects/10-pocket-arcade/artifacts/tournament-analysis.json",
+      "sha256": "60715d1a114438114a50cd1afebfe3ea1618894b4f32e8cd0c1031f2a6e26195",
+      "bytes": 4197
+    },
+    {
+      "path": "projects/10-pocket-arcade/artifacts/tournament-proposal.json",
+      "sha256": "35fc944ddc44fa7c15e5bd6194550f44ab075ab891c35948fa151f6844f5c561",
+      "bytes": 8742
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "boundaries": {
+    "automaticPartnerCodeExecution": false,
+    "crossWorldAuthority": false,
+    "externalEffects": false,
+    "foreignWorkspaceRegistration": false,
+    "nativeMembership": false,
+    "physicalManufactureVerified": false,
+    "publicLaunch": false,
+    "signedReceipts": false
+  },
+  "browserObservation": "No browser evidence is claimed here; public deployment validation is a separate workflow.",
+  "checkCapture": {
+    "bytes": 9644,
+    "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-runs.json",
+    "sha256": "d5a9684dbe55d0341787c53c5a4832d1c79b2fed2c115a650b51a48d56067f87"
+  },
+  "checkOutputs": [
+    {
+      "bytes": 7232,
+      "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-0.txt",
+      "sha256": "a4555a38e8ae7e1ab4dc9b54922c70a9083e396814319b2760aded374baafe64"
+    },
+    {
+      "bytes": 340,
+      "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-1.txt",
+      "sha256": "0ab2b430d48fb795a469d4c1a950e87ffb60e18008560331668e8ad6b39de8c1"
+    },
+    {
+      "bytes": 281,
+      "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-2.txt",
+      "sha256": "6d90167e4bbf44c1b5db47f6fbb3b71d9f574c9626f05246246784a50664b57c"
+    }
+  ],
+  "checkProvenance": "preserved-valid-original-checks-not-rerun",
+  "fixtureOnly": false,
+  "gates": {
+    "tray-geometry": {
+      "basis": "Preserved independent mesh/inventory checks remain byte-valid; current card-token parameters agree and both nominal solids have closed oriented edges. No manufacturing workflow is rerun.",
+      "status": "passed"
+    },
+    "tray-review": {
+      "basis": "The unchanged review, millimetre drawing and review ZIP remain hashed and covered by their preserved valid deterministic check records.",
+      "status": "passed"
+    },
+    "tray-unbuilt-disclosure": {
+      "basis": "Actual result/mesh records explicitly report no physical tests, fabrication, orders or native activation. The 196 mm width change remains HOLD.",
+      "status": "passed"
+    }
+  },
+  "historicalSourceCommit": "50dc804fc517968e80c7fe5554d31914067c9985",
+  "humanOrOwnerReview": "pending",
+  "partnerResult": {
+    "bytes": 8474,
+    "path": "projects/07-manufacturing/evidence/result.json",
+    "sha256": "0bc726b20fac76877a5983128b26cbd1c85258d3a3c3c6696548d83fa67bfacf"
+  },
+  "physicalAcceptance": "not-performed",
+  "projectId": "07-manufacturing",
+  "publication": {
+    "deploymentPerformedHere": false,
+    "showcaseAuthorized": true
+  },
+  "schema": "pocket-arcade-bounded-acceptance/1",
+  "scope": "Public-file technical acceptance only; never verification of withheld private execution.",
+  "sourceBasis": "Current public bytes and explicitly scoped recorded checks; no private Git history required."
+}

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Five synthetic ventures, one 300-minute week. An honest offline decision model and a working local CSV preflight.">
+  <title>Five-hour office · The One-Person Conglomerate</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#decision">Skip to decision tool</a>
+  <div class="topbar">
+    <a class="wordmark" href="../../index.html"><span class="brand-square" aria-hidden="true">5h</span> LOCAL HIVE / 02</a>
+    <nav aria-label="On this page">
+      <a href="#decision">Decide</a><a href="#demand">Compare</a><a href="#offering">Use the offering</a><a href="#provenance">Evidence</a>
+    </nav>
+    <span class="local-chip">Local only · work produced</span>
+  </div>
+  <main>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">The One-Person Conglomerate</p>
+        <h1>One week.<br>One useful thing.</h1>
+        <p class="hero-copy">Five ventures do not need five half-built products. Make the tradeoff, keep the uncertainty visible, and leave with something that works.</p>
+        <div class="hero-tags"><span>5 distinct ventures</span><span>0 measured demand</span><span>No outreach or spending</span></div>
+      </div>
+      <aside class="week-card" aria-label="Weekly hard capacity">
+        <div class="week-dial"><strong>300</strong><span>FOUNDER MINUTES</span></div>
+        <p>A hard weekly cap.<br><span class="muted">Not a productivity target.</span></p>
+      </aside>
+    </header>
+    <div class="source-notice">
+      <strong>Not market validation.</strong> Names, evidence and scores come from a <strong>synthetic seed</strong>. Minute estimates and test plans are new assumptions. Only local code checks are observed evidence.
+    </div>
+    <p id="load-status" role="status">Loading the frozen local inputs…</p>
+    <noscript><p class="notice">This tool needs JavaScript. The frozen data, scope and actual test outputs remain available in this project directory.</p></noscript>
+    <div id="app" hidden>
+      <section id="decision" aria-labelledby="decision-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / Decide deliberately</p><h2 id="decision-title">Choose the job, not the hype.</h2></div><button id="reset" type="button" class="quiet-button">Reset all assumptions</button></div>
+        <div class="decision-layout">
+          <aside class="panel controls">
+            <h3>Your objective</h3>
+            <p class="small muted">Favor useful learning and reusable work, discounted by subjective confidence. No revenue forecast.</p>
+            <div class="preset-row" aria-label="Objective presets">
+              <button id="balanced" type="button">Learning + reuse</button>
+              <button id="fastest" type="button">Speed-first</button>
+            </div>
+            <label for="learning-weight">Learning weight <output id="learning-value">3</output></label>
+            <input id="learning-weight" type="range" min="0" max="10" step="1" value="3">
+            <label for="reuse-weight">Reuse weight <output id="reuse-value">2</output></label>
+            <input id="reuse-weight" type="range" min="0" max="10" step="1" value="2">
+            <label for="speed-weight">Speed weight <output id="speed-value">1</output></label>
+            <input id="speed-weight" type="range" min="0" max="10" step="1" value="1">
+            <hr>
+            <div class="control-pair">
+              <label for="reserve">Protected reserve<br><input id="reserve" type="number" min="0" max="10000" step="1" value="30"> min</label>
+              <label for="review">Shared review<br><input id="review" type="number" min="0" max="10000" step="1" value="30"> min</label>
+            </div>
+            <label for="scope-mode">Scope being compared</label>
+            <select id="scope-mode"><option value="micro">Narrow five-hour offerings</option><option value="seed">Original primary seed durations</option></select>
+            <p class="small muted">At most one active venture. The 300-minute cap never moves. Review is counted once when anything is funded.</p>
+            <details><summary>How the score works</summary>
+              <p class="small"><code>C × (wL × L/5 + wR × R/5 + wS × S) / (wL + wR + wS)</code></p>
+              <p class="small">C = subjective confidence, 0–100. L and R = ordinal learning/reuse, 1–5. S = max(0, (300 − delivery − test preparation − review) / 300). In seed-duration mode, the original hours replace delivery + preparation.</p>
+              <p class="small">Scores are dimensionless heuristics, not probabilities or dollars. Ties within 10⁻⁹ prefer fewer minutes, then the lexical venture ID. All-zero weights are invalid; all-zero scores recommend nothing.</p>
+            </details>
+          </aside>
+          <div class="decision-main">
+            <article class="recommendation panel" aria-labelledby="recommendation-name">
+              <div class="recommendation-top"><span class="eyebrow">Model recommendation · not owner approval</span><span id="recommendation-score" class="score-chip"></span></div>
+              <h3 id="recommendation-name">Comparing five ventures</h3>
+              <p id="recommendation-reason"></p>
+              <p id="tie-note" class="small muted"></p>
+              <div id="ranking-issues" role="status"></div>
+              <div class="toolbar"><button id="apply-recommendation" type="button" class="primary">Allocate to this recommendation</button><button id="download-decision" type="button">Download decision snapshot</button></div>
+              <p id="offering-policy" class="small muted"></p>
+            </article>
+            <article class="panel budget-panel" aria-labelledby="budget-title">
+              <div class="budget-header"><h3 id="budget-title">Your actual allocation</h3><strong id="budget-total"></strong></div>
+              <progress id="budget-progress" max="300" value="0" aria-label="Allocated, review and reserved minutes"></progress>
+              <div class="budget-ledger" id="budget-ledger"></div>
+              <div id="allocation-status" role="status"></div>
+              <p class="small muted">Rows below are your proposal. Changing weights does not silently reallocate your week. Unfunded ventures are parked, not failed businesses.</p>
+            </article>
+          </div>
+        </div>
+        <article class="panel compare-panel">
+          <div class="section-heading compact"><div><h3>Open the assumptions</h3><p class="small muted">Edit estimates, ordinal scores, readiness and allocations. Original seed inputs stay frozen. “Ready” means an offline prerequisite can be supplied, never that a market test is approved.</p></div></div>
+          <div class="table-wrap">
+            <table class="assumption-table">
+              <caption class="sr-only">Five-venture ranking and allocation controls, all times in founder minutes</caption>
+              <thead><tr><th scope="col">Venture / disposition</th><th scope="col">Score / need</th><th scope="col">Delivery + test prep<br><span class="light">new minute estimates</span></th><th scope="col">Learning / reuse<br><span class="light">ordinal 1–5</span></th><th scope="col">Confidence<br><span class="light">subjective 0–100</span></th><th scope="col">Offline<br>prerequisite</th><th scope="col">Allocate<br><span class="light">venture minutes</span></th></tr></thead>
+              <tbody id="venture-rows"></tbody>
+            </table>
+          </div>
+          <p class="small muted">“Need” includes shared review, excludes reserve. Allocate covers delivery + test preparation only. Partial funding and multiple funded ventures are flagged, not presented as completed work.</p>
+        </article>
+        <article class="panel sensitivity-panel">
+          <div><p class="eyebrow">Try to break the decision</p><h3>How brittle is the winner?</h3><p class="small muted">These one-at-a-time scenarios recalculate from your current assumptions. A changed recommendation is information, not a bug. They do not measure real-world uncertainty.</p></div>
+          <div class="table-wrap"><table><caption class="sr-only">Recommendation sensitivity</caption><thead><tr><th scope="col">Counterfactual</th><th scope="col">Winner</th><th scope="col">Score</th><th scope="col">Result</th></tr></thead><tbody id="sensitivity-rows"></tbody></table></div>
+        </article>
+      </section>
+      <section id="demand" aria-labelledby="demand-title">
+        <div class="section-heading"><div><p class="eyebrow">02 / Compare what can be learned</p><h2 id="demand-title">Five hypotheses. No pretend customers.</h2></div><span class="badge">Demand tests: plans only</span></div>
+        <p class="section-copy">The smallest falsifiable tests below use fictional artifacts and a future format choice—not landing pages, paid traffic or invented sales. They are low-scope proposals, not proven global cost minima. Later observation minutes <strong>exclude unknown recruitment</strong> and are <strong>not in this week's allocation</strong>. All external observation needs separate approval and consent.</p>
+        <div id="venture-briefs" class="brief-grid"></div>
+      </section>
+      <section id="offering" aria-labelledby="offering-title">
+        <div class="section-heading"><div><p class="eyebrow">03 / A real, small offering</p><h2 id="offering-title">Ledgerleaf CSV Preflight</h2></div><span class="badge built-badge">Built here · original code</span></div>
+        <p class="section-copy">Catch structural problems before a small import. This checker runs entirely in this page: no upload, accounts, storage or formula execution. It identifies records, not financial truth. Use fictional data for this demonstration; do not use real financial files.</p>
+        <div class="offering-layout">
+          <form id="checker-form" class="panel">
+            <div class="section-heading compact"><h3>1. Supply a CSV</h3><button type="button" id="load-fixture" class="quiet-button">Load synthetic fixture</button></div>
+            <label for="csv-file">Or select one local UTF-8 file <span class="muted">(1 MiB maximum)</span></label>
+            <input id="csv-file" type="file" accept=".csv,text/csv,text/plain">
+            <label for="csv-text">CSV text <span class="muted">(comma delimiter; quoted fields supported)</span></label>
+            <textarea id="csv-text" rows="10" spellcheck="false" wrap="off" aria-describedby="csv-limits"></textarea>
+            <div class="checker-settings">
+              <label for="key-column">Unique key column<input id="key-column" type="text" value="invoice-id" spellcheck="false"></label>
+              <label for="required-columns">Required columns, comma-separated<input id="required-columns" type="text" value="invoice-id,amount-usd" spellcheck="false"></label>
+            </div>
+            <p class="small muted" id="csv-limits">Blank key disables duplicate-key checks; blank required list disables required-value checks. Trimmed names/keys are case-sensitive. Headers containing commas cannot be configured in this small UI. Limit: 10,000 data records; first 200 findings shown. No repair or sanitization is performed.</p>
+            <button type="submit" class="primary">Run local preflight</button>
+          </form>
+          <article class="panel report-panel">
+            <div class="section-heading compact"><h3>2. Understand the findings</h3><button id="download-report" type="button" disabled>Download JSON</button></div>
+            <div id="csv-status" role="status"></div>
+            <div id="csv-findings"></div>
+            <details><summary>Value-free JSON report</summary><pre id="csv-json">Run a preflight to produce a report.</pre></details>
+            <p class="small muted">Header is record 1. Physical line is also reported, so quoted multiline fields remain locatable. The synthetic sample intentionally repeats its key at record 5. Formula-like checks are conservative and may flag ordinary negative numbers.</p>
+          </article>
+        </div>
+      </section>
+      <section id="reuse" aria-labelledby="reuse-title">
+        <div class="section-heading"><div><p class="eyebrow">04 / Keep the option value</p><h2 id="reuse-title">Build once. Reuse without pretending.</h2></div></div>
+        <div class="panel table-wrap"><table><caption class="sr-only">Reusable assets and venture-specific work still needed</caption><thead><tr><th scope="col">Venture</th><th scope="col">Reusable asset / proposed use</th><th scope="col">What reuse cannot prove</th></tr></thead><tbody id="reuse-rows"></tbody></table></div>
+      </section>
+      <section id="provenance" aria-labelledby="provenance-title">
+        <div class="section-heading"><div><p class="eyebrow">05 / Show the boundary</p><h2 id="provenance-title">A new timebox. An intact evidence trail.</h2></div></div>
+        <div class="provenance-grid">
+          <article class="panel"><h3>The seed is not a five-hour plan</h3>
+            <p>The original synthetic scenario is <strong>40 hours</strong>, including <strong>8 protected hours</strong>, and hypothetical <strong>$600</strong>, including a <strong>$100 reserve</strong>. It permits three active units.</p>
+            <p>This explicit user extension has <strong>300 minutes total</strong>, at most <strong>one</strong> active unit, a new <strong>30-minute reserve</strong> and <strong>30-minute review</strong>. It authorizes <strong>$0 of spending</strong>. The old 480-minute reserve is itself infeasible here.</p>
+            <p class="small muted">The narrower estimates do not assert that an eight-hour experiment takes 150 minutes. The deliverable changed. The full original candidate list remains frozen below.</p>
+            <details><summary>All ten original candidate estimates</summary><div class="table-wrap"><table><caption class="sr-only">Unchanged synthetic seed experiments</caption><thead><tr><th scope="col">ID</th><th scope="col">Hours</th><th scope="col">Hypothetical USD</th><th scope="col">Reference selected</th></tr></thead><tbody id="seed-rows"></tbody></table></div><p class="small">Seed reference: lf-schema + fn-outline + rp-sheet = 19 hours / $90. Against 32 discretionary hours / $500, that leaves 13 hours / $410. None of those dollar amounts is money earned or authorized.</p></details>
+          </article>
+          <article class="panel"><h3>What actually exists</h3>
+            <ul class="evidence-list"><li><strong>Synthetic seed facts</strong> · five venture identities, ten uncertainties, original estimates and one duplicated fixture.</li><li><strong>New assumptions</strong> · narrow scope, founder minutes, objective weights and transfer of ordinal scores.</li><li><strong>Local artifact evidence</strong> · a working checker and reproducible Node tests. See the persisted output, not a customer claim.</li><li><strong>Market evidence</strong> · none. No customers, revenue, outreach, sessions, adoption or measured learning gains.</li></ul>
+            <div class="artifact-links"><a href="./evidence/result.json">Actual computed outputs</a><a href="./scope.json">Task / extension scope</a><a href="./sources.json">Source hashes</a><a href="./data/inputs.json">Frozen model inputs</a><a href="./README.md">Reproduce &amp; limitations</a><a href="./data/LICENSE">MIT data attribution</a></div>
+            <p class="small muted">Only the seed's unclaimed, ready <code>portfolio-intake</code> maps directly to this local work. Related native tasks remain unclaimed and unreviewed. This is neither an activated company nor an approved public contribution.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer><span>FIVE-HOUR OFFICE / LOCAL HIVE 02</span><span>Original software. Attributed synthetic data. No external effects.</span></footer>
+  </main>
+</body>
+</html>

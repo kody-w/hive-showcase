@@ -1,0 +1,11 @@
+feature,nominal,lower,upper,unit,proposed_method,status
+tray_width,140,139.5,140.5,mm,Caliper at two locations,NOT PERFORMED
+tray_depth,90,89.5,90.5,mm,Caliper at two locations,NOT PERFORMED
+tray_height,28,27.5,28.5,mm,Caliper at four corners,NOT PERFORMED
+width_side_gap_centered,1.5,1,2,mm,(Measured inner width minus insert width) / 2; also check each actual side,NOT PERFORMED
+depth_side_gap_centered,1.5,1,2,mm,(Measured inner depth minus insert depth) / 2; also check each actual side,NOT PERFORMED
+wall_minimum,3,2.7,3.3,mm,Review instrument reach and locations before use,NOT PERFORMED
+floor,3,2.7,3.3,mm,Propose depth and height measurements; instrument review needed,NOT PERFORMED
+insert_height,18,17.5,18.5,mm,Caliper on both rails,NOT PERFORMED
+visible_edge_defects,0,0,0,observed_defects,Visual and handling review by approved reviewer; unresolved defects HOLD,NOT PERFORMED
+binding_or_rocking,0,0,0,observed_events,Separately approved insertion-removal and flat-desk trial; no forcing,NOT PERFORMED

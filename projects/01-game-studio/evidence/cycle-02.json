@@ -1,0 +1,31 @@
+{
+  "cycle": 2,
+  "kind": "actual-build-play-improve",
+  "observationType": "deterministic automated engine play; no human fun evidence",
+  "before": "projects/01-game-studio/evidence/runs/cycle-02-before.json",
+  "after": "projects/01-game-studio/evidence/runs/cycle-02-after.json",
+  "controlledInputs": {
+    "scenario": "switchback",
+    "seed": 42,
+    "policy": "solo",
+    "tickBudget": 150
+  },
+  "sequence": [
+    "Recorded the completed v2 build on the stone garden.",
+    "Observed 148 wall bumps, 148 deadlocked beats, and zero deliveries.",
+    "Implemented v3 after that run: deterministic breadth-first routing and path-length energy estimates.",
+    "Added a regression test and ran all eight engine tests.",
+    "Recorded v3 with identical lessons and seed, then replayed all four cycle recordings exactly.",
+    "Started a separate whole-class doorway probe; its failure is the third cycle's before-run."
+  ],
+  "measurement": {
+    "delivered": [0, 6],
+    "wallBumps": [148, 0],
+    "deadlockTicks": [148, 0],
+    "strandedEvents": [0, 0],
+    "status": ["lost", "lost"],
+    "ticks": [150, 150]
+  },
+  "interpretation": "Routing is measurably better, but this is NOT a winning run. One courier cannot meet this class mission's twelve-pod goal within the sunset budget.",
+  "remainingFailure": "Three v3 couriers can meet head-on and deadlock. The separate doorway run delivered zero pods with 428 blocked moves."
+}

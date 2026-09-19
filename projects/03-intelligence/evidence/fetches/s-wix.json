@@ -1,0 +1,74 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-wix",
+  "requestedUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+  "retrievedAt": "2026-09-19T01:21:22.760999+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "initial consideration",
+      "found": true,
+      "startCharacter": 5540,
+      "endCharacter": 5770,
+      "text": "ransaction Terms Under the terms of the agreement, Wix acquired Base44 for initial consideration of approximately $80 million plus additional earn-out payments paid through 2029 predicated upon certain performance metrics. We expe",
+      "sha256": "5ec9c3713ad82fb2adf8df054259dac0f67dae7b4ea20306fa6e016ab9a21496"
+    },
+    {
+      "id": "e2",
+      "anchor": "$25 million in retention",
+      "found": true,
+      "startCharacter": 5818,
+      "endCharacter": 6048,
+      "text": "ontribution to 2025 bookings and revenue. We expect to incur approximately $25 million in retention bonus payments paid to Base44 employees in 2025 as part of the above initial consideration paid on the transaction, which will be ",
+      "sha256": "092bb59254401b0eb338ed013276f38919d45c0e96df4ea7ff3c5b462bfa15b8"
+    },
+    {
+      "id": "e3",
+      "anchor": "2025",
+      "found": true,
+      "startCharacter": 2284,
+      "endCharacter": 2514,
+      "text": "t us Newsroom Investor Relations Wix Capital Careers Wix News Room Jun 18, 2025 6 min read Base44 delivers effortless, code-free digital creation through an intuitive, conversational AI experience, which is expected to expand Wix’",
+      "sha256": "ca5bfb32de724b634553f8ad2d98ff38d2a87392fe8d8b7b88fa77e3b0d5f585"
+    },
+    {
+      "id": "e4",
+      "anchor": "team at Base44",
+      "found": true,
+      "startCharacter": 4262,
+      "endCharacter": 4492,
+      "text": "n online,” said Avishai Abrahami, CEO and Co-founder of Wix. “Maor and his team at Base44 bring cutting-edge technology, strong market penetration, and visionary leadership that seamlessly align with Wix’s dedication to enabling u",
+      "sha256": "1088a7661feb6359b83c90c4e0e1b4e66ba9f85d5fbb1519104934ff2a7d8f8b"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+  "contentType": "text/html; charset=UTF-8",
+  "responseBytes": 1136024,
+  "responseSha256": "a0fcd4b0cb9fe9a90fba7a0ee40e543eb096742264714f6fcff860b065d2cec0",
+  "lastModified": null,
+  "etag": "W/\"a2b2810391877e24018a81b4c777aff3\"",
+  "pageTitle": "Wix Further Expands into Vibe Coding with Acquisition of Base44, a Hyper-Growth Startup that Simplifies Web and App Creation with AI",
+  "dateAndAuthorMetadata": {
+    "og:title": [
+      "Wix Further Expands into Vibe Coding with Acquisition of Base44, a Hyper-Growth Startup that Simplifies Web and App Creation with AI"
+    ],
+    "article:author": [
+      "Wix News Room"
+    ],
+    "article:published_time": [
+      "2025-06-18T12:47:13.686Z"
+    ],
+    "article:modified_time": [
+      "2025-06-18T12:47:13.686Z"
+    ],
+    "twitter:title": [
+      "Wix Further Expands into Vibe Coding with Acquisition of Base44, a Hyper-Growth Startup that Simplifies Web and App Creation with AI"
+    ]
+  },
+  "normalizedTextSha256": "89068c23e75ca6779a16b7fbeedae25867b0bf2913682eb3d1405170a2a45679",
+  "normalizedTextCharacters": 14160,
+  "outcome": "captured"
+}

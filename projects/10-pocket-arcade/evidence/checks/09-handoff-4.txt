@@ -1,0 +1,28 @@
+argv: ["node", "--test", "projects/09-handoff/tests/replay.test.cjs"]
+recordedAt: 2026-09-19T13:28:15.497977+00:00
+exitCode: 0
+--- stdout ---
+✔ bundle contains the exact observed frames, not a second reducer (2.051666ms)
+✔ initial view shows the actual 4-to-3 final defect outcome without autoplay (0.374333ms)
+✔ reset and stepping expose the repeated receipt without changing the records (0.374958ms)
+✔ replay pauses, resumes, and clears its timer at the final receipt (0.417209ms)
+✔ case switching stops playback and preserves the already-passing ordering case (0.345583ms)
+✔ unknown case values fall back to the recorded duplicate case (0.319125ms)
+✔ reduced-motion preference displays the final record without animation (0.307042ms)
+✔ missing local data disables controls and does not invent an execution (0.197583ms)
+✔ maintenance export is the real CLI shape bound to the tested input (0.702041ms)
+✔ presentation has semantic controls, labels, local resources and no network APIs (0.402041ms)
+✔ the page and replay distinguish historical hashes from withheld private identity (0.353083ms)
+✔ reset cancels active playback and both displayed summaries are machine-readable (0.341792ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44.609584
+
+--- stderr ---
+
+--- end of captured streams ---

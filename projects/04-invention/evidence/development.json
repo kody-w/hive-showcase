@@ -1,0 +1,24 @@
+{
+  "schema": "local-invention-development-disclosure/1",
+  "protocol_freeze_commit": "484b2b39b78f209de59951c836ffce0a4022571f",
+  "post_measurement_parameter_changes": [],
+  "candidate_comparison_runs_excluded": 0,
+  "source_formatting_note": "The exact 1079-byte upstream MIT license intentionally ends with a blank line. git diff --check flags that source-data EOF blank line; stripping it would break the pinned hash. Scoped code whitespace checking excluding only source/LICENSE passes.",
+  "input_check_failures": [
+    {
+      "phase": "Before any candidate execution",
+      "check": "Exact source/LICENSE byte count and SHA-256",
+      "observed_bytes": 1078,
+      "expected_bytes": 1079,
+      "cause": "The reviewed MIT license copy omitted its terminal blank line. The initial freeze shell did not chain the source check to its commit command, so it committed the protocol despite this data-copy check failing.",
+      "first_experiment_launch": "node projects/04-invention/scripts/experiment.mjs --write stopped at loadInputs with Source bytes changed: source/LICENSE; no scenario or candidate had executed.",
+      "resolution": "Restored the final blank line using apply_patch and verified 1079 bytes and SHA-256 3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f before rerunning.",
+      "changed_experimental_rules": false
+    }
+  ],
+  "implementation_notes": [
+    "Sorting/scoring use exact BigInt numerators for normalized comparisons; this was implemented before the first successful experiment to avoid floating-point tie ambiguity.",
+    "No seed executable or downloaded test was read or run. The independent exhaustive enumerator and DOM adapter are original test code.",
+    "Forty small generated fixtures and forced one-node/size-limit fixtures are software tests, not additions or exclusions to the frozen 80-case paired study."
+  ]
+}

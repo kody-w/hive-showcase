@@ -1,0 +1,50 @@
+{
+  "schema": "pocket-arcade-consumer-check/1",
+  "mode": "check",
+  "boundContributions": [
+    "01-game-studio",
+    "05-planner",
+    "07-manufacturing",
+    "09-handoff"
+  ],
+  "pendingContributions": [],
+  "integrationStatus": "ready-for-local-validation",
+  "integrationPassed": false,
+  "outputs": [
+    {
+      "path": "projects/10-pocket-arcade/artifacts/connected-data.json",
+      "sha256": "811dc603d1d276655e95f0385c2cfedfb970773e6edff723fcf3195f2f7e94de",
+      "bytes": 9395
+    },
+    {
+      "path": "projects/10-pocket-arcade/connected-data.js",
+      "sha256": "0f4b540b8279aabeef0ec62600baefe5824cb868f9c7dc2adcfce2598f9b365c",
+      "bytes": 9508
+    },
+    {
+      "path": "projects/10-pocket-arcade/evidence/acceptance/01-game-studio.json",
+      "sha256": "b45efcb0e42089ed721eaf103aadc07223f3dbcb578dbd15584a1d4f65e5dd6a",
+      "bytes": 2606
+    },
+    {
+      "path": "projects/10-pocket-arcade/evidence/acceptance/05-planner.json",
+      "sha256": "edae5ab9cae12736ffd9e3f3796da96f1aece7c16c3f419117d43acce9f1bee2",
+      "bytes": 3169
+    },
+    {
+      "path": "projects/10-pocket-arcade/evidence/acceptance/07-manufacturing.json",
+      "sha256": "1675fd62833fe7dd65536ac0999bbc61d8ad59e02071a88018abd7921298719d",
+      "bytes": 2781
+    },
+    {
+      "path": "projects/10-pocket-arcade/evidence/acceptance/09-handoff.json",
+      "sha256": "5daa646fdcb0524eb2f0a1fca240f15956551879f74f322ef1c724481c4e5d87",
+      "bytes": 3684
+    },
+    {
+      "path": "projects/10-pocket-arcade/contributions.json",
+      "sha256": "9fb0c439dce5b71b8941a0152883d0da80d83730effe43e725a6721ecec2b5da",
+      "bytes": 43548
+    }
+  ]
+}

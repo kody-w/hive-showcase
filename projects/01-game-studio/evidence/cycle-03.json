@@ -1,0 +1,32 @@
+{
+  "cycle": 3,
+  "kind": "actual-build-play-improve",
+  "observationType": "deterministic automated engine play; no human fun evidence",
+  "before": "projects/01-game-studio/evidence/runs/cycle-03-before.json",
+  "after": "projects/01-game-studio/evidence/runs/cycle-03-after.json",
+  "controlledInputs": {
+    "scenario": "narrows",
+    "seed": 42,
+    "policy": "class",
+    "tickBudget": 150
+  },
+  "sequence": [
+    "Recorded the v3 whole-class doorway mission and inspected its head-on congestion.",
+    "Observed zero deliveries, 428 blocked robot moves, and 141 globally deadlocked beats.",
+    "Implemented v4 after the failure: reserve different patches, rotate movement priority, resolve free moves, and atomically exchange mutually blocked neighbors.",
+    "Recorded v4 on the identical garden, seed, and six teaching actions.",
+    "Ran all nine engine tests, including trained-class success across three gardens and seven seeds.",
+    "Replayed all six historical cycle runs with exact frame and final-state comparisons."
+  ],
+  "measurement": {
+    "delivered": [0, 12],
+    "blockedMoves": [428, 10],
+    "deadlockTicks": [141, 0],
+    "strandedEvents": [0, 0],
+    "courtesyPasses": [0, 6],
+    "status": ["lost", "won"],
+    "ticks": [150, 96]
+  },
+  "interpretation": "This controlled automated run meets the goal 54 beats before sunset. Robot-move blockage fell by 418; ten ordinary traffic waits remain. No claim about human enjoyment follows.",
+  "remainingFailure": "Untrained robots still hold cargo rather than deliver it; a player can lose by omitting lessons, resting the class, or deliberately switching off battery care. No human/browser/device evaluation has been performed."
+}

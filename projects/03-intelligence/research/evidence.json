@@ -1,0 +1,497 @@
+{
+  "schema": "solo-business-evidence-map/1",
+  "id": "03-intelligence",
+  "title": "The one-person software business",
+  "question": "Can a solo founder operate a useful software business with AI doing most of the implementation?",
+  "asOf": "2026-09-19",
+  "classification": "new-public-research",
+  "scope": "A bounded public-source extension, not a rerun of the seed's fictional kiosk investigation, a company audit or a market experiment.",
+  "families": [
+    {"id": "f-copilot", "label": "Copilot research", "note": "Two different study populations, with overlapping authors and GitHub/Microsoft interests. Not two fully independent vendor validations."},
+    {"id": "f-metr", "label": "METR research program", "note": "The follow-up is from the same organization and includes returning participants. These are temporal updates, not independent replications."},
+    {"id": "f-swebench", "label": "SWE-bench authors", "note": "Academic benchmark construction and author-run evaluation, not a field trial or a business audit."},
+    {"id": "f-dora", "label": "Google / DORA", "note": "Primary industry research summary from a cloud/AI vendor; observational responses and interviews."},
+    {"id": "f-base44", "label": "Base44 transaction", "note": "Wix's disclosure and TechCrunch's reporting share founder/acquirer information. Independent newsroom does not make underlying financial claims independent."},
+    {"id": "f-levels", "label": "Levels self-report", "note": "News18 attributes implementation to the game description and revenue to founder posts. The underlying posts and records were not independently inspected."}
+  ],
+  "sources": [
+    {
+      "id": "s-peng",
+      "label": "S01",
+      "shortTitle": "A bounded task, much faster",
+      "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+      "authors": "Sida Peng, Eirini Kalliamvakou, Peter Cihon and Mert Demirer",
+      "publisher": "arXiv",
+      "publicationDate": "2023-02-13",
+      "dateNote": "First submission; inspected HTML v1. Experiment ran in May–June 2022.",
+      "url": "https://arxiv.org/html/2302.06590v1",
+      "capture": "evidence/fetches/s-peng.json",
+      "familyId": "f-copilot",
+      "kind": "experiment",
+      "directness": "implementation-proxy",
+      "inspection": "Primary paper: abstract, study design, timing/success definition and reported results; not a raw-data reanalysis.",
+      "method": "95 professional programmers recruited through Upwork, randomly assigned to one JavaScript HTTP-server task with or without Copilot. Completion time ends at the first commit passing 12 provided tests.",
+      "interest": "Author affiliations include GitHub and Microsoft. It is vendor-connected primary research, not an independent business audit.",
+      "limitations": [
+        "A single short task, early tool version and recruited freelancer population; no longitudinal maintenance, sales, retention or owner economics.",
+        "Passing the provided tests is narrower than real-world product usefulness or security.",
+        "The reported 55.8% faster task completion cannot be multiplied into company revenue or a universal productivity forecast."
+      ]
+    },
+    {
+      "id": "s-cui",
+      "label": "S02",
+      "shortTitle": "Three field experiments",
+      "title": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+      "authors": "Zheyuan Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng and Tobias Salz",
+      "publisher": "Microsoft Research",
+      "publicationDate": "2025-06-01",
+      "dateNote": "Publication metadata uses June 1; page labels the preprint June 2025. Page metadata last modified August 19, 2025.",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/",
+      "capture": "evidence/fetches/s-cui.json",
+      "familyId": "f-copilot",
+      "kind": "experiment",
+      "directness": "implementation-proxy",
+      "inspection": "Primary publication listing and abstract only; full-paper estimators, task definitions and replication data were not audited.",
+      "method": "Company-run randomized access experiments at Microsoft, Accenture and an anonymous Fortune 100 company. The abstract combines 4,867 developers and reports a 26.08% increase in completed tasks, standard error 10.3%.",
+      "interest": "Company experiments, Microsoft-hosted publication and overlap with the Copilot study authors. Larger field context is valuable, but not vendor-independent replication.",
+      "limitations": [
+        "The abstract says individual experiments are noisy. Its pooled estimate is not a guaranteed gain for every developer.",
+        "Enterprise developers have organizational infrastructure and colleagues that a solo founder may lack.",
+        "Completed tasks are not revenue, durable code quality, AI's share of accepted implementation, or all-role founder time."
+      ]
+    },
+    {
+      "id": "s-metr-2025",
+      "label": "S03",
+      "shortTitle": "The historical slowdown",
+      "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "authors": "METR",
+      "publisher": "METR",
+      "publicationDate": "2025-07-10",
+      "dateNote": "Historical February–June 2025 tool/task setting; the page now explicitly calls the result out of date.",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "capture": "evidence/fetches/s-metr-2025.json",
+      "familyId": "f-metr",
+      "kind": "experiment",
+      "directness": "implementation-proxy",
+      "inspection": "Primary methodological write-up, core result, generalization cautions, FAQ and current update notice; not a replication of the linked paper.",
+      "method": "16 experienced contributors supplied 246 real issues in familiar large repositories. Issues were randomized to allow/disallow AI, primarily Cursor with Claude 3.5/3.7 Sonnet; recorded work and self-reported time were compared.",
+      "interest": "Nonprofit AI-evaluation organization, not a coding-tool sales report. Its funding and raw data were not independently audited here.",
+      "limitations": [
+        "Small, selected, experienced contributor group and mature repositories; not representative of all software work.",
+        "Measures early-2025 tools, not the best available September-2026 workflow.",
+        "The authors explicitly reject the inference that AI cannot help other developers; their newer update must accompany this result."
+      ]
+    },
+    {
+      "id": "s-metr-2026",
+      "label": "S04",
+      "shortTitle": "The important update",
+      "title": "We are Changing our Developer Productivity Experiment Design",
+      "authors": "METR",
+      "publisher": "METR",
+      "publicationDate": "2026-02-24",
+      "dateNote": "Follow-up began August 2025; describes late-2025 tools and early-2026 interpretation.",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "capture": "evidence/fetches/s-metr-2026.json",
+      "familyId": "f-metr",
+      "kind": "experiment",
+      "directness": "implementation-proxy",
+      "inspection": "Full methodological update including raw effect estimates, recruitment/task selection, reduced pay, concurrency and sample description.",
+      "method": "57 developers, including 10 returning participants, across 143 repositories and over 800 tasks. Returning developers' time estimate is −18%, interval −38% to +9%; new participants' estimate also spans zero.",
+      "interest": "Same research organization and partly overlapping participants as S03. Not an independent corroborating vote.",
+      "limitations": [
+        "Developers unwilling to forgo AI and AI-favored tasks were selected out; compensation fell from USD 150/hour to USD 50/hour.",
+        "Parallel agents complicate time measurement. The authors say their data is very weak evidence for the size of improvement.",
+        "This weakens a present-day blanket slowdown claim without establishing a precise current speedup, much less business viability."
+      ]
+    },
+    {
+      "id": "s-swebench",
+      "label": "S05",
+      "shortTitle": "What a benchmark proves",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "authors": "Carlos E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press and Karthik Narasimhan",
+      "publisher": "arXiv / SWE-bench authors",
+      "publicationDate": "2024-11-11",
+      "dateNote": "Date of the inspected paper revision, arXiv:2310.06770v3. This is the original SWE-bench paper, not SWE-bench Verified or a current leaderboard.",
+      "url": "https://arxiv.org/html/2310.06770v3",
+      "capture": "evidence/fetches/s-swebench.json",
+      "familyId": "f-swebench",
+      "kind": "benchmark",
+      "directness": "methodological-context",
+      "inspection": "Primary paper task construction, reproducibility details and discussion of limitations. No benchmark code was downloaded or executed.",
+      "method": "Repository issue/patch tasks with execution-based tests; the paper releases 2,294 task instances. Its discussion notes the Python-only domain and limits of code testing alone.",
+      "interest": "Authors of the evaluation describe their own benchmark. A benchmark is not an independent audit of a deployed business.",
+      "limitations": [
+        "Test-passing patches do not measure willingness to pay, retention, maintenance labor, support or profitability.",
+        "The paper itself cautions that execution-based testing alone is insufficient to guarantee reliable generated code.",
+        "No contemporary agent success-rate claim is made in this review, and no seed benchmark is substituted for a real run."
+      ]
+    },
+    {
+      "id": "s-dora",
+      "label": "S06",
+      "shortTitle": "Delivery has a downstream cost",
+      "title": "Announcing the 2025 DORA Report",
+      "authors": "Google Cloud / DORA",
+      "publisher": "Google Cloud",
+      "publicationDate": "2025-09-23",
+      "dateNote": "Dated primary announcement of the 2025 State of AI-assisted Software Development report.",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report",
+      "capture": "evidence/fetches/s-dora.json",
+      "familyId": "f-dora",
+      "kind": "observational",
+      "directness": "organizational-proxy",
+      "inspection": "Official findings/method summary; full PDF, survey instruments and model estimates were not independently audited.",
+      "method": "Nearly 5,000 technology-professional survey responses and over 100 hours of qualitative material. The announcement reports positive relationships with throughput/product performance, but a negative relationship with delivery stability.",
+      "interest": "Primary industry research from Google, which sells cloud and AI products.",
+      "limitations": [
+        "Observational relationships are not randomized causal effects.",
+        "Organizational and self-reported outcomes are not measured solo-founder profit or individual implementation attribution.",
+        "Positive throughput and negative stability can coexist; neither should be omitted to create a one-sided story."
+      ]
+    },
+    {
+      "id": "s-wix",
+      "label": "S07",
+      "shortTitle": "A real commercial transaction",
+      "title": "Wix Further Expands into Vibe Coding with Acquisition of Base44, a Hyper-Growth Startup that Simplifies Web and App Creation with AI",
+      "authors": "Wix News Room",
+      "publisher": "Wix",
+      "publicationDate": "2025-06-18",
+      "dateNote": "Publisher's dated acquisition announcement.",
+      "url": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+      "capture": "evidence/fetches/s-wix.json",
+      "familyId": "f-base44",
+      "kind": "commercial",
+      "directness": "commercial-signal",
+      "inspection": "Primary transaction terms and product description; no independent valuation, payroll or financial audit.",
+      "method": "Acquirer disclosure of approximately USD 80 million initial consideration plus performance-based earn-outs through 2029, with approximately USD 25 million employee-retention payments included in the initial consideration.",
+      "interest": "Interested acquirer promoting its purchase; forward-looking product language is not demonstrated operating performance.",
+      "limitations": [
+        "Purchase consideration is not recurring customer revenue, profit or founder take-home.",
+        "A platform that generates users' software is not evidence that AI generated most of the platform's own accepted implementation.",
+        "Employee-retention terms contradict a zero-human-staff interpretation of the acquisition."
+      ]
+    },
+    {
+      "id": "s-techcrunch",
+      "label": "S08",
+      "shortTitle": "Solo-owned is not solo-operated",
+      "title": "6-month-old, solo-owned vibe coder Base44 sells to Wix for $80M cash",
+      "authors": "Julie Bort",
+      "publisher": "TechCrunch",
+      "publicationDate": "2025-06-18",
+      "dateNote": "Page metadata modified June 20, 2025; fetched version retained by response hash.",
+      "url": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "capture": "evidence/fetches/s-techcrunch.json",
+      "familyId": "f-base44",
+      "kind": "commercial",
+      "directness": "commercial-report",
+      "inspection": "Reported acquisition, attributed staffing confirmation and attributed founder profit statement. Linked founder posts were not inspected.",
+      "method": "Journalistic report: Wix confirmed eight employees. A May profit figure is explicitly attributed to the founder's X/LinkedIn posts.",
+      "interest": "Independent newsroom, but key staffing and financial inputs originate with Wix/the founder; same event family as S07.",
+      "limitations": [
+        "The article does not present payroll records or an independent audit of receipts, costs, retained customers or AI's work share.",
+        "A founder-attributed USD 189,000 May profit figure is not verified six-month owner economics.",
+        "The correction to the solo narrative does not prove solo operation was impossible at an earlier, narrower stage."
+      ]
+    },
+    {
+      "id": "s-levels-report",
+      "label": "S09",
+      "shortTitle": "A promising but unaudited anecdote",
+      "title": "Man Builds $1-Million Business Using AI In Just 17 Days",
+      "authors": null,
+      "publisher": "News18",
+      "publicationDate": "2025-03-19",
+      "dateNote": "Article shows first publication and update on March 19, 2025. Individual byline not preserved in the fetched extract.",
+      "url": "https://www.news18.com/business/man-uses-ai-builds-1-million-business-in-just-17-days-9266748.html",
+      "capture": "evidence/fetches/s-levels-report-web.json",
+      "familyId": "f-levels",
+      "kind": "commercial",
+      "directness": "attributed-anecdote",
+      "inspection": "Public article successfully fetched. Underlying game execution, X posts, payments and staffing were not inspected. Direct snapshot request was blocked; the tool-returned excerpts are retained honestly without a raw-response hash.",
+      "method": "The article repeats the game's AI-made description and attributes USD 87,000 monthly recurring revenue to Pieter Levels' X posts. It annualizes a short launch-period claim.",
+      "interest": "Reported founder claims, not independent verification. This is the most directly AI-attributed commercial lead in this bounded corpus, but lower-grade evidence than the experiments.",
+      "limitations": [
+        "No independently verified labor roster, weighted implementation ledger, complete costs, retention cohorts or six-month operating history.",
+        "Annualized run rate is not a year of realized revenue; the launch-period article does not establish persistence.",
+        "Neither the headline nor a reported AI-made label verifies the protocol's definition of useful solo operation."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c-lab",
+      "title": "AI can shorten a bounded implementation task",
+      "stance": "support",
+      "kind": "fact",
+      "text": "Peng et al. report 55.8% faster completion with Copilot in a controlled JavaScript HTTP-server task involving 95 recruited programmers.",
+      "implication": "A credible mechanism for implementation leverage exists; it is not merely a benchmark score.",
+      "limit": "One task with 12 provided tests does not measure running a business, maintaining a product or earning revenue.",
+      "citations": [{"sourceId": "s-peng", "excerptIds": ["e1", "e2", "e3"], "locator": "Abstract; Study Design, recruitment and task-completion definition"}]
+    },
+    {
+      "id": "c-field",
+      "title": "The supporting case extends into real workplaces",
+      "stance": "support",
+      "kind": "fact",
+      "text": "Cui et al.'s primary abstract combines three randomized company experiments and 4,867 developers, reporting 26.08% more completed tasks (standard error 10.3%).",
+      "implication": "The positive case is not limited to one toy assignment: there is field-experimental evidence of useful implementation assistance.",
+      "limit": "This review inspected the abstract, not the full analysis. Enterprise task throughput is not solo-founder margin, AI-majority attribution or sustained operations.",
+      "citations": [{"sourceId": "s-cui", "excerptIds": ["e1", "e2", "e3"], "locator": "Publication abstract: combined sample, estimate and heterogeneity"}]
+    },
+    {
+      "id": "c-slowdown",
+      "title": "Assistance has also increased implementation time",
+      "stance": "challenge",
+      "kind": "fact",
+      "text": "METR's early-2025 randomized issue study found experienced contributors took 19% longer with AI. Its 2025 page now explicitly marks that result as out of date.",
+      "implication": "Model output can add review and integration work. A universal or timeless productivity promise is unsupported.",
+      "limit": "The 16-developer mature-repository setting is narrow. Do not present it as the current effect of late-2025/2026 tools; read the update beside it.",
+      "citations": [
+        {"sourceId": "s-metr-2025", "excerptIds": ["e1", "e2", "e3", "e4"], "locator": "Methodology; Core Result; current update notice; generalization table"},
+        {"sourceId": "s-metr-2026", "excerptIds": ["e3"], "locator": "Opening methodological caution"}
+      ]
+    },
+    {
+      "id": "c-update",
+      "title": "Current speedup is uncertain—not a repeated slowdown",
+      "stance": "context",
+      "kind": "uncertainty",
+      "text": "METR's 2026 update reports a −18% time estimate for returning developers, with an interval from −38% to +9%. It warns that selection effects and parallel-agent timing make the size of improvement unreliable.",
+      "implication": "The strongest pessimistic result has aged. Improvements are plausible, but the new point estimate is not a precise present-day effect.",
+      "limit": "Same research program, partly overlapping participants, lower compensation, selected tasks and developers. Neither a clean independent replication nor proof of general speedup.",
+      "citations": [{"sourceId": "s-metr-2026", "excerptIds": ["e1", "e2", "e3", "e4"], "locator": "Raw results; selection discussion; Details of the productivity study"}]
+    },
+    {
+      "id": "c-benchmark",
+      "title": "Test-passing is not business viability",
+      "stance": "context",
+      "kind": "inference",
+      "text": "Original SWE-bench evaluates repository issue patches through code tests, and its authors caution that execution-based testing alone cannot guarantee reliable generated code. No paying-demand or operating-margin outcome is measured.",
+      "implication": "Benchmark progress can support a capability mechanism, but it cannot directly establish this business claim.",
+      "limit": "This is a methodological boundary from the inspected original paper, not a claim about today's SWE-bench Verified scores or model rankings.",
+      "citations": [{"sourceId": "s-swebench", "excerptIds": ["e1", "e2", "e3", "e4"], "locator": "Benchmark construction; §7 Discussion; §9 Reproducibility Statement"}]
+    },
+    {
+      "id": "c-stability",
+      "title": "More delivery can coexist with less stability",
+      "stance": "challenge",
+      "kind": "fact",
+      "text": "DORA's official 2025 summary reports positive relationships between AI adoption and throughput/product performance, alongside a negative relationship with delivery stability.",
+      "implication": "Faster production can leave the sole operator with a downstream quality and operations burden.",
+      "limit": "The burden interpretation is an inference. DORA uses survey/interview evidence, not a randomized causal estimate or a solo-founder profit study.",
+      "citations": [{"sourceId": "s-dora", "excerptIds": ["e1", "e2", "e3"], "locator": "Opening methods summary; AI, the great amplifier"}]
+    },
+    {
+      "id": "c-market",
+      "title": "An AI app builder attracted a real buyer",
+      "stance": "support",
+      "kind": "attribution",
+      "text": "Wix disclosed approximately USD 80 million initial consideration for Base44, plus conditional earn-outs. Approximately USD 25 million of that initial consideration was allocated to employee-retention payments.",
+      "implication": "There is a concrete commercial signal for an AI software-creation product, stronger than an unverifiable demo alone.",
+      "limit": "An acquisition price is not recurring revenue or solo operation. The disclosure does not attribute most of Base44's own implementation to AI.",
+      "citations": [{"sourceId": "s-wix", "excerptIds": ["e1", "e2", "e4"], "locator": "Acquisition announcement, transaction terms and team description"}]
+    },
+    {
+      "id": "c-staff",
+      "title": "Solo ownership is not solo operation",
+      "stance": "challenge",
+      "kind": "attribution",
+      "text": "TechCrunch reports that Wix confirmed Base44 had eight employees at acquisition; Wix's own release describes employee-retention payments.",
+      "implication": "This high-profile commercial example fails the protocol's one-operator gate at the reported acquisition stage.",
+      "limit": "The newsroom and release share acquirer information; they are not independent payroll audits. This does not rule out an earlier genuinely solo phase.",
+      "citations": [
+        {"sourceId": "s-techcrunch", "excerptIds": ["e1"], "locator": "Paragraph beginning with the qualification that Shlomo was not truly solo"},
+        {"sourceId": "s-wix", "excerptIds": ["e2"], "locator": "Transaction terms, Base44 employees"}
+      ]
+    },
+    {
+      "id": "c-profit",
+      "title": "Reported profit is not an audited operating record",
+      "stance": "context",
+      "kind": "attribution",
+      "text": "TechCrunch attributes a USD 189,000 May profit figure to Base44's founder posts. The article does not supply an independent six-month reconciliation of profit, labor, retention and AI-work share.",
+      "implication": "The story may point toward viable economics, but this review cannot upgrade an attributed monthly figure into verified sustainable owner income.",
+      "limit": "Underlying founder posts and accounting records were not inspected. The source's attribution is preserved, not treated as a false statement or independent proof.",
+      "citations": [{"sourceId": "s-techcrunch", "excerptIds": ["e2", "e3"], "locator": "Paragraph attributing profitability to Shlomo's X/LinkedIn posts"}]
+    },
+    {
+      "id": "c-game",
+      "title": "A reported AI-made game reached reported revenue",
+      "stance": "support",
+      "kind": "attribution",
+      "text": "News18 repeats fly.pieter.com's AI-made description and attributes USD 87,000 monthly recurring revenue to Pieter Levels' posts. This is a suggestive implementation-to-commerce anecdote, not an audited result.",
+      "implication": "The positive case includes a reported product with commercial activity, not coding studies alone.",
+      "limit": "The article does not verify staffing, accepted AI-work share, costs, retained paying use or six months of operation. Multiplying monthly run rate by twelve does not create a year of receipts.",
+      "citations": [{"sourceId": "s-levels-report", "excerptIds": ["e1", "e2", "e3"], "locator": "What Is The Game?; AI-Made Flight Simulator: A $1 Million Business; date line"}]
+    },
+    {
+      "id": "c-bridge",
+      "title": "Implementation leverage is only one part of the business",
+      "stance": "context",
+      "kind": "inference",
+      "text": "Positive task-time and throughput findings support a possible mechanism. The contradictory time result, uncertain update and stability relationship show why total founder labor and operations must be measured separately.",
+      "implication": "A narrow, low-stakes product with a technically capable human operator is a reasonable hypothesis to test—not a demonstrated general business model.",
+      "limit": "This is an analyst inference under the locked definitions. Different tasks, populations, dates and outcome units must not be pooled into one effect size.",
+      "citations": [
+        {"sourceId": "s-peng", "excerptIds": ["e2"], "locator": "Abstract, reported task-completion effect"},
+        {"sourceId": "s-cui", "excerptIds": ["e1"], "locator": "Publication abstract"},
+        {"sourceId": "s-metr-2025", "excerptIds": ["e2", "e4"], "locator": "Core result and generalization limits"},
+        {"sourceId": "s-metr-2026", "excerptIds": ["e3"], "locator": "Selection-effects caution"},
+        {"sourceId": "s-dora", "excerptIds": ["e2", "e3"], "locator": "AI, the great amplifier"}
+      ],
+      "protocolRefs": ["solo", "majority", "business", "operations"]
+    },
+    {
+      "id": "c-missing",
+      "title": "The end-to-end record bundle is still missing",
+      "stance": "challenge",
+      "kind": "missing-evidence",
+      "text": "No source in this inspected corpus establishes all seven operating gates for one founder and product over the same six-month period.",
+      "implication": "The broad business claim is not established by this review. Absence in a bounded corpus does not prove impossibility or that no qualifying business exists.",
+      "limit": "This is a coverage judgment about nine inspected documents, not an exhaustive census of founders. Paying retention, complete costs, total time and accepted AI-work attribution remain unverified jointly.",
+      "citations": [
+        {"sourceId": "s-peng", "excerptIds": ["e1", "e3"], "locator": "Study Design and outcome definition"},
+        {"sourceId": "s-cui", "excerptIds": ["e1"], "locator": "Publication abstract and measured outcome"},
+        {"sourceId": "s-metr-2025", "excerptIds": ["e1", "e4"], "locator": "Methodology and scope cautions"},
+        {"sourceId": "s-metr-2026", "excerptIds": ["e2", "e3"], "locator": "Sample and methodological cautions"},
+        {"sourceId": "s-swebench", "excerptIds": ["e3", "e4"], "locator": "Discussion, benchmark outcome boundary"},
+        {"sourceId": "s-dora", "excerptIds": ["e1", "e2", "e3"], "locator": "Survey/interview and organizational outcomes"},
+        {"sourceId": "s-wix", "excerptIds": ["e1", "e2"], "locator": "Transaction terms, not a solo operating ledger"},
+        {"sourceId": "s-techcrunch", "excerptIds": ["e1", "e2", "e3"], "locator": "Staffing and attributed single-month profit"},
+        {"sourceId": "s-levels-report", "excerptIds": ["e1", "e2", "e3"], "locator": "Attributed launch-period implementation and revenue claims"}
+      ],
+      "protocolRefs": ["g-solo", "g-useful", "g-majority", "g-economic", "g-duration", "g-operations", "g-inspection"]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "k-productivity",
+      "title": "Faster here; slower there",
+      "kind": "different-settings",
+      "claimIds": ["c-lab", "c-field", "c-slowdown"],
+      "analysis": "A standard short assignment, enterprise task counts and familiar mature-repository issues have different requirements and denominators. The apparent tension is real; it is not a direct same-population numerical contradiction.",
+      "resolutionObservation": "Current-tool matched tasks with prespecified quality criteria and all human review/rework time would show where the gain actually transfers."
+    },
+    {
+      "id": "k-time",
+      "title": "A historical result is not a current constant",
+      "kind": "temporal-update",
+      "claimIds": ["c-slowdown", "c-update"],
+      "analysis": "METR explicitly warns that its earlier result is out of date. Its later point estimates suggest improvement, but selection and measurement problems prevent a clean effect-size update.",
+      "resolutionObservation": "A current prespecified experiment with credible recruitment, task-selection and concurrent-time accounting would materially change confidence in today's mechanism."
+    },
+    {
+      "id": "k-quality",
+      "title": "Throughput and stability can move in opposite directions",
+      "kind": "outcome-tradeoff",
+      "claimIds": ["c-field", "c-stability"],
+      "analysis": "More completed work does not itself imply less maintenance or incident work. DORA's relationship is observational and does not negate the randomized throughput result.",
+      "resolutionObservation": "Measure accepted work, escaped defects, restoration time, support and all-role founder labor in the same longitudinal product."
+    },
+    {
+      "id": "k-solo",
+      "title": "A solo-owner headline hides a team",
+      "kind": "definition-conflict",
+      "claimIds": ["c-market", "c-staff"],
+      "analysis": "The acquisition can be commercially significant while failing the one-operator definition. Wix's employee-retention terms and attributed eight-person count are from the same transaction family.",
+      "resolutionObservation": "A dated, independently corroborated labor roster for a genuinely solo operating interval, not ownership alone, would resolve the gate."
+    },
+    {
+      "id": "k-revenue",
+      "title": "Run rate, profit and durable operation are different",
+      "kind": "measurement-gap",
+      "claimIds": ["c-game", "c-profit", "c-missing"],
+      "analysis": "A launch-period annualized revenue claim and a founder-attributed profitable month can be true without proving six-month retained demand, full-cost owner income or sustainable workload.",
+      "resolutionObservation": "A same-period six-month reconciliation of receipts, refunds, costs, cohorts, all labor and accepted AI-work attribution would close the gap."
+    }
+  ],
+  "hypothesisAssessments": [
+    {
+      "hypothesisId": "h-leverage",
+      "assessment": "Implementation mechanism supported in bounded settings; end-to-end feasibility remains unverified.",
+      "supportClaimIds": ["c-lab", "c-field", "c-update", "c-game"],
+      "challengeClaimIds": ["c-slowdown", "c-stability", "c-missing"],
+      "nonDiscriminatingClaimIds": ["c-benchmark"],
+      "limit": "The same hypothesis can fit task gains without a viable solo business. No complete operating case was inspected."
+    },
+    {
+      "hypothesisId": "h-bottleneck",
+      "assessment": "Consistent with the measured outcome gaps and stability concern, but not directly tested with all-role founder time.",
+      "supportClaimIds": ["c-stability", "c-staff", "c-missing"],
+      "challengeClaimIds": ["c-field", "c-game"],
+      "nonDiscriminatingClaimIds": ["c-update"],
+      "limit": "Positive implementation and commercial signals prevent claiming bottlenecks always erase gains. Missing joint records do not themselves measure a bottleneck."
+    },
+    {
+      "hypothesisId": "h-selection",
+      "assessment": "One prominent solo narrative has a definition problem; selection across all businesses and hidden labor in other stories are not measured.",
+      "supportClaimIds": ["c-staff", "c-profit", "c-game"],
+      "challengeClaimIds": ["c-lab", "c-field"],
+      "nonDiscriminatingClaimIds": ["c-benchmark"],
+      "limit": "Randomized implementation gains challenge an all-hype account, not the specific business-selection mechanism. Attributed or unaudited claims are not evidence of dishonesty."
+    }
+  ],
+  "businessCases": [
+    {
+      "id": "b-base44",
+      "label": "Base44 at its reported acquisition stage",
+      "classification": "public-commercial-report",
+      "sourceIds": ["s-wix", "s-techcrunch"],
+      "gates": {"g-solo": "contradicted", "g-useful": "missing", "g-majority": "missing", "g-economic": "partial", "g-duration": "missing", "g-operations": "missing", "g-inspection": "missing"},
+      "note": "Eight employees are reported; acquisition value and a founder-attributed profitable month do not supply the remaining joint operating records."
+    },
+    {
+      "id": "b-flight",
+      "label": "fly.pieter.com as reported in March 2025",
+      "classification": "public-attributed-anecdote",
+      "sourceIds": ["s-levels-report"],
+      "gates": {"g-solo": "missing", "g-useful": "missing", "g-majority": "partial", "g-economic": "partial", "g-duration": "missing", "g-operations": "missing", "g-inspection": "missing"},
+      "note": "The article supplies an AI-made attribution and a launch-period revenue claim, not an independent staffing, retained-use, work-attribution, cost or six-month audit."
+    }
+  ],
+  "gateAssessments": [
+    {"gateId": "g-solo", "status": "not-established", "claimIds": ["c-staff", "c-game"], "note": "Base44 had reported employees. The flight-game report does not independently establish a complete labor roster."},
+    {"gateId": "g-useful", "status": "not-established", "claimIds": ["c-game", "c-missing"], "note": "No inspected evidence verifies the prespecified paying-customer floor and 90-day retention cohort."},
+    {"gateId": "g-majority", "status": "not-established", "claimIds": ["c-game", "c-benchmark"], "note": "An AI-made label or coding-tool access is not a prespecified weighted ledger of accepted work and rewrites."},
+    {"gateId": "g-economic", "status": "not-established", "claimIds": ["c-profit", "c-game", "c-stability"], "note": "Receipts, full costs and all-role labor are not jointly reconciled against the declared income/time floor."},
+    {"gateId": "g-duration", "status": "not-established", "claimIds": ["c-profit", "c-game", "c-missing"], "note": "Company age, a profitable month and annualized launch revenue do not establish six months satisfying all gates."},
+    {"gateId": "g-operations", "status": "not-established", "claimIds": ["c-stability", "c-benchmark"], "note": "No business case supplies restoration, incidents and support records with sole human accountability."},
+    {"gateId": "g-inspection", "status": "not-established", "claimIds": ["c-staff", "c-profit", "c-game"], "note": "No independent corroborator is shown inspecting a complete same-period record bundle."}
+  ],
+  "verdict": {
+    "id": "v-plausible",
+    "headline": "Conditionally plausible. Not established.",
+    "short": "AI can help implement software. The leap to a useful, sustainable one-person business remains unverified here.",
+    "rationale": "Positive experiments and attributed commercial activity support a mechanism; context-dependent productivity, operational tradeoffs and missing joint business records block a demonstrated existence verdict under the locked definitions.",
+    "claimIds": ["c-lab", "c-field", "c-update", "c-stability", "c-staff", "c-game", "c-bridge", "c-missing"],
+    "qualifiedBusinessCases": 0,
+    "recommendation": "For a technically capable founder, investigate a narrow, low-stakes product with known customer needs and human ownership of acceptance, security and operations. Treat AI-majority implementation as a measured hypothesis. Do not infer demand from generated code or give unreviewed agents production authority.",
+    "recommendationKind": "analyst-inference",
+    "mechanismSupported": true,
+    "matchedTrials": [],
+    "transferCohort": {"denominatorDisclosed": false, "failuresIncluded": false, "nonAIComparison": false},
+    "reversalStatus": {"r-up": "not-observed", "r-down": "not-observed", "r-transfer": "not-observed"},
+    "probability": null
+  },
+  "strongestCases": [
+    {"id": "supporting-case", "label": "The strongest supporting case", "claimIds": ["c-lab", "c-field", "c-update", "c-game", "c-market"], "text": "Randomized studies show implementation gains in specific settings, larger workplace experiments make pure toy-task dismissal inadequate, the newer METR update warns against a timeless slowdown claim, and reported AI-built products show a possible path to commerce. If a capable founder chooses a bounded product and keeps the saved time after review, the mechanism is credible. The crucial 'if' remains unmeasured end to end."},
+    {"id": "opposing-case", "label": "The strongest opposing case", "claimIds": ["c-slowdown", "c-stability", "c-staff", "c-profit", "c-benchmark", "c-missing"], "text": "Implementation acceleration need not lower total owner effort or create demand. Expert maintenance work has shown slowdowns; organizational evidence flags stability costs; a famous solo-owner example had employees; and reported revenue lacks the labor, cost and retention denominators needed for sustainable operation. These observations defeat a general proof claim, not every possible narrow success."}
+  ],
+  "limitations": [
+    "Bounded purposive review, not a systematic review or a census of viable businesses; absence of qualifying evidence is not proof of absence.",
+    "Research-date cutoff is September 19, 2026 UTC. Included studies cover older tools and specific populations; no claim of exhaustive coverage of the newest models.",
+    "Six provenance families are not six statistically independent replications. Several sources have vendor interests or shared underlying informants.",
+    "Cui's source is an abstract and DORA's source is an official summary, not an independently reproduced full-paper analysis.",
+    "Commercial figures are carefully attributed. No customer interviews, private accounts, payment records, source-code attribution audit, deployment or market trial occurred.",
+    "The customer, income, time and duration floors were chosen before collection to make this question falsifiable; other founders may rationally choose different floors.",
+    "Eight raw HTTP response hashes and nine local capture-file hashes are available; News18's successful fetch tool did not expose raw response bytes. Dynamic pages may change and full copyrighted pages are not archived.",
+    "Automated data/UI logic checks are not human review or a real-browser visual/a11y certification; the parent owns any browser review.",
+    "The 18 synthetic seed observations remain in a separate, MIT-attributed provenance baseline and never count as public evidence."
+  ]
+}

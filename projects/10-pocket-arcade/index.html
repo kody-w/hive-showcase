@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A local Pocket Arcade: one game night, four bounded artifact contributions, and an honest integration record.">
+  <title>Pocket Arcade · a small game night, made of real parts</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="connected-data.js" defer></script>
+  <script src="model.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#journey">Skip to the arcade</a>
+  <div class="arcade-shell">
+    <header class="topbar">
+      <a class="wordmark" href="../../index.html"><span class="brand-mark" aria-hidden="true">H</span> LOCAL HIVE <span class="wordmark-divider">/</span> 10</a>
+      <nav aria-label="Pocket Arcade">
+        <a href="#journey">The experience</a>
+        <a href="#contribution-record">The parts</a>
+        <a href="#verification">The proof</a>
+      </nav>
+      <span class="local-label"><span aria-hidden="true">●</span> Local-only edition</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A FEDERATION OF FILES. NOT OF AUTHORITY.</p>
+          <h1 id="page-title">A little arcade.<br>A complete <em>game night.</em></h1>
+          <p class="hero-description">Play a robot game. Make a finite tournament plan. Inspect a tabletop kit. Leave the next host a reproducible handoff.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#journey">Step inside <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="artifacts/operator-kit.html">Open the printable kit</a>
+          </div>
+          <p class="hero-footnote">Four separate projects. Public-safe interfaces. Reviewed showcase publication is authorized; no accounts, native activation or purchases are implied.</p>
+        </div>
+        <div class="arcade-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <span class="art-sticker">SMALL<br>IS PLAYABLE</span>
+          <div class="cabinet">
+            <div class="cabinet-marquee">POCKET <span>ARCADE</span></div>
+            <div class="cabinet-screen">
+              <span class="screen-label">LOCAL PLAYER</span>
+              <div class="robot"><i class="antenna"></i><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i><i class="robot-leg left"></i><i class="robot-leg right"></i></div>
+              <div class="screen-platform"></div>
+              <span class="screen-caption">PLAY · PLAN · MAKE · MAINTAIN</span>
+            </div>
+            <div class="cabinet-controls"><span class="joystick"></span><span class="game-button one"></span><span class="game-button two"></span></div>
+            <div class="cabinet-base"><span>NO COIN<br>REQUIRED</span><i></i></div>
+          </div>
+          <span class="art-caption">An original local integration<br>from four bounded contributions.</span>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="Integration status">
+        <div class="status-icon" aria-hidden="true">↳</div>
+        <div>
+          <p class="eyebrow">EVIDENCE, NOT CONFETTI</p>
+          <h2 id="integration-title" aria-live="polite">Four contributions bound · verify local checks</h2>
+          <p id="integration-detail">Recorded local technical checks are not current-byte verification, owner approval or native federation.</p>
+        </div>
+        <a href="#verification">Inspect the record <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section id="journey" class="journey-section" aria-labelledby="journey-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 — YOUR LOCAL GAME NIGHT</p><h2 id="journey-title">Four stops. One small experience.</h2></div>
+          <p>Open each original project in its own tab. The hub coordinates files, not identities or private workspaces.</p>
+        </div>
+        <div class="station-grid">
+          <article class="station selected" data-station="01-game-studio">
+            <div class="station-top"><span class="step">01</span><span class="station-glyph" aria-hidden="true">▣</span></div>
+            <p class="eyebrow">GAME STUDIO</p><h3>Press play.</h3>
+            <p>An original robot game with deterministic engine and replay evidence.</p>
+            <span class="availability" id="availability-01-game-studio">Availability not checked</span>
+            <button class="station-selector" data-select="01-game-studio" aria-pressed="true">Choose this stop <span aria-hidden="true">↗</span></button>
+          </article>
+          <article class="station" data-station="05-planner">
+            <div class="station-top"><span class="step">02</span><span class="station-glyph" aria-hidden="true">▤</span></div>
+            <p class="eyebrow">PRODUCT LAUNCH</p><h3>Make time.</h3>
+            <p>A finite tournament plan that says no when the required work will not fit.</p>
+            <span class="availability" id="availability-05-planner">Availability not checked</span>
+            <button class="station-selector" data-select="05-planner" aria-pressed="false">Choose this stop <span aria-hidden="true">↗</span></button>
+          </article>
+          <article class="station" data-station="07-manufacturing">
+            <div class="station-top"><span class="step">03</span><span class="station-glyph" aria-hidden="true">▱</span></div>
+            <p class="eyebrow">MICRO-MANUFACTURING</p><h3>Set the table.</h3>
+            <p>Tray design files and a fabrication review. Digital artifacts, not a shipped product.</p>
+            <span class="availability" id="availability-07-manufacturing">Availability not checked</span>
+            <button class="station-selector" data-select="07-manufacturing" aria-pressed="false">Choose this stop <span aria-hidden="true">↗</span></button>
+          </article>
+          <article class="station" data-station="09-handoff">
+            <div class="station-top"><span class="step">04</span><span class="station-glyph" aria-hidden="true">⌘</span></div>
+            <p class="eyebrow">INFRASTRUCTURE FOUNDATION</p><h3>Pass it on.</h3>
+            <p>An artifact-only continuation and an original reproducible maintenance utility.</p>
+            <span class="availability" id="availability-09-handoff">Availability not checked</span>
+            <button class="station-selector" data-select="09-handoff" aria-pressed="false">Choose this stop <span aria-hidden="true">↗</span></button>
+          </article>
+        </div>
+        <div class="station-detail" aria-live="polite">
+          <span class="detail-label">AT THIS STOP</span>
+          <div><h3 id="station-title">Play the robot game</h3><p id="station-detail">Learn the game's actual controls, play a run, then inspect its saved replay. Use its own scoring rules; this hub does not invent a game API.</p></div>
+          <a class="button primary" id="station-link" href="../01-game-studio/index.html" target="_blank" rel="noopener">Open the game ↗</a>
+        </div>
+        <p class="small-note">Opening a link or choosing a stop never marks a contribution accepted. Missing pages may not yet be in your snapshot.</p>
+      </section>
+
+      <section class="connected-section" aria-labelledby="connected-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">ACTUAL INPUTS — NOT PLACEHOLDER DELIVERIES</p><h2 id="connected-title">Four real parts.<br>One inspectable experience.</h2></div>
+          <p id="connected-source">Reading a recorded output is not fresh acceptance. All real-world approvals remain pending.</p>
+        </div>
+        <div class="connected-grid">
+          <article class="connected-card"><p class="eyebrow">ACTUAL AUTOMATED GAME RECORDING</p>
+            <h3 id="recorded-game-value">Not loaded</h3><p id="recorded-game-detail">No score is invented while the artifact data is unavailable.</p>
+            <a href="../01-game-studio/evidence/runs/release-trained.json">Inspect the winning replay ↗</a>
+            <a href="../01-game-studio/evidence/runs/release-untaught.json">Keep the losing control ↗</a>
+          </article>
+          <article class="connected-card waiting"><p class="eyebrow">ACTUAL PLANNER · REFUSAL RETAINED</p>
+            <h3 id="recorded-planner-value">Not loaded</h3><p id="recorded-planner-detail">No feasible schedule is invented while the actual model data is unavailable.</p>
+            <a href="../05-planner/fixtures/pocket-arcade.json">Inspect the original input ↗</a>
+            <a href="artifacts/tournament-proposal.json" download>Download the unapproved model proposal ↓</a>
+            <a href="artifacts/tournament-analysis.json">Read the refusal &amp; witness ↗</a>
+          </article>
+          <article class="connected-card"><p class="eyebrow">ACTUAL DIGITAL TRAY PACKAGE</p>
+            <h3 id="recorded-tray-value">Not loaded</h3><p id="recorded-tray-detail">Geometry and fabrication review are not physical manufacture.</p>
+            <a href="../07-manufacturing/generated/pocket-arcade/review-bundle.zip" download>Download the review ZIP ↓</a>
+            <a href="../07-manufacturing/generated/pocket-arcade/drawing.svg">Inspect the mm drawing ↗</a>
+          </article>
+          <article class="connected-card"><p class="eyebrow">ACTUAL OUTPUT · SYNTHETIC RECEIPTS</p>
+            <h3 id="recorded-maintenance-value">Not loaded</h3><p id="recorded-maintenance-detail">No real telemetry or release permission is implied.</p>
+            <a href="../09-handoff/artifacts/pocket-arcade-maintenance.json">Inspect the corrected queue ↗</a>
+            <a href="../09-handoff/artifacts/maintenance-contract.json">Read its consumer contract ↗</a>
+            <a href="../09-handoff/evidence/historical-continuation.json">Inspect the labeled public history ↗</a>
+          </article>
+        </div>
+        <p class="small-note">These bounded values come from public artifact files, not private stores. <a href="artifacts/connected-data.json">Inspect exact source hashes.</a> The planner rechecks imported input rather than trusting a feasibility claim; listed repair ties are not claimed exhaustive. Showcase publication is authorized. Real availability, a player bracket, printed-card fit, human fun, market demand and operational/native approval remain unverified or pending. Maintenance history is a labeled derivative, not public reverification of a private invocation.</p>
+      </section>
+
+      <section class="kit-section" aria-labelledby="kit-title">
+        <div class="kit-copy"><p class="eyebrow">02 — SOMETHING TO PUT ON THE TABLE</p><h2 id="kit-title">Paper, aliases,<br>and a plan that fits.</h2>
+          <p>The prime's printable operator kit is a real, original artifact: four host instructions, eight blank alias cards, and a session sheet. No match results or schedule feasibility are invented.</p>
+          <a class="text-link" href="artifacts/operator-kit.html">View &amp; print the operator kit <span aria-hidden="true">↗</span></a>
+          <p class="small-note">Paper cards are not measured against the partner tray yet. Confirm dimensions and suitability before any physical use.</p>
+        </div>
+        <form class="session-sheet" id="session-sheet">
+          <div class="sheet-heading"><span class="eyebrow">YOUR OPTIONAL SESSION NOTES</span><span class="paperclip" aria-hidden="true">⌁</span></div>
+          <p>Use aliases only. Eight note slots do not prove an eight-player bracket fits the synthetic plan. Notes stay in memory unless you download them; they never become integration evidence.</p>
+          <div class="alias-grid">
+            <label>Slot 1 <input name="alias1" maxlength="24" placeholder="e.g. Mica" autocomplete="off"></label>
+            <label>Slot 2 <input name="alias2" maxlength="24" placeholder="e.g. Copper" autocomplete="off"></label>
+            <label>Slot 3 <input name="alias3" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+            <label>Slot 4 <input name="alias4" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+            <label>Slot 5 <input name="alias5" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+            <label>Slot 6 <input name="alias6" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+            <label>Slot 7 <input name="alias7" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+            <label>Slot 8 <input name="alias8" maxlength="24" placeholder="Alias" autocomplete="off"></label>
+          </div>
+          <label class="notes-label" for="session-notes">Observed results, planner decision &amp; next-host notes</label>
+          <textarea id="session-notes" name="notes" rows="3" maxlength="480" placeholder="Write only what you actually observed. No names or contact details."></textarea>
+          <button class="button dark" type="submit">Download my notes <span aria-hidden="true">↓</span></button>
+          <span id="notes-status" class="small-note" role="status"></span>
+        </form>
+      </section>
+
+      <section id="contribution-record" class="record-section" aria-labelledby="record-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 — THE ACTUAL CONTRIBUTION RECORD</p><h2 id="record-title">Separate worlds. Explicit seams.</h2></div>
+          <p>Each contribution keeps its own files, owner scope and limitations. Hashes bind bytes; they do not grant authority.</p>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <caption class="visually-hidden">Four bounded contribution interfaces and their recorded acceptance</caption>
+            <thead><tr><th scope="col">Contribution</th><th scope="col">Interface &amp; boundary</th><th scope="col">Recorded acceptance</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Game Studio<span>01-game-studio</span></th><td><code>browser-game/1</code><span>Game, engine, replay. No invented playtests.</span></td><td id="acceptance-01-game-studio">Recorded checks not loaded</td><td><a href="../01-game-studio/manifest.json">Manifest ↗</a></td></tr>
+              <tr><th scope="row">Product Launch<span>05-planner</span></th><td><code>tournament-plan/1</code><span>Finite model, refusal retained. No public launch.</span></td><td id="acceptance-05-planner">Recorded checks not loaded</td><td><a href="../05-planner/manifest.json">Manifest ↗</a></td></tr>
+              <tr><th scope="row">Micro-Manufacturing<span>07-manufacturing</span></th><td><code>tabletop-accessory/1</code><span>Digital design/review. No fabrication claim.</span></td><td id="acceptance-07-manufacturing">Recorded checks not loaded</td><td><a href="../07-manufacturing/manifest.json">Manifest ↗</a></td></tr>
+              <tr><th scope="row">Infrastructure Foundation<span>09-handoff</span></th><td><code>maintenance-handoff/1</code><span>Artifact-only continuation. No store transfer.</span></td><td id="acceptance-09-handoff">Recorded checks not loaded</td><td><a href="../09-handoff/manifest.json">Manifest ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="record-downloads"><a href="contract.json">Integration contract ↓</a><a href="contributions.json">Contribution bindings ↓</a><a href="seed-map.json">Seed-to-extension mapping ↓</a><a href="evidence/result.json">Local technical evidence ↓</a></div>
+      </section>
+
+      <section id="verification" class="verification-section" aria-labelledby="verification-title">
+        <div><p class="eyebrow">04 — THE RECEIPT IS A FILE, NOT A PROMISE</p><h2 id="verification-title">Trust the check.<br>Know its limits.</h2>
+          <p>The original validator rejects missing artifacts, changed hashes, mismatched interfaces, absent acceptance fields and failed command records. It reads partner files; it never executes their commands.</p>
+          <div class="command-box"><span>FROM THE REPOSITORY ROOT · PYTHON STANDARD LIBRARY</span><code>python3 -B projects/10-pocket-arcade/validate.py --root .</code></div>
+          <p class="small-note">Exit 0 means local checks passed for the supplied snapshot. Exit 1 means absent, pending or rejected inputs. Fixture mode is explicitly marked and cannot establish real acceptance.</p>
+          <a class="text-link" href="README.md">Read the exact contract &amp; reproduction steps ↗</a>
+        </div>
+        <aside class="verification-card" aria-label="Current snapshot checks">
+          <p class="eyebrow">CURRENT SNAPSHOT</p>
+          <h3 id="snapshot-title">Not reverified in this page</h3>
+          <p id="transport-status" role="status">Direct-file mode keeps all links usable. Availability and hashes require a local HTTP preview or a saved report.</p>
+          <div class="verification-actions"><button class="button dark" id="refresh-button" type="button">Check availability ↻</button><button class="button secondary" id="verify-button" type="button">Verify saved snapshot</button></div>
+          <label class="file-label" for="report-file">Or inspect a saved validation report <span>(local file only)</span></label>
+          <input type="file" id="report-file" accept=".json,application/json">
+          <p id="verification-status" class="small-note" role="status">Public-file technical checks only. A non-rendering DOM harness is not a browser or human review. Deployment and live public-site validation are separate publisher responsibilities.</p>
+          <a href="evidence/integration-validation.json">Open the saved report ↗</a>
+        </aside>
+      </section>
+
+      <section class="boundary-note" aria-label="Scope and seed mapping">
+        <span class="boundary-symbol" aria-hidden="true">≠</span>
+        <p><strong>Useful local work is not native federation.</strong> The inert seed's ready case is Pocket Queue, a fictional anonymous-ticket rehearsal. Pocket Arcade is a requested original extension, not completion of that case. The five prime team scopes inform this coordination; no organization, workspace, membership, signature or cross-world authority is created.</p>
+      </section>
+    </main>
+    <footer><span>POCKET ARCADE <span aria-hidden="true">/</span> LOCAL HIVE 10</span><a href="NOTICE">Inert-data attribution</a><span>Made to run locally. Made to be honest.</span></footer>
+  </div>
+  <noscript><p class="noscript-note">JavaScript is off. The four project manifest links and printable kit still work; no availability or acceptance has been checked.</p></noscript>
+</body>
+</html>

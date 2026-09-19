@@ -1,0 +1,206 @@
+{
+  "execution_root": ".",
+  "path_policy": "Repository-root prefixes are rebased in process output; any remaining private metadata aborts capture. Per-channel redactions are disclosed.",
+  "qualification": "New checks of this public projection, not another AI continuation or a re-execution of historical sessions. The final manifest audit runs after this record and result.json exist.",
+  "record_kind": "new-public-projection-checks",
+  "recorded_at": "2026-09-19T13:00:01.653412+00:00",
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/09-handoff/tools/verify_inputs.py"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "",
+      "stdout": "{\n  \"preserved_historical_inputs\": 6,\n  \"unchanged_original_source_and_tests\": 4,\n  \"changed_or_missing\": [],\n  \"qualification\": \"Redacted execution records are not claimed to match private original bytes.\"\n}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/09-handoff/tools/check_acceptance.py"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "",
+      "stdout": "{\n  \"cases\": [\n    {\n      \"actual\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"expected\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"fixture\": \"fixtures/clean.jsonl\",\n      \"id\": \"clean\",\n      \"input_sha256\": \"0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf\",\n      \"passed\": true\n    },\n    {\n      \"actual\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"expected\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"fixture\": \"fixtures/duplicate.jsonl\",\n      \"id\": \"duplicate\",\n      \"input_sha256\": \"ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040\",\n      \"passed\": true\n    },\n    {\n      \"actual\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"expected\": {\n        \"closed_items\": 1,\n        \"event_count\": 3,\n        \"items\": [\n          {\n            \"event_count\": 2,\n            \"item_id\": \"arcade-cache\",\n            \"last_minute\": 19,\n            \"state\": \"closed\"\n          },\n          {\n            \"event_count\": 1,\n            \"item_id\": \"arcade-input\",\n            \"last_minute\": 11,\n            \"state\": \"open\"\n          }\n        ],\n        \"open_items\": 1\n      },\n      \"fixture\": \"fixtures/out-of-order.jsonl\",\n      \"id\": \"out-of-order\",\n      \"input_sha256\": \"02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c\",\n      \"passed\": true\n    }\n  ],\n  \"failed\": 0,\n  \"passed\": 3,\n  \"schema\": \"handoff-strict-acceptance/1\",\n  \"seed_issue\": \"ll-duplicate\"\n}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/09-handoff/tests",
+        "-p",
+        "test_ledger.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "test_byte_line_and_record_limits (test_ledger.LedgerTests) ... ok\ntest_clean_contract (test_ledger.LedgerTests) ... ok\ntest_cli_is_offline_and_reports_errors (test_ledger.LedgerTests) ... ok\ntest_conflict_late_in_input_is_not_hidden (test_ledger.LedgerTests) ... ok\ntest_conflicting_ids_rejected_for_every_payload_field (test_ledger.LedgerTests) ... ok\ntest_direct_summary_requires_bounded_receipts (test_ledger.LedgerTests) ... ok\ntest_distinct_ids_with_identical_payloads_count_separately (test_ledger.LedgerTests) ... ok\ntest_empty_blank_and_close_only_inputs (test_ledger.LedgerTests) ... ok\ntest_equal_minute_uses_event_id (test_ledger.LedgerTests) ... ok\ntest_identical_replay_is_not_additional_work (test_ledger.LedgerTests) ... ok\ntest_identifier_and_minute_bounds (test_ledger.LedgerTests) ... ok\ntest_input_and_returned_results_are_not_shared (test_ledger.LedgerTests) ... ok\ntest_maintenance_artifact_counts_raw_and_replayed_records (test_ledger.LedgerTests) ... ok\ntest_maintenance_artifact_has_no_release_authority (test_ledger.LedgerTests) ... ok\ntest_order_is_already_deterministic (test_ledger.LedgerTests) ... ok\ntest_replays_of_each_event_are_idempotent_in_every_order (test_ledger.LedgerTests) ... ok\ntest_selected_file_reader (test_ledger.LedgerTests) ... ok\ntest_strict_json_shape_and_duplicate_keys (test_ledger.LedgerTests) ... ok\ntest_validation_does_not_skip_repeated_record_payloads (test_ledger.LedgerTests) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.098s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/09-handoff/tools/build_demo.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "",
+      "stdout": "{\n  \"mode\": \"read-only-check\",\n  \"outputs\": [\n    \"projects/09-handoff/replay-data.js\",\n    \"projects/09-handoff/artifacts/pocket-arcade-maintenance.json\"\n  ],\n  \"mismatches\": []\n}\n"
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "projects/09-handoff/tests/replay.test.cjs"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "",
+      "stdout": "\u2714 bundle contains the exact observed frames, not a second reducer (1.983875ms)\n\u2714 initial view shows the actual 4-to-3 final defect outcome without autoplay (0.346375ms)\n\u2714 reset and stepping expose the repeated receipt without changing the records (0.361334ms)\n\u2714 replay pauses, resumes, and clears its timer at the final receipt (0.410625ms)\n\u2714 case switching stops playback and preserves the already-passing ordering case (0.342667ms)\n\u2714 unknown case values fall back to the recorded duplicate case (0.315958ms)\n\u2714 reduced-motion preference displays the final record without animation (0.31375ms)\n\u2714 missing local data disables controls and does not invent an execution (0.194833ms)\n\u2714 maintenance export is the real CLI shape bound to the tested input (0.511292ms)\n\u2714 presentation has semantic controls, labels, local resources and no network APIs (0.403709ms)\n\u2714 the page and replay distinguish historical hashes from withheld private identity (0.372209ms)\n\u2714 reset cancels active playback and both displayed summaries are machine-readable (0.339291ms)\n\u2139 tests 12\n\u2139 suites 0\n\u2139 pass 12\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 43.909084\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/09-handoff/tests",
+        "-p",
+        "test_public_projection.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "path_redactions": {
+        "stderr": [],
+        "stdout": []
+      },
+      "stderr": "test_a_success_flag_cannot_hide_the_original_failure (test_public_projection.PublicProjectionTests) ... ok\ntest_absolute_paths_detected_after_json_decoding (test_public_projection.PublicProjectionTests) ... ok\ntest_acceptance_target_tampering_is_rejected (test_public_projection.PublicProjectionTests) ... ok\ntest_all_payload_files_have_no_private_metadata (test_public_projection.PublicProjectionTests) ... ok\ntest_capture_cannot_overwrite_or_impersonate_historical_phases (test_public_projection.PublicProjectionTests) ... ok\ntest_identifier_detection_in_embedded_json (test_public_projection.PublicProjectionTests) ... ok\ntest_integrity_detects_changed_bytes_and_added_files (test_public_projection.PublicProjectionTests) ... ok\ntest_new_capture_retains_failed_command_codes_and_portable_roots (test_public_projection.PublicProjectionTests) ... ok\ntest_numerical_observation_tampering_is_rejected (test_public_projection.PublicProjectionTests) ... ok\ntest_operational_fields_are_not_public_summary_fields (test_public_projection.PublicProjectionTests) ... ok\ntest_original_midpoint_still_fails_the_unchanged_duplicate_target (test_public_projection.PublicProjectionTests) ... ok\ntest_paths_cannot_escape_the_project (test_public_projection.PublicProjectionTests) ... ok\ntest_traceback_rebasing_discloses_the_transformation (test_public_projection.PublicProjectionTests) ... ok\ntest_unknown_private_path_aborts_capture (test_public_projection.PublicProjectionTests) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.022s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "runtime": {
+    "python": "3.9.6"
+  },
+  "schema": "handoff-publication-checks/1",
+  "tested_files": [
+    {
+      "path": "projects/09-handoff/ACCEPTANCE.json",
+      "sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4"
+    },
+    {
+      "path": "projects/09-handoff/app.js",
+      "sha256": "ef7005452d02300a20036b3ae562860d3817a85f6bf5e8a14bac624a1e52c4c1"
+    },
+    {
+      "path": "projects/09-handoff/cli.py",
+      "sha256": "0ad68cb860a899670b81c3f3ff8643985b2152903b29d69fa660c7ec3d5a2744"
+    },
+    {
+      "path": "projects/09-handoff/evidence/midpoint-receipt-ledger.py",
+      "sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8"
+    },
+    {
+      "path": "projects/09-handoff/fixtures/clean.jsonl",
+      "sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf"
+    },
+    {
+      "path": "projects/09-handoff/fixtures/duplicate.jsonl",
+      "sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040"
+    },
+    {
+      "path": "projects/09-handoff/fixtures/out-of-order.jsonl",
+      "sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c"
+    },
+    {
+      "path": "projects/09-handoff/index.html",
+      "sha256": "8d1e4ad17df54ed1e2ec0a0de618a72fff6d79dba9bc3a1bab6c792441351cdd"
+    },
+    {
+      "path": "projects/09-handoff/manifest.json",
+      "sha256": "d33edc9dc7c6346f52c8be7767f3a18d62fa69e0539744e7f33e1688d26084f8"
+    },
+    {
+      "path": "projects/09-handoff/provenance.json",
+      "sha256": "47e655e128dafeb9262c9c4ba0b720e35c808218c06474a3864b0bc9a07e645a"
+    },
+    {
+      "path": "projects/09-handoff/receipt_ledger.py",
+      "sha256": "9049da2028504b0f6e4940d589db74ab1f42eecd1042eee504518e01d87acdc2"
+    },
+    {
+      "path": "projects/09-handoff/replay-data.js",
+      "sha256": "a56e2d79bfa5beca9769af58fc5d55c1f138173eb86bcd39a5286a83c70c4904"
+    },
+    {
+      "path": "projects/09-handoff/style.css",
+      "sha256": "204a8b2731dc4bdddd8219f8d4feb8cdc50937e28dbd3b567cf4e8943163fffe"
+    },
+    {
+      "path": "projects/09-handoff/tests/replay.test.cjs",
+      "sha256": "af1329767057024924527bec0b07b9b743a1f23753514fd2d46008fc887f983b"
+    },
+    {
+      "path": "projects/09-handoff/tests/test_ledger.py",
+      "sha256": "87bddbcd4314e7b1c4a2ce9c7b7515aa3bec049f3460889fd183d4e6ed7eba21"
+    },
+    {
+      "path": "projects/09-handoff/tests/test_public_projection.py",
+      "sha256": "3f5f289432acfb285bbe39c3553cffa9909bfbf3e0fd7bdaffc5b28051d58adc"
+    },
+    {
+      "path": "projects/09-handoff/tools/build_demo.py",
+      "sha256": "eb13c4b26bf3eac48c6ca885c50872a04dc0bb51cf850aca8298b2b82f13d68d"
+    },
+    {
+      "path": "projects/09-handoff/tools/capture.py",
+      "sha256": "d107bc20083361937ff9fed047364c98c956a415652e13406486669bca094722"
+    },
+    {
+      "path": "projects/09-handoff/tools/check_acceptance.py",
+      "sha256": "4d0ef123efb15e1374a724d4bddabfd330be295e9e054c5fc2e17167618edee3"
+    },
+    {
+      "path": "projects/09-handoff/tools/public_projection.py",
+      "sha256": "71a18bed754e425f6589dccb27a0e36d6a18741968ae4b8aa69878c86eb19571"
+    },
+    {
+      "path": "projects/09-handoff/tools/seal_public.py",
+      "sha256": "99394655203e15c31b5344630cdeb089a2ba8678f652efca5906730195c984f6"
+    },
+    {
+      "path": "projects/09-handoff/tools/verify_evidence.py",
+      "sha256": "168f21c38b0554cda2d9b573054354ca142b26abbc15a41439334cefbbcd130f"
+    },
+    {
+      "path": "projects/09-handoff/tools/verify_inputs.py",
+      "sha256": "4f5e998184de3cd3ea6014432bc84f31c277921291f01a2345865fbf71a2c9e8"
+    }
+  ]
+}

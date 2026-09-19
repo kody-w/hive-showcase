@@ -1,0 +1,9 @@
+argv: ["node", "projects/07-manufacturing/tools/generate.mjs", "--check"]
+recordedAt: 2026-09-19T02:21:35.261697+00:00
+exitCode: 0
+--- stdout ---
+Verified deterministic bytes of 41 original review artifacts across 3 configurations.
+
+--- stderr ---
+
+--- end of captured streams ---

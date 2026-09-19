@@ -1,0 +1,116 @@
+{
+  "schema": "intelligence-decision-protocol/1",
+  "id": "solo-ai-business-v1",
+  "recordedAt": "2026-09-19T01:15:13Z",
+  "lockedBeforePublicCollection": true,
+  "amendments": [],
+  "question": "Can a solo founder operate a useful software business with AI doing most of the implementation?",
+  "scope": "A new, bounded public-source research extension of the inert Public-Source Intelligence Bureau seed. The seed's fictional Juniper Queue corpus is not evidence for this question. No native initialization, deployment, market test, outreach, or company audit is performed.",
+  "estimands": [
+    {
+      "id": "existence",
+      "question": "Is at least one independently inspectable case consistent with all of the operating definitions?",
+      "threshold": "One case satisfying every gate for the same six-month period establishes a bounded existence example, not a success rate."
+    },
+    {
+      "id": "transfer",
+      "question": "Is this a repeatable recommendation for a technically capable founder of a narrow, low-stakes product?",
+      "threshold": "At least three unrelated qualifying founders plus a disclosed denominator including failed attempts and comparable non-AI operating data. Case counts alone do not establish causality or a base rate."
+    }
+  ],
+  "definitions": [
+    {
+      "id": "solo",
+      "term": "Solo founder",
+      "meaning": "One accountable working operator. No employee, cofounder, contractor, unpaid collaborator, or concealed agency performs substantive implementation, sales, support, or operations. Commodity hosting, payment processing, model services and disclosed routine legal/accounting services are allowed; their cost is included."
+    },
+    {
+      "id": "useful",
+      "term": "Useful",
+      "meaning": "At least three unrelated paying business customers OR twenty unrelated paying individuals repeatedly use the product for a real task each month. At least half of an eligible initial paying cohort is still paying after 90 days. Downloads, demo traffic, fundraising and generated apps are not substitutes."
+    },
+    {
+      "id": "majority",
+      "term": "Most implementation",
+      "meaning": "More than 50% of accepted implementation work is initially produced by AI and survives at least 30 days of use/review. Measure feature, defect, test, migration and deployment work using work items weighted 1–5 for complexity before execution; retain prompts, patches, rewrites and attribution. Do not use lines of code, token volume or tool adoption as the denominator. Human requirements, review and acceptance remain human work and all human time is logged."
+    },
+    {
+      "id": "business",
+      "term": "Operate a software business",
+      "meaning": "For the same six consecutive post-launch months, recurring customer receipts less refunds, taxes on sales, hosting, model/API, software, payment, acquisition and other non-owner operating costs average at least USD 3,000/month available to the owner. Median total founder labor is no more than 40 hours/week. This is a declared decision floor, not a universal living wage or an empirical industry standard; one-off launch labor and capital are disclosed separately."
+    },
+    {
+      "id": "operations",
+      "term": "Operationally useful, not just shipped",
+      "meaning": "Versioned releases, tested restoration, access controls, incident/defect records and measured support burden exist. Customer-critical failures are disclosed. A business cannot qualify by silently transferring maintenance, security or support work to someone else."
+    }
+  ],
+  "gates": [
+    {"id": "g-solo", "label": "One accountable operator", "definitionIds": ["solo"], "requiredObservation": "Independent corroboration of the complete labor roster, including contractors and unpaid help."},
+    {"id": "g-useful", "label": "Paying use and retention", "definitionIds": ["useful"], "requiredObservation": "Privacy-preserving payment, recurring-use and 90-day cohort evidence at the declared customer floor."},
+    {"id": "g-majority", "label": "AI does more than half", "definitionIds": ["majority"], "requiredObservation": "Prespecified weighted work ledger linked to accepted patches and 30-day survival/rewrite records."},
+    {"id": "g-economic", "label": "Owner economics and time", "definitionIds": ["business"], "requiredObservation": "Reconciled receipts, complete operating costs and all-role time logs meeting the USD 3,000 and 40-hour floors."},
+    {"id": "g-duration", "label": "Six months of operation", "definitionIds": ["business"], "requiredObservation": "All other gates observed for the same six consecutive post-launch months, not a launch-week snapshot."},
+    {"id": "g-operations", "label": "Maintenance and accountability", "definitionIds": ["operations"], "requiredObservation": "Release, incident, restoration and support records with named sole human responsibility."},
+    {"id": "g-inspection", "label": "Independent inspection", "definitionIds": ["solo", "useful", "majority", "business", "operations"], "requiredObservation": "At least one corroborator independent of the founder, AI vendor and investor inspects the underlying records; anonymized public artifacts explain what was and was not checked."}
+  ],
+  "evidenceRules": {
+    "priority": ["Primary randomized or field studies with methods", "Directly inspectable benchmark or implementation artifacts", "Primary methodological and industry reports", "Primary commercial disclosures with interested-party labels", "Independent reporting that identifies what it actually verified"],
+    "minimumInspectedSources": 6,
+    "targetRange": "8–12 distinct inspected public sources, including negative findings and at least one attempt to find business-level evidence.",
+    "stopRule": "Stop once the minimum source coverage, strongest contrary case and business-evidence search are documented, or after twelve included sources. Record failures and gaps rather than backfilling with weak citations. This is a bounded purposive review, not a systematic review.",
+    "eligible": "Publicly retrievable source text actually inspected in this run, with URL, publication date or explicit undated status, retrieval timestamp, locator, short paraphrases, source grouping and limitations.",
+    "excluded": ["Search-engine summaries as evidence", "Uninspected titles or abstracts described as full-paper review", "Private accounts or private history", "Synthetic seed observations as real-world facts", "Vendor claims silently treated as independent confirmation", "Unsupported metrics or invented quotations"],
+    "proxyBoundary": "Benchmarks, developer task time, pull requests and perceived productivity are proxies for implementation leverage. None measures paying demand, retention, contribution margin or sustainable solo operation unless those outcomes are directly observed.",
+    "independence": "Record authorship/funding interests and shared study populations. Reposts and vendor/press descriptions of the same event are one evidence family, never independent votes.",
+    "claims": "Every empirical claim must resolve to an inspected source and a precise locator. Label analytic judgments as inference, uncertainty, or missing evidence. No numerical probability from article counts."
+  },
+  "hypotheses": [
+    {
+      "id": "h-leverage",
+      "label": "Bounded implementation leverage can make a narrow solo product feasible",
+      "predicts": "Some real tasks are completed with less total effort, and a low-complexity product can translate that margin into useful operation under human oversight.",
+      "disconfirmer": "Matched all-role comparisons show review, rework and operations consume the apparent implementation saving; qualifying business cases fail the operating gates."
+    },
+    {
+      "id": "h-bottleneck",
+      "label": "Code gets cheaper while the business bottleneck moves",
+      "predicts": "Benchmarks and some coding studies improve without corresponding evidence on acquisition, retention, support, responsibility or owner economics.",
+      "disconfirmer": "Independent longitudinal cases measure and meet every operating gate, with declining total founder burden rather than merely more generated code."
+    },
+    {
+      "id": "h-selection",
+      "label": "Success stories overstate solo operation through selection or hidden labor",
+      "predicts": "Headline examples omit failures, vendor dependence, staffing changes or cost/time denominators.",
+      "disconfirmer": "A public, prespecified cohort includes failures and independently verified staffing, attribution, costs and retention; success survives those checks."
+    }
+  ],
+  "verdictRules": [
+    {"id": "v-demonstrated", "label": "Bounded existence demonstrated", "when": "At least one case passes every gate. State its product, founder and period; do not generalize its success rate."},
+    {"id": "v-plausible", "label": "Conditionally plausible; business claim not established", "when": "Credible implementation or commercial evidence supports a possible mechanism, but no inspected case passes every gate."},
+    {"id": "v-unsupported", "label": "Insufficient support for the proposed operating profile", "when": "Relevant end-to-end observations undermine the mechanism or the proposed founder/product fails essential gates. Do not claim to disprove all possible solo businesses."}
+  ],
+  "reversalConditions": [
+    {
+      "id": "r-up",
+      "direction": "upgrade",
+      "observation": "One independently corroborated, anonymized six-month record bundle meets all seven gates for the same founder and product, including the weighted AI work ledger, paying retention, complete costs and all-role labor.",
+      "effect": "Change from plausible/not established to a demonstrated bounded existence case.",
+      "gateIds": ["g-solo", "g-useful", "g-majority", "g-economic", "g-duration", "g-operations", "g-inspection"]
+    },
+    {
+      "id": "r-down",
+      "direction": "downgrade",
+      "observation": "After tool familiarization, three prespecified matched narrow-product trials compare AI-majority and human-led work for eight weeks, logging all-role labor, costs, defects and support. In at least two, AI-majority operation has no labor/cost advantage and no offsetting quality benefit, or cannot retain human accountability.",
+      "effect": "Withdraw the practical AI-majority recommendation for that tested founder/product profile; this would not prove universal impossibility.",
+      "gateIds": ["g-majority", "g-economic", "g-operations"]
+    },
+    {
+      "id": "r-transfer",
+      "direction": "broaden",
+      "observation": "Three unrelated cases meet all seven gates and a disclosed prespecified cohort reports failures, selection, comparable non-AI outcomes and product/founder boundaries.",
+      "effect": "Consider a transferable conditional recommendation while retaining uncertainty about causality and generalization.",
+      "gateIds": ["g-solo", "g-useful", "g-majority", "g-economic", "g-duration", "g-operations", "g-inspection"]
+    }
+  ]
+}

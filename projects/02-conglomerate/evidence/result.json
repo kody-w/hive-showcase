@@ -1,0 +1,560 @@
+{
+  "schema": "local-work-result/1",
+  "id": "02-conglomerate",
+  "stage": "work-produced",
+  "classification": "Actual local computational outputs from synthetic inputs and explicitly unmeasured assumptions",
+  "initial": {
+    "hardBudgetMinutes": 300,
+    "objective": "Produce one useful local artifact while favoring learning and cross-venture reuse, discounted by subjective seed confidence; do not maximize revenue or utilization.",
+    "weights": {
+      "learning": 3,
+      "reuse": 2,
+      "speed": 1
+    },
+    "ranking": {
+      "valid": true,
+      "issues": [],
+      "candidates": [
+        {
+          "id": "ledgerleaf-tools",
+          "name": "Ledgerleaf Tools",
+          "score": 53,
+          "unitMinutes": 180,
+          "totalMinutes": 210,
+          "speed": 0.3,
+          "feasible": true,
+          "reasons": []
+        },
+        {
+          "id": "quietbench-templates",
+          "name": "Quietbench Templates",
+          "score": 48.208333333333336,
+          "unitMinutes": 135,
+          "totalMinutes": 165,
+          "speed": 0.45,
+          "feasible": true,
+          "reasons": []
+        },
+        {
+          "id": "tinylesson-studio",
+          "name": "Tinylesson Studio",
+          "score": 36.80555555555556,
+          "unitMinutes": 145,
+          "totalMinutes": 175,
+          "speed": 0.4166666666666667,
+          "feasible": true,
+          "reasons": []
+        },
+        {
+          "id": "fieldnote-guides",
+          "name": "Fieldnote Guides",
+          "score": 35.13888888888889,
+          "unitMinutes": 85,
+          "totalMinutes": 115,
+          "speed": 0.6166666666666667,
+          "feasible": true,
+          "reasons": []
+        },
+        {
+          "id": "routepaper-planners",
+          "name": "Routepaper Planners",
+          "score": 33.61111111111111,
+          "unitMinutes": 70,
+          "totalMinutes": 100,
+          "speed": 0.6666666666666666,
+          "feasible": true,
+          "reasons": []
+        }
+      ],
+      "recommended": "ledgerleaf-tools",
+      "tiedIds": [
+        "ledgerleaf-tools"
+      ],
+      "margin": 4.791666666666664
+    },
+    "allocations": {
+      "ledgerleaf-tools": 180,
+      "fieldnote-guides": 0,
+      "quietbench-templates": 0,
+      "routepaper-planners": 0,
+      "tinylesson-studio": 0
+    },
+    "budget": {
+      "feasible": true,
+      "issues": [],
+      "active": [
+        "ledgerleaf-tools"
+      ],
+      "allocatedMinutes": 180,
+      "reviewMinutes": 30,
+      "reserveMinutes": 30,
+      "usedMinutes": 240,
+      "unusedMinutes": 60,
+      "budgetMinutes": 300
+    },
+    "dispositions": [
+      {
+        "id": "ledgerleaf-tools",
+        "status": "proposed-active",
+        "reason": "Highest feasible score under the stated learning/reuse objective; owner approval not granted."
+      },
+      {
+        "id": "fieldnote-guides",
+        "status": "proposed-parked",
+        "reason": "One-offering limit; lower default modeled score, not evidence of business failure."
+      },
+      {
+        "id": "quietbench-templates",
+        "status": "proposed-parked",
+        "reason": "One-offering limit; lower default modeled score, not evidence of business failure."
+      },
+      {
+        "id": "routepaper-planners",
+        "status": "proposed-parked",
+        "reason": "One-offering limit; lower default modeled score, not evidence of business failure."
+      },
+      {
+        "id": "tinylesson-studio",
+        "status": "proposed-parked",
+        "reason": "One-offering limit; lower default modeled score, not evidence of business failure."
+      }
+    ]
+  },
+  "sensitivity": [
+    {
+      "label": "Current assumptions",
+      "recommended": "ledgerleaf-tools",
+      "name": "Ledgerleaf Tools",
+      "score": 53,
+      "totalMinutes": 210,
+      "changed": false,
+      "valid": true
+    },
+    {
+      "label": "No speed preference",
+      "recommended": "ledgerleaf-tools",
+      "name": "Ledgerleaf Tools",
+      "score": 60,
+      "totalMinutes": 210,
+      "changed": false,
+      "valid": true
+    },
+    {
+      "label": "Speed weight = 4",
+      "recommended": "quietbench-templates",
+      "name": "Quietbench Templates",
+      "score": 41.888888888888886,
+      "totalMinutes": 165,
+      "changed": true,
+      "valid": true
+    },
+    {
+      "label": "Speed only",
+      "recommended": "routepaper-planners",
+      "name": "Routepaper Planners",
+      "score": 36.666666666666664,
+      "totalMinutes": 100,
+      "changed": true,
+      "valid": true
+    },
+    {
+      "label": "Leader confidence −10 points",
+      "recommended": "quietbench-templates",
+      "name": "Quietbench Templates",
+      "score": 48.208333333333336,
+      "totalMinutes": 165,
+      "changed": true,
+      "valid": true
+    },
+    {
+      "label": "All delivery + preparation estimates +25%",
+      "recommended": "ledgerleaf-tools",
+      "name": "Ledgerleaf Tools",
+      "score": 51.46666666666667,
+      "totalMinutes": 256,
+      "changed": false,
+      "valid": true
+    },
+    {
+      "label": "Leader prerequisite withheld",
+      "recommended": "quietbench-templates",
+      "name": "Quietbench Templates",
+      "score": 48.208333333333336,
+      "totalMinutes": 165,
+      "changed": true,
+      "valid": true
+    },
+    {
+      "label": "Reserve +60 minutes",
+      "recommended": "ledgerleaf-tools",
+      "name": "Ledgerleaf Tools",
+      "score": 53,
+      "totalMinutes": 210,
+      "changed": false,
+      "valid": true
+    }
+  ],
+  "infeasibility": {
+    "primarySeedDurations": {
+      "valid": true,
+      "issues": [
+        "No venture fits the current capacity and offline prerequisites. Park all five; do not relax constraints silently."
+      ],
+      "candidates": [
+        {
+          "id": "ledgerleaf-tools",
+          "name": "Ledgerleaf Tools",
+          "score": 50,
+          "unitMinutes": 480,
+          "totalMinutes": 510,
+          "speed": 0,
+          "feasible": false,
+          "reasons": [
+            "Needs 540 minutes including reserve; exceeds 300 by 240."
+          ]
+        },
+        {
+          "id": "quietbench-templates",
+          "name": "Quietbench Templates",
+          "score": 43.33333333333333,
+          "unitMinutes": 420,
+          "totalMinutes": 450,
+          "speed": 0,
+          "feasible": false,
+          "reasons": [
+            "Needs 480 minutes including reserve; exceeds 300 by 180."
+          ]
+        },
+        {
+          "id": "tinylesson-studio",
+          "name": "Tinylesson Studio",
+          "score": 33.33333333333333,
+          "unitMinutes": 360,
+          "totalMinutes": 390,
+          "speed": 0,
+          "feasible": false,
+          "reasons": [
+            "Needs 420 minutes including reserve; exceeds 300 by 120."
+          ]
+        },
+        {
+          "id": "fieldnote-guides",
+          "name": "Fieldnote Guides",
+          "score": 30,
+          "unitMinutes": 360,
+          "totalMinutes": 390,
+          "speed": 0,
+          "feasible": false,
+          "reasons": [
+            "Needs 420 minutes including reserve; exceeds 300 by 120."
+          ]
+        },
+        {
+          "id": "routepaper-planners",
+          "name": "Routepaper Planners",
+          "score": 27.5,
+          "unitMinutes": 300,
+          "totalMinutes": 330,
+          "speed": 0,
+          "feasible": false,
+          "reasons": [
+            "Needs 360 minutes including reserve; exceeds 300 by 60."
+          ]
+        }
+      ],
+      "recommended": null,
+      "tiedIds": [],
+      "margin": null
+    },
+    "literalSeedReserveMinutes": 480,
+    "literalSeedReserveRecommendation": null,
+    "fiveWaySplit": {
+      "feasible": false,
+      "issues": [
+        "Ledgerleaf Tools: 60 minutes cannot deliver the 180-minute minimum; partially funding it does not create an offering.",
+        "Fieldnote Guides: 60 minutes cannot deliver the 85-minute minimum; partially funding it does not create an offering.",
+        "Quietbench Templates: 60 minutes cannot deliver the 135-minute minimum; partially funding it does not create an offering.",
+        "Routepaper Planners: 60 minutes cannot deliver the 70-minute minimum; partially funding it does not create an offering.",
+        "Tinylesson Studio: 60 minutes cannot deliver the 145-minute minimum; partially funding it does not create an offering.",
+        "5 ventures are funded; this extension allows at most one. Choose rather than fragment the week.",
+        "Over budget by 60 minutes; the cap is still 300."
+      ],
+      "active": [
+        "ledgerleaf-tools",
+        "fieldnote-guides",
+        "quietbench-templates",
+        "routepaper-planners",
+        "tinylesson-studio"
+      ],
+      "allocatedMinutes": 300,
+      "reviewMinutes": 30,
+      "reserveMinutes": 30,
+      "usedMinutes": 360,
+      "unusedMinutes": -60,
+      "budgetMinutes": 300
+    },
+    "allTenOriginalExperiments": [
+      {
+        "id": "lf-schema",
+        "originalMinutes": 480,
+        "withNewReviewAndReserve": 540,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "lf-export",
+        "originalMinutes": 600,
+        "withNewReviewAndReserve": 660,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "fn-outline",
+        "originalMinutes": 360,
+        "withNewReviewAndReserve": 420,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "fn-observation",
+        "originalMinutes": 480,
+        "withNewReviewAndReserve": 540,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "qb-keyboard",
+        "originalMinutes": 420,
+        "withNewReviewAndReserve": 480,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "qb-catalog",
+        "originalMinutes": 300,
+        "withNewReviewAndReserve": 360,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "rp-sheet",
+        "originalMinutes": 300,
+        "withNewReviewAndReserve": 360,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "rp-interview",
+        "originalMinutes": 480,
+        "withNewReviewAndReserve": 540,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "tl-sample",
+        "originalMinutes": 360,
+        "withNewReviewAndReserve": 420,
+        "feasibleAtInitialCap": false
+      },
+      {
+        "id": "tl-transfer",
+        "originalMinutes": 540,
+        "withNewReviewAndReserve": 600,
+        "feasibleAtInitialCap": false
+      }
+    ]
+  },
+  "equalScoreEqualMinutesTie": {
+    "valid": true,
+    "issues": [],
+    "candidates": [
+      {
+        "id": "fieldnote-guides",
+        "name": "Fieldnote Guides",
+        "score": 29.72222222222222,
+        "unitMinutes": 100,
+        "totalMinutes": 130,
+        "speed": 0.5666666666666667,
+        "feasible": true,
+        "reasons": []
+      },
+      {
+        "id": "ledgerleaf-tools",
+        "name": "Ledgerleaf Tools",
+        "score": 29.72222222222222,
+        "unitMinutes": 100,
+        "totalMinutes": 130,
+        "speed": 0.5666666666666667,
+        "feasible": true,
+        "reasons": []
+      },
+      {
+        "id": "quietbench-templates",
+        "name": "Quietbench Templates",
+        "score": 29.72222222222222,
+        "unitMinutes": 100,
+        "totalMinutes": 130,
+        "speed": 0.5666666666666667,
+        "feasible": true,
+        "reasons": []
+      },
+      {
+        "id": "routepaper-planners",
+        "name": "Routepaper Planners",
+        "score": 29.72222222222222,
+        "unitMinutes": 100,
+        "totalMinutes": 130,
+        "speed": 0.5666666666666667,
+        "feasible": true,
+        "reasons": []
+      },
+      {
+        "id": "tinylesson-studio",
+        "name": "Tinylesson Studio",
+        "score": 29.72222222222222,
+        "unitMinutes": 100,
+        "totalMinutes": 130,
+        "speed": 0.5666666666666667,
+        "feasible": true,
+        "reasons": []
+      }
+    ],
+    "recommended": "fieldnote-guides",
+    "tiedIds": [
+      "fieldnote-guides",
+      "ledgerleaf-tools",
+      "quietbench-templates",
+      "routepaper-planners",
+      "tinylesson-studio"
+    ],
+    "margin": 0
+  },
+  "originalReference": {
+    "selected": [
+      "lf-schema",
+      "fn-outline",
+      "rp-sheet"
+    ],
+    "hours": 19,
+    "hypotheticalCents": 9000,
+    "unusedDiscretionaryHours": 13,
+    "unusedHypotheticalCents": 41000,
+    "interpretation": "Reconciliation of synthetic seed data, not actual funds or spend"
+  },
+  "offering": {
+    "name": "Ledgerleaf CSV Preflight",
+    "implementation": "projects/02-conglomerate/csv-checker.mjs",
+    "input": "projects/02-conglomerate/data/csv-intake.csv",
+    "actualReport": {
+      "schema": "ledgerleaf-preflight/1",
+      "status": "findings",
+      "bytes": 223,
+      "dataRecords": 5,
+      "columns": 4,
+      "findingCount": 1,
+      "truncated": false,
+      "findings": [
+        {
+          "code": "duplicate-key",
+          "message": "Key repeats an earlier record after trimming; compare the two source records.",
+          "record": 5,
+          "line": 5,
+          "column": 2,
+          "relatedRecord": 4
+        }
+      ],
+      "boundary": "Structural checks only; not import compatibility, financial correctness, sanitization or market evidence. Source values are not echoed or changed."
+    },
+    "expectedInterpretation": "The duplicate-key finding is intentional fixture evidence; a structural finding is not a market result."
+  },
+  "demandTests": [
+    {
+      "id": "ledgerleaf-tools",
+      "status": "Plan only; zero sessions performed",
+      "prepMinutesEstimate": 30,
+      "laterObservationMinutesEstimate": 45,
+      "recruitment": "Unknown, excluded; no participants contacted",
+      "passRule": "At least 2 of 3 choose the checker again AND correctly identify the duplicate within five minutes.",
+      "stopRule": "Park or simplify if fewer than 2 of 3 meet both conditions, or if explaining the checker takes longer than manual inspection."
+    },
+    {
+      "id": "fieldnote-guides",
+      "status": "Plan only; zero sessions performed",
+      "prepMinutesEstimate": 25,
+      "laterObservationMinutesEstimate": 30,
+      "recruitment": "Unknown, excluded; no participants contacted",
+      "passRule": "At least 2 of 3 choose the guide and can state a first action and how to undo it without another page.",
+      "stopRule": "Park if fewer than 2 of 3 meet the rule, or setup takes more work than the plain list."
+    },
+    {
+      "id": "quietbench-templates",
+      "status": "Plan only; zero sessions performed",
+      "prepMinutesEstimate": 35,
+      "laterObservationMinutesEstimate": 45,
+      "recruitment": "Unknown, excluded; no participants contacted",
+      "passRule": "At least 2 of 3 finish without coaching, identify required purpose and choose the form again; no keyboard blocker is acceptable.",
+      "stopRule": "Revise for any keyboard blocker; otherwise park if fewer than 2 of 3 meet the rule."
+    },
+    {
+      "id": "routepaper-planners",
+      "status": "Plan only; zero sessions performed",
+      "prepMinutesEstimate": 20,
+      "laterObservationMinutesEstimate": 30,
+      "recruitment": "Unknown, excluded; no participants contacted",
+      "passRule": "At least 2 of 3 choose the sheet and identify one changed planning decision, without requesting locations.",
+      "stopRule": "Park if grouping changes no decision, takes more effort than a list, or requires addresses."
+    },
+    {
+      "id": "tinylesson-studio",
+      "status": "Plan only; zero sessions performed",
+      "prepMinutesEstimate": 35,
+      "laterObservationMinutesEstimate": 40,
+      "recruitment": "Unknown, excluded; no participants contacted",
+      "passRule": "At least 2 of 3 meet the purpose/date rubric on the new example without copying and voluntarily choose another exercise.",
+      "stopRule": "Park if fewer than 2 of 3 meet both conditions, copying substitutes for transfer, or exercise and feedback exceed six minutes."
+    }
+  ],
+  "boundaries": {
+    "nativeObjectsInitialized": false,
+    "customersOrRevenueClaimed": false,
+    "marketObservations": 0,
+    "outreachPerformed": false,
+    "published": false,
+    "spendingAuthorizedOrPerformed": false,
+    "downloadedStarterCodeReadOrExecuted": false,
+    "realBrowserReview": "Not performed; automated DOM harness only",
+    "reviewStatus": "Local work produced, no native task claim or human acceptance"
+  },
+  "artifactSha256": {
+    "projects/02-conglomerate/.gitattributes": "7a5e0e7324ad26bebdcfa76a8f466d05c455ffccbb8a4271a271b77cfb4943b2",
+    "projects/02-conglomerate/README.md": "75e62da349b503103b2356611563d582a62c217fd1034cb46645b52f43b4f935",
+    "projects/02-conglomerate/app.mjs": "c8a247523f9403c27b4b5558003105a55d446cbe604b6d74f74e90c72234edaf",
+    "projects/02-conglomerate/csv-checker.mjs": "7939ad5cc45649a3db8fe196dcd4fb8798b91c1456a058ba4bd743ffde351745",
+    "projects/02-conglomerate/data/LICENSE": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+    "projects/02-conglomerate/data/allocation-worksheet.csv": "4af5c94434193d953aad94b4e88e777fc0713866109f98b78001154afe0ca3ad",
+    "projects/02-conglomerate/data/capacity.json": "b16ad0a1e17f4170bb530a9f5e9931de7fc8c91a4755819bc7f6a189d6043498",
+    "projects/02-conglomerate/data/csv-intake.csv": "d105e825826d14eeb58da71d0b0ada4565d08d70e39b6be11d70c689f788a5a1",
+    "projects/02-conglomerate/data/evidence-register.csv": "6bce712fe9f24a7057f36d105f23c62c730479a3a73d08abc4a041fb612cf761",
+    "projects/02-conglomerate/data/inputs.json": "48e854812a8b3e26346c1e43be6139f2e4be0b1c161e39bc3393679adeab045c",
+    "projects/02-conglomerate/data/portfolio.csv": "4ad0bdec0a16139274136f8733d55672f693917906498582c54a9f0d355dcc11",
+    "projects/02-conglomerate/index.html": "b2cb0e8cc4efbdd02076a0bf0014a3231253db46f569adc2dc71822b564784f9",
+    "projects/02-conglomerate/manifest.json": "70fbde11361f1bbddf9965fe0658a98c8208781daa64fa52d59adcaa0687e125",
+    "projects/02-conglomerate/model.mjs": "fcc795e0d491d27588970e0284ac60b04ee6403f81c6ee03f9526a4c21821ca7",
+    "projects/02-conglomerate/scope.json": "39910f2db1dc7b023cac7ed0141c82543723bb82963b1d282c9202e3e634bc52",
+    "projects/02-conglomerate/sources.json": "27e79be04890ace14f9335ea2e2ee69e9aa84824e56da3dea5c39142a3751183",
+    "projects/02-conglomerate/styles.css": "01ae1bffa8f37c3859668215a8860b36b84391d3aef58ccb4a26cb4f74960832",
+    "projects/02-conglomerate/test/checker.test.mjs": "83d3c5e3240fa4bde8ef60a9ee39fac9e8a905e5ecaf4b8b85fcefa9748dcd25",
+    "projects/02-conglomerate/test/integration.test.mjs": "6ea6146f7f4e2d5043289646c71b6e16ba25d33dc5f156d5e25f88e930c1a89a",
+    "projects/02-conglomerate/test/model.test.mjs": "a89cfa115a35663aced54d93016e6da96fc8ad82933a459f787aa52e0dc5a2aa",
+    "projects/02-conglomerate/tools/evidence.mjs": "e1511c00ac2631599188ab7fefdf69e14d3859f505137dea41161e2b9f2da0ff"
+  },
+  "validation": {
+    "command": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "projects/02-conglomerate/test/model.test.mjs",
+      "projects/02-conglomerate/test/checker.test.mjs",
+      "projects/02-conglomerate/test/integration.test.mjs"
+    ],
+    "exitCode": 0,
+    "tests": 30,
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "nodeVersion": "v26.7.0",
+    "uiCoverage": "The real original browser module, executed in a local DOM/fetch harness; not a visual browser test."
+  }
+}

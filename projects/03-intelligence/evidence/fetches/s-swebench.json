@@ -1,0 +1,58 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-swebench",
+  "requestedUrl": "https://arxiv.org/html/2310.06770v3",
+  "retrievedAt": "2026-09-19T01:21:22.760030+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "2294",
+      "found": true,
+      "startCharacter": 38102,
+      "endCharacter": 38332,
+      "text": "ferent parts of the codebase. In addition, we also include the full set of 2294 SWE-bench task instances that contains all the components discussed in the main paper. Beyond the documentation in the source code, we include thoroug",
+      "sha256": "96f8737df2f6261747872a67da1297ca2f0badd9fb000161c91158eada532171"
+    },
+    {
+      "id": "e2",
+      "anchor": "unit tests",
+      "found": true,
+      "startCharacter": 4507,
+      "endCharacter": 4737,
+      "text": " problems to LMs yet generated solutions can be easily verified by running unit tests. However, existing coding benchmarks, such as HumanEval ( Chen et al., 2021 ) , mostly involve self-contained problems that can be solved in a f",
+      "sha256": "f02f2132aa54cdefd45bd308cec6330a55276476aee45c3d06e38bda70d079e7"
+    },
+    {
+      "id": "e3",
+      "anchor": "relying solely",
+      "found": true,
+      "startCharacter": 35337,
+      "endCharacter": 35567,
+      "text": "stly, while this work evaluates models using execution-based code testing, relying solely on this method is insufficient to guarantee reliable performance of model generations, as we find automated code generations from LMs can fr",
+      "sha256": "e37609b4697838a6282e4cb4ddac7c49cd266364fc924ac9074491a1df842e09"
+    },
+    {
+      "id": "e4",
+      "anchor": "all in Python",
+      "found": true,
+      "startCharacter": 34804,
+      "endCharacter": 35034,
+      "text": "Discussion Limitations and future directions. SWE-bench task instances are all in Python; we hope to apply SWE-bench’s task instance collection procedure to expand its coverage to more programming languages and domains. Second, ou",
+      "sha256": "3da4aae471633e195b291195f405348e939ebac1e74818a8e4e87af0c47e08b7"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://arxiv.org/html/2310.06770v3",
+  "contentType": "text/html; charset=utf-8",
+  "responseBytes": 1275988,
+  "responseSha256": "7b93264b74b5753a708be62b9313d203c568f26821ef9586c6d1203f2be53382",
+  "lastModified": "Mon, 24 Aug 2026 18:45:40 GMT",
+  "etag": "\"CLWHvqT2uZYDEAE=\"",
+  "pageTitle": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+  "dateAndAuthorMetadata": {},
+  "normalizedTextSha256": "ad5d759bbe5639f68d90d9e6c8feaeaf703c903f4b532e80c28089e074b3e587",
+  "normalizedTextCharacters": 157497,
+  "outcome": "captured"
+}

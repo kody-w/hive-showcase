@@ -1,0 +1,74 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-metr-2025",
+  "requestedUrl": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+  "retrievedAt": "2026-09-19T01:19:34.839801+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "16 experienced",
+      "found": true,
+      "startCharacter": 2923,
+      "endCharacter": 3153,
+      "text": "re the real-world impact of AI tools on software development, we recruited 16 experienced developers from large open-source repositories (averaging 22k+ stars and 1M+ lines of code) that they’ve contributed to for multiple years. ",
+      "sha256": "ce3b671b6052e814a50076671461d641175ec654acd5420a3a01eb644d48813d"
+    },
+    {
+      "id": "e2",
+      "anchor": "19% longer",
+      "found": true,
+      "startCharacter": 509,
+      "endCharacter": 739,
+      "text": "tories. Surprisingly, we find that when developers use AI tools, they take 19% longer than without—AI makes them slower. We view this result as a snapshot of early-2025 AI capabilities in one relevant setting; as these systems con",
+      "sha256": "59b06f0fd2263e0f110aa9d7f3a9aea456c765ce504aaa3bb70fe7c5383c8535"
+    },
+    {
+      "id": "e3",
+      "anchor": "out of date",
+      "found": true,
+      "startCharacter": 1413,
+      "endCharacter": 1643,
+      "text": "/}} , year = {2025} , month = {07} , } Copy Subscribe ⚠️ These results are out of date. We have released results that are current as of early 2026 , in a continuation of this study. We believe these historical results no longer re",
+      "sha256": "7374ab16b0c7e90504f23a1c276e91398bd5f4ef29ea32658d7110b7fcb9ab0d"
+    },
+    {
+      "id": "e4",
+      "anchor": "do not claim",
+      "found": true,
+      "startCharacter": 4777,
+      "endCharacter": 5007,
+      "text": "n AI systems do not currently speed up many or most software developers We do not claim that our developers or repositories represent a majority or plurality of software development work AI systems do not speed up individuals or g",
+      "sha256": "2b44971c8322ac6e821e8a9a3535685dcfcfe8835a59e79538c0ae8865c85fd7"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+  "contentType": "text/html; charset=UTF-8",
+  "responseBytes": 81341,
+  "responseSha256": "1a251664f0cacf565e21b2f09a2e1a662883d252c0eeb57bcced7801bf844f9f",
+  "lastModified": null,
+  "etag": "\"15497f9da0e1f74d067b63d976b624df-ssl\"",
+  "pageTitle": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity - METR",
+  "dateAndAuthorMetadata": {
+    "citation_title": [
+      "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+    ],
+    "citation_date": [
+      "2025/07/10"
+    ],
+    "citation_journal_title": [
+      "METR Blog"
+    ],
+    "og:title": [
+      "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+    ],
+    "twitter:title": [
+      "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
+    ]
+  },
+  "normalizedTextSha256": "0b1ecb0ebf56d45fde5780063ad1d9d5d7f33fe829d1c62811e20f83c19c661d",
+  "normalizedTextCharacters": 20040,
+  "outcome": "captured"
+}

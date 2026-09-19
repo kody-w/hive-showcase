@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An offline, reproducible two-capacity packing lab. Inspect every synthetic trial, assignment, counterexample, and proof limit.">
+  <title>Falsification Lab · Applied Invention 04</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="src/engine.js"></script>
+  <script defer src="evidence/snapshot.js"></script>
+  <script defer src="src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to packing inspector</a>
+  <div class="topbar" id="top">
+    <a class="wordmark" href="#top"><span class="lab-mark" aria-hidden="true">∴</span> FALSIFICATION LAB <span class="edition">/ 04</span></a>
+    <nav aria-label="Sections">
+      <a href="#overview">Results</a><a href="#workspace">Inspector</a><a href="#failures">Failures</a><a href="#provenance">Provenance</a>
+    </nav>
+    <span class="local-tag"><span aria-hidden="true">●</span> OFFLINE / SYNTHETIC</span>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Applied Invention Lab / Library kit tote study</p>
+        <h1>Try to break<br>the <em>better plan.</em></h1>
+        <p class="hero-intro">A lab paid to prove itself wrong. Three different strategies. Two capacity constraints. Every trial kept—even the inconvenient ones.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#workspace">Inspect the evidence <span aria-hidden="true">↘</span></a>
+          <a href="PROTOCOL.md">Read the frozen protocol</a>
+        </div>
+        <p class="boundary-line">Work produced · no native activation · no human review claimed</p>
+      </div>
+      <aside class="hero-note" aria-label="Study result">
+        <div class="note-header"><span class="eyebrow">MEASURED / MODEL ONLY</span><span class="note-number">01</span></div>
+        <h2 id="verdict-title">A complete comparison,<br>not a universal claim.</h2>
+        <p id="hero-note">Loading saved deterministic evidence…</p>
+        <div class="tote-sketch" aria-hidden="true">
+          <div class="sketch-tote"><span class="block core">6</span><span class="block filler">4</span><small>V 10 / W 5</small></div>
+          <div class="sketch-tote"><span class="block core">6</span><span class="block filler">4</span><small>V 10 / W 5</small></div>
+        </div>
+        <p class="micro">Illustration: order-trap pairings. Scalar arithmetic, not geometric fit.</p>
+      </aside>
+    </header>
+
+    <div class="freeze-strip">
+      <span class="badge">PROTOCOL FROZEN</span>
+      <p>Rules committed before candidate comparisons. Known seed outcomes were already reviewed. <strong>Not a blinded or externally registered study.</strong></p>
+      <a id="freeze-hash" href="protocol-lock.json">Freeze record</a>
+    </div>
+    <noscript><p class="notice">JavaScript is required for the interactive inspector. All results are also available as <a href="evidence/result.json">JSON</a>, with <a href="evidence/trials.json">every trial</a> and the <a href="README.md">written report</a>. No server is needed.</p></noscript>
+
+    <section id="overview" aria-labelledby="overview-heading">
+      <div class="section-heading"><div><p class="eyebrow">01 / Complete comparison</p><h2 id="overview-heading">A smaller count has to earn its place.</h2></div><a href="evidence/result.json">Result JSON ↗</a></div>
+      <div class="stat-grid">
+        <article class="stat"><span class="stat-label">Input-order baseline</span><strong id="baseline-paired">—</strong><span>bins across 80 paired cases</span></article>
+        <article class="stat standout"><span class="stat-label">Selected candidate</span><strong id="selected-paired">—</strong><span id="selected-method-name">Frozen selection rule</span></article>
+        <article class="stat"><span class="stat-label">Modeled difference</span><strong id="saved-paired">—</strong><span>fewer bins; not financial savings</span></article>
+        <article class="stat"><span class="stat-label">Assignments checked</span><strong id="validations">—</strong><span>exactly once + both capacities</span></article>
+      </div>
+      <div class="panel method-panel">
+        <p class="table-intro">Authored totals cover the four source orders. Paired totals cover all 20 permutations × four scenarios. The gate requires improvement in both, with no authored-case or scenario-mean regression.</p>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">All methods and their frozen improvement gates</caption>
+            <thead><tr><th scope="col">Method / mechanism</th><th scope="col">Authored bins</th><th scope="col">Paired bins</th><th scope="col">Win / tie / loss</th><th scope="col">Improvement gate</th></tr></thead>
+            <tbody id="method-overview"></tbody>
+          </table>
+        </div>
+        <p class="micro">Descriptive synthetic results. Trial count is not a sample size for claims about real libraries. Search effort is logged; execution speed is not compared.</p>
+      </div>
+    </section>
+
+    <section id="workspace" aria-labelledby="workspace-heading">
+      <div class="section-heading no-print"><div><p class="eyebrow">02 / Open the black box</p><h2 id="workspace-heading">Every item. Every tote. Both limits.</h2></div><span class="badge">V ≤ 10 &amp; W ≤ 10</span></div>
+      <div id="scenario-picker" class="scenario-picker no-print" role="group" aria-label="Choose a scenario"></div>
+      <div class="inspector panel">
+        <div class="inspector-heading">
+          <div><p class="eyebrow" id="current-case-label"></p><h3 id="scenario-name"></h3><p class="muted" id="scenario-purpose"></p><p class="scenario-meta" id="scenario-meta"></p></div>
+          <div class="case-controls no-print">
+            <label for="case-select">Incoming order<select id="case-select"></select></label>
+            <label for="method-select">Assignment method<select id="method-select"></select></label>
+          </div>
+        </div>
+        <div class="table-wrap current-table no-print">
+          <table>
+            <caption class="sr-only">Same-case comparison; select a method to inspect its assignments</caption>
+            <thead><tr><th scope="col">Same incoming case</th><th scope="col">Bins</th><th scope="col">Δ baseline</th><th scope="col">Method-local proof</th></tr></thead>
+            <tbody id="current-compare"></tbody>
+          </table>
+        </div>
+        <div class="packing-heading">
+          <div><h3 id="packing-heading">Packing instructions</h3><p id="packing-summary"></p></div>
+          <span id="proof-pill" class="badge"></span>
+        </div>
+        <p class="proof-explainer" id="proof-explainer"></p>
+        <p class="model-warning"><strong>MODEL ONLY.</strong> These are abstract volume and weight units—not liters, kilograms, physical dimensions, or safe loads. Check harmless mock geometry before any use. No real tote has been packed.</p>
+        <div class="bins-grid" id="bins-grid"></div>
+        <div class="toolbar no-print">
+          <button type="button" class="primary" id="replay-button">Recompute this assignment</button>
+          <button type="button" id="print-button">Print current instructions</button>
+          <span id="replay-status" role="status" aria-live="polite">Read-only local replay; no evidence is overwritten.</span>
+        </div>
+        <details class="no-print"><summary>Incoming item order and bounded algorithm trace</summary><ol class="incoming-order" id="incoming-order"></ol><pre id="trace-output"></pre></details>
+        <p class="print-footer">Synthetic dataset © 2026 Hive Hub contributors, MIT. Local original algorithms. Protocol: two-capacity-falsification-v1. Source hashes and full trial traces accompany this page.</p>
+      </div>
+      <div class="panel trial-panel no-print">
+        <div class="section-heading"><div><p class="eyebrow">No cherry-picking</p><h3>All 20 paired trials for this scenario</h3></div><a href="evidence/trials.json">All 480 trial-method results ↗</a></div>
+        <div class="table-wrap"><table class="trial-table">
+          <caption class="sr-only">Every retained trial; choose its number to inspect the permutation</caption>
+          <thead><tr><th scope="col">Trial</th><th scope="col">Input</th><th scope="col">Dominant</th><th scope="col">Volume</th><th scope="col">Best-fit</th><th scope="col">Beam</th><th scope="col">Exact*</th></tr></thead>
+          <tbody id="trial-grid"></tbody>
+        </table></div>
+        <p class="micro">*“Exact” is a bounded strategy name, not a blanket proof. A 14-item case is skipped unless the incumbent already matches its lower bound. Select any result to see its actual proof status.</p>
+      </div>
+    </section>
+
+    <section id="failures" aria-labelledby="failures-heading">
+      <div class="section-heading"><div><p class="eyebrow">03 / Keep the inconvenient evidence</p><h2 id="failures-heading">The failure ledger stays open.</h2></div><a href="evidence/counterexamples.json">Full counterexample ledger ↗</a></div>
+      <div class="failure-cards">
+        <article class="panel known-failure"><span class="badge">KNOWN BEFORE FREEZE</span><h3>A dominant load is not a dominant method.</h3><div class="regression-numbers"><div><strong>6</strong><span>Input-order</span></div><div><strong>7</strong><span>Dominant</span></div><div><strong>8</strong><span>Volume-first</span></div></div><p>Mixed-classroom. The plausible dominant rule regresses; the dual best-fit candidate does too. Better performance elsewhere cannot erase this case.</p><button type="button" id="inspect-known-failure">Inspect this regression →</button></article>
+        <article class="panel"><span class="badge">LOWER BOUND ≠ ANSWER</span><h3>Three items. A bound of two. Three totes.</h3><p>In bulky-gaps, every item has volume 6. Any pair totals 12, beyond the capacity of 10. The aggregate bound <code>ceil(18/10) = 2</code> is unattainable.</p><p>Bounded exhaustive search proves three for this scalar case. A beam or greedy count above the aggregate bound is not its own proof.</p><p id="unproven-info" class="notice"></p></article>
+      </div>
+      <div class="panel">
+        <div class="section-heading"><div><h3>Every regression against first-fit</h3><p class="muted" id="failure-count"></p></div><label for="failure-filter">Show<select id="failure-filter"><option value="all">All methods</option><option value="candidate">Candidates only</option><option value="reference-control">Reference controls</option></select></label></div>
+        <div class="table-wrap ledger-scroll"><table><caption class="sr-only">Retained authored and paired losses</caption><thead><tr><th scope="col">Inspect case</th><th scope="col">Method</th><th scope="col">Baseline → result</th><th scope="col">Extra bins</th></tr></thead><tbody id="failure-list"></tbody></table></div>
+        <p class="micro" id="fallback-note"></p>
+      </div>
+    </section>
+
+    <section id="provenance" aria-labelledby="provenance-heading">
+      <div class="section-heading"><div><p class="eyebrow">04 / Reproduce, don't just believe</p><h2 id="provenance-heading">A trail you can follow offline.</h2></div><a href="README.md">Runbook &amp; interpretation ↗</a></div>
+      <div class="provenance-layout">
+        <div class="panel">
+          <h3>Original code. Attributed input data.</h3>
+          <p>The reviewed MIT-licensed seed supplied 11 synthetic rows, four scenarios, and expected reference counts. Its Python programs and tests were <strong>not read, imported, copied or executed</strong>. The algorithms here are original implementations of known techniques, not a novelty claim.</p>
+          <div class="table-wrap"><table><caption class="sr-only">Exact copied source-data SHA-256 hashes</caption><thead><tr><th scope="col">Source file</th><th scope="col">SHA-256</th></tr></thead><tbody id="provenance-table"></tbody></table></div>
+          <div class="artifact-links">
+            <a href="source/sources.json">Source refs</a><a href="source/LICENSE">MIT attribution</a><a href="protocol.json">Frozen protocol</a><a href="protocol-lock.json">Freeze commit</a><a href="evidence/baseline.json">Authored results</a><a href="evidence/dataset-audit.json">Dataset audit</a><a href="evidence/reproducibility.json">Fresh-process repetition</a><a href="evidence/checks.json">Actual check commands</a>
+          </div>
+        </div>
+        <aside class="panel limits-panel"><span class="badge">NOT PERFORMED ≠ PASSED</span><h3>The model stops here.</h3><ul id="limitations-list"></ul><a href="docs/next-study.csv">Planned mock-fit checks, not observations →</a><a href="docs/decision.md">Conditional lab decision →</a></aside>
+      </div>
+    </section>
+    <footer><span>Falsification Lab / Local Hive showcase / Work produced</span><span>No services, network calls, publication or activation.</span></footer>
+  </main>
+</body>
+</html>

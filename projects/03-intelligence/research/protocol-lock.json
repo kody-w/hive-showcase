@@ -1,0 +1,9 @@
+{
+  "schema": "local-preresearch-lock/1",
+  "protocol": "research/protocol.json",
+  "sha256": "c09db1cbeca00af962544cc7178cc3295efb9a64c957ecdd904e4aee87d2294b",
+  "commit": "8b58d0e81935da505f8dc0878e8230277c8aa557",
+  "committedAt": "2026-09-19T01:16:43Z",
+  "claim": "Definitions, evidence thresholds, hypotheses and reversal observations were committed locally before public-source discovery and collection began.",
+  "limit": "A local git chronology, not an externally preregistered or independently notarized protocol."
+}

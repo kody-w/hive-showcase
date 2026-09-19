@@ -1,0 +1,51 @@
+{
+  "schema": "local-work-scope/1",
+  "id": "02-conglomerate",
+  "stage": "work-produced",
+  "authority": "Explicit user-requested local demonstrator only",
+  "seedSlug": "one-person-conglomerate",
+  "seedCase": "first-portfolio-cycle",
+  "readyTask": {
+    "id": "portfolio-intake",
+    "team": "executive-office",
+    "sourceState": "ready",
+    "sourceAssignee": null,
+    "sourceCompletedEvidence": [],
+    "mapping": "data/inputs.json contains five distinct intake rows with owner, offer hypothesis, evidence gaps and non-goals. data/capacity.json preserves the seed's 8 reserved hours and USD 100 hypothetical cash reserve.",
+    "reviewStatus": "Local work produced; not claimed, reviewed, accepted or completed on the native task board"
+  },
+  "explicitExtension": {
+    "request": "Compare the actual five ventures under 300 founder minutes weekly, select one, build a genuinely useful offering, compare cheapest falsifiable demand-test plans and reusable assets.",
+    "changes": [
+      "The user-requested 300-minute whole-week hard cap supersedes the seed's 40-hour scenario. The seed's 480-minute time reserve alone is infeasible here; it is retained as source data, not silently subtracted.",
+      "This separate demo assumes a 30-minute protected reserve, 30-minute shared decision review and at most one active venture. Unallocated minutes are reported rather than filled.",
+      "New delivery and preparation estimates define genuinely narrower local offerings. Original ten experiment IDs, hours, hypothetical USD and selected flags remain unchanged in frozen CSV.",
+      "Original learning/reuse/confidence inputs are inherited explicitly as uncertain planning assumptions for these smaller scopes; they are editable and not measured probabilities.",
+      "Zero external spending or market-test execution is authorized. Test preparation is modeled this week; later execution estimates exclude unknown recruitment and must be replanned after approval.",
+      "Original code is authored independently. Downloaded starter reference programs and tests are not read, imported, embedded or executed."
+    ],
+    "relatedBlockedTasks": [
+      "uncertainty-audit",
+      "ledgerleaf-intake",
+      "fieldnote-intake",
+      "quietbench-intake",
+      "routepaper-intake",
+      "tinylesson-intake",
+      "capacity-baseline",
+      "allocation-analysis",
+      "allocation-proposal",
+      "portfolio-messaging",
+      "portfolio-decision",
+      "reference-tool-gate"
+    ],
+    "blockedTaskBoundary": "These tasks explain related topics only. Their prerequisites have not been approved; this extension does not claim their completion or reproduce their executable reference workflow."
+  },
+  "reviewedTeams": [
+    "executive-office", "portfolio-research", "portfolio-finance", "platform-engineering",
+    "portfolio-go-to-market", "ledgerleaf-tools", "fieldnote-guides", "quietbench-templates",
+    "routepaper-planners", "tinylesson-studio"
+  ],
+  "externalEffects": {"nativeInitialized": false, "published": false, "outreach": false, "spending": false, "marketObservations": 0},
+  "humanDecisionStillNeeded": "Review changed capacity, objective, estimates, prototype boundaries and evidence. Any future participant recruitment, observation, distribution or spend requires separate owner approval and consent.",
+  "sourceReferences": "sources.json"
+}

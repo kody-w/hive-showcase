@@ -1,0 +1,264 @@
+{
+  "schema": "pocket-arcade-component-checks/1",
+  "projectId": "07-manufacturing",
+  "fixtureOnly": false,
+  "approvedSnapshot": "502b74346fe913550f732a1a160d76162f392ce4",
+  "recordedOriginalSourceCommit": "50dc804fc517968e80c7fe5554d31914067c9985",
+  "execution": "Explicit prime invocation of reviewed original checks; never execution by the validator.",
+  "manifest": {
+    "path": "projects/07-manufacturing/manifest.json",
+    "sha256": "a22c4de25c8d32372bc50f87a04f08996c1711a3ebd30bbbcea73545c13fb537",
+    "bytes": 5079
+  },
+  "componentFiles": [
+    {
+      "path": "projects/07-manufacturing/README.md",
+      "sha256": "f829844b24ba6750a53605b4dd38aaf82d06cda3d1ca09a76dce3b320aa09855",
+      "bytes": 12679
+    },
+    {
+      "path": "projects/07-manufacturing/archive.js",
+      "sha256": "a0f7caf41e89fba417046b116e449ade26daeebaa34d802351972e975b894452",
+      "bytes": 5608
+    },
+    {
+      "path": "projects/07-manufacturing/data/seed/LICENSE",
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+      "bytes": 1079
+    },
+    {
+      "path": "projects/07-manufacturing/data/source-provenance.json",
+      "sha256": "ff9ebc63293fa22850d0dc5158c68554da11e65202cc03d74fda8c7235a0411e",
+      "bytes": 9779
+    },
+    {
+      "path": "projects/07-manufacturing/engine.js",
+      "sha256": "25b74446b12969572c9f277e63d789442a81ea82da7ba3bee49e3072b13bde21",
+      "bytes": 29570
+    },
+    {
+      "path": "projects/07-manufacturing/evidence/mesh-validation.json",
+      "sha256": "2ec090e0dd12278e0633e5458c0d25eb8f2098dd723359fb30edaaca70482780",
+      "bytes": 7648
+    },
+    {
+      "path": "projects/07-manufacturing/evidence/result.json",
+      "sha256": "0bc726b20fac76877a5983128b26cbd1c85258d3a3c3c6696548d83fa67bfacf",
+      "bytes": 8474
+    },
+    {
+      "path": "projects/07-manufacturing/generated/artifact-index.json",
+      "sha256": "25b083eb5de2aa575ccabaff1d38d52831c79ab0e62ac84bb19e740ce0be0875",
+      "bytes": 8348
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/assembly.txt",
+      "sha256": "f1668543f68c578d48abcb3b218f76eb784e98ac4397669b53654eb447d4b70a",
+      "bytes": 3272
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/bom.csv",
+      "sha256": "4bc5172c43dcc177fc74d8ddaf56e179f0e3274478078598d409ab95b32b5e53",
+      "bytes": 211
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/drawing.svg",
+      "sha256": "f563588101579b896154b4dec4190837e4855185ea77e1b50caaae47ba9e604e",
+      "bytes": 3314
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/insert.stl",
+      "sha256": "089f753c24c844e3a2fa68fb3fc0b102b745ba9f3174d25803ff4d905e719607",
+      "bytes": 7637
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/inspection.csv",
+      "sha256": "716b5bd6c1576d52f031572182fab47978f99e2b2b245a947fc4827446464bca",
+      "bytes": 1013
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/parameters.json",
+      "sha256": "662f1240a503e83173263f874b35cc743ad6c917ad1378a911b09ac6b41e7d29",
+      "bytes": 2068
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/review-bundle.zip",
+      "sha256": "56b62285ebee052f5010c9e3689133f6996ede3960fe0bdd6150da6e419813d8",
+      "bytes": 112962
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/review.json",
+      "sha256": "8354f402b7a00620c11025c41e442c70bd820f680b3e98732b92cb5290d77541",
+      "bytes": 6509
+    },
+    {
+      "path": "projects/07-manufacturing/generated/compact/tray.stl",
+      "sha256": "0955ecd650e09d8c37a204503a29a8586f847dab5b2ed93c54239f244d4d4168",
+      "bytes": 11295
+    },
+    {
+      "path": "projects/07-manufacturing/generated/comparison.json",
+      "sha256": "cf2a334e066165b2ea4a3c6f42144fc42fba4e37269020cd4046cdc0759afee0",
+      "bytes": 6017
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/assembly.txt",
+      "sha256": "2500adf028800f331996412bd823518c459fb849a6508050da0f7476934544eb",
+      "bytes": 3481
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/bom.csv",
+      "sha256": "e11d11dd6dc67217ff22c637aeb3cfa30c40e367ffef2c96b317b1abedc98ecc",
+      "bytes": 213
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/drawing.svg",
+      "sha256": "980908f22e0360d7399ab8c44d94463ded029b9641914fdec85dc76dbf28d6e8",
+      "bytes": 3517
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/insert.stl",
+      "sha256": "34e9872a27a4316dae44a27c85a7ea3601ce4b1cc15da8205c9531630e41148c",
+      "bytes": 12695
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/inspection.csv",
+      "sha256": "92ff667e1bb37902084916349d4b27d00a2b57a657763a28e1ccbbe99cb532c4",
+      "bytes": 1015
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/parameters.json",
+      "sha256": "3a385a3a45e7d6b05df2d4b0a248bcdebbc7316c7e7954c925bb16e1ce8f6042",
+      "bytes": 2075
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/review-bundle.zip",
+      "sha256": "f002197852d13842f47a79adea687a7aae9e99a9ee7f91cce027026773122472",
+      "bytes": 122785
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/review.json",
+      "sha256": "cff5dd27b6e8be9dfbde03bcfdf37082dc63dc9e784ffe6c554d99a7452322ae",
+      "bytes": 6698
+    },
+    {
+      "path": "projects/07-manufacturing/generated/pocket-arcade/tray.stl",
+      "sha256": "45c77711b7a4a90a9423a999c3bb11dd5e2f8949d9c2dea5e8d655ef6c13f66e",
+      "bytes": 11361
+    },
+    {
+      "path": "projects/07-manufacturing/generated/seed-review.json",
+      "sha256": "20262c86f93fef15b1bd41fc4a47a535c9ff2b8d36ede6d2115135843e5e19fc",
+      "bytes": 3243
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/assembly.txt",
+      "sha256": "0711bd29351830614fe06fd0cbd1e9a5312b5f51d150d758672f854c37d7c1d5",
+      "bytes": 3270
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/bom.csv",
+      "sha256": "8b50b7e626842785505ecf629b5e0a9774d07bb8a6e21f42686f2182de7963e3",
+      "bytes": 215
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/drawing.svg",
+      "sha256": "2e9af32a8f53f6c4a22db6759d3cceef8410ec7b54b37fb954beb4c27626e4cb",
+      "bytes": 3523
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/insert.stl",
+      "sha256": "694eb6a9805dc6b3994d0faf59d9ff23f4aef9d66532f23f23915e62e30ecf59",
+      "bytes": 14099
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/inspection.csv",
+      "sha256": "3b9a43e9bb25d148b71f2bbce40471c6697c96cccd7d566f086eba867dd51184",
+      "bytes": 1015
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/parameters.json",
+      "sha256": "259747d570c14d31f2b75f2fdce157a2888f020fd90a443e9933f07f403c5925",
+      "bytes": 2069
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/review-bundle.zip",
+      "sha256": "84cc35becb3c44a264c2ff4a8eeb18a355acf223a99ab27635b29d7c56121769",
+      "bytes": 123377
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/review.json",
+      "sha256": "81d55c00bbb3cfe88a06f79e385b71f1d63baa0d50a909631f9b4f533a5c3f0d",
+      "bytes": 6630
+    },
+    {
+      "path": "projects/07-manufacturing/generated/stackline/tray.stl",
+      "sha256": "e9867703e41a622687824a50caec4cbcf6e9ec2caa55898067257428868816a6",
+      "bytes": 11361
+    },
+    {
+      "path": "projects/07-manufacturing/generated/synthetic-inspection.json",
+      "sha256": "ff5674e8a263af0c0d6c2ee45afb79bf74de1120e3636b786ece98765c10cb68",
+      "bytes": 2916
+    },
+    {
+      "path": "projects/07-manufacturing/generated/width-change-review.json",
+      "sha256": "cf09687d73c2b62e3f0c0a0f389a377e91a219dbc7613526f56fdd0c68d9fb84",
+      "bytes": 15374
+    },
+    {
+      "path": "projects/07-manufacturing/index.html",
+      "sha256": "679e88603de2bf41eaf7dccc9e71ba108b65fc956674f70a2892f703d55196a2",
+      "bytes": 15444
+    }
+  ],
+  "declaredFilesUnchanged": true,
+  "allPassed": true,
+  "checkRuns": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/07-manufacturing/tests/engine.test.mjs",
+        "projects/07-manufacturing/tests/app.test.mjs"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-0.txt",
+        "sha256": "a4555a38e8ae7e1ab4dc9b54922c70a9083e396814319b2760aded374baafe64",
+        "bytes": 7232
+      },
+      "recordedAt": "2026-09-19T02:21:34.649626+00:00"
+    },
+    {
+      "argv": [
+        "python3",
+        "projects/07-manufacturing/tests/verify_artifacts.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-1.txt",
+        "sha256": "0ab2b430d48fb795a469d4c1a950e87ffb60e18008560331668e8ad6b39de8c1",
+        "bytes": 340
+      },
+      "recordedAt": "2026-09-19T02:21:35.191565+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "projects/07-manufacturing/tools/generate.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-2.txt",
+        "sha256": "6d90167e4bbf44c1b5db47f6fbb3b71d9f574c9626f05246246784a50664b57c",
+        "bytes": 281
+      },
+      "recordedAt": "2026-09-19T02:21:35.261697+00:00"
+    }
+  ],
+  "nativeOrOwnerApproval": false
+}

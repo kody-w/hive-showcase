@@ -1,0 +1,41 @@
+{
+  "schema": "pocket-arcade-maintenance-contract/1",
+  "output_schema": "pocket-arcade-maintenance/1",
+  "classification": "SYNTHETIC",
+  "purpose": "An offline consumer can show an original fictional maintenance queue without double-counting repeated receipts.",
+  "producer_argv_from_repository_root": [
+    "python3", "-B", "projects/09-handoff/cli.py",
+    "projects/09-handoff/fixtures/duplicate.jsonl"
+  ],
+  "artifact": "projects/09-handoff/artifacts/pocket-arcade-maintenance.json",
+  "fields": {
+    "schema": "Exact output_schema above.",
+    "classification": "Always SYNTHETIC. Never display as real player telemetry.",
+    "scope": "Always offline-fictional-maintenance.",
+    "release_authority": "Always false. No approvals may be inferred.",
+    "input_sha256": "Lowercase SHA-256 of the selected UTF-8 file's exact bytes.",
+    "input_records": "Count of all validated nonblank records, including repeats.",
+    "replayed_records": "input_records minus summary.event_count.",
+    "open_queue": "Sorted item IDs whose final state is open; a queue, not a deployment gate.",
+    "summary": {
+      "event_count": "Unique event IDs after complete conflict validation.",
+      "open_items": "Number of item rows with state open.",
+      "closed_items": "Number of item rows with state closed.",
+      "items": "Rows sorted by item_id, containing item_id, state, unique event_count, and last_minute."
+    }
+  },
+  "input_rules": [
+    "Each strict JSONL record has classification, event_id, item_id, action, and at_minute only.",
+    "Conflicting payloads for an existing event ID are errors, not a last-write-wins update.",
+    "Different IDs remain different events, even when all other fields match.",
+    "Chronological order uses (at_minute, event_id), not arrival time or the host clock.",
+    "The raw input is not mutated. The CLI writes only stdout or a diagnostic to stderr."
+  ],
+  "cli_exit_codes": {"0": "Valid JSON artifact printed.", "2": "Invalid invocation, input, or selected-file error."},
+  "integration_status": "Artifact provided and tested; no other workstream was modified and no Pocket Arcade integration is claimed.",
+  "limitations": [
+    "Python 3.9+ standard library; no network dependencies.",
+    "At most 1 MiB, 16 KiB per line, 5000 raw records, 40 characters per ID, and integer minutes from 0 through 1000000.",
+    "Only explicitly synthetic fixtures are accepted; this is not a production event broker or security audit."
+  ]
+}

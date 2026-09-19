@@ -1,0 +1,51 @@
+{
+  "argv": [
+    "node",
+    "projects/08-turnaround/scripts/build.mjs",
+    "--check"
+  ],
+  "exitCode": 0,
+  "output": {
+    "mode": "--check",
+    "status": "passed",
+    "generatedArtifacts": 8,
+    "verifiedCopiedDataFiles": 9,
+    "candidateId": "early-010111",
+    "strategies": 128,
+    "resourceValid": 49,
+    "floorAndFundingSurvivors": 0,
+    "scenarios": [
+      {
+        "id": "baseline",
+        "firstFloorDay": 28,
+        "firstUnfundedDay": 59,
+        "finalScheduledCashCents": -10000
+      },
+      {
+        "id": "recovery",
+        "firstFloorDay": 58,
+        "firstUnfundedDay": 90,
+        "finalScheduledCashCents": 245000
+      },
+      {
+        "id": "delayed-receipts",
+        "firstFloorDay": 28,
+        "firstUnfundedDay": 59,
+        "finalScheduledCashCents": -262500
+      },
+      {
+        "id": "weaker-demand",
+        "firstFloorDay": 30,
+        "firstUnfundedDay": 88,
+        "finalScheduledCashCents": -625000
+      },
+      {
+        "id": "combined-stress",
+        "firstFloorDay": 28,
+        "firstUnfundedDay": 58,
+        "finalScheduledCashCents": -1031000
+      }
+    ]
+  },
+  "stderr": ""
+}

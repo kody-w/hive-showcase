@@ -1,0 +1,83 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-dora",
+  "requestedUrl": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report",
+  "retrievedAt": "2026-09-19T01:19:35.589026+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "nearly 5,000",
+      "found": true,
+      "startCharacter": 1300,
+      "endCharacter": 1530,
+      "text": "insights from over 100 hours of qualitative data and survey responses from nearly 5,000 technology professionals from around the world. The report reveals a key insight: AI doesn't fix a team; it amplifies what's already there. St",
+      "sha256": "db99cbda74cc26861dcae03b6daae279314f717d20959201afc53be69e9cb620"
+    },
+    {
+      "id": "e2",
+      "anchor": "positive relationship",
+      "found": true,
+      "startCharacter": 2183,
+      "endCharacter": 2413,
+      "text": "er integrate these tools into our workflow. Unlike last year, we observe a positive relationship between AI adoption on both software delivery throughput and product performance. It appears that people, teams, and tools are learni",
+      "sha256": "80034755040294ad5edd6a1d0379956fab0b71f0e9bbdf11973430b65f595f3a"
+    },
+    {
+      "id": "e3",
+      "anchor": "negative relationship",
+      "found": true,
+      "startCharacter": 2426,
+      "endCharacter": 2656,
+      "text": "n, and how AI is most useful. However, AI adoption does continue to have a negative relationship with software delivery stability. This confirms our central theory - AI accelerates software development, but that acceleration can e",
+      "sha256": "1306b030ede5f4d1da76cd75cbbc9827eb15ed324e957251c194f9646331606c"
+    },
+    {
+      "id": "e4",
+      "anchor": "90% of survey",
+      "found": true,
+      "startCharacter": 3137,
+      "endCharacter": 3367,
+      "text": "llowing about modern software development: AI adoption is near-universal : 90% of survey respondents report using AI at work. More than 80% believe it has increased their productivity. However, skepticism remains as 30% report lit",
+      "sha256": "6092e91638bc2832a4943e6255e33717d27b467d771dc7e98703053f3e58e0fd"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report",
+  "contentType": "text/html; charset=utf-8",
+  "responseBytes": 239882,
+  "responseSha256": "40b025f43c843b3d5117249fa72f70e5dc1d59f87be923c03fdf398c70708026",
+  "lastModified": null,
+  "etag": null,
+  "pageTitle": "Announcing the 2025 DORA Report | Google Cloud Blog",
+  "dateAndAuthorMetadata": {
+    "apple-mobile-web-app-title": [
+      "Google Cloud Blog"
+    ],
+    "og:title": [
+      "Announcing the 2025 DORA Report | Google Cloud Blog"
+    ],
+    "twitter:title": [
+      "Announcing the 2025 DORA Report | Google Cloud Blog"
+    ],
+    "track-metadata-page_post_title": [
+      "Announcing the 2025 DORA Report"
+    ],
+    "published_time": [
+      "2025-09-23T17:00:03-0400"
+    ],
+    "track-metadata-page_post_author": [
+      "Nathen Harvey"
+    ],
+    "track-metadata-page_post_author_role": [
+      "DORA Lead"
+    ],
+    "authors": [
+      "Nathen Harvey,Derek DeBellis"
+    ]
+  },
+  "normalizedTextSha256": "9ba5d30fbc0f9831f33cbf2fb057dadcc26760b28b6070473d3492a67e2ab9e2",
+  "normalizedTextCharacters": 7177,
+  "outcome": "captured"
+}

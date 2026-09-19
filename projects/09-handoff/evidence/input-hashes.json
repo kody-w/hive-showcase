@@ -1,0 +1,150 @@
+{
+  "historical_files": [
+    {
+      "bytes": 2016,
+      "path": "AGENTS.md",
+      "sha256": "3baa9a6deaf4509a4e60fd77a1e46d88e3c16c364cea3db1a1ad14ed87860aec"
+    },
+    {
+      "bytes": 4529,
+      "path": "HANDOFF.md",
+      "sha256": "9cc24b856b88313d8f271904b447c1a76711b2c7ced39b69109e9dfb4108abc3"
+    },
+    {
+      "bytes": 2037,
+      "path": "ACCEPTANCE.json",
+      "sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4"
+    },
+    {
+      "bytes": 6180,
+      "path": "provenance.json",
+      "sha256": "47e655e128dafeb9262c9c4ba0b720e35c808218c06474a3864b0bc9a07e645a"
+    },
+    {
+      "bytes": 358,
+      "path": "fixtures/clean.jsonl",
+      "sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf"
+    },
+    {
+      "bytes": 476,
+      "path": "fixtures/duplicate.jsonl",
+      "sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040"
+    },
+    {
+      "bytes": 358,
+      "path": "fixtures/out-of-order.jsonl",
+      "sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/before-acceptance.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3358,
+      "path": "evidence/before-acceptance.stdout.txt",
+      "sha256": "a23994b5e2024a5bbb5023afcd7e26a3848160612a8469b8f4181ee7e302da86"
+    },
+    {
+      "bytes": 2492,
+      "path": "evidence/before-tests.stderr.txt",
+      "sha256": "1488009089deb582960a2f38529ad9da94c7db7d3b44414888ca541fe7a2fe10"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/before-tests.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 13847,
+      "path": "evidence/before.json",
+      "sha256": "4b369c6e74630d48428ec743e6d920fa2e15fb8f42a8bbf86aae967b8e671fdf"
+    }
+  ],
+  "historical_midpoint_source_hashes": [
+    {
+      "bytes": 5999,
+      "path": "receipt_ledger.py",
+      "sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8"
+    },
+    {
+      "bytes": 843,
+      "path": "cli.py",
+      "sha256": "0ad68cb860a899670b81c3f3ff8643985b2152903b29d69fa660c7ec3d5a2744"
+    },
+    {
+      "bytes": 7043,
+      "path": "tests/test_ledger.py",
+      "sha256": "6c95bd7b26beb5859076cda99e9f7ac82d634d13f29010f3fb90f0a178971cfb"
+    },
+    {
+      "bytes": 1321,
+      "path": "tools/check_acceptance.py",
+      "sha256": "4d0ef123efb15e1374a724d4bddabfd330be295e9e054c5fc2e17167618edee3"
+    },
+    {
+      "bytes": 3515,
+      "path": "tools/capture.py",
+      "sha256": "c29afe6a33cbe8621e6cef00f4c908786f92c696701de21e8746b6a40d69e463"
+    },
+    {
+      "bytes": 811,
+      "path": "tools/verify_inputs.py",
+      "sha256": "c9f74a09179026d4cc62d0e09aa108a80d89ff837f7be6ab330556e62f568f3f"
+    }
+  ],
+  "original_record_sha256": "6b03cf70815f51def8126ae3532c58cc604b38da41838fdceb7cb50ea0059ea6",
+  "preserved_public_files": [
+    {
+      "bytes": 4529,
+      "path": "HANDOFF.md",
+      "sha256": "9cc24b856b88313d8f271904b447c1a76711b2c7ced39b69109e9dfb4108abc3"
+    },
+    {
+      "bytes": 2037,
+      "path": "ACCEPTANCE.json",
+      "sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4"
+    },
+    {
+      "bytes": 6180,
+      "path": "provenance.json",
+      "sha256": "47e655e128dafeb9262c9c4ba0b720e35c808218c06474a3864b0bc9a07e645a"
+    },
+    {
+      "bytes": 358,
+      "path": "fixtures/clean.jsonl",
+      "sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf"
+    },
+    {
+      "bytes": 476,
+      "path": "fixtures/duplicate.jsonl",
+      "sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040"
+    },
+    {
+      "bytes": 358,
+      "path": "fixtures/out-of-order.jsonl",
+      "sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c"
+    }
+  ],
+  "qualification": "Historical hashes describe original private-build bytes. Only preserved_public_files and unchanged_repaired_files are required to match their current public paths. All current published bytes are separately indexed by public-integrity.json.",
+  "record_kind": "derived-historical-hash-index",
+  "schema": "handoff-public-historical-inputs/1",
+  "unchanged_repaired_files": [
+    {
+      "path": "receipt_ledger.py",
+      "sha256": "9049da2028504b0f6e4940d589db74ab1f42eecd1042eee504518e01d87acdc2"
+    },
+    {
+      "path": "tests/test_ledger.py",
+      "sha256": "87bddbcd4314e7b1c4a2ce9c7b7515aa3bec049f3460889fd183d4e6ed7eba21"
+    },
+    {
+      "path": "cli.py",
+      "sha256": "0ad68cb860a899670b81c3f3ff8643985b2152903b29d69fa660c7ec3d5a2744"
+    },
+    {
+      "path": "tools/check_acceptance.py",
+      "sha256": "4d0ef123efb15e1374a724d4bddabfd330be295e9e054c5fc2e17167618edee3"
+    }
+  ]
+}

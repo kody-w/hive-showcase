@@ -1,0 +1,74 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-metr-2026",
+  "requestedUrl": "https://metr.org/blog/2026-02-24-uplift-update/",
+  "retrievedAt": "2026-09-19T01:19:34.839904+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "-18%",
+      "found": true,
+      "startCharacter": 2302,
+      "endCharacter": 2532,
+      "text": "velopers who participated in the later study, we now estimate a speedup of -18% with a confidence interval between -38% and +9%. Among newly-recruited developers the estimated speedup is -4%, with a confidence interval between -15",
+      "sha256": "bb73b2c4ef19810a0e92312630a8c12443b7142e8449f2589fc5dacc443e1025"
+    },
+    {
+      "id": "e2",
+      "anchor": "57 developers",
+      "found": true,
+      "startCharacter": 9770,
+      "endCharacter": 10000,
+      "text": "pen-source contributors with median 10 years experience. We have data from 57 developers, across 143 repos, and 800+ tasks. 10 of these developers are from the original study, and the remaining developers are new and recruited fro",
+      "sha256": "2f4c4af63514dc3a46274156dacb7aa4e32d064490cc9101e211c9b1198d5c98"
+    },
+    {
+      "id": "e3",
+      "anchor": "only very weak evidence",
+      "found": true,
+      "startCharacter": 1968,
+      "endCharacter": 2198,
+      "text": ". However, because of the selection effects in our experiment, our data is only very weak evidence for the size of this increase. Our raw results show some evidence for speedup. Our early 2025 study found the use of AI causes task",
+      "sha256": "84ed6b340007ea34809a7f74768d1e96dce017478ffa31ee6adb6c3a826313bc"
+    },
+    {
+      "id": "e4",
+      "anchor": "multiple AI agents",
+      "found": true,
+      "startCharacter": 1678,
+      "endCharacter": 1908,
+      "text": "e-spent on each task are unreliable for the fraction of developers who use multiple AI agents concurrently. Based on conversations with study participants, we believe it is likely that developers are more sped up from AI tools now",
+      "sha256": "2f97efca4e7512b16424a8275cd3ac6b4dd92f1fb388ccb5d2849513d6e37638"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://metr.org/blog/2026-02-24-uplift-update/",
+  "contentType": "text/html; charset=UTF-8",
+  "responseBytes": 60772,
+  "responseSha256": "84275f6325901805deeefeb8e071b692ad759d09a593057b13524bde8c9a609c",
+  "lastModified": null,
+  "etag": "\"21f6d0414fbb6557ba7056a16b65e4a6-ssl\"",
+  "pageTitle": "We are Changing our Developer Productivity Experiment Design - METR",
+  "dateAndAuthorMetadata": {
+    "citation_title": [
+      "We are Changing our Developer Productivity Experiment Design"
+    ],
+    "citation_date": [
+      "2026/02/24"
+    ],
+    "citation_journal_title": [
+      "METR Blog"
+    ],
+    "og:title": [
+      "We are Changing our Developer Productivity Experiment Design"
+    ],
+    "twitter:title": [
+      "We are Changing our Developer Productivity Experiment Design"
+    ]
+  },
+  "normalizedTextSha256": "263076cd3cf521a18e9a4bc97beaa16f8d964a6275ebde90f0ba60f5818c3e55",
+  "normalizedTextCharacters": 12143,
+  "outcome": "captured"
+}

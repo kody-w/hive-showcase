@@ -1,0 +1,24 @@
+argv: ["node", "--check", "projects/10-pocket-arcade/app.js"]
+recordedAt: 2026-09-19T02:09:26.878108+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/model.js"]
+recordedAt: 2026-09-19T02:09:26.914066+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/connected-data.js"]
+recordedAt: 2026-09-19T02:09:26.941243+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---

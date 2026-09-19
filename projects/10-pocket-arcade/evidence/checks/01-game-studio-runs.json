@@ -1,0 +1,172 @@
+{
+  "schema": "pocket-arcade-component-checks/1",
+  "projectId": "01-game-studio",
+  "fixtureOnly": false,
+  "approvedSnapshot": "502b74346fe913550f732a1a160d76162f392ce4",
+  "recordedOriginalSourceCommit": "493c333ac7085a10359c87ede5e0c74ab459a766",
+  "execution": "Explicit prime invocation of reviewed original checks; never execution by the validator.",
+  "manifest": {
+    "path": "projects/01-game-studio/manifest.json",
+    "sha256": "1b3d370adc0716951a7ed8057d0436191354308b8d564ca9d1735878eda549d1",
+    "bytes": 2894
+  },
+  "componentFiles": [
+    {
+      "path": "projects/01-game-studio/README.md",
+      "sha256": "d8e4833c088e51d3107e09675b4a489cf4e62df98e48cb769d18f0a139111ea7",
+      "bytes": 11318
+    },
+    {
+      "path": "projects/01-game-studio/SOURCE-NOTICE.txt",
+      "sha256": "e0a2a72ab43ea4769236a84ca7e1628691198f630ee81b63cecce7bdb710bc67",
+      "bytes": 1525
+    },
+    {
+      "path": "projects/01-game-studio/app.js",
+      "sha256": "b6e70ca37a040dd7abdd2619448ea3981adc3a47272166177eb68a4633bc21b7",
+      "bytes": 19754
+    },
+    {
+      "path": "projects/01-game-studio/art/colony.svg",
+      "sha256": "6fffba6d758e70d0f8649c54677d3cda5c716c275e41101fe89afb008f64d089",
+      "bytes": 3887
+    },
+    {
+      "path": "projects/01-game-studio/builds.js",
+      "sha256": "bd53a5f05af425d24bfb868e6c67c300cc3bdef4bccf3b6d23f17e0115359237",
+      "bytes": 1195
+    },
+    {
+      "path": "projects/01-game-studio/controller.js",
+      "sha256": "a9d38a4a8b25766c8b712c52420e0ccd6b31350bbd751bba6770509ff07f6f50",
+      "bytes": 2802
+    },
+    {
+      "path": "projects/01-game-studio/engine.js",
+      "sha256": "0ff727d2d33562981844f933891568b250fe35d3fe0567a08f80606c2bb330b2",
+      "bytes": 20368
+    },
+    {
+      "path": "projects/01-game-studio/evidence/cycle-01.json",
+      "sha256": "ae0cf7f2fa3b00e9bf7f78deec5debbfc85950c70a481653e84bda77e43a6ef5",
+      "bytes": 1339
+    },
+    {
+      "path": "projects/01-game-studio/evidence/cycle-02.json",
+      "sha256": "7bb49cd48b0c31fd391cc94efefb047e4c585bc0503fb11bea7faebf3f40b88a",
+      "bytes": 1436
+    },
+    {
+      "path": "projects/01-game-studio/evidence/cycle-03.json",
+      "sha256": "0a6faa18ac1bf1bd3700bd57c91bdf20085f6c4016ae4cd469124247f206588e",
+      "bytes": 1708
+    },
+    {
+      "path": "projects/01-game-studio/evidence/result.json",
+      "sha256": "c6ef9f41366cd2aa2c138c92da7c64eaf732e1e6d1921373b3dbfd2a7b5e7358",
+      "bytes": 31806
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-01-after.json",
+      "sha256": "72411b3719f09690ace0f3335c41be2d2667312d890698d7b74d6caf33811ac2",
+      "bytes": 106397
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-01-before.json",
+      "sha256": "143ad206586ced7cf3967df9d0066ca09a9ae86e4be7c431f58243dcb5f9c5ae",
+      "bytes": 140551
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-02-after.json",
+      "sha256": "1f8b5b9402beb9048760485af7dd992ac086e4f345e59adb5e5f67a6753d8739",
+      "bytes": 140775
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-02-before.json",
+      "sha256": "148d1e3aa41342eabbcc0b137abe9b68f76fa8d0f0a39f860ec2ffb12f65b61c",
+      "bytes": 141241
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-03-after.json",
+      "sha256": "bed57cd5861a0a37fe28965123aaac3e799bb3c14afbd5f8e1bb32ecb4f52f2f",
+      "bytes": 95621
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/cycle-03-before.json",
+      "sha256": "ea657aa2747e54b1ec1ca0ac664a7e67be857304d4a3ed07d85bb318293bc416",
+      "bytes": 142003
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/release-trained.json",
+      "sha256": "7bf21e19f7c90926486f7e71e69ad597307c32886f4638418198b456239a814f",
+      "bytes": 95462
+    },
+    {
+      "path": "projects/01-game-studio/evidence/runs/release-untaught.json",
+      "sha256": "358fe5273ba4dbb9d494d4953f3f2d3da401e63715fdce026b4d476de48725f3",
+      "bytes": 138619
+    },
+    {
+      "path": "projects/01-game-studio/evidence/source-review.json",
+      "sha256": "b6f28386b05dbce9e916fe1095a55e29bfbac6be7f0453c2dde907839844392f",
+      "bytes": 6571
+    },
+    {
+      "path": "projects/01-game-studio/evidence/validation-history.json",
+      "sha256": "be1e78b4d2427b470306c193ad7bafeb701b69041761812ab5adfd678caf873b",
+      "bytes": 1750
+    },
+    {
+      "path": "projects/01-game-studio/evidence/validation.tap",
+      "sha256": "2b6cd0c19678a3f375553631b6d2f78285cdd0f2152e1c18365a260c011e45da",
+      "bytes": 7687
+    },
+    {
+      "path": "projects/01-game-studio/index.html",
+      "sha256": "08b979b1d51e291f79d4380400758224cc263aa5f95ba07016a7ad9fe575c6c9",
+      "bytes": 15380
+    },
+    {
+      "path": "projects/01-game-studio/replay-data.js",
+      "sha256": "064e12df38169d1b661ef709e48bf9faec0462138743894bee7c4648a5dc0328",
+      "bytes": 235650
+    }
+  ],
+  "declaredFilesUnchanged": true,
+  "allPassed": true,
+  "checkRuns": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/01-game-studio/tests/engine.test.mjs",
+        "projects/01-game-studio/tests/controller.test.mjs",
+        "projects/01-game-studio/tests/app.test.mjs",
+        "projects/01-game-studio/tests/evidence.test.mjs"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-0.txt",
+        "sha256": "5a6f873af1b012debef1147bb3bb7efb9ed5aac6c187c4c39acb2390cc715ddb",
+        "bytes": 7694
+      },
+      "recordedAt": "2026-09-19T02:21:34.639417+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "projects/01-game-studio/tools/bundle-replays.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-1.txt",
+        "sha256": "df2f09429ff317d0f2ed764ceee63ba42acdbb2c03a11dd21da7a51be5b35d94",
+        "bytes": 266
+      },
+      "recordedAt": "2026-09-19T02:21:35.677837+00:00"
+    }
+  ],
+  "nativeOrOwnerApproval": false
+}

@@ -1,0 +1,9 @@
+argv: ["python3", "projects/07-manufacturing/tests/verify_artifacts.py", "--check"]
+recordedAt: 2026-09-19T02:21:35.191565+00:00
+exitCode: 0
+--- stdout ---
+Independent validation PASS: 6 closed manifold STL solids, 3 drawings/BOMs/ZIPs, 5 adversarial rejection controls, 40 artifact hashes.
+
+--- stderr ---
+
+--- end of captured streams ---

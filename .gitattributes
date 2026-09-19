@@ -1,0 +1,3 @@
+# Byte-verified licenses and captured output must remain verbatim.
+**/LICENSE -text whitespace=-blank-at-eof
+projects/01-game-studio/evidence/validation.tap -text whitespace=-blank-at-eol

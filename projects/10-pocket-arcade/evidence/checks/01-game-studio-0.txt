@@ -1,0 +1,216 @@
+argv: ["node", "--test", "--test-reporter=tap", "projects/01-game-studio/tests/engine.test.mjs", "projects/01-game-studio/tests/controller.test.mjs", "projects/01-game-studio/tests/app.test.mjs", "projects/01-game-studio/tests/evidence.test.mjs"]
+recordedAt: 2026-09-19T02:21:34.639417+00:00
+exitCode: 0
+--- stdout ---
+TAP version 13
+# Subtest: actual app boots with local scripts, exposes the bounded contract, and paints map markers
+ok 1 - actual app boots with local scripts, exposes the bounded contract, and paints map markers
+  ---
+  duration_ms: 27.301416
+  type: 'test'
+  ...
+# Subtest: actual lesson buttons, robot selection, patch clicks, and step controls change engine state
+ok 2 - actual lesson buttons, robot selection, patch clicks, and step controls change engine state
+  ---
+  duration_ms: 113.633708
+  type: 'test'
+  ...
+# Subtest: keyboard shortcuts are wired, but do not hijack focused form controls
+ok 3 - keyboard shortcuts are wired, but do not hijack focused form controls
+  ---
+  duration_ms: 12.915
+  type: 'test'
+  ...
+# Subtest: the actual autoplay loop has a five-minute beat budget and stops at sunset
+ok 4 - the actual autoplay loop has a five-minute beat budget and stops at sunset
+  ---
+  duration_ms: 88.814292
+  type: 'test'
+  ...
+# Subtest: hidden-tab pause and explicit API actions prevent runaway timers
+ok 5 - hidden-tab pause and explicit API actions prevent runaway timers
+  ---
+  duration_ms: 11.535083
+  type: 'test'
+  ...
+# Subtest: bundled replay can be loaded, scrubbed, played to its verified win, and exited
+ok 6 - bundled replay can be loaded, scrubbed, played to its verified win, and exited
+  ---
+  duration_ms: 120.286166
+  type: 'test'
+  ...
+# Subtest: malformed or oversized file imports are rejected without replacing live play
+ok 7 - malformed or oversized file imports are rejected without replacing live play
+  ---
+  duration_ms: 6.500791
+  type: 'test'
+  ...
+# Subtest: historical builds describe their actual unsafe rules, not the latest build's promises
+ok 8 - historical builds describe their actual unsafe rules, not the latest build's promises
+  ---
+  duration_ms: 2.574167
+  type: 'test'
+  ...
+# Subtest: the browser controller uses the same six lessons and exact winning game rules
+ok 9 - the browser controller uses the same six lessons and exact winning game rules
+  ---
+  duration_ms: 60.447083
+  type: 'test'
+  ...
+# Subtest: replay verifies before display, seeks deterministically, and is read-only
+ok 10 - replay verifies before display, seeks deterministically, and is read-only
+  ---
+  duration_ms: 65.975458
+  type: 'test'
+  ...
+# Subtest: rejected replay/reset requests leave the current live session untouched
+ok 11 - rejected replay/reset requests leave the current live session untouched
+  ---
+  duration_ms: 68.422542
+  type: 'test'
+  ...
+# Subtest: partial replays can be exported and verified without fabricating unplayed actions
+ok 12 - partial replays can be exported and verified without fabricating unplayed actions
+  ---
+  duration_ms: 27.8905
+  type: 'test'
+  ...
+# Subtest: replay rejects duplicated terminal actions rather than accepting a repeated last frame
+ok 13 - replay rejects duplicated terminal actions rather than accepting a repeated last frame
+  ---
+  duration_ms: 30.14275
+  type: 'test'
+  ...
+# Subtest: rescue is a real, finite player choice with pod conservation
+ok 14 - rescue is a real, finite player choice with pod conservation
+  ---
+  duration_ms: 2.692417
+  type: 'test'
+  ...
+# Subtest: the global action cap also bounds lesson-only play
+ok 15 - the global action cap also bounds lesson-only play
+  ---
+  duration_ms: 41.337792
+  type: 'test'
+  ...
+# Subtest: same options and semantic actions produce exactly the same state
+ok 16 - same options and semantic actions produce exactly the same state
+  ---
+  duration_ms: 38.786083
+  type: 'test'
+  ...
+# Subtest: untrusted controls are bounded and invalid actions do not change state
+ok 17 - untrusted controls are bounded and invalid actions do not change state
+  ---
+  duration_ms: 2.234417
+  type: 'test'
+  ...
+# Subtest: snapshots and exported traces cannot mutate a live colony
+ok 18 - snapshots and exported traces cannot mutate a live colony
+  ---
+  duration_ms: 0.926875
+  type: 'test'
+  ...
+# Subtest: sunset is a real loss, and terminal state is immutable
+ok 19 - sunset is a real loss, and terminal state is immutable
+  ---
+  duration_ms: 37.805125
+  type: 'test'
+  ...
+# Subtest: every beat obeys map, energy, occupancy, and conservation invariants
+ok 20 - every beat obeys map, energy, occupancy, and conservation invariants
+  ---
+  duration_ms: 309.942292
+  type: 'test'
+  ...
+# Subtest: replay rejects altered actions, frames, and final states
+ok 21 - replay rejects altered actions, frames, and final states
+  ---
+  duration_ms: 7.096209
+  type: 'test'
+  ...
+# Subtest: v2 safety lesson budgets a complete meadow trip rather than stranding a courier
+ok 22 - v2 safety lesson budgets a complete meadow trip rather than stranding a courier
+  ---
+  duration_ms: 4.731042
+  type: 'test'
+  ...
+# Subtest: v3 takes a real detour around walls; solo throughput is not enough to win the class mission
+ok 23 - v3 takes a real detour around walls; solo throughput is not enough to win the class mission
+  ---
+  duration_ms: 10.375542
+  type: 'test'
+  ...
+# Subtest: v4's trained class completes all three gardens without stranding or global deadlocks
+ok 24 - v4's trained class completes all three gardens without stranding or global deadlocks
+  ---
+  duration_ms: 241.110417
+  type: 'test'
+  ...
+# Subtest: mixed, mid-shift player choices preserve every invariant and replay exactly
+ok 25 - mixed, mid-shift player choices preserve every invariant and replay exactly
+  ---
+  duration_ms: 264.44425
+  type: 'test'
+  ...
+# Subtest: invalid batch syntax is rejected before applying earlier valid lessons
+ok 26 - invalid batch syntax is rejected before applying earlier valid lessons
+  ---
+  duration_ms: 0.159208
+  type: 'test'
+  ...
+# Subtest: all eight persisted runs replay exactly, including unsuccessful cases
+ok 27 - all eight persisted runs replay exactly, including unsuccessful cases
+  ---
+  duration_ms: 283.016125
+  type: 'test'
+  ...
+# Subtest: cycle summaries are derived from paired actual runs, not invented success claims
+ok 28 - cycle summaries are derived from paired actual runs, not invented success claims
+  ---
+  duration_ms: 16.602291
+  type: 'test'
+  ...
+# Subtest: bundled offline replays contain exactly the original six trace/score pairs
+ok 29 - bundled offline replays contain exactly the original six trace/score pairs
+  ---
+  duration_ms: 15.825292
+  type: 'test'
+  ...
+# Subtest: manifest has the required scoped schema and portable runtime resources
+ok 30 - manifest has the required scoped schema and portable runtime resources
+  ---
+  duration_ms: 2.215667
+  type: 'test'
+  ...
+# Subtest: runtime is local-only and the deterministic engine uses no wall clock or random source
+ok 31 - runtime is local-only and the deterministic engine uses no wall clock or random source
+  ---
+  duration_ms: 34.360125
+  type: 'test'
+  ...
+# Subtest: scope references match the parent's verified seed bindings and file digests
+ok 32 - scope references match the parent's verified seed bindings and file digests
+  ---
+  duration_ms: 13.104417
+  type: 'test'
+  ...
+# Subtest: the recording CLI refuses to overwrite preserved observations
+ok 33 - the recording CLI refuses to overwrite preserved observations
+  ---
+  duration_ms: 57.664041
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 982.799417
+
+--- stderr ---
+
+--- end of captured streams ---

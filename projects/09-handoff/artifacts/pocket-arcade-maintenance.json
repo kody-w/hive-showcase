@@ -1,0 +1,31 @@
+{
+  "classification": "SYNTHETIC",
+  "input_records": 4,
+  "input_sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040",
+  "open_queue": [
+    "arcade-input"
+  ],
+  "release_authority": false,
+  "replayed_records": 1,
+  "schema": "pocket-arcade-maintenance/1",
+  "scope": "offline-fictional-maintenance",
+  "summary": {
+    "closed_items": 1,
+    "event_count": 3,
+    "items": [
+      {
+        "event_count": 2,
+        "item_id": "arcade-cache",
+        "last_minute": 19,
+        "state": "closed"
+      },
+      {
+        "event_count": 1,
+        "item_id": "arcade-input",
+        "last_minute": 11,
+        "state": "open"
+      }
+    ],
+    "open_items": 1
+  }
+}

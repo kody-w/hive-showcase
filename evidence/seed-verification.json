@@ -1,0 +1,2154 @@
+{
+  "schema": "local-hive-seed-byte-review/1",
+  "verifiedAt": "2026-09-19T01:11:33.237613+00:00",
+  "indexUrl": "https://kody-w.github.io/hive-hub/api/hive-hub/v1/organization-seeds.json",
+  "indexSha256": "fcb19176c22034db5c4b95530516392852754b77656b63d180214987042f7c80",
+  "seeds": [
+    {
+      "slug": "independent-game-studio",
+      "name": "The Independent Game Studio",
+      "stage": "seed-verified",
+      "seedRef": "sha256:1b84cbff20dc163254feab2e53890eeef766be02756868d7ceae49a78f4b8e48",
+      "cardRef": "sha256:4872058d0bb08f6482f7ea8d96ea84d992ae73e9d25a6aacc0516839bb42f52e",
+      "archiveRef": "sha256:12f9c2805e88c0e7b1e0e512640347694e33d4f2d80e7ccd548533434ceb9df8",
+      "archiveBytes": 77937,
+      "dialId": "dial:sha256:c34d8b053797c946528924629554abda0d1b9d5498bab5b1fec5059e44249616",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "SYNTHETIC production case: eight authored first-session records suggest confusion about four-beat bridge timing and undo. The starter game already works. Improve onboarding and readability without adding accounts, a backend, new mechanics, or an invented playtest result.",
+        "id": "first-shift-onboarding",
+        "inputs": [
+          "case/production.json",
+          "data/playtests.csv",
+          "design/rules.md",
+          "quality/acceptance.csv"
+        ],
+        "success_criteria": [
+          "All three original boards are solvable by the deterministic engine and are playable with arrows or WASD, Space, U, and R.",
+          "A release candidate opens directly from disk with no fetches, CDN, trackers, storage, server, or dependency install.",
+          "Bridge and carrying state are conveyed by text/symbol as well as color; generated audio is off by default.",
+          "The synthetic baseline remains five completions out of eight, with five bridge stalls; no real improvement is claimed without new observation.",
+          "A producer records pass, rework, or hold against every supplied acceptance case before any separately approved publication."
+        ],
+        "title": "Mosslight Courier: make the first bridge legible"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3409,
+          "sha256": "579a9a7dadb603d9713dfff4dcfe3ce3f0491df83ae4cf7a337b66773341bab9"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4446,
+          "sha256": "896a41d4d308e06626df5d790c4caaf7a959ca43c7da5ac6e444cd7c3d9532cd"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5828,
+          "sha256": "438b49e2b2ba4b40a603daf32533693fadbaef88645b95313673cd4d47eebf5b"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 706,
+          "sha256": "b6b6df43029a9400a9544a55d1d198148159709465e374ead49ea0a8fc73a471"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1183,
+          "sha256": "e986a93654c4a62c47ac1a16f2fa7c31fbb0d7d259e0b7531410a1036e1d32ee"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 2509,
+          "sha256": "46ee4f248c925a89cfd10a5e40d1b08b83056b78347b55fade1c50f0c6462955"
+        },
+        {
+          "path": "templates/casework/work/starter/art/courier.svg",
+          "bytes": 942,
+          "sha256": "d3ddc732db36f9ac80107d16c01a6144cc8619f58cf7f9f7daafbd497848fcd2"
+        },
+        {
+          "path": "templates/casework/work/starter/art/palette.json",
+          "bytes": 557,
+          "sha256": "fa5918e483d34455c6c28cd7c36506e8a68e6b7af6b1a577181a611dbe750306"
+        },
+        {
+          "path": "templates/casework/work/starter/audio/cue-sheet.csv",
+          "bytes": 315,
+          "sha256": "ece509c51adf268579b41bff043c115a1e56d6560cf8208b37accfc57fdb0106"
+        },
+        {
+          "path": "templates/casework/work/starter/case/production.json",
+          "bytes": 954,
+          "sha256": "c59e5c52e0c4518259a3bba00d94422d048abe131206447835b349d406324306"
+        },
+        {
+          "path": "templates/casework/work/starter/data/playtests.csv",
+          "bytes": 842,
+          "sha256": "bcc97d333c7caa6f943054067953b6f5046b393e4c59619b1d35e57def17fdb8"
+        },
+        {
+          "path": "templates/casework/work/starter/design/rules.md",
+          "bytes": 2116,
+          "sha256": "4480e1d46ecab9dd1e42aaffe8c6581f11d7d714171fb176b469de4989382160"
+        },
+        {
+          "path": "templates/casework/work/starter/game/game.js",
+          "bytes": 7947,
+          "sha256": "cf25b74128b27dc88d6e3e0702f67aca395231d366c9b68774dc907026da5650"
+        },
+        {
+          "path": "templates/casework/work/starter/game/index.html",
+          "bytes": 5576,
+          "sha256": "1470e507e86105ffa7a9768647a8891f4a72a412802226a4c0fa9199ae74421d"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/release-checklist.md",
+          "bytes": 1520,
+          "sha256": "d9d71fbc3a74e102e18edad57bca24dda99bd8a32e2299c09e47ca97b2bda9ad"
+        },
+        {
+          "path": "templates/casework/work/starter/quality/acceptance.csv",
+          "bytes": 1905,
+          "sha256": "664b48a7230ee0cddbd73b4c4a08e883eb45807f0f75e30e095edda9e9820733"
+        },
+        {
+          "path": "templates/casework/work/starter/tests/game.test.js",
+          "bytes": 8569,
+          "sha256": "756830905b12acafaf1e064b222a4468db816e17ac41130ee5d67fad46bd56f1"
+        },
+        {
+          "path": "templates/casework/work/starter/tools/feedback_report.py",
+          "bytes": 2588,
+          "sha256": "397464736d015c71a41a37f15ed10d1efb79a79027c2ab6a66c072844b1af667"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 8334,
+          "sha256": "b75a4c6f4aa307d889816913ee56b4a29fe35d4065072eb51f616f3bb0d6e2e4"
+        },
+        {
+          "path": "templates/teams/art/work/TEAM.md",
+          "bytes": 348,
+          "sha256": "5008ce31d5e2835502c1aa88177e54a75b2290a9c1f5746e1217dd9140fc46d7"
+        },
+        {
+          "path": "templates/teams/art/work/tasks.json",
+          "bytes": 852,
+          "sha256": "1167666198dffaa61509cb1a460c5b8b39600a7045d4adf5ed2f7ef34a5f0238"
+        },
+        {
+          "path": "templates/teams/audio/work/TEAM.md",
+          "bytes": 340,
+          "sha256": "7175778143da20aaabf836f27df477de88089051026a2cfbf8a1bcfbd8012f5d"
+        },
+        {
+          "path": "templates/teams/audio/work/tasks.json",
+          "bytes": 780,
+          "sha256": "eef4cfc0b8100a3529dc24b7cce24ee3dbdc1d610c9a76c59e475dcc025b6c02"
+        },
+        {
+          "path": "templates/teams/design/work/TEAM.md",
+          "bytes": 366,
+          "sha256": "aa7ec59e9a4164cd637f550608814508e3e08fd02d17e099d447ba7ddd714ae2"
+        },
+        {
+          "path": "templates/teams/design/work/tasks.json",
+          "bytes": 857,
+          "sha256": "3a1eccde17dc84996c1931220455178a4e2a34680b7a840345d6800f5058482d"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 343,
+          "sha256": "8c863689e602a8b15072e1616668076690d8dd60b2141d8a048f698c7c9abf77"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 1142,
+          "sha256": "68411f13db9d3d8fd2d99598230e089d24d974a8862002ecd480b814b8b038e7"
+        },
+        {
+          "path": "templates/teams/player-research/work/TEAM.md",
+          "bytes": 378,
+          "sha256": "39f4d5e96db515f1285e107dad5d7b3f9ba9b0e98c1ff0556ce54dc58be94d41"
+        },
+        {
+          "path": "templates/teams/player-research/work/tasks.json",
+          "bytes": 1757,
+          "sha256": "fb2794da4735ffaf31579b6f5a7f97af6f00bf78e712590b716783fcf6c27494"
+        },
+        {
+          "path": "templates/teams/production/work/TEAM.md",
+          "bytes": 368,
+          "sha256": "1cdc728ea2b1c9cf230f15f72f51abcfc3838bbf213aadca67f15f3b3af5329f"
+        },
+        {
+          "path": "templates/teams/production/work/tasks.json",
+          "bytes": 1669,
+          "sha256": "88d492a1df75991a940e0088a5ca75ff68ee6bd3b8195a1dadee116c087750d3"
+        },
+        {
+          "path": "templates/teams/quality/work/TEAM.md",
+          "bytes": 357,
+          "sha256": "7353963ad8414915dcfac4aa5a536f2f64f5456542f74a2076dd452c9d40b4c8"
+        },
+        {
+          "path": "templates/teams/quality/work/tasks.json",
+          "bytes": 1779,
+          "sha256": "98cd7b0910c12c34e6bf0281d3d47c6d45932990d3b156bc8d211374c29059a0"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "one-person-conglomerate",
+      "name": "The One-Person Conglomerate",
+      "stage": "seed-verified",
+      "seedRef": "sha256:f111199b1a276f9fc8c836aa53ef5234af6bc847db3fdd963dd2bf3bff16a663",
+      "cardRef": "sha256:8be433e92adb3c68443336dd5e5beb9930e6a9f7d3407e4ff263ba4b79856e60",
+      "archiveRef": "sha256:e49bee2ffd6c9bf3cd5dbd04cde9c73c2e3f4291456fb317a47d3a2e90515239",
+      "archiveBytes": 82320,
+      "dialId": "dial:sha256:a3bc40a37bcf607fac34ceb6990197c6cb18ff99727508293d321fbdb835a7ee",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "All portfolio names, estimates, and observations are SYNTHETIC. Ten candidate experiments compete for 32 discretionary founder-hours and USD 500 after protected reserves. Five business-unit workspaces stay distinct even if only three are active. The task is a defensible allocation and a small reference-tool readiness review, not a claim of customers, profits, or product-market fit.",
+        "id": "first-portfolio-cycle",
+        "inputs": [
+          "data/portfolio.csv",
+          "data/evidence-register.csv",
+          "data/capacity.json",
+          "data/allocation-worksheet.csv",
+          "docs/charter.md"
+        ],
+        "success_criteria": [
+          "Each of the five units receives an intake and an explicit active, parked, or rejected recommendation.",
+          "The proposed selection uses at most 32 discretionary hours, USD 500, and three business units, with no more than one experiment per unit.",
+          "All confidence values remain labeled subjective SYNTHETIC planning inputs, not measured demand probabilities.",
+          "The offline allocation tool and CSV preflight checks can be reproduced without installs, network access, or publication.",
+          "A human owner can review the decision, reserves, unallocated capacity, assumptions, and approval gates."
+        ],
+        "title": "Choose no more than three learning experiments for a 40-hour week"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3734,
+          "sha256": "44ca258d3bc6eff39dd53f0f38505dcfa2168bae22b09335fb3bd1eb285c42c2"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 6000,
+          "sha256": "369817eecb20f026ca375311a0103e59ef0ef8504bad4075667b7bdfeb23d1a9"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 7098,
+          "sha256": "99e64333e6a7f892d5a9e239da7b202409f4164107b3f11cb9131c026c9217cf"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 668,
+          "sha256": "4cd445e4022d36dc6adbd1cc0c292da6bada136eb2f579c3b54e5910f86e4d48"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1316,
+          "sha256": "2c298022dba44a53190725b7e7a37b3a2a4d699755e3203b368a4894f780a0bf"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 1919,
+          "sha256": "929b53e0a0287cb3b79ca08449a84daf5c03883665179b3a2d35bed6ab7c0246"
+        },
+        {
+          "path": "templates/casework/work/starter/data/allocation-worksheet.csv",
+          "bytes": 1023,
+          "sha256": "4af5c94434193d953aad94b4e88e777fc0713866109f98b78001154afe0ca3ad"
+        },
+        {
+          "path": "templates/casework/work/starter/data/capacity.json",
+          "bytes": 269,
+          "sha256": "b16ad0a1e17f4170bb530a9f5e9931de7fc8c91a4755819bc7f6a189d6043498"
+        },
+        {
+          "path": "templates/casework/work/starter/data/csv-intake.csv",
+          "bytes": 223,
+          "sha256": "d105e825826d14eeb58da71d0b0ada4565d08d70e39b6be11d70c689f788a5a1"
+        },
+        {
+          "path": "templates/casework/work/starter/data/evidence-register.csv",
+          "bytes": 1509,
+          "sha256": "6bce712fe9f24a7057f36d105f23c62c730479a3a73d08abc4a041fb612cf761"
+        },
+        {
+          "path": "templates/casework/work/starter/data/portfolio.csv",
+          "bytes": 764,
+          "sha256": "4ad0bdec0a16139274136f8733d55672f693917906498582c54a9f0d355dcc11"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/business-briefs.md",
+          "bytes": 2725,
+          "sha256": "c6e462778a2dbb35650774bdb3cb0732a0f29f28976eb048ed59b0a6db63f446"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/charter.md",
+          "bytes": 1821,
+          "sha256": "884d8142a633a0b2c12d904e0e4af55af84b2c149d01761055c563fbdde9be9b"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/decision-template.json",
+          "bytes": 1079,
+          "sha256": "c2c9bd27ac3a62f6c19782212b9d4c012700b6c091908f3ec853492ef16f5c5c"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/review-rubric.md",
+          "bytes": 2103,
+          "sha256": "53bac8052f91f597f247b7d31761a0df42655bda0fd25d8903913004b8b8bafb"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/allocation.py",
+          "bytes": 5945,
+          "sha256": "627649405a866f577e747f20c02758fd7e34822181579b39b8a9e32224894a9a"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/csv_guard.py",
+          "bytes": 3141,
+          "sha256": "2c378aa20af43e636b077662217fb55acf4f8d39d4460094574b8fafd976e001"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_allocation.py",
+          "bytes": 3243,
+          "sha256": "499ee627c57bcf4adb3be705dcb617d122bfbc16a6e4f8582cb85d728c16c2e4"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_csv_guard.py",
+          "bytes": 2265,
+          "sha256": "b1d49e174cb068e436312d41d8d137887c49cc30af661a7bd0bbaebb4e880078"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 11503,
+          "sha256": "c44eac63a5762144b9d4390bdd855261d5e21685e2373befa3a58e29ffa64303"
+        },
+        {
+          "path": "templates/teams/executive-office/work/TEAM.md",
+          "bytes": 372,
+          "sha256": "c9110c9169661201bf319eb3faccb373a7aecf6d42f6e8156223099a164c7ffc"
+        },
+        {
+          "path": "templates/teams/executive-office/work/tasks.json",
+          "bytes": 1725,
+          "sha256": "d8d2a441a2a4dc540241804d779887bd776ec6cf037ec8e9582b1c0dc4ee1b33"
+        },
+        {
+          "path": "templates/teams/fieldnote-guides/work/TEAM.md",
+          "bytes": 354,
+          "sha256": "1d71a6840b87678eee49346beb6fa970fa66dbad616c5b0655db73537310e1bd"
+        },
+        {
+          "path": "templates/teams/fieldnote-guides/work/tasks.json",
+          "bytes": 895,
+          "sha256": "81b56632104daabf7b7fa2eb33b041dff316e487e0e831ea17dce3c37a7ec666"
+        },
+        {
+          "path": "templates/teams/ledgerleaf-tools/work/TEAM.md",
+          "bytes": 353,
+          "sha256": "4f887945c9bb487b3edda9a71ef5456dae60718d0102df6436a6193706960376"
+        },
+        {
+          "path": "templates/teams/ledgerleaf-tools/work/tasks.json",
+          "bytes": 1034,
+          "sha256": "3a73da309326d26ebd9571a6734f1c507d72fda27622d89b47096466c4627e73"
+        },
+        {
+          "path": "templates/teams/platform-engineering/work/TEAM.md",
+          "bytes": 360,
+          "sha256": "2c9acc2c071aab2a818be4e9ff83a42371b23e0f67b1d60d277c707d947f1617"
+        },
+        {
+          "path": "templates/teams/platform-engineering/work/tasks.json",
+          "bytes": 2284,
+          "sha256": "e215808edd0a572d6b3a13a9767746f6fa104368376cf79b64d816e61262348e"
+        },
+        {
+          "path": "templates/teams/portfolio-finance/work/TEAM.md",
+          "bytes": 369,
+          "sha256": "2aca5f30612d97d7e2294d1a8712ccc5b8efac829f93bf6b930e7913582236bd"
+        },
+        {
+          "path": "templates/teams/portfolio-finance/work/tasks.json",
+          "bytes": 1785,
+          "sha256": "7cd52da01f85952dc44d1c3608081e84d8fe93bf4d21fd1f8c2e9d9ba2eb29b1"
+        },
+        {
+          "path": "templates/teams/portfolio-go-to-market/work/TEAM.md",
+          "bytes": 362,
+          "sha256": "0158e925113e31c7f301ac2908e066053a7e1cac8026adea04ba0ab087526621"
+        },
+        {
+          "path": "templates/teams/portfolio-go-to-market/work/tasks.json",
+          "bytes": 1119,
+          "sha256": "a6ec2c152fea217f18e722a0db241e8459306ab2872a97687b7019da8ded64d9"
+        },
+        {
+          "path": "templates/teams/portfolio-research/work/TEAM.md",
+          "bytes": 351,
+          "sha256": "d79f853f2cd87339eed2e4a56c3041bfb012e8d646597a6ce8847855894f084b"
+        },
+        {
+          "path": "templates/teams/portfolio-research/work/tasks.json",
+          "bytes": 898,
+          "sha256": "68b66bd543fd0c7fe2adead24660cf1d947ce561db64b9a046554982fd833840"
+        },
+        {
+          "path": "templates/teams/quietbench-templates/work/TEAM.md",
+          "bytes": 356,
+          "sha256": "6b92de004006c5666cd9eeb481d74740f526fa9efdb57507ed0e5b2382721074"
+        },
+        {
+          "path": "templates/teams/quietbench-templates/work/tasks.json",
+          "bytes": 879,
+          "sha256": "abac0ab0c850f156679d076e604879016c1cf901fe1c54c3c00870ffbabc2e5a"
+        },
+        {
+          "path": "templates/teams/routepaper-planners/work/TEAM.md",
+          "bytes": 375,
+          "sha256": "8b24bad95c63955dcae9c847e32b2a2c82280d62da5a24a7f158b427fae418b6"
+        },
+        {
+          "path": "templates/teams/routepaper-planners/work/tasks.json",
+          "bytes": 894,
+          "sha256": "296c1e60ac2d91c90c621836699eda7f325a6231c7e112515bf7b7a4a27801b9"
+        },
+        {
+          "path": "templates/teams/tinylesson-studio/work/TEAM.md",
+          "bytes": 360,
+          "sha256": "75f0e6cf75844b21c0c4fc7298aad7cde98d6c17b2ce8f65ceee73b355ddcfda"
+        },
+        {
+          "path": "templates/teams/tinylesson-studio/work/tasks.json",
+          "bytes": 878,
+          "sha256": "38d5bef2ef6cd7faf48e5508c09bf0b1504a62f0b56424b5d97df9dbda6b700b"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "public-source-intelligence-bureau",
+      "name": "The Public-Source Intelligence Bureau",
+      "stage": "seed-verified",
+      "seedRef": "sha256:6087a81af9f73e9787333e56d9f30ceade1fd02c4e98b9e9368248b5f9833551",
+      "cardRef": "sha256:73a3a4fa40e8e48b3acc39437d4da8e0a172c50484f6e24cba99f5084b857ebf",
+      "archiveRef": "sha256:550db33c5faeb0a56c7106ac1ab052b735b84b698f33ea3c5a26cd1212fa4724",
+      "archiveBytes": 71638,
+      "dialId": "dial:sha256:98315e0d647a0acb3068cbf86a1ddd480a655b35e1ff3f93643c4c56babad5f8",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "SYNTHETIC investigation as of 2026-09-17. A fictional business is considering a 72-hour disconnected kiosk pilot on 2026-10-15. Included public-style documents disagree about offline scope, launch readiness, and event recovery. No real company, confidential intelligence, private individual, or real published source is represented.",
+        "id": "juniper-offline-pilot",
+        "inputs": [
+          "case/question.json",
+          "sources/announcements.csv",
+          "sources/release-notes.csv",
+          "sources/lab-notes.csv",
+          "sources/support-notices.csv",
+          "sources/benchmark-runs.csv"
+        ],
+        "success_criteria": [
+          "Every assertion in a decision brief cites an exact included file and CSV row, with provenance hashes reproducible by the offline index.",
+          "Eighteen source records across five files, nine coded claims, and three conflict/ambiguity cases are accounted for.",
+          "The investigation distinguishes acknowledgment from recovered event durability and identifies the eight-ID gap in the six-hour restart row.",
+          "No included run is represented as a successful 72-hour offline restart test; source correlations and synthetic-data limitations remain explicit.",
+          "The final output is a conditional investigation/decision recommendation, not procurement approval or a claim that the fictional product is launch-ready."
+        ],
+        "title": "Can fictional Juniper Queue support an unattended offline pilot on 15 October?"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3374,
+          "sha256": "9a069d805456931fa139174e24c20634c70500d85b8238b32ebfa482ebc675b1"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 3999,
+          "sha256": "da3b108828d9c1e0106f5c7a51cc6c573d6ad762db05a1bc357ca8db64dd8826"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5596,
+          "sha256": "222f262c94614c2f795272683db30ef1d21859e3435f8ae648f86efd67fc74cd"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 783,
+          "sha256": "e7566384bdf23e6c4ff349c9ae78f78497e01947217ba505a192f903af381523"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1439,
+          "sha256": "1e309328a87faee58c975f8a09613db274b2fdd6c92a9675fe5768b8d488aca8"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 3061,
+          "sha256": "35de5cf9002cb86443f53fbf6ce5ecd341a1a88861cc3ee82f598e5ceb19c374"
+        },
+        {
+          "path": "templates/casework/work/starter/analysis/claims.csv",
+          "bytes": 2263,
+          "sha256": "194dbc94b2eb231aab4d22188c126dfd9fac1dba7a51efcd525660e395107ffc"
+        },
+        {
+          "path": "templates/casework/work/starter/analysis/contradictions.csv",
+          "bytes": 866,
+          "sha256": "851716fde9f12512c886014b39bd46c04b73e1769c05a83e304da0613898c99e"
+        },
+        {
+          "path": "templates/casework/work/starter/analysis/hypotheses.json",
+          "bytes": 1561,
+          "sha256": "c2a51860bfabbef10d108f6febd8bd36ac185a211823afa26e8fd9b6fc5c6d14"
+        },
+        {
+          "path": "templates/casework/work/starter/briefing/decision-template.md",
+          "bytes": 1828,
+          "sha256": "b98084961769078e54fdf89aba3d6961004e44cfad69b42994f34fe7d9841bfb"
+        },
+        {
+          "path": "templates/casework/work/starter/case/question.json",
+          "bytes": 985,
+          "sha256": "33741a127ab91b092489f276ab2e478448f02ad2db37e0d6b1c474a896392ad7"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/investigation-board.csv",
+          "bytes": 1460,
+          "sha256": "6370a929bc3c4848926dcc384604ae715fac05bcbb1c2d8782c86c6a52b33507"
+        },
+        {
+          "path": "templates/casework/work/starter/sources/announcements.csv",
+          "bytes": 561,
+          "sha256": "0befc6a5d3a10ca42b3a8686ce41a682b8e051037e1e0d51fc5058b6311aaf1b"
+        },
+        {
+          "path": "templates/casework/work/starter/sources/benchmark-runs.csv",
+          "bytes": 614,
+          "sha256": "d8ceba2e2baa46a1a7f6e0f3bb43ab1ee77397561132021fadd92946bcbb4d58"
+        },
+        {
+          "path": "templates/casework/work/starter/sources/lab-notes.csv",
+          "bytes": 969,
+          "sha256": "726c411f86a2e6dd78b42df789afb1b10c8cad3202c0040791899feabe864a37"
+        },
+        {
+          "path": "templates/casework/work/starter/sources/release-notes.csv",
+          "bytes": 756,
+          "sha256": "bb12ae8617a79f307aecba8c4da328737e58888bf5f556fc1da0c7199e50d4a1"
+        },
+        {
+          "path": "templates/casework/work/starter/sources/support-notices.csv",
+          "bytes": 651,
+          "sha256": "8f911383ce7552f5eef8e4f82e2b2ac35d6e0c8528379aa2869a03c7398eb01e"
+        },
+        {
+          "path": "templates/casework/work/starter/tests/test_evidence.py",
+          "bytes": 5011,
+          "sha256": "c7694241aa16ea491278ede637f947d7e06b78df394c36721c858d0dbccefe02"
+        },
+        {
+          "path": "templates/casework/work/starter/tools/evidence.py",
+          "bytes": 9185,
+          "sha256": "3edf6519d888fda1948c46422ff7ec48e42a298a4659b6367e7056b237d9ccc7"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 9177,
+          "sha256": "e674f6b772026f354731799bde15739d892594365870becd090ccbac06c4a91a"
+        },
+        {
+          "path": "templates/teams/analysis/work/TEAM.md",
+          "bytes": 373,
+          "sha256": "94751f2bbdcf3e3d6ce7af1cfe23bb4400b5a2203ef60549236f77489a5cdcf0"
+        },
+        {
+          "path": "templates/teams/analysis/work/tasks.json",
+          "bytes": 934,
+          "sha256": "291cd41c1761c64635fa9dc10ea831180cb909955931fcce33c8cbfdb91fbc88"
+        },
+        {
+          "path": "templates/teams/briefing/work/TEAM.md",
+          "bytes": 354,
+          "sha256": "d62893e5c3acb9d6840400020e07b01b72d68ed6e6437d436004eb1bd66d2ef0"
+        },
+        {
+          "path": "templates/teams/briefing/work/tasks.json",
+          "bytes": 1900,
+          "sha256": "a65fa54aeb90335897c21cac4a1567503e3b9ffa4a1e51b8496cfc9c73c279ab"
+        },
+        {
+          "path": "templates/teams/collection/work/TEAM.md",
+          "bytes": 383,
+          "sha256": "228cdb07ecad69ddbe2a5046a9506df632f756b43500085bf0ea58d1b0aa889f"
+        },
+        {
+          "path": "templates/teams/collection/work/tasks.json",
+          "bytes": 2799,
+          "sha256": "4f5d878a20b61087309e22f04b4f6990a1abd6a23df04c560caef3fc93bcbf6c"
+        },
+        {
+          "path": "templates/teams/competing-hypotheses/work/TEAM.md",
+          "bytes": 390,
+          "sha256": "5e52f7dd4705835ba347bea44e634e530962bf9ac5a57424ce6cba88133809f8"
+        },
+        {
+          "path": "templates/teams/competing-hypotheses/work/tasks.json",
+          "bytes": 1886,
+          "sha256": "19bd4cc546b0ed8d047eb6107a02b272117146449603e1ab6ba0a1ed111ccf93"
+        },
+        {
+          "path": "templates/teams/verification/work/TEAM.md",
+          "bytes": 373,
+          "sha256": "2eebb85768a72d06d73dab1abea69109fbb22908e54ecee8335edc1d3b4ba51f"
+        },
+        {
+          "path": "templates/teams/verification/work/tasks.json",
+          "bytes": 1978,
+          "sha256": "b4007b74f527675a5c95af760ec83028ef7b58121604f9febc59b2da7fc165e2"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "applied-invention-lab",
+      "name": "The Applied Invention Lab",
+      "stage": "seed-verified",
+      "seedRef": "sha256:40362b6aa8f299a8c148c2a539dfa9fe6709ba8ade66a5c8cc630fdfe97e87fd",
+      "cardRef": "sha256:a4eca49cf4b2b7177b19ca420ed94075686351e47621d132794ce4b579598e49",
+      "archiveRef": "sha256:0d153ca27640ecfb2e891797b7e1bbbb821c09f0b59a6f2b6c5ef800ebb616c2",
+      "archiveBytes": 78724,
+      "dialId": "dial:sha256:d8b04abbd666b800b4adef7b8fec696bfa8543e2ff5eb61f6c444d9c0dc524f4",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "A fictional library kit service wants a more explainable way to group harmless paper, cloth, foam, and counting materials into reusable totes. All items, capacities, shapes, and operating assumptions are SYNTHETIC. Eleven item-type rows expand into 29 instances across four scenarios. The offline reference compares input-order, dominant-load, and volume-first greedy packing, verifies every assignment, and optionally proves small scalar-model optima. It does not certify three-dimensional fit, lifting safety, physical performance, or commercial demand.",
+        "id": "library-kit-tote-study",
+        "inputs": [
+          "docs/problem-brief.md",
+          "docs/data-dictionary.md",
+          "data/items.csv",
+          "data/capacity.json",
+          "data/experiment-plan.json",
+          "reference/expected-baseline.json"
+        ],
+        "success_criteria": [
+          "Every item instance appears exactly once and every modeled tote respects both integer capacity constraints.",
+          "The authored baseline reproduces all four expected scenario counts, including a case where the dominant heuristic is worse than input order.",
+          "Seeded permutation experiments preserve all trials and can be rerun with matching source hashes and results.",
+          "Lower-bound proofs, bounded search, unproven results, and skipped search are clearly distinguished.",
+          "Physical fit, operator usefulness, cost, novelty, and customer demand remain unmeasured until separately approved studies occur."
+        ],
+        "title": "Library Kit Tote Study: does a two-capacity heuristic actually reduce modeled bins?"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3439,
+          "sha256": "6c694e4d71a7202c3dcafd3a5046c26757b684ec4a7121f22294ea34d55dce4f"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 3829,
+          "sha256": "622bc790a95770e6ebd3b093fde94c22abbbd0c21b4f4f6f48a3607da16417c3"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5733,
+          "sha256": "e44fc659c8b5d5d00c45ff7a87e10b7f31aa2470d44a435b4081ac314b50c0bb"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 680,
+          "sha256": "f3453b8deb86e9ffb84d7f44e0c0888e2aa958cdaa4cdbbf8364f1ebdbfc2173"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1556,
+          "sha256": "99b0712dad2240a5b126fc08871b18bfcc13b1c0a9c9f844af77e8f7c04e852f"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 1767,
+          "sha256": "a822680c288c15d344c06b00c7cb3d31b57c947ce6694f0ea3044ecc9c15a174"
+        },
+        {
+          "path": "templates/casework/work/starter/data/capacity.json",
+          "bytes": 309,
+          "sha256": "7545ddbec5d31256cab78aedcecd12777fc916de2cbded4607ccdcefcf6a6ad9"
+        },
+        {
+          "path": "templates/casework/work/starter/data/experiment-plan.json",
+          "bytes": 460,
+          "sha256": "e6091595c336e502e329ec8b8cd2a9ca216cc9b8c7b782017eeca51f7874d340"
+        },
+        {
+          "path": "templates/casework/work/starter/data/items.csv",
+          "bytes": 959,
+          "sha256": "07d5892a89521c9311ac5873fa423b683793893bab3631253ffc972e94623f13"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/commercialization-boundary.md",
+          "bytes": 1521,
+          "sha256": "7978f2064c4daa02e88d630ed8d472f0487090694b78a96533dacdc8119792c9"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/data-dictionary.md",
+          "bytes": 1630,
+          "sha256": "8174a135848128782437305cc8f6526ed41ee860b2a83ab929a2012ef61475e5"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/experiment-design.md",
+          "bytes": 2316,
+          "sha256": "2596cfa3f79d4d4957db86481332cb4e0ed4d4acc632e32c3cc213ff5e42e6bb"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/operator-worksheet.csv",
+          "bytes": 1318,
+          "sha256": "1ea3f8499eb8498736e623822104bbf48a3cddb575a34268a23d83c0ecc3ef93"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/problem-brief.md",
+          "bytes": 1839,
+          "sha256": "6110286bf44b4e8fb17b7d97e9769cd471cb470bc68a5b1eec0472ae009f16c8"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/prototype-brief.md",
+          "bytes": 1258,
+          "sha256": "f6b437b2e1c028ce9774eb684cdd51d1f5d51f6f834d59299a0784277bac72eb"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/replication-protocol.md",
+          "bytes": 1663,
+          "sha256": "ac91b64a6f7ba6ff45c78d8c651e6c2c582a1a8100a82b5380ef6d9e65437965"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/expected-baseline.json",
+          "bytes": 713,
+          "sha256": "da83816eddb917c66258c6800b2a7f73255dd149f0b7dc3c2d6f42ccf51272a5"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/run_experiment.py",
+          "bytes": 3155,
+          "sha256": "f21b0d734ca35c073d6d707fe1c7bba5aa2e980311473440722a1ea00d605b52"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_tote_pack.py",
+          "bytes": 6448,
+          "sha256": "0049f959a2806a6f46b9ab53f8756a277dfccd8ebdce10ebafb1932ff58a360b"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/tote_pack.py",
+          "bytes": 10016,
+          "sha256": "d592ad5a695e06e278552af552d74f8c5b7d74d8dd2d6caa9f5603dae9ee2e61"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 9783,
+          "sha256": "f36c95b9f2dce75ca99c5a940e174004883bea4b52b0598fd20ea357d2fbb19a"
+        },
+        {
+          "path": "templates/teams/commercialization/work/TEAM.md",
+          "bytes": 390,
+          "sha256": "683aa378c4b577ef5c596c34c30dd53b27dcc4264681860c143851cf90a7a440"
+        },
+        {
+          "path": "templates/teams/commercialization/work/tasks.json",
+          "bytes": 1098,
+          "sha256": "dab6d799a080d0b38b0a5279ce75b8780a6bb2b82bf59b6071ef09859411f6c9"
+        },
+        {
+          "path": "templates/teams/experiments/work/TEAM.md",
+          "bytes": 358,
+          "sha256": "a055e5d907f55766f5978ee1fbba9e180b922d85b9bfa24b574b08a8546e7a0b"
+        },
+        {
+          "path": "templates/teams/experiments/work/tasks.json",
+          "bytes": 1947,
+          "sha256": "7a3463354263b8494c99dea5cad0da6e6cfbf28aeef084168cdf378ace6007f3"
+        },
+        {
+          "path": "templates/teams/prototyping/work/TEAM.md",
+          "bytes": 383,
+          "sha256": "24fd7916d5c164d6f0dce79ae0ae6e6bd00e2fa79a01b5648a0306a64dad62b2"
+        },
+        {
+          "path": "templates/teams/prototyping/work/tasks.json",
+          "bytes": 2006,
+          "sha256": "52a65b3fe6ab04fc161baf36304e055bfb7f43d10c9c45b9b4bb11ca591d69c1"
+        },
+        {
+          "path": "templates/teams/replication/work/TEAM.md",
+          "bytes": 358,
+          "sha256": "414478f8ad33f90b93e45ccf3b71b2dc939fee658fadfdd23d3f6c492e78ee5f"
+        },
+        {
+          "path": "templates/teams/replication/work/tasks.json",
+          "bytes": 2085,
+          "sha256": "8b243011adc227ffcf63800add698d690976525d773e19e1b8c946c0d0da2cfd"
+        },
+        {
+          "path": "templates/teams/research/work/TEAM.md",
+          "bytes": 382,
+          "sha256": "5fd67e0cfbd3fba8fcff5d6a943250c5d5ff1e0b4ae9abe6b84eca4d24452a89"
+        },
+        {
+          "path": "templates/teams/research/work/tasks.json",
+          "bytes": 2978,
+          "sha256": "d13dfff6b8e47f065b1a1839654888e7ff9f33951a9b4fc0b48cedf1e80d0996"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "product-launch-company",
+      "name": "The Product Launch Company",
+      "stage": "seed-verified",
+      "seedRef": "sha256:f30f4349b32cfde5d9a1715f6293b54972435ab74fc56c7f17a63136791b2e8c",
+      "cardRef": "sha256:47e165d06d337aa7c62ec9f57920813cc617d39d68f5f37c524ea3e8f1009118",
+      "archiveRef": "sha256:5bd39ca17e4bc4900fd1b7d851a76d9e2528dca0dec40f6a3c81f0cd427318e4",
+      "archiveBytes": 90328,
+      "dialId": "dial:sha256:a8c18ee50b2a0e1b8e552925c5fc7ccd2b94bc383fcbb4a1899de9e84381e191",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "Agenda Pocket is an original offline agenda-budget planner. A SYNTHETIC library-kit meeting has 68 topic-minutes, a 60-minute session, and a five-minute wrap. The working demo reserves all required topics, includes optional topics in input order when they fit, and explains what remains unscheduled. It runs by opening a local HTML file. This case prepares a launch candidate and honest support; no users, conversions, videos, or public launch are claimed.",
+        "id": "agenda-pocket-first-launch",
+        "inputs": [
+          "docs/product-brief.md",
+          "data/sample-agenda.json",
+          "data/acceptance-cases.json",
+          "demo/index.html",
+          "docs/launch-checklist.md"
+        ],
+        "success_criteria": [
+          "The local demo operates without a server, install, CDN, account, network request, or automatic persistence.",
+          "The sample schedules 53 topic-minutes, parks the 15-minute optional template demo, leaves two slack minutes, and reserves 09:55\u201310:00 for wrap.",
+          "If required topics exceed capacity, no partial schedule is presented as feasible.",
+          "Automated numerical cases and separately observed manual interaction checks are distinguished.",
+          "Copy, support, storyboard, and launch decisions make no fabricated adoption or generated-video claims."
+        ],
+        "title": "Agenda Pocket: make a 60-minute meeting fit without hiding required topics"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3423,
+          "sha256": "8816b14963e4dc2ffa28e0d496844c59e68025a3b66026ace594368c673894d8"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4176,
+          "sha256": "dd8fa1284950733c20521dfd516cd5b5baa98ff398ffc3da6065eef8232fe947"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5958,
+          "sha256": "a954c9350bc3f2b9ccbb542479387992c49f00dbb27bc147d592b45c287c6bb5"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 627,
+          "sha256": "f890103ddfb8dbaa93a3b2c714036ba7b00c99c2f1de6e54971e4ff7005d59e9"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1364,
+          "sha256": "774ebdde3a4f88174cb503bf315156b4d4909cfb9d1b3144203c256463b88cc2"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 1842,
+          "sha256": "64489943f81f702169bfcb7d975f9266458cac68956fcacf3fce5111f23e1899"
+        },
+        {
+          "path": "templates/casework/work/starter/data/acceptance-cases.json",
+          "bytes": 2093,
+          "sha256": "6d823e958e25f9ef223e352fa146471011cf77b41f9277caf7a11c72c00378ef"
+        },
+        {
+          "path": "templates/casework/work/starter/data/sample-agenda.json",
+          "bytes": 776,
+          "sha256": "9782d287e0e1cc50e233e7e22a0d30dc2c402f430a1cde51555464637700bedc"
+        },
+        {
+          "path": "templates/casework/work/starter/demo/app.js",
+          "bytes": 8180,
+          "sha256": "313b6a8d20c587495db459db06bb7bf93cba10527f9e122dca850c5b457317e8"
+        },
+        {
+          "path": "templates/casework/work/starter/demo/core.js",
+          "bytes": 5627,
+          "sha256": "0f8d8471ee2e51abba34fda79bc33649ae895450ccdfd205ca01c30c18115ffe"
+        },
+        {
+          "path": "templates/casework/work/starter/demo/index.html",
+          "bytes": 3546,
+          "sha256": "515327d7fc2e589ace20cc24d41126740c20359c8b3ff48ed82109e7abe470d5"
+        },
+        {
+          "path": "templates/casework/work/starter/demo/styles.css",
+          "bytes": 4192,
+          "sha256": "4c10f6ac582cb25d66ccb613bad6938d19547d79a732f99d2d110604a6159d35"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/design-spec.md",
+          "bytes": 1938,
+          "sha256": "43d7d44e980c99b86c5c710ad9600f4604f9e7bee5b98ec3acd5a990abbb8f46"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/landing-copy.md",
+          "bytes": 1755,
+          "sha256": "c872607d6e7c68547b23edfbf4ceb79470656d38d28bef81fc57c1f6e5d4dd4b"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/launch-checklist.md",
+          "bytes": 1706,
+          "sha256": "f8b9483efd87802a628a72427df99489da6204e9af3f7967b93a96647f115550"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/product-brief.md",
+          "bytes": 1840,
+          "sha256": "4dc2cfd0a5e36512507e3a5b2ed14750121693f67ce0363171250e46593a8c97"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/storyboard.md",
+          "bytes": 1182,
+          "sha256": "0a99aae9c60a3413e3028b6ffeaa1aa430fbc185f12bf1c0a372fe3735c2d5a1"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/support-playbook.md",
+          "bytes": 1970,
+          "sha256": "788e580cb21494f2c40301038d39f02a0d058c2c25e328dbf52883d7089281d7"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/test-protocol.md",
+          "bytes": 2159,
+          "sha256": "cf404ebff1631618896cdea1accaa734e58d716d86a162229f18f7b10b595737"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_agenda.cjs",
+          "bytes": 5253,
+          "sha256": "69384a8374c3a2cbb30be731ec05b7769b9c48b54e5dda936a105602091deced"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 10798,
+          "sha256": "4f13a54cf3573220743b9916466f493ecde81f975192e4e77791d1727fc98a75"
+        },
+        {
+          "path": "templates/teams/creative/work/TEAM.md",
+          "bytes": 361,
+          "sha256": "03827294152ada97249de00137d40782e884c44cbe41e074002cbb5ad9c7b50e"
+        },
+        {
+          "path": "templates/teams/creative/work/tasks.json",
+          "bytes": 1757,
+          "sha256": "a0601734cea5d1de660cbe8a9bab04e246b70ae5d3add026ece4264028277fe6"
+        },
+        {
+          "path": "templates/teams/customer-success/work/TEAM.md",
+          "bytes": 362,
+          "sha256": "0d5bbfdbb78a981863209943d1a98dbd64e7e74cd0e22e18a1da2f542428a82a"
+        },
+        {
+          "path": "templates/teams/customer-success/work/tasks.json",
+          "bytes": 1832,
+          "sha256": "94261ff8ed4357ecc527411a2bf0fdb6847d30dfb896ca85bcb748128475c18a"
+        },
+        {
+          "path": "templates/teams/design/work/TEAM.md",
+          "bytes": 376,
+          "sha256": "c51d0e1a1a992031e6a95a999bd8f33b9fd70e02da929ee22a790a0b7a495aed"
+        },
+        {
+          "path": "templates/teams/design/work/tasks.json",
+          "bytes": 1906,
+          "sha256": "9dc5dfff9185d03369640b258e385d36a6675de2241307fc7bb41de92975b343"
+        },
+        {
+          "path": "templates/teams/distribution/work/TEAM.md",
+          "bytes": 354,
+          "sha256": "5f1c4f051b803c274df0d414d0a379d729f43c7fb78b02acb98506d5025908cb"
+        },
+        {
+          "path": "templates/teams/distribution/work/tasks.json",
+          "bytes": 1834,
+          "sha256": "eef51802b15994a9b1eaaebd8fd1a3c126d0fcc09b8ad6482604769c14aa1e23"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 366,
+          "sha256": "ad0d8cce7a875e1d16c02ff106fb01256af351b19616341b799e4ff9131afe53"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 2060,
+          "sha256": "27d5091837dead73583bbe33205d6cf8295cda309a78c5ad32b0611d2aadedc3"
+        },
+        {
+          "path": "templates/teams/product-strategy/work/TEAM.md",
+          "bytes": 361,
+          "sha256": "b48721779312e095c572b35e788e3f4e2f0ab82b410aa3d88987979beb376fd5"
+        },
+        {
+          "path": "templates/teams/product-strategy/work/tasks.json",
+          "bytes": 1833,
+          "sha256": "ff0815152723d9584cf26e798e41e71690c6bb2ffbe1b6a238c32f7ca1136e94"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "enterprise-transformation-firm",
+      "name": "The Enterprise Transformation Firm",
+      "stage": "seed-verified",
+      "seedRef": "sha256:2de320c891f9b8ddc815bb591548f109bb1fbc02636db7b1ff75d392752b25d9",
+      "cardRef": "sha256:cd1e79b433ce24abfe2e1c740bf2fdbfa492af10f101666cddc4b4b672d962e7",
+      "archiveRef": "sha256:8864a0f1a063da0504d07c1283a6b69d7fa239c72371b627cd7855242c99e91d",
+      "archiveBytes": 73833,
+      "dialId": "dial:sha256:e93afe6084ea6d599c2dd40ef8e58973633df3ec243b81b35515d7503631d1bc",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "Lattice Harbor Supply and every account, quote, policy, and process observation are SYNTHETIC. Eight office-supply quotes expose credit, discount, terms, inactive-account, missing-data, and rounding cases. The reference utility computes line-rounded amounts and returns needs-data, needs-review, or ready-for-human-approval. It never issues invoices, authorizes credit, or contacts an enterprise system.",
+        "id": "lattice-harbor-quote-pilot",
+        "inputs": [
+          "docs/client-brief.md",
+          "docs/process-facts.md",
+          "docs/requirements.csv",
+          "data/accounts.csv",
+          "data/quotes.csv",
+          "data/quote-lines.csv",
+          "data/policy.json"
+        ],
+        "success_criteria": [
+          "All eight quote cases are traced from original inputs through requirements to explicit acceptance results.",
+          "The prototype reproduces exact expected monetary totals using decimal half-up line and shipping-tax rounding.",
+          "Missing data blocks readiness; policy exceptions require review; even a clean quote still requires human approval.",
+          "Each exception has a proposed accountable role, handoff payload, and return path.",
+          "The pilot case reports hypotheses and measurement plans, never fabricated savings or a completed deployment."
+        ],
+        "title": "Lattice Harbor Supply: quote readiness before any invoice is issued"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3328,
+          "sha256": "9469d01a087ce7ed9b3c64d30d1574f17aa61dfc2c1e41849039122bf2382d36"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4257,
+          "sha256": "bc97de9992bc08a7fab257975ac26ac93919394b4ffcf40d4ffc9eed8d2d30f9"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5845,
+          "sha256": "55ffedad9bc67735491a4542c4070194ac1bcd4095b779ca5726afd9e0b045ee"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 616,
+          "sha256": "68210a35c8cbeeab4da342e05faab9d2e7da6e94f36ed8cf39dc6be3bf611883"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1336,
+          "sha256": "342e660d137ddb3b0009693b6beb75db416f51cf6fb0ab8da606d0f1fc58399b"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 1741,
+          "sha256": "db43ad71b6e9a0f633d56bdc35c26e9e4ce63ddb4e76712c5b9836415f6009ea"
+        },
+        {
+          "path": "templates/casework/work/starter/data/accounts.csv",
+          "bytes": 391,
+          "sha256": "8644cd424be1498821a59aad735b5663f1077a1b2479b10a51e4f3cbd54a5d44"
+        },
+        {
+          "path": "templates/casework/work/starter/data/policy.json",
+          "bytes": 440,
+          "sha256": "9c1b87389ce74d52368a497c575f3725239bfb7a7e59f6437f9fa984b20748ed"
+        },
+        {
+          "path": "templates/casework/work/starter/data/quote-lines.csv",
+          "bytes": 688,
+          "sha256": "f9570e9c9e788d494385c2a92cc65a2566e366905652a27e9a172bcf18a3933d"
+        },
+        {
+          "path": "templates/casework/work/starter/data/quotes.csv",
+          "bytes": 511,
+          "sha256": "748728a14d183fa4f1a5178830b12e5a36042560e543d3256958e7efc0d25080"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/acceptance-cases.md",
+          "bytes": 1582,
+          "sha256": "6e9e57bb8a26d4ee4731d47272d6fb2771a2dd795a0b50a112ea7a74c40b7845"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/adoption-playbook.md",
+          "bytes": 1905,
+          "sha256": "e58532e29229bdbf947abd1a2e76285700fe4388f9cc974ec7b9b27ecfa3edc5"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/client-brief.md",
+          "bytes": 1952,
+          "sha256": "dbe8e315f6ac2b8f8dfb3fbe2ee85c4ec4c6fc50297ae7ba4b8deff35ded5304"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/handoff-contracts.md",
+          "bytes": 2013,
+          "sha256": "51d629607b682ad7225f0af785a20eb9c42a6ac8e8bcc1690be9d692b5bba379"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/process-facts.md",
+          "bytes": 2584,
+          "sha256": "7be7a858bb5c12df7d7728b811198098eaa251bbd9fdaa359d890acbf1df9f0d"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/requirements.csv",
+          "bytes": 1207,
+          "sha256": "328ae43245d30d8b41a6dff267b5ca03937bb8c324e1a250b9142bba4fa93082"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/expected-results.json",
+          "bytes": 1234,
+          "sha256": "287067af395316f7048b856ac4ceb1958c0a5a78d09898b25cbd8ffcf1f9dbfc"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/quote_flow.py",
+          "bytes": 8319,
+          "sha256": "833e81477cda299aba1b876434243ee535e712c67563c38fd4d1701c4d530507"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_quote_flow.py",
+          "bytes": 4164,
+          "sha256": "a39b0d3d1c85cf7fbd92cf1260eef5bc00833627ded150420f11668ac0288908"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 10386,
+          "sha256": "e3024bcf30c49f79a432ce2590dc0cdc16e1d895121432c81cecbea0c23735db"
+        },
+        {
+          "path": "templates/teams/account-strategy/work/TEAM.md",
+          "bytes": 373,
+          "sha256": "0d5d01c7716b27d44e734dcc45cc02a8dfa21f49214a214516f3236485fa87f2"
+        },
+        {
+          "path": "templates/teams/account-strategy/work/tasks.json",
+          "bytes": 1747,
+          "sha256": "91c4960d4d4ed8aecad2130af40fd4661d5475c87b110ff48b6ed0641b7288b2"
+        },
+        {
+          "path": "templates/teams/adoption/work/TEAM.md",
+          "bytes": 349,
+          "sha256": "49d5649fdd34a6cd2239c064d2f66eec47c60d55ae5d67d6a6c91241d198ec67"
+        },
+        {
+          "path": "templates/teams/adoption/work/tasks.json",
+          "bytes": 1768,
+          "sha256": "22272890832bcb873bcb31515147cca044e4ad73f5a0993be24d9c7496342ecc"
+        },
+        {
+          "path": "templates/teams/architecture/work/TEAM.md",
+          "bytes": 353,
+          "sha256": "70fdab27a7072b0fddae0e758f0b14ad89a27b3fe8e51ece6df802d27b3e2f63"
+        },
+        {
+          "path": "templates/teams/architecture/work/tasks.json",
+          "bytes": 1751,
+          "sha256": "7b78bdc536681dbc6632e6fb578df929efbf702fb17b29e24db83b51ff0f3984"
+        },
+        {
+          "path": "templates/teams/discovery/work/TEAM.md",
+          "bytes": 364,
+          "sha256": "56594c7f17a2c4fec1ced9f56b41838b0ecd07e996b493e6569d44289cc7206c"
+        },
+        {
+          "path": "templates/teams/discovery/work/tasks.json",
+          "bytes": 1777,
+          "sha256": "533a9c175d73fc20f7011829d045ee3a7c6704176315f26acced53b843f56f69"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 356,
+          "sha256": "9d786f27b64eb5c9437a6160b6ed0fcd06a06b5fcf21cebc354efbcc2d640d2b"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 1938,
+          "sha256": "81493ac6d13d714a0c2a7d6089579ef22464a229c557a7bba80de5c1dfc464da"
+        },
+        {
+          "path": "templates/teams/quality/work/TEAM.md",
+          "bytes": 362,
+          "sha256": "e59118430e8fb4201315a43d575824bb42416dbfb38300ea9ff697e37d66ee59"
+        },
+        {
+          "path": "templates/teams/quality/work/tasks.json",
+          "bytes": 1815,
+          "sha256": "974078e03f6d059c64388c1c5bc647e576cde989f6d878eea20b4f651eaa0332"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "micro-manufacturing-company",
+      "name": "The Micro-Manufacturing Company",
+      "stage": "seed-verified",
+      "seedRef": "sha256:e65367fa0c6e01ba4a28161bb1f258cb94f23d86432875a66533ab1f0913c8b2",
+      "cardRef": "sha256:ad72b7a37ad341399d3f2fb605065be004f0206c70ba303e194765a1dfd2b4e3",
+      "archiveRef": "sha256:986a5cd0db5e1d6ecac7cc28c7f9f79c3f958cbfce14d4ece7767fde1b1b0e56",
+      "archiveBytes": 70319,
+      "dialId": "dial:sha256:cfdd7c774d92ea22726f58dbf38e0dc7ef25d09c4c8feaed2d60a4d46e9fa334",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "SYNTHETIC case: a fictional micro-business is considering twenty desktop organizers consisting of a tray and removable ladder insert. A request to widen the tray from 180 to 196 mm must be evaluated against a fixed packing envelope. No object has been manufactured, sourced, purchased, inspected, or shipped.",
+        "id": "stackline-caddy-pilot",
+        "inputs": [
+          "case/brief.json",
+          "design/parameters.json",
+          "data/bom.csv",
+          "ops/change-request.json"
+        ],
+        "success_criteria": [
+          "The original SCAD source and offline planner describe the same two-part nominal geometry and 1.5 mm side clearance.",
+          "All dollar amounts are hypothetical and reproducible from the included cost table and solid-volume model.",
+          "The baseline synthetic inspection exercise identifies exactly three conforming and two nonconforming rows.",
+          "The proposed 196 mm width is held because it exceeds the supplied packing envelope, even if other calculations pass.",
+          "A pilot recommendation distinguishes design review from real fabrication, material certification, inspection, spending, and shipment approvals."
+        ],
+        "title": "Stackline desk caddy: a 20-kit planning exercise"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3469,
+          "sha256": "dba13249baa771bb054fd2099ab52e0eda10c6b5c8afb760cef9d0ab5d151a13"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4637,
+          "sha256": "efcdca937d6d6e49d658d47d695585feee700b32375c7711379046ba1cb4c037"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 6050,
+          "sha256": "1cc2b81da22585536a58293323cff84263689780ef865648315412c541809e8e"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 683,
+          "sha256": "4e0ee4739f541d2639348481347c4be47b8930cb1c50131db9e5281274b1a72b"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1193,
+          "sha256": "9e0a17ee6b980ade62a2314affa48dba1ae2335341204f36e11a054c9d5897ef"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 2585,
+          "sha256": "0a93c7c8674da32323c98197c5f8ac77eba933708ed4c2a473ff995fb07f4b64"
+        },
+        {
+          "path": "templates/casework/work/starter/case/brief.json",
+          "bytes": 824,
+          "sha256": "f91f3a302648524fd2e1452258d216896d6eb867dc35424b072c82996a907cc6"
+        },
+        {
+          "path": "templates/casework/work/starter/data/bom.csv",
+          "bytes": 232,
+          "sha256": "9a559adce2e53f7e842d0d21ca1a087edf6bfc71f517a4241027b218da142c5a"
+        },
+        {
+          "path": "templates/casework/work/starter/data/cost-assumptions.csv",
+          "bytes": 684,
+          "sha256": "2d769cb1f926e66d73d83ef73f581135e4cc138ba9adbfab01035def49711b4c"
+        },
+        {
+          "path": "templates/casework/work/starter/design/desk-caddy.scad",
+          "bytes": 1398,
+          "sha256": "793f30abe183b9aa04f2fa1c1856218c9b7a1e2cb81122884ee4b23a896fc703"
+        },
+        {
+          "path": "templates/casework/work/starter/design/desk-caddy.svg",
+          "bytes": 1423,
+          "sha256": "df7492b4f09e917a7b3da2daef4266a478137094caa2c95a1afb8056eb331d2d"
+        },
+        {
+          "path": "templates/casework/work/starter/design/parameters.json",
+          "bytes": 423,
+          "sha256": "513c3766a6fb5ca2f6cfdf28098ad4b3af329c4387c6a5744d89a21a3ef0a340"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/assembly.md",
+          "bytes": 2097,
+          "sha256": "31e2955cfbf9ef4ccb50ae3a93a9f9fcd962416ad5ae656f74fcc0c84bd59035"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/change-request.json",
+          "bytes": 609,
+          "sha256": "f347b11225543f00a2dea5d16f7df173893f2d0caf83f8c0d55163e3ea4043fc"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/pack-spec.json",
+          "bytes": 415,
+          "sha256": "f119c94ac2eef55c7bfbf7d3498fc2660c41977d4fa386a83e1186a6e36a94cc"
+        },
+        {
+          "path": "templates/casework/work/starter/quality/dimensions.csv",
+          "bytes": 423,
+          "sha256": "688d36477bba5c8f1ddc4c11ed80bdc306ef9888d76cc0ccf1466bbc2694adb0"
+        },
+        {
+          "path": "templates/casework/work/starter/quality/inspection-samples.csv",
+          "bytes": 398,
+          "sha256": "5d5068495220bef4bee47deba17be756b166b231dc0b605e66ebeddf1c88d4e7"
+        },
+        {
+          "path": "templates/casework/work/starter/tests/test_plan.py",
+          "bytes": 4911,
+          "sha256": "a4c410007ac936c9468fa00747a698ac8bd214e2086ea282f569fe18441f63c0"
+        },
+        {
+          "path": "templates/casework/work/starter/tools/plan.py",
+          "bytes": 10509,
+          "sha256": "1f89d763dbd4a38867108ee497e844e69198fc0ed260296bdd95d95ac33f4e4f"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 8823,
+          "sha256": "e91cd0feb0ab5ed3f0983357fa9c6ee8fa3b21311a5593ae6a87a27e0bae4151"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 350,
+          "sha256": "97bfef6c0caef3c1421446f9478faa112826473a70e22094da12e02eb9d0e884"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 1950,
+          "sha256": "c4836e308f773c6b2468d75257264da9a09fb51974fc7e13f6ff1ddb40fdc8b3"
+        },
+        {
+          "path": "templates/teams/finance/work/TEAM.md",
+          "bytes": 368,
+          "sha256": "8da82b676e41ca6aa028d4dbf1eb4dc39d279ed2123d5f965a6d718b96829142"
+        },
+        {
+          "path": "templates/teams/finance/work/tasks.json",
+          "bytes": 1103,
+          "sha256": "426c35c9879071f828347c2ef35c990e4f9fc58de2ce595f195d76414d814740"
+        },
+        {
+          "path": "templates/teams/industrial-design/work/TEAM.md",
+          "bytes": 352,
+          "sha256": "be1196e9de8e10a0d858e14f0d254665f48fa3bf37d48d69a1a2f926c61b4b23"
+        },
+        {
+          "path": "templates/teams/industrial-design/work/tasks.json",
+          "bytes": 1852,
+          "sha256": "4a09b12ccaa94c94e7a7fcec7377513f84d1ce40f39305a1475c6a741abc30fe"
+        },
+        {
+          "path": "templates/teams/logistics/work/TEAM.md",
+          "bytes": 353,
+          "sha256": "1c4e8cbc3645dc73fb2847b43c72dab75b5cde599a141e712653b48ae7705093"
+        },
+        {
+          "path": "templates/teams/logistics/work/tasks.json",
+          "bytes": 874,
+          "sha256": "0f7c478780e5a195331d1a6328d4aef8b17742184df6e29a28c9e3d6542f3ba3"
+        },
+        {
+          "path": "templates/teams/production-planning/work/TEAM.md",
+          "bytes": 386,
+          "sha256": "ae9e6bbf174e9f40f358b3e29eaebafb29b7164e5392078d694c106798c8fba3"
+        },
+        {
+          "path": "templates/teams/production-planning/work/tasks.json",
+          "bytes": 970,
+          "sha256": "f1d2a7bd0fe1b7ead71faeacc55ef19443782087a6542534e89662f67cec65f2"
+        },
+        {
+          "path": "templates/teams/quality/work/TEAM.md",
+          "bytes": 359,
+          "sha256": "9e17e41cb05d7c2a3c3632dfadf18b7438725fc53af1535f8c2c46c7463649c9"
+        },
+        {
+          "path": "templates/teams/quality/work/tasks.json",
+          "bytes": 1699,
+          "sha256": "4ebde64e438d4cc2b23e9f4d200552fe2284fc86aedb15780c33be00eeec0767"
+        },
+        {
+          "path": "templates/teams/sourcing/work/TEAM.md",
+          "bytes": 367,
+          "sha256": "00ff4fb8d419249bc317321d44dc5b1a7d95d32b34ac307743cb6d92b3a15e85"
+        },
+        {
+          "path": "templates/teams/sourcing/work/tasks.json",
+          "bytes": 895,
+          "sha256": "21d120eaba8ae986752b9ce8c23fa314e20db6d1595652a113ff270516965a98"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "turnaround-firm",
+      "name": "The Turnaround Firm",
+      "stage": "seed-verified",
+      "seedRef": "sha256:f9112fb8e126f098c0a303662f92c925f30795c1039ee2ad9309bf4232376df0",
+      "cardRef": "sha256:a0be11a1402994edcf66c6b7a4cfa3b4933d886fc902c2eb3576049828ac1a8d",
+      "archiveRef": "sha256:d2f818c10c0af2b0af010ae280eec8bd94e80f5fb7609a71993694827810a6da",
+      "archiveBytes": 78187,
+      "dialId": "dial:sha256:96422842a8c4c5581ed5a4a91c67cbad7ae43245be2d3777e91956a7399644ec",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "SYNTHETIC case at 2026-09-30: Cedarline Desk has declining subscription receipts, increasing refunds, USD 32400 closing cash, and twelve authored open tickets. Its actual small reference dispatcher alphabetizes severity, sending low-priority tickets ahead of urgent ones. A five-day planning sprint has 360 engineering minutes and 420 support-remediation minutes. No production account, money, trade, customer message, or realized recovery is involved.",
+        "id": "cedarline-five-day-recovery",
+        "inputs": [
+          "case/recovery.json",
+          "data/cash-ledger.csv",
+          "data/subscriptions.csv",
+          "data/payables.csv",
+          "data/support-backlog.csv",
+          "product/dispatch.py"
+        ],
+        "success_criteria": [
+          "Fifteen synthetic cash rows reconcile USD 52000 opening cash plus USD 48500 receipts less USD 68100 payments to USD 32400 closing cash.",
+          "USD 5500 incremental prior-period payables are reserved separately; runway to the USD 12000 floor is about 49.7 days under the repeated-September scenario.",
+          "The alphabetical dispatch defect is reproducible and a candidate policy prioritizes eligible urgent tickets without dispatching a blocked ticket.",
+          "The support simulation selects six tickets totaling exactly 420 estimated minutes and retains all other tickets as blocked or deferred.",
+          "Any proposed USD 1700 monthly containment difference remains an approval-dependent scenario, not achieved savings, profit, sales, or executed financial activity."
+        ],
+        "title": "Cedarline Desk: cash containment and a broken support dispatch queue"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3465,
+          "sha256": "cc7cc8df3f00aaa7c2b62cdd04540a4a665dada977876a0661bb57e5921bc11b"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 3745,
+          "sha256": "dfd0bf4067f4480989ccb6d6e6a5d340e926a6ff4120b2ee7422764fa488db98"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5511,
+          "sha256": "011c89dd7a9ab8c1ee966f2e7914d55b0cfeae41562c47b7d984dc3ab30b6cd4"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 829,
+          "sha256": "e3bf5ab5049b632c60b42d66e93b2dfdb9672eb8c128239cf8a42f170df45235"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1579,
+          "sha256": "100f7048a868d0553bd704250a82b18e2f666d206e3e4b2781cf3c3010b0bcf5"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 3406,
+          "sha256": "72643191a0f5c7b836869ce53bed192b44bf2c431cea34188c2f155b23a9cec0"
+        },
+        {
+          "path": "templates/casework/work/starter/case/recovery.json",
+          "bytes": 872,
+          "sha256": "92e6b5c0763d226a71996ce9654b43c7e31e7d035d1144b1f97a6b9e37116350"
+        },
+        {
+          "path": "templates/casework/work/starter/data/cash-ledger.csv",
+          "bytes": 1011,
+          "sha256": "17728ba9a34df12dcd0997dad08ec922babc3d6d504c2e47e1ab0ac3aad69d8e"
+        },
+        {
+          "path": "templates/casework/work/starter/data/payables.csv",
+          "bytes": 490,
+          "sha256": "07c963d545bc10b7a34b78065653ff4c070d8bd9ac0f61991bb7854cf0bf9f31"
+        },
+        {
+          "path": "templates/casework/work/starter/data/scenarios.csv",
+          "bytes": 419,
+          "sha256": "e81fd022a31c2550dd0a54e754d072ad5b7ca164adf57e8bfd9c3214891e2c19"
+        },
+        {
+          "path": "templates/casework/work/starter/data/subscriptions.csv",
+          "bytes": 268,
+          "sha256": "177b247ac08ada48652d2123af4066c946c89e2aeccb367c669d34912ef7ace8"
+        },
+        {
+          "path": "templates/casework/work/starter/data/support-backlog.csv",
+          "bytes": 1254,
+          "sha256": "565b646c0dbab4567c30838950093b1bf68f3c7332933eddb49c4b40c3027031"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/approval-gates.json",
+          "bytes": 998,
+          "sha256": "6e2e89930421dc3b1ab4b0a2b8fb80f8bb31e79e249fd77504ecbaaa6ea69fdf"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/customer-response.md",
+          "bytes": 1981,
+          "sha256": "ab2e0474bc67b85412f2b32d7a7b94d7d08490768f3c80a3cf5083fcfb4b06f2"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/recovery-sprint.csv",
+          "bytes": 1056,
+          "sha256": "056db98cad94ab00478eb6d37e61c236883b46506c700eca2609ca6755e4c51d"
+        },
+        {
+          "path": "templates/casework/work/starter/product/dispatch.py",
+          "bytes": 679,
+          "sha256": "273c16c64eb389baa1d867f4d94b12cbcb7eb3661c480d3b15fb150e14ef3c59"
+        },
+        {
+          "path": "templates/casework/work/starter/quality/recovery-cases.csv",
+          "bytes": 1743,
+          "sha256": "4236e1e613e2ca0733095be6a6d260018ec52266a93b977a2d8b9b4b4f2f09f5"
+        },
+        {
+          "path": "templates/casework/work/starter/tests/test_recovery.py",
+          "bytes": 7173,
+          "sha256": "c6590a45c0052cd63741c20ddff7f9a619af41ad1ead55c50e3d57b4d8fd34c8"
+        },
+        {
+          "path": "templates/casework/work/starter/tools/recovery.py",
+          "bytes": 12404,
+          "sha256": "019ff2fdcb7f5b04530f2f1c0a0a956363cbbf371a20e703164d2e4149aff4a3"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 10519,
+          "sha256": "8188e4007fb4b265f6140544bb900e519a3a7d6899a1eced22ce243e601d50a2"
+        },
+        {
+          "path": "templates/teams/customer-success/work/TEAM.md",
+          "bytes": 389,
+          "sha256": "cca32357d63b4004c48d18eacf82bab81a34b487c831722b9865167aa75cee5d"
+        },
+        {
+          "path": "templates/teams/customer-success/work/tasks.json",
+          "bytes": 1101,
+          "sha256": "8044ffb37dde7cbc75b4fc0e8f88e353ae6a6cf62255a5fa82e8baca5cae0546"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 366,
+          "sha256": "a3919817144605eb4988f8f3f74cf0a2af4e1b55a59dc115ffa7222ef75172b8"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 1947,
+          "sha256": "cc08395fbd000cbb3cccdf0fdc3c423d345738d34520d0c4ccae860b1a9057b8"
+        },
+        {
+          "path": "templates/teams/finance/work/TEAM.md",
+          "bytes": 379,
+          "sha256": "4fa62ee8bb3f54136cac0b3f95fd22dbe5b967660ee1105416bfd19033ca5ff7"
+        },
+        {
+          "path": "templates/teams/finance/work/tasks.json",
+          "bytes": 2986,
+          "sha256": "3571acdde325fe580bf3037b415839f5a254bcde7eb3ec3d9975a3f1ab321bee"
+        },
+        {
+          "path": "templates/teams/operations/work/TEAM.md",
+          "bytes": 371,
+          "sha256": "273fe63556f403adadf69e4f25864cd947168824844ac61d7d99e1516b98c2d6"
+        },
+        {
+          "path": "templates/teams/operations/work/tasks.json",
+          "bytes": 2050,
+          "sha256": "c6114c313527f1efbba8d4cfed5ba0cac608126a85dc3f834dab486e9a1f7db4"
+        },
+        {
+          "path": "templates/teams/product-recovery/work/TEAM.md",
+          "bytes": 358,
+          "sha256": "fcba45b080d2908974b217e7a05abf6313d66a8d73fb10a90202d572918df095"
+        },
+        {
+          "path": "templates/teams/product-recovery/work/tasks.json",
+          "bytes": 2769,
+          "sha256": "0b025a2867bcc333ee34de1bab39527b2a148e1221d1f7bc4706835c7e12e9a8"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "open-source-infrastructure-foundation",
+      "name": "The Open-Source Infrastructure Foundation",
+      "stage": "seed-verified",
+      "seedRef": "sha256:f3ef3de76892c8d58ff6db41cf1665bcb607a6d230b366ccb552f1aaee8755b7",
+      "cardRef": "sha256:1dfcc7d23262bcd50d49e4005811ad1d1054afa2dc325aa9cfee55a9646f711e",
+      "archiveRef": "sha256:e74bf1efeb5046338528b7bc7b3d94b529a8019cbdeb02b43202f76d537552c9",
+      "archiveBytes": 74270,
+      "dialId": "dial:sha256:4b189dd1a9e0c42accafb089674e18fdae6245fa177ceab916f58e670de2820c",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "Line Ledger is an original Python standard-library reference, not copied infrastructure or a real private project. Its SYNTHETIC JSONL fixtures model harmless open/close events for fictional work items. The implementation deliberately counts repeated identical event IDs twice and follows arrival order instead of event time. One clean contract case passes; two defect cases fail. The organization must reproduce, repair, review, and only then consider release.",
+        "id": "line-ledger-repair-cycle",
+        "inputs": [
+          "docs/charter.md",
+          "docs/contract.md",
+          "docs/issue-register.csv",
+          "data/events-clean.jsonl",
+          "data/events-duplicate.jsonl",
+          "data/events-out-of-order.jsonl",
+          "data/expected-contract.json",
+          "reference/line_ledger.py"
+        ],
+        "success_criteria": [
+          "The untouched reference characterizes one passing and two failing strict contract cases; failures are not hidden as completed fixes.",
+          "Repair proposals address identical-ID deduplication and deterministic ordering by at_minute then event_id.",
+          "Bounded input validation, conflict rejection, no-mutation behavior, and offline operation are preserved.",
+          "A release candidate requires the strict contract checker to pass every case plus reviewed regression tests.",
+          "Source ownership, remaining limitations, and external publication approvals are explicit."
+        ],
+        "title": "Line Ledger: repair duplicate counting and out-of-order state reduction"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3550,
+          "sha256": "68604dc14fd00e26c7072801a164af2bba693d184ae458059b3fe76eff896c53"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4774,
+          "sha256": "05798b99d1f7ed2812a135732c89df0af000cc5721dbdf9148f0d7e3a2cb0b67"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 6437,
+          "sha256": "7fdbf523871320afc6ac296e514d72e5a05c88333cebe2be00c3020d7f1cc36f"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 636,
+          "sha256": "e70b0728ee09d213fba1cfb1c9aed513a6567456aa95c712c8d88a7a949c5d7f"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1482,
+          "sha256": "a20b8ca75e827269e1b503edebde8f611b42b2ee6b817ec1f0dff19428c9281f"
+        },
+        {
+          "path": "templates/casework/work/starter/LICENSE.txt",
+          "bytes": 590,
+          "sha256": "ca37215db74226fbb5b58788cd950cc5bf3696c86cd5988d04060343df74ab7a"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 1955,
+          "sha256": "1f6f9b92df47c898641b5da65c7d8f04cec2248b8b9eda3d492bda862109472a"
+        },
+        {
+          "path": "templates/casework/work/starter/data/events-clean.jsonl",
+          "bytes": 323,
+          "sha256": "28025d47bfbdfcb4b7b59d98a6bb4b671c4dcc574facdc65f26836468f75a28e"
+        },
+        {
+          "path": "templates/casework/work/starter/data/events-duplicate.jsonl",
+          "bytes": 430,
+          "sha256": "209a05fc4bc3c8582e966d471200397521c9a1592b75820c5ef9439697247de3"
+        },
+        {
+          "path": "templates/casework/work/starter/data/events-out-of-order.jsonl",
+          "bytes": 323,
+          "sha256": "d05949223d4d8e5c4eaf8a5a4df1ed5cd949eb67a4f861fa8753bc0e9e503b7d"
+        },
+        {
+          "path": "templates/casework/work/starter/data/expected-contract.json",
+          "bytes": 1210,
+          "sha256": "bf733860bbf7bd53e8ad9fdfcb06ed29d1c5f97b0f25d8152f3ef20d7c7219d5"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/charter.md",
+          "bytes": 1365,
+          "sha256": "3b6c394d22b53b2e17844a3f9f1927a64df290a948cccca8c99da9d772e12ac4"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/community-intake.md",
+          "bytes": 1419,
+          "sha256": "f0aed797c18eca8c77f36c2b7a9d3fe52928c64a02856028cdb2a2dee996dea0"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/contract.md",
+          "bytes": 2003,
+          "sha256": "788a25c7ebbb3bf248b90536da3912b1d7fcbae6fddf8c6bf1b01afc460c9664"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/contribution-guide.md",
+          "bytes": 1759,
+          "sha256": "e311c2aa6d75e5f0231d70c3ba7c8d259c96aedb14b150943b67e4f077f80d08"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/issue-register.csv",
+          "bytes": 496,
+          "sha256": "f3f5b5d48fb958b853d9a76a64f2698c09e4bdb0a74ecf1d61d7e3d08da4f6a4"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/release-checklist.md",
+          "bytes": 1553,
+          "sha256": "f7b5f07abcecb40b18dc9d6367700db86c0fcccf1848b310cd61dc2b6f22efdb"
+        },
+        {
+          "path": "templates/casework/work/starter/docs/security-boundary.md",
+          "bytes": 1437,
+          "sha256": "50722fe7756eaa9f99e8076bd2ea1d0e6e12af49333ef52ded90be0977d655d8"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/check_acceptance.py",
+          "bytes": 2305,
+          "sha256": "c0e6320a0862eb2b2e06b0c19f74cf5b6394546339f62639b715ff3e1b4f10ef"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/line_ledger.py",
+          "bytes": 3932,
+          "sha256": "a43d89fdb69d00d00de21dbaff54a206196c6bbf81c5bd15b2282c1faf8b786d"
+        },
+        {
+          "path": "templates/casework/work/starter/reference/test_baseline.py",
+          "bytes": 3475,
+          "sha256": "62fb17a1ea6975afd8d97871340fcce026d9aa22bbee1d29284c64111bf52fe8"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 11357,
+          "sha256": "aa01486bb4ec61a5634016168a2e8e05929824e8fdae32871485f8d77199261d"
+        },
+        {
+          "path": "templates/teams/community/work/TEAM.md",
+          "bytes": 360,
+          "sha256": "00071c1da0254fd9a9cb436a6636da8cd53f7525140eabbadc2d32a376803b52"
+        },
+        {
+          "path": "templates/teams/community/work/tasks.json",
+          "bytes": 1811,
+          "sha256": "184440fd40c005398ae1d5dda821f87cd24772eab20b594137453ab0c9769214"
+        },
+        {
+          "path": "templates/teams/docs/work/TEAM.md",
+          "bytes": 370,
+          "sha256": "198429f81ef66cc6656c2c87e38f0e432328d01bac06a89e491393d58bb2e8d7"
+        },
+        {
+          "path": "templates/teams/docs/work/tasks.json",
+          "bytes": 1799,
+          "sha256": "5820ec96e7361ca1d9cec10378becbc4d2a11f6b14a848d7d8ee32f5b352801f"
+        },
+        {
+          "path": "templates/teams/engineering/work/TEAM.md",
+          "bytes": 380,
+          "sha256": "15d3fff295e1f44b6e03a8fc2363bb4a1f63c0471a691925e807f373bbe7618e"
+        },
+        {
+          "path": "templates/teams/engineering/work/tasks.json",
+          "bytes": 2045,
+          "sha256": "ec18a1a7e5c1d43c3224f892593736c4a58152369e5896baa00e1cb7c5462323"
+        },
+        {
+          "path": "templates/teams/maintainers/work/TEAM.md",
+          "bytes": 362,
+          "sha256": "83f28b94751362e750cb1f9f8ac0d3996c4addcf610d70f19b9d6e3b126924c0"
+        },
+        {
+          "path": "templates/teams/maintainers/work/tasks.json",
+          "bytes": 1812,
+          "sha256": "f88fdcf033f9e568f73c09cd4f36c1f1cbabd96e4c75b113d0b899aeb494b96d"
+        },
+        {
+          "path": "templates/teams/release/work/TEAM.md",
+          "bytes": 361,
+          "sha256": "6e0cb5e8541c1ddbe8fa557c054f04773197374fd9980fd8075fadae725e8eee"
+        },
+        {
+          "path": "templates/teams/release/work/tasks.json",
+          "bytes": 2052,
+          "sha256": "ed93401148c5d1b38114541fb77628bea6cee4208852215df8ed734785e937c9"
+        },
+        {
+          "path": "templates/teams/security/work/TEAM.md",
+          "bytes": 391,
+          "sha256": "79e213374fe6c5c1d88af9eaff0af58ea3095fccfb55c779661aec5a10ebc8dc"
+        },
+        {
+          "path": "templates/teams/security/work/tasks.json",
+          "bytes": 1128,
+          "sha256": "61b9e23dbe8b0ebb43d5895479002cbbf84d444851ba6203658a01a372a34fae"
+        },
+        {
+          "path": "templates/teams/triage/work/TEAM.md",
+          "bytes": 356,
+          "sha256": "c149148b69ec22f51e8a3a0341ccfb2682333e1b9a5029208df1a2469541eec2"
+        },
+        {
+          "path": "templates/teams/triage/work/tasks.json",
+          "bytes": 1195,
+          "sha256": "bae7f388a12f1c1073038d3010d7d5d9fe19e3e4a5d5ad7602a48be0af6e82bf"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    },
+    {
+      "slug": "federation-prime-contractor",
+      "name": "The Federation Prime Contractor",
+      "stage": "seed-verified",
+      "seedRef": "sha256:069200f14e55eb2a91f912ee2e9af636bec4c5950f8f27c917fd45d859c91114",
+      "cardRef": "sha256:ae6fbc659828f89f13409d554e51d15de8f397a97f5b2464deaa2d8fe12a78d8",
+      "archiveRef": "sha256:4c17f17bc151588633825452b234fed080a057399a76bb5a7cd6edb58c75d043",
+      "archiveBytes": 90685,
+      "dialId": "dial:sha256:ea8bb4fd6e69c884e7256b64b57ec84dafb82f13abeb95fd10d17796f2589f5d",
+      "protocolRef": "sha256:15fcb25a5f640c88962cc46d2d5ba6d11b2db48abbaae912228ff7256f52b60f",
+      "case": {
+        "brief": "SYNTHETIC engagement for fictional Hearthstep Maker Hall. Propose an offline anonymous-ticket intake rehearsal: applied-invention-lab is a candidate for the prototype interface, enterprise-transformation-firm for the operating model, and product-launch-company for the operator pilot kit. They are DISCOVERY-ONLY candidates, not contracted or joined partners. The prime's five own team workspaces belong only to its own demonstration world. Included submissions are original local fixtures, not partner-delivered work.",
+        "id": "pocket-queue-prime-pilot",
+        "inputs": [
+          "case/engagement.json",
+          "briefs/applied-invention-lab.json",
+          "briefs/enterprise-transformation-firm.json",
+          "briefs/product-launch-company.json",
+          "governance/public-artifact-boundary.json"
+        ],
+        "success_criteria": [
+          "Each of the three candidate organizations has a concrete machine-readable brief, scoped deliverable, dependency, and review gate.",
+          "The local matrix checks eighteen criteria across three reference artifacts and one derived integration report.",
+          "The baseline rejects the 1440-minute retention setting and the incompatible pilot-kit interface version, and blocks the integration report.",
+          "The corrected fixture passes content checks but still reports no exchange approval, contract, membership, workspace registration, federation activation, delivery authority, or real partner acceptance.",
+          "Only separately owner-approved public artifacts may cross independent organizations; this package performs no crossing or remote operation."
+        ],
+        "title": "Pocket Queue: a 60-attendee maker-hall intake rehearsal"
+      },
+      "verifiedFiles": [
+        {
+          "path": "LICENSE",
+          "bytes": 1079,
+          "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3653,
+          "sha256": "844b6e3dc18f6e890f2526e3d5c47d9e3641f32ae4ac9648a9e19b30f1ad0a98"
+        },
+        {
+          "path": "initialize.json",
+          "bytes": 4032,
+          "sha256": "2b86c01736e8d94df0e87a66814f9b6cc2342800e3068dda0b9348b4165449e2"
+        },
+        {
+          "path": "seed.json",
+          "bytes": 5994,
+          "sha256": "b95c296369509dc6a3586b8c3afdd660e718382138cfa0a6b7a83331fd7be645"
+        },
+        {
+          "path": "templates/casework/work/ACCEPTANCE.md",
+          "bytes": 815,
+          "sha256": "bd2b6877daee37f6eeee874f4fc294bfdb8e381f87237d593dc1482b9df2bb2c"
+        },
+        {
+          "path": "templates/casework/work/intake.json",
+          "bytes": 1653,
+          "sha256": "4c88a2a5cf775d2604666ab638ccc039a7f99384bbfcb212df38c9b96f719bff"
+        },
+        {
+          "path": "templates/casework/work/starter/README.md",
+          "bytes": 3329,
+          "sha256": "027e7c162b3bb507279e97913649238d24b75dae219b451b8adadbd0bc0f8e41"
+        },
+        {
+          "path": "templates/casework/work/starter/briefs/applied-invention-lab.json",
+          "bytes": 1324,
+          "sha256": "47e957c699dfacec3035522f49c298b45daa58dcccecaa932cefee4f3518dfdf"
+        },
+        {
+          "path": "templates/casework/work/starter/briefs/enterprise-transformation-firm.json",
+          "bytes": 1338,
+          "sha256": "9f8bc59282fdba87dbe9bc8297e6e0cb591663bced9dce549361cebbfebc4686"
+        },
+        {
+          "path": "templates/casework/work/starter/briefs/product-launch-company.json",
+          "bytes": 1320,
+          "sha256": "ea011aee01690e4562f4e1b196f79dae656ccba6262df696b169ddf3eed54836"
+        },
+        {
+          "path": "templates/casework/work/starter/case/engagement.json",
+          "bytes": 919,
+          "sha256": "4d92feff47a25a397d55a146ccff8265fbbc7f278b5b003138814161a204c01a"
+        },
+        {
+          "path": "templates/casework/work/starter/data/acceptance-matrix.csv",
+          "bytes": 2777,
+          "sha256": "f8ccf0dfb37dd9c874a9f2592189a30f3b1699ecaba0dead6e3e4cf087d0e516"
+        },
+        {
+          "path": "templates/casework/work/starter/data/deliverables.csv",
+          "bytes": 461,
+          "sha256": "3f137e353e7f2603fc56f8284caca7c00276a6a8afe96bbed547b6dd07a708f7"
+        },
+        {
+          "path": "templates/casework/work/starter/data/dependencies.csv",
+          "bytes": 611,
+          "sha256": "2210f3ad5c85f100147675a2524d633be5032345eedbfb98f6045f32147fc712"
+        },
+        {
+          "path": "templates/casework/work/starter/fixtures/rework-submissions.json",
+          "bytes": 2005,
+          "sha256": "c49f7d42b7f079d63989102aef5bc13d341102385265bc4751a3db39da6ded67"
+        },
+        {
+          "path": "templates/casework/work/starter/fixtures/submissions.json",
+          "bytes": 2008,
+          "sha256": "7c5e15082362a89ceccee3aa4d53d72023b23201ccf056f5b9248d6e7238c531"
+        },
+        {
+          "path": "templates/casework/work/starter/governance/public-artifact-boundary.json",
+          "bytes": 1036,
+          "sha256": "736290fdb247cb8e400b65b0b2b6ed58559dd4a15225ad9cc34ffbfa96253589"
+        },
+        {
+          "path": "templates/casework/work/starter/interfaces/pilot.json",
+          "bytes": 1315,
+          "sha256": "015ddc555f2ca4e8f41973357db7b8508459d702ff55a69f0cb7fcdc86f26759"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/change-requests.csv",
+          "bytes": 793,
+          "sha256": "90deebde4b60973739a4b56a88a18e1f7180453e51a2071f8601b744a95144a0"
+        },
+        {
+          "path": "templates/casework/work/starter/ops/risk-register.csv",
+          "bytes": 1463,
+          "sha256": "d752c36500da2381bc60d1578028b6bcca2e5afcb6a0be299d9abaaec0c6e497"
+        },
+        {
+          "path": "templates/casework/work/starter/tests/test_acceptance.py",
+          "bytes": 7310,
+          "sha256": "3c0ec3ad0f38c7c1aa0ca563cb87909ebf969b184f20d47f36998dd123ea069f"
+        },
+        {
+          "path": "templates/casework/work/starter/tools/acceptance.py",
+          "bytes": 15370,
+          "sha256": "1e2d944d372ad86b70f71e1182442c35ba22946e043cc259ef1ebae4422687da"
+        },
+        {
+          "path": "templates/casework/work/task-board.json",
+          "bytes": 11116,
+          "sha256": "ef75c2a49619cac0bbe3e81cb979184ad7642c7f66414dc91100be1f0d702244"
+        },
+        {
+          "path": "templates/teams/acceptance-quality/work/TEAM.md",
+          "bytes": 397,
+          "sha256": "d55b8754b176883a056d1f3602e66071af35296692194d54a06b8ec2361cf451"
+        },
+        {
+          "path": "templates/teams/acceptance-quality/work/tasks.json",
+          "bytes": 2199,
+          "sha256": "50dd10a337a66f23a9b73ab8e576ca019fda4968eae557268d612c04db72491e"
+        },
+        {
+          "path": "templates/teams/change-control/work/TEAM.md",
+          "bytes": 368,
+          "sha256": "8e5b8fb15f60688849bd13fbf837012f7daadf8a2c03f79478307aa8fe7a669a"
+        },
+        {
+          "path": "templates/teams/change-control/work/tasks.json",
+          "bytes": 2176,
+          "sha256": "c3ea5a6f39967258186c7c2b0658563b3ce31a4539091cb36dba254dd738fad2"
+        },
+        {
+          "path": "templates/teams/integration/work/TEAM.md",
+          "bytes": 370,
+          "sha256": "e219610d640cf3e531b3a3c83b5797bf3b34a105b7cfa8172ce7b130a5657301"
+        },
+        {
+          "path": "templates/teams/integration/work/tasks.json",
+          "bytes": 2223,
+          "sha256": "2bdd3105155bda3d10638647b284eceae61ef573528547521033960c37cce7b3"
+        },
+        {
+          "path": "templates/teams/partner-sourcing/work/TEAM.md",
+          "bytes": 414,
+          "sha256": "982c2dbff99e9b3dc0b8ffa07af65d407ef1794598ad891e3e6157ecd96a4605"
+        },
+        {
+          "path": "templates/teams/partner-sourcing/work/tasks.json",
+          "bytes": 2736,
+          "sha256": "0f64d76cae0f43214879062967e407a7ae47f321193ba4d6b253ffddf1cb8063"
+        },
+        {
+          "path": "templates/teams/program-office/work/TEAM.md",
+          "bytes": 381,
+          "sha256": "dff0eb6c996f0ee594631ebcf3651c7111358904c31d3e32d791aabf7342bdc5"
+        },
+        {
+          "path": "templates/teams/program-office/work/tasks.json",
+          "bytes": 2120,
+          "sha256": "0f2dc226f998ac71cffbd31373ad7057a1ec290a7a6b7620bed1ce5a4d7ab88b"
+        }
+      ],
+      "checks": [
+        "Exact downloaded object SHA-256 values",
+        "Full Dial ID equality across hash-verified card, record, and camera locator",
+        "Protocol, learning, conformance, SDK declaration, and package bindings",
+        "ZIP byte count and SHA-256",
+        "Safe regular-file ZIP entries with unique names and exact inventory",
+        "Every extracted file byte count, SHA-256, and descriptor content",
+        "Embedded inventory and initialization dependencies"
+      ],
+      "nativeInitialized": false,
+      "downloadedCodeExecuted": false
+    }
+  ],
+  "limitations": [
+    "Unsigned integrity review, not publisher authentication or a native SDK conformance run.",
+    "No downloaded code executed, native setup applied, membership joined, or publication performed.",
+    "Native setup still requires an exact locally trusted SDK, owner inputs, and exact-plan approvals."
+  ]
+}

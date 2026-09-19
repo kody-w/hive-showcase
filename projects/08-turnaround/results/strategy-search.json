@@ -1,0 +1,5397 @@
+{
+  "schema": "turnaround-strategy-search/1",
+  "classification": "Finite deterministic experiment; not a global optimum or owner approval",
+  "specification": {
+    "description": "All 64 subsets of six actions under each of two fixed start schedules: 128 candidates, including empty plans. Default 300-minute support request. Reject prerequisite, due-date, total-budget and daily-capacity violations before scoring. Nothing here authorizes the seed's blocked work.",
+    "ranking": [
+      "latest strict cash-floor breach (censored at horizon + 1)",
+      "latest first unfunded payment (censored at horizon + 1)",
+      "most prospective urgent tickets selected",
+      "highest end scheduled cash",
+      "lowest sunk fees",
+      "stable strategy id"
+    ],
+    "schedules": [
+      {
+        "id": "early",
+        "starts": {
+          "queue-repair": 1,
+          "support-slice": 6,
+          "contractor-cut": 1,
+          "hosting-cut": 1,
+          "receipt-pull": 1,
+          "defer-payable": 1
+        }
+      },
+      {
+        "id": "staged",
+        "starts": {
+          "queue-repair": 5,
+          "support-slice": 10,
+          "contractor-cut": 8,
+          "hosting-cut": 8,
+          "receipt-pull": 8,
+          "defer-payable": 5
+        }
+      }
+    ],
+    "thresholdScan": {
+      "receiptDelayDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "demandBps": [
+        10000,
+        9000,
+        8000,
+        7000
+      ]
+    },
+    "limitations": [
+      "Only two start schedules and six authored actions; no continuous optimization.",
+      "The best-scoring policy can still fail the floor and run out of cash.",
+      "Consent and physical feasibility of every modeled intervention are unverified.",
+      "Delayed receipts and weaker demand do not trigger a new search or a hidden rescue."
+    ]
+  },
+  "evaluatedCount": 128,
+  "validCount": 49,
+  "rejectedCount": 79,
+  "floorAndFundingSurvivors": 0,
+  "fundedSurvivors": 0,
+  "candidate": {
+    "id": "early-010111",
+    "plan": [
+      {
+        "id": "queue-repair",
+        "startDay": 1
+      },
+      {
+        "id": "support-slice",
+        "startDay": 6
+      },
+      {
+        "id": "contractor-cut",
+        "startDay": 1
+      },
+      {
+        "id": "receipt-pull",
+        "startDay": 1
+      }
+    ],
+    "actionPlanFeasible": true,
+    "floorMaintained": false,
+    "cashFundedThroughHorizon": false,
+    "recoveryExistsWithinHorizon": false,
+    "firstFloorDay": 58,
+    "firstUnfundedDay": 90,
+    "earliestWarningDay": 0,
+    "floorEscalationDay": 51,
+    "fundingEscalationDay": 83,
+    "finalScheduledCashCents": 245000,
+    "finalAvailableCents": 245000,
+    "finalPriorPayableReserveCents": 0,
+    "minimumCashCents": -262500,
+    "minimumAvailableCents": -262500,
+    "minimumFloorHeadroomCents": -1462500,
+    "receiptsWithinHorizonCents": 4350000,
+    "outflowsWithinHorizonCents": 7345000,
+    "scheduledActionCostsCents": 45000,
+    "endingCycleRecurringBurnCents": 750000,
+    "urgentTicketsProspectivelySelected": 3,
+    "supportMinutes": 300,
+    "issues": []
+  },
+  "rankedValidIds": [
+    "early-010111",
+    "staged-010111",
+    "early-010100",
+    "early-010101",
+    "staged-010100",
+    "staged-010101",
+    "staged-110100",
+    "staged-110101",
+    "early-010011",
+    "staged-010011",
+    "early-010000",
+    "early-010001",
+    "staged-010000",
+    "staged-010001",
+    "early-011000",
+    "staged-011000",
+    "early-110000",
+    "early-110001",
+    "staged-110000",
+    "staged-110001",
+    "staged-111000",
+    "early-000111",
+    "staged-000111",
+    "staged-100111",
+    "early-000011",
+    "staged-000011",
+    "early-100011",
+    "staged-100011",
+    "early-000100",
+    "early-000101",
+    "staged-000100",
+    "staged-000101",
+    "early-001100",
+    "staged-001100",
+    "staged-100100",
+    "staged-100101",
+    "early-000000",
+    "early-000001",
+    "staged-000000",
+    "staged-000001",
+    "early-001000",
+    "staged-001000",
+    "early-100000",
+    "early-100001",
+    "staged-100000",
+    "staged-100001",
+    "early-101000",
+    "staged-101000",
+    "staged-101100"
+  ],
+  "evaluated": [
+    {
+      "id": "early-000000",
+      "plan": [],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-000001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-000010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-000011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "early-000100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-000101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-000110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-000111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "early-001000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -15000,
+      "finalAvailableCents": -15000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1465000,
+      "minimumAvailableCents": -1465000,
+      "minimumFloorHeadroomCents": -2665000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7605000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-001001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-001010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-001011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-001100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 255000,
+      "finalAvailableCents": 255000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1195000,
+      "minimumAvailableCents": -1195000,
+      "minimumFloorHeadroomCents": -2395000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7335000,
+      "scheduledActionCostsCents": 75000,
+      "endingCycleRecurringBurnCents": 730000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-001101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-001110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-001111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-010000",
+      "plan": [
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-010001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-010010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-010011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "early-010100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-010101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-010110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-010111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "early-011000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -30000,
+      "finalAvailableCents": -30000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -537500,
+      "minimumAvailableCents": -537500,
+      "minimumFloorHeadroomCents": -1737500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7620000,
+      "scheduledActionCostsCents": 60000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-011001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-011010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-011011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-011100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-011101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-011110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-011111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-100000",
+      "plan": [
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-100001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-100010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-100011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "early-100100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 120 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-100101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 120 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-100110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "Day 1 review load 120 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-100111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 120 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-101000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -37500,
+      "finalAvailableCents": -37500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1487500,
+      "minimumAvailableCents": -1487500,
+      "minimumFloorHeadroomCents": -2687500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7627500,
+      "scheduledActionCostsCents": 55000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-101001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-101010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6."
+      ]
+    },
+    {
+      "id": "early-101011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-101100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 135 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-101101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 135 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-101110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "Day 1 review load 135 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-101111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 135 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-110000",
+      "plan": [
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -47500,
+      "finalAvailableCents": -47500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -555000,
+      "minimumAvailableCents": -555000,
+      "minimumFloorHeadroomCents": -1755000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7637500,
+      "scheduledActionCostsCents": 25000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-110001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -47500,
+      "finalAvailableCents": -47500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -555000,
+      "minimumAvailableCents": -555000,
+      "minimumFloorHeadroomCents": -1755000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7637500,
+      "scheduledActionCostsCents": 25000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "early-110010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "early-110011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "early-110100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 150 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-110101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 150 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-110110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "Day 1 review load 150 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-110111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "Day 1 review load 150 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-111000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 1 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-111001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-111010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-111011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 105 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-111100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 1 review load 165 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-111101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 165 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "early-111110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 6.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 1 review load 165 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "early-111111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 1
+        },
+        {
+          "id": "support-slice",
+          "startDay": 6
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 1
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 1
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 1
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 1
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 1 engineering load 180 exceeds daily cap 120 minutes.",
+        "Day 1 review load 165 exceeds daily cap 90 minutes.",
+        "Day 2 engineering load 180 exceeds daily cap 120 minutes."
+      ]
+    },
+    {
+      "id": "staged-000000",
+      "plan": [],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-000001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-000010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-000011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-000100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-000101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-000110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-000111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 260000,
+      "finalAvailableCents": 260000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1190000,
+      "minimumAvailableCents": -1190000,
+      "minimumFloorHeadroomCents": -2390000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7330000,
+      "scheduledActionCostsCents": 30000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-001000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -15000,
+      "finalAvailableCents": -15000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1465000,
+      "minimumAvailableCents": -1465000,
+      "minimumFloorHeadroomCents": -2665000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7605000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-001001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-001010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-001011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-001100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 255000,
+      "finalAvailableCents": 255000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1195000,
+      "minimumAvailableCents": -1195000,
+      "minimumFloorHeadroomCents": -2395000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7335000,
+      "scheduledActionCostsCents": 75000,
+      "endingCycleRecurringBurnCents": 730000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-001101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-001110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-001111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-010000",
+      "plan": [
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-010001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-010010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-010011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -25000,
+      "finalAvailableCents": -25000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -532500,
+      "minimumAvailableCents": -532500,
+      "minimumFloorHeadroomCents": -1732500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7615000,
+      "scheduledActionCostsCents": 15000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-010100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-010101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-010110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-010111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-011000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -30000,
+      "finalAvailableCents": -30000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -537500,
+      "minimumAvailableCents": -537500,
+      "minimumFloorHeadroomCents": -1737500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7620000,
+      "scheduledActionCostsCents": 60000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-011001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-011010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-011011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-011100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-011101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-011110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-011111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-100000",
+      "plan": [
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-100001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-100010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-100011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -32500,
+      "finalAvailableCents": -32500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1482500,
+      "minimumAvailableCents": -1482500,
+      "minimumFloorHeadroomCents": -2682500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7622500,
+      "scheduledActionCostsCents": 10000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-100100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 237500,
+      "finalAvailableCents": 237500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1212500,
+      "minimumAvailableCents": -1212500,
+      "minimumFloorHeadroomCents": -2412500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7352500,
+      "scheduledActionCostsCents": 40000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-100101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 237500,
+      "finalAvailableCents": 237500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1212500,
+      "minimumAvailableCents": -1212500,
+      "minimumFloorHeadroomCents": -2412500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7352500,
+      "scheduledActionCostsCents": 40000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-100110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-100111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": 237500,
+      "finalAvailableCents": 237500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1212500,
+      "minimumAvailableCents": -1212500,
+      "minimumFloorHeadroomCents": -2412500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7352500,
+      "scheduledActionCostsCents": 40000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "issues": []
+    },
+    {
+      "id": "staged-101000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -37500,
+      "finalAvailableCents": -37500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1487500,
+      "minimumAvailableCents": -1487500,
+      "minimumFloorHeadroomCents": -2687500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7627500,
+      "scheduledActionCostsCents": 55000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-101001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-101010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-101011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-101100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 58,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 51,
+      "finalScheduledCashCents": 232500,
+      "finalAvailableCents": 232500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1217500,
+      "minimumAvailableCents": -1217500,
+      "minimumFloorHeadroomCents": -2417500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7357500,
+      "scheduledActionCostsCents": 85000,
+      "endingCycleRecurringBurnCents": 730000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-101101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-101110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12."
+      ]
+    },
+    {
+      "id": "staged-101111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-110000",
+      "plan": [
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -47500,
+      "finalAvailableCents": -47500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -555000,
+      "minimumAvailableCents": -555000,
+      "minimumFloorHeadroomCents": -1755000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7637500,
+      "scheduledActionCostsCents": 25000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-110001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -47500,
+      "finalAvailableCents": -47500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -555000,
+      "minimumAvailableCents": -555000,
+      "minimumFloorHeadroomCents": -1755000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7637500,
+      "scheduledActionCostsCents": 25000,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-110010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12.",
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-110011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-110100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 222500,
+      "finalAvailableCents": 222500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -285000,
+      "minimumAvailableCents": -285000,
+      "minimumFloorHeadroomCents": -1485000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7367500,
+      "scheduledActionCostsCents": 55000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-110101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 222500,
+      "finalAvailableCents": 222500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -285000,
+      "minimumAvailableCents": -285000,
+      "minimumFloorHeadroomCents": -1485000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7367500,
+      "scheduledActionCostsCents": 55000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-110110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12.",
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-110111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-111000",
+      "plan": [
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 89,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 82,
+      "finalScheduledCashCents": -52500,
+      "finalAvailableCents": -52500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -560000,
+      "minimumAvailableCents": -560000,
+      "minimumFloorHeadroomCents": -1760000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7642500,
+      "scheduledActionCostsCents": 70000,
+      "endingCycleRecurringBurnCents": 880000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": []
+    },
+    {
+      "id": "staged-111001",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes."
+      ]
+    },
+    {
+      "id": "staged-111010",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12.",
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-111011",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "support total 390 exceeds one-time budget 300 minutes."
+      ]
+    },
+    {
+      "id": "staged-111100",
+      "plan": [
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-111101",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-111110",
+      "plan": [
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "support-slice needs queue-repair ready before its work starts on day 12.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    },
+    {
+      "id": "staged-111111",
+      "plan": [
+        {
+          "id": "queue-repair",
+          "startDay": 5
+        },
+        {
+          "id": "support-slice",
+          "startDay": 10
+        },
+        {
+          "id": "contractor-cut",
+          "startDay": 8
+        },
+        {
+          "id": "hosting-cut",
+          "startDay": 8
+        },
+        {
+          "id": "receipt-pull",
+          "startDay": 8
+        },
+        {
+          "id": "defer-payable",
+          "startDay": 5
+        }
+      ],
+      "actionPlanFeasible": false,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "issues": [
+        "engineering total 480 exceeds one-time budget 360 minutes.",
+        "support total 390 exceeds one-time budget 300 minutes.",
+        "review total 210 exceeds one-time budget 180 minutes.",
+        "Day 8 review load 105 exceeds daily cap 90 minutes."
+      ]
+    }
+  ],
+  "provenance": {
+    "modelSha256": "f482d2bcc616bba534b5f4d4aca7fbe55263b747405bdab4a27d40b35f113b9c",
+    "inputsSha256": "eaf6265d5abe77334427eb1989962cbc9a353c56e6eeacdcb5db4acb20ea3f33",
+    "scenarioSpecificationSha256": "fa0ac52ebce67adb4f38e16aaae6aa91f5c752d4ebc097f53ac58cbc7e215a90"
+  }
+}

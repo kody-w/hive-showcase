@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An offline parametric desk-organizer design studio: real STL solids, dimensioned drawings and honest digital-only manufacturing review.">
+  <title>Stackline — Object Lab / 07</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="archive.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workbench">Skip to configurator</a>
+  <main>
+    <nav class="topbar" aria-label="Project navigation">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">▥</span> HIVE <span class="brand-divider">/</span> OBJECT LAB</a>
+      <span class="topbar-right"><span class="status-dot" aria-hidden="true"></span> LOCAL DESIGN STUDY <span class="issue">07 / 10</span></span>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">07 — Micro-manufacturing · original parametric design</p>
+        <h1>Less screen.<br><span>More substance.</span></h1>
+        <p class="lede">Meet Stackline. A tray, a lift-out insert, and a few numbers.<br class="desktop-break"> Shape your desk organizer. Take the geometry with you.</p>
+      </div>
+      <div class="hero-note">
+        <span class="outline-badge"><span aria-hidden="true">◇</span> DIGITAL REVIEW ONLY</span>
+        <p>Real downloadable geometry.<br>Zero parts manufactured.</p>
+        <a href="#review-gates">See what is — and isn’t — checked <span aria-hidden="true">↘</span></a>
+      </div>
+    </header>
+
+    <section aria-labelledby="preset-heading">
+      <div class="section-heading">
+        <h2 id="preset-heading"><span class="section-no">01</span> Pick a starting point</h2>
+        <p>Three configurations. One editable system.</p>
+      </div>
+      <div id="presets" class="preset-grid" role="group" aria-label="Starting configurations">
+        <button class="preset-card active" data-preset="stackline" aria-pressed="true"><span class="preset-number">A / 180 × 100</span><strong>Stackline</strong><span>Three equal desk bays</span><span class="preset-indicator" aria-hidden="true">↗</span></button>
+        <button class="preset-card" data-preset="compact" aria-pressed="false"><span class="preset-number">B / 140 × 90</span><strong>Compact</strong><span>A lighter two-bay footprint</span><span class="preset-indicator" aria-hidden="true">↗</span></button>
+        <button class="preset-card" data-preset="pocket-arcade" aria-pressed="false"><span class="preset-number">C / 180 × 100</span><strong>Pocket Arcade</strong><span>One card bay + two token bays</span><span class="preset-indicator" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section id="workbench" class="workbench" aria-labelledby="workbench-heading">
+      <div class="controls">
+        <div class="panel-heading"><h2 id="workbench-heading"><span class="section-no">02</span> Make it yours</h2><span class="unit-chip">mm</span></div>
+        <p class="control-description">Every dimension drives the geometry. No redrawing.</p>
+        <form id="parameters" novalidate>
+          <fieldset>
+            <legend>Outer envelope</legend>
+            <div class="field-grid three">
+              <label for="width">Width<input id="width" name="width" type="number" min="100" max="260" step="0.5" value="180" inputmode="decimal"></label>
+              <label for="depth">Depth<input id="depth" name="depth" type="number" min="60" max="180" step="0.5" value="100" inputmode="decimal"></label>
+              <label for="height">Height<input id="height" name="height" type="number" min="18" max="60" step="0.5" value="32" inputmode="decimal"></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Build the shell</legend>
+            <div class="field-grid">
+              <label for="wall">Wall thickness<input id="wall" name="wall" type="number" min="2" max="8" step="0.1" value="3" inputmode="decimal"></label>
+              <label for="floor">Floor thickness<input id="floor" name="floor" type="number" min="2" max="8" step="0.1" value="3" inputmode="decimal"></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Lift-out insert</legend>
+            <div class="field-grid">
+              <label for="bays">Bay count<select id="bays" name="bays"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label>
+              <label for="insertHeight">Insert height<input id="insertHeight" name="insertHeight" type="number" min="8" max="50" step="0.5" value="20" inputmode="decimal"></label>
+              <label for="rib">Rib thickness<input id="rib" name="rib" type="number" min="1.5" max="6" step="0.1" value="2" inputmode="decimal"></label>
+              <label for="clearance">Gap / side<input id="clearance" name="clearance" type="number" min="0.5" max="3" step="0.1" value="1.5" inputmode="decimal" aria-describedby="gap-help"></label>
+            </div>
+            <label class="full-label" for="layout">Bay layout<select id="layout" name="layout"><option value="even">Equal bays</option><option value="card-token">Card lead + token bays (55% / rest)</option></select></label>
+            <p id="gap-help" class="field-help">Loose centered gap, not a press fit. Minimum 2 mm recess below the rim.</p>
+          </fieldset>
+          <button type="button" id="reset" class="quiet-button">↺ Reset this configuration</button>
+        </form>
+      </div>
+      <div class="design-area">
+        <div class="preview-header"><div><span class="eyebrow">LIVE NOMINAL GEOMETRY</span><h3 id="design-name">Stackline</h3></div><div class="view-toggle" role="group" aria-label="Geometry view"><button id="assembled" type="button" aria-pressed="true">Assembled</button><button id="exploded" type="button" aria-pressed="false">Exploded</button></div></div>
+        <div class="drawing-stage" id="drawing-stage">
+          <div class="stage-coordinate" aria-hidden="true">ISO / MM<br>+ Z ↑</div>
+          <div id="preview"><p>Loading original geometry…</p></div>
+          <div class="stage-caption"><span><i class="swatch tray" aria-hidden="true"></i> 01 Tray</span><span><i class="swatch insert" aria-hidden="true"></i> 02 Lift-out insert</span><span>Nominal view · not a photograph</span></div>
+        </div>
+        <div class="live-status" id="live-status" role="status" aria-live="polite">Preparing digital fit checks…</div>
+        <div class="invalid-message" id="validation-errors" role="alert" hidden></div>
+        <div class="metric-grid" aria-label="Modeled design metrics">
+          <div><span class="metric-label">SOLID MATERIAL</span><strong id="metric-mass">—</strong><small>at assumed 1.24 g/cm³</small></div>
+          <div><span class="metric-label">BENCH EFFORT</span><strong id="metric-time">—</strong><small>modeled assembly + checks</small></div>
+          <div><span class="metric-label">SYNTHETIC UNIT COST</span><strong id="metric-cost">—</strong><small>not a quote · USD</small></div>
+        </div>
+        <div class="fit-strip" id="fit-strip"></div>
+      </div>
+    </section>
+
+    <section class="download-panel" aria-labelledby="download-heading">
+      <div><p class="eyebrow">YOUR NUMBERS, YOUR FILES</p><h2 id="download-heading">Take it off the screen.</h2><p>Two separate STL solids, a dimensioned SVG, BOM, parameters,<br class="desktop-break"> assembly plan, and an unperformed inspection sheet.</p><p class="small-note">STL is unitless. Import explicitly as <strong>millimetres</strong>. Review only, never a machine-ready claim.</p></div>
+      <div class="download-actions">
+        <button id="download-bundle" class="primary-button" type="button" disabled><span aria-hidden="true">↓</span> Download current review ZIP</button>
+        <div class="individual-downloads">
+          <button data-download="tray" disabled>Tray STL</button><button data-download="insert" disabled>Insert STL</button><button data-download="drawing" disabled>Drawing SVG</button><button data-download="bom" disabled>BOM CSV</button><button data-download="parameters" disabled>Parameters</button>
+          <a href="engine.js" download="stackline-original-engine.js">Original source ↗</a>
+        </div>
+        <p id="download-status" class="small-note" role="status" aria-live="polite">Everything stays local. No accounts, uploads, or background requests.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="comparison-heading" class="comparison-section">
+      <div class="section-heading"><h2 id="comparison-heading"><span class="section-no">03</span> Trade-offs, made visible</h2><p>Fixed presets · edits above don’t overwrite these baselines.</p></div>
+      <div class="table-wrap comparison-table">
+        <table>
+          <caption class="sr-only">Comparison of three nominal configurations; all material, cost and effort estimates are modeled.</caption>
+          <thead><tr><th scope="col">Configuration</th><th scope="col">Envelope / mm</th><th scope="col">Solid material</th><th scope="col">Modeled bench effort</th><th scope="col">Synthetic cost</th><th scope="col">Review package</th></tr></thead>
+          <tbody id="comparison-body">
+            <tr><th scope="row">Stackline</th><td>180 × 100 × 32</td><td>151.67 g</td><td>6.00 min</td><td>$7.61</td><td><a href="generated/stackline/review-bundle.zip" download>ZIP ↓</a></td></tr>
+            <tr><th scope="row">Compact</th><td>140 × 90 × 28</td><td>103.67 g</td><td>5.67 min</td><td>$6.23</td><td><a href="generated/compact/review-bundle.zip" download>ZIP ↓</a></td></tr>
+            <tr><th scope="row">Pocket Arcade</th><td>180 × 100 × 28</td><td>140.96 g</td><td>6.75 min</td><td>$7.60</td><td><a href="generated/pocket-arcade/review-bundle.zip" download>ZIP ↓</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="comparison-notes"><p><strong>Compact:</strong> about 32% less nominal solid material than Stackline.</p><p><strong>Pocket Arcade:</strong> an assumed 88 × 63 mm card footprint and 20 mm tokens. No actual game-piece fit test.</p></div>
+      <details class="method"><summary>How the numbers are modeled</summary><div>
+        <p>All dimensions use mm. Tray volume = outer width × depth × floor + wall-ring area × (height − floor). Insert volume = two full-width rails + the crossbars between them. Shared-volume overlap is removed before STL triangulation.</p>
+        <p>Mass (g) = solid volume (mm³) ÷ 1,000 × assumed density (1.24 g/cm³). Gross feedstock = mass ÷ 0.92. This is a <strong>solid geometry model</strong>, not a slicer/infill/support estimate. STL volumes are checked against those formulas.</p>
+        <p>Modeled bench effort = 300 fixed seconds + 20 seconds per bay + 45 seconds for a card/token review. It includes assembly, handling, and inspection, excludes fabrication/postprocessing, and is <strong>not time-study evidence</strong>.</p>
+        <p>Synthetic unit USD = gross feedstock kg × $24 + bench hours × $22 + $0.35 packaging + $1.10 overhead. Twenty-kit totals are rounded after aggregation; $7.61 × 20 is not the unrounded baseline batch result of $152.13. Density/price/yield sensitivity is in every review JSON.</p>
+        <a href="README.md">Read the method, tolerances, attribution and reproduction steps ↗</a>
+      </div></details>
+    </section>
+
+    <section id="review-gates" aria-labelledby="review-heading">
+      <div class="section-heading"><h2 id="review-heading"><span class="section-no">04</span> Honest about the evidence</h2><p>Geometry is checked. The physical world is not.</p></div>
+      <div class="review-grid">
+        <article class="review-card">
+          <span class="review-symbol digital" aria-hidden="true">✓</span><h3>Checked digitally</h3>
+          <ul><li>Finite dimensions, positive walls, bays and recess</li><li>Shared-vertex, closed, oriented STL topology</li><li>Independent volume, units and bounds checks</li><li>BOM quantities and deterministic regeneration</li><li>Seed gauge replay: 3 pass / 2 hold, synthetic only</li></ul>
+          <a href="evidence/result.json">Open reproducible evidence ↗</a>
+        </article>
+        <article class="review-card caution">
+          <span class="review-symbol physical" aria-hidden="true">○</span><h3>Still needs a physical pilot</h3>
+          <ul><li>Material/process suitability and dimensional capability</li><li>Actual four-side fit, squareness and surface quality</li><li>Insertion, removal, retrieval and desk stability</li><li>Handling time, strength and transit protection</li><li>Separate prototype, spend and shipment approval</li></ul>
+          <a href="generated/stackline/inspection.csv" download>Download unperformed checklist ↓</a>
+        </article>
+        <article class="review-card hold-card">
+          <span class="review-symbol hold" aria-hidden="true">!</span><h3>The 196 mm request: hold</h3>
+          <p>The seed’s wider proposal needs <strong>200 mm</strong> including two 2 mm pads. Its synthetic packing interior is only <strong>192 mm</strong>.</p>
+          <div class="pack-meter" aria-hidden="true"><div><span>192 mm pack</span></div><span>+8 mm</span></div>
+          <p>No silent approval. Reopen geometry, fit limits, material, cost, and packaging review.</p>
+          <a href="generated/width-change-review.json">Inspect the change-impact record ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="assembly-section" aria-labelledby="assembly-heading">
+      <div><p class="eyebrow">TWO PARTS. NO HARDWARE.</p><h2 id="assembly-heading">A reversible idea.<br>Not a fabrication order.</h2><p>After separately approved prototype, material and process reviews, a future pilot would follow this sequence.</p><a href="generated/stackline/assembly.txt" download>Full prospective assembly instructions ↓</a></div>
+      <ol class="assembly-steps">
+        <li><span>01</span><div><h3>Identify & measure</h3><p>Match pair and revision IDs. Record dimensions and edges. Never mix variants or invent readings.</p></div></li>
+        <li><span>02</span><div><h3>Place & lift</h3><p>Rails front/back, insert onto the floor. No fasteners, adhesive or forcing. Check all four gaps.</p></div></li>
+        <li><span>03</span><div><h3>Inspect & hold</h3><p>Review seating, retrieval and stability. Segregate binding or mismatched pairs for design review.</p></div></li>
+      </ol>
+    </section>
+
+    <footer><div><strong>STACKLINE</strong> / OBJECT LAB 07<p>Original local work · verified inert seed data attributed under MIT.<br>Dry, lightweight desktop use only. No safety-critical, food, heated or child-safety applications.</p></div><div><a href="data/source-provenance.json">Sources & hashes</a><a href="manifest.json">Project manifest</a><a href="generated/artifact-index.json">Artifact hashes</a><span>WORK PRODUCED · NOT PHYSICALLY VALIDATED</span></div></footer>
+    <noscript><p class="notice">JavaScript is required for live editing. The three preset ZIPs, drawings, BOMs and review files remain directly downloadable from the comparison table.</p></noscript>
+  </main>
+</body>
+</html>

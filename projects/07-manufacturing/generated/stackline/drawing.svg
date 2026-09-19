@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="411mm" viewBox="0 0 297 411">
+<title>Stackline nominal dimensioned review drawing — millimetres</title>
+<desc>1 drawing unit equals 1 mm. Not a cut template or machine instruction. Two separate nominal solids.</desc>
+<style>text{font-family:monospace;fill:#142734;font-size:3.3px}.heading{font-size:5px;font-weight:bold}.small{font-size:2.9px}.outline{fill:none;stroke:#142734;stroke-width:.35}.hidden{fill:none;stroke:#65767c;stroke-width:.25;stroke-dasharray:2 1}.insert{fill:#d8eee5;stroke:#27715f;stroke-width:.22}.dimension path{fill:none;stroke:#597078;stroke-width:.2}.dimension text{font-size:3px}.bar{stroke:#142734;stroke-width:.5}</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text class="heading" x="15" y="13">STACKLINE / DIGITAL DESIGN REVIEW</text>
+<text class="label" x="15" y="20">180 × 100 × 32 mm | 3 bays | even | generator 1.0.0</text>
+<rect class="outline" x="30" y="42" width="180" height="100"/><rect class="hidden" x="33" y="45" width="174" height="94"/><rect class="insert" x="34.5" y="46.5" width="171" height="2"/><rect class="insert" x="34.5" y="135.5" width="171" height="2"/><rect class="insert" x="90.166667" y="48.5" width="2" height="87"/><rect class="insert" x="147.833333" y="48.5" width="2" height="87"/><g class="dimension"><path d="M 30 34 L 210 34"/><path d="M 28.5 32.5 l 3 3 M 208.5 32.5 l 3 3"/><text class="label" x="122" y="32">180 mm</text></g><g class="dimension"><path d="M 20 42 L 20 142"/><path d="M 18.5 40.5 l 3 3 M 18.5 140.5 l 3 3"/><text class="label" x="22" y="90">100 mm</text></g>
+<text class="small" x="30" y="151">TOP / insert shown at its assembled offset</text>
+<text class="small" x="30" y="157">Nominal side gap 1.5 mm on all four sides; inner 174 × 94 mm</text>
+<text class="heading" x="30" y="176">FRONT / outer envelope and hidden floor</text>
+<rect class="outline" x="30" y="188" width="180" height="32"/>
+<path class="hidden" d="M 30 217 h 180"/>
+<g class="dimension"><path d="M 219 188 L 219 220"/><path d="M 217.5 186.5 l 3 3 M 217.5 218.5 l 3 3"/><text class="label" x="221" y="202">32 mm</text></g>
+<text class="small" x="33" y="214">floor 3 mm; wall 3 mm; rim recess 9 mm</text>
+<text class="heading" x="30" y="248">INSERT / separate part; local origin 0,0,0</text>
+<rect class="insert" x="30" y="262" width="171" height="2"/><rect class="insert" x="30" y="351" width="171" height="2"/><rect class="insert" x="85.666667" y="264" width="2" height="87"/><rect class="insert" x="143.333333" y="264" width="2" height="87"/>
+<g class="dimension"><path d="M 30 256 L 201 256"/><path d="M 28.5 254.5 l 3 3 M 199.5 254.5 l 3 3"/><text class="label" x="117.5" y="254">171 mm</text></g>
+<g class="dimension"><path d="M 20 262 L 20 353"/><path d="M 18.5 260.5 l 3 3 M 18.5 351.5 l 3 3"/><text class="label" x="22" y="305.5">91 mm</text></g>
+<text class="small" x="32" y="307.5">55.67</text><text class="small" x="89.667" y="307.5">55.67</text><text class="small" x="147.333" y="307.5">55.67</text>
+<text class="small" x="30" y="361">Bay widths above; clear depth 87 mm; rib 2 mm; height 20 mm</text>
+<text class="small" x="30" y="368">STL is unitless: explicitly import as mm. Scale/check this drawing at 100%.</text>
+<path class="bar" d="M 30 388 h 50 M 30 386 v 4 M 80 386 v 4"/>
+<text class="small" x="86" y="390">50 mm scale bar</text>
+<text class="small" x="15" y="402">REVIEW ONLY / No physical tests, fabrication, process qualification, or purchasing performed.</text>
+</svg>

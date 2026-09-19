@@ -1,0 +1,501 @@
+{
+  "schema": "pocket-arcade-public-result/1",
+  "id": "10-pocket-arcade",
+  "seedSlug": "federation-prime-contractor",
+  "stage": "work-produced",
+  "recordKind": "public-projection-integration-summary",
+  "recordedAt": "2026-09-19T13:48:00.821333+00:00",
+  "status": "public-projection-locally-checked",
+  "integrationStatus": "local-integration-checks-passed",
+  "integrationPassed": true,
+  "publication": {
+    "showcaseOwnerAuthorized": true,
+    "deploymentPerformedByThisWorkstream": false,
+    "liveBrowserValidatedByThisWorkstream": false,
+    "scope": "Reviewed static public showcase only; the coordinating publisher owns remote deployment."
+  },
+  "componentChecks": [
+    {
+      "id": "01-game-studio",
+      "checkProvenance": "preserved-valid-original-checks-not-rerun",
+      "checkCount": 2,
+      "record": {
+        "path": "projects/10-pocket-arcade/evidence/checks/01-game-studio-runs.json",
+        "sha256": "30bd07e4bdc8ade2e28a443444498fb80afd2a5a781c716ab842632c3e503e6f",
+        "bytes": 6095
+      }
+    },
+    {
+      "id": "05-planner",
+      "checkProvenance": "preserved-valid-original-checks-not-rerun",
+      "checkCount": 4,
+      "record": {
+        "path": "projects/10-pocket-arcade/evidence/checks/05-planner-runs.json",
+        "sha256": "05aac2dffe390d7b48341a60d8278507c168b3cd25a72f25d6a6986010a1d99c",
+        "bytes": 7582
+      }
+    },
+    {
+      "id": "07-manufacturing",
+      "checkProvenance": "preserved-valid-original-checks-not-rerun",
+      "checkCount": 3,
+      "record": {
+        "path": "projects/10-pocket-arcade/evidence/checks/07-manufacturing-runs.json",
+        "sha256": "d5a9684dbe55d0341787c53c5a4832d1c79b2fed2c115a650b51a48d56067f87",
+        "bytes": 9644
+      }
+    },
+    {
+      "id": "09-handoff",
+      "checkProvenance": "new-public-projection-checks",
+      "checkCount": 7,
+      "record": {
+        "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-runs.json",
+        "sha256": "d8d1a9eaaf226d565d3dc7762cf301faa08cceb47b8344998627f96551752c49",
+        "bytes": 8167
+      }
+    }
+  ],
+  "totalRecordedComponentCommands": 16,
+  "newMaintenanceCommands": 7,
+  "preservedOtherComponentCommands": 9,
+  "realValidation": {
+    "argv": [
+      "python3",
+      "-B",
+      "projects/10-pocket-arcade/validate.py",
+      "--root",
+      "."
+    ],
+    "exitCode": 0,
+    "inputHashCount": 158,
+    "summary": {
+      "requiredContributions": 4,
+      "acceptedLocalContributions": 4,
+      "acceptedFixtureContributions": 0,
+      "verifiedLocalContributions": 4,
+      "verifiedFixtureContributions": 0,
+      "dependencyBlockedContributions": 0,
+      "awaitingContributions": [],
+      "recordedCheckCount": 16,
+      "inputFileCount": 158
+    },
+    "report": {
+      "path": "projects/10-pocket-arcade/evidence/integration-validation.json",
+      "sha256": "220e10ff3c06879990c1586833abb10618459f7417ec23000262e7d0a27e6149",
+      "bytes": 60539
+    }
+  },
+  "maintenancePublicProjection": {
+    "resultSchema": "handoff-public-result/1",
+    "historyRecord": "projects/09-handoff/evidence/historical-continuation.json",
+    "historicalRecordKind": "derived-historical-summary",
+    "privateInvocationIndependentlyReverified": false,
+    "maintenanceBehaviorAndExportUnchanged": true,
+    "currentCounts": {
+      "rawRecords": 4,
+      "uniqueEvents": 3,
+      "replayedRecords": 1
+    },
+    "qualification": "Current public behavior and included historical source snapshots are reproducible; private invocation identity is withheld and cannot be independently reverified publicly."
+  },
+  "redactionBoundaries": [
+    "No machine-specific locations,private execution identifiers,internal prompts or raw private invocation records are included.",
+    "Private parent observation payloads and their acceptance dependencies are excluded.",
+    "Unchanged original check records remain original observations; historical Git digests are informational and are not required public Git objects.",
+    "Derived maintenance history is explicitly labeled,not byte-identical private transcripts or a new handoff.",
+    "The original private checkout and partner files were not edited."
+  ],
+  "approvals": {
+    "nativeActivation": "pending",
+    "operationalUse": "pending",
+    "humanFunAndAccessibility": "pending",
+    "physicalFabricationAndFit": "pending",
+    "marketValidation": "pending"
+  },
+  "ownedRefreshChecks": {
+    "status": "passed",
+    "commandCount": 12,
+    "unitTests": {
+      "python": 92,
+      "node": 18
+    },
+    "unitTestTotal": 110,
+    "record": {
+      "path": "projects/10-pocket-arcade/evidence/final-own-checks.json",
+      "sha256": "884af09862a5afe1c4c085cea51dd54a045d470e53413edbea8875c8c4f91355",
+      "bytes": 7542
+    }
+  },
+  "freshGitVerification": {
+    "status": "passed",
+    "argv": [
+      "python3",
+      "-B",
+      "projects/10-pocket-arcade/public_checks.py",
+      "--root",
+      ".",
+      "--fresh-git"
+    ],
+    "exitCode": 0,
+    "stdoutSha256": "6fda64b10e91a742db86243c95e08e0ff966e47a1fd7044cfbc9e318e348d0f3",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pathRebasing": [],
+    "result": {
+      "schema": "pocket-arcade-public-check/1",
+      "status": "passed",
+      "publicFilesChecked": 74,
+      "checks": [
+        "machine/private identifiers absent",
+        "embedded JSON strings inspected",
+        "private operational fields absent",
+        "exact owned artifact inventory"
+      ],
+      "showcasePublicationAuthorized": true,
+      "deploymentPerformedByThisCheck": false,
+      "nativeHumanPhysicalMarketApproval": false,
+      "freshGit": {
+        "schema": "pocket-arcade-fresh-git-check/1",
+        "status": "passed",
+        "exportKind": "project-local disposable copy with empty new Git history",
+        "privateGitObjectsRequired": false,
+        "networkUsed": false,
+        "servicesStarted": false,
+        "browserUsed": false,
+        "partnerWorkflowsRecaptured": false,
+        "checks": [
+          {
+            "argv": [
+              "python3",
+              "-B",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "projects/10-pocket-arcade/tests",
+              "-p",
+              "test_*.py",
+              "-v"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "51bd58e16b2b722943123297951cab576e2fa0c512c1a48085663a41baa2ec91",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--test",
+              "projects/10-pocket-arcade/tests/model.test.cjs"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "6059961470c3c8655f977879fcdfddb0b255b620b0e7d420b3d060710b86d107",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "projects/10-pocket-arcade/app.js"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "projects/10-pocket-arcade/model.js"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "projects/10-pocket-arcade/connected-data.js"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "projects/10-pocket-arcade/planner_bridge.mjs"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "projects/10-pocket-arcade/verify_experience.cjs"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "projects/10-pocket-arcade/planner_bridge.mjs",
+              "--root",
+              ".",
+              "--check"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "578a80a56bd96e20aec273dd275e191a716df85797d3ee8008c57a42bc6f28c2",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "python3",
+              "-B",
+              "projects/10-pocket-arcade/consume.py",
+              "--root",
+              ".",
+              "--check"
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "0613f0228a45882af13856b6650d5dc719d7df32c462e8d0c0e222b553e96fd5",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "python3",
+              "-B",
+              "projects/10-pocket-arcade/validate.py",
+              "--root",
+              "."
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "220e10ff3c06879990c1586833abb10618459f7417ec23000262e7d0a27e6149",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "node",
+              "projects/10-pocket-arcade/verify_experience.cjs",
+              "--root",
+              "."
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "868c33fe0aac79a50a77e309ac1839acbed118020a1bfab4a91f0b2393e6c29b",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          },
+          {
+            "argv": [
+              "python3",
+              "-B",
+              "projects/10-pocket-arcade/public_checks.py",
+              "--root",
+              "."
+            ],
+            "exitCode": 0,
+            "stdoutSha256": "1d73b795761989b11400d0f93071ed6009d3a0e4aab45bb30d8d505f11cc9731",
+            "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "pathRebasing": []
+          }
+        ]
+      }
+    },
+    "qualification": "This fresh-export summary was added after its tested copy. All source/binding hashes remain unchanged; the final public payload is scanned again afterward."
+  },
+  "limitations": [
+    "Technical acceptance is not an identity attestation,native federation,human review,physical verification or market validation.",
+    "The original85-minute/75-minute planner refusal remains unchanged; its alternative remains an unapproved synthetic-model proposal.",
+    "Historical no-publication observations retain their historical scope; current authorization covers only the reviewed showcase.",
+    "Browser and live Pages checks are publisher-owned and were not performed here."
+  ],
+  "combinedExperience": {
+    "status": "local-technical-checks-passed",
+    "report": {
+      "path": "projects/10-pocket-arcade/evidence/experience-verification.json",
+      "sha256": "868c33fe0aac79a50a77e309ac1839acbed118020a1bfab4a91f0b2393e6c29b",
+      "bytes": 32431
+    },
+    "caseCount": 7,
+    "repositoryBasePathChecked": "/hive-showcase/",
+    "realBrowserUsed": false,
+    "servicesStarted": false,
+    "deploymentPerformed": false
+  },
+  "connectedData": {
+    "record": {
+      "path": "projects/10-pocket-arcade/artifacts/connected-data.json",
+      "sha256": "811dc603d1d276655e95f0385c2cfedfb970773e6edff723fcf3195f2f7e94de",
+      "bytes": 9395
+    },
+    "offlineBundle": {
+      "path": "projects/10-pocket-arcade/connected-data.js",
+      "sha256": "0f4b540b8279aabeef0ec62600baefe5824cb868f9c7dc2adcfce2598f9b365c",
+      "bytes": 9508
+    },
+    "check": {
+      "path": "projects/10-pocket-arcade/evidence/final-consumer-check.json",
+      "sha256": "0613f0228a45882af13856b6650d5dc719d7df32c462e8d0c0e222b553e96fd5",
+      "bytes": 1654
+    }
+  },
+  "currentSourceInputs": [
+    {
+      "path": "projects/10-pocket-arcade/NOTICE",
+      "sha256": "c99de3e931645fa5205553eab355e818b035e6bbdf9bf41d0fb8e7c9a8c8c426",
+      "bytes": 1495
+    },
+    {
+      "path": "projects/10-pocket-arcade/README.md",
+      "sha256": "e7f0178f387476c5544fd658b94aa1c3f4eb9a27d6e0ba8838d1b474143793a0",
+      "bytes": 23934
+    },
+    {
+      "path": "projects/10-pocket-arcade/app.js",
+      "sha256": "b2e9ed0b18d5725f1ec5a64d6bcca19cc2559598734ba05f137db0c830bf1e16",
+      "bytes": 12758
+    },
+    {
+      "path": "projects/10-pocket-arcade/artifacts/connected-data.json",
+      "sha256": "811dc603d1d276655e95f0385c2cfedfb970773e6edff723fcf3195f2f7e94de",
+      "bytes": 9395
+    },
+    {
+      "path": "projects/10-pocket-arcade/artifacts/operator-kit.html",
+      "sha256": "c2c4fc4e0510a4c87b3ace84828bda40a84007d4fd10a56dce3dd430b00d12a4",
+      "bytes": 6553
+    },
+    {
+      "path": "projects/10-pocket-arcade/artifacts/tournament-analysis.json",
+      "sha256": "60715d1a114438114a50cd1afebfe3ea1618894b4f32e8cd0c1031f2a6e26195",
+      "bytes": 4197
+    },
+    {
+      "path": "projects/10-pocket-arcade/artifacts/tournament-proposal.json",
+      "sha256": "35fc944ddc44fa7c15e5bd6194550f44ab075ab891c35948fa151f6844f5c561",
+      "bytes": 8742
+    },
+    {
+      "path": "projects/10-pocket-arcade/capture_checks.py",
+      "sha256": "f6a54b92f7ffb99a3a00b9c218e34d854fd3408cba82d6c4edd188183c8962e9",
+      "bytes": 7028
+    },
+    {
+      "path": "projects/10-pocket-arcade/connected-data.js",
+      "sha256": "0f4b540b8279aabeef0ec62600baefe5824cb868f9c7dc2adcfce2598f9b365c",
+      "bytes": 9508
+    },
+    {
+      "path": "projects/10-pocket-arcade/consume.py",
+      "sha256": "7f5380a5b7e8d2fdbedcdc792a1696cb9c6e77a3de426569cceaa95bd25bb659",
+      "bytes": 32784
+    },
+    {
+      "path": "projects/10-pocket-arcade/contract.json",
+      "sha256": "8eec668eeef221e3cdefd3d96e1cb3ed65dae97cc6b3c5e6d73032c089481345",
+      "bytes": 8528
+    },
+    {
+      "path": "projects/10-pocket-arcade/contributions.json",
+      "sha256": "9fb0c439dce5b71b8941a0152883d0da80d83730effe43e725a6721ecec2b5da",
+      "bytes": 43548
+    },
+    {
+      "path": "projects/10-pocket-arcade/index.html",
+      "sha256": "5d01c1a9cb8fa6ae461ca203db6efccf1f79774e22b4161da24def1e6b75703b",
+      "bytes": 18975
+    },
+    {
+      "path": "projects/10-pocket-arcade/interfaces/contribution.schema.json",
+      "sha256": "4316c089736c2725d6024f2ddb03afcd682bb16d48f0683c98cbeb59887bbf8e",
+      "bytes": 5366
+    },
+    {
+      "path": "projects/10-pocket-arcade/manifest.json",
+      "sha256": "c079f8cb7cc3ad036e94a2f53d9cfc1447f3406cf90b35554a3e2fd62255798f",
+      "bytes": 7567
+    },
+    {
+      "path": "projects/10-pocket-arcade/model.js",
+      "sha256": "838ae2660c41db3b41e0e39943080fd63355e2808e4eeb70286154e2a9bdd7ec",
+      "bytes": 16401
+    },
+    {
+      "path": "projects/10-pocket-arcade/package.json",
+      "sha256": "59e29fc6458f0f57ee8814ea61406263c23e57010505dec106ff3b60eff3cf40",
+      "bytes": 179
+    },
+    {
+      "path": "projects/10-pocket-arcade/planner_bridge.mjs",
+      "sha256": "95f40ab0b2bd136c1dbc63fdb2dace2715a645aa5fe73093c8abc786e877b90b",
+      "bytes": 9335
+    },
+    {
+      "path": "projects/10-pocket-arcade/public_checks.py",
+      "sha256": "58fbea9e3ee62f70349f78626fe4a96728535de9e1d38cfbbabc8bc29f124ded",
+      "bytes": 7431
+    },
+    {
+      "path": "projects/10-pocket-arcade/seed-map.json",
+      "sha256": "5445272d58910d0708b6193630805ddabfd21fe7358023f04866e81f9cf9aef9",
+      "bytes": 3690
+    },
+    {
+      "path": "projects/10-pocket-arcade/style.css",
+      "sha256": "6b852371401818b39355797db3fab5312e3104d2f7bfe4676d04a9cf7851a5b9",
+      "bytes": 19049
+    },
+    {
+      "path": "projects/10-pocket-arcade/tests/fixtures/README.md",
+      "sha256": "a202b4756bb3139b67bfb79a6559647157c5c880649fd64ddbf2719a435181cc",
+      "bytes": 1357
+    },
+    {
+      "path": "projects/10-pocket-arcade/tests/model.test.cjs",
+      "sha256": "d7796d92615a4ace851d5398f9324f1e0b22d5d46e29b7269460a602133c78ab",
+      "bytes": 11018
+    },
+    {
+      "path": "projects/10-pocket-arcade/tests/test_consume.py",
+      "sha256": "69d2e4df19a3a4488f0f71620da0cb99e899ca54012fcea6f1a8cca481ed29d9",
+      "bytes": 15162
+    },
+    {
+      "path": "projects/10-pocket-arcade/tests/test_public_checks.py",
+      "sha256": "c11c14c3a100ac92b5ef474d26212c3017da7a7f76ede7f61df6058e45efc6b1",
+      "bytes": 2502
+    },
+    {
+      "path": "projects/10-pocket-arcade/tests/test_validator.py",
+      "sha256": "b259aceb208656cb6c7b60b0cafd72987b5146d728298beae3f0c5c4247d693c",
+      "bytes": 23187
+    },
+    {
+      "path": "projects/10-pocket-arcade/validate.py",
+      "sha256": "6f5fe280c410698fd95152740be8893d848a3fa27f9e7366e0cc7d0b3278127c",
+      "bytes": 36087
+    },
+    {
+      "path": "projects/10-pocket-arcade/verify_experience.cjs",
+      "sha256": "002fe3042059f1ef222bb1e90c32a70e0e9564f6b70348b3df69a8b53d1a1c05",
+      "bytes": 13856
+    }
+  ],
+  "historicalObservationScope": "Preserved phase-a/phase-b logs and original no-publication/model-review flags remain historical observations,not new executions or current showcase authorization.",
+  "genuineLocalBlockers": []
+}

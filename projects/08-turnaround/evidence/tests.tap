@@ -1,0 +1,316 @@
+TAP version 13
+# Subtest: every frozen input/result and the file-protocol bundle reproduce byte-for-byte
+ok 1 - every frozen input/result and the file-protocol bundle reproduce byte-for-byte
+  ---
+  duration_ms: 56.6235
+  type: 'test'
+  ...
+# Subtest: copied data hashes bind to the exact existing seed verification report
+ok 2 - copied data hashes bind to the exact existing seed verification report
+  ---
+  duration_ms: 0.283042
+  type: 'test'
+  ...
+# Subtest: manifest is root-runnable, scoped and work-produced, with evidence created by the recorder
+ok 3 - manifest is root-runnable, scoped and work-produced, with evidence created by the recorder
+  ---
+  duration_ms: 0.169541
+  type: 'test'
+  ...
+# Subtest: scope maps both ready tasks and all blocked work without pretending acceptance
+ok 4 - scope maps both ready tasks and all blocked work without pretending acceptance
+  ---
+  duration_ms: 0.389291
+  type: 'test'
+  ...
+# Subtest: HTML uses shared local styles and relative resources only; controls have unique IDs
+ok 5 - HTML uses shared local styles and relative resources only; controls have unique IDs
+  ---
+  duration_ms: 0.245625
+  type: 'test'
+  ...
+# Subtest: runtime is original local code, with no network APIs, storage, eval or copied executable files
+ok 6 - runtime is original local code, with no network APIs, storage, eval or copied executable files
+  ---
+  duration_ms: 0.909917
+  type: 'test'
+  ...
+# Subtest: frozen runs remain conditional and include no native initialization or external effects
+ok 7 - frozen runs remain conditional and include no native initialization or external effects
+  ---
+  duration_ms: 0.634166
+  type: 'test'
+  ...
+# Subtest: all nine copied inert data/license files match exact seed hashes
+ok 8 - all nine copied inert data/license files match exact seed hashes
+  ---
+  duration_ms: 0.663958
+  type: 'test'
+  ...
+# Subtest: decimal money parsing rejects rounding, negatives and unsafe values
+ok 9 - decimal money parsing rejects rounding, negatives and unsafe values
+  ---
+  duration_ms: 0.135833
+  type: 'test'
+  ...
+# Subtest: reviewed CSV parser rejects duplicate headers, wrong widths and quoted formats
+ok 10 - reviewed CSV parser rejects duplicate headers, wrong widths and quoted formats
+  ---
+  duration_ms: 0.346584
+  type: 'test'
+  ...
+# Subtest: 15-row ledger, subscriptions and incremental reserves reconcile independently
+ok 11 - 15-row ledger, subscriptions and incremental reserves reconcile independently
+  ---
+  duration_ms: 0.882125
+  type: 'test'
+  ...
+# Subtest: cash reconciliation rejects duplicates, bad directions, dates and billing mismatches
+ok 12 - cash reconciliation rejects duplicates, bad directions, dates and billing mismatches
+  ---
+  duration_ms: 0.590417
+  type: 'test'
+  ...
+# Subtest: seed scenario difference is $1,700, not invented sales
+ok 13 - seed scenario difference is $1,700, not invented sales
+  ---
+  duration_ms: 0.05375
+  type: 'test'
+  ...
+# Subtest: backlog impact retains twelve tickets, four urgent and a blocked urgent without revenue attribution
+ok 14 - backlog impact retains twelve tickets, four urgent and a blocked urgent without revenue attribution
+  ---
+  duration_ms: 0.25875
+  type: 'test'
+  ...
+# Subtest: original non-preemptive selector reproduces 420-minute seed-data expectation
+ok 15 - original non-preemptive selector reproduces 420-minute seed-data expectation
+  ---
+  duration_ms: 0.09375
+  type: 'test'
+  ...
+# Subtest: zero capacity, invalid budgets, unknown severity and duplicate tickets are explicit
+ok 16 - zero capacity, invalid budgets, unknown severity and duplicate tickets are explicit
+  ---
+  duration_ms: 0.140917
+  type: 'test'
+  ...
+# Subtest: ties are stable by ID, closed and blocked rows cannot be selected
+ok 17 - ties are stable by ID, closed and blocked rows cannot be selected
+  ---
+  duration_ms: 0.115667
+  type: 'test'
+  ...
+# Subtest: calendar days are UTC-stable and working-day readiness respects weekends
+ok 18 - calendar days are UTC-stable and working-day readiness respects weekends
+  ---
+  duration_ms: 0.463375
+  type: 'test'
+  ...
+# Subtest: prerequisites and readiness cannot be skipped to get an instant support benefit
+ok 19 - prerequisites and readiness cannot be skipped to get an instant support benefit
+  ---
+  duration_ms: 0.2305
+  type: 'test'
+  ...
+# Subtest: total budgets cannot be replenished by spreading actions across weeks
+ok 20 - total budgets cannot be replenished by spreading actions across weeks
+  ---
+  duration_ms: 0.103
+  type: 'test'
+  ...
+# Subtest: daily capacity matters even when the total review budget fits
+ok 21 - daily capacity matters even when the total review budget fits
+  ---
+  duration_ms: 0.087875
+  type: 'test'
+  ...
+# Subtest: candidate resources reconcile with every daily allocation and compete with a full support slice
+ok 22 - candidate resources reconcile with every daily allocation and compete with a full support slice
+  ---
+  duration_ms: 0.156208
+  type: 'test'
+  ...
+# Subtest: cost reductions wait for lead time and never cancel an existing full-cycle bill
+ok 23 - cost reductions wait for lead time and never cancel an existing full-cycle bill
+  ---
+  duration_ms: 0.60775
+  type: 'test'
+  ...
+# Subtest: failed consent keeps sunk fees and resource use but removes all cost benefits
+ok 24 - failed consent keeps sunk fees and resource use but removes all cost benefits
+  ---
+  duration_ms: 1.125333
+  type: 'test'
+  ...
+# Subtest: invalid action proposals are rejected explicitly, not applied partially or silently rescued
+ok 25 - invalid action proposals are rejected explicitly, not applied partially or silently rescued
+  ---
+  duration_ms: 0.606583
+  type: 'test'
+  ...
+# Subtest: payables are paid only once and reserve releases do not create receipts
+ok 26 - payables are paid only once and reserve releases do not create receipts
+  ---
+  duration_ms: 0.3125
+  type: 'test'
+  ...
+# Subtest: deferring a bill preserves principal/reserves, adds an irreversible fee and reduces support capacity
+ok 27 - deferring a bill preserves principal/reserves, adds an irreversible fee and reduces support capacity
+  ---
+  duration_ms: 0.54325
+  type: 'test'
+  ...
+# Subtest: deferral beyond a short horizon is still reserved, and failed consent or a late attempt cannot erase the bill
+ok 28 - deferral beyond a short horizon is still reserved, and failed consent or a late attempt cannot erase the bill
+  ---
+  duration_ms: 1.09375
+  type: 'test'
+  ...
+# Subtest: receipt acceleration splits the same cycle pool with unique IDs; no duplicated or new sales
+ok 29 - receipt acceleration splits the same cycle pool with unique IDs; no duplicated or new sales
+  ---
+  duration_ms: 0.357833
+  type: 'test'
+  ...
+# Subtest: late collection readiness and failed receipt consent cannot retrospectively accelerate receipts
+ok 30 - late collection readiness and failed receipt consent cannot retrospectively accelerate receipts
+  ---
+  duration_ms: 0.257209
+  type: 'test'
+  ...
+# Subtest: receipt delays conserve every cent, including out-of-window receipts, without shifting outflows
+ok 31 - receipt delays conserve every cent, including out-of-window receipts, without shifting outflows
+  ---
+  duration_ms: 0.643959
+  type: 'test'
+  ...
+# Subtest: weaker demand removes receipts, not costs, and odd splits remain integer cents
+ok 32 - weaker demand removes receipts, not costs, and odd splits remain integer cents
+  ---
+  duration_ms: 0.616041
+  type: 'test'
+  ...
+# Subtest: cash reconciles at every event/day and stress is deterministic, without mutating inputs
+ok 33 - cash reconciles at every event/day and stress is deterministic, without mutating inputs
+  ---
+  duration_ms: 2.904292
+  type: 'test'
+  ...
+# Subtest: lumpy baseline fails earlier than smoothed runway; obligations precede same-day receipts
+ok 34 - lumpy baseline fails earlier than smoothed runway; obligations precede same-day receipts
+  ---
+  duration_ms: 0.285833
+  type: 'test'
+  ...
+# Subtest: intraday failure is retained even when same-day receipts leave a positive endpoint
+ok 35 - intraday failure is retained even when same-day receipts leave a positive endpoint
+  ---
+  duration_ms: 0.82075
+  type: 'test'
+  ...
+# Subtest: floor equality and zero cash equality are safe at the boundary; one cent less is not
+ok 36 - floor equality and zero cash equality are safe at the boundary; one cent less is not
+  ---
+  duration_ms: 1.372042
+  type: 'test'
+  ...
+# Subtest: earliest forecast warning is day zero; rolling warnings are a distinct lead-time clock
+ok 37 - earliest forecast warning is day zero; rolling warnings are a distinct lead-time clock
+  ---
+  duration_ms: 2.068666
+  type: 'test'
+  ...
+# Subtest: invalid/unknown assumptions and action IDs cannot sneak in financing or unbounded values
+ok 38 - invalid/unknown assumptions and action IDs cannot sneak in financing or unbounded values
+  ---
+  duration_ms: 0.887417
+  type: 'test'
+  ...
+# Subtest: small documented search evaluates 128 choices, rejects infeasibility and finds no full rescue
+ok 39 - small documented search evaluates 128 choices, rejects infeasibility and finds no full rescue
+  ---
+  duration_ms: 34.793042
+  type: 'test'
+  ...
+# Subtest: five frozen experiment outcomes include combined stress and retain the same candidate
+ok 40 - five frozen experiment outcomes include combined stress and retain the same candidate
+  ---
+  duration_ms: 39.2165
+  type: 'test'
+  ...
+# Subtest: display money preserves cents and rejects non-money; all dynamic text can be escaped
+ok 41 - display money preserves cents and rejects non-money; all dynamic text can be escaped
+  ---
+  duration_ms: 9.614459
+  type: 'test'
+  ...
+# Subtest: weekly display aggregates every daily receipt/outflow once and retains intraday minimum
+ok 42 - weekly display aggregates every daily receipt/outflow once and retains intraday minimum
+  ---
+  duration_ms: 4.305458
+  type: 'test'
+  ...
+# Subtest: chart has accessible descriptions and distinguishes floor, troughs and counterfactual cash
+ok 43 - chart has accessible descriptions and distinguishes floor, troughs and counterfactual cash
+  ---
+  duration_ms: 2.282125
+  type: 'test'
+  ...
+# Subtest: file protocol loads only the original classic fallback; local HTTP loads ES modules
+ok 44 - file protocol loads only the original classic fallback; local HTTP loads ES modules
+  ---
+  duration_ms: 6.920667
+  type: 'test'
+  ...
+# Subtest: original offline UI boots with failure visible, rather than a claimed successful recovery
+ok 45 - original offline UI boots with failure visible, rather than a claimed successful recovery
+  ---
+  duration_ms: 10.777625
+  type: 'test'
+  ...
+# Subtest: scenario buttons wire delayed and combined stress into the actual model
+ok 46 - scenario buttons wire delayed and combined stress into the actual model
+  ---
+  duration_ms: 12.272667
+  type: 'test'
+  ...
+# Subtest: action toggles make capacity conflicts explicit and clear all unearned benefits
+ok 47 - action toggles make capacity conflicts explicit and clear all unearned benefits
+  ---
+  duration_ms: 7.5655
+  type: 'test'
+  ...
+# Subtest: consent switches remove benefits but retain irreversible start fees
+ok 48 - consent switches remove benefits but retain irreversible start fees
+  ---
+  duration_ms: 7.614541
+  type: 'test'
+  ...
+# Subtest: custom assumption sliders update model results; reset restores the frozen candidate
+ok 49 - custom assumption sliders update model results; reset restores the frozen candidate
+  ---
+  duration_ms: 10.596333
+  type: 'test'
+  ...
+# Subtest: invalid start input clears stale output and a valid correction recomputes it
+ok 50 - invalid start input clears stale output and a valid correction recomputes it
+  ---
+  duration_ms: 8.052042
+  type: 'test'
+  ...
+# Subtest: day inspection and daily table are wired, including counterfactual status after failure
+ok 51 - day inspection and daily table are wired, including counterfactual status after failure
+  ---
+  duration_ms: 12.313667
+  type: 'test'
+  ...
+1..51
+# tests 51
+# suites 0
+# pass 51
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 141.214041

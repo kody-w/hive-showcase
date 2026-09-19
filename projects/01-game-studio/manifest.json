@@ -1,0 +1,45 @@
+{
+  "id": "01-game-studio",
+  "title": "Little Signals — a school for small robots",
+  "seedSlug": "independent-game-studio",
+  "entrypoint": "projects/01-game-studio/index.html",
+  "summary": "Teach three tiny robot couriers to return pods, budget power, and share a garden. A five-minute offline game with a shared deterministic engine, four preserved builds, three measured improvement cycles, and exact replayable runs.",
+  "checks": [
+    ["node", "--test", "--test-reporter=tap", "projects/01-game-studio/tests/engine.test.mjs", "projects/01-game-studio/tests/controller.test.mjs", "projects/01-game-studio/tests/app.test.mjs", "projects/01-game-studio/tests/evidence.test.mjs"],
+    ["node", "projects/01-game-studio/tools/bundle-replays.mjs", "--check"]
+  ],
+  "artifacts": [
+    "projects/01-game-studio/README.md",
+    "projects/01-game-studio/engine.js",
+    "projects/01-game-studio/builds.js",
+    "projects/01-game-studio/controller.js",
+    "projects/01-game-studio/app.js",
+    "projects/01-game-studio/art/colony.svg",
+    "projects/01-game-studio/replay-data.js",
+    "projects/01-game-studio/SOURCE-NOTICE.txt",
+    "projects/01-game-studio/evidence/source-review.json",
+    "projects/01-game-studio/evidence/result.json",
+    "projects/01-game-studio/evidence/validation.tap",
+    "projects/01-game-studio/evidence/validation-history.json",
+    "projects/01-game-studio/evidence/cycle-01.json",
+    "projects/01-game-studio/evidence/cycle-02.json",
+    "projects/01-game-studio/evidence/cycle-03.json",
+    "projects/01-game-studio/evidence/runs/cycle-01-before.json",
+    "projects/01-game-studio/evidence/runs/cycle-01-after.json",
+    "projects/01-game-studio/evidence/runs/cycle-02-before.json",
+    "projects/01-game-studio/evidence/runs/cycle-02-after.json",
+    "projects/01-game-studio/evidence/runs/cycle-03-before.json",
+    "projects/01-game-studio/evidence/runs/cycle-03-after.json",
+    "projects/01-game-studio/evidence/runs/release-trained.json",
+    "projects/01-game-studio/evidence/runs/release-untaught.json"
+  ],
+  "limitations": [
+    "Actual deterministic automated engine runs and DOM contract tests are not evidence of human enjoyment, usability, or real browser rendering.",
+    "No browser, physical device, screen-reader, or manual keyboard-only review was performed by this workstream.",
+    "Five minutes is the 150-beat cap at two seconds per beat; planning pauses, fast steps, and early wins change wall-clock duration.",
+    "Historical builds intentionally retain their recorded failures; the second cycle's improved solo run still loses.",
+    "Robot teaching edits explicit deterministic rules, not a trained machine-learning model.",
+    "Original user-authorized game extension; no claim of completing the seed's original Mosslight Courier case, native activation, publication, or business activity."
+  ],
+  "stage": "work-produced"
+}

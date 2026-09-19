@@ -1,0 +1,40 @@
+argv: ["node", "--check", "projects/10-pocket-arcade/app.js"]
+recordedAt: 2026-09-19T13:46:35.817192+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/model.js"]
+recordedAt: 2026-09-19T13:46:35.840744+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/connected-data.js"]
+recordedAt: 2026-09-19T13:46:35.864708+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/planner_bridge.mjs"]
+recordedAt: 2026-09-19T13:46:35.888996+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---
+argv: ["node", "--check", "projects/10-pocket-arcade/verify_experience.cjs"]
+recordedAt: 2026-09-19T13:46:35.913843+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+
+--- end of captured streams ---

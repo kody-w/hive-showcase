@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="A five-minute, offline robot-teaching game. Give three little couriers lessons, grow a glowing nursery, and replay every choice.">
+  <title>Little Signals — a school for small robots</title>
+  <link rel="icon" href="art/colony.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="builds.js"></script>
+  <script defer src="engine.js"></script>
+  <script defer src="controller.js"></script>
+  <script defer src="replay-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#playground">Skip to the game</a>
+  <main>
+    <nav class="masthead" aria-label="Project navigation">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">✳</span> POCKET LABS <span>/ 01</span></a>
+      <span class="edition">LOCAL EDITION <span class="status-dot" aria-hidden="true"></span> NO NETWORK</span>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">A school for small robots</p>
+        <h1>Little <em>Signals.</em></h1>
+        <p class="lede">They know how to wander. <strong>You teach them how to care.</strong><br>
+          Bring sun pods home before sunset. Every little lesson matters.</p>
+        <div class="hero-tags"><span>3 curious robots</span><span>5-minute shift</span><span>Every choice replayable</span></div>
+      </div>
+      <img class="hero-art" src="art/colony.svg" alt="Three friendly, handmade geometric robots tending a small glowing flower." width="260" height="184">
+    </header>
+
+    <p id="boot-notice" class="notice">Loading local game modules… JavaScript must be enabled. No download or account is needed.</p>
+    <noscript><p class="notice">This game needs JavaScript for its deterministic simulation. All scripts and artwork are local.</p></noscript>
+    <section class="onboarding" aria-labelledby="first-lesson">
+      <div><span class="step-number">01</span><p id="first-lesson"><strong>Meet your class.</strong> Select Pip, Ada, or Bop.</p></div>
+      <div><span class="step-number">02</span><p><strong>Give two lessons.</strong> Return with a pod. Recharge safely.</p></div>
+      <div><span class="step-number">03</span><p><strong>Launch &amp; observe.</strong> Adjust routes. Rescue mistakes.</p></div>
+    </section>
+
+    <section id="playground" class="game-shell" aria-label="Interactive robot garden" tabindex="-1">
+      <div class="game-topline">
+        <div class="garden-picker">
+          <label for="garden">Your garden</label>
+          <select id="garden">
+            <option value="switchback">Stone garden · 12 pods</option>
+            <option value="meadow">Open meadow · 6 pods</option>
+            <option value="narrows">One little doorway · 12 pods</option>
+          </select>
+        </div>
+        <span class="shift-state" id="shift-state">PAUSED · LESSON TIME</span>
+      </div>
+      <div class="hud" aria-label="Colony progress">
+        <div><span class="stat-label">Nursery</span><strong><span id="delivered">0</span><small> / <span id="goal">12</span> pods</small></strong><div class="goal-track"><span id="goal-fill"></span></div></div>
+        <div><span class="stat-label">Until sunset</span><strong id="clock">05:00</strong><small id="beat-count">0 / 150 beats</small></div>
+        <div><span class="stat-label">Class energy</span><strong id="energy">72<small> / 72</small></strong><small>Moves and harvesting use power</small></div>
+        <div><span class="stat-label">Little score</span><strong id="points">72</strong><small id="traffic">0 traffic waits</small></div>
+      </div>
+
+      <div class="play-layout">
+        <div class="garden-area">
+          <div class="board-caption"><span id="garden-caption">STONE GARDEN</span><span id="board-time">MORNING / 01</span></div>
+          <div class="board-wrap">
+            <svg id="board" viewBox="0 0 728 504" role="group" aria-label="Robot garden. Select a robot or a pod patch."></svg>
+            <div id="outcome" class="outcome" hidden>
+              <span id="outcome-symbol" aria-hidden="true">✳</span>
+              <h2 id="outcome-title">A little brighter.</h2>
+              <p id="outcome-reason"></p>
+              <p id="outcome-score" class="outcome-score"></p>
+              <button id="again" class="primary">Teach another shift</button>
+            </div>
+          </div>
+          <div class="legend" aria-label="Map symbols">
+            <span><i class="legend-home" aria-hidden="true">⌂</i> Nursery + charger</span>
+            <span><i class="legend-pod" aria-hidden="true">✳</i> Sun pods</span>
+            <span><i class="legend-rock" aria-hidden="true">▰</i> Stone</span>
+            <span><i aria-hidden="true">P A B</i> Your class</span>
+          </div>
+          <div class="transport" aria-label="Play controls">
+            <button id="play" class="primary"><span aria-hidden="true">▶</span> Launch shift <kbd>Space</kbd></button>
+            <button id="step">1 beat <kbd>N</kbd></button>
+            <button id="five">5 beats</button>
+            <button id="restart" class="quiet" title="Start a fresh shift; download the current replay first if you want to keep it.">Restart <kbd>R</kbd></button>
+          </div>
+          <p class="pace-note" id="pace-note">Paused for lessons. One beat = 2 seconds; sunset after 150 beats. Pausing does not spend time.</p>
+          <p id="hint" class="hint">Start with Pip: teach “When carrying → return home,” then “Low power → recharge.”</p>
+        </div>
+
+        <aside class="classroom" aria-labelledby="classroom-title">
+          <div class="section-label"><h2 id="classroom-title">Your little class</h2><span>SELECT / TEACH</span></div>
+          <div class="robot-tabs" role="group" aria-label="Select a robot">
+            <button class="robot-card pip" data-robot="0" aria-pressed="true">
+              <span class="bot-letter" aria-hidden="true">P</span>
+              <strong>Pip <kbd>1</kbd></strong>
+              <span class="robot-battery" id="battery-0">24 / 24</span>
+              <progress id="battery-bar-0" max="24" value="24" aria-label="Pip energy"></progress>
+              <span id="cargo-0" class="cargo">Empty hands</span>
+            </button>
+            <button class="robot-card ada" data-robot="1" aria-pressed="false">
+              <span class="bot-letter" aria-hidden="true">A</span>
+              <strong>Ada <kbd>2</kbd></strong>
+              <span class="robot-battery" id="battery-1">24 / 24</span>
+              <progress id="battery-bar-1" max="24" value="24" aria-label="Ada energy"></progress>
+              <span id="cargo-1" class="cargo">Empty hands</span>
+            </button>
+            <button class="robot-card bop" data-robot="2" aria-pressed="false">
+              <span class="bot-letter" aria-hidden="true">B</span>
+              <strong>Bop <kbd>3</kbd></strong>
+              <span class="robot-battery" id="battery-2">24 / 24</span>
+              <progress id="battery-bar-2" max="24" value="24" aria-label="Bop energy"></progress>
+              <span id="cargo-2" class="cargo">Empty hands</span>
+            </button>
+          </div>
+          <div class="lesson-heading"><h3><span id="pupil">Pip</span>’s lessons</h3><span class="badge" id="lesson-count">0 / 2 learned</span></div>
+          <p class="robot-thought" id="thought">“Ready for a lesson.”</p>
+          <button id="delivery-lesson" class="lesson" aria-pressed="false">
+            <span class="lesson-icon" aria-hidden="true">↩</span>
+            <span><strong>When carrying → return home</strong><small>A pod only counts once it reaches the nursery.</small></span>
+            <span class="lesson-check" id="delivery-check">+</span>
+          </button>
+          <button id="safety-lesson" class="lesson" aria-pressed="false">
+            <span class="lesson-icon" aria-hidden="true">ϟ</span>
+            <span><strong>Low power → recharge</strong><small id="safety-copy">Budget a round trip. Charge fully before leaving.</small></span>
+            <span class="lesson-check" id="safety-check">+</span>
+          </button>
+          <div class="route-choice">
+            <label for="focus">Where should I gather?</label>
+            <select id="focus">
+              <option id="auto-focus-label" value="nearest">Share patches fairly</option>
+              <option value="north">North · moon clover</option>
+              <option value="east">East · sun pods</option>
+              <option value="south">South · bell moss</option>
+            </select>
+            <small>Click a patch on the map to teach its route. If it empties, choose another.</small>
+          </div>
+          <div class="care-actions">
+            <button id="rest" aria-pressed="false">Rest at home</button>
+            <button id="rescue">Rescue <span id="kits">2</span></button>
+          </div>
+          <p class="small-print">Rescue returns one robot with full power, but loses its carried pod and 75 points. Two kits per shift.</p>
+          <div class="journal-heading"><h3>Field notes</h3><span aria-hidden="true">↘</span></div>
+          <ol id="journal" class="journal"><li>00 · Three curious robots. One small nursery.</li></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <section class="archive panel" aria-labelledby="replay-title">
+        <p class="eyebrow">Every choice leaves a trace</p>
+        <h2 id="replay-title">Rewind the little things.</h2>
+        <p>Download your shift or watch a real automated development run. Imports are checked against the same rules before playback.</p>
+        <div class="replay-pick">
+          <label for="recording">Recorded run</label>
+          <select id="recording">
+            <option value="cycle-03-after">03 / After · courtesy wins</option>
+            <option value="cycle-03-before">03 / Before · doorway deadlock</option>
+            <option value="cycle-02-after">02 / After · paths work, solo loses</option>
+            <option value="cycle-02-before">02 / Before · wall collision</option>
+            <option value="cycle-01-after">01 / After · safe return</option>
+            <option value="cycle-01-before">01 / Before · out of power</option>
+          </select>
+          <button id="watch">Load verified replay</button>
+        </div>
+        <div id="replay-controls" hidden>
+          <label for="replay-position">Replay action <output id="replay-position-label">0 / 0</output></label>
+          <input id="replay-position" type="range" value="0" min="0" max="1">
+          <p class="small-print">Read-only playback. Use Launch / step above, or scrub here. One recorded action may contain up to 25 beats. Restart to leave replay.</p>
+        </div>
+        <div class="toolbar">
+          <button id="download">↓ Download this run</button>
+          <label class="file-button" for="import-run">↑ Import a run<input id="import-run" type="file" accept=".json,application/json"></label>
+        </div>
+        <p class="small-print">No uploads, tracking, storage, sound, or external assets. Downloads are explicit; resets discard unsaved play. Max imported file: 2 MB.</p>
+      </section>
+      <section class="lab-notes panel" aria-labelledby="lab-title">
+        <p class="eyebrow">Built, played, improved — three times</p>
+        <h2 id="lab-title">Small changes. Measured.</h2>
+        <div class="cycle-row"><span>01</span><div><strong>Enough power to get home</strong><p>Pods delivered: <b>1 → 6</b>. Stranded robots: <b>1 → 0</b>.</p></div><span class="cycle-tag">WIN</span></div>
+        <div class="cycle-row"><span>02</span><div><strong>Around, not through</strong><p>Wall bumps: <b>148 → 0</b>. Delivery: <b>0 → 6 / 12</b>.</p></div><span class="cycle-tag failed">STILL LOST</span></div>
+        <div class="cycle-row"><span>03</span><div><strong>A little room for everyone</strong><p>Blocked moves: <b>428 → 10</b>. <b>12 pods / 96 beats</b>.</p></div><span class="cycle-tag">WIN</span></div>
+        <p class="honesty">These are actual deterministic engine runs, not human playtests. Solvability and better robot behavior are not evidence of fun.</p>
+        <a href="evidence/result.json">Inspect machine-readable evidence ↗</a>
+      </section>
+    </section>
+
+    <details class="field-guide">
+      <summary>Field guide · controls, scoring, and the four preserved builds</summary>
+      <div class="guide-columns">
+        <div><h3>How the colony works</h3><p>Each robot can carry one pod. Moving one tile or gathering costs one energy. The nursery restores six energy per charging beat. Teaching costs no beats; it changes explicit rules, not a machine-learning model.</p>
+          <p>In the latest build, trained robots plan real paths, reserve different patches, and politely exchange places when they meet head-on. They still need your return and recharge lessons.</p>
+          <p>Win by delivering the garden’s goal before beat 150. Lose at sunset, when all robots are stranded with no kits, or at the 512-action practice cap. A reset starts clean.</p></div>
+        <div><h3>Keyboard &amp; scoring</h3><p><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> select a robot. <kbd>D</kbd> toggles return; <kbd>C</kbd> toggles recharge. <kbd>←</kbd> <kbd>→</kbd> change route. <kbd>N</kbd> advances one beat. <kbd>Space</kbd> launches / pauses. <kbd>Escape</kbd> pauses. <kbd>R</kbd> restarts.</p>
+          <p>Keys do not override focused form controls. Tab reaches every button; map symbols are optional shortcuts. Hidden tabs pause automatically.</p>
+          <p>Score = 100 × delivered pods + 3 × unused beats on a win + remaining energy − 2 × blocked moves − 75 × rescues, floored at zero.</p></div>
+        <div><h3>Try a historical build</h3><label for="build">Build used for new shifts</label><select id="build">
+          <option value="v4">v4 · Room for everyone (recommended)</option>
+          <option value="v3">v3 · Around, not through</option>
+          <option value="v2">v2 · Enough to get home</option>
+          <option value="v1">v1 · First footsteps</option>
+        </select><p id="build-description">Reserve different patches, rotate move priority, and exchange places politely at a narrow crossing.</p>
+          <label for="seed">Garden seed</label><input id="seed" type="number" min="0" max="4294967295" step="1" value="42"><button id="apply-seed">Start this seed</button>
+          <p>Seeds vary pod supplies, not the rules. Earlier builds intentionally retain their recorded failures. All four run the same versioned engine.</p></div>
+      </div>
+    </details>
+    <footer><span>Made here, from simple shapes and a little curiosity.</span><a href="README.md">Play / API / replay documentation</a><a href="evidence/source-review.json">Source &amp; scope</a><span>Original local work · not an activated Hive</span></footer>
+    <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+    <p id="announcer" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

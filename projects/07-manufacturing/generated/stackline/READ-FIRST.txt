@@ -1,0 +1,10 @@
+DIGITAL REVIEW ONLY — NOT APPROVED FOR FABRICATION
+Units: nominal millimetres. STL has no units: explicitly import as mm.
+One tray + one insert; separate local origins at [0,0,0]. Do not fuse or scale them.
+See parameters.json for assembly translation, assumptions, and physical limitations.
+drawing.svg is a dimensioned drawing, not a cut path or machine instruction.
+All mass, cost, payload-fit, and effort outputs are models, not physical evidence.
+Original generator source is also directly downloadable as engine.js from the configurator.
+Preset bundles include source/; live custom bundles require the separate source download.
+Verified seed data attribution: Copyright (c) 2026 Hive Hub contributors, MIT.
+No ordering, fabrication, downloaded starter execution, machine operation, or external activity occurred.

@@ -1,0 +1,50 @@
+{
+  "schema": "bounded-research-collection-log/1",
+  "asOf": "2026-09-19",
+  "protocolCommit": "8b58d0e81935da505f8dc0878e8230277c8aa557",
+  "strategy": "Purposive, adversarial public review. Locate experimental implementation evidence, current counterevidence, benchmark limits, operational outcomes and the strongest accessible commercial anecdotes. Inspect original pages before coding claims. Stop after nine included sources with all these categories represented.",
+  "discoveryQueries": [
+    "Primary METR early-2025 developer RCT and any 2026 follow-up; Cui et al. field experiments; Peng et al. controlled Copilot task",
+    "Solo AI-implemented revenue business; Base44 acquisition, staffing, attribution and operating costs; original SWE-bench methodology; DORA 2025",
+    "Exact Microsoft Research publication page for Cui et al.'s three field experiments",
+    "METR February 2026 update, selection effects and sign of the reported effect",
+    "Official Wix June 18, 2025 Base44 acquisition release",
+    "Official DORA 2025 AI-assisted development findings and survey methodology",
+    "Original Pieter Levels flight-simulator reports and independently audited six-month solo AI-business records"
+  ],
+  "discoveryIsNotEvidence": true,
+  "correctionsAfterPrimaryInspection": [
+    {
+      "issue": "A discovery summary incorrectly described the METR follow-up as a persistent 18% slowdown.",
+      "resolution": "The actual 2026 post reports an estimated 18% reduction in time for returning participants, with a confidence interval spanning zero and substantial selection/measurement warnings.",
+      "sourceIds": ["s-metr-2025", "s-metr-2026"]
+    },
+    {
+      "issue": "Discovery supplied incorrect arXiv identifiers and dates for the coding studies.",
+      "resolution": "Peng's inspected paper is arXiv:2302.06590 (2023-02-13); Cui's inspected Microsoft listing dates its preprint to June 2025. Only inspected URLs and outcomes are used.",
+      "sourceIds": ["s-peng", "s-cui"]
+    },
+    {
+      "issue": "A discovery answer claimed no primary 2025 DORA report could be confirmed.",
+      "resolution": "The official report landing page and Google's dated announcement were retrieved. Claims use the inspected announcement, not an uninspected full PDF.",
+      "sourceIds": ["s-dora"]
+    },
+    {
+      "issue": "Discovery described Base44's retention pool as additional to the initial acquisition price and repeated unverified revenue/attribution claims.",
+      "resolution": "Wix says approximately USD 25 million in employee retention payments is part of the approximately USD 80 million initial consideration. The TechCrunch profit figure is explicitly attributed to founder posts, not an independent audit. No unsupported AI-work percentage is asserted.",
+      "sourceIds": ["s-wix", "s-techcrunch"]
+    }
+  ],
+  "retrievalNotes": [
+    {"url": "https://openai.com/index/introducing-swe-bench-verified/", "outcome": "web_fetch HTTP 403", "decision": "Excluded. Use the inspected original SWE-bench paper only; do not claim to have reviewed Verified methodology or current leaderboard performance."},
+    {"url": "https://dora.dev/research/2025/dora-report/", "outcome": "Official landing page fetched; extract contained only a short summary", "decision": "Use the detailed, dated Google Cloud announcement instead; full report methods were not audited."},
+    {"url": "https://www.globenewswire.com/news-release/2025/06/18/3101508/0/en/Wix-Further-Expands-into-Vibe-Coding-with-Acquisition-of-Base44-a-Hyper-Growth-Startup-that-Simplifies-Web-and-App-Creation-with-AI.html", "outcome": "web_fetch succeeded; subsequent urllib snapshot timed out", "decision": "Capture the same release from Wix's own press room. Initial failed request metadata retained."},
+    {"url": "https://www.news18.com/business/man-uses-ai-builds-1-million-business-in-just-17-days-9266748.html", "outcome": "web_fetch returned the article; subsequent urllib request returned HTTP 403", "decision": "Retain bounded exact excerpts from the successful fetch with an explicitly unavailable raw-response hash, plus the failed direct-fetch record. Do not claim direct inspection of the underlying X posts, payments or game."}
+  ],
+  "coverageLimits": [
+    "No exhaustive search of all solo businesses, paywalled publications or post-February-2026 experimental updates.",
+    "Nine documents form six provenance families, not nine independent confirmations or a statistical sample.",
+    "The strongest accessible business leads are press reports/disclosures; no underlying private financial, labor or customer records were accessed.",
+    "Synthetic Juniper Queue inputs were read and hash-checked separately, not used to support any public-research claim."
+  ]
+}

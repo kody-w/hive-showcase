@@ -1,0 +1,215 @@
+{
+  "schema": "stackline-source-provenance/1",
+  "seedSlug": "micro-manufacturing-company",
+  "seedRef": "sha256:e65367fa0c6e01ba4a28161bb1f258cb94f23d86432875a66533ab1f0913c8b2",
+  "archiveRef": "sha256:986a5cd0db5e1d6ecac7cc28c7f9f79c3f958cbfce14d4ece7767fde1b1b0e56",
+  "parentEvidence": "evidence/seed-verification.json",
+  "parentEvidenceSHA256": "dc624f7101cd31e76a43b6285c183ce23ec92f3b0fc95e22da74b3e886c85a38",
+  "sourceHome": "https://kody-w.github.io/hive-hub/",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hive Hub contributors",
+  "records": [
+    {
+      "seedPath": "LICENSE",
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+      "bytes": 1079,
+      "localPath": "projects/07-manufacturing/data/seed/LICENSE",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/case/brief.json",
+      "sha256": "f91f3a302648524fd2e1452258d216896d6eb867dc35424b072c82996a907cc6",
+      "bytes": 824,
+      "localPath": "projects/07-manufacturing/data/seed/brief.json",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/design/parameters.json",
+      "sha256": "513c3766a6fb5ca2f6cfdf28098ad4b3af329c4387c6a5744d89a21a3ef0a340",
+      "bytes": 423,
+      "localPath": "projects/07-manufacturing/data/seed/parameters.json",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/data/bom.csv",
+      "sha256": "9a559adce2e53f7e842d0d21ca1a087edf6bfc71f517a4241027b218da142c5a",
+      "bytes": 232,
+      "localPath": "projects/07-manufacturing/data/seed/bom.csv",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/data/cost-assumptions.csv",
+      "sha256": "2d769cb1f926e66d73d83ef73f581135e4cc138ba9adbfab01035def49711b4c",
+      "bytes": 684,
+      "localPath": "projects/07-manufacturing/data/seed/cost-assumptions.csv",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/ops/pack-spec.json",
+      "sha256": "f119c94ac2eef55c7bfbf7d3498fc2660c41977d4fa386a83e1186a6e36a94cc",
+      "bytes": 415,
+      "localPath": "projects/07-manufacturing/data/seed/pack-spec.json",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/ops/change-request.json",
+      "sha256": "f347b11225543f00a2dea5d16f7df173893f2d0caf83f8c0d55163e3ea4043fc",
+      "bytes": 609,
+      "localPath": "projects/07-manufacturing/data/seed/change-request.json",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/quality/dimensions.csv",
+      "sha256": "688d36477bba5c8f1ddc4c11ed80bdc306ef9888d76cc0ccf1466bbc2694adb0",
+      "bytes": 423,
+      "localPath": "projects/07-manufacturing/data/seed/dimensions.csv",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/quality/inspection-samples.csv",
+      "sha256": "5d5068495220bef4bee47deba17be756b166b231dc0b605e66ebeddf1c88d4e7",
+      "bytes": 398,
+      "localPath": "projects/07-manufacturing/data/seed/inspection-samples.csv",
+      "use": "copied inert synthetic data / license; attributed under MIT"
+    },
+    {
+      "seedPath": "seed.json",
+      "sha256": "1cc2b81da22585536a58293323cff84263689780ef865648315412c541809e8e",
+      "bytes": 6050,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "initialize.json",
+      "sha256": "efcdca937d6d6e49d658d47d695585feee700b32375c7711379046ba1cb4c037",
+      "bytes": 4637,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "README.md",
+      "sha256": "dba13249baa771bb054fd2099ab52e0eda10c6b5c8afb760cef9d0ab5d151a13",
+      "bytes": 3469,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/casework/work/task-board.json",
+      "sha256": "e91cd0feb0ab5ed3f0983357fa9c6ee8fa3b21311a5593ae6a87a27e0bae4151",
+      "bytes": 8823,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/casework/work/intake.json",
+      "sha256": "9e0a17ee6b980ade62a2314affa48dba1ae2335341204f36e11a054c9d5897ef",
+      "bytes": 1193,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/casework/work/ACCEPTANCE.md",
+      "sha256": "4e0ee4739f541d2639348481347c4be47b8930cb1c50131db9e5281274b1a72b",
+      "bytes": 683,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/casework/work/starter/ops/assembly.md",
+      "sha256": "31e2955cfbf9ef4ccb50ae3a93a9f9fcd962416ad5ae656f74fcc0c84bd59035",
+      "bytes": 2097,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/industrial-design/work/TEAM.md",
+      "sha256": "be1196e9de8e10a0d858e14f0d254665f48fa3bf37d48d69a1a2f926c61b4b23",
+      "bytes": 352,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/industrial-design/work/tasks.json",
+      "sha256": "4a09b12ccaa94c94e7a7fcec7377513f84d1ce40f39305a1475c6a741abc30fe",
+      "bytes": 1852,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/engineering/work/TEAM.md",
+      "sha256": "97bfef6c0caef3c1421446f9478faa112826473a70e22094da12e02eb9d0e884",
+      "bytes": 350,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/engineering/work/tasks.json",
+      "sha256": "c4836e308f773c6b2468d75257264da9a09fb51974fc7e13f6ff1ddb40fdc8b3",
+      "bytes": 1950,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/sourcing/work/TEAM.md",
+      "sha256": "00ff4fb8d419249bc317321d44dc5b1a7d95d32b34ac307743cb6d92b3a15e85",
+      "bytes": 367,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/sourcing/work/tasks.json",
+      "sha256": "21d120eaba8ae986752b9ce8c23fa314e20db6d1595652a113ff270516965a98",
+      "bytes": 895,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/production-planning/work/TEAM.md",
+      "sha256": "ae9e6bbf174e9f40f358b3e29eaebafb29b7164e5392078d694c106798c8fba3",
+      "bytes": 386,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/production-planning/work/tasks.json",
+      "sha256": "f1d2a7bd0fe1b7ead71faeacc55ef19443782087a6542534e89662f67cec65f2",
+      "bytes": 970,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/quality/work/TEAM.md",
+      "sha256": "9e17e41cb05d7c2a3c3632dfadf18b7438725fc53af1535f8c2c46c7463649c9",
+      "bytes": 359,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/quality/work/tasks.json",
+      "sha256": "4ebde64e438d4cc2b23e9f4d200552fe2284fc86aedb15780c33be00eeec0767",
+      "bytes": 1699,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/logistics/work/TEAM.md",
+      "sha256": "1c4e8cbc3645dc73fb2847b43c72dab75b5cde599a141e712653b48ae7705093",
+      "bytes": 353,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/logistics/work/tasks.json",
+      "sha256": "0f7c478780e5a195331d1a6328d4aef8b17742184df6e29a28c9e3d6542f3ba3",
+      "bytes": 874,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/finance/work/TEAM.md",
+      "sha256": "8da82b676e41ca6aa028d4dbf1eb4dc39d279ed2123d5f965a6d718b96829142",
+      "bytes": 368,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    },
+    {
+      "seedPath": "templates/teams/finance/work/tasks.json",
+      "sha256": "426c35c9879071f828347c2ef35c990e4f9fc58de2ce595f195d76414d814740",
+      "bytes": 1103,
+      "use": "read-only requirement / role-scope review; not executed or embedded"
+    }
+  ],
+  "notExecutedImportedOrEmbedded": [
+    "templates/casework/work/starter/tools/plan.py",
+    "templates/casework/work/starter/tests/test_plan.py",
+    "templates/casework/work/starter/design/desk-caddy.scad",
+    "templates/casework/work/starter/design/desk-caddy.svg"
+  ],
+  "originalWork": [
+    "Original shared-lattice solid-boundary generator, topology checks and STL serializer.",
+    "Original dimensioned drawings, isometric preview, configurator and ZIP writer.",
+    "Original compact and Pocket Arcade parameter extensions and handling model.",
+    "Original independent Python mesh/ZIP/drawing/BOM checks and Node tests."
+  ],
+  "authority": "User-approved original local demo only; no native initialization or external effects."
+}

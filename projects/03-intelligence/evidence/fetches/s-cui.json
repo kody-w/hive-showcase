@@ -1,0 +1,79 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-cui",
+  "requestedUrl": "https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/",
+  "retrievedAt": "2026-09-19T01:19:34.839295+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "4,867",
+      "found": true,
+      "startCharacter": 2281,
+      "endCharacter": 2511,
+      "text": "ch experiment is noisy, when data is combined across three experiments and 4,867 developers, our analysis reveals a 26.08% increase (SE: 10.3%) in completed tasks among developers using the AI tool. Notably, less experienced devel",
+      "sha256": "8ba8a1967496336543421d3978fd2abab804aacc8c649b1f8e39dfdfb20f5d5e"
+    },
+    {
+      "id": "e2",
+      "anchor": "26.08%",
+      "found": true,
+      "startCharacter": 2322,
+      "endCharacter": 2552,
+      "text": "ined across three experiments and 4,867 developers, our analysis reveals a 26.08% increase (SE: 10.3%) in completed tasks among developers using the AI tool. Notably, less experienced developers had higher adoption rates and great",
+      "sha256": "3c85dbf52392ab24a9387a9bb61e42fe3a6926ed42c5e6aad63a556cb67ffa3c"
+    },
+    {
+      "id": "e3",
+      "anchor": "less experienced",
+      "found": true,
+      "startCharacter": 2414,
+      "endCharacter": 2644,
+      "text": "SE: 10.3%) in completed tasks among developers using the AI tool. Notably, less experienced developers had higher adoption rates and greater productivity gains. Opens in a new tab Preprint Groups Economics and Computation Research",
+      "sha256": "1d47aab1178558bd5cd3b9bee5d3e4e421ee14d053ca93ed4ccf1ce4551fc92c"
+    },
+    {
+      "id": "e4",
+      "anchor": "2025",
+      "found": true,
+      "startCharacter": 1780,
+      "endCharacter": 2010,
+      "text": "Mert Demirer , Sonia Jaffe , Leon Musolff , Sida Peng , Tobias Salz | June 2025 Download BibTex This study evaluates the impact of generative AI on software developer productivity via randomized controlled trials at Microsoft, Acc",
+      "sha256": "d6a2c97eb19306c51bce33cec7713732ca942d4ea719185fcd5b6b9144cbca15"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/",
+  "contentType": "text/html; charset=UTF-8",
+  "responseBytes": 178443,
+  "responseSha256": "751863d898b67c4b98b2b7f40dcf96524650a8dc9f5f70e9037130cd88b35026",
+  "lastModified": null,
+  "etag": null,
+  "pageTitle": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers - Microsoft Research",
+  "dateAndAuthorMetadata": {
+    "og:title": [
+      "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers - Microsoft Research"
+    ],
+    "article:modified_time": [
+      "2025-08-19T17:55:53+00:00"
+    ],
+    "citation_title": [
+      "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers"
+    ],
+    "citation_author": [
+      "Zheyuan (Kevin) Cui",
+      "Mert Demirer",
+      "Sonia Jaffe",
+      "Leon Musolff",
+      "Sida Peng",
+      "Tobias Salz"
+    ],
+    "citation_publication_date": [
+      "2025/06/01"
+    ]
+  },
+  "normalizedTextSha256": "3ab31f70695e782c35d7010fadd8ee2cbb4526e98030040ffe8ebba451fa2171",
+  "normalizedTextCharacters": 3973,
+  "outcome": "captured"
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-peng",
+  "requestedUrl": "https://arxiv.org/html/2302.06590v1",
+  "retrievedAt": "2026-09-19T01:21:22.759428+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "95 professional programmers",
+      "found": true,
+      "startCharacter": 4151,
+      "endCharacter": 4381,
+      "text": "2022, right before GitHub Copilot became generally available. We recruited 95 professional programmers through Upwork, a freelancing platform. Participation in the experiment was advertised on Upwork as a job posting, looking to r",
+      "sha256": "d946a55bd75d12c2e7fb643339aee968244488ab426ea5c36eedbdbc8d6dd832"
+    },
+    {
+      "id": "e2",
+      "anchor": "55.8%",
+      "found": true,
+      "startCharacter": 1203,
+      "endCharacter": 1433,
+      "text": "treatment group, with access to the AI pair programmer, completed the task 55.8% faster than the control group. Observed heterogenous effects show promise for AI pair programmers to help people transition into software development",
+      "sha256": "a136f9485793b3c047d654672ed1e9cfcdfead5ba829a455576a211dd2fe013b"
+    },
+    {
+      "id": "e3",
+      "anchor": "12 tests",
+      "found": true,
+      "startCharacter": 7638,
+      "endCharacter": 7868,
+      "text": "ry creation and the timestamp of the first commit to successfully pass all 12 tests was counted as the participant’s task completion time. The full history of test suite runs is visible on each repository, enabling researchers to ",
+      "sha256": "bd96f8ed2f98d52176391ebeb785f70d6c5f9ee507c09b16cac31e7210b68e92"
+    },
+    {
+      "id": "e4",
+      "anchor": "Affiliation: GitHub",
+      "found": true,
+      "startCharacter": 474,
+      "endCharacter": 704,
+      "text": "ty: Evidence from GitHub Copilot Sida Peng Eirini Kalliamvakou Peter Cihon Affiliation: GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, USA Mert Demirer Affiliation: GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, USA Affi",
+      "sha256": "105abcbc9388926558f968a4751065793f0568fa77c299ca627754a15afe4ebd"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://arxiv.org/html/2302.06590v1",
+  "contentType": "text/html; charset=utf-8",
+  "responseBytes": 68169,
+  "responseSha256": "9713fec5877692533dea697cff5df72cce6b4e560419b43ae3f28521702e068b",
+  "lastModified": "Mon, 24 Aug 2026 19:21:42 GMT",
+  "etag": "\"CJrEx6v+uZYDEAE=\"",
+  "pageTitle": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+  "dateAndAuthorMetadata": {},
+  "normalizedTextSha256": "4591ba65d6f34bbb11c81d2233945803b286a9fee65c54c796d87f314cd31d26",
+  "normalizedTextCharacters": 22291,
+  "outcome": "captured"
+}

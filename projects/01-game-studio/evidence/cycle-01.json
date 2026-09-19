@@ -1,0 +1,29 @@
+{
+  "cycle": 1,
+  "kind": "actual-build-play-improve",
+  "observationType": "deterministic automated engine play; no human fun evidence",
+  "before": "projects/01-game-studio/evidence/runs/cycle-01-before.json",
+  "after": "projects/01-game-studio/evidence/runs/cycle-01-after.json",
+  "controlledInputs": {
+    "scenario": "meadow",
+    "seed": 42,
+    "policy": "solo",
+    "tickBudget": 150
+  },
+  "sequence": [
+    "Implemented v1 and ran six engine tests.",
+    "Recorded v1: the solo courier delivered one pod, departed undercharged, and stranded itself.",
+    "Implemented v2 after observing that recording: recharge fully; budget travel, harvest, return, and two spare energy cells.",
+    "Added a regression test; ran all seven tests; recorded v2 with the same actions and seed.",
+    "Replayed both files against the updated shared engine and verified exact final states."
+  ],
+  "measurement": {
+    "delivered": [1, 6],
+    "strandedEvents": [1, 0],
+    "status": ["lost", "won"],
+    "ticks": [150, 111],
+    "energySpent": [24, 90]
+  },
+  "interpretation": "Delivery reliability improved. Total energy spent increased because six trips were completed; this is not a claim of lower total energy use.",
+  "remainingFailure": "v2 still walks greedily into stone walls; the next recorded stone-garden run delivered zero pods."
+}

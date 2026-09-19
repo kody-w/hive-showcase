@@ -1,0 +1,10 @@
+{
+  "name": "hive-local-showcase",
+  "private": true,
+  "type": "module",
+  "description": "Original local demonstrations using verified public seed data.",
+  "scripts": {
+    "test": "python3 tools/run_checks.py",
+    "start": "python3 tools/serve.py"
+  }
+}

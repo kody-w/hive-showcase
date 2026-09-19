@@ -1,0 +1,2 @@
+# Preserve the verified upstream license bytes, including its terminal blank line.
+inputs/seed/LICENSE whitespace=-blank-at-eof

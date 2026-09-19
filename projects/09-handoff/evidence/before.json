@@ -1,0 +1,552 @@
+{
+  "contract_sha256": "aa14e38494a5dcc07784e09bb0d47568febf8201545186b23828aa29d4f62dc4",
+  "execution_root": ".",
+  "historical_parent_commit": "5eb9e598d6dd6f929e7724d908f5771268513e07",
+  "historical_recorded_at": "2026-09-19T01:19:44.481015+00:00",
+  "observations_sha256": "286acb61347a5c56cbd832b65b94af00e4eadc270930891f4d13f6a742e8ff84",
+  "original_record_sha256": "4b369c6e74630d48428ec743e6d920fa2e15fb8f42a8bbf86aae967b8e671fdf",
+  "phase": "before",
+  "qualification": "Derived from the original private execution, not byte-identical to that record and not a new run. Numerical observations, test outcomes, fixtures and acceptance targets are retained.",
+  "record_kind": "redacted-derived-historical-record",
+  "redactions": [
+    "Absolute checkout and interpreter paths omitted.",
+    "Traceback paths, when present, rebased to repository-relative paths; published log hashes recomputed."
+  ],
+  "replays": [
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "projects/09-handoff/fixtures/clean.jsonl",
+      "frames": [
+        {
+          "closed_items": 0,
+          "event_count": 0,
+          "items": [],
+          "open_items": 0
+        },
+        {
+          "closed_items": 0,
+          "event_count": 1,
+          "items": [
+            {
+              "event_count": 1,
+              "item_id": "arcade-cache",
+              "last_minute": 7,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        },
+        {
+          "closed_items": 0,
+          "event_count": 2,
+          "items": [
+            {
+              "event_count": 1,
+              "item_id": "arcade-cache",
+              "last_minute": 7,
+              "state": "open"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 2
+        },
+        {
+          "closed_items": 1,
+          "event_count": 3,
+          "items": [
+            {
+              "event_count": 2,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      ],
+      "id": "clean",
+      "input_sha256": "0af0e109cda8b97681a3f74dfed464761bc42ef2d118ce44f1c36a544d6654bf",
+      "maintenance": {
+        "classification": "SYNTHETIC",
+        "input_records": 3,
+        "open_queue": [
+          "arcade-input"
+        ],
+        "release_authority": false,
+        "replayed_records": 0,
+        "schema": "pocket-arcade-maintenance/1",
+        "scope": "offline-fictional-maintenance",
+        "summary": {
+          "closed_items": 1,
+          "event_count": 3,
+          "items": [
+            {
+              "event_count": 2,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      },
+      "records": [
+        {
+          "action": "open",
+          "at_minute": 7,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-open",
+          "item_id": "arcade-cache"
+        },
+        {
+          "action": "open",
+          "at_minute": 11,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-input-open",
+          "item_id": "arcade-input"
+        },
+        {
+          "action": "close",
+          "at_minute": 19,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-close",
+          "item_id": "arcade-cache"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 4,
+        "items": [
+          {
+            "event_count": 3,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "projects/09-handoff/fixtures/duplicate.jsonl",
+      "frames": [
+        {
+          "closed_items": 0,
+          "event_count": 0,
+          "items": [],
+          "open_items": 0
+        },
+        {
+          "closed_items": 0,
+          "event_count": 1,
+          "items": [
+            {
+              "event_count": 1,
+              "item_id": "arcade-cache",
+              "last_minute": 7,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        },
+        {
+          "closed_items": 0,
+          "event_count": 2,
+          "items": [
+            {
+              "event_count": 2,
+              "item_id": "arcade-cache",
+              "last_minute": 7,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        },
+        {
+          "closed_items": 1,
+          "event_count": 3,
+          "items": [
+            {
+              "event_count": 3,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            }
+          ],
+          "open_items": 0
+        },
+        {
+          "closed_items": 1,
+          "event_count": 4,
+          "items": [
+            {
+              "event_count": 3,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      ],
+      "id": "duplicate",
+      "input_sha256": "ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040",
+      "maintenance": {
+        "classification": "SYNTHETIC",
+        "input_records": 4,
+        "open_queue": [
+          "arcade-input"
+        ],
+        "release_authority": false,
+        "replayed_records": 0,
+        "schema": "pocket-arcade-maintenance/1",
+        "scope": "offline-fictional-maintenance",
+        "summary": {
+          "closed_items": 1,
+          "event_count": 4,
+          "items": [
+            {
+              "event_count": 3,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      },
+      "records": [
+        {
+          "action": "open",
+          "at_minute": 7,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-open",
+          "item_id": "arcade-cache"
+        },
+        {
+          "action": "open",
+          "at_minute": 7,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-open",
+          "item_id": "arcade-cache"
+        },
+        {
+          "action": "close",
+          "at_minute": 19,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-close",
+          "item_id": "arcade-cache"
+        },
+        {
+          "action": "open",
+          "at_minute": 11,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-input-open",
+          "item_id": "arcade-input"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "expected": {
+        "closed_items": 1,
+        "event_count": 3,
+        "items": [
+          {
+            "event_count": 2,
+            "item_id": "arcade-cache",
+            "last_minute": 19,
+            "state": "closed"
+          },
+          {
+            "event_count": 1,
+            "item_id": "arcade-input",
+            "last_minute": 11,
+            "state": "open"
+          }
+        ],
+        "open_items": 1
+      },
+      "fixture": "projects/09-handoff/fixtures/out-of-order.jsonl",
+      "frames": [
+        {
+          "closed_items": 0,
+          "event_count": 0,
+          "items": [],
+          "open_items": 0
+        },
+        {
+          "closed_items": 1,
+          "event_count": 1,
+          "items": [
+            {
+              "event_count": 1,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            }
+          ],
+          "open_items": 0
+        },
+        {
+          "closed_items": 1,
+          "event_count": 2,
+          "items": [
+            {
+              "event_count": 1,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        },
+        {
+          "closed_items": 1,
+          "event_count": 3,
+          "items": [
+            {
+              "event_count": 2,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      ],
+      "id": "out-of-order",
+      "input_sha256": "02a242cbcf4b0b7dab25ed13e9c2b0f03acf090377c2a3d7e6cc7f08226ace6c",
+      "maintenance": {
+        "classification": "SYNTHETIC",
+        "input_records": 3,
+        "open_queue": [
+          "arcade-input"
+        ],
+        "release_authority": false,
+        "replayed_records": 0,
+        "schema": "pocket-arcade-maintenance/1",
+        "scope": "offline-fictional-maintenance",
+        "summary": {
+          "closed_items": 1,
+          "event_count": 3,
+          "items": [
+            {
+              "event_count": 2,
+              "item_id": "arcade-cache",
+              "last_minute": 19,
+              "state": "closed"
+            },
+            {
+              "event_count": 1,
+              "item_id": "arcade-input",
+              "last_minute": 11,
+              "state": "open"
+            }
+          ],
+          "open_items": 1
+        }
+      },
+      "records": [
+        {
+          "action": "close",
+          "at_minute": 19,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-close",
+          "item_id": "arcade-cache"
+        },
+        {
+          "action": "open",
+          "at_minute": 11,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-input-open",
+          "item_id": "arcade-input"
+        },
+        {
+          "action": "open",
+          "at_minute": 7,
+          "classification": "SYNTHETIC",
+          "event_id": "receipt-cache-open",
+          "item_id": "arcade-cache"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "projects/09-handoff/tools/check_acceptance.py"
+      ],
+      "exit_code": 1,
+      "name": "acceptance",
+      "stderr": {
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "path": "projects/09-handoff/evidence/before-acceptance.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "transform": "unchanged-bytes"
+      },
+      "stdout": {
+        "original_sha256": "a23994b5e2024a5bbb5023afcd7e26a3848160612a8469b8f4181ee7e302da86",
+        "path": "projects/09-handoff/evidence/before-acceptance.stdout.txt",
+        "sha256": "a23994b5e2024a5bbb5023afcd7e26a3848160612a8469b8f4181ee7e302da86",
+        "transform": "unchanged-bytes"
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/09-handoff/tests",
+        "-p",
+        "test_ledger.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "name": "tests",
+      "stderr": {
+        "original_sha256": "1488009089deb582960a2f38529ad9da94c7db7d3b44414888ca541fe7a2fe10",
+        "path": "projects/09-handoff/evidence/before-tests.stderr.txt",
+        "sha256": "4de3909eacb96c48c67dc40aef81753fe534f155b6756660776e7b62bbfdb8f2",
+        "transform": "traceback-path-rebased-to-repository-relative"
+      },
+      "stdout": {
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "path": "projects/09-handoff/evidence/before-tests.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "transform": "unchanged-bytes"
+      }
+    }
+  ],
+  "runtime": {
+    "python": "3.9.6"
+  },
+  "schema": "handoff-public-capture/1",
+  "source_sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8"
+}

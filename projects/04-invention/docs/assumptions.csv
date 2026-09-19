@@ -1,0 +1,12 @@
+domain,assumption,status,falsifier,response
+scalar-input,The eleven synthetic rows expand to 29 unique per-scenario IDs,verified-in-code,A duplicate or omitted instance,Reject the run and preserve the failed check
+scalar-capacity,Both integer totals are at most ten in every modeled tote,verified-in-code,Either reconstructed load exceeds ten,Reject the assignment
+source-order,CSV order is a deliberately authored baseline variable,reviewed-data,Reordered data presented as original history,Restore exact source bytes and identify the changed study
+geometry,An aggregate-feasible pairing might correspond to a useful mock arrangement,unmeasured,Empty paper outlines cannot fit without overlap or deformation,Reject scalar fit as sufficient and add geometric constraints
+handling,Abstract weight units say nothing about safe lifting or container strength,excluded,Anyone interprets ten units as a real load limit,Stop transport or lifting use of this prototype
+accessibility,An operator may need a particular retrieval order,unmeasured,Useful access requires emptying or disrupting an assigned tote,Add access constraints before a practical pilot
+kit-cohesion,Items may be freely mixed within a scenario in the scalar model,model-only,Real kit membership must stay together,Reformulate the problem before extrapolating counts
+comprehension,A person could understand exact IDs and two numeric loads,unmeasured,An authorized participant mismatches an ID or misses a weight violation,Revise labeling and repeat an approved harmless comprehension check
+workflow,A local worksheet could be useful relative to manual grouping,unmeasured,Manual grouping or an ordinary spreadsheet is simpler or equally useful,Stop or simplify instead of building a service
+market,Repeated planning pain might justify any product work,unmeasured,No repeated problem or no reliable input data,Reject the opportunity hypothesis
+novelty,These are original implementations of known algorithm families,not-a-novelty-claim,No novelty search or intellectual-property review has been done,Make no patentability or freedom-to-operate claim

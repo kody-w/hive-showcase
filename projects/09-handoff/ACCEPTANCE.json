@@ -1,0 +1,63 @@
+{
+  "schema": "handoff-acceptance/1",
+  "classification": "SYNTHETIC",
+  "seed_issue": "ll-duplicate",
+  "scope": "One clean-room defect reproduction; not the upstream two-defect release gate.",
+  "invariants": [
+    "Identical repeated event IDs count once globally and per item.",
+    "A repeated ID with any changed payload is rejected after complete validation.",
+    "Unique events apply in ascending (at_minute, event_id) order.",
+    "Items are sorted by item_id; input receipts are never mutated.",
+    "Empty input is valid; close without an earlier open is valid.",
+    "Only explicitly synthetic bounded strict JSONL is accepted."
+  ],
+  "limits": {
+    "bytes": 1048576,
+    "line_bytes": 16384,
+    "records": 5000,
+    "id_characters": 40,
+    "minute_min": 0,
+    "minute_max": 1000000
+  },
+  "cases": [
+    {
+      "id": "clean",
+      "fixture": "fixtures/clean.jsonl",
+      "expected": {
+        "event_count": 3,
+        "open_items": 1,
+        "closed_items": 1,
+        "items": [
+          {"item_id": "arcade-cache", "state": "closed", "event_count": 2, "last_minute": 19},
+          {"item_id": "arcade-input", "state": "open", "event_count": 1, "last_minute": 11}
+        ]
+      }
+    },
+    {
+      "id": "duplicate",
+      "fixture": "fixtures/duplicate.jsonl",
+      "expected": {
+        "event_count": 3,
+        "open_items": 1,
+        "closed_items": 1,
+        "items": [
+          {"item_id": "arcade-cache", "state": "closed", "event_count": 2, "last_minute": 19},
+          {"item_id": "arcade-input", "state": "open", "event_count": 1, "last_minute": 11}
+        ]
+      }
+    },
+    {
+      "id": "out-of-order",
+      "fixture": "fixtures/out-of-order.jsonl",
+      "expected": {
+        "event_count": 3,
+        "open_items": 1,
+        "closed_items": 1,
+        "items": [
+          {"item_id": "arcade-cache", "state": "closed", "event_count": 2, "last_minute": 19},
+          {"item_id": "arcade-input", "state": "open", "event_count": 1, "last_minute": 11}
+        ]
+      }
+    }
+  ]
+}

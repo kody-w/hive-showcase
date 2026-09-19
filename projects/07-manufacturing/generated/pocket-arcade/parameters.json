@@ -1,0 +1,59 @@
+{
+  "schema": "stackline-design/1",
+  "generatorVersion": "1.0.0",
+  "units": "mm",
+  "parameters": {
+    "width": 180,
+    "depth": 100,
+    "height": 28,
+    "wall": 3,
+    "floor": 3,
+    "clearance": 1.5,
+    "insertHeight": 18,
+    "rib": 2,
+    "bays": 3,
+    "layout": "card-token"
+  },
+  "assumptions": {
+    "classification": "SYNTHETIC / modeled; not a quotation or time study",
+    "densityGCM3": 1.24,
+    "feedstockUSDPerKG": 24,
+    "scrapFraction": 0.08,
+    "benchUSDPerHour": 22,
+    "packagingUSD": 0.35,
+    "overheadUSD": 1.1,
+    "planningQuantity": 20,
+    "pack": {
+      "width": 192,
+      "depth": 112,
+      "height": 42,
+      "padding": 2,
+      "massG": 25,
+      "maxMassG": 250
+    },
+    "payload": {
+      "cardWidth": 88,
+      "cardDepth": 63,
+      "cardStackHeight": 12,
+      "tokenDiameter": 20,
+      "edgeAllowance": 1
+    }
+  },
+  "origin": "Each STL has its own local minimum at [0,0,0].",
+  "assembledInsertTranslationMM": [
+    4.5,
+    4.5,
+    3
+  ],
+  "disposition": "DIGITAL REVIEW ONLY — NOT APPROVED FOR FABRICATION",
+  "limitations": [
+    "No material has been selected, purchased, printed, fabricated, handled, inspected, or shipped.",
+    "STL files contain nominal millimetre coordinates but STL itself has no unit metadata. Import explicitly as mm.",
+    "Solid-volume mass is not a slicer estimate: no infill, supports, shrinkage, machine time, or process settings are modeled.",
+    "Clearance is a loose, centered design assumption, not a validated tolerance or friction fit. The insert is not retained.",
+    "The open-ended ladder and 1.5 mm nominal surrounding gap do not seal small tokens into bays.",
+    "Dimensions, strength, material suitability, surface finish, stability, handling time, and transit behavior require future physical review.",
+    "Lightweight dry desk items only; no food, heated items, electrical, medical, child-safety, or load-bearing uses.",
+    "Packaging and costs are synthetic scenarios. Digital passes grant no fabrication, spending, shipment, or native Hive authority."
+  ]
+}

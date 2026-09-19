@@ -1,0 +1,41 @@
+{
+  "classification": "SYNTHETIC",
+  "seedSlug": "enterprise-transformation-firm",
+  "seedRef": "sha256:2de320c891f9b8ddc815bb591548f109bb1fbc02636db7b1ff75d392752b25d9",
+  "archiveRef": "sha256:8864a0f1a063da0504d07c1283a6b69d7fa239c72371b627cd7855242c99e91d",
+  "verificationReport": "evidence/seed-verification.json",
+  "license": "MIT; Copyright (c) 2026 Hive Hub contributors",
+  "licenseFile": "fixtures/LICENSE",
+  "treatment": "Only inert data copied. Native initialization, task board, and team scopes read as data. Downloaded reference code was not read, executed, imported, or embedded. Source outcomes calculated independently using original code.",
+  "copiedFiles": [
+    {"source": "LICENSE", "local": "fixtures/LICENSE", "bytes": 1079, "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"},
+    {"source": "templates/casework/work/starter/data/accounts.csv", "local": "fixtures/accounts.csv", "bytes": 391, "sha256": "8644cd424be1498821a59aad735b5663f1077a1b2479b10a51e4f3cbd54a5d44"},
+    {"source": "templates/casework/work/starter/data/quotes.csv", "local": "fixtures/quotes.csv", "bytes": 511, "sha256": "748728a14d183fa4f1a5178830b12e5a36042560e543d3256958e7efc0d25080"},
+    {"source": "templates/casework/work/starter/data/quote-lines.csv", "local": "fixtures/quote-lines.csv", "bytes": 688, "sha256": "f9570e9c9e788d494385c2a92cc65a2566e366905652a27e9a172bcf18a3933d"},
+    {"source": "templates/casework/work/starter/data/policy.json", "local": "fixtures/policy.json", "bytes": 440, "sha256": "9c1b87389ce74d52368a497c575f3725239bfb7a7e59f6437f9fa984b20748ed"},
+    {"source": "templates/casework/work/starter/reference/expected-results.json", "local": "fixtures/expected-results.json", "bytes": 1234, "sha256": "287067af395316f7048b856ac4ceb1958c0a5a78d09898b25cbd8ffcf1f9dbfc"}
+  ],
+  "reviewedContext": [
+    {"source": "seed.json", "sha256": "55ffedad9bc67735491a4542c4070194ac1bcd4095b779ca5726afd9e0b045ee"},
+    {"source": "initialize.json", "sha256": "bc97de9992bc08a7fab257975ac26ac93919394b4ffcf40d4ffc9eed8d2d30f9"},
+    {"source": "templates/casework/work/intake.json", "sha256": "342e660d137ddb3b0009693b6beb75db416f51cf6fb0ab8da606d0f1fc58399b"},
+    {"source": "templates/casework/work/task-board.json", "sha256": "e3024bcf30c49f79a432ce2590dc0cdc16e1d895121432c81cecbea0c23735db"},
+    {"source": "templates/casework/work/starter/docs/process-facts.md", "sha256": "7be7a858bb5c12df7d7728b811198098eaa251bbd9fdaa359d890acbf1df9f0d"},
+    {"source": "templates/casework/work/starter/docs/client-brief.md", "sha256": "dbe8e315f6ac2b8f8dfb3fbe2ee85c4ec4c6fc50297ae7ba4b8deff35ded5304"},
+    {"source": "templates/casework/work/starter/docs/acceptance-cases.md", "sha256": "6e9e57bb8a26d4ee4731d47272d6fb2771a2dd795a0b50a112ea7a74c40b7845"},
+    {"source": "templates/casework/work/starter/docs/handoff-contracts.md", "sha256": "51d629607b682ad7225f0af785a20eb9c42a6ac8e8bcc1690be9d692b5bba379"},
+    {"source": "templates/casework/work/starter/docs/adoption-playbook.md", "sha256": "e58532e29229bdbf947abd1a2e76285700fe4388f9cc974ec7b9b27ecfa3edc5"},
+    {"source": "templates/casework/work/starter/docs/requirements.csv", "sha256": "328ae43245d30d8b41a6dff267b5ca03937bb8c324e1a250b9142bba4fa93082"},
+    {"source": "templates/teams/account-strategy/work/TEAM.md", "sha256": "0d5d01c7716b27d44e734dcc45cc02a8dfa21f49214a214516f3236485fa87f2"},
+    {"source": "templates/teams/discovery/work/TEAM.md", "sha256": "56594c7f17a2c4fec1ced9f56b41838b0ecd07e996b493e6569d44289cc7206c"},
+    {"source": "templates/teams/architecture/work/TEAM.md", "sha256": "70fdab27a7072b0fddae0e758f0b14ad89a27b3fe8e51ece6df802d27b3e2f63"},
+    {"source": "templates/teams/engineering/work/TEAM.md", "sha256": "9d786f27b64eb5c9437a6160b6ed0fcd06a06b5fcf21cebc354efbcc2d640d2b"},
+    {"source": "templates/teams/quality/work/TEAM.md", "sha256": "e59118430e8fb4201315a43d575824bb42416dbfb38300ea9ff697e37d66ee59"},
+    {"source": "templates/teams/adoption/work/TEAM.md", "sha256": "49d5649fdd34a6cd2239c064d2f66eec47c60d55ae5d67d6a6c91241d198ec67"}
+  ],
+  "derivedFiles": {
+    "fixtures/workload.json": "Original reconciliation of the four source data files, plus declared 10-minute arrival-clock assumption. No corrected or approved business values added.",
+    "results/comparison.json": "Original deterministic model output. All timings, capacities and design mechanisms are hypotheses.",
+    "results/replays.json": "Full per-case histories and event logs for the paced workload in all three designs."
+  }
+}

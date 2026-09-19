@@ -1,0 +1,5 @@
+--- evidence/midpoint-receipt-ledger.py
++++ receipt_ledger.py
+@@ -76 +76 @@
+-    return sorted(receipts, key=lambda row: (row.at_minute, row.event_id))
++    return sorted(identities.values(), key=lambda row: (row.at_minute, row.event_id))

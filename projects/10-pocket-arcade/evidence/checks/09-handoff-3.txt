@@ -1,0 +1,16 @@
+argv: ["python3", "-B", "projects/09-handoff/tools/build_demo.py", "--check"]
+recordedAt: 2026-09-19T13:28:15.444262+00:00
+exitCode: 0
+--- stdout ---
+{
+  "mode": "read-only-check",
+  "outputs": [
+    "projects/09-handoff/replay-data.js",
+    "projects/09-handoff/artifacts/pocket-arcade-maintenance.json"
+  ],
+  "mismatches": []
+}
+
+--- stderr ---
+
+--- end of captured streams ---

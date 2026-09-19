@@ -1,0 +1,13 @@
+argv: ["node", "projects/05-planner/tools/build.mjs", "--check"]
+recordedAt: 2026-09-19T02:21:35.202003+00:00
+exitCode: 0
+--- stdout ---
+projects/05-planner/app.bundle.js matches original local sources.
+projects/05-planner/fixtures/library.json matches original local sources.
+projects/05-planner/fixtures/pocket-arcade.json matches original local sources.
+projects/05-planner/fixtures/disjoint.json matches original local sources.
+projects/05-planner/fixtures/boundary.json matches original local sources.
+
+--- stderr ---
+
+--- end of captured streams ---

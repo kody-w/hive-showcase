@@ -1,0 +1,162 @@
+{
+  "schema": "pocket-arcade-integration-contract/1",
+  "id": "10-pocket-arcade",
+  "seedSlug": "federation-prime-contractor",
+  "entrypoint": "projects/10-pocket-arcade/index.html",
+  "scope": "Original local artifacts, linked in place; no native organization or partner authority.",
+  "boundaries": {
+    "nativeMembership": false,
+    "foreignWorkspaceRegistration": false,
+    "signedReceipts": false,
+    "crossWorldAuthority": false,
+    "externalEffects": false,
+    "physicalManufactureVerified": false,
+    "publicLaunch": false,
+    "automaticPartnerCodeExecution": false
+  },
+  "acceptancePolicy": {
+    "manifestStage": "work-produced",
+    "hashAlgorithm": "sha256",
+    "hashScope": "Exact manifest bytes and every declared artifact, entrypoint, result, acceptance proof and check log.",
+    "checkExecution": "The validator reads recorded command results; it never executes commands from a manifest.",
+    "passingProofValues": [true, "pass", "passed", "verified", "local-checks-passed"],
+    "missingPolicy": "Fail closed: pending, absent, malformed, stale, fixture-only or incompatible contributions cannot pass real integration.",
+    "acceptanceMeaning": "Local file integrity and explicit recorded checks, not signatures, live usability, fabrication, commercial acceptance or native authority."
+  },
+  "journey": [
+    {
+      "step": 1,
+      "contributor": "01-game-studio",
+      "action": "Play the original robot game and inspect its deterministic replay artifact.",
+      "handoff": "Use the game's own rules; note an alias and the observed result without inventing a scoring API."
+    },
+    {
+      "step": 2,
+      "contributor": "05-planner",
+      "action": "Choose the tournament preset, set a finite time budget, and inspect the feasible schedule or explicit refusal.",
+      "handoff": "Only use a schedule that the planner actually marks feasible; do not treat a partial plan as feasible."
+    },
+    {
+      "step": 3,
+      "contributor": "07-manufacturing",
+      "action": "Inspect the card/token tray design and fabrication review; print the prime's blank operator kit if useful.",
+      "handoff": "Digital geometry and review files are not a fabricated, certified or inspected physical product."
+    },
+    {
+      "step": 4,
+      "contributor": "09-handoff",
+      "action": "Inspect the artifact-only handoff and maintenance utility, then verify the saved integration snapshot.",
+      "handoff": "Carry file references and reproducible checks, never another organization's stores, membership or signing authority."
+    }
+  ],
+  "contributors": [
+    {
+      "id": "01-game-studio",
+      "label": "Game Studio",
+      "seedSlug": "independent-game-studio",
+      "worldLabel": "Separate Game Studio demonstration; not a registered world",
+      "directory": "projects/01-game-studio",
+      "manifest": "projects/01-game-studio/manifest.json",
+      "entrypoint": "projects/01-game-studio/index.html",
+      "evidence": "projects/01-game-studio/evidence/result.json",
+      "interfaceId": "pocket-arcade/browser-game/1",
+      "scope": "Original browser game, deterministic engine, replay artifact and local test evidence only.",
+      "dependsOn": [],
+      "roles": {
+        "engine": {
+          "extensions": [".js", ".mjs", ".cjs"],
+          "description": "Original deterministic game engine; inspected as bytes, never imported by the integration validator."
+        },
+        "replay": {
+          "extensions": [".json", ".jsonl"],
+          "description": "Saved deterministic replay or replay-validation artifact; not an invented playtest."
+        }
+      },
+      "gates": [
+        {"id": "game-playable", "description": "Recorded local checks cover the original playable robot game and declared controls."},
+        {"id": "game-deterministic", "description": "Recorded tests cover deterministic engine/replay behavior."},
+        {"id": "game-honest-scope", "description": "Offline/local limits and the distinction from real playtesting are explicit."}
+      ]
+    },
+    {
+      "id": "05-planner",
+      "label": "Product Launch",
+      "seedSlug": "product-launch-company",
+      "worldLabel": "Separate Product Launch demonstration; not a registered world",
+      "directory": "projects/05-planner",
+      "manifest": "projects/05-planner/manifest.json",
+      "entrypoint": "projects/05-planner/index.html",
+      "evidence": "projects/05-planner/evidence/result.json",
+      "interfaceId": "pocket-arcade/tournament-plan/1",
+      "scope": "Offline constraint planner, bounded tournament preset and exported plan/check artifact; no marketing or public launch.",
+      "dependsOn": ["01-game-studio"],
+      "roles": {
+        "tournament-plan": {
+          "extensions": [".json", ".csv"],
+          "description": "Actual saved tournament preset, finite schedule or validation artifact from the planner."
+        }
+      },
+      "gates": [
+        {"id": "planner-finite", "description": "Recorded checks cover a finite tournament budget and time accounting."},
+        {"id": "planner-refuses-overflow", "description": "Required work over capacity is rejected rather than called feasible."},
+        {"id": "planner-offline", "description": "Local-only operation and unperformed adoption/launch claims remain explicit."}
+      ]
+    },
+    {
+      "id": "07-manufacturing",
+      "label": "Micro-Manufacturing",
+      "seedSlug": "micro-manufacturing-company",
+      "worldLabel": "Separate Micro-Manufacturing demonstration; not a registered world",
+      "directory": "projects/07-manufacturing",
+      "manifest": "projects/07-manufacturing/manifest.json",
+      "entrypoint": "projects/07-manufacturing/index.html",
+      "evidence": "projects/07-manufacturing/evidence/result.json",
+      "interfaceId": "pocket-arcade/tabletop-accessory/1",
+      "scope": "Parameterized organizer/card-token tray and fabrication review files only; no fabrication, purchasing or shipping.",
+      "dependsOn": ["01-game-studio", "05-planner"],
+      "roles": {
+        "tray-design": {
+          "extensions": [".scad", ".svg", ".stl", ".json"],
+          "description": "Actual parameterized tray design or exported design file, not evidence of physical manufacture."
+        },
+        "fabrication-review": {
+          "extensions": [".json", ".csv", ".md", ".html", ".txt"],
+          "description": "Recorded design/fit/packing review with explicit model and physical-validation limitations."
+        }
+      },
+      "gates": [
+        {"id": "tray-geometry", "description": "Recorded checks cover tray parameters and digital geometry."},
+        {"id": "tray-review", "description": "An actual fabrication-review artifact accompanies the design."},
+        {"id": "tray-unbuilt-disclosure", "description": "No digital content pass is represented as physical manufacture, certification or inspection."}
+      ]
+    },
+    {
+      "id": "09-handoff",
+      "label": "Infrastructure Foundation",
+      "seedSlug": "open-source-infrastructure-foundation",
+      "worldLabel": "Separate Infrastructure Foundation demonstration; not a registered world",
+      "directory": "projects/09-handoff",
+      "manifest": "projects/09-handoff/manifest.json",
+      "entrypoint": "projects/09-handoff/index.html",
+      "evidence": "projects/09-handoff/evidence/result.json",
+      "interfaceId": "pocket-arcade/maintenance-handoff/1",
+      "scope": "Artifact-only continuation instructions, original maintenance utility and regression evidence; no transfer of stores or authority.",
+      "dependsOn": ["01-game-studio", "05-planner", "07-manufacturing"],
+      "roles": {
+        "maintenance-tool": {
+          "extensions": [".py", ".js", ".mjs", ".cjs"],
+          "description": "Original offline maintenance utility; the validator hashes it without importing or executing it."
+        },
+        "handoff": {
+          "extensions": [".md", ".json", ".txt", ".html"],
+          "description": "Artifact-only continuation record with reproducible commands and remaining limits."
+        }
+      },
+      "gates": [
+        {"id": "maintenance-contract", "description": "Recorded maintenance tests cover the utility's strict contract and regressions."},
+        {"id": "maintenance-reproducible", "description": "Handoff files provide an actual reproducible local check path."},
+        {"id": "maintenance-artifact-only", "description": "Continuation is bounded to file references and never claims membership, signatures or inherited authority."}
+      ]
+    }
+  ]
+}

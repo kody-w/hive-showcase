@@ -1,0 +1,40 @@
+✔ controller starts from local data and renders the actual selected claim (13.354ms)
+✔ delegated direction, search, method and reset controls really change the rendered list (3.689792ms)
+✔ source selection drills into provenance, preserves node focus and updates the bookmark (2.331917ms)
+✔ clicking a nested element uses delegated closest selection (2.011042ms)
+✔ all tabs support click, arrows, Home/End and roving tab stops (3.161042ms)
+✔ the hero decision link reveals and scrolls to the gate view (1.946625ms)
+✔ all hypothetical gates can be checked and reset without changing the actual verdict (3.102833ms)
+✔ hash navigation restores source/claim views without stale hidden selections (2.528584ms)
+✔ SVG citation edges use actual node coordinates and reduce to text on narrow screens (2.36375ms)
+✔ mobile selection brings the inspection desk into view (1.884834ms)
+✔ missing local bundle gets a useful error instead of a false loaded state (2.017584ms)
+✔ bundle is exactly the authored claim data and locked protocol (1.529458ms)
+✔ all three directional filters retain exactly their claims (0.266208ms)
+✔ search is case-insensitive and searches source titles/dates (0.221083ms)
+✔ method, direction and text filters intersect without changing evidence (0.129291ms)
+✔ citation graph has exactly one edge for each declared claim-source relation (0.218958ms)
+✔ deep links validate IDs and unknown values cannot inject a selection (0.247334ms)
+✔ empty results clear a stale inspector and resetting restores an actual claim (0.193875ms)
+✔ following a hidden counterclaim clears only obstructing filters (0.117334ms)
+✔ every claim inspector exposes attribution, limits, source locators and tensions (10.033292ms)
+✔ every source drilldown exposes independence, date, methods, limits and actual hashes (0.751917ms)
+✔ rendering escapes evidence strings and rejects non-HTTPS source URLs (0.12475ms)
+✔ actual evidence yields conditional plausibility and zero qualifying cases (0.102542ms)
+✔ bounded existence requires every gate; omit each one in turn (0.359083ms)
+✔ every additional same-period, duration and independence condition is necessary (0.06625ms)
+✔ one complete verified case upgrades existence, not transfer (0.167958ms)
+✔ downgrade requires three eligible trials and at least two adverse outcomes (0.102791ms)
+✔ lost accountability satisfies adverse outcome, not universal impossibility (0.135084ms)
+✔ lack of mechanism supports insufficient-support verdict, never a false success (0.110708ms)
+✔ transfer requires three unrelated founders, failures, denominator and non-AI comparison (0.412875ms)
+✔ counterfactual is always labeled hypothetical, rejects duplicates and cannot mutate evidence (0.172959ms)
+✔ all hypotheses, source families, definitions and reversal conditions are visible (0.432042ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83.547917

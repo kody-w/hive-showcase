@@ -1,0 +1,21 @@
+{
+  "schema": "turnaround-scenarios/1",
+  "classification": "ADDED MODEL EXPERIMENTS, NOT OBSERVATIONS",
+  "scenarios": [
+    {"id": "baseline", "title": "No intervention", "useCandidate": false, "assumptions": {}, "description": "Repeated September amounts with no action, date-lumped payments and full prior-payable reserves."},
+    {"id": "recovery", "title": "Bounded recovery candidate", "useCandidate": true, "assumptions": {}, "description": "Best of the documented finite strategy grid, not a guarantee or a global optimum."},
+    {"id": "delayed-receipts", "title": "Receipts +10 days", "useCandidate": true, "assumptions": {"receiptDelayDays": 10}, "description": "Every candidate receipt moves ten days; cycle totals are conserved, including beyond-horizon receivables."},
+    {"id": "weaker-demand", "title": "Demand −20%", "useCandidate": true, "assumptions": {"demandBps": 8000}, "description": "Only 80% of the assumed September receipt pool remains each cycle, with unchanged payroll and refunds."},
+    {"id": "combined-stress", "title": "Delay + weaker demand", "useCandidate": true, "assumptions": {"receiptDelayDays": 10, "demandBps": 8000}, "description": "The same candidate, not re-optimized: both ten-day receipt delay and 20% lower demand."}
+  ],
+  "search": {
+    "description": "All 64 subsets of six actions under each of two fixed start schedules: 128 candidates, including empty plans. Default 300-minute support request. Reject prerequisite, due-date, total-budget and daily-capacity violations before scoring. Nothing here authorizes the seed's blocked work.",
+    "ranking": ["latest strict cash-floor breach (censored at horizon + 1)", "latest first unfunded payment (censored at horizon + 1)", "most prospective urgent tickets selected", "highest end scheduled cash", "lowest sunk fees", "stable strategy id"],
+    "schedules": [
+      {"id": "early", "starts": {"queue-repair": 1, "support-slice": 6, "contractor-cut": 1, "hosting-cut": 1, "receipt-pull": 1, "defer-payable": 1}},
+      {"id": "staged", "starts": {"queue-repair": 5, "support-slice": 10, "contractor-cut": 8, "hosting-cut": 8, "receipt-pull": 8, "defer-payable": 5}}
+    ],
+    "thresholdScan": {"receiptDelayDays": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "demandBps": [10000, 9000, 8000, 7000]},
+    "limitations": ["Only two start schedules and six authored actions; no continuous optimization.", "The best-scoring policy can still fail the floor and run out of cash.", "Consent and physical feasibility of every modeled intervention are unverified.", "Delayed receipts and weaker demand do not trigger a new search or a hidden rescue."]
+  }
+}

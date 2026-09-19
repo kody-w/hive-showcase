@@ -1,0 +1,216 @@
+{
+  "schema": "enterprise-queue-workload/1",
+  "classification": "SYNTHETIC",
+  "anchor": "Lattice Harbor Supply; eight original seed quotes, unmodified business data",
+  "arrivalAssumption": "Quote-ID order, one arrival every 10 model minutes from t=0; no source timestamps exist.",
+  "cases": [
+    {
+      "id": "q-101",
+      "arrival": 0,
+      "source": {
+        "quote_id": "q-101",
+        "total_usd": "268.21",
+        "state": "ready-for-human-approval",
+        "data_errors": [],
+        "review_reasons": [],
+        "accountId": "ac-cedar",
+        "lineIds": [
+          "line-101-a"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-101-a",
+              "netUsd": "237.50",
+              "taxUsd": "17.81"
+            }
+          ],
+          "shippingUsd": "12.00",
+          "shippingTaxUsd": "0.90"
+        }
+      }
+    },
+    {
+      "id": "q-102",
+      "arrival": 10,
+      "source": {
+        "quote_id": "q-102",
+        "total_usd": "116.10",
+        "state": "needs-review",
+        "data_errors": [],
+        "review_reasons": [
+          "credit-limit"
+        ],
+        "accountId": "ac-birch",
+        "lineIds": [
+          "line-102-a"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-102-a",
+              "netUsd": "108.00",
+              "taxUsd": "8.10"
+            }
+          ],
+          "shippingUsd": "0.00",
+          "shippingTaxUsd": "0.00"
+        }
+      }
+    },
+    {
+      "id": "q-103",
+      "arrival": 20,
+      "source": {
+        "quote_id": "q-103",
+        "total_usd": "208.55",
+        "state": "needs-review",
+        "data_errors": [],
+        "review_reasons": [
+          "line-103-a:discount-policy"
+        ],
+        "accountId": "ac-cedar",
+        "lineIds": [
+          "line-103-a"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-103-a",
+              "netUsd": "184.00",
+              "taxUsd": "13.80"
+            }
+          ],
+          "shippingUsd": "10.00",
+          "shippingTaxUsd": "0.75"
+        }
+      }
+    },
+    {
+      "id": "q-104",
+      "arrival": 30,
+      "source": {
+        "quote_id": "q-104",
+        "total_usd": "935.16",
+        "state": "needs-review",
+        "data_errors": [],
+        "review_reasons": [
+          "inactive-account",
+          "terms-policy"
+        ],
+        "accountId": "ac-elm",
+        "lineIds": [
+          "line-104-a"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-104-a",
+              "netUsd": "849.92",
+              "taxUsd": "63.74"
+            }
+          ],
+          "shippingUsd": "20.00",
+          "shippingTaxUsd": "1.50"
+        }
+      }
+    },
+    {
+      "id": "q-105",
+      "arrival": 40,
+      "source": {
+        "quote_id": "q-105",
+        "total_usd": null,
+        "state": "needs-data",
+        "data_errors": [
+          "line-105-a:unknown-tax-code",
+          "missing-po"
+        ],
+        "review_reasons": [],
+        "accountId": "ac-cedar",
+        "lineIds": [
+          "line-105-a"
+        ],
+        "calculations": null
+      }
+    },
+    {
+      "id": "q-106",
+      "arrival": 50,
+      "source": {
+        "quote_id": "q-106",
+        "total_usd": "10.16",
+        "state": "ready-for-human-approval",
+        "data_errors": [],
+        "review_reasons": [],
+        "accountId": "ac-maple",
+        "lineIds": [
+          "line-106-a",
+          "line-106-b"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-106-a",
+              "netUsd": "0.15",
+              "taxUsd": "0.01"
+            },
+            {
+              "lineId": "line-106-b",
+              "netUsd": "10.00",
+              "taxUsd": "0.00"
+            }
+          ],
+          "shippingUsd": "0.00",
+          "shippingTaxUsd": "0.00"
+        }
+      }
+    },
+    {
+      "id": "q-107",
+      "arrival": 60,
+      "source": {
+        "quote_id": "q-107",
+        "total_usd": null,
+        "state": "needs-data",
+        "data_errors": [
+          "line-107-a:invalid-quantity"
+        ],
+        "review_reasons": [],
+        "accountId": "ac-cedar",
+        "lineIds": [
+          "line-107-a"
+        ],
+        "calculations": null
+      }
+    },
+    {
+      "id": "q-108",
+      "arrival": 70,
+      "source": {
+        "quote_id": "q-108",
+        "total_usd": "107.50",
+        "state": "needs-review",
+        "data_errors": [],
+        "review_reasons": [
+          "terms-policy"
+        ],
+        "accountId": "ac-cedar",
+        "lineIds": [
+          "line-108-a"
+        ],
+        "calculations": {
+          "lines": [
+            {
+              "lineId": "line-108-a",
+              "netUsd": "100.00",
+              "taxUsd": "7.50"
+            }
+          ],
+          "shippingUsd": "0.00",
+          "shippingTaxUsd": "0.00"
+        }
+      }
+    }
+  ]
+}

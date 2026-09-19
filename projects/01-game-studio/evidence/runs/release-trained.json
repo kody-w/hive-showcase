@@ -1,0 +1,4667 @@
+{
+  "schema": "little-signals-recording/1",
+  "recordedAt": "2026-09-19T01:30:35.531Z",
+  "observation": "Actual deterministic Node execution of the browser game engine; not a human playtest.",
+  "policy": "class",
+  "engineSha256": "0ff727d2d33562981844f933891568b250fe35d3fe0567a08f80606c2bb330b2",
+  "buildsSha256": "bd53a5f05af425d24bfb868e6c67c300cc3bdef4bccf3b6d23f17e0115359237",
+  "score": {
+    "schema": "little-signals-score/1",
+    "game": "01-game-studio",
+    "version": "v4",
+    "scenario": "switchback",
+    "seed": 42,
+    "status": "won",
+    "delivered": 12,
+    "goal": 12,
+    "tick": 96,
+    "limit": 150,
+    "energy": 44,
+    "points": 1386,
+    "automated": true
+  },
+  "metrics": {
+    "moves": 215,
+    "harvested": 12,
+    "energySpent": 227,
+    "chargeTicks": 39,
+    "blockedMoves": 10,
+    "wallBumps": 0,
+    "trafficWaits": 10,
+    "deadlockTicks": 0,
+    "longestStall": 0,
+    "strandedEvents": 0,
+    "rescues": 0,
+    "lessons": 6,
+    "courtesyPasses": 6,
+    "idleTicks": 0
+  },
+  "replayVerified": true,
+  "trace": {
+    "schema": "little-signals-replay/1",
+    "game": "01-game-studio",
+    "options": {
+      "version": "v4",
+      "scenario": "switchback",
+      "seed": 42
+    },
+    "entries": [
+      {
+        "action": {
+          "type": "teach",
+          "robot": 0,
+          "rule": "delivery",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "d6085390",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Pip learned delivery: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "teach",
+          "robot": 0,
+          "rule": "safety",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "cd559a87",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Pip learned safety: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "teach",
+          "robot": 1,
+          "rule": "delivery",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "29cd3ae1",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Ada learned delivery: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "teach",
+          "robot": 1,
+          "rule": "safety",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "a6bac78a",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Ada learned safety: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "teach",
+          "robot": 2,
+          "rule": "delivery",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "47561b34",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Bop learned delivery: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "teach",
+          "robot": 2,
+          "rule": "safety",
+          "value": true
+        },
+        "frames": [
+          {
+            "tick": 0,
+            "hash": "5ce98ae3",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Ready for a lesson"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": [
+              "Bop learned safety: true."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 1,
+            "hash": "b6b0b157",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Waiting for a classmate"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Waiting for a classmate"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 2,
+            "hash": "ca5f7f10",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Waiting for a classmate"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 3,
+            "hash": "eb85e516",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 4,
+            "hash": "fb801fdf",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 5,
+            "hash": "8ada9a8c",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 6,
+            "hash": "d90e57cd",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 7,
+            "hash": "04203e52",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                6,
+                4,
+                17,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 8,
+            "hash": "31d3c6de",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                7,
+                4,
+                16,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                3,
+                17,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 9,
+            "hash": "61087b86",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                8,
+                4,
+                15,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                2,
+                16,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              6,
+              7
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 10,
+            "hash": "32fd099d",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                8,
+                4,
+                14,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                6,
+                2,
+                15,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              6,
+              5,
+              7
+            ],
+            "events": [
+              "Ada picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 11,
+            "hash": "254d6e70",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                7,
+                15,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                8,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                2,
+                14,
+                1,
+                "Picked up a sun pod"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": [
+              "Pip picked up a pod.",
+              "Bop picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 12,
+            "hash": "ada27603",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                6,
+                14,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                7,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                3,
+                13,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 13,
+            "hash": "d56f0361",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                6,
+                14,
+                1,
+                "Waiting for a classmate"
+              ],
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                4,
+                12,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 14,
+            "hash": "b76cd1db",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                6,
+                14,
+                1,
+                "Waiting for a classmate"
+              ],
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 15,
+            "hash": "22f03244",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                6,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 16,
+            "hash": "dee74d1c",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                5,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 17,
+            "hash": "0f30a8ec",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                4,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 18,
+            "hash": "bd2ddd2a",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                3,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 19,
+            "hash": "a100defa",
+            "status": "playing",
+            "delivered": 0,
+            "robots": [
+              [
+                3,
+                4,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 20,
+            "hash": "948bacd0",
+            "status": "playing",
+            "delivered": 1,
+            "robots": [
+              [
+                2,
+                4,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": [
+              "Ada planted pod 1."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 21,
+            "hash": "8254f744",
+            "status": "playing",
+            "delivered": 2,
+            "robots": [
+              [
+                1,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": [
+              "Bop planted pod 2."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 22,
+            "hash": "b2dfb1de",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                1,
+                4,
+                7,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": [
+              "Pip planted pod 3."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 23,
+            "hash": "02c4a12c",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                1,
+                4,
+                13,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 24,
+            "hash": "ed83990c",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                1,
+                4,
+                19,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 25,
+            "hash": "fdc2060e",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 26,
+            "hash": "f2ad9b74",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Waiting for a classmate"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 27,
+            "hash": "3ddff297",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 28,
+            "hash": "dfaeedd2",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 29,
+            "hash": "7e35c421",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 30,
+            "hash": "b7078098",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 31,
+            "hash": "3585c3be",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 32,
+            "hash": "b9665f70",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                5,
+                3,
+                17,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              6
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 33,
+            "hash": "fad6c55b",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                6,
+                4,
+                17,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                7,
+                15,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                5,
+                2,
+                16,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              5
+            ],
+            "events": [
+              "Ada picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 34,
+            "hash": "b1f7ca82",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                7,
+                4,
+                16,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                6,
+                14,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                2,
+                15,
+                0,
+                "Collecting · Moon clover"
+              ]
+            ],
+            "remaining": [
+              5,
+              5,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 35,
+            "hash": "52453b28",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                8,
+                4,
+                15,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                2,
+                14,
+                1,
+                "Picked up a sun pod"
+              ]
+            ],
+            "remaining": [
+              4,
+              5,
+              5
+            ],
+            "events": [
+              "Bop picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 36,
+            "hash": "695f5931",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                8,
+                4,
+                14,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                5,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                3,
+                13,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": [
+              "Pip picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 37,
+            "hash": "8cdbafd4",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                8,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                4,
+                12,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 38,
+            "hash": "086d84a2",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                7,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 39,
+            "hash": "40cc87b4",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                4,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 40,
+            "hash": "39e43ab6",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 41,
+            "hash": "bbf695ff",
+            "status": "playing",
+            "delivered": 3,
+            "robots": [
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 42,
+            "hash": "0b393a02",
+            "status": "playing",
+            "delivered": 4,
+            "robots": [
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                7,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": [
+              "Ada planted pod 4."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 43,
+            "hash": "0e3ed78b",
+            "status": "playing",
+            "delivered": 4,
+            "robots": [
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                13,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 44,
+            "hash": "3a0521ad",
+            "status": "playing",
+            "delivered": 4,
+            "robots": [
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                19,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 45,
+            "hash": "83fb8166",
+            "status": "playing",
+            "delivered": 5,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": [
+              "Bop planted pod 5."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 46,
+            "hash": "74487571",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": [
+              "Pip planted pod 6."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 47,
+            "hash": "d2afac30",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 48,
+            "hash": "bc3c56fd",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 49,
+            "hash": "5c81095e",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 50,
+            "hash": "bfe7d0d8",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 51,
+            "hash": "63c726bf",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 52,
+            "hash": "852d7c2e",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 53,
+            "hash": "942e1488",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              5
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 54,
+            "hash": "8fe2e08a",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                7,
+                15,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              4
+            ],
+            "events": [
+              "Ada picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 55,
+            "hash": "34a5c2cb",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                6,
+                14,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 56,
+            "hash": "cf77ea27",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                6,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                4,
+                17,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 57,
+            "hash": "ef46cb72",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                5,
+                3,
+                17,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                5,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                7,
+                4,
+                16,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 58,
+            "hash": "504500b9",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                5,
+                2,
+                16,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                4,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                8,
+                4,
+                15,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              4,
+              4,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 59,
+            "hash": "ef5813d0",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                6,
+                2,
+                15,
+                0,
+                "Collecting · Moon clover"
+              ],
+              [
+                3,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                8,
+                4,
+                14,
+                1,
+                "Picked up a sun pod"
+              ]
+            ],
+            "remaining": [
+              4,
+              3,
+              4
+            ],
+            "events": [
+              "Bop picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 60,
+            "hash": "2d117e91",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                6,
+                2,
+                14,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                3,
+                4,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                8,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Pip picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 61,
+            "hash": "dcc75572",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                6,
+                3,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                7,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 62,
+            "hash": "d0e63b73",
+            "status": "playing",
+            "delivered": 6,
+            "robots": [
+              [
+                6,
+                4,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 63,
+            "hash": "3f8d3be9",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                7,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Ada planted pod 7."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 64,
+            "hash": "b741c9dd",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                13,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 65,
+            "hash": "fa5e86ff",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                19,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 66,
+            "hash": "382b0886",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 67,
+            "hash": "cc97af8c",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                3,
+                5,
+                8,
+                1,
+                "Waiting for a classmate"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                4,
+                7,
+                1,
+                "Waiting for a classmate"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 68,
+            "hash": "906b2345",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                3,
+                5,
+                8,
+                1,
+                "Waiting for a classmate"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Bop and Ada made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 69,
+            "hash": "8b05685b",
+            "status": "playing",
+            "delivered": 7,
+            "robots": [
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Pip and Ada made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 70,
+            "hash": "e0a55b27",
+            "status": "playing",
+            "delivered": 8,
+            "robots": [
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Bop planted pod 8."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 71,
+            "hash": "e9c5472a",
+            "status": "playing",
+            "delivered": 8,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 72,
+            "hash": "afc0c9f0",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": [
+              "Pip planted pod 9."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 73,
+            "hash": "5184d6e3",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                1,
+                4,
+                11,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 74,
+            "hash": "e13bf514",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                1,
+                4,
+                17,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              4
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 75,
+            "hash": "60dfce90",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                1,
+                4,
+                23,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                6,
+                7,
+                15,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": [
+              "Ada picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 76,
+            "hash": "b4e8c0ff",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                6,
+                6,
+                14,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 77,
+            "hash": "7044ea44",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                6,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 78,
+            "hash": "1354fb2c",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                5,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 79,
+            "hash": "e104b44b",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                4,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": [
+              "Ada and Bop made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 80,
+            "hash": "66de2abd",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                3,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": [
+              "Pip and Ada made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 81,
+            "hash": "d61bb3de",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                3,
+                4,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 82,
+            "hash": "b217f5d0",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                5,
+                4,
+                18,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                2,
+                4,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              3
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 83,
+            "hash": "964d5ac8",
+            "status": "playing",
+            "delivered": 9,
+            "robots": [
+              [
+                6,
+                4,
+                17,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                1,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                7,
+                15,
+                1,
+                "Picked up a sun pod"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              2
+            ],
+            "events": [
+              "Bop picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 84,
+            "hash": "7e10cce4",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                7,
+                4,
+                16,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                1,
+                4,
+                7,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                6,
+                6,
+                14,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              2
+            ],
+            "events": [
+              "Ada planted pod 10."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 85,
+            "hash": "3692c07f",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                8,
+                4,
+                15,
+                0,
+                "Collecting · Sun pods"
+              ],
+              [
+                1,
+                4,
+                13,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                6,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              3,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 86,
+            "hash": "2367ff57",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                8,
+                4,
+                14,
+                1,
+                "Picked up a sun pod"
+              ],
+              [
+                1,
+                4,
+                19,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                5,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": [
+              "Pip picked up a pod."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 87,
+            "hash": "7f5e30b2",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                8,
+                5,
+                13,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ],
+              [
+                4,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 88,
+            "hash": "a65e532c",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                7,
+                5,
+                12,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                3,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 89,
+            "hash": "4a4561a1",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                6,
+                5,
+                11,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Waiting for a classmate"
+              ],
+              [
+                3,
+                4,
+                9,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 90,
+            "hash": "66e05dd1",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                5,
+                5,
+                10,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                4,
+                22,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                2,
+                4,
+                8,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": [
+              "Ada and Bop made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 91,
+            "hash": "547d78ad",
+            "status": "playing",
+            "delivered": 10,
+            "robots": [
+              [
+                4,
+                5,
+                9,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                3,
+                5,
+                21,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 92,
+            "hash": "0e91a6dd",
+            "status": "playing",
+            "delivered": 11,
+            "robots": [
+              [
+                3,
+                5,
+                8,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                4,
+                5,
+                20,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                7,
+                0,
+                "Delivered a sun pod"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": [
+              "Bop planted pod 11.",
+              "Pip and Ada made a little room."
+            ]
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 93,
+            "hash": "15150ea0",
+            "status": "playing",
+            "delivered": 11,
+            "robots": [
+              [
+                3,
+                4,
+                7,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                5,
+                5,
+                19,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                13,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 94,
+            "hash": "7cf13a5c",
+            "status": "playing",
+            "delivered": 11,
+            "robots": [
+              [
+                2,
+                4,
+                6,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                5,
+                18,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                19,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 95,
+            "hash": "0ded6bff",
+            "status": "playing",
+            "delivered": 11,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                1,
+                "Bringing a pod home"
+              ],
+              [
+                6,
+                6,
+                17,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                1,
+                4,
+                24,
+                0,
+                "Recharging at the nursery"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": []
+          }
+        ]
+      },
+      {
+        "action": {
+          "type": "tick",
+          "count": 1
+        },
+        "frames": [
+          {
+            "tick": 96,
+            "hash": "02269e5d",
+            "status": "won",
+            "delivered": 12,
+            "robots": [
+              [
+                1,
+                4,
+                5,
+                0,
+                "Delivered a sun pod"
+              ],
+              [
+                6,
+                7,
+                16,
+                0,
+                "Collecting · Bell moss"
+              ],
+              [
+                2,
+                4,
+                23,
+                0,
+                "Collecting · Sun pods"
+              ]
+            ],
+            "remaining": [
+              3,
+              2,
+              2
+            ],
+            "events": [
+              "Pip planted pod 12."
+            ]
+          }
+        ]
+      }
+    ],
+    "final": {
+      "schema": "little-signals-state/1",
+      "version": "v4",
+      "scenario": "switchback",
+      "seed": 42,
+      "tick": 96,
+      "limit": 150,
+      "actions": 102,
+      "status": "won",
+      "reason": "The nursery is glowing. Your little colony learned to share.",
+      "width": 13,
+      "height": 9,
+      "home": {
+        "x": 1,
+        "y": 4
+      },
+      "goal": 12,
+      "delivered": 12,
+      "lostCargo": 0,
+      "initialPods": 19,
+      "rescueKits": 2,
+      "walls": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "patches": [
+        {
+          "id": "north",
+          "name": "Moon clover",
+          "x": 6,
+          "y": 2,
+          "initial": 6,
+          "remaining": 3
+        },
+        {
+          "id": "east",
+          "name": "Sun pods",
+          "x": 8,
+          "y": 4,
+          "initial": 6,
+          "remaining": 2
+        },
+        {
+          "id": "south",
+          "name": "Bell moss",
+          "x": 6,
+          "y": 7,
+          "initial": 7,
+          "remaining": 2
+        }
+      ],
+      "robots": [
+        {
+          "id": 0,
+          "name": "Pip",
+          "x": 1,
+          "y": 4,
+          "energy": 5,
+          "cargo": 0,
+          "program": {
+            "delivery": true,
+            "safety": true,
+            "focus": "nearest",
+            "job": "collect"
+          },
+          "mode": "Delivered a sun pod",
+          "target": null,
+          "stranded": false,
+          "deliveries": 4,
+          "wait": 0
+        },
+        {
+          "id": 1,
+          "name": "Ada",
+          "x": 6,
+          "y": 7,
+          "energy": 16,
+          "cargo": 0,
+          "program": {
+            "delivery": true,
+            "safety": true,
+            "focus": "nearest",
+            "job": "collect"
+          },
+          "mode": "Collecting · Bell moss",
+          "target": "south",
+          "stranded": false,
+          "deliveries": 4,
+          "wait": 0
+        },
+        {
+          "id": 2,
+          "name": "Bop",
+          "x": 2,
+          "y": 4,
+          "energy": 23,
+          "cargo": 0,
+          "program": {
+            "delivery": true,
+            "safety": true,
+            "focus": "nearest",
+            "job": "collect"
+          },
+          "mode": "Collecting · Sun pods",
+          "target": "east",
+          "stranded": false,
+          "deliveries": 4,
+          "wait": 0
+        }
+      ],
+      "metrics": {
+        "moves": 215,
+        "harvested": 12,
+        "energySpent": 227,
+        "chargeTicks": 39,
+        "blockedMoves": 10,
+        "wallBumps": 0,
+        "trafficWaits": 10,
+        "deadlockTicks": 0,
+        "longestStall": 0,
+        "strandedEvents": 0,
+        "rescues": 0,
+        "lessons": 6,
+        "courtesyPasses": 6,
+        "idleTicks": 0
+      },
+      "events": [
+        "Pip planted pod 12."
+      ]
+    }
+  }
+}

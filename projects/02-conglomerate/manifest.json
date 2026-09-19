@@ -1,0 +1,47 @@
+{
+  "id": "02-conglomerate",
+  "title": "Five-hour Office: The One-Person Conglomerate",
+  "seedSlug": "one-person-conglomerate",
+  "entrypoint": "projects/02-conglomerate/index.html",
+  "summary": "An offline five-venture decision lab with a hard 300-minute week, editable assumptions, explicit infeasibility and sensitivity, planned demand tests, and an original working Ledgerleaf CSV checker.",
+  "checks": [
+    ["node", "--test", "projects/02-conglomerate/test/model.test.mjs", "projects/02-conglomerate/test/checker.test.mjs", "projects/02-conglomerate/test/integration.test.mjs"],
+    ["node", "--check", "projects/02-conglomerate/app.mjs"],
+    ["node", "projects/02-conglomerate/tools/evidence.mjs", "--check"]
+  ],
+  "artifacts": [
+    "projects/02-conglomerate/.gitattributes",
+    "projects/02-conglomerate/index.html",
+    "projects/02-conglomerate/styles.css",
+    "projects/02-conglomerate/app.mjs",
+    "projects/02-conglomerate/model.mjs",
+    "projects/02-conglomerate/csv-checker.mjs",
+    "projects/02-conglomerate/README.md",
+    "projects/02-conglomerate/manifest.json",
+    "projects/02-conglomerate/scope.json",
+    "projects/02-conglomerate/sources.json",
+    "projects/02-conglomerate/data/inputs.json",
+    "projects/02-conglomerate/data/portfolio.csv",
+    "projects/02-conglomerate/data/evidence-register.csv",
+    "projects/02-conglomerate/data/allocation-worksheet.csv",
+    "projects/02-conglomerate/data/capacity.json",
+    "projects/02-conglomerate/data/csv-intake.csv",
+    "projects/02-conglomerate/data/LICENSE",
+    "projects/02-conglomerate/test/model.test.mjs",
+    "projects/02-conglomerate/test/checker.test.mjs",
+    "projects/02-conglomerate/test/integration.test.mjs",
+    "projects/02-conglomerate/tools/evidence.mjs",
+    "projects/02-conglomerate/evidence/result.json"
+  ],
+  "limitations": [
+    "All seed venture facts, audiences, ordinal scores and confidence values are synthetic; no customers, revenue, outreach or market validation are claimed.",
+    "The user's 300-minute week is a separate extension of a 40-hour seed. New narrow-scope estimates are unmeasured; the original reserve and ten experiment rows remain frozen.",
+    "The recommendation is a heuristic for one artifact, not an optimizer of revenue, an approval, or a native Hive task completion. Reuse scores may double-count benefits and timing ignores unknown rework.",
+    "Demand tests are plans only. Future execution estimates exclude recruitment and are not funded in this week's plan; approval and consent would be needed.",
+    "Only Ledgerleaf's offering is implemented. Selecting another simulated winner does not create another product or validate any demand claim.",
+    "CSV checks are structural, case-sensitive and conservative; they do not repair or sanitize input, execute formulas, certify accounting or guarantee import compatibility.",
+    "The browser UI needs the repo-root HTTP preview for local ES modules and JSON. No external resources or runtime dependencies are used; no preview service was started here.",
+    "Automated UI coverage uses a local DOM harness, not a real browser or accessibility certification. Visual browser review remains unperformed."
+  ],
+  "stage": "work-produced"
+}

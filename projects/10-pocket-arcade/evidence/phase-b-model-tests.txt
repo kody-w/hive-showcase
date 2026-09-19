@@ -1,0 +1,25 @@
+✔ UI catalog matches the actual machine-readable contract (1.090291ms)
+✔ safe paths reject traversal, absolute URLs, encoding and foreign projects (0.1755ms)
+✔ manifest availability checks require the actual identity and field shapes (0.286708ms)
+✔ the published contribution schema declares the same IDs and false authority (0.321792ms)
+✔ unverified presence never becomes integration acceptance (0.122292ms)
+✔ three recorded component passes still leave the actual planner dependency pending (0.09925ms)
+✔ saved pass remains unverified if any actual contribution is missing (0.075084ms)
+✔ fixture reports are explicitly refused by the real-contribution UI (0.131708ms)
+✔ the connected-data UI refuses fixture bytes as actual arrived artifacts (0.117083ms)
+✔ reports with positive native authority or malformed pass fields are refused (0.100958ms)
+✔ a self-asserted report pass is insufficient (0.070333ms)
+✔ untrusted report file locators cannot make a foreign request (0.061792ms)
+✔ valid awaiting report is accepted only as awaiting (0.055292ms)
+✔ notes are bounded user data and never a result or integration receipt (0.083292ms)
+✔ every station has availability, acceptance and action controls in the original HTML (0.741ms)
+✔ printable kit provides actual blank cards, local links and four concrete instructions (0.259875ms)
+✔ browser shell neither stores user notes nor executes downloaded strings (0.241208ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 45.729542

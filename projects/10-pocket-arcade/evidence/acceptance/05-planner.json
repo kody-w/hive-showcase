@@ -1,0 +1,72 @@
+{
+  "boundaries": {
+    "automaticPartnerCodeExecution": false,
+    "crossWorldAuthority": false,
+    "externalEffects": false,
+    "foreignWorkspaceRegistration": false,
+    "nativeMembership": false,
+    "physicalManufactureVerified": false,
+    "publicLaunch": false,
+    "signedReceipts": false
+  },
+  "browserObservation": "No browser evidence is claimed here; public deployment validation is a separate workflow.",
+  "checkCapture": {
+    "bytes": 7582,
+    "path": "projects/10-pocket-arcade/evidence/checks/05-planner-runs.json",
+    "sha256": "05aac2dffe390d7b48341a60d8278507c168b3cd25a72f25d6a6986010a1d99c"
+  },
+  "checkOutputs": [
+    {
+      "bytes": 18057,
+      "path": "projects/10-pocket-arcade/evidence/checks/05-planner-0.txt",
+      "sha256": "b2d7e9e524c1d1395805270256c282edd79c9800ac212d538bd07c78865fe59c"
+    },
+    {
+      "bytes": 178,
+      "path": "projects/10-pocket-arcade/evidence/checks/05-planner-1.txt",
+      "sha256": "7b09582120564f3be95f65d47bf3c667b4759c64a8c148b308356ea2c04c4fa3"
+    },
+    {
+      "bytes": 184,
+      "path": "projects/10-pocket-arcade/evidence/checks/05-planner-2.txt",
+      "sha256": "ec5376cc4e3eed156e2fce04db32382b50a222bebcd7d341857907e146085b78"
+    },
+    {
+      "bytes": 556,
+      "path": "projects/10-pocket-arcade/evidence/checks/05-planner-3.txt",
+      "sha256": "bc8477466ec99e63ff26f140b15047bad57645727b2ec13f9f82072104d32714"
+    }
+  ],
+  "checkProvenance": "preserved-valid-original-checks-not-rerun",
+  "fixtureOnly": false,
+  "gates": {
+    "planner-finite": {
+      "basis": "Preserved original checks and the unchanged recorded solver bridge verify the finite seven-task preset, complete model proposal and input-only export/import round trip; this refresh does not rerun the planner workflow.",
+      "status": "passed"
+    },
+    "planner-offline": {
+      "basis": "Preserved static/DOM checks cover local-only behavior. Historical no-publication observations remain historical; authorization to publish this reviewed showcase does not approve a real tournament, native activation or market claim.",
+      "status": "passed"
+    },
+    "planner-refuses-overflow": {
+      "basis": "The 85-minute baseline cannot fit 75 minutes and retains a null schedule. Adversarial cases match; forged imported feasibility is ignored. The +10-minute model proposal preserves every task, and incomplete tie enumeration remains explicit.",
+      "status": "passed"
+    }
+  },
+  "historicalSourceCommit": "230a27a827be66a6d4bedc6bb5e4d2e78acf72c3",
+  "humanOrOwnerReview": "pending",
+  "partnerResult": {
+    "bytes": 11988,
+    "path": "projects/05-planner/evidence/result.json",
+    "sha256": "eefe648291d704f7e603d7beafd0eaa90e80a72eddf9450dba9ceef6be1e591a"
+  },
+  "physicalAcceptance": "not-performed",
+  "projectId": "05-planner",
+  "publication": {
+    "deploymentPerformedHere": false,
+    "showcaseAuthorized": true
+  },
+  "schema": "pocket-arcade-bounded-acceptance/1",
+  "scope": "Public-file technical acceptance only; never verification of withheld private execution.",
+  "sourceBasis": "Current public bytes and explicitly scoped recorded checks; no private Git history required."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-levels-report",
+  "requestedUrl": "https://www.news18.com/business/man-uses-ai-builds-1-million-business-in-just-17-days-9266748.html",
+  "retrievedAt": "2026-09-19T01:24:08.518079+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [],
+  "outcome": "failed",
+  "error": "HTTP Error 403: Forbidden"
+}

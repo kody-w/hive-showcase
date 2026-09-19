@@ -1,0 +1,51 @@
+{
+  "id": "09-handoff",
+  "title": "The receipt that counted twice",
+  "seedSlug": "open-source-infrastructure-foundation",
+  "entrypoint": "projects/09-handoff/index.html",
+  "summary": "A portable public projection of an original duplicate-receipt repair performed by one real historical Astra continuation: unchanged utility and criteria, redacted derived evidence, reproducible source snapshots, and a Pocket Arcade maintenance export.",
+  "checks": [
+    ["python3", "-B", "projects/09-handoff/tools/verify_inputs.py"],
+    ["python3", "-B", "projects/09-handoff/tools/check_acceptance.py"],
+    ["python3", "-B", "-m", "unittest", "discover", "-s", "projects/09-handoff/tests", "-p", "test_ledger.py", "-v"],
+    ["python3", "-B", "projects/09-handoff/tools/build_demo.py", "--check"],
+    ["node", "--test", "projects/09-handoff/tests/replay.test.cjs"],
+    ["python3", "-B", "-m", "unittest", "discover", "-s", "projects/09-handoff/tests", "-p", "test_public_projection.py", "-v"],
+    ["python3", "-B", "projects/09-handoff/tools/verify_evidence.py"]
+  ],
+  "artifacts": [
+    "projects/09-handoff/artifacts/pocket-arcade-maintenance.json",
+    "projects/09-handoff/artifacts/maintenance-contract.json",
+    "projects/09-handoff/cli.py",
+    "projects/09-handoff/receipt_ledger.py",
+    "projects/09-handoff/HANDOFF.md",
+    "projects/09-handoff/ACCEPTANCE.json",
+    "projects/09-handoff/fixtures/duplicate.jsonl",
+    "projects/09-handoff/provenance.json",
+    "projects/09-handoff/evidence/input-hashes.json",
+    "projects/09-handoff/evidence/before.json",
+    "projects/09-handoff/evidence/continuation-baseline.json",
+    "projects/09-handoff/evidence/historical-continuation.json",
+    "projects/09-handoff/evidence/continuation.json",
+    "projects/09-handoff/evidence/recovery.json",
+    "projects/09-handoff/evidence/after.json",
+    "projects/09-handoff/evidence/package-checks.json",
+    "projects/09-handoff/evidence/public-integrity.json",
+    "projects/09-handoff/evidence/midpoint-receipt-ledger.py",
+    "projects/09-handoff/evidence/repair.diff",
+    "projects/09-handoff/evidence/result.json"
+  ],
+  "limitations": [
+    "Clean-room reproduction of the seed's explicitly specified ll-duplicate defect, not an upstream patch or newly discovered bug.",
+    "Original SYNTHETIC fixtures only; no real telemetry, player feedback, human review, or production assurance.",
+    "One real separate Astra continuation performed the original repair. Private invocation records and identity are withheld; this historical fact cannot be independently reverified from the public projection.",
+    "Public historical records are explicitly redacted derivatives, not byte-identical private transcripts or new executions. Original numerical observations and safe input bytes are retained.",
+    "Historical commit hashes are informational; checks use included source snapshots and current public-byte hashes, never private Git objects.",
+    "The browser plays back captured Python output; the Python utility runs separately through the documented CLI.",
+    "Browser visuals were not browser-validated; DOM behavior and static offline references are tested with Node built-ins.",
+    "The seed's separate ordering defect was not an unfinished defect here; this is not the full seed release gate.",
+    "The maintenance artifact is provided for a consumer; integration into another workstream is not claimed.",
+    "No network dependencies, services, native Hive activation, or release authority. Only the coordinating publisher owns remote publication; this projection performs no remote operations."
+  ],
+  "stage": "work-produced"
+}

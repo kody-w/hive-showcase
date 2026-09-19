@@ -1,0 +1,226 @@
+{
+  "schema": "pocket-arcade-component-checks/1",
+  "projectId": "05-planner",
+  "fixtureOnly": false,
+  "approvedSnapshot": "502b74346fe913550f732a1a160d76162f392ce4",
+  "recordedOriginalSourceCommit": "230a27a827be66a6d4bedc6bb5e4d2e78acf72c3",
+  "execution": "Explicit prime invocation of reviewed original checks; never execution by the validator.",
+  "manifest": {
+    "path": "projects/05-planner/manifest.json",
+    "sha256": "be32190db7b40a42850abddd7799b6496983068aa31b63af758bcad5f20b9534",
+    "bytes": 3954
+  },
+  "componentFiles": [
+    {
+      "path": "projects/05-planner/README.md",
+      "sha256": "0963c67f913fa7d2cb487dd5b6873a7fabb7e19a6712ca6a6ce05e5a2b755f60",
+      "bytes": 17862
+    },
+    {
+      "path": "projects/05-planner/app.bundle.js",
+      "sha256": "17460cfcf3b391baab3ad043527ae3c1c3234fee3fdf93d9948804a32e49dd13",
+      "bytes": 60587
+    },
+    {
+      "path": "projects/05-planner/app.mjs",
+      "sha256": "20683e1cb376ac07d6d20a3f68c331af3eb6afbeb6bac186ea75c0feb449c823",
+      "bytes": 20971
+    },
+    {
+      "path": "projects/05-planner/data/source/LICENSE",
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+      "bytes": 1079
+    },
+    {
+      "path": "projects/05-planner/data/source/acceptance-cases.json",
+      "sha256": "6d823e958e25f9ef223e352fa146471011cf77b41f9277caf7a11c72c00378ef",
+      "bytes": 2093
+    },
+    {
+      "path": "projects/05-planner/data/source/initialize.json",
+      "sha256": "dd8fa1284950733c20521dfd516cd5b5baa98ff398ffc3da6065eef8232fe947",
+      "bytes": 4176
+    },
+    {
+      "path": "projects/05-planner/data/source/intake.json",
+      "sha256": "774ebdde3a4f88174cb503bf315156b4d4909cfb9d1b3144203c256463b88cc2",
+      "bytes": 1364
+    },
+    {
+      "path": "projects/05-planner/data/source/sample-agenda.json",
+      "sha256": "9782d287e0e1cc50e233e7e22a0d30dc2c402f430a1cde51555464637700bedc",
+      "bytes": 776
+    },
+    {
+      "path": "projects/05-planner/data/source/seed.json",
+      "sha256": "a954c9350bc3f2b9ccbb542479387992c49f00dbb27bc147d592b45c287c6bb5",
+      "bytes": 5958
+    },
+    {
+      "path": "projects/05-planner/data/source/task-board.json",
+      "sha256": "4f13a54cf3573220743b9916466f493ecde81f975192e4e77791d1727fc98a75",
+      "bytes": 10798
+    },
+    {
+      "path": "projects/05-planner/docs/FAQ.md",
+      "sha256": "ee83afd580c296073ee12f2fdf8b24784c0bdde96d439893cff748507fe99d1b",
+      "bytes": 6173
+    },
+    {
+      "path": "projects/05-planner/docs/launch-draft.md",
+      "sha256": "cd69c248693d7a9b56d1293f7a1fc928a4fd5359cc59569a37b480ab9647285b",
+      "bytes": 5500
+    },
+    {
+      "path": "projects/05-planner/docs/manual-checks.json",
+      "sha256": "86963a3a9014b268fe999364c90c5f6ddd5902b4c93d947e7a9e2ace52466412",
+      "bytes": 3012
+    },
+    {
+      "path": "projects/05-planner/docs/task-mapping.md",
+      "sha256": "61882809d58571cafac263f8debded5b6c1eaeafc430e14c105150a0b63fbb08",
+      "bytes": 5613
+    },
+    {
+      "path": "projects/05-planner/editor.mjs",
+      "sha256": "4fc41b34deb74fb30d983eef286bb938c98c26eb1f3323ecf822aa3405a195f6",
+      "bytes": 3637
+    },
+    {
+      "path": "projects/05-planner/engine.mjs",
+      "sha256": "66a9abbcc9c3a0c00dc7841ed5b36c78a3d3349a74bf80178202818d791974cf",
+      "bytes": 30634
+    },
+    {
+      "path": "projects/05-planner/evidence/check-01.tap",
+      "sha256": "8fa9855b95f648f478fcb84f55006a36ba2bcd930ff2f1ee60cd4e33242fa6b7",
+      "bytes": 17669
+    },
+    {
+      "path": "projects/05-planner/evidence/fixture-results.json",
+      "sha256": "89f0367aef4eea8bda6d3b84b37eb627faea7df665ecbab3f4a2326af6342961",
+      "bytes": 170405
+    },
+    {
+      "path": "projects/05-planner/evidence/result.json",
+      "sha256": "eefe648291d704f7e603d7beafd0eaa90e80a72eddf9450dba9ceef6be1e591a",
+      "bytes": 11988
+    },
+    {
+      "path": "projects/05-planner/fixtures/adversarial.json",
+      "sha256": "d6bcc8a42612d8dc4421799cab5011609ef30c1b52084319b16fbf0a3f3e160d",
+      "bytes": 14559
+    },
+    {
+      "path": "projects/05-planner/fixtures/boundary.json",
+      "sha256": "a76fdb85867c4ec120057da3a4ab1e6f576414b6a8bbf454589be9ef0c418e86",
+      "bytes": 1117
+    },
+    {
+      "path": "projects/05-planner/fixtures/disjoint.json",
+      "sha256": "96220fed3ab1ed7a026fffd77827ea04017830ad09a668b1e64afa33932d9fb0",
+      "bytes": 675
+    },
+    {
+      "path": "projects/05-planner/fixtures/library.json",
+      "sha256": "24785a9694b54d2be2501668e43eedd6721a6fe11a8662434f778c0cc316e039",
+      "bytes": 2320
+    },
+    {
+      "path": "projects/05-planner/fixtures/pocket-arcade.json",
+      "sha256": "44d916e056b463535eb051a4260b6c967d63d8d6aab87df73d6a59f858c92987",
+      "bytes": 2331
+    },
+    {
+      "path": "projects/05-planner/index.html",
+      "sha256": "c7dfe6eb8ea1115526d7cc1053a5293ecb19dfb2aa907af448906de158d0fd4e",
+      "bytes": 11528
+    },
+    {
+      "path": "projects/05-planner/manifest.json",
+      "sha256": "be32190db7b40a42850abddd7799b6496983068aa31b63af758bcad5f20b9534",
+      "bytes": 3954
+    },
+    {
+      "path": "projects/05-planner/presets.mjs",
+      "sha256": "d34d05e0d6ad0a82ee05e44aa0093cc298e7070d8d083f1ebe139bac73e5c3e8",
+      "bytes": 5279
+    },
+    {
+      "path": "projects/05-planner/provenance.json",
+      "sha256": "c4084cb90b629b3f38fd10092a82b4e05f57720b760fe3f71561199bd638b911",
+      "bytes": 7227
+    },
+    {
+      "path": "projects/05-planner/styles.css",
+      "sha256": "4a9aa347b065a9ba43968a73a3e02f6ba22102dd4b92df6d78caedbe5727773c",
+      "bytes": 13503
+    }
+  ],
+  "declaredFilesUnchanged": true,
+  "allPassed": true,
+  "checkRuns": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/05-planner/tests/engine.test.mjs",
+        "projects/05-planner/tests/oracle.test.mjs",
+        "projects/05-planner/tests/editor.test.mjs",
+        "projects/05-planner/tests/artifacts.test.mjs",
+        "projects/05-planner/tests/ui.test.mjs"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/05-planner-0.txt",
+        "sha256": "b2d7e9e524c1d1395805270256c282edd79c9800ac212d538bd07c78865fe59c",
+        "bytes": 18057
+      },
+      "recordedAt": "2026-09-19T02:21:34.695076+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/05-planner/app.mjs"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/05-planner-1.txt",
+        "sha256": "7b09582120564f3be95f65d47bf3c667b4759c64a8c148b308356ea2c04c4fa3",
+        "bytes": 178
+      },
+      "recordedAt": "2026-09-19T02:21:35.125964+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "projects/05-planner/app.bundle.js"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/05-planner-2.txt",
+        "sha256": "ec5376cc4e3eed156e2fce04db32382b50a222bebcd7d341857907e146085b78",
+        "bytes": 184
+      },
+      "recordedAt": "2026-09-19T02:21:35.167571+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "projects/05-planner/tools/build.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": {
+        "path": "projects/10-pocket-arcade/evidence/checks/05-planner-3.txt",
+        "sha256": "bc8477466ec99e63ff26f140b15047bad57645727b2ec13f9f82072104d32714",
+        "bytes": 556
+      },
+      "recordedAt": "2026-09-19T02:21:35.202003+00:00"
+    }
+  ],
+  "nativeOrOwnerApproval": false
+}

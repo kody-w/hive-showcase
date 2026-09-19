@@ -1,0 +1,87 @@
+{
+  "boundaries": {
+    "automaticPartnerCodeExecution": false,
+    "crossWorldAuthority": false,
+    "externalEffects": false,
+    "foreignWorkspaceRegistration": false,
+    "nativeMembership": false,
+    "physicalManufactureVerified": false,
+    "publicLaunch": false,
+    "signedReceipts": false
+  },
+  "browserObservation": "No browser evidence is claimed here; public deployment validation is a separate workflow.",
+  "checkCapture": {
+    "bytes": 8167,
+    "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-runs.json",
+    "sha256": "d8d1a9eaaf226d565d3dc7762cf301faa08cceb47b8344998627f96551752c49"
+  },
+  "checkOutputs": [
+    {
+      "bytes": 400,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-0.txt",
+      "sha256": "670c62a847ff24f9a455b60b971d38943833526f6d2aa87890dcd1b04071c927"
+    },
+    {
+      "bytes": 3551,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-1.txt",
+      "sha256": "1f1bb1f392b60195f834a946f6d61649fd6073715b2445fc194f0372544f6eed"
+    },
+    {
+      "bytes": 1781,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-2.txt",
+      "sha256": "2926eb4551bc15e6f2a93425cb85f516c955673898798af1d80acd576a37b104"
+    },
+    {
+      "bytes": 380,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-3.txt",
+      "sha256": "feef6bc84c5a1ddfb8d73220c5cd633f06480f625c42b62e4f3cb7e8e6a4f979"
+    },
+    {
+      "bytes": 1379,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-4.txt",
+      "sha256": "360ab3a34243b384507db346ba40d4cadd51fcd0c81546eea641e42309fa84a0"
+    },
+    {
+      "bytes": 1825,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-5.txt",
+      "sha256": "c8e2549ad51494a608696c4eb95ba57884eb178db45bcf7673644755c39335de"
+    },
+    {
+      "bytes": 680,
+      "path": "projects/10-pocket-arcade/evidence/checks/09-handoff-6.txt",
+      "sha256": "f4baabc870ac2e893dc7a39b9cb30dde10005108945ee52fae5b4d2e09b1de0b"
+    }
+  ],
+  "checkProvenance": "new-public-projection-checks",
+  "fixtureOnly": false,
+  "gates": {
+    "maintenance-artifact-only": {
+      "basis": "Current public artifacts and an explicitly derived historical summary are inspected. This does not independently reverify the removed private invocation or identity. SYNTHETIC scope and release_authority false remain mandatory.",
+      "status": "passed"
+    },
+    "maintenance-contract": {
+      "basis": "Seven current public checks cover strict acceptance, 19 ledger regressions, 12 replay tests, 14 projection/privacy tests and public evidence binding. Historical failing acceptance remains exit 1 in a labeled derived record.",
+      "status": "passed"
+    },
+    "maintenance-reproducible": {
+      "basis": "Current public checks reproduce the unchanged CLI/export and the included midpoint/repaired-source behavior without private Git objects. The current queue retains exact input hash and raw/unique/replayed counts.",
+      "status": "passed"
+    }
+  },
+  "historicalSourceCommit": null,
+  "humanOrOwnerReview": "pending",
+  "partnerResult": {
+    "bytes": 7466,
+    "path": "projects/09-handoff/evidence/result.json",
+    "sha256": "5ce58892864d37f27614e11448c5c6ca45352361d1b7b660753e2b87ee59967f"
+  },
+  "physicalAcceptance": "not-performed",
+  "projectId": "09-handoff",
+  "publication": {
+    "deploymentPerformedHere": false,
+    "showcaseAuthorized": true
+  },
+  "schema": "pocket-arcade-bounded-acceptance/1",
+  "scope": "Public-file technical acceptance only; never verification of withheld private execution.",
+  "sourceBasis": "Current public bytes and explicitly scoped recorded checks; no private Git history required."
+}

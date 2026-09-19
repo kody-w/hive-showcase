@@ -1,0 +1,396 @@
+{
+  "schema": "agenda-planner-export/1",
+  "engineVersion": "1.0.0",
+  "agendaSchema": "agenda-planner/1",
+  "content": "current-analysis",
+  "status": "feasible",
+  "agenda": {
+    "schema": "agenda-planner/1",
+    "title": "Pocket Arcade tournament",
+    "classification": "synthetic",
+    "day": {
+      "start": 840,
+      "end": 925,
+      "stepMinutes": 5,
+      "availability": [
+        [
+          840,
+          930
+        ]
+      ]
+    },
+    "tasks": [
+      {
+        "id": "check-in",
+        "label": "Player check-in & rules",
+        "duration": 10,
+        "availability": [
+          [
+            840,
+            850
+          ]
+        ],
+        "dependsOn": [],
+        "fixedStart": 840,
+        "kind": "event"
+      },
+      {
+        "id": "round-one",
+        "label": "Pocket Arcade • qualifying round",
+        "duration": 20,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "check-in"
+        ],
+        "fixedStart": null,
+        "kind": "task"
+      },
+      {
+        "id": "break-one",
+        "label": "Screen break & score check",
+        "duration": 5,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "round-one"
+        ],
+        "fixedStart": null,
+        "kind": "break"
+      },
+      {
+        "id": "round-two",
+        "label": "Pocket Arcade • semifinal",
+        "duration": 20,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "break-one"
+        ],
+        "fixedStart": null,
+        "kind": "task"
+      },
+      {
+        "id": "break-two",
+        "label": "Reset & rest",
+        "duration": 5,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "round-two"
+        ],
+        "fixedStart": null,
+        "kind": "break"
+      },
+      {
+        "id": "final",
+        "label": "Pocket Arcade • final",
+        "duration": 20,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "break-two"
+        ],
+        "fixedStart": null,
+        "kind": "task"
+      },
+      {
+        "id": "results",
+        "label": "Results & thank-you",
+        "duration": 5,
+        "availability": [
+          [
+            850,
+            930
+          ]
+        ],
+        "dependsOn": [
+          "final"
+        ],
+        "fixedStart": null,
+        "kind": "task"
+      }
+    ],
+    "repairs": {
+      "latestEnd": 930,
+      "durationFloors": {
+        "round-one": 10,
+        "round-two": 10,
+        "final": 10
+      }
+    }
+  },
+  "analysis": {
+    "schema": "agenda-planner-analysis/1",
+    "engineVersion": "1.0.0",
+    "agenda": {
+      "schema": "agenda-planner/1",
+      "title": "Pocket Arcade tournament",
+      "classification": "synthetic",
+      "day": {
+        "start": 840,
+        "end": 925,
+        "stepMinutes": 5,
+        "availability": [
+          [
+            840,
+            930
+          ]
+        ]
+      },
+      "tasks": [
+        {
+          "id": "check-in",
+          "label": "Player check-in & rules",
+          "duration": 10,
+          "availability": [
+            [
+              840,
+              850
+            ]
+          ],
+          "dependsOn": [],
+          "fixedStart": 840,
+          "kind": "event"
+        },
+        {
+          "id": "round-one",
+          "label": "Pocket Arcade • qualifying round",
+          "duration": 20,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "check-in"
+          ],
+          "fixedStart": null,
+          "kind": "task"
+        },
+        {
+          "id": "break-one",
+          "label": "Screen break & score check",
+          "duration": 5,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "round-one"
+          ],
+          "fixedStart": null,
+          "kind": "break"
+        },
+        {
+          "id": "round-two",
+          "label": "Pocket Arcade • semifinal",
+          "duration": 20,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "break-one"
+          ],
+          "fixedStart": null,
+          "kind": "task"
+        },
+        {
+          "id": "break-two",
+          "label": "Reset & rest",
+          "duration": 5,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "round-two"
+          ],
+          "fixedStart": null,
+          "kind": "break"
+        },
+        {
+          "id": "final",
+          "label": "Pocket Arcade • final",
+          "duration": 20,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "break-two"
+          ],
+          "fixedStart": null,
+          "kind": "task"
+        },
+        {
+          "id": "results",
+          "label": "Results & thank-you",
+          "duration": 5,
+          "availability": [
+            [
+              850,
+              930
+            ]
+          ],
+          "dependsOn": [
+            "final"
+          ],
+          "fixedStart": null,
+          "kind": "task"
+        }
+      ],
+      "repairs": {
+        "latestEnd": 930,
+        "durationFloors": {
+          "round-one": 10,
+          "round-two": 10,
+          "final": 10
+        }
+      }
+    },
+    "feasibility": {
+      "schema": "agenda-planner-solution/1",
+      "status": "feasible",
+      "message": "Every commitment fits; the complete schedule is a checkable witness.",
+      "schedule": [
+        {
+          "taskId": "check-in",
+          "start": 840,
+          "end": 850,
+          "duration": 10
+        },
+        {
+          "taskId": "round-one",
+          "start": 850,
+          "end": 870,
+          "duration": 20
+        },
+        {
+          "taskId": "break-one",
+          "start": 870,
+          "end": 875,
+          "duration": 5
+        },
+        {
+          "taskId": "round-two",
+          "start": 875,
+          "end": 895,
+          "duration": 20
+        },
+        {
+          "taskId": "break-two",
+          "start": 895,
+          "end": 900,
+          "duration": 5
+        },
+        {
+          "taskId": "final",
+          "start": 900,
+          "end": 920,
+          "duration": 20
+        },
+        {
+          "taskId": "results",
+          "start": 920,
+          "end": 925,
+          "duration": 5
+        }
+      ],
+      "proof": {
+        "kind": "witness",
+        "complete": true
+      },
+      "stats": {
+        "nodesVisited": 10,
+        "nodeLimit": 20000,
+        "totalNodesVisited": 10
+      }
+    },
+    "conflict": {
+      "status": "not-applicable",
+      "taskIds": [],
+      "minimumCardinalityProven": false,
+      "explanation": "A feasible witness exists; no conflict core is needed."
+    },
+    "repairs": {
+      "objective": {
+        "id": "fewest-fields-then-minutes/1",
+        "order": [
+          "changedFields",
+          "totalMinutes"
+        ],
+        "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+      },
+      "choices": [],
+      "status": "not-needed"
+    },
+    "limits": {
+      "maxTasks": 8,
+      "maxSlots": 120,
+      "maxWindows": 16,
+      "steps": [
+        1,
+        5,
+        10,
+        15,
+        30,
+        60
+      ],
+      "defaultNodes": 20000,
+      "defaultCoreNodes": 20000,
+      "defaultRepairNodes": 60000,
+      "defaultRepairCandidates": 2500,
+      "hardNodes": 1000000,
+      "hardRepairCandidates": 100000
+    },
+    "settings": {
+      "maxNodes": 20000,
+      "maxCoreNodes": 20000,
+      "maxCoreChecks": 255,
+      "maxRepairNodes": 60000,
+      "maxRepairCandidates": 2500,
+      "maxChoices": 4
+    }
+  },
+  "notice": "Local model output, not a calendar booking, user study, or public launch. A repair changes explicit time budgets only after approval. Pocket Arcade proposal only: owner/native approval remains pending; no real tournament was held or booked.",
+  "pocketArcadeReview": {
+    "modelProposalOnly": true,
+    "ownerApproved": false,
+    "nativeAuthority": false,
+    "humanFunVerified": false,
+    "marketValidated": false,
+    "physicalFabricationApproved": false,
+    "publicationApproved": false
+  }
+}

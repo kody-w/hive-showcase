@@ -1,0 +1,136 @@
+{
+  "schema": "agenda-planner/1",
+  "title": "Pocket Arcade tournament",
+  "classification": "synthetic",
+  "day": {
+    "start": 840,
+    "end": 915,
+    "stepMinutes": 5,
+    "availability": [
+      [
+        840,
+        930
+      ]
+    ]
+  },
+  "tasks": [
+    {
+      "id": "check-in",
+      "label": "Player check-in & rules",
+      "duration": 10,
+      "availability": [
+        [
+          840,
+          850
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": 840,
+      "kind": "event"
+    },
+    {
+      "id": "round-one",
+      "label": "Pocket Arcade • qualifying round",
+      "duration": 20,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "check-in"
+      ],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "break-one",
+      "label": "Screen break & score check",
+      "duration": 5,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "round-one"
+      ],
+      "fixedStart": null,
+      "kind": "break"
+    },
+    {
+      "id": "round-two",
+      "label": "Pocket Arcade • semifinal",
+      "duration": 20,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "break-one"
+      ],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "break-two",
+      "label": "Reset & rest",
+      "duration": 5,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "round-two"
+      ],
+      "fixedStart": null,
+      "kind": "break"
+    },
+    {
+      "id": "final",
+      "label": "Pocket Arcade • final",
+      "duration": 20,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "break-two"
+      ],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "results",
+      "label": "Results & thank-you",
+      "duration": 5,
+      "availability": [
+        [
+          850,
+          930
+        ]
+      ],
+      "dependsOn": [
+        "final"
+      ],
+      "fixedStart": null,
+      "kind": "task"
+    }
+  ],
+  "repairs": {
+    "latestEnd": 930,
+    "durationFloors": {
+      "round-one": 10,
+      "round-two": 10,
+      "final": 10
+    }
+  }
+}

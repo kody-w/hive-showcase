@@ -1,0 +1,53 @@
+{
+  "schema": "pocket-arcade-seed-mapping/1",
+  "seedSlug": "federation-prime-contractor",
+  "verificationReport": "evidence/seed-verification.json",
+  "seedRef": "sha256:069200f14e55eb2a91f912ee2e9af636bec4c5950f8f27c917fd45d859c91114",
+  "archiveRef": "sha256:4c17f17bc151588633825452b234fed080a057399a76bb5a7cd6edb58c75d043",
+  "seedFileSha256": "b95c296369509dc6a3586b8c3afdd660e718382138cfa0a6b7a83331fd7be645",
+  "initializeFileSha256": "2b86c01736e8d94df0e87a66814f9b6cc2342800e3068dda0b9348b4165449e2",
+  "inertReference": {
+    "caseId": "pocket-queue-prime-pilot",
+    "readyTaskId": "freeze-prime-engagement",
+    "subject": "Fictional Hearthstep Maker Hall anonymous-ticket rehearsal",
+    "syntheticAttendeeCeiling": 60,
+    "retentionCeilingMinutes": 120,
+    "ownTeamScopes": ["program-office", "partner-sourcing", "integration", "acceptance-quality", "change-control"],
+    "discoveryOnlyCandidates": ["applied-invention-lab", "enterprise-transformation-firm", "product-launch-company"],
+    "nativeCaseCompleted": false,
+    "referenceTestsExecuted": false,
+    "referenceCodeImportedOrEmbedded": false
+  },
+  "requestedExtension": {
+    "id": "pocket-arcade-local-extension",
+    "relationshipToReadyCase": "A new, original local implementation of bounded artifact briefs, dependency gates, rejection and honest handoff. It is not the seed's anonymous-ticket pilot.",
+    "substitutions": [
+      "Robot gameplay replaces the anonymous-ticket prototype; no ticket schema compatibility is claimed.",
+      "A finite tournament planner replaces the queue operating model; the seed's 60-attendee and retention criteria are not reused as game acceptance.",
+      "A card/token tray and printable operator kit are new tabletop deliverables.",
+      "An artifact-only maintenance handoff is a new bounded local contribution."
+    ],
+    "teamScopeMapping": {
+      "program-office": "Freeze four local contribution scopes and the four-stop user journey.",
+      "partner-sourcing": "Publish machine-readable interfaces pointing at original local demos; no outreach or contracts.",
+      "integration": "Link artifacts in their own project directories and lock exact reviewed bytes.",
+      "acceptance-quality": "Fail missing/malformed inputs, verify hashes and recorded acceptance, and label fixture-only tests.",
+      "change-control": "Keep native authority false and require new evidence whenever source bytes change."
+    }
+  },
+  "partnerDataReviewed": [
+    {"seedSlug": "independent-game-studio", "path": "templates/casework/work/ACCEPTANCE.md", "carryover": "Determinism, explicit controls, offline limits and no invented playtests; not completion of the seed's three original boards."},
+    {"seedSlug": "product-launch-company", "path": "templates/casework/work/ACCEPTANCE.md", "carryover": "Honest finite-capacity refusal and separation of automated from manual evidence; not a launch or adoption claim."},
+    {"seedSlug": "micro-manufacturing-company", "path": "templates/casework/work/ACCEPTANCE.md", "carryover": "Model/geometry review is distinct from real fabrication and shipment; original nominal dimensions are not automatically adopted."},
+    {"seedSlug": "open-source-infrastructure-foundation", "path": "templates/casework/work/ACCEPTANCE.md", "carryover": "Reproducible strict checks, explicit source ownership and no publication authority; not a claim to have repaired the downloaded utility."}
+  ],
+  "authority": {
+    "nativeInitialization": false,
+    "membership": false,
+    "foreignWorkspaceRegistration": false,
+    "signedReceipts": false,
+    "federationActivation": false,
+    "crossWorldAuthority": false,
+    "externalEffects": []
+  }
+}

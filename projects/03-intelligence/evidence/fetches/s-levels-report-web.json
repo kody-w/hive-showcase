@@ -1,0 +1,35 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-levels-report",
+  "requestedUrl": "https://www.news18.com/business/man-uses-ai-builds-1-million-business-in-just-17-days-9266748.html",
+  "finalUrl": null,
+  "retrievedAt": "2026-09-19",
+  "timestampPrecision": "UTC day; exact request timestamp not exposed by the fetch tool",
+  "method": "Successful functions.web_fetch public-page retrieval; bounded exact excerpts transcribed from its returned content",
+  "outcome": "captured",
+  "status": null,
+  "responseSha256": null,
+  "responseBytes": null,
+  "pageTitle": "Man Builds $1-Million Business Using AI In Just 17 Days",
+  "storagePolicy": "Short excerpts only. The fetch tool did not expose HTTP headers or raw response bytes; no raw-response hash is claimed. The separate urllib 403 result is preserved in s-levels-report.json.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "found": true,
+      "locator": "What Is The Game?",
+      "text": "It is “a free-to-play MMO flight sim, 100% made with AI, without loading screen and GBs of updates\", according to fly.pieter.com."
+    },
+    {
+      "id": "e2",
+      "found": true,
+      "locator": "AI-Made Flight Simulator: A $1 Million Business",
+      "text": "The game developed by Levels using AI tools is now pulling in a total of $87,000 per month (monthly recurring revenue or MRR), according to his X handle."
+    },
+    {
+      "id": "e3",
+      "found": true,
+      "locator": "Article date line",
+      "text": "Last Updated:March 19, 2025, 15:48 IST"
+    }
+  ]
+}

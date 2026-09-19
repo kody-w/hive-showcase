@@ -1,0 +1,40 @@
+{
+  "schema": "local-invention-repetition/1",
+  "status": "pass",
+  "runtime": {
+    "node": "v26.7.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "commandFromRepositoryRoot": [
+    "node",
+    "projects/04-invention/scripts/replicate.mjs",
+    "--write"
+  ],
+  "repeatedCommandFromRepositoryRoot": [
+    "node",
+    "projects/04-invention/scripts/experiment.mjs",
+    "--emit"
+  ],
+  "freshProcesses": 2,
+  "outputHashes": [
+    "09704b17fcae134064cad2c3d79e5910586d050ab488fa4683e6a31fcfad41cf",
+    "09704b17fcae134064cad2c3d79e5910586d050ab488fa4683e6a31fcfad41cf"
+  ],
+  "byteIdentical": true,
+  "savedEvidenceMatches": true,
+  "assignmentAudit": {
+    "checked": 504,
+    "errors": 0,
+    "verifier": "Separate traversal of serialized IDs and input loads, not solver validation flags."
+  },
+  "artifactHashes": {
+    "evidence/dataset-audit.json": "6c77f1a9dfbce395f1c9a4ac30cd5e335107d0f80115aed3bb035dee5adacf37",
+    "evidence/baseline.json": "12158313b556ffb2fc547a7aa56f1e8c4abaa8337486aca10835f11c80c896a9",
+    "evidence/trials.json": "3923c8a2b64d7a6818bf5977c9639553b430768a40c570d589e461af38ebebd1",
+    "evidence/counterexamples.json": "f7ceee49f611ce229c82bca982ec138fa62a9fd441702d5dbe61b9a09a9d937b",
+    "evidence/result.json": "6c52a8edc2b73a8bf901218309b51f54f7cc935981321f83a55fcd0393938cf1",
+    "evidence/snapshot.js": "6ed816c1c561d9b1a4d9daae9a035640917d1643587c6ce9448fb547be7247fd"
+  },
+  "scope": "Two fresh original-JavaScript processes plus a separate serialized-assignment audit. Not independent human replication or a browser/physical test."
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "inert-data-provenance/1",
+  "seedSlug": "one-person-conglomerate",
+  "upstream": "https://kody-w.github.io/hive-hub/",
+  "packageVerification": "evidence/seed-verification.json",
+  "seedRef": "sha256:f111199b1a276f9fc8c836aa53ef5234af6bc847db3fdd963dd2bf3bff16a663",
+  "archiveRef": "sha256:e49bee2ffd6c9bf3cd5dbd04cde9c73c2e3f4291456fb317a47d3a2e90515239",
+  "attribution": "Synthetic seed data and derived names/claims: Copyright (c) 2026 Hive Hub contributors, MIT; full notice in data/LICENSE. All browser code, modeling implementation, test plans and tests are original for this demonstrator.",
+  "method": "Read only seed/init/task-board/intake, relevant TEAM descriptions, data and explanatory documents. No downloaded reference code was read or run. Frozen files are byte-matched to the verified package. inputs.json is an attributed transformation with explicitly new estimates.",
+  "frozenFiles": [
+    {"local": "data/LICENSE", "source": "LICENSE", "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"},
+    {"local": "data/portfolio.csv", "source": "templates/casework/work/starter/data/portfolio.csv", "sha256": "4ad0bdec0a16139274136f8733d55672f693917906498582c54a9f0d355dcc11"},
+    {"local": "data/evidence-register.csv", "source": "templates/casework/work/starter/data/evidence-register.csv", "sha256": "6bce712fe9f24a7057f36d105f23c62c730479a3a73d08abc4a041fb612cf761"},
+    {"local": "data/allocation-worksheet.csv", "source": "templates/casework/work/starter/data/allocation-worksheet.csv", "sha256": "4af5c94434193d953aad94b4e88e777fc0713866109f98b78001154afe0ca3ad"},
+    {"local": "data/capacity.json", "source": "templates/casework/work/starter/data/capacity.json", "sha256": "b16ad0a1e17f4170bb530a9f5e9931de7fc8c91a4755819bc7f6a189d6043498"},
+    {"local": "data/csv-intake.csv", "source": "templates/casework/work/starter/data/csv-intake.csv", "sha256": "d105e825826d14eeb58da71d0b0ada4565d08d70e39b6be11d70c689f788a5a1"}
+  ],
+  "reviewedReferences": [
+    {"source": "seed.json", "sha256": "99e64333e6a7f892d5a9e239da7b202409f4164107b3f11cb9131c026c9217cf"},
+    {"source": "initialize.json", "sha256": "369817eecb20f026ca375311a0103e59ef0ef8504bad4075667b7bdfeb23d1a9"},
+    {"source": "templates/casework/work/intake.json", "sha256": "2c298022dba44a53190725b7e7a37b3a2a4d699755e3203b368a4894f780a0bf"},
+    {"source": "templates/casework/work/task-board.json", "sha256": "c44eac63a5762144b9d4390bdd855261d5e21685e2373befa3a58e29ffa64303"},
+    {"source": "templates/casework/work/starter/docs/charter.md", "sha256": "884d8142a633a0b2c12d904e0e4af55af84b2c149d01761055c563fbdde9be9b"},
+    {"source": "templates/casework/work/starter/docs/business-briefs.md", "sha256": "c6e462778a2dbb35650774bdb3cb0732a0f29f28976eb048ed59b0a6db63f446"},
+    {"source": "templates/casework/work/starter/docs/review-rubric.md", "sha256": "53bac8052f91f597f247b7d31761a0df42655bda0fd25d8903913004b8b8bafb"},
+    {"source": "templates/teams/executive-office/work/TEAM.md", "sha256": "c9110c9169661201bf319eb3faccb373a7aecf6d42f6e8156223099a164c7ffc"},
+    {"source": "templates/teams/portfolio-finance/work/TEAM.md", "sha256": "2aca5f30612d97d7e2294d1a8712ccc5b8efac829f93bf6b930e7913582236bd"},
+    {"source": "templates/teams/portfolio-research/work/TEAM.md", "sha256": "d79f853f2cd87339eed2e4a56c3041bfb012e8d646597a6ce8847855894f084b"},
+    {"source": "templates/teams/platform-engineering/work/TEAM.md", "sha256": "2c9acc2c071aab2a818be4e9ff83a42371b23e0f67b1d60d277c707d947f1617"},
+    {"source": "templates/teams/portfolio-go-to-market/work/TEAM.md", "sha256": "0158e925113e31c7f301ac2908e066053a7e1cac8026adea04ba0ab087526621"},
+    {"source": "templates/teams/ledgerleaf-tools/work/TEAM.md", "sha256": "4f887945c9bb487b3edda9a71ef5456dae60718d0102df6436a6193706960376"},
+    {"source": "templates/teams/fieldnote-guides/work/TEAM.md", "sha256": "1d71a6840b87678eee49346beb6fa970fa66dbad616c5b0655db73537310e1bd"},
+    {"source": "templates/teams/quietbench-templates/work/TEAM.md", "sha256": "6b92de004006c5666cd9eeb481d74740f526fa9efdb57507ed0e5b2382721074"},
+    {"source": "templates/teams/routepaper-planners/work/TEAM.md", "sha256": "8b24bad95c63955dcae9c847e32b2a2c82280d62da5a24a7f158b427fae418b6"},
+    {"source": "templates/teams/tinylesson-studio/work/TEAM.md", "sha256": "75f0e6cf75844b21c0c4fc7298aad7cde98d6c17b2ce8f65ceee73b355ddcfda"}
+  ]
+}

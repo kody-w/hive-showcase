@@ -1,0 +1,3082 @@
+{
+  "schema": "enterprise-queue-comparison/1",
+  "classification": "SYNTHETIC",
+  "meaning": "Measured in this deterministic model only. Disposed means a pending handoff was recorded, never approval or realized savings.",
+  "sourceFiles": [
+    {
+      "path": "fixtures/LICENSE",
+      "bytes": 1079,
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f",
+      "exactMatch": true
+    },
+    {
+      "path": "fixtures/accounts.csv",
+      "bytes": 391,
+      "sha256": "8644cd424be1498821a59aad735b5663f1077a1b2479b10a51e4f3cbd54a5d44",
+      "exactMatch": true
+    },
+    {
+      "path": "fixtures/quotes.csv",
+      "bytes": 511,
+      "sha256": "748728a14d183fa4f1a5178830b12e5a36042560e543d3256958e7efc0d25080",
+      "exactMatch": true
+    },
+    {
+      "path": "fixtures/quote-lines.csv",
+      "bytes": 688,
+      "sha256": "f9570e9c9e788d494385c2a92cc65a2566e366905652a27e9a172bcf18a3933d",
+      "exactMatch": true
+    },
+    {
+      "path": "fixtures/policy.json",
+      "bytes": 440,
+      "sha256": "9c1b87389ce74d52368a497c575f3725239bfb7a7e59f6437f9fa984b20748ed",
+      "exactMatch": true
+    },
+    {
+      "path": "fixtures/expected-results.json",
+      "bytes": 1234,
+      "sha256": "287067af395316f7048b856ac4ceb1958c0a5a78d09898b25cbd8ffcf1f9dbfc",
+      "exactMatch": true
+    }
+  ],
+  "sourceAcceptance": [
+    {
+      "quote_id": "q-101",
+      "total_usd": "268.21",
+      "state": "ready-for-human-approval",
+      "data_errors": [],
+      "review_reasons": []
+    },
+    {
+      "quote_id": "q-102",
+      "total_usd": "116.10",
+      "state": "needs-review",
+      "data_errors": [],
+      "review_reasons": [
+        "credit-limit"
+      ]
+    },
+    {
+      "quote_id": "q-103",
+      "total_usd": "208.55",
+      "state": "needs-review",
+      "data_errors": [],
+      "review_reasons": [
+        "line-103-a:discount-policy"
+      ]
+    },
+    {
+      "quote_id": "q-104",
+      "total_usd": "935.16",
+      "state": "needs-review",
+      "data_errors": [],
+      "review_reasons": [
+        "inactive-account",
+        "terms-policy"
+      ]
+    },
+    {
+      "quote_id": "q-105",
+      "total_usd": null,
+      "state": "needs-data",
+      "data_errors": [
+        "line-105-a:unknown-tax-code",
+        "missing-po"
+      ],
+      "review_reasons": []
+    },
+    {
+      "quote_id": "q-106",
+      "total_usd": "10.16",
+      "state": "ready-for-human-approval",
+      "data_errors": [],
+      "review_reasons": []
+    },
+    {
+      "quote_id": "q-107",
+      "total_usd": null,
+      "state": "needs-data",
+      "data_errors": [
+        "line-107-a:invalid-quantity"
+      ],
+      "review_reasons": []
+    },
+    {
+      "quote_id": "q-108",
+      "total_usd": "107.50",
+      "state": "needs-review",
+      "data_errors": [],
+      "review_reasons": [
+        "terms-policy"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A1",
+      "title": "Clock, not a timestamp",
+      "detail": "Integer model minutes, continuous working time, no nights, shifts, outages, or observed clocks. Paced arrivals are 10 minutes apart; stress arrivals are simultaneous."
+    },
+    {
+      "id": "A2",
+      "title": "Capacity, not headcount evidence",
+      "detail": "Baseline and triage: one slot each at intake, billing, seller-data, tax-data, credit, commercial, account, and disposition (8 total). Pod: intake/billing/disposition one each and pod two (5 total). Slots are nonpreemptive service capacity, not measured FTE or labor cost."
+    },
+    {
+      "id": "A3",
+      "title": "All service times are authored",
+      "detail": "Baseline intake/validation/recheck/disposition = 6/18/10/12 min. Triage = 12/6/6/12. Pod = 6/10/10/12. Specialist minutes: PO 24, tax 30, quantity 24, account 30, credit 36, discount 24, terms 24. Pod exception service is 1.5×. Stress multipliers apply equally across designs."
+    },
+    {
+      "id": "A4",
+      "title": "FIFO with explicit ties",
+      "detail": "No random generator or priority cherry-picking. Complete all tasks at a timestamp in scheduling order, then process arrivals in quote-ID order, then dispatch FIFO by enqueue sequence. Resources dispatch in ID order; lowest free slot first. Intervals are [start, end)."
+    },
+    {
+      "id": "A5",
+      "title": "Rework is a failed unchanged-input return",
+      "detail": "Each exception packet returns to billing. Baseline/pod return after each reason; triage returns once after all reasons. Original defects and policy flags never disappear. Owner service prepares a request/review packet; it is not an authorized correction or decision. There is no invented successful approval probability."
+    },
+    {
+      "id": "A6",
+      "title": "Finite handoff boundary",
+      "detail": "Drain all eight cases to a recorded handoff: 2 ready-for-human-approval, 4 needs-review, 2 needs-data. These are dispositions, not eight successful quotes, invoices, or cash receipts. Review/data cases remain externally unresolved; no external response time is fabricated."
+    },
+    {
+      "id": "A7",
+      "title": "No observed savings",
+      "detail": "One tiny fixed workload, no stochastic confidence interval. Nearest-rank p50/p95; with eight cases p95 equals the maximum. Monetary calculations test source reconciliation only. No time-to-money conversion, realized savings, production integration, or adoption is measured."
+    }
+  ],
+  "designs": [
+    {
+      "id": "baseline",
+      "title": "Baseline",
+      "short": "Serial handoffs",
+      "color": "#b8a7ff",
+      "description": "One billing queue, one specialist packet at a time, and a billing recheck after every exception.",
+      "intake": 6,
+      "validation": 18,
+      "recheck": 10,
+      "disposition": 12,
+      "exceptionMultiplier": 1,
+      "specialistSlots": 5,
+      "totalSlots": 8
+    },
+    {
+      "id": "triage",
+      "title": "Triage first",
+      "short": "Prevent repeat handling",
+      "color": "#73e3c4",
+      "description": "Spend 12 minutes at intake, route known data blockers before billing, and consolidate exceptions into one return. Same eight slots.",
+      "intake": 12,
+      "validation": 6,
+      "recheck": 6,
+      "disposition": 12,
+      "exceptionMultiplier": 1,
+      "specialistSlots": 5,
+      "totalSlots": 8
+    },
+    {
+      "id": "pod",
+      "title": "Pooled pod",
+      "short": "Pool exception capacity",
+      "color": "#ffc278",
+      "description": "Replace five specialist packet-preparation slots with two generalists. Billing packet assembly takes 10 minutes, but each exception takes 1.5× specialist time. Rechecks remain.",
+      "intake": 6,
+      "validation": 10,
+      "recheck": 10,
+      "disposition": 12,
+      "exceptionMultiplier": 1.5,
+      "specialistSlots": 2,
+      "totalSlots": 5
+    }
+  ],
+  "comparisons": [
+    {
+      "scenario": {
+        "id": "paced",
+        "title": "Authored arrival ladder",
+        "short": "8 quotes · 10-min spacing",
+        "description": "The same eight source quotes arrive in ID order at 0, 10, …, 70 model minutes. These clocks are assumptions.",
+        "arrivals": "fixture",
+        "exceptionMultiplier": 1,
+        "dispositionMultiplier": 1
+      },
+      "inputSha256": "bc7fd4771ffb0e6aaabea0118a89c40f003641e7d3e3d461f027ca32ccc65cde",
+      "identicalComparisonInputs": true,
+      "runs": [
+        {
+          "designId": "baseline",
+          "inputSha256": "bc7fd4771ffb0e6aaabea0118a89c40f003641e7d3e3d461f027ca32ccc65cde",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 248,
+            "durationMinutes": 248,
+            "throughputPerHour": 1.935483870967742,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 82,
+              "p95": 98,
+              "max": 98,
+              "mean": 71.75,
+              "sum": 574
+            },
+            "cycle": {
+              "count": 8,
+              "min": 36,
+              "p50": 154,
+              "p95": 208,
+              "max": 208,
+              "mean": 144.75,
+              "sum": 1158
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 36,
+              "p50": 36,
+              "p95": 76,
+              "max": 76,
+              "mean": 56,
+              "sum": 112
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.12096774193548387,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 224,
+                "utilization": 0.9032258064516129,
+                "waitMinutes": 560,
+                "maxBusy": 1,
+                "maxQueue": 5
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.2903225806451613,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.14516129032258066,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.3870967741935484,
+                "waitMinutes": 14,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.1935483870967742,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.1935483870967742,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.12096774193548387,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "billing"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": 0,
+            "throughputPerHour": 0,
+            "meanWaitMinutes": 0,
+            "p95WaitMinutes": 0,
+            "p95CycleMinutes": 0,
+            "cleanP95CycleMinutes": 0,
+            "dispositionQueueMinutes": 0
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 36,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 36,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-102",
+              "arrival": 10,
+              "completedAt": 172,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 80,
+              "cycleMinutes": 162,
+              "serviceMinutes": 82,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-103",
+              "arrival": 20,
+              "completedAt": 184,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 94,
+              "cycleMinutes": 164,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-104",
+              "arrival": 30,
+              "completedAt": 236,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 96,
+              "cycleMinutes": 206,
+              "serviceMinutes": 110,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-105",
+              "arrival": 40,
+              "completedAt": 248,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 98,
+              "cycleMinutes": 208,
+              "serviceMinutes": 110,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-106",
+              "arrival": 50,
+              "completedAt": 126,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 40,
+              "cycleMinutes": 76,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-107",
+              "arrival": 60,
+              "completedAt": 212,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 82,
+              "cycleMinutes": 152,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-108",
+              "arrival": 70,
+              "completedAt": 224,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 84,
+              "cycleMinutes": 154,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            }
+          ]
+        },
+        {
+          "designId": "triage",
+          "inputSha256": "bc7fd4771ffb0e6aaabea0118a89c40f003641e7d3e3d461f027ca32ccc65cde",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 162,
+            "durationMinutes": 162,
+            "throughputPerHour": 2.962962962962963,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 16,
+              "p95": 32,
+              "max": 32,
+              "mean": 16.75,
+              "sum": 134
+            },
+            "cycle": {
+              "count": 8,
+              "min": 30,
+              "p50": 76,
+              "p95": 110,
+              "max": 110,
+              "mean": 76.75,
+              "sum": 614
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 30,
+              "p50": 30,
+              "p95": 58,
+              "max": 58,
+              "mean": 44,
+              "sum": 88
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 6,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.18518518518518517,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 12,
+                "busyMinutes": 72,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 24,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 6,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.2222222222222222,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.5925925925925926,
+                "waitMinutes": 48,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.5925925925925926,
+                "waitMinutes": 56,
+                "maxBusy": 1,
+                "maxQueue": 2
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.2962962962962963,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.18518518518518517,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "intake"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -86,
+            "throughputPerHour": 1.0274790919952208,
+            "meanWaitMinutes": -55,
+            "p95WaitMinutes": -66,
+            "p95CycleMinutes": -98,
+            "cleanP95CycleMinutes": -18,
+            "dispositionQueueMinutes": 34
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 30,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 30,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -6
+            },
+            {
+              "id": "q-102",
+              "arrival": 10,
+              "completedAt": 84,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 2,
+              "cycleMinutes": 74,
+              "serviceMinutes": 72,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-103",
+              "arrival": 20,
+              "completedAt": 96,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 16,
+              "cycleMinutes": 76,
+              "serviceMinutes": 60,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-104",
+              "arrival": 30,
+              "completedAt": 126,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 6,
+              "cycleMinutes": 96,
+              "serviceMinutes": 90,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -110
+            },
+            {
+              "id": "q-105",
+              "arrival": 40,
+              "completedAt": 150,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 26,
+              "cycleMinutes": 110,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -98
+            },
+            {
+              "id": "q-106",
+              "arrival": 50,
+              "completedAt": 108,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 28,
+              "cycleMinutes": 58,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -18
+            },
+            {
+              "id": "q-107",
+              "arrival": 60,
+              "completedAt": 138,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 24,
+              "cycleMinutes": 78,
+              "serviceMinutes": 54,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -74
+            },
+            {
+              "id": "q-108",
+              "arrival": 70,
+              "completedAt": 162,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 32,
+              "cycleMinutes": 92,
+              "serviceMinutes": 60,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -62
+            }
+          ]
+        },
+        {
+          "designId": "pod",
+          "inputSha256": "bc7fd4771ffb0e6aaabea0118a89c40f003641e7d3e3d461f027ca32ccc65cde",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 223,
+            "durationMinutes": 223,
+            "throughputPerHour": 2.1524663677130045,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 16,
+              "p95": 54,
+              "max": 54,
+              "mean": 26,
+              "sum": 208
+            },
+            "cycle": {
+              "count": 8,
+              "min": 28,
+              "p50": 108,
+              "p95": 183,
+              "max": 183,
+              "mean": 104.5,
+              "sum": 836
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 28,
+              "p50": 28,
+              "p95": 28,
+              "max": 28,
+              "mean": 28,
+              "sum": 56
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 160,
+                "utilization": 0.7174887892376681,
+                "waitMinutes": 50,
+                "maxBusy": 1,
+                "maxQueue": 2
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.4304932735426009,
+                "waitMinutes": 4,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.21524663677130046,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "pod",
+                "label": "Shared exception pod",
+                "capacity": 2,
+                "visits": 8,
+                "busyMinutes": 324,
+                "utilization": 0.726457399103139,
+                "waitMinutes": 154,
+                "maxBusy": 2,
+                "maxQueue": 2
+              }
+            ],
+            "bottleneck": "pod"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -25,
+            "throughputPerHour": 0.2169824967452625,
+            "meanWaitMinutes": -45.75,
+            "p95WaitMinutes": -44,
+            "p95CycleMinutes": -25,
+            "cleanP95CycleMinutes": -48,
+            "dispositionQueueMinutes": -10
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 28,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 28,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -8
+            },
+            {
+              "id": "q-102",
+              "arrival": 10,
+              "completedAt": 118,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 16,
+              "cycleMinutes": 108,
+              "serviceMinutes": 92,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -54
+            },
+            {
+              "id": "q-103",
+              "arrival": 20,
+              "completedAt": 98,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 4,
+              "cycleMinutes": 78,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -86
+            },
+            {
+              "id": "q-104",
+              "arrival": 30,
+              "completedAt": 211,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 52,
+              "cycleMinutes": 181,
+              "serviceMinutes": 129,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -25
+            },
+            {
+              "id": "q-105",
+              "arrival": 40,
+              "completedAt": 223,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 54,
+              "cycleMinutes": 183,
+              "serviceMinutes": 129,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -25
+            },
+            {
+              "id": "q-106",
+              "arrival": 50,
+              "completedAt": 78,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 0,
+              "cycleMinutes": 28,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -48
+            },
+            {
+              "id": "q-107",
+              "arrival": 60,
+              "completedAt": 174,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 40,
+              "cycleMinutes": 114,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -38
+            },
+            {
+              "id": "q-108",
+              "arrival": 70,
+              "completedAt": 186,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 42,
+              "cycleMinutes": 116,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "id": "burst",
+        "title": "Synchronized burst",
+        "short": "8 quotes · all at t=0",
+        "description": "Arrival sensitivity: all eight original quotes arrive together. No cases, defects, or amounts change.",
+        "arrivals": "simultaneous",
+        "exceptionMultiplier": 1,
+        "dispositionMultiplier": 1
+      },
+      "inputSha256": "da9f20fd396ad2e04fcbb87c3c31af09d8f5181d1b59800a9506a7e9428119b4",
+      "identicalComparisonInputs": true,
+      "runs": [
+        {
+          "designId": "baseline",
+          "inputSha256": "da9f20fd396ad2e04fcbb87c3c31af09d8f5181d1b59800a9506a7e9428119b4",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 248,
+            "durationMinutes": 248,
+            "throughputPerHour": 1.935483870967742,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 114,
+              "p95": 154,
+              "max": 154,
+              "mean": 106.75,
+              "sum": 854
+            },
+            "cycle": {
+              "count": 8,
+              "min": 36,
+              "p50": 184,
+              "p95": 248,
+              "max": 248,
+              "mean": 179.75,
+              "sum": 1438
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 36,
+              "p50": 36,
+              "p95": 126,
+              "max": 126,
+              "mean": 81,
+              "sum": 162
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.12096774193548387,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 224,
+                "utilization": 0.9032258064516129,
+                "waitMinutes": 672,
+                "maxBusy": 1,
+                "maxQueue": 5
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.2903225806451613,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.14516129032258066,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.3870967741935484,
+                "waitMinutes": 14,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.1935483870967742,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.1935483870967742,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.12096774193548387,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "billing"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": 0,
+            "throughputPerHour": 0,
+            "meanWaitMinutes": 0,
+            "p95WaitMinutes": 0,
+            "p95CycleMinutes": 0,
+            "cleanP95CycleMinutes": 0,
+            "dispositionQueueMinutes": 0
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 36,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 36,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 172,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 90,
+              "cycleMinutes": 172,
+              "serviceMinutes": 82,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 184,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 114,
+              "cycleMinutes": 184,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 236,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 126,
+              "cycleMinutes": 236,
+              "serviceMinutes": 110,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 248,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 138,
+              "cycleMinutes": 248,
+              "serviceMinutes": 110,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 126,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 90,
+              "cycleMinutes": 126,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 212,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 142,
+              "cycleMinutes": 212,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 224,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 154,
+              "cycleMinutes": 224,
+              "serviceMinutes": 70,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            }
+          ]
+        },
+        {
+          "designId": "triage",
+          "inputSha256": "da9f20fd396ad2e04fcbb87c3c31af09d8f5181d1b59800a9506a7e9428119b4",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 162,
+            "durationMinutes": 162,
+            "throughputPerHour": 2.962962962962963,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 36,
+              "p95": 102,
+              "max": 102,
+              "mean": 51.75,
+              "sum": 414
+            },
+            "cycle": {
+              "count": 8,
+              "min": 30,
+              "p50": 108,
+              "p95": 162,
+              "max": 162,
+              "mean": 111.75,
+              "sum": 894
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 30,
+              "p50": 30,
+              "p95": 108,
+              "max": 108,
+              "mean": 69,
+              "sum": 138
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 6,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.18518518518518517,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 12,
+                "busyMinutes": 72,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 24,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 6,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.2222222222222222,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.5925925925925926,
+                "waitMinutes": 48,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.5925925925925926,
+                "waitMinutes": 336,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.2962962962962963,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.18518518518518517,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "intake"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -86,
+            "throughputPerHour": 1.0274790919952208,
+            "meanWaitMinutes": -55,
+            "p95WaitMinutes": -52,
+            "p95CycleMinutes": -86,
+            "cleanP95CycleMinutes": -18,
+            "dispositionQueueMinutes": 34
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 30,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 30,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -6
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 84,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 12,
+              "cycleMinutes": 84,
+              "serviceMinutes": 72,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 96,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 36,
+              "cycleMinutes": 96,
+              "serviceMinutes": 60,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 126,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 36,
+              "cycleMinutes": 126,
+              "serviceMinutes": 90,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -110
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 150,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 66,
+              "cycleMinutes": 150,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -98
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 108,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 78,
+              "cycleMinutes": 108,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -18
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 138,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 84,
+              "cycleMinutes": 138,
+              "serviceMinutes": 54,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -74
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 162,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 102,
+              "cycleMinutes": 162,
+              "serviceMinutes": 60,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -62
+            }
+          ]
+        },
+        {
+          "designId": "pod",
+          "inputSha256": "da9f20fd396ad2e04fcbb87c3c31af09d8f5181d1b59800a9506a7e9428119b4",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 223,
+            "durationMinutes": 223,
+            "throughputPerHour": 2.1524663677130045,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 50,
+              "p95": 112,
+              "max": 112,
+              "mean": 62.5,
+              "sum": 500
+            },
+            "cycle": {
+              "count": 8,
+              "min": 28,
+              "p50": 120,
+              "p95": 223,
+              "max": 223,
+              "mean": 141,
+              "sum": 1128
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 28,
+              "p50": 28,
+              "p95": 78,
+              "max": 78,
+              "mean": 53,
+              "sum": 106
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 160,
+                "utilization": 0.7174887892376681,
+                "waitMinutes": 162,
+                "maxBusy": 1,
+                "maxQueue": 3
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.4304932735426009,
+                "waitMinutes": 6,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.21524663677130046,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "pod",
+                "label": "Shared exception pod",
+                "capacity": 2,
+                "visits": 8,
+                "busyMinutes": 324,
+                "utilization": 0.726457399103139,
+                "waitMinutes": 164,
+                "maxBusy": 2,
+                "maxQueue": 2
+              }
+            ],
+            "bottleneck": "intake"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -25,
+            "throughputPerHour": 0.2169824967452625,
+            "meanWaitMinutes": -44.25,
+            "p95WaitMinutes": -42,
+            "p95CycleMinutes": -25,
+            "cleanP95CycleMinutes": -48,
+            "dispositionQueueMinutes": -8
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 28,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 28,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -8
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 120,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 28,
+              "cycleMinutes": 120,
+              "serviceMinutes": 92,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -52
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 108,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 34,
+              "cycleMinutes": 108,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -76
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 211,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 82,
+              "cycleMinutes": 211,
+              "serviceMinutes": 129,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -25
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 223,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 94,
+              "cycleMinutes": 223,
+              "serviceMinutes": 129,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -25
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 78,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 50,
+              "cycleMinutes": 78,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -48
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 174,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 100,
+              "cycleMinutes": 174,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -38
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 186,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 112,
+              "cycleMinutes": 186,
+              "serviceMinutes": 74,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "id": "escalation",
+        "title": "Slow exception owners",
+        "short": "Burst · 2× owner service",
+        "description": "Stress: same eight quotes at t=0; every design uses twice the assumed exception-preparation time. Tests generalist congestion.",
+        "arrivals": "simultaneous",
+        "exceptionMultiplier": 2,
+        "dispositionMultiplier": 1
+      },
+      "inputSha256": "4c3c039ce877e298084e716a2b16a7adbcea5d7e15cf073ba15b64fc162f5f40",
+      "identicalComparisonInputs": true,
+      "runs": [
+        {
+          "designId": "baseline",
+          "inputSha256": "4c3c039ce877e298084e716a2b16a7adbcea5d7e15cf073ba15b64fc162f5f40",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 280,
+            "durationMinutes": 280,
+            "throughputPerHour": 1.7142857142857142,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 90,
+              "p95": 132,
+              "max": 132,
+              "mean": 88.25,
+              "sum": 706
+            },
+            "cycle": {
+              "count": 8,
+              "min": 36,
+              "p50": 184,
+              "p95": 280,
+              "max": 280,
+              "mean": 188.25,
+              "sum": 1506
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 36,
+              "p50": 36,
+              "p95": 126,
+              "max": 126,
+              "mean": 81,
+              "sum": 162
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 60,
+                "utilization": 0.21428571428571427,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 224,
+                "utilization": 0.8,
+                "waitMinutes": 502,
+                "maxBusy": 1,
+                "maxQueue": 5
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 144,
+                "utilization": 0.5142857142857142,
+                "waitMinutes": 18,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 72,
+                "utilization": 0.2571428571428571,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.34285714285714286,
+                "waitMinutes": 6,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.17142857142857143,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 96,
+                "utilization": 0.34285714285714286,
+                "waitMinutes": 12,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 60,
+                "utilization": 0.21428571428571427,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "billing"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": 0,
+            "throughputPerHour": 0,
+            "meanWaitMinutes": 0,
+            "p95WaitMinutes": 0,
+            "p95CycleMinutes": 0,
+            "cleanP95CycleMinutes": 0,
+            "dispositionQueueMinutes": 0
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 36,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 36,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 184,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 66,
+              "cycleMinutes": 184,
+              "serviceMinutes": 118,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 172,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 78,
+              "cycleMinutes": 172,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 268,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 104,
+              "cycleMinutes": 268,
+              "serviceMinutes": 164,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 280,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 116,
+              "cycleMinutes": 280,
+              "serviceMinutes": 164,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 126,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 90,
+              "cycleMinutes": 126,
+              "serviceMinutes": 36,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 214,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 120,
+              "cycleMinutes": 214,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 226,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 132,
+              "cycleMinutes": 226,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            }
+          ]
+        },
+        {
+          "designId": "triage",
+          "inputSha256": "4c3c039ce877e298084e716a2b16a7adbcea5d7e15cf073ba15b64fc162f5f40",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 216,
+            "durationMinutes": 216,
+            "throughputPerHour": 2.2222222222222223,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 54,
+              "p95": 102,
+              "max": 102,
+              "mean": 51,
+              "sum": 408
+            },
+            "cycle": {
+              "count": 8,
+              "min": 30,
+              "p50": 120,
+              "p95": 216,
+              "max": 216,
+              "mean": 138,
+              "sum": 1104
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 30,
+              "p50": 30,
+              "p95": 90,
+              "max": 90,
+              "mean": 60,
+              "sum": 120
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 6,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 60,
+                "utilization": 0.2777777777777778,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 12,
+                "busyMinutes": 72,
+                "utilization": 0.3333333333333333,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 144,
+                "utilization": 0.6666666666666666,
+                "waitMinutes": 36,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 72,
+                "utilization": 0.3333333333333333,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 12,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 336,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 96,
+                "utilization": 0.4444444444444444,
+                "waitMinutes": 24,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 60,
+                "utilization": 0.2777777777777778,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "intake"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -64,
+            "throughputPerHour": 0.5079365079365081,
+            "meanWaitMinutes": -37.25,
+            "p95WaitMinutes": -30,
+            "p95CycleMinutes": -64,
+            "cleanP95CycleMinutes": -36,
+            "dispositionQueueMinutes": 6
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 30,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 30,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -6
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 120,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 12,
+              "cycleMinutes": 120,
+              "serviceMinutes": 108,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -64
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 108,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 24,
+              "cycleMinutes": 108,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -64
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 216,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 72,
+              "cycleMinutes": 216,
+              "serviceMinutes": 144,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -52
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 192,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 54,
+              "cycleMinutes": 192,
+              "serviceMinutes": 138,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 90,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 60,
+              "cycleMinutes": 90,
+              "serviceMinutes": 30,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -36
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 180,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 102,
+              "cycleMinutes": 180,
+              "serviceMinutes": 78,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -34
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 168,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 84,
+              "cycleMinutes": 168,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -58
+            }
+          ]
+        },
+        {
+          "designId": "pod",
+          "inputSha256": "4c3c039ce877e298084e716a2b16a7adbcea5d7e15cf073ba15b64fc162f5f40",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 390,
+            "durationMinutes": 390,
+            "throughputPerHour": 1.2307692307692308,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 50,
+              "p95": 194,
+              "max": 194,
+              "mean": 98.75,
+              "sum": 790
+            },
+            "cycle": {
+              "count": 8,
+              "min": 28,
+              "p50": 156,
+              "p95": 390,
+              "max": 390,
+              "mean": 217.75,
+              "sum": 1742
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 28,
+              "p50": 28,
+              "p95": 78,
+              "max": 78,
+              "mean": 53,
+              "sum": 106
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 160,
+                "utilization": 0.41025641025641024,
+                "waitMinutes": 116,
+                "maxBusy": 1,
+                "maxQueue": 3
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.24615384615384617,
+                "waitMinutes": 2,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.12307692307692308,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "pod",
+                "label": "Shared exception pod",
+                "capacity": 2,
+                "visits": 8,
+                "busyMinutes": 648,
+                "utilization": 0.8307692307692308,
+                "waitMinutes": 504,
+                "maxBusy": 2,
+                "maxQueue": 4
+              }
+            ],
+            "bottleneck": "pod"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": 110,
+            "throughputPerHour": -0.48351648351648335,
+            "meanWaitMinutes": 10.5,
+            "p95WaitMinutes": 62,
+            "p95CycleMinutes": 110,
+            "cleanP95CycleMinutes": -48,
+            "dispositionQueueMinutes": -4
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 28,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 28,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -8
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 156,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 10,
+              "cycleMinutes": 156,
+              "serviceMinutes": 146,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -28
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 130,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 20,
+              "cycleMinutes": 130,
+              "serviceMinutes": 110,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -42
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 364,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 154,
+              "cycleMinutes": 364,
+              "serviceMinutes": 210,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 96
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 390,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 180,
+              "cycleMinutes": 390,
+              "serviceMinutes": 210,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 110
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 78,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 50,
+              "cycleMinutes": 78,
+              "serviceMinutes": 28,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -48
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 292,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 182,
+              "cycleMinutes": 292,
+              "serviceMinutes": 110,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 78
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 304,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 194,
+              "cycleMinutes": 304,
+              "serviceMinutes": 110,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 78
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "id": "gate",
+        "title": "Disposition desk squeeze",
+        "short": "Burst · 3× final service",
+        "description": "Stress: same eight quotes at t=0; the final handoff desk takes 36 rather than 12 minutes in every design. Faster upstream work can just wait downstream.",
+        "arrivals": "simultaneous",
+        "exceptionMultiplier": 1,
+        "dispositionMultiplier": 3
+      },
+      "inputSha256": "ab65d20d8c927545e898d8a4f56f4d9fe1a5211cfed599fd495c3e6a88a0d678",
+      "identicalComparisonInputs": true,
+      "runs": [
+        {
+          "designId": "baseline",
+          "inputSha256": "ab65d20d8c927545e898d8a4f56f4d9fe1a5211cfed599fd495c3e6a88a0d678",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 376,
+            "durationMinutes": 376,
+            "throughputPerHour": 1.2765957446808511,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 138,
+              "p95": 242,
+              "max": 242,
+              "mean": 143.75,
+              "sum": 1150
+            },
+            "cycle": {
+              "count": 8,
+              "min": 60,
+              "p50": 232,
+              "p95": 376,
+              "max": 376,
+              "mean": 240.75,
+              "sum": 1926
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 60,
+              "p50": 60,
+              "p95": 150,
+              "max": 150,
+              "mean": 105,
+              "sum": 210
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.0797872340425532,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 224,
+                "utilization": 0.5957446808510638,
+                "waitMinutes": 672,
+                "maxBusy": 1,
+                "maxQueue": 5
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.19148936170212766,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.09574468085106383,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 288,
+                "utilization": 0.7659574468085106,
+                "waitMinutes": 310,
+                "maxBusy": 1,
+                "maxQueue": 4
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.1276595744680851,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.1276595744680851,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.0797872340425532,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "billing"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": 0,
+            "throughputPerHour": 0,
+            "meanWaitMinutes": 0,
+            "p95WaitMinutes": 0,
+            "p95CycleMinutes": 0,
+            "cleanP95CycleMinutes": 0,
+            "dispositionQueueMinutes": 0
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 60,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 60,
+              "serviceMinutes": 60,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 196,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 90,
+              "cycleMinutes": 196,
+              "serviceMinutes": 106,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 232,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 138,
+              "cycleMinutes": 232,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 340,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 206,
+              "cycleMinutes": 340,
+              "serviceMinutes": 134,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 376,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 242,
+              "cycleMinutes": 376,
+              "serviceMinutes": 134,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 150,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 90,
+              "cycleMinutes": 150,
+              "serviceMinutes": 60,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 268,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 174,
+              "cycleMinutes": 268,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 304,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 210,
+              "cycleMinutes": 304,
+              "serviceMinutes": 94,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 0
+            }
+          ]
+        },
+        {
+          "designId": "triage",
+          "inputSha256": "ab65d20d8c927545e898d8a4f56f4d9fe1a5211cfed599fd495c3e6a88a0d678",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 324,
+            "durationMinutes": 324,
+            "throughputPerHour": 1.4814814814814814,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 102,
+              "p95": 240,
+              "max": 240,
+              "mean": 111.75,
+              "sum": 894
+            },
+            "cycle": {
+              "count": 8,
+              "min": 54,
+              "p50": 180,
+              "p95": 324,
+              "max": 324,
+              "mean": 195.75,
+              "sum": 1566
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 54,
+              "p50": 54,
+              "p95": 180,
+              "max": 180,
+              "mean": 117,
+              "sum": 234
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 6,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "account",
+                "label": "Account packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.09259259259259259,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 12,
+                "busyMinutes": 72,
+                "utilization": 0.2222222222222222,
+                "waitMinutes": 24,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "commercial",
+                "label": "Commercial packet desk",
+                "capacity": 1,
+                "visits": 3,
+                "busyMinutes": 72,
+                "utilization": 0.2222222222222222,
+                "waitMinutes": 6,
+                "maxBusy": 1,
+                "maxQueue": 1
+              },
+              {
+                "id": "credit",
+                "label": "Credit packet desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 36,
+                "utilization": 0.1111111111111111,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 288,
+                "utilization": 0.8888888888888888,
+                "waitMinutes": 528,
+                "maxBusy": 1,
+                "maxQueue": 5
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 96,
+                "utilization": 0.2962962962962963,
+                "waitMinutes": 336,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "seller",
+                "label": "Seller data return",
+                "capacity": 1,
+                "visits": 2,
+                "busyMinutes": 48,
+                "utilization": 0.14814814814814814,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              },
+              {
+                "id": "tax",
+                "label": "Tax-data desk",
+                "capacity": 1,
+                "visits": 1,
+                "busyMinutes": 30,
+                "utilization": 0.09259259259259259,
+                "waitMinutes": 0,
+                "maxBusy": 1,
+                "maxQueue": 0
+              }
+            ],
+            "bottleneck": "disposition"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -52,
+            "throughputPerHour": 0.20488573680063027,
+            "meanWaitMinutes": -32,
+            "p95WaitMinutes": -2,
+            "p95CycleMinutes": -52,
+            "cleanP95CycleMinutes": 30,
+            "dispositionQueueMinutes": 218
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 54,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 54,
+              "serviceMinutes": 54,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -6
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 108,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 12,
+              "cycleMinutes": 108,
+              "serviceMinutes": 96,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 144,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 60,
+              "cycleMinutes": 144,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 216,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 102,
+              "cycleMinutes": 216,
+              "serviceMinutes": 114,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -124
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 288,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 180,
+              "cycleMinutes": 288,
+              "serviceMinutes": 108,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -88
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 180,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 126,
+              "cycleMinutes": 180,
+              "serviceMinutes": 54,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": 30
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 252,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 174,
+              "cycleMinutes": 252,
+              "serviceMinutes": 78,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -16
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 324,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 240,
+              "cycleMinutes": 324,
+              "serviceMinutes": 84,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": 20
+            }
+          ]
+        },
+        {
+          "designId": "pod",
+          "inputSha256": "ab65d20d8c927545e898d8a4f56f4d9fe1a5211cfed599fd495c3e6a88a0d678",
+          "metrics": {
+            "submitted": 8,
+            "disposed": 8,
+            "inSystem": 0,
+            "dropped": 0,
+            "firstArrival": 0,
+            "lastDisposition": 318,
+            "durationMinutes": 318,
+            "throughputPerHour": 1.509433962264151,
+            "wait": {
+              "count": 8,
+              "min": 0,
+              "p50": 58,
+              "p95": 165,
+              "max": 165,
+              "mean": 87.75,
+              "sum": 702
+            },
+            "cycle": {
+              "count": 8,
+              "min": 52,
+              "p50": 174,
+              "p95": 318,
+              "max": 318,
+              "mean": 190.25,
+              "sum": 1522
+            },
+            "cleanCycle": {
+              "count": 2,
+              "min": 52,
+              "p50": 52,
+              "p95": 102,
+              "max": 102,
+              "mean": 77,
+              "sum": 154
+            },
+            "rework": {
+              "cases": 6,
+              "visits": 8,
+              "caseRate": 0.75
+            },
+            "sourceCategories": {
+              "ready-for-human-approval": 2,
+              "needs-review": 4,
+              "needs-data": 2
+            },
+            "approved": 0,
+            "resources": [
+              {
+                "id": "billing",
+                "label": "Billing validation",
+                "capacity": 1,
+                "visits": 16,
+                "busyMinutes": 160,
+                "utilization": 0.5031446540880503,
+                "waitMinutes": 162,
+                "maxBusy": 1,
+                "maxQueue": 3
+              },
+              {
+                "id": "disposition",
+                "label": "Disposition desk",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 288,
+                "utilization": 0.9056603773584906,
+                "waitMinutes": 208,
+                "maxBusy": 1,
+                "maxQueue": 3
+              },
+              {
+                "id": "intake",
+                "label": "Seller intake",
+                "capacity": 1,
+                "visits": 8,
+                "busyMinutes": 48,
+                "utilization": 0.1509433962264151,
+                "waitMinutes": 168,
+                "maxBusy": 1,
+                "maxQueue": 7
+              },
+              {
+                "id": "pod",
+                "label": "Shared exception pod",
+                "capacity": 2,
+                "visits": 8,
+                "busyMinutes": 324,
+                "utilization": 0.5094339622641509,
+                "waitMinutes": 164,
+                "maxBusy": 2,
+                "maxQueue": 2
+              }
+            ],
+            "bottleneck": "disposition"
+          },
+          "deltaFromBaseline": {
+            "durationMinutes": -58,
+            "throughputPerHour": 0.23283821758329992,
+            "meanWaitMinutes": -56,
+            "p95WaitMinutes": -77,
+            "p95CycleMinutes": -58,
+            "cleanP95CycleMinutes": -48,
+            "dispositionQueueMinutes": -102
+          },
+          "cases": [
+            {
+              "id": "q-101",
+              "arrival": 0,
+              "completedAt": 52,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "268.21",
+              "waitMinutes": 0,
+              "cycleMinutes": 52,
+              "serviceMinutes": 52,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -8
+            },
+            {
+              "id": "q-102",
+              "arrival": 0,
+              "completedAt": 174,
+              "sourceState": "needs-review",
+              "totalUsd": "116.10",
+              "waitMinutes": 58,
+              "cycleMinutes": 174,
+              "serviceMinutes": 116,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -22
+            },
+            {
+              "id": "q-103",
+              "arrival": 0,
+              "completedAt": 138,
+              "sourceState": "needs-review",
+              "totalUsd": "208.55",
+              "waitMinutes": 40,
+              "cycleMinutes": 138,
+              "serviceMinutes": 98,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -94
+            },
+            {
+              "id": "q-104",
+              "arrival": 0,
+              "completedAt": 282,
+              "sourceState": "needs-review",
+              "totalUsd": "935.16",
+              "waitMinutes": 129,
+              "cycleMinutes": 282,
+              "serviceMinutes": 153,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -58
+            },
+            {
+              "id": "q-105",
+              "arrival": 0,
+              "completedAt": 318,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 165,
+              "cycleMinutes": 318,
+              "serviceMinutes": 153,
+              "recheckVisits": 2,
+              "cycleDeltaFromBaseline": -58
+            },
+            {
+              "id": "q-106",
+              "arrival": 0,
+              "completedAt": 102,
+              "sourceState": "ready-for-human-approval",
+              "totalUsd": "10.16",
+              "waitMinutes": 50,
+              "cycleMinutes": 102,
+              "serviceMinutes": 52,
+              "recheckVisits": 0,
+              "cycleDeltaFromBaseline": -48
+            },
+            {
+              "id": "q-107",
+              "arrival": 0,
+              "completedAt": 210,
+              "sourceState": "needs-data",
+              "totalUsd": null,
+              "waitMinutes": 112,
+              "cycleMinutes": 210,
+              "serviceMinutes": 98,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -58
+            },
+            {
+              "id": "q-108",
+              "arrival": 0,
+              "completedAt": 246,
+              "sourceState": "needs-review",
+              "totalUsd": "107.50",
+              "waitMinutes": 148,
+              "cycleMinutes": 246,
+              "serviceMinutes": 98,
+              "recheckVisits": 1,
+              "cycleDeltaFromBaseline": -58
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

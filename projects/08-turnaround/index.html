@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An original synthetic cash-recovery model: finite resources, timing-only receipts, visible failure and no guaranteed rescue.">
+  <title>The corporate escape room · Cedarline Desk</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./boot.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#runway">Skip controls, inspect the runway</a>
+  <main>
+    <header class="hero">
+      <div class="hero-top">
+        <span class="eyebrow">08 / The turnaround firm</span>
+        <nav aria-label="Project evidence"><a href="./README.md">Method</a><a href="./evidence/result.json">Evidence</a><a href="./data/attribution.json">Sources</a></nav>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p class="pill">Synthetic case · original local model · no external effects</p>
+          <h1>The corporate<br><em>escape room.</em></h1>
+          <p class="hero-copy">Cedarline Desk has a cash problem and a queue of urgent work.
+            Every route out consumes something. Move the pieces. Watch what breaks first.</p>
+        </div>
+        <aside class="case-stamp" aria-label="Model boundary">
+          <span class="stamp-label">The window</span>
+          <strong>90<span>days</span></strong>
+          <span>3 normalized billing cycles<br>5-day seed sprint · finite resources</span>
+          <b>AN EXIT IS NOT GUARANTEED</b>
+        </aside>
+      </div>
+      <div class="fact-strip" aria-label="Reconciled synthetic seed facts">
+        <div><span>Starting bank cash</span><strong>$32,400</strong><small>15-row ledger reconciled</small></div>
+        <div><span>Prior-period obligations</span><strong>$5,500</strong><small>Reserved, not paid twice</small></div>
+        <div><span>Cash after reserves</span><strong>$26,900</strong><small>$14,900 above the floor</small></div>
+        <div><span>September cash burn</span><strong>$9,000<span>/30d</span></strong><small>Mechanical repeat, not forecast fact</small></div>
+      </div>
+    </header>
+
+    <noscript><p class="notice">JavaScript is required for the interactive model. Frozen results remain readable in <a href="./results/scenarios.json">scenario evidence</a> and <a href="./README.md">the method and outcomes</a>.</p></noscript>
+    <p id="boot-message" class="notice">Loading the original offline model. No accounts, services or network data are used.</p>
+
+    <div class="workbench">
+      <aside class="control-panel" aria-labelledby="controls-title">
+        <div class="section-heading"><span class="step">01</span><h2 id="controls-title">Choose your constraints</h2></div>
+        <p class="small muted">Controls change a hypothetical schedule only. They cannot approve or execute a real intervention.</p>
+        <fieldset class="scenario-fieldset">
+          <legend>Frozen scenario</legend>
+          <div id="scenario-controls" class="scenario-controls"></div>
+        </fieldset>
+        <div class="control-heading"><h3>Interventions</h3><button id="reset" type="button" class="quiet-button">Reset candidate</button></div>
+        <p class="small muted">All fees, start dates and lead times below are added assumptions. Cost levels and total engineering/support budgets come from the seed.</p>
+        <div id="action-controls"></div>
+
+        <fieldset class="assumption-fieldset">
+          <legend>Stress the receipt pool</legend>
+          <label for="delay">Receipt delay <output id="delay-output" for="delay">0 days</output></label>
+          <input id="delay" type="range" min="0" max="30" step="1" value="0">
+          <label for="demand">Existing demand retained <output id="demand-output" for="demand">100%</output></label>
+          <input id="demand" type="range" min="0" max="100" step="1" value="100">
+          <p class="small muted">Delays conserve receipts, including money outside the window. Lower demand removes receipts; nothing replaces them.</p>
+        </fieldset>
+        <details class="advanced-controls">
+          <summary>Added action assumptions</summary>
+          <label for="advance">Receipt share moved early <output id="advance-output" for="advance">65%</output></label>
+          <input id="advance" type="range" min="0" max="80" step="1" value="65">
+          <label for="support">Support slice requested <output id="support-output" for="support">300 min</output></label>
+          <input id="support" type="range" min="0" max="420" step="15" value="300">
+          <label for="review">One-time review budget <output id="review-output" for="review">180 min</output></label>
+          <input id="review" type="range" min="0" max="360" step="30" value="180">
+          <label for="warning-lead">Rolling alert lead <output id="warning-lead-output" for="warning-lead">7 days</output></label>
+          <input id="warning-lead" type="range" min="0" max="30" step="1" value="7">
+          <fieldset class="consent-fieldset">
+            <legend>Assume the outcome succeeds?</legend>
+            <label><input id="contractor-consent" type="checkbox" checked> Contractor agreement</label>
+            <label><input id="hosting-consent" type="checkbox" checked> Hosting validation</label>
+            <label><input id="receipt-consent" type="checkbox" checked> Earlier-receipt consent</label>
+            <label><input id="deferral-consent" type="checkbox" checked> Payable deferral consent</label>
+          </fieldset>
+          <p class="small muted">A checked box is not authorization or evidence. Turn one off: validly started work and fees stay consumed, without the assumed benefit.</p>
+        </details>
+      </aside>
+
+      <section class="results-panel" aria-labelledby="results-title">
+        <div class="section-heading"><span class="step">02</span><h2 id="results-title">Read the consequences</h2><span id="scenario-label" class="pill">Recovery candidate</span></div>
+        <div id="decision" class="decision"></div>
+        <p id="announcer" class="sr-only" role="status" aria-live="polite"></p>
+        <div id="metrics" class="metrics"></div>
+        <section class="panel runway-panel" id="runway" aria-labelledby="runway-title">
+          <div class="panel-heading"><div><p class="eyebrow">Cash does not arrive smoothly</p><h3 id="runway-title">The runway, with the gaps left in</h3></div><span class="pill">Daily events / USD</span></div>
+          <p class="small muted">Net of reserved prior payables. Bills are due before same-day receipts. After the first unfunded payment, the trace is counterfactual arithmetic—not an overdraft or a rescued business.</p>
+          <div class="chart-legend" aria-label="Chart legend"><span class="legend-current">Closing available cash</span><span class="legend-trough">Intraday trough</span><span class="legend-baseline">No-action closing cash</span></div>
+          <div id="cash-chart" class="cash-chart"></div>
+          <div class="inspect-control"><label for="inspect-day">Inspect day <output id="inspect-day-output" for="inspect-day">58</output></label><input id="inspect-day" type="range" min="0" max="90" step="1" value="58"></div>
+          <div id="day-detail" class="day-detail"></div>
+          <details class="timeline-details">
+            <summary>Accessible cash timeline and reconciliation</summary>
+            <label for="timeline-mode">Rows</label><select id="timeline-mode"><option value="weekly">Weekly totals, daily minimum</option><option value="daily">Every day</option></select>
+            <div id="timeline-table" class="table-wrap"></div>
+          </details>
+        </section>
+
+        <section class="panel" aria-labelledby="warning-title">
+          <div class="panel-heading"><div><p class="eyebrow">Failure is a result, not an error</p><h3 id="warning-title">Earliest warning & causal chain</h3></div></div>
+          <div id="warning-detail"></div>
+          <ol id="causal-chain" class="causal-chain"></ol>
+          <div id="conservation" class="conservation"></div>
+        </section>
+        <section class="panel" aria-labelledby="capacity-title">
+          <div class="panel-heading"><div><p class="eyebrow">No free interventions</p><h3 id="capacity-title">Spend time, cash, or capacity</h3></div></div>
+          <div id="resource-bars" class="resource-bars"></div>
+          <div id="resource-issues"></div>
+          <div id="support-detail"></div>
+          <details><summary>Start → readiness and daily work allocations</summary><div id="action-timing" class="table-wrap"></div><div id="daily-capacity" class="table-wrap"></div></details>
+        </section>
+        <section class="panel" aria-labelledby="commitments-title">
+          <div class="panel-heading"><div><p class="eyebrow">A delay is not a saving</p><h3 id="commitments-title">Payment commitments</h3></div></div>
+          <p class="small muted">Prior-period catch-up bills are incremental. Recurring bills remain due even when earlier receipts fail. Future reserve releases after default are not actual payments.</p>
+          <div id="commitments" class="table-wrap commitments-scroll"></div>
+          <div id="outside-window"></div>
+        </section>
+      </section>
+    </div>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-title">
+      <div class="section-heading"><span class="step">03</span><div><p class="eyebrow">Keep the same plan under stress</p><h2 id="comparison-title">The five frozen experiments</h2></div></div>
+      <p class="muted">The candidate is selected once under default assumptions. Stress tests never add replacement sales, financing, or a hidden second rescue.</p>
+      <div id="scenario-comparison" class="table-wrap"></div>
+      <div id="search-note" class="search-note"></div>
+      <details><summary>Discrete sensitivity scan: floor day / unfunded day</summary><p class="small muted">Each cell is a separate run of the same candidate. No interpolation, universal safe threshold, or real forecast is claimed.</p><div id="threshold-table" class="table-wrap"></div></details>
+    </section>
+    <section class="method-grid">
+      <div class="panel"><p class="eyebrow">Facts versus assumptions</p><h2>Show the boundary.</h2><p>The seed's ledger, payables, rate levels, ticket estimates and one-time resource caps are synthetic facts. Future demand, collection timing, consent, costs and lead times are assumptions.</p><details><summary>Read every added model assumption</summary><div id="assumption-notes"></div></details></div>
+      <div class="panel"><p class="eyebrow">Evidence, not acceptance</p><h2>Leave an audit trail.</h2><p>No reference work is marked accepted. No downloaded code runs here. Local test results validate arithmetic and behavior, not actual business outcomes.</p><ul class="evidence-links"><li><a href="./results/scenarios.json">Frozen daily/event scenario results</a></li><li><a href="./results/strategy-search.json">All 128 strategy evaluations</a></li><li><a href="./data/scope.json">Ready-task and extension scope map</a></li><li><a href="./data/attribution.json">MIT attribution and source hashes</a></li><li><a href="./evidence/result.json">Checks, limitations and artifact hashes</a></li></ul></div>
+    </section>
+    <footer><strong>Synthetic operational modeling.</strong> Not personalized investment advice, a solvency opinion, an instruction to spend, or a claim of real recovery. Offline by design. Work produced—not reviewed, accepted, activated, or deployed.</footer>
+  </main>
+</body>
+</html>

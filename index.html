@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ten original local Hive demonstrations with inspectable artifacts and explicit limits.">
+  <title>Hive Showcase - ten ideas, tangible work</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="assets/portal.css">
+  <script type="module" src="assets/portal.mjs"></script>
+</head>
+<body>
+  <main>
+    <nav class="topbar" aria-label="Showcase navigation">
+      <a class="brand" href="./">HIVE <span>SHOWCASE</span></a>
+      <span class="badge">Public demo / local-first</span>
+    </nav>
+    <header class="hero">
+      <p class="eyebrow">Ten parallel Astra workstreams</p>
+      <h1>Less theater.<br><span>More things that work.</span></h1>
+      <p class="intro">Play the game. Challenge the evidence. Break the schedule.
+        Inspect the geometry. Follow the actual work from public seed to local artifact.</p>
+      <div class="toolbar">
+        <a class="button primary" href="#projects">Explore the ten demonstrations</a>
+        <a class="button" href="evidence/seed-verification.json">Inspect seed provenance</a>
+        <a class="button" href="https://github.com/kody-w/hive-showcase/blob/main/.github/skills/hive-showcase/SKILL.md"
+           target="_blank" rel="noopener noreferrer">Get the reusable skill</a>
+      </div>
+      <div class="boundary">
+        Public demonstrations of the original local work, not activated companies
+        or a live federation. Synthetic data and modeled outcomes are labeled.
+        Publishing this site does not imply purchases, physical fabrication,
+        human acceptance, or native Hive activation.
+      </div>
+    </header>
+    <section class="stats" aria-label="Artifact status" aria-live="polite">
+      <div><strong id="artifact-count">--</strong><span>project manifests integrated</span></div>
+      <div><strong id="seed-count">--</strong><span>seed packages byte-verified</span></div>
+      <div><strong id="check-count">--</strong><span>project check sets passed</span></div>
+      <div><strong>0</strong><span>native organizations activated</span></div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Choose a doorway</p><h2 id="projects-title">Ten ideas. Inspectable results.</h2></div>
+        <button id="refresh" type="button">Refresh artifacts</button>
+      </div>
+      <p id="load-status" class="muted" role="status">Loading local artifact manifests...</p>
+      <div id="project-grid" class="grid project-grid"></div>
+    </section>
+    <section class="panel lineage" aria-labelledby="lineage-title">
+      <div>
+        <p class="eyebrow">One connected experience</p>
+        <h2 id="lineage-title">Pocket Arcade connects the real outputs.</h2>
+        <p>Game + honest tournament scheduling + fabrication-review kit + maintenance handoff.
+          Integration is checked against actual files, not imaginary partner activity.</p>
+        <a href="projects/10-pocket-arcade/index.html">Open Pocket Arcade</a>
+      </div>
+      <div class="flow" aria-label="Pocket Arcade contributions">
+        <span>01 / Game</span><span>05 / Planner</span><span>07 / Kit</span><span>09 / Continuity</span>
+        <strong>10 / Pocket Arcade</strong>
+      </div>
+    </section>
+    <footer>
+      <p><a href="README.md">Local run instructions</a> /
+        <a href="evidence/check-results.json">Recorded checks</a> /
+        <a href="https://github.com/kody-w/hive-hub/blob/main/skills/hive-network/SKILL.md"
+           target="_blank" rel="noopener noreferrer">Source workflow</a></p>
+      <p>Package integrity is not authority. Automated checks are not human review, market demand,
+        physical validation, or proof that a business is operating.</p>
+    </footer>
+  </main>
+</body>
+</html>

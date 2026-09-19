@@ -1,0 +1,27 @@
+argv: ["python3", "-B", "-m", "unittest", "discover", "-s", "projects/09-handoff/tests", "-p", "test_public_projection.py", "-v"]
+recordedAt: 2026-09-19T13:28:15.574097+00:00
+exitCode: 0
+--- stdout ---
+
+--- stderr ---
+test_a_success_flag_cannot_hide_the_original_failure (test_public_projection.PublicProjectionTests) ... ok
+test_absolute_paths_detected_after_json_decoding (test_public_projection.PublicProjectionTests) ... ok
+test_acceptance_target_tampering_is_rejected (test_public_projection.PublicProjectionTests) ... ok
+test_all_payload_files_have_no_private_metadata (test_public_projection.PublicProjectionTests) ... ok
+test_capture_cannot_overwrite_or_impersonate_historical_phases (test_public_projection.PublicProjectionTests) ... ok
+test_identifier_detection_in_embedded_json (test_public_projection.PublicProjectionTests) ... ok
+test_integrity_detects_changed_bytes_and_added_files (test_public_projection.PublicProjectionTests) ... ok
+test_new_capture_retains_failed_command_codes_and_portable_roots (test_public_projection.PublicProjectionTests) ... ok
+test_numerical_observation_tampering_is_rejected (test_public_projection.PublicProjectionTests) ... ok
+test_operational_fields_are_not_public_summary_fields (test_public_projection.PublicProjectionTests) ... ok
+test_original_midpoint_still_fails_the_unchanged_duplicate_target (test_public_projection.PublicProjectionTests) ... ok
+test_paths_cannot_escape_the_project (test_public_projection.PublicProjectionTests) ... ok
+test_traceback_rebasing_discloses_the_transformation (test_public_projection.PublicProjectionTests) ... ok
+test_unknown_private_path_aborts_capture (test_public_projection.PublicProjectionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.027s
+
+OK
+
+--- end of captured streams ---

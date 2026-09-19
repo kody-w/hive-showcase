@@ -1,0 +1,220 @@
+{
+  "schema": "five-hour-portfolio/1",
+  "classification": "SYNTHETIC seed facts plus explicit demo assumptions; no measured demand",
+  "initial": {
+    "budgetMinutes": 300,
+    "reserveMinutes": 30,
+    "reviewMinutes": 30,
+    "maxActive": 1,
+    "weights": {"learning": 3, "reuse": 2, "speed": 1}
+  },
+  "objective": "Produce one useful local artifact while favoring learning and cross-venture reuse, discounted by subjective seed confidence; do not maximize revenue or utilization.",
+  "estimatePolicy": "Delivery and test-preparation minutes are new, unmeasured estimates for narrower demo offerings, not proportional reductions of seed hours. Learning, reuse and confidence are inherited from each named seed direction as a contestable assumption. Future consented observation and recruitment are not included in this week's plans-only allocation.",
+  "sourceCapacity": {
+    "founderHours": 40,
+    "reservedHours": 8,
+    "cashUsd": "600.00",
+    "reservedCashUsd": "100.00",
+    "maxActive": 3,
+    "referenceSelection": ["lf-schema", "fn-outline", "rp-sheet"],
+    "referenceHours": 19,
+    "referenceCashUsd": "90.00"
+  },
+  "ventures": [
+    {
+      "id": "ledgerleaf-tools",
+      "name": "Ledgerleaf Tools",
+      "kind": "Offline file utilities",
+      "offerHypothesis": "Explain small CSV import problems",
+      "owner": "ledgerleaf-tools",
+      "primaryExperiment": "lf-schema",
+      "seedHours": 8,
+      "seedCostUsd": "40.00",
+      "learning": 5,
+      "reuse": 5,
+      "confidence": 60,
+      "deliveryMinutes": 150,
+      "testPrepMinutes": 30,
+      "estimateReason": "One strict CSV parser, a small finding contract and a local report; no import integrations, repairs, accounting or downstream export product.",
+      "smallestOffer": "A local CSV preflight with record, line and column findings; paste or select a UTF-8 file and download a value-free JSON report.",
+      "nonGoals": "No accounting certification, bookkeeping, file repair, formula execution, real financial-file exercise, signing, billing or production integration.",
+      "dependency": {
+        "label": "A fictional CSV fixture and a stable record/code contract",
+        "ready": true,
+        "basis": "Seed fixture is available; the original checker in this demo has automated artifact tests. Neither establishes demand."
+      },
+      "plan": {
+        "audienceHypothesis": "People preparing a small CSV import; no such people have been recruited.",
+        "question": "Will a prospective user choose this checker over manual inspection for a second fictional import?",
+        "protocol": "After separate owner approval and consent, offer three prospective users a five-record fictional CSV and the checker. Ask each to explain a duplicate finding without coaching, then let them choose checker or plain text for a second sample.",
+        "pass": "At least 2 of 3 choose the checker again AND correctly identify the duplicate within five minutes.",
+        "stop": "Park or simplify if fewer than 2 of 3 meet both conditions, or if explaining the checker takes longer than manual inspection.",
+        "laterExecutionMinutes": 45,
+        "status": "Plan only; zero sessions performed",
+        "interpretation": "A tiny convenience sample could disconfirm utility; even a pass is not paying demand, retention or product-market fit."
+      },
+      "reuseUse": "Own the value-free finding schema, parser, fixture patterns and offline report UI.",
+      "reuseBoundary": "The other ventures can reuse components, not inherit evidence of customer demand.",
+      "uncertainties": [
+        {"id": "lf-need", "claim": "Findings reduce import confusion", "evidence": "Authored reference fixture only", "disconfirm": "Reader cannot explain the duplicate-key finding"},
+        {"id": "lf-format", "claim": "JSON findings can support a later UI", "evidence": "Local schema inspection only", "disconfirm": "Finding lacks a stable row and code"}
+      ]
+    },
+    {
+      "id": "fieldnote-guides",
+      "name": "Fieldnote Guides",
+      "kind": "Practical reference publishing",
+      "offerHypothesis": "Make a supply-drawer reset easier to start",
+      "owner": "fieldnote-guides",
+      "primaryExperiment": "fn-outline",
+      "seedHours": 6,
+      "seedCostUsd": "35.00",
+      "learning": 4,
+      "reuse": 3,
+      "confidence": 50,
+      "deliveryMinutes": 60,
+      "testPrepMinutes": 25,
+      "estimateReason": "One page using 12 index cards, 3 binder clips, 2 empty envelopes and removable labels, with an undo step; no catalog or physical observation.",
+      "smallestOffer": "A printable count, group, label, return and undo guide for a fictional supply drawer.",
+      "nonGoals": "No repair, equipment maintenance, electrical, chemical or safety instructions; no physical intervention.",
+      "dependency": {
+        "label": "Fictional inventory and a one-page comprehension rubric",
+        "ready": true,
+        "basis": "The seed supplies the inventory. The proposed guide and rubric remain unbuilt."
+      },
+      "plan": {
+        "audienceHypothesis": "People who postpone organizing a shared supply drawer; unmeasured.",
+        "question": "Does someone choose and start using the guide instead of a plain list?",
+        "protocol": "With later owner approval and consent, offer three people a fictional inventory, a plain list and the guide. Ask them to pick a format and state their first grouping and reversal step in five minutes.",
+        "pass": "At least 2 of 3 choose the guide and can state a first action and how to undo it without another page.",
+        "stop": "Park if fewer than 2 of 3 meet the rule, or setup takes more work than the plain list.",
+        "laterExecutionMinutes": 30,
+        "status": "Plan only; zero sessions performed",
+        "interpretation": "Format choice and comprehension are weak utility signals, not purchases."
+      },
+      "reuseUse": "Use CSV checks for a fictional drawer-inventory table; reuse printable finding labels and the pass/stop test template.",
+      "reuseBoundary": "A CSV parser does not write a useful guide; the original page and comprehension work are still needed.",
+      "uncertainties": [
+        {"id": "fn-need", "claim": "A guide helps people start organizing", "evidence": "Fictional drawer inventory only", "disconfirm": "Guide requires more setup than a plain list"},
+        {"id": "fn-format", "claim": "A single page is enough", "evidence": "Original outline only", "disconfirm": "Reader needs an unexplained second page"}
+      ]
+    },
+    {
+      "id": "quietbench-templates",
+      "name": "Quietbench Templates",
+      "kind": "Accessible office templates",
+      "offerHypothesis": "Make purchasing requests easier to understand",
+      "owner": "quietbench-templates",
+      "primaryExperiment": "qb-keyboard",
+      "seedHours": 7,
+      "seedCostUsd": "20.00",
+      "learning": 4,
+      "reuse": 4,
+      "confidence": 65,
+      "deliveryMinutes": 100,
+      "testPrepMinutes": 35,
+      "estimateReason": "One request form with required/optional labels, a keyboard pass and print reading order; not a three-template catalog or accessibility certification.",
+      "smallestOffer": "A printable purchasing request with item, reason, alternatives, hypothetical cost, needed-by window and reviewer question.",
+      "nonGoals": "No accessibility certification, procurement workflow, employer adoption, approval authority or real purchasing.",
+      "dependency": {
+        "label": "Plain-language field order and a keyboard/print review plan",
+        "ready": true,
+        "basis": "The seed lists fields. A review plan can be drafted locally; the form and human review remain unperformed."
+      },
+      "plan": {
+        "audienceHypothesis": "People drafting small purchasing requests; unmeasured.",
+        "question": "Would a drafter choose this form over a blank note for a second fictional request?",
+        "protocol": "After approval and consent, ask three prospective drafters to navigate a fictional request using only a keyboard, explain which purpose field is required, then choose form or note for another request.",
+        "pass": "At least 2 of 3 finish without coaching, identify required purpose and choose the form again; no keyboard blocker is acceptable.",
+        "stop": "Revise for any keyboard blocker; otherwise park if fewer than 2 of 3 meet the rule.",
+        "laterExecutionMinutes": 45,
+        "status": "Plan only; zero sessions performed",
+        "interpretation": "A small walkthrough is neither an accessibility audit nor adoption evidence."
+      },
+      "reuseUse": "Reuse labeled controls, text-only finding codes and required-column checks on fictional request exports.",
+      "reuseBoundary": "The checker cannot certify accessibility or whether a purchasing request is justified.",
+      "uncertainties": [
+        {"id": "qb-need", "claim": "Field order reduces ambiguity", "evidence": "Synthetic field list only", "disconfirm": "Required purpose is unclear without visual layout"},
+        {"id": "qb-access", "claim": "Keyboard order can be predictable", "evidence": "Proposed walkthrough only", "disconfirm": "Keyboard traversal differs from reading order"}
+      ]
+    },
+    {
+      "id": "routepaper-planners",
+      "name": "Routepaper Planners",
+      "kind": "Printable category planners",
+      "offerHypothesis": "Group errands without location tracking",
+      "owner": "routepaper-planners",
+      "primaryExperiment": "rp-sheet",
+      "seedHours": 5,
+      "seedCostUsd": "15.00",
+      "learning": 3,
+      "reuse": 3,
+      "confidence": 55,
+      "deliveryMinutes": 50,
+      "testPrepMinutes": 20,
+      "estimateReason": "One category/time-window/can-wait/done sheet for a library return, labels and a fictional tote drop; no navigation or interviews.",
+      "smallestOffer": "A printable, location-free category grouping sheet for three fictional errands.",
+      "nonGoals": "No addresses, location histories, travel predictions, real schedules or navigation.",
+      "dependency": {
+        "label": "Fictional errands and an address-free grouping rule",
+        "ready": true,
+        "basis": "Seed examples exist. The sheet is only a proposed alternative in this demo."
+      },
+      "plan": {
+        "audienceHypothesis": "People planning errands who do not need maps; unmeasured.",
+        "question": "Will someone choose the grouped sheet over a plain list, and does it change a decision?",
+        "protocol": "After approval and consent, give three people the same fictional errands in plain-list and grouped-sheet versions. Ask them to choose one and explain a grouping or deferral decision without adding any addresses.",
+        "pass": "At least 2 of 3 choose the sheet and identify one changed planning decision, without requesting locations.",
+        "stop": "Park if grouping changes no decision, takes more effort than a list, or requires addresses.",
+        "laterExecutionMinutes": 30,
+        "status": "Plan only; zero sessions performed",
+        "interpretation": "This is a low-scope interest test, not proof of repeat use or sales."
+      },
+      "reuseUse": "Reuse the local-file pattern and required-column checks for category, time-window, can-wait and done.",
+      "reuseBoundary": "Do not introduce location collection just because the parser accepts arbitrary text.",
+      "uncertainties": [
+        {"id": "rp-need", "claim": "Category grouping is useful without maps", "evidence": "Synthetic errand list only", "disconfirm": "Grouping changes no planning decision"},
+        {"id": "rp-privacy", "claim": "A useful sheet needs no addresses", "evidence": "Original concept only", "disconfirm": "Core feature requires collecting locations"}
+      ]
+    },
+    {
+      "id": "tinylesson-studio",
+      "name": "Tinylesson Studio",
+      "kind": "Offline micro-lessons",
+      "offerHypothesis": "Teach transferable file-naming habits",
+      "owner": "tinylesson-studio",
+      "primaryExperiment": "tl-sample",
+      "seedHours": 6,
+      "seedCostUsd": "30.00",
+      "learning": 4,
+      "reuse": 4,
+      "confidence": 50,
+      "deliveryMinutes": 110,
+      "testPrepMinutes": 35,
+      "estimateReason": "One six-minute lesson, three fictional names and a transfer answer rubric; no course platform or observed learning gains.",
+      "smallestOffer": "An offline lesson on stable purpose and sortable dates, followed by an unrelated file-naming exercise.",
+      "nonGoals": "No access to personal files, course platform, learning-improvement claim or certification.",
+      "dependency": {
+        "label": "Original sample names and a transfer-scoring rubric",
+        "ready": true,
+        "basis": "Seed naming examples exist. The lesson and transfer exercise remain proposed."
+      },
+      "plan": {
+        "audienceHypothesis": "People uncertain about file naming; unmeasured.",
+        "question": "Will a learner choose another short exercise after independently transferring the idea?",
+        "protocol": "After approval and consent, give three people a six-minute lesson using fictional filenames, then an unrelated naming exercise with a purpose/date rubric. Offer another exercise or an exit.",
+        "pass": "At least 2 of 3 meet the purpose/date rubric on the new example without copying and voluntarily choose another exercise.",
+        "stop": "Park if fewer than 2 of 3 meet both conditions, copying substitutes for transfer, or exercise and feedback exceed six minutes.",
+        "laterExecutionMinutes": 40,
+        "status": "Plan only; zero sessions performed",
+        "interpretation": "No causal learning gain or willingness to pay can be inferred from this tiny test."
+      },
+      "reuseUse": "Turn fictional CSV failures into original data-hygiene exercises with stable, machine-checkable finding codes.",
+      "reuseBoundary": "Automated check results are answer rubrics, not evidence that a learner improved.",
+      "uncertainties": [
+        {"id": "tl-need", "claim": "A short lesson supports transfer", "evidence": "Original lesson outline only", "disconfirm": "Learner only copies the sample naming pattern"},
+        {"id": "tl-scope", "claim": "Six minutes can fit one objective", "evidence": "Proposed timing budget only", "disconfirm": "Exercise and feedback exceed the timebox"}
+      ]
+    }
+  ]
+}

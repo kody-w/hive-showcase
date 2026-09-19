@@ -1,0 +1,186 @@
+{
+  "classification": "SYNTHETIC authored support risk",
+  "openTickets": 12,
+  "urgentTickets": 4,
+  "blockedUrgentTickets": 1,
+  "affectedAccountsNotSummed": true,
+  "receiptRecoveryCreditedCents": 0,
+  "tickets": [
+    {
+      "id": "ticket-001",
+      "openedOn": "2026-09-10",
+      "priority": "urgent",
+      "state": "open",
+      "minutes": 90,
+      "affectedAccounts": 7,
+      "blockedBy": "",
+      "issue": "Duplicate export acknowledgment in batch retry",
+      "ageDays": 20,
+      "interpretation": "Eligible urgent work; no causal churn estimate."
+    },
+    {
+      "id": "ticket-002",
+      "openedOn": "2026-09-06",
+      "priority": "low",
+      "state": "open",
+      "minutes": 20,
+      "affectedAccounts": 1,
+      "blockedBy": "",
+      "issue": "Misaligned export title in wide layout",
+      "ageDays": 24,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-003",
+      "openedOn": "2026-09-15",
+      "priority": "normal",
+      "state": "open",
+      "minutes": 60,
+      "affectedAccounts": 3,
+      "blockedBy": "",
+      "issue": "Saved view sort resets on reopen",
+      "ageDays": 15,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-004",
+      "openedOn": "2026-09-21",
+      "priority": "urgent",
+      "state": "open",
+      "minutes": 120,
+      "affectedAccounts": 5,
+      "blockedBy": "needs-synthetic-reproduction",
+      "issue": "Intermittent retry log cannot yet be reproduced",
+      "ageDays": 9,
+      "interpretation": "Blocked: needs evidence, not dispatch."
+    },
+    {
+      "id": "ticket-005",
+      "openedOn": "2026-09-12",
+      "priority": "normal",
+      "state": "open",
+      "minutes": 75,
+      "affectedAccounts": 4,
+      "blockedBy": "",
+      "issue": "Bulk tag operation drops the visible selection",
+      "ageDays": 18,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-006",
+      "openedOn": "2026-09-20",
+      "priority": "low",
+      "state": "open",
+      "minutes": 25,
+      "affectedAccounts": 1,
+      "blockedBy": "",
+      "issue": "Secondary button caption is unclear",
+      "ageDays": 10,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-007",
+      "openedOn": "2026-09-25",
+      "priority": "urgent",
+      "state": "open",
+      "minutes": 90,
+      "affectedAccounts": 6,
+      "blockedBy": "",
+      "issue": "Retry status remains pending after acknowledged completion",
+      "ageDays": 5,
+      "interpretation": "Eligible urgent work; no causal churn estimate."
+    },
+    {
+      "id": "ticket-008",
+      "openedOn": "2026-09-27",
+      "priority": "normal",
+      "state": "open",
+      "minutes": 45,
+      "affectedAccounts": 2,
+      "blockedBy": "",
+      "issue": "Empty-list state omits a recovery hint",
+      "ageDays": 3,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-009",
+      "openedOn": "2026-09-01",
+      "priority": "low",
+      "state": "open",
+      "minutes": 15,
+      "affectedAccounts": 1,
+      "blockedBy": "",
+      "issue": "Help icon baseline differs between two pages",
+      "ageDays": 29,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-010",
+      "openedOn": "2026-09-18",
+      "priority": "urgent",
+      "state": "open",
+      "minutes": 60,
+      "affectedAccounts": 8,
+      "blockedBy": "",
+      "issue": "Urgent queue view shows no reason for skipped items",
+      "ageDays": 12,
+      "interpretation": "Eligible urgent work; no causal churn estimate."
+    },
+    {
+      "id": "ticket-011",
+      "openedOn": "2026-09-09",
+      "priority": "normal",
+      "state": "open",
+      "minutes": 60,
+      "affectedAccounts": 4,
+      "blockedBy": "",
+      "issue": "Filter summary disappears on back navigation",
+      "ageDays": 21,
+      "interpretation": "Retain when capacity-deferred."
+    },
+    {
+      "id": "ticket-012",
+      "openedOn": "2026-09-23",
+      "priority": "low",
+      "state": "open",
+      "minutes": 30,
+      "affectedAccounts": 1,
+      "blockedBy": "",
+      "issue": "Printed legend has an unnecessary blank row",
+      "ageDays": 7,
+      "interpretation": "Retain when capacity-deferred."
+    }
+  ],
+  "fullSeedCapacityPlan": {
+    "requestedMinutes": 420,
+    "usedMinutes": 420,
+    "unusedMinutes": 0,
+    "selected": [
+      "ticket-001",
+      "ticket-010",
+      "ticket-007",
+      "ticket-011",
+      "ticket-005",
+      "ticket-008"
+    ],
+    "deferred": [
+      "ticket-003",
+      "ticket-009",
+      "ticket-002",
+      "ticket-006",
+      "ticket-012"
+    ],
+    "blocked": [
+      "ticket-004"
+    ],
+    "excluded": [],
+    "urgentSelected": 3,
+    "policy": "Eligible urgent, normal, low; oldest first, then ID; non-preemptive fit, retain skipped work.",
+    "execution": "Prospective allocation only; no ticket is completed or sent."
+  },
+  "provenance": {
+    "modelSha256": "f482d2bcc616bba534b5f4d4aca7fbe55263b747405bdab4a27d40b35f113b9c",
+    "inputsSha256": "eaf6265d5abe77334427eb1989962cbc9a353c56e6eeacdcb5db4acb20ea3f33",
+    "scenarioSpecificationSha256": "fa0ac52ebce67adb4f38e16aaae6aa91f5c752d4ebc097f53ac58cbc7e215a90"
+  }
+}

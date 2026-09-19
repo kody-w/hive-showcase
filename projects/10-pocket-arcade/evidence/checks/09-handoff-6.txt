@@ -1,0 +1,18 @@
+argv: ["python3", "-B", "projects/09-handoff/tools/verify_evidence.py"]
+recordedAt: 2026-09-19T13:28:15.665452+00:00
+exitCode: 0
+--- stdout ---
+{
+  "status": "pass",
+  "current_public_files_bound": 55,
+  "preserved_original_inputs": 6,
+  "historical_duplicate_behavior": "4 events before; 3 after; one replay",
+  "historical_frames_reproduced_from_included_source": true,
+  "fresh_publication_commands": 6,
+  "historical_invocation_reverification": "Not possible publicly; private invocation metadata is withheld.",
+  "qualification": "Public byte/behavior consistency, not new continuation evidence or an identity attestation."
+}
+
+--- stderr ---
+
+--- end of captured streams ---

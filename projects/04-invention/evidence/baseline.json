@@ -1,0 +1,4024 @@
+{
+  "schema": "local-invention-authored-results/1",
+  "classification": "SYNTHETIC",
+  "protocolId": "two-capacity-falsification-v1",
+  "referenceChecks": [
+    {
+      "scenario": "order-trap",
+      "method": "input-first-fit",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "scenario": "order-trap",
+      "method": "dominant-first-fit",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "scenario": "order-trap",
+      "method": "volume-first-fit",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "scenario": "weight-trap",
+      "method": "input-first-fit",
+      "expected": 4,
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "scenario": "weight-trap",
+      "method": "dominant-first-fit",
+      "expected": 4,
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "scenario": "weight-trap",
+      "method": "volume-first-fit",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "scenario": "mixed-classroom",
+      "method": "input-first-fit",
+      "expected": 6,
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "scenario": "mixed-classroom",
+      "method": "dominant-first-fit",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "scenario": "mixed-classroom",
+      "method": "volume-first-fit",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "scenario": "bulky-gaps",
+      "method": "input-first-fit",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "scenario": "bulky-gaps",
+      "method": "dominant-first-fit",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "scenario": "bulky-gaps",
+      "method": "volume-first-fit",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "order-trap/authored",
+      "scenario": "order-trap",
+      "trial": 0,
+      "incomingOrder": [
+        "filler-card-pack-01",
+        "filler-card-pack-02",
+        "core-board-pack-01",
+        "core-board-pack-02"
+      ],
+      "methods": {
+        "input-first-fit": {
+          "method": "input-first-fit",
+          "count": 3,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "filler-card-pack-01",
+                "filler-card-pack-02"
+              ],
+              "volume": 8,
+              "weight": 4,
+              "remainingVolume": 2,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "core-board-pack-01"
+              ],
+              "volume": 6,
+              "weight": 3,
+              "remainingVolume": 4,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "core-board-pack-02"
+              ],
+              "volume": 6,
+              "weight": 3,
+              "remainingVolume": 4,
+              "remainingWeight": 7
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 4,
+            "insertions": [
+              {
+                "itemId": "filler-card-pack-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 4,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-02",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "core-board-pack-01",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "core-board-pack-02",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dominant-first-fit": {
+          "method": "dominant-first-fit",
+          "count": 2,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "core-board-pack-01",
+            "core-board-pack-02",
+            "filler-card-pack-01",
+            "filler-card-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "core-board-pack-01",
+                "filler-card-pack-01"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "core-board-pack-02",
+                "filler-card-pack-02"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 2,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 2,
+            "optimalBinCount": 2,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 4,
+            "insertions": [
+              {
+                "itemId": "core-board-pack-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "core-board-pack-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "volume-first-fit": {
+          "method": "volume-first-fit",
+          "count": 2,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "core-board-pack-01",
+            "core-board-pack-02",
+            "filler-card-pack-01",
+            "filler-card-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "core-board-pack-01",
+                "filler-card-pack-01"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "core-board-pack-02",
+                "filler-card-pack-02"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 2,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 2,
+            "optimalBinCount": 2,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 4,
+            "insertions": [
+              {
+                "itemId": "core-board-pack-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "core-board-pack-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dual-best-fit": {
+          "method": "dual-best-fit",
+          "count": 2,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "core-board-pack-01",
+            "core-board-pack-02",
+            "filler-card-pack-01",
+            "filler-card-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "core-board-pack-01",
+                "filler-card-pack-01"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "core-board-pack-02",
+                "filler-card-pack-02"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 2,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 2,
+            "optimalBinCount": 2,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 5,
+            "insertions": [
+              {
+                "itemId": "core-board-pack-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "core-board-pack-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "filler-card-pack-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": "2500"
+              },
+              {
+                "itemId": "filler-card-pack-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 5,
+                "residualScoreNumerator": "2500"
+              }
+            ]
+          }
+        },
+        "beam-128": {
+          "method": "beam-128",
+          "count": 2,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "filler-card-pack-01",
+                "core-board-pack-01"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "filler-card-pack-02",
+                "core-board-pack-02"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 2,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 2,
+            "optimalBinCount": 2,
+            "searchStatus": "bounded-beam",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-beam",
+            "width": 128,
+            "layers": [
+              {
+                "depth": 1,
+                "itemId": "filler-card-pack-01",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 2,
+                "itemId": "filler-card-pack-02",
+                "parents": 1,
+                "generated": 2,
+                "unique": 2,
+                "equivalentMerged": 0,
+                "kept": 2,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 3,
+                "itemId": "core-board-pack-01",
+                "parents": 2,
+                "generated": 4,
+                "unique": 3,
+                "equivalentMerged": 1,
+                "kept": 3,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              },
+              {
+                "depth": 4,
+                "itemId": "core-board-pack-02",
+                "parents": 3,
+                "generated": 6,
+                "unique": 4,
+                "equivalentMerged": 2,
+                "kept": 4,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              }
+            ],
+            "rawBeamCount": 2,
+            "incumbentCount": 3,
+            "fallbackUsed": false,
+            "discardedStates": 0,
+            "generatedStates": 13
+          }
+        },
+        "bounded-exact": {
+          "method": "bounded-exact",
+          "count": 2,
+          "incomingOrder": [
+            "filler-card-pack-01",
+            "filler-card-pack-02",
+            "core-board-pack-01",
+            "core-board-pack-02"
+          ],
+          "processingOrder": [
+            "core-board-pack-01",
+            "core-board-pack-02",
+            "filler-card-pack-01",
+            "filler-card-pack-02"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "core-board-pack-01",
+                "filler-card-pack-01"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "core-board-pack-02",
+                "filler-card-pack-02"
+              ],
+              "volume": 10,
+              "weight": 5,
+              "remainingVolume": 0,
+              "remainingWeight": 5
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 4,
+            "assignedItems": 4,
+            "totesChecked": 2,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 2,
+            "optimalBinCount": 2,
+            "searchStatus": "bound-reached",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-depth-first",
+            "itemLimit": 12,
+            "nodeLimit": 50000,
+            "incumbentCount": 3,
+            "incumbentOrder": [
+              "filler-card-pack-01",
+              "filler-card-pack-02",
+              "core-board-pack-01",
+              "core-board-pack-02"
+            ],
+            "searchOrder": [
+              "core-board-pack-01",
+              "core-board-pack-02",
+              "filler-card-pack-01",
+              "filler-card-pack-02"
+            ],
+            "nodes": 5,
+            "status": "bound-reached",
+            "levels": [
+              {
+                "depth": 0,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 1,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 1,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 2,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 3,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 1,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 4,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              }
+            ],
+            "improvements": [
+              {
+                "atNode": 5,
+                "count": 2,
+                "itemIds": [
+                  [
+                    "core-board-pack-01",
+                    "filler-card-pack-01"
+                  ],
+                  [
+                    "core-board-pack-02",
+                    "filler-card-pack-02"
+                  ]
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "caseId": "weight-trap/authored",
+      "scenario": "weight-trap",
+      "trial": 0,
+      "incomingOrder": [
+        "light-foam-panel-01",
+        "light-foam-panel-02",
+        "light-foam-panel-03",
+        "dense-counter-pouch-01",
+        "dense-counter-pouch-02",
+        "dense-counter-pouch-03",
+        "medium-card-board-01",
+        "medium-card-board-02"
+      ],
+      "methods": {
+        "input-first-fit": {
+          "method": "input-first-fit",
+          "count": 4,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "light-foam-panel-01",
+                "dense-counter-pouch-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "light-foam-panel-02",
+                "dense-counter-pouch-02"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "light-foam-panel-03",
+                "dense-counter-pouch-03"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "medium-card-board-01",
+                "medium-card-board-02"
+              ],
+              "volume": 6,
+              "weight": 6,
+              "remainingVolume": 4,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 4,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 4,
+            "optimalBinCount": 4,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 16,
+            "insertions": [
+              {
+                "itemId": "light-foam-panel-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-03",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dominant-first-fit": {
+          "method": "dominant-first-fit",
+          "count": 4,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "dense-counter-pouch-01",
+                "light-foam-panel-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "dense-counter-pouch-02",
+                "light-foam-panel-02"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "dense-counter-pouch-03",
+                "light-foam-panel-03"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "medium-card-board-01",
+                "medium-card-board-02"
+              ],
+              "volume": 6,
+              "weight": 6,
+              "remainingVolume": 4,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 4,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 4,
+            "optimalBinCount": 4,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 16,
+            "insertions": [
+              {
+                "itemId": "dense-counter-pouch-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-03",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "volume-first-fit": {
+          "method": "volume-first-fit",
+          "count": 5,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "medium-card-board-01",
+            "medium-card-board-02",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "light-foam-panel-01",
+                "medium-card-board-01"
+              ],
+              "volume": 10,
+              "weight": 4,
+              "remainingVolume": 0,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "light-foam-panel-02",
+                "medium-card-board-02"
+              ],
+              "volume": 10,
+              "weight": 4,
+              "remainingVolume": 0,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "light-foam-panel-03",
+                "dense-counter-pouch-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "dense-counter-pouch-02"
+              ],
+              "volume": 2,
+              "weight": 7,
+              "remainingVolume": 8,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "dense-counter-pouch-03"
+              ],
+              "volume": 2,
+              "weight": 7,
+              "remainingVolume": 8,
+              "remainingWeight": 3
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 5,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 5,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 16,
+            "insertions": [
+              {
+                "itemId": "light-foam-panel-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 7,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-01",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-02",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-03",
+                "tote": 5,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dual-best-fit": {
+          "method": "dual-best-fit",
+          "count": 4,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "dense-counter-pouch-01",
+                "light-foam-panel-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "dense-counter-pouch-02",
+                "light-foam-panel-02"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "dense-counter-pouch-03",
+                "light-foam-panel-03"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "medium-card-board-01",
+                "medium-card-board-02"
+              ],
+              "volume": 6,
+              "weight": 6,
+              "remainingVolume": 4,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 4,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 4,
+            "optimalBinCount": 4,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 19,
+            "insertions": [
+              {
+                "itemId": "dense-counter-pouch-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "dense-counter-pouch-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "light-foam-panel-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": "500"
+              },
+              {
+                "itemId": "light-foam-panel-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": "500"
+              },
+              {
+                "itemId": "light-foam-panel-03",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 8,
+                "residualScoreNumerator": "500"
+              },
+              {
+                "itemId": "medium-card-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "medium-card-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 6,
+                "residualScoreNumerator": "3200"
+              }
+            ]
+          }
+        },
+        "beam-128": {
+          "method": "beam-128",
+          "count": 4,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "light-foam-panel-01",
+                "dense-counter-pouch-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "light-foam-panel-02",
+                "dense-counter-pouch-02"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "light-foam-panel-03",
+                "medium-card-board-01"
+              ],
+              "volume": 10,
+              "weight": 4,
+              "remainingVolume": 0,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "dense-counter-pouch-03",
+                "medium-card-board-02"
+              ],
+              "volume": 5,
+              "weight": 10,
+              "remainingVolume": 5,
+              "remainingWeight": 0
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 4,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 4,
+            "optimalBinCount": 4,
+            "searchStatus": "bounded-beam",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-beam",
+            "width": 128,
+            "layers": [
+              {
+                "depth": 1,
+                "itemId": "light-foam-panel-01",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 2,
+                "itemId": "light-foam-panel-02",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              },
+              {
+                "depth": 3,
+                "itemId": "light-foam-panel-03",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              },
+              {
+                "depth": 4,
+                "itemId": "dense-counter-pouch-01",
+                "parents": 1,
+                "generated": 4,
+                "unique": 2,
+                "equivalentMerged": 2,
+                "kept": 2,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              },
+              {
+                "depth": 5,
+                "itemId": "dense-counter-pouch-02",
+                "parents": 2,
+                "generated": 7,
+                "unique": 3,
+                "equivalentMerged": 4,
+                "kept": 3,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              },
+              {
+                "depth": 6,
+                "itemId": "dense-counter-pouch-03",
+                "parents": 3,
+                "generated": 9,
+                "unique": 4,
+                "equivalentMerged": 5,
+                "kept": 4,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              },
+              {
+                "depth": 7,
+                "itemId": "medium-card-board-01",
+                "parents": 4,
+                "generated": 16,
+                "unique": 10,
+                "equivalentMerged": 6,
+                "kept": 10,
+                "discarded": 0,
+                "bestPartialBinCount": 4
+              },
+              {
+                "depth": 8,
+                "itemId": "medium-card-board-02",
+                "parents": 10,
+                "generated": 44,
+                "unique": 21,
+                "equivalentMerged": 23,
+                "kept": 21,
+                "discarded": 0,
+                "bestPartialBinCount": 4
+              }
+            ],
+            "rawBeamCount": 4,
+            "incumbentCount": 4,
+            "fallbackUsed": false,
+            "discardedStates": 0,
+            "generatedStates": 83
+          }
+        },
+        "bounded-exact": {
+          "method": "bounded-exact",
+          "count": 4,
+          "incomingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "processingOrder": [
+            "light-foam-panel-01",
+            "light-foam-panel-02",
+            "light-foam-panel-03",
+            "dense-counter-pouch-01",
+            "dense-counter-pouch-02",
+            "dense-counter-pouch-03",
+            "medium-card-board-01",
+            "medium-card-board-02"
+          ],
+          "lowerBound": 4,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "light-foam-panel-01",
+                "dense-counter-pouch-01"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "light-foam-panel-02",
+                "dense-counter-pouch-02"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "light-foam-panel-03",
+                "dense-counter-pouch-03"
+              ],
+              "volume": 9,
+              "weight": 8,
+              "remainingVolume": 1,
+              "remainingWeight": 2
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "medium-card-board-01",
+                "medium-card-board-02"
+              ],
+              "volume": 6,
+              "weight": 6,
+              "remainingVolume": 4,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 8,
+            "assignedItems": 8,
+            "totesChecked": 4,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 4,
+            "certifiedLowerBound": 4,
+            "upperBound": 4,
+            "optimalBinCount": 4,
+            "searchStatus": "bound-equality",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-depth-first",
+            "itemLimit": 12,
+            "nodeLimit": 50000,
+            "incumbentCount": 4,
+            "incumbentOrder": [
+              "light-foam-panel-01",
+              "light-foam-panel-02",
+              "light-foam-panel-03",
+              "dense-counter-pouch-01",
+              "dense-counter-pouch-02",
+              "dense-counter-pouch-03",
+              "medium-card-board-01",
+              "medium-card-board-02"
+            ],
+            "searchOrder": [
+              "dense-counter-pouch-01",
+              "dense-counter-pouch-02",
+              "dense-counter-pouch-03",
+              "light-foam-panel-01",
+              "light-foam-panel-02",
+              "light-foam-panel-03",
+              "medium-card-board-01",
+              "medium-card-board-02"
+            ],
+            "nodes": 0,
+            "status": "bound-equality",
+            "levels": [
+              {
+                "depth": 0,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 1,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 2,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 3,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 4,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 5,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 6,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 7,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 8,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              }
+            ],
+            "improvements": []
+          }
+        }
+      }
+    },
+    {
+      "caseId": "mixed-classroom/authored",
+      "scenario": "mixed-classroom",
+      "trial": 0,
+      "incomingOrder": [
+        "paper-stack-01",
+        "paper-stack-02",
+        "paper-stack-03",
+        "paper-stack-04",
+        "foam-shapes-01",
+        "foam-shapes-02",
+        "foam-shapes-03",
+        "tile-pouch-01",
+        "tile-pouch-02",
+        "tile-pouch-03",
+        "cloth-pack-01",
+        "cloth-pack-02",
+        "counter-board-01",
+        "counter-board-02"
+      ],
+      "methods": {
+        "input-first-fit": {
+          "method": "input-first-fit",
+          "count": 6,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "paper-stack-01",
+                "paper-stack-02",
+                "paper-stack-03"
+              ],
+              "volume": 9,
+              "weight": 6,
+              "remainingVolume": 1,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "paper-stack-04",
+                "foam-shapes-01"
+              ],
+              "volume": 9,
+              "weight": 3,
+              "remainingVolume": 1,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "foam-shapes-02",
+                "tile-pouch-01"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "foam-shapes-03",
+                "tile-pouch-02"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "tile-pouch-03",
+                "cloth-pack-01",
+                "cloth-pack-02"
+              ],
+              "volume": 10,
+              "weight": 10,
+              "remainingVolume": 0,
+              "remainingWeight": 0
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 6,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 6,
+            "optimalBinCount": 6,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 42,
+            "insertions": [
+              {
+                "itemId": "paper-stack-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-02",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-03",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-04",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-01",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-02",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-03",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-01",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-03",
+                "tote": 5,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-01",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 8,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-02",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 10,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-01",
+                "tote": 6,
+                "opened": true,
+                "volumeAfter": 5,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-02",
+                "tote": 6,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dominant-first-fit": {
+          "method": "dominant-first-fit",
+          "count": 7,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "counter-board-01",
+            "counter-board-02",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "tile-pouch-01",
+                "foam-shapes-01"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "tile-pouch-02",
+                "foam-shapes-02"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "tile-pouch-03",
+                "foam-shapes-03"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "cloth-pack-01",
+                "cloth-pack-02"
+              ],
+              "volume": 8,
+              "weight": 4,
+              "remainingVolume": 2,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "paper-stack-01",
+                "paper-stack-02",
+                "paper-stack-03"
+              ],
+              "volume": 9,
+              "weight": 6,
+              "remainingVolume": 1,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T07",
+              "itemIds": [
+                "paper-stack-04"
+              ],
+              "volume": 3,
+              "weight": 2,
+              "remainingVolume": 7,
+              "remainingWeight": 8
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 7,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 7,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 48,
+            "insertions": [
+              {
+                "itemId": "tile-pouch-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-03",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 5,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-01",
+                "tote": 5,
+                "opened": true,
+                "volumeAfter": 4,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-02",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-01",
+                "tote": 6,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-02",
+                "tote": 6,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-03",
+                "tote": 6,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-04",
+                "tote": 7,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "volume-first-fit": {
+          "method": "volume-first-fit",
+          "count": 8,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "counter-board-01",
+            "counter-board-02",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 2,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "foam-shapes-01",
+                "cloth-pack-01"
+              ],
+              "volume": 10,
+              "weight": 3,
+              "remainingVolume": 0,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "foam-shapes-02",
+                "cloth-pack-02"
+              ],
+              "volume": 10,
+              "weight": 3,
+              "remainingVolume": 0,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "foam-shapes-03",
+                "paper-stack-01"
+              ],
+              "volume": 9,
+              "weight": 3,
+              "remainingVolume": 1,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "paper-stack-02",
+                "paper-stack-03",
+                "paper-stack-04"
+              ],
+              "volume": 9,
+              "weight": 6,
+              "remainingVolume": 1,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "tile-pouch-01"
+              ],
+              "volume": 2,
+              "weight": 6,
+              "remainingVolume": 8,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T07",
+              "itemIds": [
+                "tile-pouch-02"
+              ],
+              "volume": 2,
+              "weight": 6,
+              "remainingVolume": 8,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T08",
+              "itemIds": [
+                "tile-pouch-03"
+              ],
+              "volume": 2,
+              "weight": 6,
+              "remainingVolume": 8,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 8,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 8,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 48,
+            "insertions": [
+              {
+                "itemId": "foam-shapes-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 5,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-01",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-02",
+                "tote": 5,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-03",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 4,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-04",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-01",
+                "tote": 6,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-02",
+                "tote": 7,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-03",
+                "tote": 8,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dual-best-fit": {
+          "method": "dual-best-fit",
+          "count": 7,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "counter-board-01",
+            "counter-board-02",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "tile-pouch-01",
+                "foam-shapes-01"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "tile-pouch-02",
+                "foam-shapes-02"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "tile-pouch-03",
+                "foam-shapes-03"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "cloth-pack-01",
+                "cloth-pack-02"
+              ],
+              "volume": 8,
+              "weight": 4,
+              "remainingVolume": 2,
+              "remainingWeight": 6
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "paper-stack-01",
+                "paper-stack-02",
+                "paper-stack-03"
+              ],
+              "volume": 9,
+              "weight": 6,
+              "remainingVolume": 1,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T07",
+              "itemIds": [
+                "paper-stack-04"
+              ],
+              "volume": 3,
+              "weight": 2,
+              "remainingVolume": 7,
+              "remainingWeight": 8
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 7,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 7,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 51,
+            "insertions": [
+              {
+                "itemId": "tile-pouch-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "tile-pouch-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 2,
+                "weightAfter": 6,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "foam-shapes-01",
+                "tote": 1,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": "1300"
+              },
+              {
+                "itemId": "foam-shapes-02",
+                "tote": 2,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": "1300"
+              },
+              {
+                "itemId": "foam-shapes-03",
+                "tote": 3,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 7,
+                "residualScoreNumerator": "1300"
+              },
+              {
+                "itemId": "counter-board-01",
+                "tote": 4,
+                "opened": true,
+                "volumeAfter": 5,
+                "weightAfter": 3,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "counter-board-02",
+                "tote": 4,
+                "opened": false,
+                "volumeAfter": 10,
+                "weightAfter": 6,
+                "residualScoreNumerator": "1600"
+              },
+              {
+                "itemId": "cloth-pack-01",
+                "tote": 5,
+                "opened": true,
+                "volumeAfter": 4,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "cloth-pack-02",
+                "tote": 5,
+                "opened": false,
+                "volumeAfter": 8,
+                "weightAfter": 4,
+                "residualScoreNumerator": "4000"
+              },
+              {
+                "itemId": "paper-stack-01",
+                "tote": 6,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "paper-stack-02",
+                "tote": 6,
+                "opened": false,
+                "volumeAfter": 6,
+                "weightAfter": 4,
+                "residualScoreNumerator": "5200"
+              },
+              {
+                "itemId": "paper-stack-03",
+                "tote": 6,
+                "opened": false,
+                "volumeAfter": 9,
+                "weightAfter": 6,
+                "residualScoreNumerator": "1700"
+              },
+              {
+                "itemId": "paper-stack-04",
+                "tote": 7,
+                "opened": true,
+                "volumeAfter": 3,
+                "weightAfter": 2,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "beam-128": {
+          "method": "beam-128",
+          "count": 6,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "paper-stack-01",
+                "paper-stack-02",
+                "tile-pouch-01"
+              ],
+              "volume": 8,
+              "weight": 10,
+              "remainingVolume": 2,
+              "remainingWeight": 0
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "paper-stack-03",
+                "paper-stack-04",
+                "tile-pouch-02"
+              ],
+              "volume": 8,
+              "weight": 10,
+              "remainingVolume": 2,
+              "remainingWeight": 0
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "foam-shapes-01",
+                "tile-pouch-03"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "foam-shapes-02",
+                "cloth-pack-01"
+              ],
+              "volume": 10,
+              "weight": 3,
+              "remainingVolume": 0,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "foam-shapes-03",
+                "cloth-pack-02"
+              ],
+              "volume": 10,
+              "weight": 3,
+              "remainingVolume": 0,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 6,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 6,
+            "optimalBinCount": 6,
+            "searchStatus": "bounded-beam",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-beam",
+            "width": 128,
+            "layers": [
+              {
+                "depth": 1,
+                "itemId": "paper-stack-01",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 2,
+                "itemId": "paper-stack-02",
+                "parents": 1,
+                "generated": 2,
+                "unique": 2,
+                "equivalentMerged": 0,
+                "kept": 2,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 3,
+                "itemId": "paper-stack-03",
+                "parents": 2,
+                "generated": 5,
+                "unique": 3,
+                "equivalentMerged": 2,
+                "kept": 3,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 4,
+                "itemId": "paper-stack-04",
+                "parents": 3,
+                "generated": 8,
+                "unique": 4,
+                "equivalentMerged": 4,
+                "kept": 4,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              },
+              {
+                "depth": 5,
+                "itemId": "foam-shapes-01",
+                "parents": 4,
+                "generated": 11,
+                "unique": 7,
+                "equivalentMerged": 4,
+                "kept": 7,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              },
+              {
+                "depth": 6,
+                "itemId": "foam-shapes-02",
+                "parents": 7,
+                "generated": 18,
+                "unique": 9,
+                "equivalentMerged": 9,
+                "kept": 9,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              },
+              {
+                "depth": 7,
+                "itemId": "foam-shapes-03",
+                "parents": 9,
+                "generated": 22,
+                "unique": 10,
+                "equivalentMerged": 12,
+                "kept": 10,
+                "discarded": 0,
+                "bestPartialBinCount": 4
+              },
+              {
+                "depth": 8,
+                "itemId": "tile-pouch-01",
+                "parents": 10,
+                "generated": 49,
+                "unique": 30,
+                "equivalentMerged": 19,
+                "kept": 30,
+                "discarded": 0,
+                "bestPartialBinCount": 4
+              },
+              {
+                "depth": 9,
+                "itemId": "tile-pouch-02",
+                "parents": 30,
+                "generated": 134,
+                "unique": 54,
+                "equivalentMerged": 80,
+                "kept": 54,
+                "discarded": 0,
+                "bestPartialBinCount": 4
+              },
+              {
+                "depth": 10,
+                "itemId": "tile-pouch-03",
+                "parents": 54,
+                "generated": 225,
+                "unique": 76,
+                "equivalentMerged": 149,
+                "kept": 76,
+                "discarded": 0,
+                "bestPartialBinCount": 5
+              },
+              {
+                "depth": 11,
+                "itemId": "cloth-pack-01",
+                "parents": 76,
+                "generated": 438,
+                "unique": 291,
+                "equivalentMerged": 147,
+                "kept": 128,
+                "discarded": 163,
+                "bestPartialBinCount": 5
+              },
+              {
+                "depth": 12,
+                "itemId": "cloth-pack-02",
+                "parents": 128,
+                "generated": 536,
+                "unique": 325,
+                "equivalentMerged": 211,
+                "kept": 128,
+                "discarded": 197,
+                "bestPartialBinCount": 5
+              },
+              {
+                "depth": 13,
+                "itemId": "counter-board-01",
+                "parents": 128,
+                "generated": 191,
+                "unique": 191,
+                "equivalentMerged": 0,
+                "kept": 128,
+                "discarded": 63,
+                "bestPartialBinCount": 6
+              },
+              {
+                "depth": 14,
+                "itemId": "counter-board-02",
+                "parents": 128,
+                "generated": 228,
+                "unique": 193,
+                "equivalentMerged": 35,
+                "kept": 128,
+                "discarded": 65,
+                "bestPartialBinCount": 6
+              }
+            ],
+            "rawBeamCount": 6,
+            "incumbentCount": 6,
+            "fallbackUsed": false,
+            "discardedStates": 488,
+            "generatedStates": 1868
+          }
+        },
+        "bounded-exact": {
+          "method": "bounded-exact",
+          "count": 6,
+          "incomingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "processingOrder": [
+            "paper-stack-01",
+            "paper-stack-02",
+            "paper-stack-03",
+            "paper-stack-04",
+            "foam-shapes-01",
+            "foam-shapes-02",
+            "foam-shapes-03",
+            "tile-pouch-01",
+            "tile-pouch-02",
+            "tile-pouch-03",
+            "cloth-pack-01",
+            "cloth-pack-02",
+            "counter-board-01",
+            "counter-board-02"
+          ],
+          "lowerBound": 6,
+          "aggregateGap": 0,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "paper-stack-01",
+                "paper-stack-02",
+                "paper-stack-03"
+              ],
+              "volume": 9,
+              "weight": 6,
+              "remainingVolume": 1,
+              "remainingWeight": 4
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "paper-stack-04",
+                "foam-shapes-01"
+              ],
+              "volume": 9,
+              "weight": 3,
+              "remainingVolume": 1,
+              "remainingWeight": 7
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "foam-shapes-02",
+                "tile-pouch-01"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T04",
+              "itemIds": [
+                "foam-shapes-03",
+                "tile-pouch-02"
+              ],
+              "volume": 8,
+              "weight": 7,
+              "remainingVolume": 2,
+              "remainingWeight": 3
+            },
+            {
+              "id": "T05",
+              "itemIds": [
+                "tile-pouch-03",
+                "cloth-pack-01",
+                "cloth-pack-02"
+              ],
+              "volume": 10,
+              "weight": 10,
+              "remainingVolume": 0,
+              "remainingWeight": 0
+            },
+            {
+              "id": "T06",
+              "itemIds": [
+                "counter-board-01",
+                "counter-board-02"
+              ],
+              "volume": 10,
+              "weight": 6,
+              "remainingVolume": 0,
+              "remainingWeight": 4
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 14,
+            "assignedItems": 14,
+            "totesChecked": 6,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "aggregate-bound-equality",
+            "aggregateLowerBound": 6,
+            "certifiedLowerBound": 6,
+            "upperBound": 6,
+            "optimalBinCount": 6,
+            "searchStatus": "bound-equality",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-depth-first",
+            "itemLimit": 12,
+            "nodeLimit": 50000,
+            "incumbentCount": 6,
+            "incumbentOrder": [
+              "paper-stack-01",
+              "paper-stack-02",
+              "paper-stack-03",
+              "paper-stack-04",
+              "foam-shapes-01",
+              "foam-shapes-02",
+              "foam-shapes-03",
+              "tile-pouch-01",
+              "tile-pouch-02",
+              "tile-pouch-03",
+              "cloth-pack-01",
+              "cloth-pack-02",
+              "counter-board-01",
+              "counter-board-02"
+            ],
+            "searchOrder": [
+              "tile-pouch-01",
+              "tile-pouch-02",
+              "tile-pouch-03",
+              "foam-shapes-01",
+              "foam-shapes-02",
+              "foam-shapes-03",
+              "counter-board-01",
+              "counter-board-02",
+              "cloth-pack-01",
+              "cloth-pack-02",
+              "paper-stack-01",
+              "paper-stack-02",
+              "paper-stack-03",
+              "paper-stack-04"
+            ],
+            "nodes": 0,
+            "status": "bound-equality",
+            "levels": [
+              {
+                "depth": 0,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 1,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 2,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 3,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 4,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 5,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 6,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 7,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 8,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 9,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 10,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 11,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 12,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 13,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 14,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              }
+            ],
+            "improvements": []
+          }
+        }
+      }
+    },
+    {
+      "caseId": "bulky-gaps/authored",
+      "scenario": "bulky-gaps",
+      "trial": 0,
+      "incomingOrder": [
+        "wide-foam-block-01",
+        "wide-foam-block-02",
+        "wide-foam-block-03"
+      ],
+      "methods": {
+        "input-first-fit": {
+          "method": "input-first-fit",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 3,
+            "insertions": [
+              {
+                "itemId": "wide-foam-block-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dominant-first-fit": {
+          "method": "dominant-first-fit",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 3,
+            "insertions": [
+              {
+                "itemId": "wide-foam-block-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "volume-first-fit": {
+          "method": "volume-first-fit",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 3,
+            "insertions": [
+              {
+                "itemId": "wide-foam-block-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "dual-best-fit": {
+          "method": "dual-best-fit",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "not-attempted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "greedy-insertions",
+            "feasibilityChecks": 3,
+            "insertions": [
+              {
+                "itemId": "wide-foam-block-01",
+                "tote": 1,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-02",
+                "tote": 2,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              },
+              {
+                "itemId": "wide-foam-block-03",
+                "tote": 3,
+                "opened": true,
+                "volumeAfter": 6,
+                "weightAfter": 1,
+                "residualScoreNumerator": null
+              }
+            ]
+          }
+        },
+        "beam-128": {
+          "method": "beam-128",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "bounded-unknown",
+            "method": "none",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 2,
+            "upperBound": 3,
+            "optimalBinCount": null,
+            "searchStatus": "bounded-beam",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-beam",
+            "width": 128,
+            "layers": [
+              {
+                "depth": 1,
+                "itemId": "wide-foam-block-01",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 1
+              },
+              {
+                "depth": 2,
+                "itemId": "wide-foam-block-02",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 2
+              },
+              {
+                "depth": 3,
+                "itemId": "wide-foam-block-03",
+                "parents": 1,
+                "generated": 1,
+                "unique": 1,
+                "equivalentMerged": 0,
+                "kept": 1,
+                "discarded": 0,
+                "bestPartialBinCount": 3
+              }
+            ],
+            "rawBeamCount": 3,
+            "incumbentCount": 3,
+            "fallbackUsed": false,
+            "discardedStates": 0,
+            "generatedStates": 3
+          }
+        },
+        "bounded-exact": {
+          "method": "bounded-exact",
+          "count": 3,
+          "incomingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "processingOrder": [
+            "wide-foam-block-01",
+            "wide-foam-block-02",
+            "wide-foam-block-03"
+          ],
+          "lowerBound": 2,
+          "aggregateGap": 1,
+          "bins": [
+            {
+              "id": "T01",
+              "itemIds": [
+                "wide-foam-block-01"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T02",
+              "itemIds": [
+                "wide-foam-block-02"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            },
+            {
+              "id": "T03",
+              "itemIds": [
+                "wide-foam-block-03"
+              ],
+              "volume": 6,
+              "weight": 1,
+              "remainingVolume": 4,
+              "remainingWeight": 9
+            }
+          ],
+          "validation": {
+            "valid": true,
+            "expectedItems": 3,
+            "assignedItems": 3,
+            "totesChecked": 3,
+            "errors": []
+          },
+          "proof": {
+            "status": "proven-model-optimum",
+            "method": "exhaustive-search",
+            "aggregateLowerBound": 2,
+            "certifiedLowerBound": 3,
+            "upperBound": 3,
+            "optimalBinCount": 3,
+            "searchStatus": "exhausted",
+            "scope": "Two-capacity scalar model only; not physical fit."
+          },
+          "trace": {
+            "kind": "bounded-depth-first",
+            "itemLimit": 12,
+            "nodeLimit": 50000,
+            "incumbentCount": 3,
+            "incumbentOrder": [
+              "wide-foam-block-01",
+              "wide-foam-block-02",
+              "wide-foam-block-03"
+            ],
+            "searchOrder": [
+              "wide-foam-block-01",
+              "wide-foam-block-02",
+              "wide-foam-block-03"
+            ],
+            "nodes": 3,
+            "status": "exhausted",
+            "levels": [
+              {
+                "depth": 0,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 1,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 1,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              },
+              {
+                "depth": 2,
+                "visited": 1,
+                "aggregatePruned": 0,
+                "capacityRejected": 1,
+                "symmetrySkipped": 1,
+                "newBinPruned": 1
+              },
+              {
+                "depth": 3,
+                "visited": 0,
+                "aggregatePruned": 0,
+                "capacityRejected": 0,
+                "symmetrySkipped": 0,
+                "newBinPruned": 0
+              }
+            ],
+            "improvements": []
+          }
+        }
+      }
+    }
+  ]
+}

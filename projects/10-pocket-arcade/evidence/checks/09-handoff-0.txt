@@ -1,0 +1,14 @@
+argv: ["python3", "-B", "projects/09-handoff/tools/verify_inputs.py"]
+recordedAt: 2026-09-19T13:28:15.233031+00:00
+exitCode: 0
+--- stdout ---
+{
+  "preserved_historical_inputs": 6,
+  "unchanged_original_source_and_tests": 4,
+  "changed_or_missing": [],
+  "qualification": "Redacted execution records are not claimed to match private original bytes."
+}
+
+--- stderr ---
+
+--- end of captured streams ---

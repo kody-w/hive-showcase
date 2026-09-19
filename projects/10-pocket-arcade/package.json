@@ -1,0 +1,6 @@
+{
+  "name": "local-pocket-arcade",
+  "private": true,
+  "type": "commonjs",
+  "description": "Loader boundary for dependency-free classic browser scripts and their Node tests."
+}

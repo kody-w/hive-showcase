@@ -1,0 +1,68 @@
+{
+  "schema": "local-invention-checks/1",
+  "status": "pass",
+  "runtime": {
+    "node": "v26.7.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "commandFromRepositoryRoot": [
+    "node",
+    "projects/04-invention/scripts/checks.mjs",
+    "--write"
+  ],
+  "scope": "Actual local Node tests, deterministic experiment replay and two fresh-process repetitions. DOM tests use a minimal Node VM adapter; no browser layout or physical test occurred.",
+  "checks": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "projects/04-invention/test/engine.test.mjs",
+        "projects/04-invention/test/evidence.test.mjs",
+        "projects/04-invention/test/ui.test.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "✔ source expansion preserves all 11 rows, 29 IDs, source order and shape assumptions (0.738708ms)\n✔ CSV parser handles quoted notes but rejects ambiguous or invalid source data (3.378667ms)\n✔ all twelve original reference counts are reproduced without imported reference code (0.704125ms)\n✔ the dominant and volume counterexamples remain worse on mixed-classroom (0.15675ms)\n✔ every original method respects both capacities and exactly-once assignments (10.207ms)\n✔ verification rejects duplicate, missing, unknown, overloaded and falsified assignments (0.307708ms)\n✔ invalid integer capacities, oversized items and cross-scenario input fail (0.170792ms)\n✔ inclusive capacity equality and empty input are handled exactly (0.124542ms)\n✔ normalized sorting uses both capacities and exact rational ties (0.085667ms)\n✔ xorshift32 and FNV-1a match fixed algorithm vectors (0.17575ms)\n✔ permutation streams are repeatable, continuous and scenario-specific (0.288042ms)\n✔ aggregate equality proves a result without pretending to run exact search (0.088625ms)\n✔ bulky-gaps needs exhaustive proof above its unattainable aggregate bound (0.07925ms)\n✔ node and item limits report unknown rather than inventing exact proofs (0.119291ms)\n✔ bounded exact agrees with a separate exhaustive partition enumerator on 40 test fixtures (0.859458ms)\n✔ beam states stay bounded and fallback never worsens its first-fit incumbent (5.97925ms)\n✔ algorithms neither mutate inputs nor depend on locale or ambient randomness (9.638125ms)\n✔ saved evidence covers every frozen case, method, incoming order and PRNG state (2.922083ms)\n✔ separate verifier reconstructs all 504 assignments rather than trusting pass flags (15.296875ms)\n✔ all aggregate metrics and candidate gates are reconstructed from complete trials (0.303334ms)\n✔ regression ledger retains every losing method result and known failure (0.220667ms)\n✔ search traces remain within the frozen budgets and proof labels are honest (0.269542ms)\n✔ copied source data and reviewed provenance match the parent verification record (2.584917ms)\n✔ evidence identifies the unchanged pre-comparison freeze and exact original implementation (0.271583ms)\n✔ offline HTML references local existing assets, valid anchors and accessible controls (0.77725ms)\n✔ original browser scripts initialize from disk data without fetch, storage or a service (16.301ms)\n✔ all scenario and method controls render assignments and reproduce selected saved traces (36.926917ms)\n✔ failure filters and known-counterexample navigation preserve unfavorable results (6.10175ms)\n✔ local replay detects disagreement rather than silently overwriting saved evidence (4.954708ms)\n✔ print action is wired and the printable view retains numeric loads and model warnings (4.120833ms)\nℹ tests 30\nℹ suites 0\nℹ pass 30\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 128.854958\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "argv": [
+        "node",
+        "projects/04-invention/scripts/experiment.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\n  \"mode\": \"--check\",\n  \"artifacts\": 6,\n  \"assignmentsIndependentlyChecked\": 504,\n  \"referenceCountsMatched\": 12,\n  \"totalTrialMethodResults\": 480,\n  \"authoredTotals\": {\n    \"input-first-fit\": 16,\n    \"dominant-first-fit\": 16,\n    \"volume-first-fit\": 18,\n    \"dual-best-fit\": 16,\n    \"beam-128\": 15,\n    \"bounded-exact\": 15\n  },\n  \"pairedTotals\": {\n    \"input-first-fit\": 323,\n    \"dominant-first-fit\": 320,\n    \"volume-first-fit\": 360,\n    \"dual-best-fit\": 320,\n    \"beam-128\": 300,\n    \"bounded-exact\": 315\n  },\n  \"decision\": {\n    \"kind\": \"measured-model-improvement\",\n    \"selectedMethod\": \"beam-128\",\n    \"eligibleMethods\": [\n      \"beam-128\",\n      \"bounded-exact\"\n    ],\n    \"authoredBinsSaved\": 1,\n    \"pairedBinsSaved\": 23,\n    \"pairedReductionPercent\": 7.120743034055727,\n    \"inference\": \"Descriptive results on these four synthetic cases only. No population, physical or market inference.\"\n  }\n}\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "argv": [
+        "node",
+        "projects/04-invention/scripts/replicate.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\n  \"mode\": \"--check\",\n  \"byteIdentical\": true,\n  \"checked\": 504,\n  \"outputSha256\": \"09704b17fcae134064cad2c3d79e5910586d050ab488fa4683e6a31fcfad41cf\"\n}\n\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "codeHashes": {
+    "index.html": "4380392bf4389e1efbfab4c2cc8c5b64560e1492bc5485cfea62c7deea017517",
+    "style.css": "3c813238c8f81d1a5261cb403c38fb329dc24ab851e1ea93137728849331d47d",
+    "src/app.js": "a69e166acea89642ae5adb6867dab3ab27669e0576a09ca79e650af6f8f5795a",
+    "src/engine.js": "4a09899f3cea4a2f8164c6e6af3e161c0b3be74af057c4f0e76c86e64ae41622",
+    "src/study.mjs": "39215cd018b7fc48ce418c4d9ffcedcb1dcb3046f016f1c68f2b2d0e6815df68",
+    "scripts/experiment.mjs": "ff6c59203198679225ca857ac37ec45940c357d66588333072f90b8b44f55265",
+    "scripts/replicate.mjs": "b7078fc6d8510df91978d6917f90c7ac1c7e817657deee72a7e947dbb96a56b9",
+    "scripts/checks.mjs": "060629eee42b492ced90b0e354abd92932e152b50cc7f50c55dc3d33c07390b0",
+    "test/engine.test.mjs": "52d2b94fb3270683aa7392a9bddaf56ca7ed840020d71f213c9bf56703bd1a8f",
+    "test/evidence.test.mjs": "84f69db35d30dcc67acfc71b6b88c5a87ec85cb3aae2cf744fdd042fd8ad5999",
+    "test/ui.test.mjs": "cd3df10936cc49b3c9135259367d38b0ff895e13c10c4052638eda033549338a"
+  }
+}

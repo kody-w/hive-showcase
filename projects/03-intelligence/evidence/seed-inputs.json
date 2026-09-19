@@ -1,0 +1,239 @@
+{
+  "schema": "inert-seed-input-provenance/1",
+  "classification": "public-synthetic",
+  "seedSlug": "public-source-intelligence-bureau",
+  "seedRef": "sha256:6087a81af9f73e9787333e56d9f30ceade1fd02c4e98b9e9368248b5f9833551",
+  "archiveRef": "sha256:550db33c5faeb0a56c7106ac1ab052b735b84b698f33ea3c5a26cd1212fa4724",
+  "parentVerificationSha256": "dc624f7101cd31e76a43b6285c183ce23ec92f3b0fc95e22da74b3e886c85a38",
+  "parentVerifiedAt": "2026-09-19T01:11:33.237613+00:00",
+  "nativeInitialized": false,
+  "downloadedCodeExecuted": false,
+  "scope": "Only reviewed data and its MIT license are copied. The original fictional Juniper Queue investigation is a provenance baseline, not evidence for the new solo-founder question.",
+  "files": [
+    {
+      "path": "inputs/seed/LICENSE",
+      "originalPath": "LICENSE",
+      "bytes": 1079,
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+    },
+    {
+      "path": "inputs/seed/seed.json",
+      "originalPath": "seed.json",
+      "bytes": 5596,
+      "sha256": "222f262c94614c2f795272683db30ef1d21859e3435f8ae648f86efd67fc74cd"
+    },
+    {
+      "path": "inputs/seed/initialize.json",
+      "originalPath": "initialize.json",
+      "bytes": 3999,
+      "sha256": "da3b108828d9c1e0106f5c7a51cc6c573d6ad762db05a1bc357ca8db64dd8826"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/intake.json",
+      "originalPath": "templates/casework/work/intake.json",
+      "bytes": 1439,
+      "sha256": "1e309328a87faee58c975f8a09613db274b2fdd6c92a9675fe5768b8d488aca8"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/task-board.json",
+      "originalPath": "templates/casework/work/task-board.json",
+      "bytes": 9177,
+      "sha256": "e674f6b772026f354731799bde15739d892594365870becd090ccbac06c4a91a"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/ACCEPTANCE.md",
+      "originalPath": "templates/casework/work/ACCEPTANCE.md",
+      "bytes": 783,
+      "sha256": "e7566384bdf23e6c4ff349c9ae78f78497e01947217ba505a192f903af381523"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/case/question.json",
+      "originalPath": "templates/casework/work/starter/case/question.json",
+      "bytes": 985,
+      "sha256": "33741a127ab91b092489f276ab2e478448f02ad2db37e0d6b1c474a896392ad7"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/sources/announcements.csv",
+      "originalPath": "templates/casework/work/starter/sources/announcements.csv",
+      "bytes": 561,
+      "sha256": "0befc6a5d3a10ca42b3a8686ce41a682b8e051037e1e0d51fc5058b6311aaf1b"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/sources/release-notes.csv",
+      "originalPath": "templates/casework/work/starter/sources/release-notes.csv",
+      "bytes": 756,
+      "sha256": "bb12ae8617a79f307aecba8c4da328737e58888bf5f556fc1da0c7199e50d4a1"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/sources/lab-notes.csv",
+      "originalPath": "templates/casework/work/starter/sources/lab-notes.csv",
+      "bytes": 969,
+      "sha256": "726c411f86a2e6dd78b42df789afb1b10c8cad3202c0040791899feabe864a37"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/sources/support-notices.csv",
+      "originalPath": "templates/casework/work/starter/sources/support-notices.csv",
+      "bytes": 651,
+      "sha256": "8f911383ce7552f5eef8e4f82e2b2ac35d6e0c8528379aa2869a03c7398eb01e"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/sources/benchmark-runs.csv",
+      "originalPath": "templates/casework/work/starter/sources/benchmark-runs.csv",
+      "bytes": 614,
+      "sha256": "d8ceba2e2baa46a1a7f6e0f3bb43ab1ee77397561132021fadd92946bcbb4d58"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/analysis/claims.csv",
+      "originalPath": "templates/casework/work/starter/analysis/claims.csv",
+      "bytes": 2263,
+      "sha256": "194dbc94b2eb231aab4d22188c126dfd9fac1dba7a51efcd525660e395107ffc"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/analysis/contradictions.csv",
+      "originalPath": "templates/casework/work/starter/analysis/contradictions.csv",
+      "bytes": 866,
+      "sha256": "851716fde9f12512c886014b39bd46c04b73e1769c05a83e304da0613898c99e"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/analysis/hypotheses.json",
+      "originalPath": "templates/casework/work/starter/analysis/hypotheses.json",
+      "bytes": 1561,
+      "sha256": "c2a51860bfabbef10d108f6febd8bd36ac185a211823afa26e8fd9b6fc5c6d14"
+    },
+    {
+      "path": "inputs/seed/templates/casework/work/starter/ops/investigation-board.csv",
+      "originalPath": "templates/casework/work/starter/ops/investigation-board.csv",
+      "bytes": 1460,
+      "sha256": "6370a929bc3c4848926dcc384604ae715fac05bcbb1c2d8782c86c6a52b33507"
+    },
+    {
+      "path": "inputs/seed/templates/teams/collection/work/TEAM.md",
+      "originalPath": "templates/teams/collection/work/TEAM.md",
+      "bytes": 383,
+      "sha256": "228cdb07ecad69ddbe2a5046a9506df632f756b43500085bf0ea58d1b0aa889f"
+    },
+    {
+      "path": "inputs/seed/templates/teams/analysis/work/TEAM.md",
+      "originalPath": "templates/teams/analysis/work/TEAM.md",
+      "bytes": 373,
+      "sha256": "94751f2bbdcf3e3d6ce7af1cfe23bb4400b5a2203ef60549236f77489a5cdcf0"
+    },
+    {
+      "path": "inputs/seed/templates/teams/competing-hypotheses/work/TEAM.md",
+      "originalPath": "templates/teams/competing-hypotheses/work/TEAM.md",
+      "bytes": 390,
+      "sha256": "5e52f7dd4705835ba347bea44e634e530962bf9ac5a57424ce6cba88133809f8"
+    },
+    {
+      "path": "inputs/seed/templates/teams/verification/work/TEAM.md",
+      "originalPath": "templates/teams/verification/work/TEAM.md",
+      "bytes": 373,
+      "sha256": "2eebb85768a72d06d73dab1abea69109fbb22908e54ecee8335edc1d3b4ba51f"
+    },
+    {
+      "path": "inputs/seed/templates/teams/briefing/work/TEAM.md",
+      "originalPath": "templates/teams/briefing/work/TEAM.md",
+      "bytes": 354,
+      "sha256": "d62893e5c3acb9d6840400020e07b01b72d68ed6e6437d436004eb1bd66d2ef0"
+    }
+  ],
+  "syntheticSourceRecords": [
+    {
+      "id": "announce-01",
+      "path": "inputs/seed/templates/casework/work/starter/sources/announcements.csv",
+      "row": 2
+    },
+    {
+      "id": "announce-02",
+      "path": "inputs/seed/templates/casework/work/starter/sources/announcements.csv",
+      "row": 3
+    },
+    {
+      "id": "announce-03",
+      "path": "inputs/seed/templates/casework/work/starter/sources/announcements.csv",
+      "row": 4
+    },
+    {
+      "id": "release-01",
+      "path": "inputs/seed/templates/casework/work/starter/sources/release-notes.csv",
+      "row": 2
+    },
+    {
+      "id": "release-02",
+      "path": "inputs/seed/templates/casework/work/starter/sources/release-notes.csv",
+      "row": 3
+    },
+    {
+      "id": "release-03",
+      "path": "inputs/seed/templates/casework/work/starter/sources/release-notes.csv",
+      "row": 4
+    },
+    {
+      "id": "release-04",
+      "path": "inputs/seed/templates/casework/work/starter/sources/release-notes.csv",
+      "row": 5
+    },
+    {
+      "id": "lab-01",
+      "path": "inputs/seed/templates/casework/work/starter/sources/lab-notes.csv",
+      "row": 2
+    },
+    {
+      "id": "lab-02",
+      "path": "inputs/seed/templates/casework/work/starter/sources/lab-notes.csv",
+      "row": 3
+    },
+    {
+      "id": "lab-03",
+      "path": "inputs/seed/templates/casework/work/starter/sources/lab-notes.csv",
+      "row": 4
+    },
+    {
+      "id": "lab-04",
+      "path": "inputs/seed/templates/casework/work/starter/sources/lab-notes.csv",
+      "row": 5
+    },
+    {
+      "id": "support-01",
+      "path": "inputs/seed/templates/casework/work/starter/sources/support-notices.csv",
+      "row": 2
+    },
+    {
+      "id": "support-02",
+      "path": "inputs/seed/templates/casework/work/starter/sources/support-notices.csv",
+      "row": 3
+    },
+    {
+      "id": "support-03",
+      "path": "inputs/seed/templates/casework/work/starter/sources/support-notices.csv",
+      "row": 4
+    },
+    {
+      "id": "run-01",
+      "path": "inputs/seed/templates/casework/work/starter/sources/benchmark-runs.csv",
+      "row": 2
+    },
+    {
+      "id": "run-02",
+      "path": "inputs/seed/templates/casework/work/starter/sources/benchmark-runs.csv",
+      "row": 3
+    },
+    {
+      "id": "run-03",
+      "path": "inputs/seed/templates/casework/work/starter/sources/benchmark-runs.csv",
+      "row": 4
+    },
+    {
+      "id": "run-04",
+      "path": "inputs/seed/templates/casework/work/starter/sources/benchmark-runs.csv",
+      "row": 5
+    }
+  ],
+  "syntheticCounts": {
+    "sourceFiles": 5,
+    "records": 18,
+    "codedClaims": 9,
+    "conflicts": 3
+  },
+  "newResearchSources": "research/evidence.json#/sources"
+}

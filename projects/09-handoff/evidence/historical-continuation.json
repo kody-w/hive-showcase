@@ -1,0 +1,80 @@
+{
+  "claim": "One real separate Astra continuation performed the original repair from project artifacts in an isolated writable checkout. No continuation was launched for this public projection.",
+  "continuation_count": 1,
+  "fix_commit": "849660c39cd53277f37ba3dddf8f7ccd553cf910",
+  "historical_outcomes": {
+    "before_regression_tests": {
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 15
+    },
+    "before_strict_acceptance": {
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 2
+    },
+    "browser_run": false,
+    "coordinator_regression_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 19
+    },
+    "coordinator_strict_acceptance": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 3
+    },
+    "executor_regression_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 19
+    },
+    "executor_reproduced_baseline": true,
+    "executor_strict_acceptance": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 3
+    },
+    "offline_replay_dom_tests": {
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 12
+    },
+    "sealed_files_unchanged": 12
+  },
+  "midpoint_commit": "97dac1b6bdcfcfbae5ebdb43bbfdc0854335030e",
+  "model": "gpt-6-astra",
+  "omitted": [
+    "Machine-specific paths and interpreter locations.",
+    "Provider task/session identifiers and registry metadata.",
+    "Internal coordination instructions and raw invocation/result records."
+  ],
+  "original_record_hashes": {
+    "evidence/after.json": "773d6530b9d145d6097c4ce5354e234e98796951e0d4d472818c8216dfae4334",
+    "evidence/before.json": "4b369c6e74630d48428ec743e6d920fa2e15fb8f42a8bbf86aae967b8e671fdf",
+    "evidence/continuation-baseline.json": "4e5dad774eeece8b84511565e447fb31778503f8c938db54f888a7448aa48ec6",
+    "evidence/continuation-run.json": "16423754e17842a2967c53ef599422e67b69db189c3b5d21f3297857903451a8",
+    "evidence/continuation.json": "f7584b1d2bba83463003aa1b626ec3b8b944b541e560147a6f58287f26131b8a",
+    "evidence/input-hashes.json": "6b03cf70815f51def8126ae3532c58cc604b38da41838fdceb7cb50ea0059ea6",
+    "evidence/package-checks.json": "29fb18f1bbcce9b34e4d086d3a45f511c1eab9344044d809bd7bdb7ff960280f",
+    "evidence/recovery.json": "7487388497b593f9b742532227cb756273315ab7bf95e217600dc148fafad3c1",
+    "evidence/result.json": "e9148752ea4338b22fa07beb17cf573d1aedc49b4a6b91ae30161ba9dc62c179"
+  },
+  "original_record_sha256": "16423754e17842a2967c53ef599422e67b69db189c3b5d21f3297857903451a8",
+  "public_reverification": {
+    "behavior": "Original midpoint and repaired source snapshots, fixtures, criteria, numerical traces and the one-line diff can be checked without Git history.",
+    "context_independence": "The original executor reported no earlier conversation consultation. This is a historical self-report, not an audited provider-isolation guarantee.",
+    "git_history": "Historical commit hashes are informational; their objects are not part of the fresh public repository.",
+    "historical_execution": "The underlying private invocation and its identity cannot be independently reverified from this public projection."
+  },
+  "record_kind": "derived-historical-summary",
+  "repair": {
+    "after_sha256": "9049da2028504b0f6e4940d589db74ab1f42eecd1042eee504518e01d87acdc2",
+    "after_source": "projects/09-handoff/receipt_ledger.py",
+    "before_sha256": "e18cc559250d313f8e2161a61e83c663e7a4678330f2ab0e729ee228753e49d8",
+    "before_source": "projects/09-handoff/evidence/midpoint-receipt-ledger.py",
+    "diff": "projects/09-handoff/evidence/repair.diff",
+    "scope": "One return expression; complete conflict validation precedes deduplication and ordering."
+  },
+  "schema": "handoff-public-continuation/1"
+}

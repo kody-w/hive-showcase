@@ -1,0 +1,144 @@
+{
+  "schema": "pocket-arcade-tournament-review/1",
+  "classification": "Actual original solver execution over a synthetic model; no real tournament",
+  "approvedComponentSnapshot": "502b74346fe913550f732a1a160d76162f392ce4",
+  "engineInterface": "agenda-planner-analysis/1",
+  "engineVersion": "1.0.0",
+  "ownerApproved": false,
+  "nativeAuthority": false,
+  "baseline": {
+    "input": "projects/05-planner/fixtures/pocket-arcade.json",
+    "start": 840,
+    "cutoff": 915,
+    "requiredMinutes": 85,
+    "availableMinutes": 75,
+    "status": "infeasible",
+    "schedule": null,
+    "proof": {
+      "kind": "capacity",
+      "requiredMinutes": 85,
+      "availableMinutes": 75,
+      "excessMinutes": 10,
+      "complete": true
+    }
+  },
+  "repair": {
+    "status": "minimum-proven",
+    "minimumProven": true,
+    "optimum": {
+      "changedFields": 1,
+      "totalMinutes": 10
+    },
+    "choicesShown": 4,
+    "tiesComplete": false,
+    "cheaperCandidatesComplete": true,
+    "selectedChanges": [
+      {
+        "type": "extend-day",
+        "from": 915,
+        "to": 925
+      }
+    ],
+    "interpretation": "One displayed minimum-cost proposal within the declared repair family; tied alternatives are not claimed exhaustive."
+  },
+  "proposal": {
+    "status": "feasible",
+    "start": 840,
+    "cutoff": 925,
+    "taskCount": 7,
+    "tasksUnchanged": true,
+    "schedule": [
+      {
+        "taskId": "check-in",
+        "start": 840,
+        "end": 850,
+        "duration": 10,
+        "label": "Player check-in & rules"
+      },
+      {
+        "taskId": "round-one",
+        "start": 850,
+        "end": 870,
+        "duration": 20,
+        "label": "Pocket Arcade • qualifying round"
+      },
+      {
+        "taskId": "break-one",
+        "start": 870,
+        "end": 875,
+        "duration": 5,
+        "label": "Screen break & score check"
+      },
+      {
+        "taskId": "round-two",
+        "start": 875,
+        "end": 895,
+        "duration": 20,
+        "label": "Pocket Arcade • semifinal"
+      },
+      {
+        "taskId": "break-two",
+        "start": 895,
+        "end": 900,
+        "duration": 5,
+        "label": "Reset & rest"
+      },
+      {
+        "taskId": "final",
+        "start": 900,
+        "end": 920,
+        "duration": 20,
+        "label": "Pocket Arcade • final"
+      },
+      {
+        "taskId": "results",
+        "start": 920,
+        "end": 925,
+        "duration": 5,
+        "label": "Results & thank-you"
+      }
+    ],
+    "verification": {
+      "valid": true,
+      "issues": []
+    },
+    "export": "projects/10-pocket-arcade/artifacts/tournament-proposal.json",
+    "inputOnlyRoundTripVerified": true,
+    "forgedImportedClaimRejected": true,
+    "ownerApproved": false,
+    "requiresOwnerReview": true
+  },
+  "sourceFiles": [
+    {
+      "path": "projects/05-planner/evidence/result.json",
+      "sha256": "eefe648291d704f7e603d7beafd0eaa90e80a72eddf9450dba9ceef6be1e591a",
+      "bytes": 11988
+    },
+    {
+      "path": "projects/05-planner/fixtures/pocket-arcade.json",
+      "sha256": "44d916e056b463535eb051a4260b6c967d63d8d6aab87df73d6a59f858c92987",
+      "bytes": 2331
+    },
+    {
+      "path": "projects/05-planner/evidence/fixture-results.json",
+      "sha256": "89f0367aef4eea8bda6d3b84b37eb627faea7df665ecbab3f4a2326af6342961",
+      "bytes": 170405
+    },
+    {
+      "path": "projects/05-planner/engine.mjs",
+      "sha256": "66a9abbcc9c3a0c00dc7841ed5b36c78a3d3349a74bf80178202818d791974cf",
+      "bytes": 30634
+    },
+    {
+      "path": "projects/05-planner/editor.mjs",
+      "sha256": "4fc41b34deb74fb30d983eef286bb938c98c26eb1f3323ecf822aa3405a195f6",
+      "bytes": 3637
+    }
+  ],
+  "limits": [
+    "Single-track same-day discrete model; declared availability is not a real booking.",
+    "The 75-minute baseline remains infeasible. The 85-minute proposal changes the cutoff by 10 minutes without dropping or shortening work.",
+    "Game rounds are synthetic session blocks, not a proved eight-player bracket or observed tournament.",
+    "Technical feasibility and bounded repair minimality do not establish owner/native approval, human fun, physical fit, market demand or publication authority."
+  ]
+}

@@ -1,0 +1,3 @@
+{"classification":"SYNTHETIC","event_id":"receipt-cache-open","item_id":"arcade-cache","action":"open","at_minute":7}
+{"classification":"SYNTHETIC","event_id":"receipt-input-open","item_id":"arcade-input","action":"open","at_minute":11}
+{"classification":"SYNTHETIC","event_id":"receipt-cache-close","item_id":"arcade-cache","action":"close","at_minute":19}

@@ -1,0 +1,5958 @@
+{
+  "schema": "agenda-planner-fixture-results/1",
+  "classification": "synthetic-model-evidence",
+  "cases": [
+    {
+      "id": "overloaded-duration",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreSize": 2,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 5
+        },
+        "choices": 3
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 5
+        },
+        "choices": 3,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Five minutes over",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                610
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "design",
+              "label": "Design review",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "decision",
+              "label": "Decision session",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 610,
+            "durationFloors": {
+              "design": 30,
+              "decision": 25
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "design",
+            "decision"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  610
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "design",
+              "label": "Design review",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "decision",
+              "label": "Decision session",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "explanation": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 5
+              },
+              "changes": [
+                {
+                  "type": "extend-day",
+                  "from": 600,
+                  "to": 605
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Five minutes over",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 605,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      610
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "design",
+                    "label": "Design review",
+                    "duration": 35,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "decision",
+                    "label": "Decision session",
+                    "duration": 30,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 610,
+                  "durationFloors": {
+                    "design": 30,
+                    "decision": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "design",
+                  "start": 540,
+                  "end": 575,
+                  "duration": 35
+                },
+                {
+                  "taskId": "decision",
+                  "start": 575,
+                  "end": 605,
+                  "duration": 30
+                }
+              ]
+            },
+            {
+              "id": "repair-2",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 5
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "design",
+                  "from": 35,
+                  "to": 30
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Five minutes over",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      610
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "design",
+                    "label": "Design review",
+                    "duration": 30,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "decision",
+                    "label": "Decision session",
+                    "duration": 30,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 610,
+                  "durationFloors": {
+                    "design": 30,
+                    "decision": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "design",
+                  "start": 540,
+                  "end": 570,
+                  "duration": 30
+                },
+                {
+                  "taskId": "decision",
+                  "start": 570,
+                  "end": 600,
+                  "duration": 30
+                }
+              ]
+            },
+            {
+              "id": "repair-3",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 5
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "decision",
+                  "from": 30,
+                  "to": 25
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Five minutes over",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      610
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "design",
+                    "label": "Design review",
+                    "duration": 35,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "decision",
+                    "label": "Decision session",
+                    "duration": 25,
+                    "availability": [
+                      [
+                        540,
+                        610
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 610,
+                  "durationFloors": {
+                    "design": 30,
+                    "decision": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "design",
+                  "start": 540,
+                  "end": 575,
+                  "duration": 35
+                },
+                {
+                  "taskId": "decision",
+                  "start": 575,
+                  "end": 600,
+                  "duration": 25
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 5
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 0,
+            "candidatesChecked": 3,
+            "candidateSpaceSize": "11",
+            "tiesComplete": true,
+            "nodesVisited": 9,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 65,
+              "availableMinutes": 60,
+              "excessMinutes": 5,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "disjoint-availability",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "empty-domain",
+        "coreSize": 1,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 5
+        },
+        "choices": 1
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "empty-domain",
+        "coreStatus": "minimum-proven",
+        "coreSize": 1,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 5
+        },
+        "choices": 1,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "A fragmented hour",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                555
+              ],
+              [
+                575,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "focus",
+              "label": "Uninterrupted focus",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {
+              "focus": 25
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "\"Uninterrupted focus\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "schedule": null,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "focus"
+            ],
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "focus"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  555
+                ],
+                [
+                  575,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "focus",
+              "label": "Uninterrupted focus",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "focus"
+            ],
+            "complete": true
+          },
+          "explanation": "\"Uninterrupted focus\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 1,
+          "nodesVisited": 0
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 5
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "focus",
+                  "from": 30,
+                  "to": 25
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "A fragmented hour",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      555
+                    ],
+                    [
+                      575,
+                      600
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "focus",
+                    "label": "Uninterrupted focus",
+                    "duration": 25,
+                    "availability": [
+                      [
+                        540,
+                        600
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 600,
+                  "durationFloors": {
+                    "focus": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "focus",
+                  "start": 575,
+                  "end": 600,
+                  "duration": 25
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 5
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 0,
+            "candidatesChecked": 1,
+            "candidateSpaceSize": "1",
+            "tiesComplete": true,
+            "nodesVisited": 2,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "empty-domain",
+              "taskIds": [
+                "focus"
+              ],
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "dependency-conflict",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "exhaustive-search",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "exhaustive-search",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Approval arrives too late",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "approve",
+              "label": "Approval",
+              "duration": 20,
+              "availability": [
+                [
+                  570,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "deliver",
+              "label": "Delivery after approval",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  565
+                ]
+              ],
+              "dependsOn": [
+                "approve"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "Every legal placement was excluded by exhaustive search. No schedule exists in the declared discrete model.",
+          "schedule": null,
+          "proof": {
+            "kind": "exhaustive-search",
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 3,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 3
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "approve",
+            "deliver"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "approve",
+              "label": "Approval",
+              "duration": 20,
+              "availability": [
+                [
+                  570,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "deliver",
+              "label": "Delivery after approval",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  565
+                ]
+              ],
+              "dependsOn": [
+                "approve"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "exhaustive-search",
+            "complete": true
+          },
+          "explanation": "Every legal placement was excluded by exhaustive search. No schedule exists in the declared discrete model.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 7
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "none-within-policy",
+          "message": "Every allowed repair was ruled out. No repair exists within this policy; this is not a claim about changes outside it.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": true,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 0,
+            "candidateSpaceSize": "0",
+            "tiesComplete": true,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "exhaustive-search",
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "dependency-cycle",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "dependency-cycle",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "dependency-cycle",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Circular prerequisites",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                615
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "alpha",
+              "label": "Alpha",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [
+                "beta"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "beta",
+              "label": "Beta",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [
+                "alpha"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 615,
+            "durationFloors": {
+              "alpha": 5,
+              "beta": 5
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "Positive-duration tasks form a dependency cycle; each cannot finish before the next starts.",
+          "schedule": null,
+          "proof": {
+            "kind": "dependency-cycle",
+            "taskIds": [
+              "alpha",
+              "beta",
+              "alpha"
+            ],
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "alpha",
+            "beta"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  615
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "alpha",
+              "label": "Alpha",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [
+                "beta"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "beta",
+              "label": "Beta",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [
+                "alpha"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "dependency-cycle",
+            "taskIds": [
+              "alpha",
+              "beta",
+              "alpha"
+            ],
+            "complete": true
+          },
+          "explanation": "Positive-duration tasks form a dependency cycle; each cannot finish before the next starts.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "none-within-policy",
+          "message": "Every allowed repair was ruled out. No repair exists within this policy; this is not a claim about changes outside it.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": true,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 15,
+            "candidateSpaceSize": "15",
+            "tiesComplete": true,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "dependency-cycle",
+              "taskIds": [
+                "alpha",
+                "beta",
+                "alpha"
+              ],
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "fixed-event-collision",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "fixed-collision",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "fixed-collision",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Two fixed meetings",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                615
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "meeting-a",
+              "label": "Fixed A",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 550,
+              "kind": "event"
+            },
+            {
+              "id": "meeting-b",
+              "label": "Fixed B",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 560,
+              "kind": "event"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 615,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "Two fixed events overlap on the single agenda track.",
+          "schedule": null,
+          "proof": {
+            "kind": "fixed-collision",
+            "taskIds": [
+              "meeting-a",
+              "meeting-b"
+            ],
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "meeting-a",
+            "meeting-b"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  615
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "meeting-a",
+              "label": "Fixed A",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 550,
+              "kind": "event"
+            },
+            {
+              "type": "task",
+              "id": "meeting-b",
+              "label": "Fixed B",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  615
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 560,
+              "kind": "event"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "fixed-collision",
+            "taskIds": [
+              "meeting-a",
+              "meeting-b"
+            ],
+            "complete": true
+          },
+          "explanation": "Two fixed events overlap on the single agenda track.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "none-within-policy",
+          "message": "Every allowed repair was ruled out. No repair exists within this policy; this is not a claim about changes outside it.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": true,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 3,
+            "candidateSpaceSize": "3",
+            "tiesComplete": true,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "fixed-collision",
+              "taskIds": [
+                "meeting-a",
+                "meeting-b"
+              ],
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "boundary-valid-agenda",
+      "expected": {
+        "status": "feasible",
+        "proofKind": "witness",
+        "repairStatus": "not-needed",
+        "lastEnd": 1440
+      },
+      "actual": {
+        "status": "feasible",
+        "proofKind": "witness",
+        "coreStatus": "not-applicable",
+        "coreSize": 0,
+        "repairStatus": "not-needed",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Finish exactly at midnight",
+          "classification": "synthetic",
+          "day": {
+            "start": 1380,
+            "end": 1440,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                1380,
+                1440
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "setup",
+              "label": "Setup",
+              "duration": 30,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 1380,
+              "kind": "event"
+            },
+            {
+              "id": "round",
+              "label": "Final round",
+              "duration": 25,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [
+                "setup"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "close",
+              "label": "Closing break",
+              "duration": 5,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [
+                "round"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 1440,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "feasible",
+          "message": "Every commitment fits; the complete schedule is a checkable witness.",
+          "schedule": [
+            {
+              "taskId": "setup",
+              "start": 1380,
+              "end": 1410,
+              "duration": 30
+            },
+            {
+              "taskId": "round",
+              "start": 1410,
+              "end": 1435,
+              "duration": 25
+            },
+            {
+              "taskId": "close",
+              "start": 1435,
+              "end": 1440,
+              "duration": 5
+            }
+          ],
+          "proof": {
+            "kind": "witness",
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 4,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 4
+          }
+        },
+        "conflict": {
+          "status": "not-applicable",
+          "taskIds": [],
+          "minimumCardinalityProven": false,
+          "explanation": "A feasible witness exists; no conflict core is needed."
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "not-needed"
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "malformed-input",
+      "expected": {
+        "status": "invalid",
+        "proofKind": "not-assessed",
+        "repairStatus": "not-assessed"
+      },
+      "actual": {
+        "status": "invalid",
+        "proofKind": "not-assessed",
+        "coreStatus": "not-assessed",
+        "coreSize": null,
+        "repairStatus": "not-assessed",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": null,
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "invalid",
+          "schedule": null,
+          "message": "Input is malformed; feasibility was not assessed.",
+          "issues": [
+            {
+              "path": "$.tasks[0].duration",
+              "message": "Duration must be a positive integer of at most 1440 minutes.",
+              "code": "invalid"
+            }
+          ],
+          "proof": {
+            "kind": "not-assessed",
+            "complete": false
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 0,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "not-assessed"
+        },
+        "repairs": {
+          "status": "not-assessed",
+          "choices": []
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "malformed-duplicate-id",
+      "expected": {
+        "status": "invalid",
+        "proofKind": "not-assessed",
+        "repairStatus": "not-assessed"
+      },
+      "actual": {
+        "status": "invalid",
+        "proofKind": "not-assessed",
+        "coreStatus": "not-assessed",
+        "coreSize": null,
+        "repairStatus": "not-assessed",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": null,
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "invalid",
+          "schedule": null,
+          "message": "Input is malformed; feasibility was not assessed.",
+          "issues": [
+            {
+              "path": "$.tasks[1].id",
+              "message": "Task IDs must be unique.",
+              "code": "invalid"
+            }
+          ],
+          "proof": {
+            "kind": "not-assessed",
+            "complete": false
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 0,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "not-assessed"
+        },
+        "repairs": {
+          "status": "not-assessed",
+          "choices": []
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "search-bound-feasible",
+      "expected": {
+        "status": "unproven",
+        "proofKind": "search-bound",
+        "repairStatus": "unproven",
+        "unboundedStatus": "feasible"
+      },
+      "actual": {
+        "status": "unproven",
+        "proofKind": "search-bound",
+        "coreStatus": "unproven",
+        "coreSize": 0,
+        "repairStatus": "unproven",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Unknown is not impossible",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 560,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                560
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 5,
+              "availability": [
+                [
+                  540,
+                  560
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 5,
+              "availability": [
+                [
+                  540,
+                  560
+                ]
+              ],
+              "dependsOn": [
+                "one"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 560,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "unproven",
+          "message": "Search bound reached. Feasibility is unknown; this is not a proof of impossibility.",
+          "schedule": null,
+          "proof": {
+            "kind": "search-bound",
+            "complete": false
+          },
+          "stats": {
+            "nodesVisited": 1,
+            "nodeLimit": 1,
+            "totalNodesVisited": 1
+          }
+        },
+        "conflict": {
+          "status": "unproven",
+          "taskIds": [],
+          "minimumCardinalityProven": false,
+          "explanation": "Feasibility is unknown; no conflict or smallest core is claimed."
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "unproven",
+          "message": "Original feasibility is unknown; no minimality claim is made.",
+          "minimumProven": false
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 1,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "search-bound-infeasible",
+      "expected": {
+        "status": "unproven",
+        "proofKind": "search-bound",
+        "repairStatus": "unproven",
+        "unboundedStatus": "infeasible"
+      },
+      "actual": {
+        "status": "unproven",
+        "proofKind": "search-bound",
+        "coreStatus": "unproven",
+        "coreSize": 0,
+        "repairStatus": "unproven",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "An unsearched collision",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 15,
+              "availability": [
+                [
+                  540,
+                  555
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 15,
+              "availability": [
+                [
+                  540,
+                  555
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "unproven",
+          "message": "Search bound reached. Feasibility is unknown; this is not a proof of impossibility.",
+          "schedule": null,
+          "proof": {
+            "kind": "search-bound",
+            "complete": false
+          },
+          "stats": {
+            "nodesVisited": 1,
+            "nodeLimit": 1,
+            "totalNodesVisited": 1
+          }
+        },
+        "conflict": {
+          "status": "unproven",
+          "taskIds": [],
+          "minimumCardinalityProven": false,
+          "explanation": "Feasibility is unknown; no conflict or smallest core is claimed."
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "unproven",
+          "message": "Original feasibility is unknown; no minimality claim is made.",
+          "minimumProven": false
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 1,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "repair-candidate-bound",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreSize": 2,
+        "repairStatus": "unproven"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "unproven",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Repair candidates not searched",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                610
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 610,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "one",
+            "two"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  610
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  610
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "explanation": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "unproven",
+          "message": "Repair search stopped (candidate bound). A repair may exist; neither minimality nor absence is proven.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 0,
+            "candidateSpaceSize": "2",
+            "tiesComplete": false,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 0,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 65,
+              "availableMinutes": 60,
+              "excessMinutes": 5,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 0,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "repair-node-bound",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreSize": 2,
+        "repairStatus": "unproven"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "unproven",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Repair witness not searched",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                605
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  605
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  605
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 605,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "one",
+            "two"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  605
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  605
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  605
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "explanation": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "unproven",
+          "message": "Repair search stopped (node bound). A repair may exist; neither minimality nor absence is proven.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 1,
+            "candidateSpaceSize": "1",
+            "tiesComplete": false,
+            "nodesVisited": 0,
+            "nodeLimit": 0,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 65,
+              "availableMinutes": 60,
+              "excessMinutes": 5,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 0,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "two-field-minimum",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreSize": 1,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 2,
+          "totalMinutes": 10
+        },
+        "choices": 1
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 1,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 2,
+          "totalMinutes": 10
+        },
+        "choices": 1,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Two independent conflicts",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                565
+              ],
+              [
+                575,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "Morning topic",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  565
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Later topic",
+              "duration": 30,
+              "availability": [
+                [
+                  575,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {
+              "one": 25,
+              "two": 25
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "60 committed minutes exceed 50 declared available minutes by 10.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 60,
+            "availableMinutes": 50,
+            "excessMinutes": 10,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "one"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  565
+                ],
+                [
+                  575,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "one",
+              "label": "Morning topic",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  565
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "one"
+            ],
+            "complete": true
+          },
+          "explanation": "\"Morning topic\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 1,
+          "nodesVisited": 0
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 2,
+                "totalMinutes": 10
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "one",
+                  "from": 30,
+                  "to": 25
+                },
+                {
+                  "type": "shorten-task",
+                  "taskId": "two",
+                  "from": 30,
+                  "to": 25
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Two independent conflicts",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      565
+                    ],
+                    [
+                      575,
+                      600
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "one",
+                    "label": "Morning topic",
+                    "duration": 25,
+                    "availability": [
+                      [
+                        540,
+                        565
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "two",
+                    "label": "Later topic",
+                    "duration": 25,
+                    "availability": [
+                      [
+                        575,
+                        600
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 600,
+                  "durationFloors": {
+                    "one": 25,
+                    "two": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "one",
+                  "start": 540,
+                  "end": 565,
+                  "duration": 25
+                },
+                {
+                  "taskId": "two",
+                  "start": 575,
+                  "end": 600,
+                  "duration": 25
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 2,
+            "totalMinutes": 10
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 2,
+            "candidatesChecked": 3,
+            "candidateSpaceSize": "3",
+            "tiesComplete": true,
+            "nodesVisited": 3,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 60,
+              "availableMinutes": 50,
+              "excessMinutes": 10,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "lexicographic-repair",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 25
+        },
+        "choices": 1
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 1,
+        "repairStatus": "minimum-proven",
+        "cost": {
+          "changedFields": 1,
+          "totalMinutes": 25
+        },
+        "choices": 1,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Fields first is an explicit tradeoff",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                575
+              ],
+              [
+                585,
+                635
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "fixed",
+              "label": "Fixed opening",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  560
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 540,
+              "kind": "task"
+            },
+            {
+              "id": "middle",
+              "label": "Middle session",
+              "duration": 20,
+              "availability": [
+                [
+                  560,
+                  635
+                ]
+              ],
+              "dependsOn": [
+                "fixed"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "last",
+              "label": "Last session",
+              "duration": 20,
+              "availability": [
+                [
+                  585,
+                  635
+                ]
+              ],
+              "dependsOn": [
+                "middle"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 630,
+            "durationFloors": {
+              "middle": 15,
+              "last": 15
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "60 committed minutes exceed 50 declared available minutes by 10.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 60,
+            "availableMinutes": 50,
+            "excessMinutes": 10,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "middle"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  575
+                ],
+                [
+                  585,
+                  635
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "middle",
+              "label": "Middle session",
+              "duration": 20,
+              "availability": [
+                [
+                  560,
+                  635
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "middle"
+            ],
+            "complete": true
+          },
+          "explanation": "\"Middle session\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 2,
+          "nodesVisited": 2
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 25
+              },
+              "changes": [
+                {
+                  "type": "extend-day",
+                  "from": 600,
+                  "to": 625
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Fields first is an explicit tradeoff",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 625,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      575
+                    ],
+                    [
+                      585,
+                      635
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "fixed",
+                    "label": "Fixed opening",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        540,
+                        560
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": 540,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "middle",
+                    "label": "Middle session",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        560,
+                        635
+                      ]
+                    ],
+                    "dependsOn": [
+                      "fixed"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "last",
+                    "label": "Last session",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        585,
+                        635
+                      ]
+                    ],
+                    "dependsOn": [
+                      "middle"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 630,
+                  "durationFloors": {
+                    "middle": 15,
+                    "last": 15
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "fixed",
+                  "start": 540,
+                  "end": 560,
+                  "duration": 20
+                },
+                {
+                  "taskId": "middle",
+                  "start": 585,
+                  "end": 605,
+                  "duration": 20
+                },
+                {
+                  "taskId": "last",
+                  "start": 605,
+                  "end": 625,
+                  "duration": 20
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 25
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 6,
+            "candidatesChecked": 7,
+            "candidateSpaceSize": "27",
+            "tiesComplete": true,
+            "nodesVisited": 19,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 60,
+              "availableMinutes": 50,
+              "excessMinutes": 10,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "core-search-bound",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "unproven-minimum",
+        "repairStatus": "none-within-policy"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "unproven-minimum",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Unproven smallest core",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "unproven-minimum",
+          "taskIds": [
+            "one",
+            "two"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": false,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "explanation": "The full task set is proven conflicting, but the bounded search did not prove a smallest task core.",
+          "subsetsChecked": 0,
+          "nodesVisited": 0
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "none-within-policy",
+          "message": "Every allowed repair was ruled out. No repair exists within this policy; this is not a claim about changes outside it.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": true,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 0,
+            "candidateSpaceSize": "0",
+            "tiesComplete": true,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 65,
+              "availableMinutes": 60,
+              "excessMinutes": 5,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 0,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "unsupported-constraint",
+      "expected": {
+        "status": "unsupported",
+        "proofKind": "not-assessed",
+        "repairStatus": "not-assessed"
+      },
+      "actual": {
+        "status": "unsupported",
+        "proofKind": "not-assessed",
+        "coreStatus": "not-assessed",
+        "coreSize": null,
+        "repairStatus": "not-assessed",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": null,
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "unsupported",
+          "schedule": null,
+          "message": "This input is outside the supported model; feasibility was not assessed.",
+          "issues": [
+            {
+              "path": "$.resources",
+              "message": "This field/constraint is not supported; it will not be ignored.",
+              "code": "unsupported"
+            }
+          ],
+          "proof": {
+            "kind": "not-assessed",
+            "complete": false
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 0,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "not-assessed"
+        },
+        "repairs": {
+          "status": "not-assessed",
+          "choices": []
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "no-invented-availability",
+      "expected": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy"
+      },
+      "actual": {
+        "status": "infeasible",
+        "proofKind": "capacity",
+        "coreStatus": "minimum-proven",
+        "coreSize": 2,
+        "repairStatus": "none-within-policy",
+        "cost": null,
+        "choices": 0,
+        "validRepairWitnesses": true
+      },
+      "matches": true,
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "The room really closes at ten",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 630,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "one",
+            "two"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "one",
+              "label": "One",
+              "duration": 35,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "two",
+              "label": "Two",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 65,
+            "availableMinutes": 60,
+            "excessMinutes": 5,
+            "complete": true
+          },
+          "explanation": "65 committed minutes exceed 60 declared available minutes by 5.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 3,
+          "nodesVisited": 4
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "none-within-policy",
+          "message": "Every allowed repair was ruled out. No repair exists within this policy; this is not a claim about changes outside it.",
+          "minimumProven": false,
+          "optimum": null,
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": false,
+            "allCandidatesComplete": true,
+            "lowerCostCandidatesChecked": null,
+            "candidatesChecked": 6,
+            "candidateSpaceSize": "6",
+            "tiesComplete": true,
+            "nodesVisited": 0,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 65,
+              "availableMinutes": 60,
+              "excessMinutes": 5,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    }
+  ],
+  "presets": [
+    {
+      "id": "library",
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Library kit • every topic committed",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 1,
+            "availability": [
+              [
+                540,
+                630
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "welcome",
+              "label": "Confirm the decision to make",
+              "duration": 5,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "stock-review",
+              "label": "Review fictional kit stock",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "decision",
+              "label": "Choose the sample kit scope",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "template-demo",
+              "label": "Optional template demonstration",
+              "duration": 15,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "risk-check",
+              "label": "Check assumptions and open questions",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "roundup",
+              "label": "Collect optional follow-up ideas",
+              "duration": 8,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "wrap",
+              "label": "Wrap & next steps",
+              "duration": 5,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [
+                "welcome",
+                "stock-review",
+                "decision",
+                "template-demo",
+                "risk-check",
+                "roundup"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 630,
+            "durationFloors": {
+              "template-demo": 2
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "73 committed minutes exceed 60 declared available minutes by 13.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 73,
+            "availableMinutes": 60,
+            "excessMinutes": 13,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "stock-review",
+            "decision",
+            "template-demo",
+            "risk-check",
+            "roundup"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  630
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "stock-review",
+              "label": "Review fictional kit stock",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "decision",
+              "label": "Choose the sample kit scope",
+              "duration": 20,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "template-demo",
+              "label": "Optional template demonstration",
+              "duration": 15,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "risk-check",
+              "label": "Check assumptions and open questions",
+              "duration": 10,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "roundup",
+              "label": "Collect optional follow-up ideas",
+              "duration": 8,
+              "availability": [
+                [
+                  540,
+                  630
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 63,
+            "availableMinutes": 60,
+            "excessMinutes": 3,
+            "complete": true
+          },
+          "explanation": "63 committed minutes exceed 60 declared available minutes by 3.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 114,
+          "nodesVisited": 482
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 13
+              },
+              "changes": [
+                {
+                  "type": "extend-day",
+                  "from": 600,
+                  "to": 613
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Library kit • every topic committed",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 613,
+                  "stepMinutes": 1,
+                  "availability": [
+                    [
+                      540,
+                      630
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "welcome",
+                    "label": "Confirm the decision to make",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "stock-review",
+                    "label": "Review fictional kit stock",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "decision",
+                    "label": "Choose the sample kit scope",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "template-demo",
+                    "label": "Optional template demonstration",
+                    "duration": 15,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "risk-check",
+                    "label": "Check assumptions and open questions",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "roundup",
+                    "label": "Collect optional follow-up ideas",
+                    "duration": 8,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "wrap",
+                    "label": "Wrap & next steps",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [
+                      "welcome",
+                      "stock-review",
+                      "decision",
+                      "template-demo",
+                      "risk-check",
+                      "roundup"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 630,
+                  "durationFloors": {
+                    "template-demo": 2
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "decision",
+                  "start": 540,
+                  "end": 560,
+                  "duration": 20
+                },
+                {
+                  "taskId": "template-demo",
+                  "start": 560,
+                  "end": 575,
+                  "duration": 15
+                },
+                {
+                  "taskId": "stock-review",
+                  "start": 575,
+                  "end": 585,
+                  "duration": 10
+                },
+                {
+                  "taskId": "risk-check",
+                  "start": 585,
+                  "end": 595,
+                  "duration": 10
+                },
+                {
+                  "taskId": "roundup",
+                  "start": 595,
+                  "end": 603,
+                  "duration": 8
+                },
+                {
+                  "taskId": "welcome",
+                  "start": 603,
+                  "end": 608,
+                  "duration": 5
+                },
+                {
+                  "taskId": "wrap",
+                  "start": 608,
+                  "end": 613,
+                  "duration": 5
+                }
+              ]
+            },
+            {
+              "id": "repair-2",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 13
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "template-demo",
+                  "from": 15,
+                  "to": 2
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Library kit • every topic committed",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 1,
+                  "availability": [
+                    [
+                      540,
+                      630
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "welcome",
+                    "label": "Confirm the decision to make",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "stock-review",
+                    "label": "Review fictional kit stock",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "decision",
+                    "label": "Choose the sample kit scope",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "template-demo",
+                    "label": "Optional template demonstration",
+                    "duration": 2,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "risk-check",
+                    "label": "Check assumptions and open questions",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "roundup",
+                    "label": "Collect optional follow-up ideas",
+                    "duration": 8,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "wrap",
+                    "label": "Wrap & next steps",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        540,
+                        630
+                      ]
+                    ],
+                    "dependsOn": [
+                      "welcome",
+                      "stock-review",
+                      "decision",
+                      "template-demo",
+                      "risk-check",
+                      "roundup"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 630,
+                  "durationFloors": {
+                    "template-demo": 2
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "decision",
+                  "start": 540,
+                  "end": 560,
+                  "duration": 20
+                },
+                {
+                  "taskId": "stock-review",
+                  "start": 560,
+                  "end": 570,
+                  "duration": 10
+                },
+                {
+                  "taskId": "risk-check",
+                  "start": 570,
+                  "end": 580,
+                  "duration": 10
+                },
+                {
+                  "taskId": "roundup",
+                  "start": 580,
+                  "end": 588,
+                  "duration": 8
+                },
+                {
+                  "taskId": "welcome",
+                  "start": 588,
+                  "end": 593,
+                  "duration": 5
+                },
+                {
+                  "taskId": "template-demo",
+                  "start": 593,
+                  "end": 595,
+                  "duration": 2
+                },
+                {
+                  "taskId": "wrap",
+                  "start": 595,
+                  "end": 600,
+                  "duration": 5
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 13
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 24,
+            "candidatesChecked": 26,
+            "candidateSpaceSize": "433",
+            "tiesComplete": true,
+            "nodesVisited": 18,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 73,
+              "availableMinutes": 60,
+              "excessMinutes": 13,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "arcade",
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Pocket Arcade tournament",
+          "classification": "synthetic",
+          "day": {
+            "start": 840,
+            "end": 915,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                840,
+                930
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "check-in",
+              "label": "Player check-in & rules",
+              "duration": 10,
+              "availability": [
+                [
+                  840,
+                  850
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 840,
+              "kind": "event"
+            },
+            {
+              "id": "round-one",
+              "label": "Pocket Arcade • qualifying round",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "check-in"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "break-one",
+              "label": "Screen break & score check",
+              "duration": 5,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "round-one"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            },
+            {
+              "id": "round-two",
+              "label": "Pocket Arcade • semifinal",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "break-one"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "break-two",
+              "label": "Reset & rest",
+              "duration": 5,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "round-two"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            },
+            {
+              "id": "final",
+              "label": "Pocket Arcade • final",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "break-two"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "results",
+              "label": "Results & thank-you",
+              "duration": 5,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "final"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 930,
+            "durationFloors": {
+              "round-one": 10,
+              "round-two": 10,
+              "final": 10
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "85 committed minutes exceed 75 declared available minutes by 10.",
+          "schedule": null,
+          "proof": {
+            "kind": "capacity",
+            "requiredMinutes": 85,
+            "availableMinutes": 75,
+            "excessMinutes": 10,
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "round-one",
+            "break-one",
+            "round-two",
+            "break-two",
+            "final"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 840,
+              "end": 915
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  840,
+                  930
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "round-one",
+              "label": "Pocket Arcade • qualifying round",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "break-one",
+              "label": "Screen break & score check",
+              "duration": 5,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "round-one"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            },
+            {
+              "type": "task",
+              "id": "round-two",
+              "label": "Pocket Arcade • semifinal",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "break-one"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "type": "task",
+              "id": "break-two",
+              "label": "Reset & rest",
+              "duration": 5,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "round-two"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            },
+            {
+              "type": "task",
+              "id": "final",
+              "label": "Pocket Arcade • final",
+              "duration": 20,
+              "availability": [
+                [
+                  850,
+                  930
+                ]
+              ],
+              "dependsOn": [
+                "break-two"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "exhaustive-search",
+            "complete": true
+          },
+          "explanation": "Every legal placement was excluded by exhaustive search. No schedule exists in the declared discrete model.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 114,
+          "nodesVisited": 570
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 10
+              },
+              "changes": [
+                {
+                  "type": "extend-day",
+                  "from": 915,
+                  "to": 925
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Pocket Arcade tournament",
+                "classification": "synthetic",
+                "day": {
+                  "start": 840,
+                  "end": 925,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      840,
+                      930
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "check-in",
+                    "label": "Player check-in & rules",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        840,
+                        850
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": 840,
+                    "kind": "event"
+                  },
+                  {
+                    "id": "round-one",
+                    "label": "Pocket Arcade • qualifying round",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "check-in"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-one",
+                    "label": "Screen break & score check",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "round-two",
+                    "label": "Pocket Arcade • semifinal",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-two",
+                    "label": "Reset & rest",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "final",
+                    "label": "Pocket Arcade • final",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "results",
+                    "label": "Results & thank-you",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "final"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 930,
+                  "durationFloors": {
+                    "round-one": 10,
+                    "round-two": 10,
+                    "final": 10
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "check-in",
+                  "start": 840,
+                  "end": 850,
+                  "duration": 10
+                },
+                {
+                  "taskId": "round-one",
+                  "start": 850,
+                  "end": 870,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-one",
+                  "start": 870,
+                  "end": 875,
+                  "duration": 5
+                },
+                {
+                  "taskId": "round-two",
+                  "start": 875,
+                  "end": 895,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-two",
+                  "start": 895,
+                  "end": 900,
+                  "duration": 5
+                },
+                {
+                  "taskId": "final",
+                  "start": 900,
+                  "end": 920,
+                  "duration": 20
+                },
+                {
+                  "taskId": "results",
+                  "start": 920,
+                  "end": 925,
+                  "duration": 5
+                }
+              ]
+            },
+            {
+              "id": "repair-2",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 10
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "round-one",
+                  "from": 20,
+                  "to": 10
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Pocket Arcade tournament",
+                "classification": "synthetic",
+                "day": {
+                  "start": 840,
+                  "end": 915,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      840,
+                      930
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "check-in",
+                    "label": "Player check-in & rules",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        840,
+                        850
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": 840,
+                    "kind": "event"
+                  },
+                  {
+                    "id": "round-one",
+                    "label": "Pocket Arcade • qualifying round",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "check-in"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-one",
+                    "label": "Screen break & score check",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "round-two",
+                    "label": "Pocket Arcade • semifinal",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-two",
+                    "label": "Reset & rest",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "final",
+                    "label": "Pocket Arcade • final",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "results",
+                    "label": "Results & thank-you",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "final"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 930,
+                  "durationFloors": {
+                    "round-one": 10,
+                    "round-two": 10,
+                    "final": 10
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "check-in",
+                  "start": 840,
+                  "end": 850,
+                  "duration": 10
+                },
+                {
+                  "taskId": "round-one",
+                  "start": 850,
+                  "end": 860,
+                  "duration": 10
+                },
+                {
+                  "taskId": "break-one",
+                  "start": 860,
+                  "end": 865,
+                  "duration": 5
+                },
+                {
+                  "taskId": "round-two",
+                  "start": 865,
+                  "end": 885,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-two",
+                  "start": 885,
+                  "end": 890,
+                  "duration": 5
+                },
+                {
+                  "taskId": "final",
+                  "start": 890,
+                  "end": 910,
+                  "duration": 20
+                },
+                {
+                  "taskId": "results",
+                  "start": 910,
+                  "end": 915,
+                  "duration": 5
+                }
+              ]
+            },
+            {
+              "id": "repair-3",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 10
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "round-two",
+                  "from": 20,
+                  "to": 10
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Pocket Arcade tournament",
+                "classification": "synthetic",
+                "day": {
+                  "start": 840,
+                  "end": 915,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      840,
+                      930
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "check-in",
+                    "label": "Player check-in & rules",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        840,
+                        850
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": 840,
+                    "kind": "event"
+                  },
+                  {
+                    "id": "round-one",
+                    "label": "Pocket Arcade • qualifying round",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "check-in"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-one",
+                    "label": "Screen break & score check",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "round-two",
+                    "label": "Pocket Arcade • semifinal",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-two",
+                    "label": "Reset & rest",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "final",
+                    "label": "Pocket Arcade • final",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "results",
+                    "label": "Results & thank-you",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "final"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 930,
+                  "durationFloors": {
+                    "round-one": 10,
+                    "round-two": 10,
+                    "final": 10
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "check-in",
+                  "start": 840,
+                  "end": 850,
+                  "duration": 10
+                },
+                {
+                  "taskId": "round-one",
+                  "start": 850,
+                  "end": 870,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-one",
+                  "start": 870,
+                  "end": 875,
+                  "duration": 5
+                },
+                {
+                  "taskId": "round-two",
+                  "start": 875,
+                  "end": 885,
+                  "duration": 10
+                },
+                {
+                  "taskId": "break-two",
+                  "start": 885,
+                  "end": 890,
+                  "duration": 5
+                },
+                {
+                  "taskId": "final",
+                  "start": 890,
+                  "end": 910,
+                  "duration": 20
+                },
+                {
+                  "taskId": "results",
+                  "start": 910,
+                  "end": 915,
+                  "duration": 5
+                }
+              ]
+            },
+            {
+              "id": "repair-4",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 10
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "final",
+                  "from": 20,
+                  "to": 10
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Pocket Arcade tournament",
+                "classification": "synthetic",
+                "day": {
+                  "start": 840,
+                  "end": 915,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      840,
+                      930
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "check-in",
+                    "label": "Player check-in & rules",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        840,
+                        850
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": 840,
+                    "kind": "event"
+                  },
+                  {
+                    "id": "round-one",
+                    "label": "Pocket Arcade • qualifying round",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "check-in"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-one",
+                    "label": "Screen break & score check",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "round-two",
+                    "label": "Pocket Arcade • semifinal",
+                    "duration": 20,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-one"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "break-two",
+                    "label": "Reset & rest",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "round-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "break"
+                  },
+                  {
+                    "id": "final",
+                    "label": "Pocket Arcade • final",
+                    "duration": 10,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "break-two"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  },
+                  {
+                    "id": "results",
+                    "label": "Results & thank-you",
+                    "duration": 5,
+                    "availability": [
+                      [
+                        850,
+                        930
+                      ]
+                    ],
+                    "dependsOn": [
+                      "final"
+                    ],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 930,
+                  "durationFloors": {
+                    "round-one": 10,
+                    "round-two": 10,
+                    "final": 10
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "check-in",
+                  "start": 840,
+                  "end": 850,
+                  "duration": 10
+                },
+                {
+                  "taskId": "round-one",
+                  "start": 850,
+                  "end": 870,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-one",
+                  "start": 870,
+                  "end": 875,
+                  "duration": 5
+                },
+                {
+                  "taskId": "round-two",
+                  "start": 875,
+                  "end": 895,
+                  "duration": 20
+                },
+                {
+                  "taskId": "break-two",
+                  "start": 895,
+                  "end": 900,
+                  "duration": 5
+                },
+                {
+                  "taskId": "final",
+                  "start": 900,
+                  "end": 910,
+                  "duration": 10
+                },
+                {
+                  "taskId": "results",
+                  "start": 910,
+                  "end": 915,
+                  "duration": 5
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "The minimum cost is proven; additional tied choices were not fully enumerated (display-choice bound).",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 10
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 4,
+            "candidatesChecked": 8,
+            "candidateSpaceSize": "107",
+            "tiesComplete": false,
+            "nodesVisited": 59,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "capacity",
+              "requiredMinutes": 85,
+              "availableMinutes": 75,
+              "excessMinutes": 10,
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "split",
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "Enough minutes, nowhere to put them",
+          "classification": "synthetic",
+          "day": {
+            "start": 540,
+            "end": 600,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                540,
+                555
+              ],
+              [
+                575,
+                600
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "deep-work",
+              "label": "One uninterrupted design session",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 600,
+            "durationFloors": {
+              "deep-work": 25
+            }
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "infeasible",
+          "message": "\"One uninterrupted design session\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "schedule": null,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "deep-work"
+            ],
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 0,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 0
+          }
+        },
+        "conflict": {
+          "status": "minimum-proven",
+          "taskIds": [
+            "deep-work"
+          ],
+          "constraints": [
+            {
+              "type": "day-bounds",
+              "start": 540,
+              "end": 600
+            },
+            {
+              "type": "day-availability",
+              "windows": [
+                [
+                  540,
+                  555
+                ],
+                [
+                  575,
+                  600
+                ]
+              ]
+            },
+            {
+              "type": "single-track",
+              "nonPreemptive": true,
+              "allSelectedTasksMandatory": true
+            },
+            {
+              "type": "task",
+              "id": "deep-work",
+              "label": "One uninterrupted design session",
+              "duration": 30,
+              "availability": [
+                [
+                  540,
+                  600
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": null,
+              "kind": "task"
+            }
+          ],
+          "minimumCardinalityProven": true,
+          "proof": {
+            "kind": "empty-domain",
+            "taskIds": [
+              "deep-work"
+            ],
+            "complete": true
+          },
+          "explanation": "\"One uninterrupted design session\" has no contiguous placement satisfying its duration, windows, fixed start and the day bounds.",
+          "scope": "One minimum-cardinality task subset, with induced dependencies and unchanged day constraints. Not a minimum atomic-constraint set.",
+          "subsetsChecked": 1,
+          "nodesVisited": 0
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [
+            {
+              "id": "repair-1",
+              "cost": {
+                "changedFields": 1,
+                "totalMinutes": 5
+              },
+              "changes": [
+                {
+                  "type": "shorten-task",
+                  "taskId": "deep-work",
+                  "from": 30,
+                  "to": 25
+                }
+              ],
+              "agenda": {
+                "schema": "agenda-planner/1",
+                "title": "Enough minutes, nowhere to put them",
+                "classification": "synthetic",
+                "day": {
+                  "start": 540,
+                  "end": 600,
+                  "stepMinutes": 5,
+                  "availability": [
+                    [
+                      540,
+                      555
+                    ],
+                    [
+                      575,
+                      600
+                    ]
+                  ]
+                },
+                "tasks": [
+                  {
+                    "id": "deep-work",
+                    "label": "One uninterrupted design session",
+                    "duration": 25,
+                    "availability": [
+                      [
+                        540,
+                        600
+                      ]
+                    ],
+                    "dependsOn": [],
+                    "fixedStart": null,
+                    "kind": "task"
+                  }
+                ],
+                "repairs": {
+                  "latestEnd": 600,
+                  "durationFloors": {
+                    "deep-work": 25
+                  }
+                }
+              },
+              "schedule": [
+                {
+                  "taskId": "deep-work",
+                  "start": 575,
+                  "end": 600,
+                  "duration": 25
+                }
+              ]
+            }
+          ],
+          "status": "minimum-proven",
+          "message": "Every cheaper allowed repair is proven infeasible. These are the minimum-cost choices.",
+          "minimumProven": true,
+          "optimum": {
+            "changedFields": 1,
+            "totalMinutes": 5
+          },
+          "proof": {
+            "method": "Cost-ordered exhaustive finite repair enumeration plus exact feasibility checks",
+            "cheaperCandidatesComplete": true,
+            "allCandidatesComplete": false,
+            "lowerCostCandidatesChecked": 0,
+            "candidatesChecked": 1,
+            "candidateSpaceSize": "1",
+            "tiesComplete": true,
+            "nodesVisited": 2,
+            "nodeLimit": 60000,
+            "candidateLimit": 2500,
+            "originalInfeasibility": {
+              "kind": "empty-domain",
+              "taskIds": [
+                "deep-work"
+              ],
+              "complete": true
+            }
+          }
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    },
+    {
+      "id": "boundary",
+      "analysis": {
+        "schema": "agenda-planner-analysis/1",
+        "engineVersion": "1.0.0",
+        "agenda": {
+          "schema": "agenda-planner/1",
+          "title": "An exact midnight finish",
+          "classification": "synthetic",
+          "day": {
+            "start": 1380,
+            "end": 1440,
+            "stepMinutes": 5,
+            "availability": [
+              [
+                1380,
+                1440
+              ]
+            ]
+          },
+          "tasks": [
+            {
+              "id": "setup",
+              "label": "Setup at 23:00",
+              "duration": 30,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [],
+              "fixedStart": 1380,
+              "kind": "event"
+            },
+            {
+              "id": "round",
+              "label": "Final round",
+              "duration": 25,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [
+                "setup"
+              ],
+              "fixedStart": null,
+              "kind": "task"
+            },
+            {
+              "id": "close",
+              "label": "Close before midnight",
+              "duration": 5,
+              "availability": [
+                [
+                  1380,
+                  1440
+                ]
+              ],
+              "dependsOn": [
+                "round"
+              ],
+              "fixedStart": null,
+              "kind": "break"
+            }
+          ],
+          "repairs": {
+            "latestEnd": 1440,
+            "durationFloors": {}
+          }
+        },
+        "feasibility": {
+          "schema": "agenda-planner-solution/1",
+          "status": "feasible",
+          "message": "Every commitment fits; the complete schedule is a checkable witness.",
+          "schedule": [
+            {
+              "taskId": "setup",
+              "start": 1380,
+              "end": 1410,
+              "duration": 30
+            },
+            {
+              "taskId": "round",
+              "start": 1410,
+              "end": 1435,
+              "duration": 25
+            },
+            {
+              "taskId": "close",
+              "start": 1435,
+              "end": 1440,
+              "duration": 5
+            }
+          ],
+          "proof": {
+            "kind": "witness",
+            "complete": true
+          },
+          "stats": {
+            "nodesVisited": 4,
+            "nodeLimit": 20000,
+            "totalNodesVisited": 4
+          }
+        },
+        "conflict": {
+          "status": "not-applicable",
+          "taskIds": [],
+          "minimumCardinalityProven": false,
+          "explanation": "A feasible witness exists; no conflict core is needed."
+        },
+        "repairs": {
+          "objective": {
+            "id": "fewest-fields-then-minutes/1",
+            "order": [
+              "changedFields",
+              "totalMinutes"
+            ],
+            "scope": "Extend the day cutoff within declared availability, or shorten explicitly negotiable, unfixed task time budgets. Keep every task, dependency, window and fixed start."
+          },
+          "choices": [],
+          "status": "not-needed"
+        },
+        "limits": {
+          "maxTasks": 8,
+          "maxSlots": 120,
+          "maxWindows": 16,
+          "steps": [
+            1,
+            5,
+            10,
+            15,
+            30,
+            60
+          ],
+          "defaultNodes": 20000,
+          "defaultCoreNodes": 20000,
+          "defaultRepairNodes": 60000,
+          "defaultRepairCandidates": 2500,
+          "hardNodes": 1000000,
+          "hardRepairCandidates": 100000
+        },
+        "settings": {
+          "maxNodes": 20000,
+          "maxCoreNodes": 20000,
+          "maxCoreChecks": 255,
+          "maxRepairNodes": 60000,
+          "maxRepairCandidates": 2500,
+          "maxChoices": 4
+        }
+      }
+    }
+  ]
+}

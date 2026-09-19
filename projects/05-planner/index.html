@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="An offline, small-instance agenda planner that proves its limits and never quietly drops a commitment.">
+  <title>Agenda Pocket — room for reality</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.bundle.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#editor">Skip to agenda editor</a>
+  <main>
+    <nav class="topline" aria-label="Project navigation">
+      <a href="../../index.html" class="wordmark"><span class="brand-mark" aria-hidden="true">ap</span> Agenda Pocket</a>
+      <div class="topline-meta"><span class="local-dot" aria-hidden="true"></span> LOCAL / OFFLINE <span class="edition">05 — PRODUCT LAB</span></div>
+    </nav>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">A little honesty for your day</p>
+        <h1>Make room.<br>Not promises.</h1>
+        <p class="hero-copy">Some agendas cannot fit. See exactly what conflicts, then choose a <em>proven smallest change</em> within the limits you declare.</p>
+        <div class="principles"><span>Every commitment stays</span><span>Time is never invented</span><span>Unknown means unknown</span></div>
+      </div>
+      <aside class="hero-note">
+        <span class="note-index">THE POCKET RULE</span>
+        <p>“Not enough time” is a useful result.</p>
+        <small>Single track. Whole grid minutes. At most 8 commitments. A bounded exact solver, not an AI guess.</small>
+      </aside>
+    </header>
+
+    <section class="scenario-bar" aria-label="Synthetic examples">
+      <div>
+        <label for="preset">Try a scenario</label>
+        <select id="preset">
+          <option value="library">Library kit • overloaded</option>
+          <option value="arcade">Pocket Arcade tournament</option>
+          <option value="split">Disjoint availability</option>
+          <option value="boundary">Boundary-valid • midnight</option>
+        </select>
+      </div>
+      <button id="load-preset" type="button">Load / reset scenario</button>
+      <span class="badge">SYNTHETIC PRESETS</span>
+      <p id="scenario-note"></p>
+    </section>
+
+    <div id="error-box" class="error-box" role="alert" tabindex="-1" hidden></div>
+    <noscript><p class="notice">Enable JavaScript for the local planner. No account, network request or dependency install is needed. The engine and fixtures are also available as local files.</p></noscript>
+
+    <div class="workspace">
+      <section id="editor" class="editor-column" aria-labelledby="editor-title">
+        <form id="agenda-form" novalidate>
+          <section class="panel day-panel">
+            <div class="section-heading"><span class="step-label">01</span><h2 id="editor-title">Declare your time</h2></div>
+            <label class="full-field" for="agenda-title">Agenda name<input id="agenda-title" type="text" maxlength="120" required></label>
+            <div class="field-grid three">
+              <label for="day-start">Start<input id="day-start" type="text" inputmode="text" placeholder="09:00" required></label>
+              <label for="day-end">Current cutoff<input id="day-end" type="text" placeholder="10:00" required></label>
+              <label for="step">Grid<select id="step"><option value="1">1 minute</option><option value="5">5 minutes</option><option value="10">10 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option></select></label>
+            </div>
+            <label class="full-field" for="day-windows">Actual availability<input id="day-windows" type="text" aria-describedby="availability-help" placeholder="09:00–10:00, 10:30–11:00"></label>
+            <p id="availability-help" class="field-help">Comma-separated windows; empty means unavailable. Only these minutes exist. Availability may extend past the cutoff, but the solver cannot use it without your approval.</p>
+            <div class="field-grid two">
+              <label for="latest-end">Latest negotiable cutoff<input id="latest-end" type="text" aria-describedby="cutoff-help" placeholder="10:30"></label>
+              <label for="classification">Data classification<select id="classification"><option value="synthetic">Synthetic</option><option value="user-entered">User-entered</option></select></label>
+            </div>
+            <p id="cutoff-help" class="field-help">This authorizes proposed changes only. It does not extend availability or book a room.</p>
+          </section>
+
+          <section class="panel commitments-panel" aria-labelledby="tasks-title">
+            <div class="section-heading"><span class="step-label">02</span><h2 id="tasks-title">Keep the commitments</h2><span id="task-count" class="count-pill"></span></div>
+            <p class="field-help">Everything listed is mandatory, including breaks. Only you can remove a row. A lower floor explicitly permits proposing a shorter time budget, not less work by magic.</p>
+            <div id="task-list"></div>
+            <button id="add-task" type="button" class="quiet-button">+ Add a commitment</button>
+          </section>
+
+          <section class="panel solve-panel">
+            <div class="field-grid two">
+              <label for="search-budget">Feasibility search bound<select id="search-budget"><option value="20000">20,000 nodes • standard</option><option value="1000">1,000 nodes • limited</option><option value="1">1 node • demonstrate unknown</option></select></label>
+              <div class="solve-action"><button id="solve" type="submit" class="primary-button">Check the whole agenda <span aria-hidden="true">↗</span></button></div>
+            </div>
+            <p class="field-help">No partial agenda is shown as a solution. All proofs are relative to the declared grid and constraints. Repair search: 60,000 nodes / 2,500 candidates; up to 4 tied choices shown.</p>
+          </section>
+        </form>
+
+        <details class="panel data-panel">
+          <summary>Local files &amp; exact JSON</summary>
+          <p class="field-help">Nothing autosaves. Import only an explicitly selected file (64 KiB maximum). Failed imports preserve your current editor and result. Export before closing.</p>
+          <label for="import-file">Import agenda or exported report<input id="import-file" type="file" accept=".json,application/json"></label>
+          <div class="toolbar"><button id="export-input" type="button">Export input JSON</button><button id="refresh-json" type="button">Copy editor into box</button></div>
+          <label class="full-field" for="json-input">Advanced JSON input<textarea id="json-input" rows="9" spellcheck="false" placeholder='{"schema":"agenda-planner/1", …}'></textarea></label>
+          <button id="apply-json" type="button">Validate &amp; load JSON</button>
+          <p class="field-help">Unknown constraints are rejected as unsupported, never quietly ignored.</p>
+        </details>
+      </section>
+
+      <section class="results-column" aria-labelledby="result-title">
+        <div class="panel result-card" id="result-card">
+          <div class="result-heading"><p class="eyebrow">THE REALITY CHECK</p><span id="result-badge" class="badge">NOT CHECKED</span></div>
+          <h2 id="result-title">Your time, accounted for.</h2>
+          <p id="result-message" role="status" aria-live="polite">Load a scenario or check your agenda to begin.</p>
+          <div class="metrics">
+            <div><span id="metric-commitments">—</span><small>committed minutes</small></div>
+            <div><span id="metric-available">—</span><small>available before cutoff</small></div>
+            <div><span id="metric-tasks">—</span><small>tasks retained</small></div>
+          </div>
+          <p id="proof-note" class="field-help"></p>
+          <button id="export-analysis" type="button" disabled>Export current analysis ↓</button>
+        </div>
+
+        <section class="panel timeline-panel" aria-labelledby="timeline-title">
+          <div class="section-heading"><span class="step-label">03</span><h2 id="timeline-title">The full picture</h2><span id="timeline-state" class="muted"></span></div>
+          <div class="timeline-endpoints"><span id="timeline-start">—</span><span id="timeline-end">—</span></div>
+          <div id="timeline-track" class="timeline-track" aria-label="Proportional agenda timeline"></div>
+          <div id="timeline-content"><p class="empty-state">A complete, verified schedule will appear here. Never an optimistic partial one.</p></div>
+        </section>
+
+        <section id="conflict-panel" class="panel conflict-panel" aria-labelledby="conflict-title" hidden>
+          <p class="eyebrow">WHY IT DOES NOT FIT</p>
+          <h2 id="conflict-title">The conflicting commitments</h2>
+          <p id="conflict-message"></p>
+          <ul id="conflict-list" class="constraint-list"></ul>
+          <p id="core-proof" class="field-help"></p>
+          <details><summary>Exact core constraints</summary><pre id="constraint-json"></pre></details>
+        </section>
+
+        <section id="repair-panel" class="panel repair-panel" aria-labelledby="repair-title" hidden>
+          <p class="eyebrow">NEGOTIATE, DON'T DISAPPEAR</p>
+          <h2 id="repair-title">Smallest changes, proved.</h2>
+          <p id="repair-message"></p>
+          <details class="objective-note">
+            <summary>What does “smallest” mean?</summary>
+            <p>First minimize the number of changed fields. Then minimize the sum of minutes changed. A cutoff is one field; each task duration is another. A 1-minute step means 1-minute candidates, not continuous time.</p>
+            <p>Only cutoff extensions up to your limit and task reductions down to your floors are considered. Windows, dependencies, fixed events and task membership never change. All cheaper candidates must be proven infeasible before a minimum is claimed.</p>
+          </details>
+          <div id="repair-choices"></div>
+          <p id="repair-proof" class="field-help"></p>
+        </section>
+      </section>
+    </div>
+
+    <section class="honesty-footer panel" aria-labelledby="limits-title">
+      <div><p class="eyebrow">AN HONEST LOCAL CANDIDATE</p><h2 id="limits-title">Small by design.<br>Explicit about the edges.</h2></div>
+      <div>
+        <p>Up to 8 mandatory, uninterrupted tasks on one track. At most 120 grid slots including the repair envelope. Finish-to-start dependencies, disjoint availability and fixed starts. No dates, recurring events, priorities, parallel rooms or calendar integrations.</p>
+        <p><strong>Not observed:</strong> real-user usefulness, screen-reader behavior, keyboard/browser walkthroughs or market traction. Automated evidence is not a launch approval.</p>
+        <div class="footer-links"><a href="./README.md">Engine API &amp; formats</a><a href="./docs/launch-draft.md">Local launch draft</a><a href="./docs/FAQ.md">FAQ &amp; recovery</a><a href="./provenance.json">Seed attribution</a><a href="./evidence/result.json">Actual test evidence</a></div>
+      </div>
+    </section>
+    <footer class="fine-print">Original local implementation · MIT-attributed synthetic input data · No publication, telemetry, automatic storage or native Hive activation.</footer>
+  </main>
+</body>
+</html>

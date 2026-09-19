@@ -1,0 +1,68 @@
+{
+  "schema": "agenda-planner/1",
+  "title": "An exact midnight finish",
+  "classification": "synthetic",
+  "day": {
+    "start": 1380,
+    "end": 1440,
+    "stepMinutes": 5,
+    "availability": [
+      [
+        1380,
+        1440
+      ]
+    ]
+  },
+  "tasks": [
+    {
+      "id": "setup",
+      "label": "Setup at 23:00",
+      "duration": 30,
+      "availability": [
+        [
+          1380,
+          1440
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": 1380,
+      "kind": "event"
+    },
+    {
+      "id": "round",
+      "label": "Final round",
+      "duration": 25,
+      "availability": [
+        [
+          1380,
+          1440
+        ]
+      ],
+      "dependsOn": [
+        "setup"
+      ],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "close",
+      "label": "Close before midnight",
+      "duration": 5,
+      "availability": [
+        [
+          1380,
+          1440
+        ]
+      ],
+      "dependsOn": [
+        "round"
+      ],
+      "fixedStart": null,
+      "kind": "break"
+    }
+  ],
+  "repairs": {
+    "latestEnd": 1440,
+    "durationFloors": {}
+  }
+}

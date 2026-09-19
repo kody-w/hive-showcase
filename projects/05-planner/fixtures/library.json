@@ -1,0 +1,129 @@
+{
+  "schema": "agenda-planner/1",
+  "title": "Library kit • every topic committed",
+  "classification": "synthetic",
+  "day": {
+    "start": 540,
+    "end": 600,
+    "stepMinutes": 1,
+    "availability": [
+      [
+        540,
+        630
+      ]
+    ]
+  },
+  "tasks": [
+    {
+      "id": "welcome",
+      "label": "Confirm the decision to make",
+      "duration": 5,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "stock-review",
+      "label": "Review fictional kit stock",
+      "duration": 10,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "decision",
+      "label": "Choose the sample kit scope",
+      "duration": 20,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "template-demo",
+      "label": "Optional template demonstration",
+      "duration": 15,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "risk-check",
+      "label": "Check assumptions and open questions",
+      "duration": 10,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "roundup",
+      "label": "Collect optional follow-up ideas",
+      "duration": 8,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    },
+    {
+      "id": "wrap",
+      "label": "Wrap & next steps",
+      "duration": 5,
+      "availability": [
+        [
+          540,
+          630
+        ]
+      ],
+      "dependsOn": [
+        "welcome",
+        "stock-review",
+        "decision",
+        "template-demo",
+        "risk-check",
+        "roundup"
+      ],
+      "fixedStart": null,
+      "kind": "break"
+    }
+  ],
+  "repairs": {
+    "latestEnd": 630,
+    "durationFloors": {
+      "template-demo": 2
+    }
+  }
+}

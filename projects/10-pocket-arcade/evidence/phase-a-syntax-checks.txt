@@ -1,0 +1,9 @@
+argv: ["node", "--check", "projects/10-pocket-arcade/app.js"]
+exitCode: 0
+stdout: (empty)
+stderr: (empty)
+
+argv: ["node", "--check", "projects/10-pocket-arcade/model.js"]
+exitCode: 0
+stdout: (empty)
+stderr: (empty)

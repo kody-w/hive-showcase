@@ -1,0 +1,80 @@
+{
+  "seedSlug": "micro-manufacturing-company",
+  "scope": "Read-only seed task/scope review; no native task claims, organization, registration, SDK, CAD renderer, or downloaded starter execution.",
+  "baseline": {
+    "trayInteriorMM": [
+      174,
+      94
+    ],
+    "insertFootprintMM": [
+      171,
+      91
+    ],
+    "trayVolumeMM3": 101676,
+    "insertVolumeMM3": 20640,
+    "nominalSideGapMM": 1.5,
+    "solidMassG": 151.67184,
+    "syntheticUnitUSD": "7.61",
+    "syntheticTwentyKitUSD": "152.13",
+    "dimensionsAndVolumesMatchInertTaskBoard": true,
+    "originalSCADExecutedOrCertified": false
+  },
+  "inspectionExercise": {
+    "pass": 3,
+    "hold": 2,
+    "report": "generated/synthetic-inspection.json"
+  },
+  "changeRequest": {
+    "widthMM": 196,
+    "decision": "HOLD",
+    "report": "generated/width-change-review.json"
+  },
+  "roleScopeResponse": [
+    {
+      "team": "industrial-design",
+      "artifact": "README.md",
+      "disposition": "Dry lightweight desk envelope, three nominal configurations, future pilot only."
+    },
+    {
+      "team": "engineering",
+      "artifact": "engine.js",
+      "disposition": "Original parametric solid geometry and dimension/fit reports; no downloaded reference execution."
+    },
+    {
+      "team": "sourcing",
+      "artifact": "generated/stackline/review.json",
+      "disposition": "Density/price/yield low/base/high synthetic sensitivity; no vendors or purchasing."
+    },
+    {
+      "team": "production-planning",
+      "artifact": "generated/stackline/assembly.txt",
+      "disposition": "Prospective reversible twenty-kit sequence; no process settings."
+    },
+    {
+      "team": "quality",
+      "artifact": "generated/synthetic-inspection.json",
+      "disposition": "Three passing and two held synthetic rows; proposed future inspections separate."
+    },
+    {
+      "team": "logistics",
+      "artifact": "generated/width-change-review.json",
+      "disposition": "All-axis padding and packaging mass modeled; wider proposal held."
+    },
+    {
+      "team": "finance",
+      "artifact": "generated/comparison.json",
+      "disposition": "Baseline 7.61 USD unit / 152.13 USD twenty-kit aggregate; wholly hypothetical."
+    }
+  ],
+  "physicallyAccepted": false,
+  "limitations": [
+    "No material has been selected, purchased, printed, fabricated, handled, inspected, or shipped.",
+    "STL files contain nominal millimetre coordinates but STL itself has no unit metadata. Import explicitly as mm.",
+    "Solid-volume mass is not a slicer estimate: no infill, supports, shrinkage, machine time, or process settings are modeled.",
+    "Clearance is a loose, centered design assumption, not a validated tolerance or friction fit. The insert is not retained.",
+    "The open-ended ladder and 1.5 mm nominal surrounding gap do not seal small tokens into bays.",
+    "Dimensions, strength, material suitability, surface finish, stability, handling time, and transit behavior require future physical review.",
+    "Lightweight dry desk items only; no food, heated items, electrical, medical, child-safety, or load-bearing uses.",
+    "Packaging and costs are synthetic scenarios. Digital passes grant no fabrication, spending, shipment, or native Hive authority."
+  ]
+}

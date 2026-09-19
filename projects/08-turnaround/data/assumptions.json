@@ -1,0 +1,106 @@
+{
+  "schema": "turnaround-assumptions/1",
+  "classification": "ADDED MODEL ASSUMPTIONS, NOT SEED FACTS",
+  "defaults": {
+    "horizonDays": 90,
+    "receiptDelayDays": 0,
+    "demandBps": 10000,
+    "acceleratedBps": 6500,
+    "supportSliceMinutes": 300,
+    "reviewCapacityMinutes": 180,
+    "warningLeadDays": 7,
+    "contractorConsent": true,
+    "hostingValidated": true,
+    "receiptConsent": true,
+    "deferralConsent": true
+  },
+  "definitions": [
+    {"id": "calendar", "text": "Day 1 is 2026-10-01. Horizon is 90 calendar days. Three normalized 30-day billing cycles are used, NOT actual calendar months. Work is Monday-Friday, no holidays; lead times are calendar days and start after the actual work start."},
+    {"id": "billing", "text": "Repeat September's receipts and expenses, rather than extrapolating growth. Every cycle's payroll is due on offset 28, contractors on 29, and hosting/refunds/receipts on 30, using the seed posting pattern as a timing assumption. Outflows are due before same-day receipts."},
+    {"id": "accounting", "text": "All money is integer cents. Scheduled cash equals opening bank cash plus scheduled receipts less required outflows. Negative scheduled cash is an unfunded requirement, never an authorized overdraft. The executable prefix ends at the first unfunded payment; all later events are explicitly counterfactual schedule arithmetic."},
+    {"id": "reserve", "text": "Outstanding incremental prior-period payables stay reserved until their scheduled payment, even when deferred beyond the horizon. Cash-floor tests use scheduled cash less these reserves. A reserve release is not a receipt. Agreed deferral fees are also reserved immediately."},
+    {"id": "floor", "text": "A strict value below $12,000 breaches the floor. Exactly $12,000 is not a breach; exactly zero bank cash can fund the preceding payment. Test every event including the trough before same-day receipts, not only daily closing cash."},
+    {"id": "capacity", "text": "The seed's 360 engineering and 420 support minutes are single total budgets, never replenished weekly. Added daily caps are 120 engineering, 210 support and 90 review minutes. Review has an added 180-minute total budget. Splitting work evenly over an action's working days is a scheduling simplification, not a staff availability fact."},
+    {"id": "action-outcomes", "text": "All actions are conditional and unapproved. Their one-time fees are paid at actual start and remain lost if consent/validation fails. Work time is consumed either way. No repair or support work automatically creates sales, retention or refund savings."},
+    {"id": "cost-changes", "text": "Contractor and hosting levels come from the seed containment scenario. They apply only to a complete 30-day cycle starting on or after action readiness. Existing-cycle invoices are not reduced retrospectively."},
+    {"id": "receipts", "text": "Collection coordination can move 65% of already-assumed cycle receipts from day 30 to day 20, only if ready by day 20 and assumed consent holds. It never increases the cycle total. All receipts, including accelerated portions, receive the same additional delay. Weaker demand reduces each cycle's existing receipts; no replacement sales or financing are permitted."},
+    {"id": "deferral", "text": "Negotiating the $2,500 prior support payable before its due date can move it by 30 calendar days, with a $100 sunk negotiation fee, $125 added late fee and loss of 120 support minutes from the one-time budget. These are assumed consequences, not contract facts. Consent failure keeps the original due date and spends the negotiation fee without benefit."},
+    {"id": "warning", "text": "All inputs are known in this deterministic exercise, so the earliest forecast warning is day 0 whenever any modeled future failure exists. The separate rolling escalation starts max(0, breach day minus warningLeadDays); it is a policy clock, not a prediction that the risk was unknowable earlier."},
+    {"id": "support", "text": "Queue repair allocates the seed's 60+180+90+30 engineering minutes across three working days. The optional support slice is prospective, non-preemptive severity/age/ID fit over two working days after repair readiness. Tickets remain unexecuted. Unselected and blocked tickets stay visible; overlapping affected-account counts are never summed."}
+  ],
+  "dailyCapacity": {"engineering": 120, "support": 210, "review": 90},
+  "actions": [
+    {
+      "id": "queue-repair",
+      "title": "Review & repair queue",
+      "description": "Reserve the authored engineering sprint. Makes a modeled support slice eligible; no cash recovery is credited.",
+      "workdays": 3,
+      "leadDays": 3,
+      "costCents": 0,
+      "resources": {"engineering": 360, "support": 0, "review": 0},
+      "prerequisites": [],
+      "factBasis": "Engineering minutes: recovery-sprint.csv. Workday timing is an added assumption."
+    },
+    {
+      "id": "support-slice",
+      "title": "Protect the urgent queue",
+      "description": "Plan a capacity-bounded support slice after queue readiness. It consumes the selected tickets' minutes, not invented money.",
+      "workdays": 2,
+      "leadDays": 2,
+      "costCents": 0,
+      "resources": {"engineering": 0, "support": "selected-ticket-minutes", "review": 0},
+      "prerequisites": ["queue-repair"],
+      "factBasis": "Ticket estimates and support cap: seed data. Allocation timing and selected slice size are assumptions."
+    },
+    {
+      "id": "contractor-cut",
+      "title": "Narrow contractor scope",
+      "description": "Assumed agreement lowers a future full cycle from $3,000 to $1,500. Current-cycle obligations survive.",
+      "workdays": 1,
+      "leadDays": 14,
+      "costCents": 30000,
+      "resources": {"engineering": 0, "support": 0, "review": 60},
+      "prerequisites": [],
+      "consentKey": "contractorConsent",
+      "factBasis": "Rate levels: scenarios.csv. $300 sunk fee, 14-day lead and resource load are assumptions."
+    },
+    {
+      "id": "hosting-cut",
+      "title": "Validate smaller hosting",
+      "description": "Assumed validation lowers a future full cycle from $1,800 to $1,600, competing with engineering work.",
+      "workdays": 2,
+      "leadDays": 10,
+      "costCents": 45000,
+      "resources": {"engineering": 120, "support": 0, "review": 30},
+      "prerequisites": [],
+      "consentKey": "hostingValidated",
+      "factBasis": "Rate levels: scenarios.csv. $450 sunk fee, 10-day lead and resource load are assumptions."
+    },
+    {
+      "id": "receipt-pull",
+      "title": "Coordinate earlier receipts",
+      "description": "Moves part of the same receipt pool ten days earlier; never adds revenue. Uses support and review capacity.",
+      "workdays": 2,
+      "leadDays": 7,
+      "costCents": 15000,
+      "resources": {"engineering": 0, "support": 90, "review": 60},
+      "prerequisites": [],
+      "consentKey": "receiptConsent",
+      "factBasis": "No timing improvement is in the seed. Fee, share, lead, consent and capacity are added assumptions."
+    },
+    {
+      "id": "defer-payable",
+      "title": "Defer prior support bill",
+      "description": "Moves $2,500 to day 40 if ready before day 10. Keeps the full reserve, adds a fee and removes support capacity.",
+      "workdays": 1,
+      "leadDays": 3,
+      "costCents": 10000,
+      "resources": {"engineering": 0, "support": 0, "review": 60},
+      "prerequisites": [],
+      "consentKey": "deferralConsent",
+      "factBasis": "Original $2,500 obligation and date: payables.csv. Every deferral term is an added assumption."
+    }
+  ],
+  "deferral": {"payableId": "arrears-support", "days": 30, "feeCents": 12500, "lostSupportMinutes": 120},
+  "receiptAdvanceDays": 10
+}

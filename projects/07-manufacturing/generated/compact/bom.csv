@@ -1,0 +1,3 @@
+part_id,quantity,x_mm,y_mm,z_mm,solid_volume_mm3,modeled_mass_g,density_g_cm3,classification
+tray,1,140,90,28,71400,88.536,1.24,SYNTHETIC solid model
+insert,1,131,81,18,12204,15.13296,1.24,SYNTHETIC solid model

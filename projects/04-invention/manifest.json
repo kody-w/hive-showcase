@@ -1,0 +1,46 @@
+{
+  "id": "04-invention",
+  "title": "Falsification Lab · Two capacities, no easy claims",
+  "seedSlug": "applied-invention-lab",
+  "entrypoint": "projects/04-invention/index.html",
+  "summary": "An original offline packing lab with a pre-comparison protocol commit, six methods, all four synthetic scenarios and 504 verified assignments. Beam search saves 23 modeled bins across 80 paired cases; best-fit's regression, exact-search skips and all counterexamples remain inspectable.",
+  "checks": [
+    ["node", "--test", "projects/04-invention/test/engine.test.mjs", "projects/04-invention/test/evidence.test.mjs", "projects/04-invention/test/ui.test.mjs"],
+    ["node", "projects/04-invention/scripts/experiment.mjs", "--check"],
+    ["node", "projects/04-invention/scripts/replicate.mjs", "--check"]
+  ],
+  "artifacts": [
+    "projects/04-invention/README.md",
+    "projects/04-invention/PROTOCOL.md",
+    "projects/04-invention/protocol.json",
+    "projects/04-invention/protocol-lock.json",
+    "projects/04-invention/source/sources.json",
+    "projects/04-invention/source/LICENSE",
+    "projects/04-invention/source/items.csv",
+    "projects/04-invention/source/capacity.json",
+    "projects/04-invention/source/experiment-plan.json",
+    "projects/04-invention/source/expected-baseline.json",
+    "projects/04-invention/evidence/dataset-audit.json",
+    "projects/04-invention/evidence/baseline.json",
+    "projects/04-invention/evidence/trials.json",
+    "projects/04-invention/evidence/counterexamples.json",
+    "projects/04-invention/evidence/result.json",
+    "projects/04-invention/evidence/snapshot.js",
+    "projects/04-invention/evidence/reproducibility.json",
+    "projects/04-invention/evidence/checks.json",
+    "projects/04-invention/evidence/development.json",
+    "projects/04-invention/docs/assumptions.csv",
+    "projects/04-invention/docs/next-study.csv",
+    "projects/04-invention/docs/decision.md"
+  ],
+  "limitations": [
+    "All inputs and improvements are synthetic two-capacity scalar results, not actual packing, mass, geometry, handling or safety evidence.",
+    "The local protocol was committed before new candidate execution but after review of known reference outcomes; it is not blinded or externally registered.",
+    "The original JS PRNG preserves seed 1729 and 20 paired repetitions but does not reproduce unexecuted Python random arrays.",
+    "Beam search retains at most 128 states; exact search stops above 12 items or at 50000 nodes. Skipped and unclosed results remain explicitly unknown.",
+    "Four authored scenarios do not establish universal superiority, population effects, novelty, patentability, market demand or financial savings.",
+    "Fresh-process repetition and Node DOM tests are not independent human replication, actual browser visual review, physical testing or operator validation.",
+    "Native Hive initialization, human review, services, publication, outreach, spending and external mutations were not performed."
+  ],
+  "stage": "work-produced"
+}

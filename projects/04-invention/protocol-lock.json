@@ -1,0 +1,9 @@
+{
+  "schema": "local-protocol-lock/1",
+  "original_freeze_commit": "484b2b39b78f209de59951c836ffce0a4022571f",
+  "protocol_sha256": "265419757652f778da8adcb1f28ef5de295908282377c55c5883071e67f84ac9",
+  "protocol_markdown_sha256": "65c62209816b13cd5f90f1552d70455fc2591d7e50d501d6405e3d21fa7642b3",
+  "scope": "Local prospective freeze before implementing or running new candidate comparisons. Known synthetic reference outcomes were already reviewed; not a blinded or externally registered study.",
+  "pre_experiment_correction": "The pre-freeze source-byte check found source/LICENSE was missing the seed's final blank line (1078 vs 1079 bytes). The shell still committed the protocol. The blank line was restored before any experiment; no data, rule, budget, seed or acceptance criterion changed.",
+  "history_note": "The recorded commit is the original worktree freeze. Integration by cherry-pick can create a different commit ID; immutable file hashes also identify the frozen rules."
+}

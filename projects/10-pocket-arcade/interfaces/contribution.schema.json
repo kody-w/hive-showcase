@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:local-pocket-arcade:contributions:1",
+  "title": "Pocket Arcade local contribution record",
+  "description": "Data only. Runtime validation also enforces contract roles/gates, exact file sets, local paths, fixture markers, byte hashes and dependency acyclicity. No remote schema is fetched.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "fixtureOnly", "scope", "boundaries", "contributions"],
+  "properties": {
+    "schema": {"const": "pocket-arcade-contributions/1"},
+    "fixtureOnly": {"type": "boolean"},
+    "scope": {"const": "local-original-artifact-integration"},
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nativeMembership", "foreignWorkspaceRegistration", "signedReceipts", "crossWorldAuthority", "externalEffects", "physicalManufactureVerified", "publicLaunch", "automaticPartnerCodeExecution"],
+      "properties": {
+        "nativeMembership": {"const": false},
+        "foreignWorkspaceRegistration": {"const": false},
+        "signedReceipts": {"const": false},
+        "crossWorldAuthority": {"const": false},
+        "externalEffects": {"const": false},
+        "physicalManufactureVerified": {"const": false},
+        "publicLaunch": {"const": false},
+        "automaticPartnerCodeExecution": {"const": false}
+      }
+    },
+    "contributions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/contribution"}},
+    "integrationArtifacts": {"type": "array", "maxItems": 32, "items": {"$ref": "#/$defs/lock"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "path": {"type": "string", "pattern": "^projects/(01-game-studio|05-planner|07-manufacturing|09-handoff|10-pocket-arcade)/[A-Za-z0-9._/-]+$", "maxLength": 400},
+    "lock": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "bytes"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "bytes": {"type": "integer", "minimum": 1, "maximum": 16777216}
+      }
+    },
+    "proof": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "pointer", "equals"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "pointer": {"type": "string", "pattern": "^/", "maxLength": 512},
+        "equals": {"enum": [true, "pass", "passed", "verified", "local-checks-passed"]}
+      }
+    },
+    "gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "state", "proof"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "state": {"enum": ["awaiting", "pass"]},
+        "proof": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/proof"}]},
+        "note": {"type": "string", "minLength": 1}
+      }
+    },
+    "checkRun": {
+      "type": "object", "additionalProperties": false,
+      "required": ["argv", "exitCode", "output"],
+      "properties": {
+        "argv": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+        "exitCode": {"type": "integer", "const": 0},
+        "output": {"$ref": "#/$defs/lock"},
+        "recordedAt": {"type": "string", "minLength": 1}
+      }
+    },
+    "contribution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "interfaceId", "state", "sourceCommit", "manifestSha256", "files", "roles", "gates", "checkRuns"],
+      "properties": {
+        "id": {"enum": ["01-game-studio", "05-planner", "07-manufacturing", "09-handoff"]},
+        "interfaceId": {"enum": ["pocket-arcade/browser-game/1", "pocket-arcade/tournament-plan/1", "pocket-arcade/tabletop-accessory/1", "pocket-arcade/maintenance-handoff/1"]},
+        "state": {"enum": ["awaiting", "received"]},
+        "sourceCommit": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^([0-9a-f]{40}|[0-9a-f]{64})$"}]},
+        "manifestSha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/hash"}]},
+        "files": {"type": "array", "items": {"$ref": "#/$defs/lock"}},
+        "roles": {"type": "object", "additionalProperties": {"$ref": "#/$defs/path"}},
+        "gates": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/gate"}},
+        "checkRuns": {"type": "array", "items": {"$ref": "#/$defs/checkRun"}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"state": {"const": "awaiting"}}},
+          "then": {
+            "properties": {
+              "sourceCommit": {"type": "null"},
+              "manifestSha256": {"type": "null"},
+              "files": {"maxItems": 0},
+              "roles": {"maxProperties": 0},
+              "checkRuns": {"maxItems": 0},
+              "gates": {"items": {"properties": {"state": {"const": "awaiting"}, "proof": {"type": "null"}}}}
+            }
+          },
+          "else": {
+            "properties": {
+              "manifestSha256": {"$ref": "#/$defs/hash"},
+              "files": {"minItems": 1},
+              "roles": {"minProperties": 1},
+              "checkRuns": {"minItems": 1},
+              "gates": {"items": {"properties": {"state": {"const": "pass"}, "proof": {"$ref": "#/$defs/proof"}}}}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

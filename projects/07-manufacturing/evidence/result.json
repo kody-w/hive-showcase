@@ -1,0 +1,170 @@
+{
+  "schema": "local-hive-work-result/1",
+  "id": "07-manufacturing",
+  "seedSlug": "micro-manufacturing-company",
+  "stage": "work-produced",
+  "status": "digital-checks-passed",
+  "classification": "Original digital work and synthetic modeled estimates only",
+  "entrypoint": "projects/07-manufacturing/index.html",
+  "implementation": "Original shared-lattice parametric solids; plain offline browser JS and Node/Python standard library",
+  "runtimes": {
+    "node": "v26.7.0",
+    "python": "Python 3.9.6"
+  },
+  "checks": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/07-manufacturing/tests/engine.test.mjs",
+        "projects/07-manufacturing/tests/app.test.mjs"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "status": "pass",
+      "tests": 30,
+      "passed": 30,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "projects/07-manufacturing/tests/verify_artifacts.py",
+        "--check"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "Independent validation PASS: 6 closed manifold STL solids, 3 drawings/BOMs/ZIPs, 5 adversarial rejection controls, 40 artifact hashes."
+    },
+    {
+      "argv": [
+        "node",
+        "projects/07-manufacturing/tools/generate.mjs",
+        "--check"
+      ],
+      "cwd": "repository-root",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "Verified deterministic bytes of 41 original review artifacts across 3 configurations."
+    }
+  ],
+  "sourceSHA256": {
+    "engine.js": "25b74446b12969572c9f277e63d789442a81ea82da7ba3bee49e3072b13bde21",
+    "archive.js": "a0f7caf41e89fba417046b116e449ade26daeebaa34d802351972e975b894452",
+    "app.js": "62ea6ea80af4f689fcdd2802a7b784f148a174844f98317e5290e9fa0e05d117",
+    "index.html": "679e88603de2bf41eaf7dccc9e71ba108b65fc956674f70a2892f703d55196a2",
+    "styles.css": "361cd2784e128c3628fb942d08142b41fc8b6eae22115a33a98c9dce1f31875f",
+    "README.md": "f829844b24ba6750a53605b4dd38aaf82d06cda3d1ca09a76dce3b320aa09855",
+    "manifest.json": "a22c4de25c8d32372bc50f87a04f08996c1711a3ebd30bbbcea73545c13fb537",
+    "tools/generate.mjs": "8e43f6e43fe9205af5fc94bab5bb8af251b1617a2830d59f58a7ea7d4558406f",
+    "tools/capture-provenance.py": "86c3071e3c9f0dd7ab14e51ec812c768644daaab4c09c80b787d9431a33b15a8",
+    "tools/verify.mjs": "e5ec47cfcf00c891662a76cbb35a322a34e8e0b9a39b1c782e80e188728ab3e7",
+    "tests/engine.test.mjs": "a638856806c920ac7ecf3e50d9efc030e36a9032bed35ecc2c8051a12a161985",
+    "tests/app.test.mjs": "9476bfc587a468f97bbaa5531ca3ee9ed2f3b1e065289b45d52a7d2e5b5e0966",
+    "tests/verify_artifacts.py": "7e33920b920878f0c40631536936285b75622c398cc449db4ee0b089e77d2a55",
+    "data/source-provenance.json": "ff9ebc63293fa22850d0dc5158c68554da11e65202cc03d74fda8c7235a0411e",
+    "generated/artifact-index.json": "25b083eb5de2aa575ccabaff1d38d52831c79ab0e62ac84bb19e740ce0be0875",
+    "evidence/mesh-validation.json": "2ec090e0dd12278e0633e5458c0d25eb8f2098dd723359fb30edaaca70482780"
+  },
+  "outputs": {
+    "configurations": [
+      "stackline",
+      "compact",
+      "pocket-arcade"
+    ],
+    "nominalSTLSolids": 6,
+    "closedManifoldSolids": 6,
+    "dimensionedSVGDrawings": 3,
+    "twoPartBOMs": 3,
+    "reviewZIPs": 3,
+    "manifestArtifactPaths": [
+      "projects/07-manufacturing/README.md",
+      "projects/07-manufacturing/engine.js",
+      "projects/07-manufacturing/archive.js",
+      "projects/07-manufacturing/data/source-provenance.json",
+      "projects/07-manufacturing/data/seed/LICENSE",
+      "projects/07-manufacturing/generated/artifact-index.json",
+      "projects/07-manufacturing/generated/comparison.json",
+      "projects/07-manufacturing/generated/seed-review.json",
+      "projects/07-manufacturing/generated/synthetic-inspection.json",
+      "projects/07-manufacturing/generated/width-change-review.json",
+      "projects/07-manufacturing/generated/stackline/review-bundle.zip",
+      "projects/07-manufacturing/generated/stackline/tray.stl",
+      "projects/07-manufacturing/generated/stackline/insert.stl",
+      "projects/07-manufacturing/generated/stackline/drawing.svg",
+      "projects/07-manufacturing/generated/stackline/parameters.json",
+      "projects/07-manufacturing/generated/stackline/bom.csv",
+      "projects/07-manufacturing/generated/stackline/inspection.csv",
+      "projects/07-manufacturing/generated/stackline/assembly.txt",
+      "projects/07-manufacturing/generated/stackline/review.json",
+      "projects/07-manufacturing/generated/compact/review-bundle.zip",
+      "projects/07-manufacturing/generated/compact/tray.stl",
+      "projects/07-manufacturing/generated/compact/insert.stl",
+      "projects/07-manufacturing/generated/compact/drawing.svg",
+      "projects/07-manufacturing/generated/compact/parameters.json",
+      "projects/07-manufacturing/generated/compact/bom.csv",
+      "projects/07-manufacturing/generated/compact/inspection.csv",
+      "projects/07-manufacturing/generated/compact/assembly.txt",
+      "projects/07-manufacturing/generated/compact/review.json",
+      "projects/07-manufacturing/generated/pocket-arcade/review-bundle.zip",
+      "projects/07-manufacturing/generated/pocket-arcade/tray.stl",
+      "projects/07-manufacturing/generated/pocket-arcade/insert.stl",
+      "projects/07-manufacturing/generated/pocket-arcade/drawing.svg",
+      "projects/07-manufacturing/generated/pocket-arcade/parameters.json",
+      "projects/07-manufacturing/generated/pocket-arcade/bom.csv",
+      "projects/07-manufacturing/generated/pocket-arcade/inspection.csv",
+      "projects/07-manufacturing/generated/pocket-arcade/assembly.txt",
+      "projects/07-manufacturing/generated/pocket-arcade/review.json",
+      "projects/07-manufacturing/evidence/mesh-validation.json",
+      "projects/07-manufacturing/evidence/result.json"
+    ],
+    "independentlyValidated": "projects/07-manufacturing/evidence/mesh-validation.json"
+  },
+  "baseline": {
+    "trayInteriorMM": [
+      174,
+      94
+    ],
+    "insertFootprintMM": [
+      171,
+      91
+    ],
+    "nominalGapMM": 1.5,
+    "solidVolumeMM3": 122316,
+    "modeledSolidMassG": 151.67184,
+    "syntheticUSDPerKit": "7.61",
+    "syntheticUSDTwentyKitAggregate": "152.13",
+    "syntheticInspection": {
+      "pass": 3,
+      "hold": 2
+    }
+  },
+  "widthChange": {
+    "outerWidthMM": 196,
+    "paddedWidthMM": 200,
+    "packInteriorWidthMM": 192,
+    "disposition": "HOLD"
+  },
+  "downloadedStarterCodeExecuted": false,
+  "browserAccessedByWorkstream": false,
+  "nativeHiveInitialized": false,
+  "fabricationOrOrdersPerformed": false,
+  "servicesStarted": false,
+  "publicationOrSpendingPerformed": false,
+  "physicalTestsPerformed": [],
+  "limitations": [
+    "Digital manufacturing-review work only. No fabrication, orders, material selection, machine operation, physical measurements, shipment, publication, spending, services or native Hive setup occurred.",
+    "STL coordinates are nominal mm, but STL has no unit metadata: import explicitly at 1:1 mm. No slicer, CAD import, infill, support, shrinkage, process or print-behavior validation is claimed.",
+    "Clearance, wall/rib limits and inspection tolerances are design/review assumptions, not validated process capability or strength. The loose insert is unretained and its bays do not seal small objects.",
+    "All mass, feedstock, cost, effort, packaging and five inspection fixture rows are synthetic/modeled. Assembly effort includes handling/inspection and is not a time study or fabrication-time estimate.",
+    "Pocket Arcade is an original card/token concept using assumed payload dimensions; actual game-item fit, retention, retrieval, stability and durability are untested.",
+    "The proposed 196 mm design is HOLD against the current fixed packing envelope. Baseline samples do not validate a width change or any real batch.",
+    "Physical prototype approval, material/process safety and suitability, dimensional and fit trials, surface/stability/strength review, real handling time and transit protection remain unperformed.",
+    "Real-browser visual and accessibility review is parent-owned and not claimed by this workstream; app behavior was checked with an original minimal DOM harness.",
+    "Only lightweight dry desk use is in scope; food, heated items, electrical, medical, child-safety and load-bearing uses are excluded."
+  ]
+}

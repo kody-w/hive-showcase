@@ -1,0 +1,50 @@
+{
+  "id": "06-enterprise",
+  "title": "Process Time Machine",
+  "seedSlug": "enterprise-transformation-firm",
+  "entrypoint": "projects/06-enterprise/index.html",
+  "summary": "Replay eight actual synthetic quote exceptions through a deterministic baseline, early triage, and pooled pod. Inspect queues, unchanged-input rework, case timelines, utilization, adverse stress outcomes, and a bounded reversible pilot; modeled improvement is not realized savings.",
+  "checks": [
+    ["node", "projects/06-enterprise/scripts/validate.mjs"]
+  ],
+  "artifacts": [
+    "projects/06-enterprise/index.html",
+    "projects/06-enterprise/styles.css",
+    "projects/06-enterprise/app.mjs",
+    "projects/06-enterprise/view.mjs",
+    "projects/06-enterprise/engine.mjs",
+    "projects/06-enterprise/model.mjs",
+    "projects/06-enterprise/source.mjs",
+    "projects/06-enterprise/README.md",
+    "projects/06-enterprise/pilot.md",
+    "projects/06-enterprise/traceability.json",
+    "projects/06-enterprise/provenance.json",
+    "projects/06-enterprise/manifest.json",
+    "projects/06-enterprise/fixtures/LICENSE",
+    "projects/06-enterprise/fixtures/accounts.csv",
+    "projects/06-enterprise/fixtures/quotes.csv",
+    "projects/06-enterprise/fixtures/quote-lines.csv",
+    "projects/06-enterprise/fixtures/policy.json",
+    "projects/06-enterprise/fixtures/expected-results.json",
+    "projects/06-enterprise/fixtures/workload.json",
+    "projects/06-enterprise/results/comparison.json",
+    "projects/06-enterprise/results/replays.json",
+    "projects/06-enterprise/tests/source.test.mjs",
+    "projects/06-enterprise/tests/engine.test.mjs",
+    "projects/06-enterprise/tests/ui.test.mjs",
+    "projects/06-enterprise/scripts/reproduce.mjs",
+    "projects/06-enterprise/scripts/validate.mjs",
+    "projects/06-enterprise/evidence/result.json"
+  ],
+  "limitations": [
+    "All business data is SYNTHETIC; all arrival clocks, service durations, capacities and redesign effects are explicit uncalibrated assumptions.",
+    "The finite boundary ends at a pending handoff, not actual source correction, human approval, invoicing, payment or cash; two data holds and four review cases remain unresolved.",
+    "Eight authored quotes cannot estimate production variability or savings. Nearest-rank p95 is the maximum at n=8; the clean-case tail has n=2.",
+    "The pooled pod has five total service slots versus eight in baseline/triage, not an equal-staffing or cost comparison. Both improvements and adverse stress outcomes are reported.",
+    "No concurrency-safe credit reservation, real tax policy, enterprise integration, production data, deployment, native Hive activation, outreach or external mutation is implemented.",
+    "Browser rendering was not exercised; Node tests cover UI renderers, reducers and an injected DOM/clock adapter, not a visual, accessibility or cross-browser audit.",
+    "Plain ES modules require an owner-controlled local static preview; file:// may block modules or local fixture fetch. This project starts no server.",
+    "The reversible pilot and 35-minute rehearsal are proposals only. Human review, real-policy confirmation, adoption, actual business performance and realized savings are not observed."
+  ],
+  "stage": "work-produced"
+}

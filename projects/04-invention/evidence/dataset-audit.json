@@ -1,0 +1,303 @@
+{
+  "schema": "local-invention-dataset-audit/1",
+  "classification": "SYNTHETIC",
+  "rowCount": 11,
+  "instanceCount": 29,
+  "capacity": {
+    "classification": "SYNTHETIC",
+    "volume_units": 10,
+    "weight_units": 10,
+    "max_items_per_scenario": 60,
+    "exact_item_limit": 12,
+    "exact_node_limit": 50000,
+    "interpretation": "Abstract positive integer capacities only; not physical dimensions, mass, container strength, or safe handling limits."
+  },
+  "scenarios": [
+    {
+      "id": "order-trap",
+      "rowCount": 2,
+      "items": [
+        {
+          "id": "filler-card-pack-01",
+          "sku": "filler-card-pack",
+          "scenario": "order-trap",
+          "volume": 4,
+          "weight": 2,
+          "shapeNote": "Rectangular paper proxy with unknown actual dimensions"
+        },
+        {
+          "id": "filler-card-pack-02",
+          "sku": "filler-card-pack",
+          "scenario": "order-trap",
+          "volume": 4,
+          "weight": 2,
+          "shapeNote": "Rectangular paper proxy with unknown actual dimensions"
+        },
+        {
+          "id": "core-board-pack-01",
+          "sku": "core-board-pack",
+          "scenario": "order-trap",
+          "volume": 6,
+          "weight": 3,
+          "shapeNote": "Flat board proxy with unknown orientation constraints"
+        },
+        {
+          "id": "core-board-pack-02",
+          "sku": "core-board-pack",
+          "scenario": "order-trap",
+          "volume": 6,
+          "weight": 3,
+          "shapeNote": "Flat board proxy with unknown orientation constraints"
+        }
+      ],
+      "itemCount": 4,
+      "totalVolume": 20,
+      "totalWeight": 10,
+      "lowerBound": 2
+    },
+    {
+      "id": "weight-trap",
+      "rowCount": 3,
+      "items": [
+        {
+          "id": "light-foam-panel-01",
+          "sku": "light-foam-panel",
+          "scenario": "weight-trap",
+          "volume": 7,
+          "weight": 1,
+          "shapeNote": "Bulky light proxy with no measured compression"
+        },
+        {
+          "id": "light-foam-panel-02",
+          "sku": "light-foam-panel",
+          "scenario": "weight-trap",
+          "volume": 7,
+          "weight": 1,
+          "shapeNote": "Bulky light proxy with no measured compression"
+        },
+        {
+          "id": "light-foam-panel-03",
+          "sku": "light-foam-panel",
+          "scenario": "weight-trap",
+          "volume": 7,
+          "weight": 1,
+          "shapeNote": "Bulky light proxy with no measured compression"
+        },
+        {
+          "id": "dense-counter-pouch-01",
+          "sku": "dense-counter-pouch",
+          "scenario": "weight-trap",
+          "volume": 2,
+          "weight": 7,
+          "shapeNote": "Small dense proxy with unknown pouch geometry"
+        },
+        {
+          "id": "dense-counter-pouch-02",
+          "sku": "dense-counter-pouch",
+          "scenario": "weight-trap",
+          "volume": 2,
+          "weight": 7,
+          "shapeNote": "Small dense proxy with unknown pouch geometry"
+        },
+        {
+          "id": "dense-counter-pouch-03",
+          "sku": "dense-counter-pouch",
+          "scenario": "weight-trap",
+          "volume": 2,
+          "weight": 7,
+          "shapeNote": "Small dense proxy with unknown pouch geometry"
+        },
+        {
+          "id": "medium-card-board-01",
+          "sku": "medium-card-board",
+          "scenario": "weight-trap",
+          "volume": 3,
+          "weight": 3,
+          "shapeNote": "Medium flat proxy with unknown nesting"
+        },
+        {
+          "id": "medium-card-board-02",
+          "sku": "medium-card-board",
+          "scenario": "weight-trap",
+          "volume": 3,
+          "weight": 3,
+          "shapeNote": "Medium flat proxy with unknown nesting"
+        }
+      ],
+      "itemCount": 8,
+      "totalVolume": 33,
+      "totalWeight": 30,
+      "lowerBound": 4
+    },
+    {
+      "id": "mixed-classroom",
+      "rowCount": 5,
+      "items": [
+        {
+          "id": "paper-stack-01",
+          "sku": "paper-stack",
+          "scenario": "mixed-classroom",
+          "volume": 3,
+          "weight": 2,
+          "shapeNote": "Flat paper proxy"
+        },
+        {
+          "id": "paper-stack-02",
+          "sku": "paper-stack",
+          "scenario": "mixed-classroom",
+          "volume": 3,
+          "weight": 2,
+          "shapeNote": "Flat paper proxy"
+        },
+        {
+          "id": "paper-stack-03",
+          "sku": "paper-stack",
+          "scenario": "mixed-classroom",
+          "volume": 3,
+          "weight": 2,
+          "shapeNote": "Flat paper proxy"
+        },
+        {
+          "id": "paper-stack-04",
+          "sku": "paper-stack",
+          "scenario": "mixed-classroom",
+          "volume": 3,
+          "weight": 2,
+          "shapeNote": "Flat paper proxy"
+        },
+        {
+          "id": "foam-shapes-01",
+          "sku": "foam-shapes",
+          "scenario": "mixed-classroom",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Irregular foam proxy"
+        },
+        {
+          "id": "foam-shapes-02",
+          "sku": "foam-shapes",
+          "scenario": "mixed-classroom",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Irregular foam proxy"
+        },
+        {
+          "id": "foam-shapes-03",
+          "sku": "foam-shapes",
+          "scenario": "mixed-classroom",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Irregular foam proxy"
+        },
+        {
+          "id": "tile-pouch-01",
+          "sku": "tile-pouch",
+          "scenario": "mixed-classroom",
+          "volume": 2,
+          "weight": 6,
+          "shapeNote": "Compact counting-piece proxy"
+        },
+        {
+          "id": "tile-pouch-02",
+          "sku": "tile-pouch",
+          "scenario": "mixed-classroom",
+          "volume": 2,
+          "weight": 6,
+          "shapeNote": "Compact counting-piece proxy"
+        },
+        {
+          "id": "tile-pouch-03",
+          "sku": "tile-pouch",
+          "scenario": "mixed-classroom",
+          "volume": 2,
+          "weight": 6,
+          "shapeNote": "Compact counting-piece proxy"
+        },
+        {
+          "id": "cloth-pack-01",
+          "sku": "cloth-pack",
+          "scenario": "mixed-classroom",
+          "volume": 4,
+          "weight": 2,
+          "shapeNote": "Folded cloth proxy with no compression model"
+        },
+        {
+          "id": "cloth-pack-02",
+          "sku": "cloth-pack",
+          "scenario": "mixed-classroom",
+          "volume": 4,
+          "weight": 2,
+          "shapeNote": "Folded cloth proxy with no compression model"
+        },
+        {
+          "id": "counter-board-01",
+          "sku": "counter-board",
+          "scenario": "mixed-classroom",
+          "volume": 5,
+          "weight": 3,
+          "shapeNote": "Flat board proxy"
+        },
+        {
+          "id": "counter-board-02",
+          "sku": "counter-board",
+          "scenario": "mixed-classroom",
+          "volume": 5,
+          "weight": 3,
+          "shapeNote": "Flat board proxy"
+        }
+      ],
+      "itemCount": 14,
+      "totalVolume": 54,
+      "totalWeight": 39,
+      "lowerBound": 6
+    },
+    {
+      "id": "bulky-gaps",
+      "rowCount": 1,
+      "items": [
+        {
+          "id": "wide-foam-block-01",
+          "sku": "wide-foam-block",
+          "scenario": "bulky-gaps",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Indivisible six-volume proxy"
+        },
+        {
+          "id": "wide-foam-block-02",
+          "sku": "wide-foam-block",
+          "scenario": "bulky-gaps",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Indivisible six-volume proxy"
+        },
+        {
+          "id": "wide-foam-block-03",
+          "sku": "wide-foam-block",
+          "scenario": "bulky-gaps",
+          "volume": 6,
+          "weight": 1,
+          "shapeNote": "Indivisible six-volume proxy"
+        }
+      ],
+      "itemCount": 3,
+      "totalVolume": 18,
+      "totalWeight": 3,
+      "lowerBound": 2
+    }
+  ],
+  "inputHashes": {
+    "source/items.csv": "07d5892a89521c9311ac5873fa423b683793893bab3631253ffc972e94623f13",
+    "source/capacity.json": "7545ddbec5d31256cab78aedcecd12777fc916de2cbded4607ccdcefcf6a6ad9",
+    "source/experiment-plan.json": "e6091595c336e502e329ec8b8cd2a9ca216cc9b8c7b782017eeca51f7874d340",
+    "source/expected-baseline.json": "da83816eddb917c66258c6800b2a7f73255dd149f0b7dc3c2d6f42ccf51272a5",
+    "source/LICENSE": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+  },
+  "checks": {
+    "exactSourceBytes": true,
+    "idsUniqueWithinScenario": true,
+    "allItemsIndividuallyFeasible": true,
+    "sourceOrderPreserved": true
+  },
+  "interpretation": "Integer volume/weight proxies only; shape notes are retained but not solver constraints."
+}

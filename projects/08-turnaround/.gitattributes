@@ -1,0 +1,2 @@
+# Preserve the verified source license's intentional final blank line byte-for-byte.
+data/reference/LICENSE whitespace=-blank-at-eof

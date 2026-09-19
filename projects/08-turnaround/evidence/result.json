@@ -1,0 +1,505 @@
+{
+  "schema": "local-hive-project-result/1",
+  "id": "08-turnaround",
+  "title": "The corporate escape room",
+  "stage": "work-produced",
+  "status": "passed",
+  "recordedAt": "2026-09-19T01:43:17.274Z",
+  "environment": {
+    "node": "v26.7.0",
+    "platform": "darwin",
+    "dependencyInstalls": 0
+  },
+  "summary": "Original bounded cash model and offline interface produced and locally tested. No sustainable rescue was found in the documented strategy space.",
+  "checks": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "projects/08-turnaround/tests/model.test.mjs",
+        "projects/08-turnaround/tests/ui.test.mjs",
+        "projects/08-turnaround/tests/artifacts.test.mjs"
+      ],
+      "exitCode": 0,
+      "durationMs": 171,
+      "stdoutArtifact": "projects/08-turnaround/evidence/tests.tap",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "projects/08-turnaround/scripts/build.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "durationMs": 90,
+      "stdoutArtifact": "projects/08-turnaround/evidence/build-check.json",
+      "stderr": ""
+    }
+  ],
+  "integrityCheck": {
+    "argv": [
+      "node",
+      "projects/08-turnaround/scripts/evidence.mjs",
+      "--check"
+    ],
+    "method": "This same artifact-set verification runs after recording. evidence/result.json excludes itself from the digest to avoid a self-hash cycle."
+  },
+  "tests": {
+    "tests": 51,
+    "pass": 51,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "sourceVerification": {
+    "copiedInertFilesMatched": 9,
+    "report": "evidence/seed-verification.json",
+    "seedObjectRef": "sha256:f9112fb8e126f098c0a303662f92c925f30795c1039ee2ad9309bf4232376df0",
+    "archiveSha256": "d2f818c10c0af2b0af010ae280eec8bd94e80f5fb7609a71993694827810a6da",
+    "extractedSeedJsonSha256": "011c89dd7a9ab8c1ee966f2e7914d55b0cfeae41562c47b7d984dc3ab30b6cd4"
+  },
+  "strategySearch": {
+    "evaluated": 128,
+    "valid": 49,
+    "rejected": 79,
+    "floorAndFundingSurvivors": 0,
+    "candidateId": "early-010111",
+    "candidatePlan": [
+      {
+        "id": "queue-repair",
+        "startDay": 1
+      },
+      {
+        "id": "support-slice",
+        "startDay": 6
+      },
+      {
+        "id": "contractor-cut",
+        "startDay": 1
+      },
+      {
+        "id": "receipt-pull",
+        "startDay": 1
+      }
+    ],
+    "remainingCandidateBurnPer30DaysCents": 750000
+  },
+  "modeledOutcomes": [
+    {
+      "id": "baseline",
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -10000,
+      "finalAvailableCents": -10000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1460000,
+      "minimumAvailableCents": -1460000,
+      "minimumFloorHeadroomCents": -2660000,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7600000,
+      "scheduledActionCostsCents": 0,
+      "endingCycleRecurringBurnCents": 900000,
+      "urgentTicketsProspectivelySelected": 0,
+      "supportMinutes": 0,
+      "firstUnfundedPayment": {
+        "day": 59,
+        "date": "2026-11-28",
+        "eventId": "contractors-cycle-2",
+        "cause": "Repeat-September amount. Existing-cycle commitment survives any mid-cycle action.",
+        "requiredCents": 300000,
+        "availableBeforeCents": 90000,
+        "shortfallCents": 210000
+      },
+      "receiptConservation": {
+        "assumedCyclePoolCents": 4350000,
+        "scheduledWithinHorizonCents": 4350000,
+        "scheduledAfterHorizonCents": 0,
+        "timingCreatedReceiptsCents": 0
+      }
+    },
+    {
+      "id": "recovery",
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 58,
+      "firstUnfundedDay": 90,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 51,
+      "fundingEscalationDay": 83,
+      "finalScheduledCashCents": 245000,
+      "finalAvailableCents": 245000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -262500,
+      "minimumAvailableCents": -262500,
+      "minimumFloorHeadroomCents": -1462500,
+      "receiptsWithinHorizonCents": 4350000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "firstUnfundedPayment": {
+        "day": 90,
+        "date": "2026-12-29",
+        "eventId": "hosting-cycle-3",
+        "cause": "Repeat-September amount. Existing-cycle commitment survives any mid-cycle action.",
+        "requiredCents": 180000,
+        "availableBeforeCents": 87500,
+        "shortfallCents": 92500
+      },
+      "receiptConservation": {
+        "assumedCyclePoolCents": 4350000,
+        "scheduledWithinHorizonCents": 4350000,
+        "scheduledAfterHorizonCents": 0,
+        "timingCreatedReceiptsCents": 0
+      }
+    },
+    {
+      "id": "delayed-receipts",
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 59,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 52,
+      "finalScheduledCashCents": -262500,
+      "finalAvailableCents": -262500,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1205000,
+      "minimumAvailableCents": -1205000,
+      "minimumFloorHeadroomCents": -2405000,
+      "receiptsWithinHorizonCents": 3842500,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 750000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "firstUnfundedPayment": {
+        "day": 59,
+        "date": "2026-11-28",
+        "eventId": "contractors-cycle-2",
+        "cause": "Conditional lower seed rate: action ready before this complete cycle began.",
+        "requiredCents": 150000,
+        "availableBeforeCents": 45000,
+        "shortfallCents": 105000
+      },
+      "receiptConservation": {
+        "assumedCyclePoolCents": 4350000,
+        "scheduledWithinHorizonCents": 3842500,
+        "scheduledAfterHorizonCents": 507500,
+        "timingCreatedReceiptsCents": 0
+      }
+    },
+    {
+      "id": "weaker-demand",
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 30,
+      "firstUnfundedDay": 88,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 23,
+      "fundingEscalationDay": 81,
+      "finalScheduledCashCents": -625000,
+      "finalAvailableCents": -625000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1031000,
+      "minimumAvailableCents": -1031000,
+      "minimumFloorHeadroomCents": -2231000,
+      "receiptsWithinHorizonCents": 3480000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 1040000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "firstUnfundedPayment": {
+        "day": 88,
+        "date": "2026-12-27",
+        "eventId": "payroll-cycle-3",
+        "cause": "Repeat-September amount. Existing-cycle commitment survives any mid-cycle action.",
+        "requiredCents": 1700000,
+        "availableBeforeCents": 1169000,
+        "shortfallCents": 531000
+      },
+      "receiptConservation": {
+        "assumedCyclePoolCents": 3480000,
+        "scheduledWithinHorizonCents": 3480000,
+        "scheduledAfterHorizonCents": 0,
+        "timingCreatedReceiptsCents": 0
+      }
+    },
+    {
+      "id": "combined-stress",
+      "actionPlanFeasible": true,
+      "floorMaintained": false,
+      "cashFundedThroughHorizon": false,
+      "recoveryExistsWithinHorizon": false,
+      "firstFloorDay": 28,
+      "firstUnfundedDay": 58,
+      "earliestWarningDay": 0,
+      "floorEscalationDay": 21,
+      "fundingEscalationDay": 51,
+      "finalScheduledCashCents": -1031000,
+      "finalAvailableCents": -1031000,
+      "finalPriorPayableReserveCents": 0,
+      "minimumCashCents": -1785000,
+      "minimumAvailableCents": -1785000,
+      "minimumFloorHeadroomCents": -2985000,
+      "receiptsWithinHorizonCents": 3074000,
+      "outflowsWithinHorizonCents": 7345000,
+      "scheduledActionCostsCents": 45000,
+      "endingCycleRecurringBurnCents": 1040000,
+      "urgentTicketsProspectivelySelected": 3,
+      "supportMinutes": 300,
+      "firstUnfundedPayment": {
+        "day": 58,
+        "date": "2026-11-27",
+        "eventId": "payroll-cycle-2",
+        "cause": "Repeat-September amount. Existing-cycle commitment survives any mid-cycle action.",
+        "requiredCents": 1700000,
+        "availableBeforeCents": 1455000,
+        "shortfallCents": 245000
+      },
+      "receiptConservation": {
+        "assumedCyclePoolCents": 3480000,
+        "scheduledWithinHorizonCents": 3074000,
+        "scheduledAfterHorizonCents": 406000,
+        "timingCreatedReceiptsCents": 0
+      }
+    }
+  ],
+  "earliestWarning": {
+    "day": 0,
+    "interpretation": "With a fully specified deterministic schedule, every default/stress experiment already shows a future failure at day 0. Rolling seven-day alerts are separately recorded; they do not postpone discovery."
+  },
+  "browserUsed": false,
+  "uiValidation": "Original bundled application executed against a minimal Node DOM harness. No browser, screenshot, visual inspection or real-browser accessibility certification performed.",
+  "nativeInitialized": false,
+  "downloadedCodeExecuted": false,
+  "downloadedCodeImportedOrEmbedded": false,
+  "referenceTasksAccepted": false,
+  "externalEffects": [],
+  "limitations": [
+    "Synthetic operational modeling only; not personalized investment advice, a solvency opinion or real business outcomes.",
+    "90-day deterministic window, normalized 30-day cycles and assumed payment-before-receipt ordering; no complete accrual accounts, taxes, financing, litigation or quantified service-outage model.",
+    "Future receipts, consent, lead times, fees, daily staffing and action outcomes are labeled added assumptions. No new sales or support-to-revenue uplift is invented.",
+    "A negative scheduled balance is a funding gap, not a permitted overdraft. The executable prefix ends at the first unfunded payment; later values are counterfactual.",
+    "A best finite-grid candidate is not a global optimum or a guaranteed rescue. No evaluated plan protects both floor and funding for the full default window.",
+    "Reference tasks remain unaccepted and blocked states unchanged. No native Hive initialization, deployment, publication, customer work, messages or financial effects occurred.",
+    "Browser interaction and visual rendering were not performed by this workstream. Original UI logic is tested with a minimal Node DOM harness, not a real-browser accessibility certification."
+  ],
+  "artifacts": [
+    {
+      "path": "projects/08-turnaround/.gitattributes",
+      "bytes": 133,
+      "sha256": "7b9299dcb74c3a4650d239e47de4164b06242ccc82eb548b41416de1dc7e030f"
+    },
+    {
+      "path": "projects/08-turnaround/README.md",
+      "bytes": 15213,
+      "sha256": "87600886955fd973eb8a29a73ed8a765de703e5c4fb88992abccd804a4928674"
+    },
+    {
+      "path": "projects/08-turnaround/app.mjs",
+      "bytes": 23980,
+      "sha256": "f40f6eff7f973dd316caeb446eb2a11f841543c464c14de5cffebfc3af7919d3"
+    },
+    {
+      "path": "projects/08-turnaround/boot.js",
+      "bytes": 479,
+      "sha256": "2baff9e0fb141c1c6b02fdbf206a44ff423557bf9c185e3ec36ddf0c9fca79ba"
+    },
+    {
+      "path": "projects/08-turnaround/data.mjs",
+      "bytes": 84785,
+      "sha256": "62281402a7a5518f014ccb562ffa10365931bfa41f504eb88cd9ddf719c2e612"
+    },
+    {
+      "path": "projects/08-turnaround/data/assumptions.json",
+      "bytes": 7763,
+      "sha256": "bd1c39b26f8c98724d458cf045b810a003455e906c1d80c8253703c65f261375"
+    },
+    {
+      "path": "projects/08-turnaround/data/attribution.json",
+      "bytes": 4511,
+      "sha256": "e91e0f94eda9ba392da0a48629f87db07b2730efc2706199c975b7f0a571dd2c"
+    },
+    {
+      "path": "projects/08-turnaround/data/inputs.json",
+      "bytes": 22963,
+      "sha256": "eaf6265d5abe77334427eb1989962cbc9a353c56e6eeacdcb5db4acb20ea3f33"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/LICENSE",
+      "bytes": 1079,
+      "sha256": "3ca4ef7120c79e55fa3c113f2c6366a072b685018d2bf736ff2bcfceba57a77f"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/approval-gates.json",
+      "bytes": 998,
+      "sha256": "6e2e89930421dc3b1ab4b0a2b8fb80f8bb31e79e249fd77504ecbaaa6ea69fdf"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/cash-ledger.csv",
+      "bytes": 1011,
+      "sha256": "17728ba9a34df12dcd0997dad08ec922babc3d6d504c2e47e1ab0ac3aad69d8e"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/payables.csv",
+      "bytes": 490,
+      "sha256": "07c963d545bc10b7a34b78065653ff4c070d8bd9ac0f61991bb7854cf0bf9f31"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/recovery-sprint.csv",
+      "bytes": 1056,
+      "sha256": "056db98cad94ab00478eb6d37e61c236883b46506c700eca2609ca6755e4c51d"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/recovery.json",
+      "bytes": 872,
+      "sha256": "92e6b5c0763d226a71996ce9654b43c7e31e7d035d1144b1f97a6b9e37116350"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/scenarios.csv",
+      "bytes": 419,
+      "sha256": "e81fd022a31c2550dd0a54e754d072ad5b7ca164adf57e8bfd9c3214891e2c19"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/subscriptions.csv",
+      "bytes": 268,
+      "sha256": "177b247ac08ada48652d2123af4066c946c89e2aeccb367c669d34912ef7ace8"
+    },
+    {
+      "path": "projects/08-turnaround/data/reference/support-backlog.csv",
+      "bytes": 1254,
+      "sha256": "565b646c0dbab4567c30838950093b1bf68f3c7332933eddb49c4b40c3027031"
+    },
+    {
+      "path": "projects/08-turnaround/data/scenarios.json",
+      "bytes": 2663,
+      "sha256": "fa0ac52ebce67adb4f38e16aaae6aa91f5c752d4ebc097f53ac58cbc7e215a90"
+    },
+    {
+      "path": "projects/08-turnaround/data/scope.json",
+      "bytes": 5227,
+      "sha256": "03f69e406f4e51e863065d3f5359c392654a333e6c6e51c4256545a69a3e7ccd"
+    },
+    {
+      "path": "projects/08-turnaround/evidence/build-check.json",
+      "bytes": 1152,
+      "sha256": "8a0b22c746fb026407c5998bf8a591fc6a8ecb4534336853fdfbec8e531183f5"
+    },
+    {
+      "path": "projects/08-turnaround/evidence/tests.tap",
+      "bytes": 12128,
+      "sha256": "a4b24fa598353039f44f0e495d24dc2c8645925cd21d80a33888f76608ed7073"
+    },
+    {
+      "path": "projects/08-turnaround/index.html",
+      "bytes": 11658,
+      "sha256": "8c1d00d807f81508dbd75090b947d61cc7ffa2443d102215dcef6fdeba69d331"
+    },
+    {
+      "path": "projects/08-turnaround/manifest.json",
+      "bytes": 2944,
+      "sha256": "810500577ec72a944a84471c542db1a7edc6c7c700b9b49ac934c396f1234f93"
+    },
+    {
+      "path": "projects/08-turnaround/model.mjs",
+      "bytes": 28164,
+      "sha256": "f482d2bcc616bba534b5f4d4aca7fbe55263b747405bdab4a27d40b35f113b9c"
+    },
+    {
+      "path": "projects/08-turnaround/offline.js",
+      "bytes": 141304,
+      "sha256": "b4f3e574151932e429b716b4582116a0dc41a8aade916beb01f756f012cd530f"
+    },
+    {
+      "path": "projects/08-turnaround/results/backlog.json",
+      "bytes": 5278,
+      "sha256": "402bf7f52f22a3ea50308ff5b4bbd945e26cdeb5c4e091fcd04df1022314b6e6"
+    },
+    {
+      "path": "projects/08-turnaround/results/reconciliation.json",
+      "bytes": 1754,
+      "sha256": "be126d66f67f3dbf6a0e226cdb7b924a4aa5f455597c6627044112d482353624"
+    },
+    {
+      "path": "projects/08-turnaround/results/scenarios.json",
+      "bytes": 319286,
+      "sha256": "2f5450ba663b797d87d91c48dd5c5b4a7365ba537ed02fb3f963ecd8c55b6dbc"
+    },
+    {
+      "path": "projects/08-turnaround/results/strategy-search.json",
+      "bytes": 158486,
+      "sha256": "9928415aaee0f20d68d80fdc6fd2688510d4f834d73ba47a62dd1e8336bd0da8"
+    },
+    {
+      "path": "projects/08-turnaround/results/thresholds.json",
+      "bytes": 52770,
+      "sha256": "00dd5f4e3ef3d7e20869e8c7c56b1e5c5e351cff632e6cf97a9aeaa5650f95b4"
+    },
+    {
+      "path": "projects/08-turnaround/scripts/build.mjs",
+      "bytes": 4205,
+      "sha256": "10e2be997ac34d26921f22b61e250a3cb0e71913c2c9859ccade073b6ba985d4"
+    },
+    {
+      "path": "projects/08-turnaround/scripts/evidence.mjs",
+      "bytes": 7329,
+      "sha256": "fbc0435e02fa0ec4da9f55285fa51b9d49bf9d53e486542bb339d67e2e34db5b"
+    },
+    {
+      "path": "projects/08-turnaround/scripts/inputs.mjs",
+      "bytes": 4515,
+      "sha256": "2867c05d178b374f6af271ff98f34e49462f6eb94653d8bf1640a43223e795b4"
+    },
+    {
+      "path": "projects/08-turnaround/styles.css",
+      "bytes": 14406,
+      "sha256": "3afb292298144241c207cd1c711b116e49f0f8c8c60a0dab9298a7ea5ccde5b1"
+    },
+    {
+      "path": "projects/08-turnaround/tests/artifacts.test.mjs",
+      "bytes": 4937,
+      "sha256": "f64107537f151e59e4fe721a2b145ca0bda1a3856361f6e9ff8dd0f01f83e214"
+    },
+    {
+      "path": "projects/08-turnaround/tests/dom-harness.mjs",
+      "bytes": 2619,
+      "sha256": "b4b8f60077ac8db7155cdaba27cddb0291148efdbf67ac09ae22194267ba0d5e"
+    },
+    {
+      "path": "projects/08-turnaround/tests/model.test.mjs",
+      "bytes": 22149,
+      "sha256": "206df9639ce1e530e3787ebe3447a01c4b6db86e0e16a37d9c26416b673a897c"
+    },
+    {
+      "path": "projects/08-turnaround/tests/ui.test.mjs",
+      "bytes": 7881,
+      "sha256": "9099e9731ca2168a23b3b42107e50253672b5dfa30eb9b37d22307127bf3c7bd"
+    },
+    {
+      "path": "projects/08-turnaround/view-model.mjs",
+      "bytes": 4601,
+      "sha256": "1aedad410ef1eca6fc5bfb219258c0e58de249d2e177ab4d4f1e295ba12bc62c"
+    }
+  ],
+  "artifactSetSha256": "29bd1159e30f6906f4be4060ffc6eb4361fe7a2b486bd443f6b24a8c966e12aa"
+}

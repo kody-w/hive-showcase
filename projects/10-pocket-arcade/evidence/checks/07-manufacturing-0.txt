@@ -1,0 +1,198 @@
+argv: ["node", "--test", "--test-reporter=tap", "projects/07-manufacturing/tests/engine.test.mjs", "projects/07-manufacturing/tests/app.test.mjs"]
+recordedAt: 2026-09-19T02:21:34.649626+00:00
+exitCode: 0
+--- stdout ---
+TAP version 13
+# Subtest: offline HTML uses local classic scripts, shared CSS, semantic labels and no runtime requests
+ok 1 - offline HTML uses local classic scripts, shared CSS, semantic labels and no runtime requests
+  ---
+  duration_ms: 2.38175
+  type: 'test'
+  ...
+# Subtest: actual app initializes a valid baseline and switches all three starting configurations
+ok 2 - actual app initializes a valid baseline and switches all three starting configurations
+  ---
+  duration_ms: 122.092041
+  type: 'test'
+  ...
+# Subtest: live edits update the geometry, metrics and explicit custom identity
+ok 3 - live edits update the geometry, metrics and explicit custom identity
+  ---
+  duration_ms: 19.692875
+  type: 'test'
+  ...
+# Subtest: blank, nonfinite, and invalid dimensions block downloads and clear stale previews
+ok 4 - blank, nonfinite, and invalid dimensions block downloads and clear stale previews
+  ---
+  duration_ms: 18.468292
+  type: 'test'
+  ...
+# Subtest: reset restores the selected preset; view toggle changes assembled/exploded geometry
+ok 5 - reset restores the selected preset; view toggle changes assembled/exploded geometry
+  ---
+  duration_ms: 23.360417
+  type: 'test'
+  ...
+# Subtest: valid but packing-held and payload-held models preserve visible HOLD findings
+ok 6 - valid but packing-held and payload-held models preserve visible HOLD findings
+  ---
+  duration_ms: 38.068417
+  type: 'test'
+  ...
+# Subtest: download controls create real current-parameter STL, SVG, BOM, JSON and ZIP bytes
+ok 7 - download controls create real current-parameter STL, SVG, BOM, JSON and ZIP bytes
+  ---
+  duration_ms: 40.129958
+  type: 'test'
+  ...
+# Subtest: baseline dimensions and material values match attributed inert data
+ok 8 - baseline dimensions and material values match attributed inert data
+  ---
+  duration_ms: 3.654167
+  type: 'test'
+  ...
+# Subtest: the original effort and cost model reproduces the synthetic baseline
+ok 9 - the original effort and cost model reproduces the synthetic baseline
+  ---
+  duration_ms: 3.177625
+  type: 'test'
+  ...
+# Subtest: stackline: both solids have paired oriented edges, expected topology, volume and dimensions
+ok 10 - stackline: both solids have paired oriented edges, expected topology, volume and dimensions
+  ---
+  duration_ms: 3.936333
+  type: 'test'
+  ...
+# Subtest: compact: both solids have paired oriented edges, expected topology, volume and dimensions
+ok 11 - compact: both solids have paired oriented edges, expected topology, volume and dimensions
+  ---
+  duration_ms: 1.90275
+  type: 'test'
+  ...
+# Subtest: pocket-arcade: both solids have paired oriented edges, expected topology, volume and dimensions
+ok 12 - pocket-arcade: both solids have paired oriented edges, expected topology, volume and dimensions
+  ---
+  duration_ms: 1.440292
+  type: 'test'
+  ...
+# Subtest: insert nominal gaps are noninterfering at all four walls with a floor contact only
+ok 13 - insert nominal gaps are noninterfering at all four walls with a floor contact only
+  ---
+  duration_ms: 3.479375
+  type: 'test'
+  ...
+# Subtest: changing parameters alters exported coordinates and preserves dimensional units
+ok 14 - changing parameters alters exported coordinates and preserves dimensional units
+  ---
+  duration_ms: 2.979167
+  type: 'test'
+  ...
+# Subtest: all numeric parameters reject missing, string, NaN and infinity inputs
+ok 15 - all numeric parameters reject missing, string, NaN and infinity inputs
+  ---
+  duration_ms: 0.660666
+  type: 'test'
+  ...
+# Subtest: range, layout, integer and small-bay constraints cannot produce negative geometry
+ok 16 - range, layout, integer and small-bay constraints cannot produce negative geometry
+  ---
+  duration_ms: 0.175958
+  type: 'test'
+  ...
+# Subtest: deterministic parameter sweep preserves closed mesh and analytic volume
+ok 17 - deterministic parameter sweep preserves closed mesh and analytic volume
+  ---
+  duration_ms: 230.641459
+  type: 'test'
+  ...
+# Subtest: Pocket Arcade contains the assumed payload but correctly holds too-small custom bays
+ok 18 - Pocket Arcade contains the assumed payload but correctly holds too-small custom bays
+  ---
+  duration_ms: 5.881125
+  type: 'test'
+  ...
+# Subtest: packing includes both-side padding and packaging mass, and holds the 196 mm request
+ok 19 - packing includes both-side padding and packaging mass, and holds the 196 mm request
+  ---
+  duration_ms: 3.571875
+  type: 'test'
+  ...
+# Subtest: material and effort estimates have explicit monotonic sensitivity
+ok 20 - material and effort estimates have explicit monotonic sensitivity
+  ---
+  duration_ms: 1.276166
+  type: 'test'
+  ...
+# Subtest: inert gauge fixtures replay to exactly 3 pass and 2 explained holds
+ok 21 - inert gauge fixtures replay to exactly 3 pass and 2 explained holds
+  ---
+  duration_ms: 0.826208
+  type: 'test'
+  ...
+# Subtest: BOM exports exactly two nonnegative correctly dimensioned parts
+ok 22 - BOM exports exactly two nonnegative correctly dimensioned parts
+  ---
+  duration_ms: 1.318583
+  type: 'test'
+  ...
+# Subtest: STL normals and serialized vertices describe the model without unit conversion
+ok 23 - STL normals and serialized vertices describe the model without unit conversion
+  ---
+  duration_ms: 1.842542
+  type: 'test'
+  ...
+# Subtest: drawing declares millimetres, scale bar, nominal dimensions, and review-only boundary
+ok 24 - drawing declares millimetres, scale bar, nominal dimensions, and review-only boundary
+  ---
+  duration_ms: 2.934875
+  type: 'test'
+  ...
+# Subtest: isometric SVG visibility agrees with independent box-ray intersections
+ok 25 - isometric SVG visibility agrees with independent box-ray intersections
+  ---
+  duration_ms: 105.587666
+  type: 'test'
+  ...
+# Subtest: review and inspection artifacts cannot be mistaken for measured physical outcomes
+ok 26 - review and inspection artifacts cannot be mistaken for measured physical outcomes
+  ---
+  duration_ms: 2.133583
+  type: 'test'
+  ...
+# Subtest: original ZIP implementation matches standard CRC vector and deterministic headers
+ok 27 - original ZIP implementation matches standard CRC vector and deterministic headers
+  ---
+  duration_ms: 13.763958
+  type: 'test'
+  ...
+# Subtest: copied inert files and all reviewed reference hashes match parent verification
+ok 28 - copied inert files and all reviewed reference hashes match parent verification
+  ---
+  duration_ms: 2.207917
+  type: 'test'
+  ...
+# Subtest: all generated files match fresh in-memory generation byte for byte
+ok 29 - all generated files match fresh in-memory generation byte for byte
+  ---
+  duration_ms: 27.109417
+  type: 'test'
+  ...
+# Subtest: manifest has scoped paths, concrete artifacts and reproducible root argv checks
+ok 30 - manifest has scoped paths, concrete artifacts and reproducible root argv checks
+  ---
+  duration_ms: 0.32025
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 493.00275
+
+--- stderr ---
+
+--- end of captured streams ---

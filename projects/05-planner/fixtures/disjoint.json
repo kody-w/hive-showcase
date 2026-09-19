@@ -1,0 +1,42 @@
+{
+  "schema": "agenda-planner/1",
+  "title": "Enough minutes, nowhere to put them",
+  "classification": "synthetic",
+  "day": {
+    "start": 540,
+    "end": 600,
+    "stepMinutes": 5,
+    "availability": [
+      [
+        540,
+        555
+      ],
+      [
+        575,
+        600
+      ]
+    ]
+  },
+  "tasks": [
+    {
+      "id": "deep-work",
+      "label": "One uninterrupted design session",
+      "duration": 30,
+      "availability": [
+        [
+          540,
+          600
+        ]
+      ],
+      "dependsOn": [],
+      "fixedStart": null,
+      "kind": "task"
+    }
+  ],
+  "repairs": {
+    "latestEnd": 600,
+    "durationFloors": {
+      "deep-work": 25
+    }
+  }
+}

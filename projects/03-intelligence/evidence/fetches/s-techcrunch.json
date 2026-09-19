@@ -1,0 +1,89 @@
+{
+  "schema": "bounded-http-evidence/1",
+  "sourceId": "s-techcrunch",
+  "requestedUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+  "retrievedAt": "2026-09-19T01:19:36.073255+00:00",
+  "method": "GET; Python urllib; no cookies, authentication or script execution",
+  "storagePolicy": "Only short exact excerpts and metadata are retained. Body/text hashes cover the full fetched response; hashes do not archive the full copyrighted page.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "anchor": "eight employees",
+      "found": true,
+      "startCharacter": 1570,
+      "endCharacter": 1800,
+      "text": "’t a billion dollars or close to it. And Shlomo wasn’t truly solo — he had eight employees, Wix confirmed. They will collectively receive $25 million of the $80 million as a “retention” bonus. Wix declined to give details on that ",
+      "sha256": "9d7994e4d13ca429fcb2acfc9d6eb2cba1d38c431da84a5caf369a5fce9a6abf"
+    },
+    {
+      "id": "e2",
+      "anchor": "$189,000",
+      "found": true,
+      "startCharacter": 2135,
+      "endCharacter": 2365,
+      "text": "o Shlomo’s posts on X and LinkedIn, the company was profitable, generating $189,000 in profit in May even after covering high LLM token costs, which he also documented publicly. Base44 spread mostly through word of mouth as Shlomo",
+      "sha256": "d0b0f89f6924378a58c1206a2302cea1c8237975f7f8b4c6b501943d0ccd1123"
+    },
+    {
+      "id": "e3",
+      "anchor": "According to",
+      "found": true,
+      "startCharacter": 2049,
+      "endCharacter": 2279,
+      "text": " grew to 250,000 users, hitting 10,000 users within its first three weeks. According to Shlomo’s posts on X and LinkedIn, the company was profitable, generating $189,000 in profit in May even after covering high LLM token costs, w",
+      "sha256": "e0a2bec5a66ebf9f07bb786da5631ca425c5032413f398ea5aee306e1de2a6bb"
+    },
+    {
+      "id": "e4",
+      "anchor": "June 18, 2025",
+      "found": true,
+      "startCharacter": 928,
+      "endCharacter": 1158,
+      "text": "wned vibe coder Base44 sells to Wix for $80M cash Julie Bort 1:25 PM PDT · June 18, 2025 There’s a lot of talk in the startup world about how AI makes individuals so productive that it could give rise to a generation of “solo unic",
+      "sha256": "66bf3eb1bcb9d25c5a44cc38a253bb122fb79b961d304570a448143ba749a543"
+    }
+  ],
+  "status": 200,
+  "finalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+  "contentType": "text/html; charset=UTF-8",
+  "responseBytes": 236646,
+  "responseSha256": "e03797624a300079f7a017b78957a4ae15b9359dd3930750edb954c8513a3759",
+  "lastModified": null,
+  "etag": null,
+  "pageTitle": "6-month-old, solo-owned vibe coder Base44 sells to Wix for $80M cash | TechCrunch",
+  "dateAndAuthorMetadata": {
+    "og:title": [
+      "6-month-old, solo-owned vibe coder Base44 sells to Wix for $80M cash | TechCrunch"
+    ],
+    "article:published_time": [
+      "2025-06-18T20:25:21+00:00"
+    ],
+    "article:modified_time": [
+      "2025-06-20T16:20:17+00:00"
+    ],
+    "author": [
+      "Julie Bort"
+    ],
+    "sailthru.date": [
+      "2025-06-18 13:25:21"
+    ],
+    "sailthru.title": [
+      "6-month-old, solo-owned vibe coder Base44 sells to Wix for $80M cash"
+    ],
+    "sailthru.author": [
+      "Julie Bort"
+    ],
+    "parsely-title": [
+      "6-month-old, solo-owned vibe coder Base44 sells to Wix for $80M cash"
+    ],
+    "parsely-pub-date": [
+      "2025-06-18T20:25:21Z"
+    ],
+    "parsely-author": [
+      "Julie Bort"
+    ]
+  },
+  "normalizedTextSha256": "05ab4a56c58ce8e31469caa0f410ddca20f9564ff6ec81d78981a4d93bb29af6",
+  "normalizedTextCharacters": 6356,
+  "outcome": "captured"
+}

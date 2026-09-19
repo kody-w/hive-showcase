@@ -1,0 +1,59 @@
+{
+  "schema": "agenda-planner-manual-protocol/1",
+  "overallStatus": "not-observed",
+  "environment": null,
+  "reason": "The workstream was instructed not to use a shared browser or start services. Node/static/DOM-double tests are recorded separately and do not constitute browser or assistive-technology observations.",
+  "checks": [
+    {
+      "id": "file-open-offline",
+      "action": "Open projects/05-planner/index.html directly from disk with networking unavailable.",
+      "criterion": "Relative local assets and the original generated bundle load; edit, solve, repair and JSON export work without requests.",
+      "status": "not-observed"
+    },
+    {
+      "id": "keyboard-and-labels",
+      "action": "Use only keyboard to choose a preset, expand tasks, edit fields, solve and approve a repair.",
+      "criterion": "Visible focus, meaningful labels, logical reading order and no keyboard trap.",
+      "status": "not-observed"
+    },
+    {
+      "id": "honest-blocked-and-repair",
+      "action": "Load Pocket Arcade, read the original conflict, then approve one offered change.",
+      "criterion": "85 minutes in 75 is explicitly infeasible; no partial schedule is drawn. Minimum cost is one field/10 minutes. The approved schedule retains all seven tasks, both breaks and fixed check-in.",
+      "status": "not-observed"
+    },
+    {
+      "id": "unknown-is-not-impossible",
+      "action": "Load boundary-valid midnight preset, choose the one-node bound, and solve.",
+      "criterion": "Unproven/unknown wording; no impossibility or minimum repair claim, no invented schedule.",
+      "status": "not-observed"
+    },
+    {
+      "id": "stale-and-malformed",
+      "action": "Edit after a result; also import malformed and unsupported JSON.",
+      "criterion": "Editing removes old repair choices and disables analysis export. Failed imports preserve editor/result and focus the error summary.",
+      "status": "not-observed"
+    },
+    {
+      "id": "import-export-and-reload",
+      "action": "Explicitly export input and analysis, import an exported report, reload after saving.",
+      "criterion": "Downloaded JSON labels status accurately; imported input round-trips but report conclusions are discarded. Reload does not imply autosave.",
+      "status": "not-observed"
+    },
+    {
+      "id": "screen-reader",
+      "action": "Read editor labels, errors, status changes, conflict scope, repair objective and timeline with an assistive technology.",
+      "criterion": "Meaning does not depend on color; status, errors, task names and ordering are understandable.",
+      "status": "not-observed"
+    },
+    {
+      "id": "narrow-and-zoom",
+      "action": "Inspect at 320 CSS pixels and at 200 percent zoom.",
+      "criterion": "Controls and text are usable, labels readable, time values and task details reachable without obscured content.",
+      "status": "not-observed"
+    }
+  ],
+  "certificationClaimed": false,
+  "userStudyPerformed": false,
+  "publicationApproved": false
+}

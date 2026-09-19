@@ -1,0 +1,12 @@
+[
+  {"id":"01-game-studio","title":"Teach a robot colony","seedSlug":"independent-game-studio","tag":"Play / improve","summary":"A playable game with bounded agent controls, real runs, and replayable development cycles."},
+  {"id":"02-conglomerate","title":"Five bets. Five hours.","seedSlug":"one-person-conglomerate","tag":"Decide / build","summary":"Put a founder's limited time to work, compare tradeoffs, and use the winning venture's offering."},
+  {"id":"03-intelligence","title":"Put the hype on trial","seedSlug":"public-source-intelligence-bureau","tag":"Investigate / challenge","summary":"Follow supporting and opposing evidence about AI-operated software businesses back to its sources."},
+  {"id":"04-invention","title":"Try to disprove an invention","seedSlug":"applied-invention-lab","tag":"Experiment / reproduce","summary":"Compare packing strategies against identical cases, including the failures."},
+  {"id":"05-planner","title":"The day that cannot fit","seedSlug":"product-launch-company","tag":"Constrain / explain","summary":"An offline planner that explains impossible commitments instead of quietly losing them."},
+  {"id":"06-enterprise","title":"Replay a broken process","seedSlug":"enterprise-transformation-firm","tag":"Model / redesign","summary":"Inspect the same exception workload under a baseline and two process redesigns."},
+  {"id":"07-manufacturing","title":"Make it leave the screen","seedSlug":"micro-manufacturing-company","tag":"Design / inspect","summary":"Configure a small organizer and inspect real geometry and fabrication-review artifacts."},
+  {"id":"08-turnaround","title":"The corporate escape room","seedSlug":"turnaround-firm","tag":"Recover / stress","summary":"Explore recovery choices with visible cash, lead-time, and capacity consequences."},
+  {"id":"09-handoff","title":"Change the AI. Keep the work.","seedSlug":"open-source-infrastructure-foundation","tag":"Handoff / continue","summary":"Inspect a defect repair continued by a separate AI context using project artifacts alone."},
+  {"id":"10-pocket-arcade","title":"Pocket Arcade","seedSlug":"federation-prime-contractor","tag":"Connect / deliver","summary":"Bring the actual game, tournament planner, tabletop accessories, and maintenance kit together."}
+]

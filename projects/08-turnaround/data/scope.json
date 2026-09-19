@@ -1,0 +1,65 @@
+{
+  "schema": "turnaround-scope-map/1",
+  "stage": "work-produced",
+  "authority": "Original local demonstration only. Reference board states remain unchanged; no acceptance or team assignment is asserted.",
+  "referenceBoardSha256": "8188e4007fb4b265f6140544bb900e519a3a7d6899a1eced22ce243e601d50a2",
+  "reviewedInitialization": {"inert": true, "executed": false, "externalEffectsAuthorized": false, "signedEstateActivation": false},
+  "teamScopes": [
+    {"team": "finance", "boundary": "Cash reconciliation, obligation reserves and conditional scenario arithmetic; no realized savings."},
+    {"team": "product-recovery", "boundary": "Authored support risk, priority policy and a bounded hold/rework interpretation."},
+    {"team": "engineering", "boundary": "Original local model only; reference dispatcher reproduction, deployment and upstream repair are not claimed."},
+    {"team": "operations", "boundary": "Prospective one-time capacity allocations, blocked/deferred work and original model tests."},
+    {"team": "customer-success", "boundary": "No customer messages, promises, refund commitments or outreach. No customer-draft task is claimed."}
+  ],
+  "readyTasks": [
+    {
+      "id": "reconcile-synthetic-cash",
+      "sourceState": "ready",
+      "team": "finance",
+      "localCoverage": "Original arithmetic reproduces 15 ledger rows, plan billings, monthly losses, closing cash and distinct prior-period reserves.",
+      "artifacts": ["projects/08-turnaround/results/reconciliation.json", "projects/08-turnaround/tests/model.test.mjs"],
+      "methodDeviation": "The user prohibited reference code execution. The authored utility/tests were not run; an original cents-based implementation and tests were used instead.",
+      "referenceAccepted": false,
+      "localStage": "work-produced"
+    },
+    {
+      "id": "map-backlog-impact",
+      "sourceState": "ready",
+      "team": "product-recovery",
+      "localCoverage": "Maps all 12 authored open tickets, 4 urgent, 1 blocked urgent; retains ages, estimates and per-ticket affected-account counts without summing overlapping accounts or attributing churn.",
+      "artifacts": ["projects/08-turnaround/results/backlog.json"],
+      "referenceAccepted": false,
+      "localStage": "work-produced"
+    }
+  ],
+  "blockedReferenceTasks": [
+    {"id": "reproduce-dispatch-defect", "sourceState": "blocked", "coverage": "Not executed; expected legacy order in seed data is not represented as observed execution."},
+    {"id": "set-cash-guardrails", "sourceState": "blocked", "coverage": "Related reserve arithmetic modeled locally; no approval or source-state transition."},
+    {"id": "agree-priority-rule", "sourceState": "blocked", "coverage": "Original prospective severity/age/ID fit policy used for modeling; not agreed by a real owner."},
+    {"id": "plan-capacity-bounded-support", "sourceState": "blocked", "coverage": "420-minute reference-data expectation reproduced by original selector; candidate can choose a smaller slice. No work executed."},
+    {"id": "repair-dispatch-candidate", "sourceState": "blocked", "coverage": "Original selector only; no reference code modification, deployed repair or claimed upstream candidate."},
+    {"id": "verify-recovery-handoff", "sourceState": "blocked", "coverage": "Only original project tests run. No reference handoff acceptance or production rollback performed."},
+    {"id": "prepare-customer-drafts", "sourceState": "blocked", "coverage": "Outside this extension; no messages or drafts claimed accepted."},
+    {"id": "model-containment-options", "sourceState": "blocked", "coverage": "Seed rate levels enter conditional model with new lead-time, cost and resource assumptions. No cancellations or achieved savings."},
+    {"id": "review-five-day-recovery", "sourceState": "blocked", "coverage": "Local model warns of infeasibility; no human hold/rework/acceptance is fabricated."}
+  ],
+  "requestedExtension": {
+    "title": "The corporate escape room",
+    "source": "Explicit user request for workstream 08",
+    "includes": [
+      "90-day bounded scheduled cash model with event-level troughs and daily/weekly display.",
+      "Six original conditional actions with working-day resource allocations, calendar lead times, sunk costs and obligation deferral consequences.",
+      "128 documented strategy combinations, explicit invalid plans and no forced recovery.",
+      "Fixed candidate under baseline, recovery, delayed-receipts, weaker-demand and combined stress comparisons.",
+      "Early full-information warning, separate rolling escalation, strict floor and zero-cash thresholds.",
+      "Offline interactive UI, frozen inputs/results, cents conservation and timing tests."
+    ],
+    "addedAssumptions": "projects/08-turnaround/data/assumptions.json",
+    "notIncluded": [
+      "Native Hive initialization, deployment, real accounts, personalized financial or investment advice.",
+      "External publication, messages, purchases, sales, new financing or actual business outcomes.",
+      "General optimizer, full accrual financial statements, taxes, interest, litigation, insolvency-law or service-outage estimates.",
+      "Acceptance of any downloaded/reference work."
+    ]
+  }
+}

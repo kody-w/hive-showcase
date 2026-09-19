@@ -1,0 +1,50 @@
+{
+  "schema": "local-invention-protocol/1",
+  "id": "two-capacity-falsification-v1",
+  "classification": "SYNTHETIC",
+  "freeze_scope": "Prospective local protocol for original candidate implementations and a newly specified JavaScript permutation stream. Seed data, expected reference counts, and the known mixed-classroom regression were reviewed before this freeze. Not blinded or externally registered.",
+  "scenarios": ["order-trap", "weight-trap", "mixed-classroom", "bulky-gaps"],
+  "input_semantics": {
+    "rows": 11,
+    "instances": 29,
+    "scenario_sizes": [4, 8, 14, 3],
+    "expansion": "Preserve CSV row order; expand each count in ascending order as sku-01, sku-02, etc. IDs must be unique within a scenario. Never move items across scenarios.",
+    "capacities": "Both positive integer proxy totals must be <= 10. Indivisible items; equality is feasible. No physical units, geometry, compatibility, or kit-cohesion constraints.",
+    "invalid_input": "Stop, report failure, and exclude no valid trial. Maximum 1 MiB CSV, 1000 rows, 20 instances per row, 60 instances per scenario."
+  },
+  "methods": [
+    {"id": "input-first-fit", "role": "baseline", "rule": "Incoming order, first feasible existing bin, otherwise a new bin."},
+    {"id": "dominant-first-fit", "role": "reference-control", "rule": "Descending max(v/V,w/W), then descending v/V+w/W, then ascending ASCII item ID; first feasible bin."},
+    {"id": "volume-first-fit", "role": "reference-control", "rule": "Descending volume, then descending weight, then ascending ASCII item ID; first feasible bin."},
+    {"id": "dual-best-fit", "role": "candidate", "rule": "Dominant order. Among feasible existing bins minimize squared residual volume fraction plus squared residual weight fraction after insertion; ties use earliest bin. Open a bin only if none fits."},
+    {"id": "beam-128", "role": "candidate", "rule": "Incoming order. At each depth explore every feasible existing-bin placement plus a new bin; collapse identical multisets of (volume,weight) loads. Keep at most 128 states ranked by fewer bins, then greater sum of squared normalized occupied loads, then ascending canonical load signature, then assignment signature. Use ASCII comparison. Return the best complete beam packing unless it uses more bins than incoming-order first-fit; in that case retain the first-fit incumbent and disclose the raw beam result."},
+    {"id": "bounded-exact", "role": "candidate", "rule": "Start with incoming-order first-fit incumbent. First test aggregate lower-bound equality. Otherwise skip search above 12 items. For smaller cases depth-first branch-and-bound uses dominant item order, existing bins in index order with identical-load symmetry elimination, then one new bin. Seek strictly fewer bins than the incumbent. Prune when bin count plus aggregate remaining demand not covered by existing slack cannot beat incumbent. Stop at 50000 visited states or lower-bound equality. Exhaustion without a limit proves optimality; hitting a limit does not."}
+  ],
+  "beam_width": 128,
+  "exact_item_limit": 12,
+  "exact_node_limit": 50000,
+  "permutations": {
+    "master_seed": 1729,
+    "repetitions_per_scenario": 20,
+    "prng": "xorshift32, unsigned shifts 13 left, 17 right, 5 left. Scenario seed = uint32(1729 XOR FNV-1a-32 of ASCII scenario ID), replacing zero with one. FNV offset 2166136261, multiplier 16777619.",
+    "shuffle": "A separate continuing PRNG stream per scenario. Start every trial with the original expanded order; Fisher-Yates descending i=n-1..1. For bound b=i+1 draw uint32 x until x < 2^32-(2^32 mod b), then swap i with x mod b. Record start/end state and every full permutation.",
+    "pairing": "Identical incoming permutation for all six methods in a trial. Sorted methods may deliberately ignore that order.",
+    "counts": "80 paired cases, 480 trial-method results, plus 24 authored-order method results.",
+    "reference_difference": "Seed 1729, 20 repetitions, all four scenarios and all three reference controls are preserved. This original JS PRNG is not Python random; do not claim reproduction of unexecuted reference permutation arrays."
+  },
+  "metrics": {
+    "primary": "Paired total modeled bins and per-scenario paired means; smaller is better.",
+    "secondary": "Authored-order bins; win/tie/loss counts against paired first-fit; min/max/mean; exact assignment validity; aggregate lower-bound gap; proof status; search effort and truncations.",
+    "not_metrics": ["wall-clock speed", "physical fit", "lifting safety", "handling time", "financial savings", "algorithmic novelty", "market demand"]
+  },
+  "acceptance": {
+    "hard_checks": ["All 12 authored-order reference counts match reviewed expected data.", "All 504 method results assign every scenario item exactly once and satisfy both capacities.", "All 80 paired cases and all six methods are retained, including losses and skipped or capped searches.", "Fresh-process reruns match complete deterministic evidence and source hashes."],
+    "candidate_gate": "A candidate must use strictly fewer total bins across the four authored cases, never regress on an authored case, use strictly fewer total bins across all 80 paired cases, and have no worse paired total in any scenario. Otherwise report that candidate as failing the improvement gate, not as an invalid computation.",
+    "selection": "Among candidates passing the gate choose smallest paired total, then smallest authored total, then fixed preference dual-best-fit, beam-128, bounded-exact. No selection by best individual trial.",
+    "negative_result": "If no candidate passes, retain all valid results and conclude that none met this frozen improvement gate.",
+    "proof": "ceil(total_volume/V) and ceil(total_weight/W) give an aggregate lower bound. A valid packing attaining their maximum proves scalar optimality. Only fully exhausted bounded search can prove an optimum above that bound. Beam pruning, item-limit skips and node-limit stops are not proofs."
+  },
+  "trace_policy": "Persist each incoming order, algorithm processing order, exact bin IDs/loads/slack, validation report and proof. Greedy trace records insertions; beam records each frontier's generated/deduplicated/retained/pruned counts and any fallback; exact records visited/pruned/symmetry counts by depth and every incumbent change. Retain all paired regression identifiers.",
+  "change_policy": "Commit this protocol before executing new candidate comparisons. Do not tune parameters or switch seeds after outcomes. Implementation bugs require disclosed corrections, fresh complete reruns, and preservation of meaningful failed evidence. A changed experimental question requires a separately versioned protocol.",
+  "out_of_scope": ["Native Hive initialization or review", "Independent human replication", "Physical packing or handling tests", "Patent or novelty assessment", "Market validation", "Publication, spending, outreach, services, or browser access"]
+}

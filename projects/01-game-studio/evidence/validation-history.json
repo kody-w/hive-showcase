@@ -1,0 +1,47 @@
+{
+  "schema": "little-signals-validation-history/1",
+  "observations": [
+    {
+      "stage": "v1 baseline",
+      "command": ["node", "--test", "projects/01-game-studio/tests/engine.test.mjs"],
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "stage": "cycle 1 energy fix",
+      "command": ["node", "--test", "projects/01-game-studio/tests/engine.test.mjs"],
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "stage": "cycle 2 pathfinding fix",
+      "command": ["node", "--test", "projects/01-game-studio/tests/engine.test.mjs"],
+      "passed": 8,
+      "failed": 0
+    },
+    {
+      "stage": "cycle 3 courtesy fix",
+      "command": ["node", "--test", "projects/01-game-studio/tests/engine.test.mjs"],
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "stage": "first combined app/controller/engine validation",
+      "command": ["node", "--test", "projects/01-game-studio/tests/engine.test.mjs", "projects/01-game-studio/tests/controller.test.mjs", "projects/01-game-studio/tests/app.test.mjs"],
+      "passed": 22,
+      "failed": 1,
+      "failure": "The DOM test fixture stored input.value as a number, unlike the browser's string-coercing HTML input property. Restart's trim() failed in the fixture.",
+      "correction": "Added native-like string coercion to the fixture's value property. No game rule changed."
+    },
+    {
+      "stage": "targeted app retest after fixture correction",
+      "command": ["node", "--test", "projects/01-game-studio/tests/app.test.mjs"],
+      "passed": 7,
+      "failed": 0
+    }
+  ],
+  "finalValidation": "See validation.tap and result.json for the actual final manifest-check executions.",
+  "browserRendering": "not-run",
+  "humanPlaytest": "not-run",
+  "screenReader": "not-run"
+}

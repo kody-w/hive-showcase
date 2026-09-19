@@ -1,0 +1,20 @@
+test_all_gates_verdict_conditions_and_reversal_directions_are_preserved (__main__.EvidenceIntegrity) ... ok
+test_all_hypotheses_have_opposition_and_non_discriminating_evidence (__main__.EvidenceIntegrity) ... ok
+test_all_static_and_generated_links_resolve_without_network (__main__.EvidenceIntegrity) ... ok
+test_authoritative_brief_and_source_limitations_remain_honest (__main__.EvidenceIntegrity) ... ok
+test_basic_accessibility_and_critical_offline_constraints (__main__.EvidenceIntegrity) ... ok
+test_business_cases_do_not_convert_anecdotes_to_passes (__main__.EvidenceIntegrity) ... ok
+test_contradictions_and_temporal_correction_are_not_filtered_out_of_data (__main__.EvidenceIntegrity) ... ok
+test_entire_local_integrity_inventory_recomputes (__main__.EvidenceIntegrity) ... ok
+test_ids_are_unique_and_material_claims_resolve_to_inspected_passages (__main__.EvidenceIntegrity) ... ok
+test_manifest_is_scoped_and_every_artifact_exists (__main__.EvidenceIntegrity) ... ok
+test_nine_actual_sources_and_six_nonvoting_families (__main__.EvidenceIntegrity) ... ok
+test_protocol_is_unchanged_and_predates_collection (__main__.EvidenceIntegrity) ... ok
+test_seed_snapshots_match_reviewed_original_bytes (__main__.EvidenceIntegrity) ... ok
+test_source_metadata_and_bounded_capture_receipts (__main__.EvidenceIntegrity) ... ok
+test_synthetic_row_ids_counts_and_eight_id_gap_stay_separate (__main__.EvidenceIntegrity) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.059s
+
+OK

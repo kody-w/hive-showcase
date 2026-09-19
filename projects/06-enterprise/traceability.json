@@ -1,0 +1,39 @@
+{
+  "classification": "SYNTHETIC",
+  "stage": "work-produced",
+  "authority": "Original local implementation and conditional proposal; not human-reviewed, native task completion, policy approval, or deployment.",
+  "sourceRequirements": {
+    "path": "templates/casework/work/starter/docs/requirements.csv",
+    "sha256": "328ae43245d30d8b41a6dff267b5ca03937bb8c324e1a250b9142bba4fa93082",
+    "count": 12
+  },
+  "requirements": [
+    {"id": "req-round", "sourceFact": "pf-round", "fields": ["quantity", "unit-price-usd", "discount-pct", "tax-code"], "cases": ["q-101", "q-104"], "ownerRole": "quality", "evidence": ["tests/source.test.mjs: line net, line tax, and shipping tax round half-up with exact integers", "results/comparison.json"], "gate": "automated-model-check"},
+    {"id": "req-tiny", "sourceFact": "pf-round", "fields": ["line-106-a", "tax-code"], "cases": ["q-106"], "ownerRole": "quality", "evidence": ["tests/source.test.mjs: line net, line tax, and shipping tax round half-up with exact integers", "results/comparison.json"], "gate": "automated-model-check"},
+    {"id": "req-credit", "sourceFact": "pf-credit", "fields": ["open-balance-usd", "credit-limit-usd", "total_usd"], "cases": ["q-102"], "ownerRole": "credit-reviewer", "evidence": ["tests/source.test.mjs: credit, discount and terms boundaries are inclusive and quotes do not reserve balances", "pilot.md"], "gate": "model-check-only-policy-not-observed"},
+    {"id": "req-discount", "sourceFact": "pf-review", "fields": ["discount-pct", "tier", "discount_caps_pct"], "cases": ["q-103"], "ownerRole": "commercial-reviewer", "evidence": ["tests/source.test.mjs: all eight original outcomes match the inert acceptance JSON exactly", "pilot.md"], "gate": "model-check-only-policy-not-observed"},
+    {"id": "req-active", "sourceFact": "pf-review", "fields": ["active"], "cases": ["q-104"], "ownerRole": "account-owner", "evidence": ["tests/source.test.mjs: data errors suppress all totals, outrank policy flags, and never invent corrections", "pilot.md"], "gate": "model-check-only-policy-not-observed"},
+    {"id": "req-terms", "sourceFact": "pf-review", "fields": ["requested-terms-days", "approved-terms-days"], "cases": ["q-108", "q-104"], "ownerRole": "commercial-reviewer", "evidence": ["tests/source.test.mjs: all eight original outcomes match the inert acceptance JSON exactly", "pilot.md"], "gate": "model-check-only-policy-not-observed"},
+    {"id": "req-po", "sourceFact": "pf-po", "fields": ["po-reference"], "cases": ["q-105"], "ownerRole": "seller", "evidence": ["tests/source.test.mjs: data errors suppress all totals, outrank policy flags, and never invent corrections", "pilot.md: Correction-proposal ledger"], "gate": "model-check-only-source-correction-unresolved"},
+    {"id": "req-tax", "sourceFact": "pf-data", "fields": ["line-105-a:tax-code", "tax_rates_pct"], "cases": ["q-105"], "ownerRole": "billing-coordinator", "evidence": ["tests/source.test.mjs: all eight original outcomes match the inert acceptance JSON exactly", "pilot.md: Correction-proposal ledger"], "gate": "model-check-only-source-correction-unresolved"},
+    {"id": "req-quantity", "sourceFact": "pf-data", "fields": ["line-107-a:quantity"], "cases": ["q-107"], "ownerRole": "seller", "evidence": ["tests/source.test.mjs: fractional and unsafe quantities are data blockers, never truncated or coerced", "pilot.md: Correction-proposal ledger"], "gate": "model-check-only-source-correction-unresolved"},
+    {"id": "req-shipping", "sourceFact": "pf-ship", "fields": ["shipping-usd", "shipping-taxable", "shipping_tax_code"], "cases": ["q-101"], "ownerRole": "billing-coordinator", "evidence": ["tests/source.test.mjs: line net, line tax, and shipping tax round half-up with exact integers"], "gate": "automated-model-check"},
+    {"id": "req-authority", "sourceFact": "pf-review", "fields": ["state", "approved"], "cases": ["q-101", "q-106"], "ownerRole": "account-strategy", "evidence": ["tests/engine.test.mjs: every exception has a capacity-constrained owner visit and bounded unchanged-source rework", "pilot.md: Conditional gate and next-owner handoff"], "gate": "model-check-only-human-approval-not-observed"},
+    {"id": "req-isolation", "sourceFact": "pf-credit", "fields": ["open-balance-usd", "quote-id"], "cases": ["q-102"], "ownerRole": "architecture", "evidence": ["tests/source.test.mjs: credit, discount and terms boundaries are inclusive and quotes do not reserve balances"], "gate": "automated-model-check-not-concurrency-safe-credit"}
+  ],
+  "modelRequirements": [
+    {"id": "model-conservation", "evidence": "tests/engine.test.mjs: all 12 runs conserve every case at every event and between events without exceeding capacity", "gate": "automated-model-check"},
+    {"id": "model-identical-inputs", "evidence": "tests/engine.test.mjs: comparison inputs are byte-identical within scenarios; stress changes only declared assumptions", "gate": "automated-model-check"},
+    {"id": "model-relocated-bottleneck", "evidence": "tests/engine.test.mjs: gate squeeze demonstrates faster overall drainage but a worse clean-quote tail and relocated bottleneck", "gate": "automated-model-counterexample"},
+    {"id": "model-harmful-redesign", "evidence": "tests/engine.test.mjs: slow-owner stress makes the pooled pod worse on throughput and tails, despite faster clean cases", "gate": "automated-model-counterexample"},
+    {"id": "model-interactive-replay", "evidence": "tests/ui.test.mjs: actual app wiring handles seek, case/design clicks, play, end, reset and scenario changes without a browser", "gate": "node-dom-adapter-check-not-visual-browser-validation"}
+  ],
+  "unperformedGates": [
+    {"id": "human-review", "disposition": "not-observed"},
+    {"id": "policy-confirmation", "disposition": "not-observed"},
+    {"id": "source-correction-authorization", "disposition": "not-observed"},
+    {"id": "adoption-rehearsal", "disposition": "not-observed"},
+    {"id": "real-baseline-and-financial-impact", "disposition": "not-observed"},
+    {"id": "production-or-native-activation", "disposition": "out-of-scope-not-authorized"}
+  ]
+}

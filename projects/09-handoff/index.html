@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A real artifact-only AI continuation repairs a synthetic duplicate-receipt defect. Offline evidence, replay, and a useful maintenance kit.">
+  <title>09 · The receipt that counted twice</title>
+  <link rel="stylesheet" href="../../assets/shared.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="replay-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#replay">Skip to the case replay</a>
+  <main>
+    <header class="hero">
+      <div class="masthead">
+        <span class="eyebrow">Local Hive / Workstream 09</span>
+        <span class="badge">Public projection · offline · synthetic</span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">An unfinished job. A different context.</p>
+          <h1>The receipt that<br><span>counted twice.</span></h1>
+          <p class="lede">One real defect reproduction. One frozen midpoint.
+            One separate AI continuation that had to finish the job from files—not this conversation.</p>
+          <div class="toolbar">
+            <a class="button primary" href="#replay">Replay the case <span aria-hidden="true">↓</span></a>
+            <a class="button" href="HANDOFF.md">Read the historical handoff</a>
+          </div>
+        </div>
+        <aside class="checkpoint" aria-label="Observed continuation result">
+          <div class="checkpoint-top"><span class="seal" aria-hidden="true">09</span><span>ARTIFACT HANDOFF<br><strong>Actually continued</strong></span></div>
+          <dl>
+            <div><dt>Executor</dt><dd>Separate Astra task</dd></div>
+            <div><dt>Writable checkout</dt><dd>Isolated sibling worktree</dd></div>
+            <div><dt>Preserved original inputs</dt><dd>6 / 6 unchanged</dd></div>
+            <div><dt>Historical repair outcome</dt><dd class="success">3 cases + 19 tests pass</dd></div>
+          </dl>
+          <p class="fine">One actual historical continuation. This public edition retains behavior and derived evidence, not private executor metadata.</p>
+        </aside>
+      </div>
+    </header>
+    <p class="notice"><strong>Public projection, not the private execution archive.</strong>
+      Historical records below are explicitly redacted derivatives. Machine paths, private identifiers, and coordination records are withheld.
+      No new AI continuation was run for publication. The original handoff, contract, fixtures, provenance, and utility remain intact;
+      the <a href="evidence/public-integrity.json">public integrity manifest</a> binds this edition's current bytes.</p>
+
+    <section class="stats" aria-label="Before and after">
+      <div class="stat"><span class="eyebrow">Midpoint / failing</span><strong class="error">4 <small>events counted</small></strong><p>Four records, but only three unique IDs.</p></div>
+      <div class="stat"><span class="eyebrow">Continuation / repaired</span><strong class="success">3 <small>unique events</small></strong><p>The identical replay adds no work.</p></div>
+      <div class="stat"><span class="eyebrow">Useful output</span><strong>1 <small>open maintenance item</small></strong><p>A local queue the Pocket Arcade can consume.</p></div>
+    </section>
+
+    <section id="replay" class="section">
+      <div class="section-heading"><span class="section-number">01</span><div><p class="eyebrow">Evidence you can follow</p><h2>Replay the preserved case</h2></div></div>
+      <p>The seed explicitly names <code>ll-duplicate</code>: repeated identical event IDs count twice.
+        These new fictional Arcade receipts reproduce that behavior in original code.
+        The replay below plays back <strong>recorded Python execution frames</strong> preserved in redacted historical records;
+        it does not run Python in your browser. The included original source snapshots independently reproduce those numerical frames.</p>
+      <div class="replay-shell">
+        <div class="replay-controls">
+          <label for="case-select">Acceptance case</label>
+          <select id="case-select">
+            <option value="duplicate">Repeated receipt · the failing case</option>
+            <option value="clean">Clean input · preserved behavior</option>
+            <option value="out-of-order">Out of order · already worked</option>
+          </select>
+          <div class="toolbar">
+            <button id="play" type="button" aria-pressed="false">Replay all</button>
+            <button id="step" type="button">Step receipt</button>
+            <button id="reset" type="button">Reset</button>
+          </div>
+        </div>
+        <p id="frame-status" class="frame-status" role="status" aria-live="polite">JavaScript loads only local recorded data. The final observed result is 4 → 3 events.</p>
+        <progress id="progress" value="4" max="4" aria-label="Receipts replayed"></progress>
+        <div class="table-wrap">
+          <table class="receipt-table">
+            <caption>Original SYNTHETIC input records, in arrival order</caption>
+            <thead><tr><th scope="col">#</th><th scope="col">Event ID</th><th scope="col">Item / action</th><th scope="col">Minute</th><th scope="col">Record kind</th></tr></thead>
+            <tbody id="receipts"></tbody>
+          </table>
+        </div>
+        <div class="comparison">
+          <article class="outcome before">
+            <div class="outcome-label"><span>Frozen midpoint</span><span class="badge">Pre-fix capture</span></div>
+            <p class="big-count"><span id="before-count">4</span><small> events counted</small></p>
+            <p id="before-verdict" class="error">FAIL · expected 3 unique events</p>
+            <div id="before-items" class="item-list"></div>
+          </article>
+          <article class="outcome after">
+            <div class="outcome-label"><span>Separate continuation</span><span class="badge">Observed repair</span></div>
+            <p class="big-count"><span id="after-count">3</span><small> unique events</small></p>
+            <p id="after-verdict" class="success">PASS · unchanged acceptance target</p>
+            <div id="after-items" class="item-list"></div>
+          </article>
+        </div>
+        <details><summary>Inspect this recorded frame and its input hash</summary><pre id="frame-json">See evidence/before.json and evidence/after.json for the complete execution records.</pre></details>
+      </div>
+      <p class="fine">The clean and ordering cases already passed at the midpoint.
+        Only the specified duplicate-counting defect was unfinished.
+        <a href="evidence/before-acceptance.stdout.txt">Historical failing acceptance output</a> ·
+        <a href="evidence/after-acceptance.stdout.txt">Historical coordinator recheck</a> ·
+        <a href="evidence/publication-final-checks.json">New public-projection checks</a></p>
+    </section>
+
+    <section class="section" aria-labelledby="handoff-title">
+      <div class="section-heading"><span class="section-number">02</span><div><p class="eyebrow">Actual execution chain</p><h2 id="handoff-title">What crossed the boundary?</h2></div></div>
+      <div class="timeline">
+        <article class="card"><span class="timeline-step">A / FIRST CONTEXT</span><h3>Freeze, don't finish</h3><p>A bounded utility, three fixtures, strict acceptance, 16 tests, input hashes, exact failing output, decisions, and the next action were committed while the duplicate case still failed.</p><a href="HANDOFF.md">Open the sealed midpoint handoff</a></article>
+        <article class="card"><span class="timeline-step">B / SEPARATE CONTEXT</span><h3>Recover and repair</h3><p>One authorized separate Astra continuation recovered the work from project artifacts. It reproduced the failure, made the actual fix, added three regressions, and committed its result. Its private invocation metadata is withheld.</p><a href="evidence/recovery.json">Read the derived recovery summary</a></article>
+        <article class="card"><span class="timeline-step">C / COORDINATOR</span><h3>Integrate and verify</h3><p>The real child commit was fast-forwarded intact. The coordinator reran acceptance and all 19 tests, verified the sealed files, and built this evidence playback without modifying the repair.</p><a href="evidence/result.json">Inspect the packaged result</a></article>
+      </div>
+      <div class="context-grid">
+        <article class="panel"><h3>Recovered from the artifacts</h3><ul><li>The exact fixture, acceptance target, and next command.</li><li>Which behavior already passed and had to remain intact.</li><li>The difference between raw records and unique work.</li><li>Conflict rejection, bounds, no-mutation rules, and scope.</li><li>Who owned the next step—not invented release authority.</li></ul></article>
+        <article class="panel"><h3>Missing at the original handoff</h3><ul><li>The earlier conversation and undocumented reasoning.</li><li>A real-world dataset or human review.</li><li>The original downloaded archive in the second context.</li><li>At that time: browser validation, upstream acceptance, and publication permission.</li><li>Any guarantee that a different handoff would also succeed.</li></ul></article>
+      </div>
+      <div class="notice independence"><strong>What can be reverified publicly?</strong>
+        The original midpoint source, one-line fix, unchanged targets, numerical replay, and maintenance output can be checked from this snapshot.
+        The historical executor identity and invocation cannot be independently reverified here because private records are withheld.
+        The original executor's no-earlier-chat account remains a historical self-report; provider isolation was not audited.
+        This is not a new continuation or an independent human review.</div>
+    </section>
+
+    <section class="section kit-section" aria-labelledby="kit-title">
+      <div class="section-heading"><span class="section-number">03</span><div><p class="eyebrow">Something useful survives</p><h2 id="kit-title">The Pocket Arcade maintenance kit</h2></div></div>
+      <div class="kit-grid">
+        <div><p>Give the original Python CLI an explicitly selected synthetic JSONL file.
+          It produces a stable per-item maintenance summary: raw input count, replay count, last event minute, open queue, and input SHA-256.</p>
+          <pre><code>python3 -B projects/09-handoff/cli.py \
+  projects/09-handoff/fixtures/duplicate.jsonl</code></pre>
+          <p>The sample retains <code>arcade-input</code> as open, closes <code>arcade-cache</code>, and reports exactly one replay.
+            The JSON is ready for an offline consumer; no other workstream was modified or integration fabricated.</p>
+          <div class="toolbar"><a class="button primary" href="artifacts/pocket-arcade-maintenance.json" download>Download maintenance JSON</a><a class="button" href="artifacts/maintenance-contract.json">Consumer contract</a></div>
+        </div>
+        <aside class="panel kit-boundaries"><h3>A small, bounded tool</h3><dl><div><dt>Input cap</dt><dd>1 MiB / 5,000 records</dd></div><div><dt>Line cap</dt><dd>16 KiB</dd></div><div><dt>Duplicate ID</dt><dd>Same payload → one event</dd></div><div><dt>Changed payload</dt><dd>Rejected, not overwritten</dd></div><div><dt>Ordering</dt><dd>Minute, then event ID</dd></div><div><dt>Release authority</dt><dd>Always false</dd></div></dl><a href="README.md">Commands, limits, and reproducibility</a></aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="receipts-title">
+      <div class="section-heading"><span class="section-number">04</span><div><p class="eyebrow">History versus current bytes</p><h2 id="receipts-title">Inspect the preserved repair</h2></div></div>
+      <div class="hash-panel">
+        <dl>
+          <div><dt>Historical private midpoint hash</dt><dd><code>97dac1b6bdcfcfbae5ebdb43bbfdc0854335030e</code></dd></div>
+          <div><dt>Historical private fix hash</dt><dd><code>849660c39cd53277f37ba3dddf8f7ccd553cf910</code></dd></div>
+          <div><dt>Original continuation</dt><dd>One separate Astra context; private identity withheld</dd></div>
+          <div><dt>Repeated-receipt input SHA-256</dt><dd><code>ca1f5c0591cfe5dc4c7b2d713f4efe4e58a6cf58270683d84f2bd4248048b040</code></dd></div>
+        </dl>
+      </div>
+      <div class="evidence-links">
+        <a href="evidence/historical-continuation.json">Derived continuation history</a>
+        <a href="evidence/continuation-baseline.json">Redacted historical failing baseline</a>
+        <a href="evidence/continuation.json">Redacted historical passing capture</a>
+        <a href="evidence/after.json">Redacted historical coordinator recheck</a>
+        <a href="evidence/input-hashes.json">Historical input hashes</a>
+        <a href="evidence/public-integrity.json">Current public-byte manifest</a>
+        <a href="evidence/midpoint-receipt-ledger.py">Original midpoint source snapshot</a>
+        <a href="evidence/repair.diff">Actual one-line repair diff</a>
+        <a href="ACCEPTANCE.json">Unchanged contract</a>
+        <a href="provenance.json">Inert seed provenance</a>
+      </div>
+      <p class="fine">Historical commit hashes are informational: their Git objects are not included in the fresh public repository.
+        Checks use the included source snapshots, not hidden history. Public redacted records have new hashes and are not byte-identical private transcripts.
+        Hashes bind bytes, not signatures or executor identities.</p>
+    </section>
+
+    <footer>
+      <p><strong>Clean-room reproduction, not an upstream patch.</strong> The reviewed seed deliberately specifies this synthetic defect.
+        No downloaded starter code was executed, imported, or embedded. All code and fixtures here are original.</p>
+      <p>No network dependencies, services, accounts, real telemetry, or native Hive activation.
+        Publication is owned by the coordinating publisher; this local projection performs no remote operations.
+        Browser visuals have not been browser-validated. Local checks do not complete the seed's full two-defect release gate.</p>
+      <p class="eyebrow">Work-produced / one observed continuation / no invented authority</p>
+    </footer>
+    <noscript><p class="notice">Replay controls require JavaScript. All evidence, source, fixtures, commands, and downloadable JSON remain available through the links above.</p></noscript>
+  </main>
+</body>
+</html>
