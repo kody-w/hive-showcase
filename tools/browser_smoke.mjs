@@ -133,8 +133,12 @@ async function launch(profile) {
   return { child, endpoint };
 }
 
-async function waitFor(protocol, session, expression, description) {
-  for (let attempt = 0; attempt < 100; attempt++) {
+async function waitFor(protocol, session, expression, description, timeoutMs = 5000) {
+  if (!Number.isInteger(timeoutMs) || timeoutMs < 100 || timeoutMs > 120000) {
+    throw new Error("Browser expectation timeout must be an integer from 100 to 120000 ms.");
+  }
+  const deadline = performance.now() + timeoutMs;
+  while (performance.now() < deadline) {
     if (await protocol.evaluate(session, expression)) return;
     await sleep(50);
   }
@@ -189,11 +193,14 @@ async function performAction(protocol, session, action) {
           (expected.disabled === undefined || Boolean(node.disabled) === expected.disabled) &&
           (expected.hidden === undefined || node.hidden === expected.hidden) &&
           (expected.checked === undefined || node.checked === expected.checked);
-      })()`, JSON.stringify(action.expect));
+      })()`, JSON.stringify(action.expect), action.timeoutMs ?? 5000);
     } catch (error) {
       const readback = await protocol.evaluate(session, `(() => {
         const node = document.querySelector(${JSON.stringify(action.expect.selector)});
-        return node ? {text:node.textContent?.slice(0, 1200), value:node.value, disabled:node.disabled, hidden:node.hidden, checked:node.checked} : null;
+        return {
+          target: node ? {text:node.textContent?.slice(0, 1200), value:node.value, disabled:node.disabled, hidden:node.hidden, checked:node.checked} : null,
+          status: [...document.querySelectorAll("[role=status]")].slice(0, 5).map(item => item.textContent.slice(0, 1200))
+        };
       })()`);
       throw new Error(`${error.message}; actual readback: ${JSON.stringify(readback)}`);
     }

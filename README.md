@@ -113,3 +113,8 @@ The original local run covered ten project check sets and 120 bounded browser
 test steps at each of two viewports. Projection-specific checks and publication
 details are recorded separately. Technical observations are not native
 activation or human, market, or physical approval.
+
+The [public deployment record](evidence/pages-publication.json) links the live
+desktop/mobile checks for all ten demonstrations and the portal. The network
+audit step allows a bounded 60 seconds to retrieve and hash its 158 public
+inputs; other interaction expectations keep their short default deadlines.

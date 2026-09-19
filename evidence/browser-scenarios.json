@@ -143,7 +143,7 @@
     {"type":"click","selector":"[data-select=\"07-manufacturing\"]","expect":{"selector":"#station-link[href$=\"/07-manufacturing/index.html\"]"}},
     {"type":"click","selector":"[data-select=\"09-handoff\"]","expect":{"selector":"#station-link[href$=\"/09-handoff/index.html\"]"}},
     {"type":"click","selector":"[data-select=\"01-game-studio\"]","expect":{"selector":"#station-link[href$=\"/01-game-studio/index.html\"]"}},
-    {"type":"click","selector":"#verify-button","expect":{"selector":"#snapshot-title","includes":"Input hashes match this snapshot"}},
+    {"type":"click","selector":"#verify-button","timeoutMs":60000,"expect":{"selector":"#snapshot-title","includes":"Input hashes match this snapshot"}},
     {"type":"assert","selector":"#verification-status","expect":{"selector":"#verification-status","includes":"158 present input hashes"}},
     {"type":"input","selector":"#session-notes","value":"Automated local interface check only. No human match or physical fabrication occurred."},
     {"type":"assert","selector":"#snapshot-title","expect":{"selector":"#snapshot-title","includes":"Input hashes match this snapshot"}}

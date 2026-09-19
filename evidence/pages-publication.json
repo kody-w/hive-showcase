@@ -1,0 +1,41 @@
+{
+  "schema": "hive-pages-publication/1",
+  "stage": "live-verified",
+  "site": "https://kody-w.github.io/hive-showcase/",
+  "repository": "https://github.com/kody-w/hive-showcase",
+  "scope": {
+    "demonstrations": 10,
+    "reusableSkill": "hive-showcase",
+    "freshPublicHistory": true,
+    "privateBuildHistoryPublished": false
+  },
+  "testedDeployment": {
+    "commit": "511d6af0b9e51dfca3678ba5d6b6d379af5053d8",
+    "status": "built",
+    "sourceBranch": "main",
+    "sourcePath": "/",
+    "httpsEnforced": true,
+    "builtAt": "2026-09-19T14:05:13Z"
+  },
+  "liveChecks": {
+    "desktop": "evidence/browser-smoke.json",
+    "mobile": "evidence/browser-mobile.json",
+    "pagesPerViewport": 11,
+    "boundedStepsPerViewport": 120,
+    "currentPocketArcadeInputHashes": 158,
+    "applicationRuntimeChangedForEvidencePublication": false,
+    "networkAuditWaitBudgetMs": 60000
+  },
+  "skill": {
+    "path": ".github/skills/hive-showcase/SKILL.md",
+    "rawUrl": "https://raw.githubusercontent.com/kody-w/hive-showcase/main/.github/skills/hive-showcase/SKILL.md",
+    "sha256": "a7899619cc744258b48357602ae9af61dc1daaea948f21a0238c33a6fdc57b32",
+    "publicBytesMatchedReviewedInstalledCopy": true
+  },
+  "boundaries": [
+    "Historical handoff records are explicitly redacted derivatives; private invocation details are not publicly reverified.",
+    "Synthetic and modeled results remain labeled; no customer, revenue, physical fabrication, or human-fun observations were invented.",
+    "Public hosting does not initialize a native Organization, grant private membership, activate a federation, or imply Hive Hub maintainer acceptance.",
+    "These are unsigned publication and technical observations, not native receipts or authority grants."
+  ]
+}
