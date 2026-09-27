@@ -1,5 +1,9 @@
 # Hive Showcase
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/hive-showcase.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/hive-showcase.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 Ten original, local-first demonstrations based on public Hive Hub organization
 seeds. Public site: **https://kody-w.github.io/hive-showcase/**.
 
